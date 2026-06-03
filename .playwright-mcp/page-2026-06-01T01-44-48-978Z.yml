@@ -1,0 +1,275 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - generic [ref=e8]: Facturation électronique 2026 — anticipez !
+        - link "En savoir plus →" [ref=e9] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - navigation [ref=e14]:
+      - generic [ref=e16]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e18]
+        - button "Ouvrir le menu" [ref=e19] [cursor=pointer]:
+          - img [ref=e20]
+      - generic [ref=e22]:
+        - link "Nos services" [ref=e23] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e24] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e25] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e26] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e27] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e28] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=e29]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - img [ref=e33]
+        - text: Développement sur mesure
+      - heading "Applications Web Sur Mesure en Guadeloupe" [level=1] [ref=e37]:
+        - text: Applications Web
+        - text: Sur Mesure en Guadeloupe
+      - paragraph [ref=e38]: Transformez vos processus métier avec une application web personnalisée. CRM, réservation, e-learning, portail intranet — nous développons la solution qui répond exactement à vos besoins.
+      - link "Demander un devis gratuit" [ref=e39] [cursor=pointer]:
+        - /url: /#contact
+        - generic [ref=e40]:
+          - text: Demander un devis gratuit
+          - img [ref=e41]
+    - generic [ref=e44]:
+      - heading "Pourquoi Choisir Une Application Sur Mesure ?" [level=2] [ref=e45]
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - img [ref=e49]
+          - heading "Technologies Modernes" [level=3] [ref=e53]
+          - paragraph [ref=e54]: React, Next.js, Node.js — les meilleures technologies pour des applications performantes
+        - generic [ref=e55]:
+          - img [ref=e57]
+          - heading "Base de Données Robuste" [level=3] [ref=e61]
+          - paragraph [ref=e62]: PostgreSQL, Supabase — sécurité et performance garanties pour vos données
+        - generic [ref=e63]:
+          - img [ref=e65]
+          - heading "Responsive & Mobile" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Applications adaptées à tous les écrans — ordinateur, tablette, smartphone
+        - generic [ref=e69]:
+          - img [ref=e71]
+          - heading "Sécurité Maximale" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Authentification, chiffrement, sauvegardes automatiques
+        - generic [ref=e75]:
+          - img [ref=e77]
+          - heading "Performance Optimale" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Temps de chargement ultra-rapides, expérience utilisateur fluide
+        - generic [ref=e81]:
+          - img [ref=e83]
+          - heading "Évolutive" [level=3] [ref=e86]
+          - paragraph [ref=e87]: Architecture modulaire permettant d'ajouter des fonctionnalités facilement
+    - generic [ref=e89]:
+      - heading "Exemples d'Applications Développées" [level=2] [ref=e90]
+      - paragraph [ref=e91]: Des solutions concrètes pour des besoins réels d'entreprises guadeloupéennes
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - heading "CRM Sur Mesure" [level=3] [ref=e94]
+          - paragraph [ref=e95]: Gestion de clients, suivi des ventes, automatisation des tâches
+          - paragraph [ref=e96]: À partir de 2 500€
+          - list [ref=e97]:
+            - listitem [ref=e98]:
+              - img [ref=e99]
+              - text: Gestion contacts & clients
+            - listitem [ref=e101]:
+              - img [ref=e102]
+              - text: Pipeline de vente
+            - listitem [ref=e104]:
+              - img [ref=e105]
+              - text: Tableaux de bord analytics
+            - listitem [ref=e107]:
+              - img [ref=e108]
+              - text: Automatisation emails
+            - listitem [ref=e110]:
+              - img [ref=e111]
+              - text: Intégration calendrier
+          - link "Discuter de ce projet" [ref=e113] [cursor=pointer]:
+            - /url: /#contact
+            - text: Discuter de ce projet
+            - img [ref=e114]
+        - generic [ref=e116]:
+          - heading "Système de Réservation" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Réservations en ligne pour restaurants, hôtels, services
+          - paragraph [ref=e119]: À partir de 1 800€
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - img [ref=e122]
+              - text: Calendrier disponibilités
+            - listitem [ref=e124]:
+              - img [ref=e125]
+              - text: Réservation en temps réel
+            - listitem [ref=e127]:
+              - img [ref=e128]
+              - text: Paiement en ligne
+            - listitem [ref=e130]:
+              - img [ref=e131]
+              - text: Notifications SMS/Email
+            - listitem [ref=e133]:
+              - img [ref=e134]
+              - text: Gestion multi-utilisateurs
+          - link "Discuter de ce projet" [ref=e136] [cursor=pointer]:
+            - /url: /#contact
+            - text: Discuter de ce projet
+            - img [ref=e137]
+        - generic [ref=e139]:
+          - heading "Plateforme E-learning" [level=3] [ref=e140]
+          - paragraph [ref=e141]: Formation en ligne, cours vidéo, quiz et certifications
+          - paragraph [ref=e142]: À partir de 3 000€
+          - list [ref=e143]:
+            - listitem [ref=e144]:
+              - img [ref=e145]
+              - text: Hébergement cours vidéo
+            - listitem [ref=e147]:
+              - img [ref=e148]
+              - text: Quiz & évaluations
+            - listitem [ref=e150]:
+              - img [ref=e151]
+              - text: Suivi progression
+            - listitem [ref=e153]:
+              - img [ref=e154]
+              - text: Certificats automatiques
+            - listitem [ref=e156]:
+              - img [ref=e157]
+              - text: Espace étudiant/formateur
+          - link "Discuter de ce projet" [ref=e159] [cursor=pointer]:
+            - /url: /#contact
+            - text: Discuter de ce projet
+            - img [ref=e160]
+        - generic [ref=e162]:
+          - heading "Portail Intranet" [level=3] [ref=e163]
+          - paragraph [ref=e164]: Espace collaboratif pour entreprises et associations
+          - paragraph [ref=e165]: À partir de 2 000€
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - img [ref=e168]
+              - text: Gestion documents
+            - listitem [ref=e170]:
+              - img [ref=e171]
+              - text: Messagerie interne
+            - listitem [ref=e173]:
+              - img [ref=e174]
+              - text: Gestion de projets
+            - listitem [ref=e176]:
+              - img [ref=e177]
+              - text: Annuaire employés
+            - listitem [ref=e179]:
+              - img [ref=e180]
+              - text: Permissions par rôle
+          - link "Discuter de ce projet" [ref=e182] [cursor=pointer]:
+            - /url: /#contact
+            - text: Discuter de ce projet
+            - img [ref=e183]
+    - generic [ref=e186]:
+      - heading "Comment Ça Marche ?" [level=2] [ref=e187]
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]: "1"
+          - generic [ref=e191]:
+            - heading "Analyse de vos besoins" [level=3] [ref=e192]
+            - paragraph [ref=e193]: Appel découverte gratuit de 30 min pour comprendre votre projet et vos objectifs
+        - generic [ref=e194]:
+          - generic [ref=e195]: "2"
+          - generic [ref=e196]:
+            - heading "Devis détaillé" [level=3] [ref=e197]
+            - paragraph [ref=e198]: Proposition technique et financière sous 48h avec planning prévisionnel
+        - generic [ref=e199]:
+          - generic [ref=e200]: "3"
+          - generic [ref=e201]:
+            - heading "Développement" [level=3] [ref=e202]
+            - paragraph [ref=e203]: Réalisation de votre application avec suivi hebdomadaire et démos régulières
+        - generic [ref=e204]:
+          - generic [ref=e205]: "4"
+          - generic [ref=e206]:
+            - heading "Tests & Formation" [level=3] [ref=e207]
+            - paragraph [ref=e208]: Tests complets, corrections, et formation de vos équipes à l'utilisation
+        - generic [ref=e209]:
+          - generic [ref=e210]: "5"
+          - generic [ref=e211]:
+            - heading "Mise en ligne" [level=3] [ref=e212]
+            - paragraph [ref=e213]: Déploiement sur serveurs sécurisés avec support technique inclus
+    - generic [ref=e215]:
+      - heading "Prêt à digitaliser votre entreprise ?" [level=2] [ref=e216]
+      - paragraph [ref=e217]: Discutons de votre projet lors d'un appel découverte gratuit de 30 minutes.
+      - link "Réserver mon appel gratuit" [ref=e218] [cursor=pointer]:
+        - /url: /#contact
+        - generic [ref=e219]:
+          - text: Réserver mon appel gratuit
+          - img [ref=e220]
+  - contentinfo [ref=e222]:
+    - generic [ref=e223]:
+      - generic [ref=e224]:
+        - generic [ref=e225]:
+          - generic [ref=e226] [cursor=pointer]:
+            - img "SolYB" [ref=e227]
+            - generic [ref=e228]: SolYB
+          - paragraph [ref=e229]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e230]: Expert local 971
+        - generic [ref=e232]:
+          - heading "Navigation" [level=3] [ref=e233]
+          - list [ref=e234]:
+            - listitem [ref=e235]:
+              - link "Nos services" [ref=e236] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e237]:
+              - link "Réalisations" [ref=e238] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e239]:
+              - link "Nos tarifs" [ref=e240] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e241]:
+              - link "L'équipe" [ref=e242] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e243]:
+              - link "Parlons-en" [ref=e244] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e245]:
+          - heading "Services" [level=3] [ref=e246]
+          - list [ref=e247]:
+            - listitem [ref=e248]: Sites web sur-mesure
+            - listitem [ref=e249]: Applications métier
+            - listitem [ref=e250]:
+              - link "Facturation électronique 2026" [ref=e251] [cursor=pointer]:
+                - /url: /facturation-electronique
+            - listitem [ref=e252]:
+              - link "ResaGP — Gestion restaurant" [ref=e253] [cursor=pointer]:
+                - /url: /resagp
+            - listitem [ref=e254]: E-commerce
+            - listitem [ref=e255]: Maintenance & support
+        - generic [ref=e256]:
+          - heading "Contact" [level=3] [ref=e257]
+          - list [ref=e258]:
+            - listitem [ref=e259]:
+              - img [ref=e260]
+              - link "contact@solyb.gp" [ref=e263] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e264]:
+              - img [ref=e265]
+              - link "+590 690 XX XX XX" [ref=e267] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e268]:
+              - img [ref=e269]
+              - generic [ref=e272]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e273]:
+              - img [ref=e274]
+              - link "LinkedIn" [ref=e278] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e280]:
+        - paragraph [ref=e281]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e282]:
+          - link "Mentions légales" [ref=e283] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e284] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e286] [cursor=pointer]:
+    - img [ref=e287]

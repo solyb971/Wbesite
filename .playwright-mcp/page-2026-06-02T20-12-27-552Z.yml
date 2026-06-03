@@ -1,0 +1,160 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+        - /url: /admin
+        - img "SolYB" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: SolYB
+          - generic [ref=e10]: CRM Pro
+      - button [ref=e11]:
+        - img [ref=e12]
+    - generic [ref=e15]:
+      - generic [ref=e16]: Vos Produits
+      - generic [ref=e17]:
+        - link "SolYB Agence" [ref=e18] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e20]
+          - text: SolYB Agence
+        - link "FactuGP" [ref=e22] [cursor=pointer]:
+          - /url: /facturation-electronique
+          - img [ref=e24]
+          - text: FactuGP
+          - img [ref=e28]
+        - link "ResaGP" [ref=e30] [cursor=pointer]:
+          - /url: /resagp
+          - img [ref=e32]
+          - text: ResaGP
+          - img [ref=e37]
+    - generic [ref=e39]:
+      - generic [ref=e40]: Navigation
+      - navigation [ref=e41]:
+        - link "Pipeline / Leads" [ref=e42] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e43]
+          - text: Pipeline / Leads
+        - link "Planning" [ref=e48] [cursor=pointer]:
+          - /url: /admin/planning
+          - img [ref=e49]
+          - text: Planning
+        - link "Analytics" [ref=e51] [cursor=pointer]:
+          - /url: /admin/analytics
+          - img [ref=e52]
+          - text: Analytics
+        - link "Templates Email" [ref=e54] [cursor=pointer]:
+          - /url: /admin/templates
+          - img [ref=e55]
+          - text: Templates Email
+        - link "Paramètres" [ref=e58] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=e59]
+          - text: Paramètres
+    - generic [ref=e63]:
+      - generic [ref=e64]: "Y"
+      - generic [ref=e65]:
+        - generic [ref=e66]: Yacine B.
+        - generic [ref=e67]: v2.0 · Admin
+  - generic [ref=e68]:
+    - navigation [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - button [ref=e72]:
+            - img [ref=e73]
+          - generic [ref=e74]:
+            - heading "Templates Email" [level=1] [ref=e75]
+            - paragraph [ref=e76]: Séquences automatiques
+        - generic [ref=e77]: Live
+        - generic [ref=e78]:
+          - button [ref=e80]:
+            - img [ref=e81]
+          - button "Y Yacine" [ref=e85]:
+            - generic [ref=e86]: "Y"
+            - text: Yacine
+    - main [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - heading "Templates d'emails" [level=1] [ref=e91]
+            - paragraph [ref=e92]: Gérez vos modèles d'emails et séquences automatiques
+          - button "Nouveau template" [ref=e93]:
+            - img [ref=e94]
+            - text: Nouveau template
+        - generic [ref=e95]:
+          - img [ref=e96]
+          - textbox "Rechercher un template..." [ref=e99]
+        - generic [ref=e100]:
+          - generic [ref=e102]:
+            - img [ref=e104]
+            - generic [ref=e106]:
+              - heading "Séquences Automatiques" [level=2] [ref=e107]
+              - paragraph [ref=e108]: Emails envoyés automatiquement selon le parcours du lead
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: "1"
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Email de bienvenue
+                  - generic [ref=e115]: J+0
+              - generic [ref=e116]:
+                - generic [ref=e117]:
+                  - generic [ref=e118]: 75%
+                  - generic [ref=e119]: Ouverture
+                - generic [ref=e120]:
+                  - generic [ref=e121]: 40%
+                  - generic [ref=e122]: Clic
+                - generic [ref=e123]:
+                  - button "Éditer" [ref=e124]
+                  - button "Stats" [ref=e125]
+            - generic [ref=e126]:
+              - generic [ref=e127]:
+                - generic [ref=e128]: "2"
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Cas client similaire
+                  - generic [ref=e131]: J+3
+              - generic [ref=e132]:
+                - generic [ref=e133]:
+                  - generic [ref=e134]: 60%
+                  - generic [ref=e135]: Ouverture
+                - generic [ref=e136]:
+                  - generic [ref=e137]: 25%
+                  - generic [ref=e138]: Clic
+                - generic [ref=e139]:
+                  - button "Éditer" [ref=e140]
+                  - button "Stats" [ref=e141]
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: "3"
+                - generic [ref=e145]:
+                  - generic [ref=e146]: Urgence douce
+                  - generic [ref=e147]: J+7
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - generic [ref=e150]: 45%
+                  - generic [ref=e151]: Ouverture
+                - generic [ref=e152]:
+                  - generic [ref=e153]: 15%
+                  - generic [ref=e154]: Clic
+                - generic [ref=e155]:
+                  - button "Éditer" [ref=e156]
+                  - button "Stats" [ref=e157]
+            - generic [ref=e158]:
+              - generic [ref=e159]:
+                - generic [ref=e160]: "4"
+                - generic [ref=e161]:
+                  - generic [ref=e162]: Dernier contact
+                  - generic [ref=e163]: J+10
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - generic [ref=e166]: 30%
+                  - generic [ref=e167]: Ouverture
+                - generic [ref=e168]:
+                  - generic [ref=e169]: 10%
+                  - generic [ref=e170]: Clic
+                - generic [ref=e171]:
+                  - button "Éditer" [ref=e172]
+                  - button "Stats" [ref=e173]
+        - generic [ref=e176]:
+          - img [ref=e178]
+          - generic [ref=e181]:
+            - heading "Réponses Rapides" [level=2] [ref=e182]
+            - paragraph [ref=e183]: Templates pour répondre rapidement aux demandes

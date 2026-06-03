@@ -1,0 +1,395 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - generic [ref=e8]: Facturation électronique 2026 — anticipez !
+        - link "En savoir plus →" [ref=e9] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - navigation [ref=e14]:
+      - generic [ref=e16]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e18]
+        - button "Ouvrir le menu" [ref=e19] [cursor=pointer]:
+          - img [ref=e20]
+      - generic [ref=e22]:
+        - link "Nos services" [ref=e23] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e24] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e25] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e26] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e27] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e28] [cursor=pointer]:
+          - /url: /#contact
+  - article [ref=e29]:
+    - generic [ref=e31]:
+      - link "Retour au blog" [ref=e32] [cursor=pointer]:
+        - /url: /blog
+        - img [ref=e33]
+        - text: Retour au blog
+      - generic [ref=e35]: Guides
+      - 'heading "Application Web vs Site Web : Que Choisir pour Votre Entreprise en Guadeloupe ?" [level=1] [ref=e36]'
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img [ref=e39]
+          - generic [ref=e41]: 27 décembre 2024
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - generic [ref=e46]: 10 min de lecture
+    - generic [ref=e48]:
+      - paragraph [ref=e49]:
+        - text: Vous êtes entrepreneur en Guadeloupe et vous hésitez entre créer un
+        - strong [ref=e50]: site web classique
+        - text: ou développer une
+        - strong [ref=e51]: application web sur mesure
+        - text: "? Cette question revient souvent lors de nos échanges avec les TPE et PME guadeloupéennes. Dans ce guide complet, nous vous aidons à faire le bon choix selon vos besoins et votre budget."
+      - heading "Quelle est la Différence Entre un Site Web et une Application Web ?" [level=2] [ref=e52]
+      - paragraph [ref=e53]: Avant de choisir, il est essentiel de comprendre les différences fondamentales entre ces deux solutions.
+      - 'heading "Site Web Classique : Vitrine de Votre Activité" [level=3] [ref=e54]'
+      - paragraph [ref=e55]:
+        - text: Un
+        - strong [ref=e56]: site web classique
+        - text: (ou site vitrine) est principalement
+        - strong [ref=e57]: informatif
+        - text: . Il présente votre entreprise, vos services, vos coordonnées et permet aux visiteurs de vous contacter.
+      - generic [ref=e58]:
+        - heading "Exemples concrets en Guadeloupe:" [level=4] [ref=e59]
+        - list [ref=e60]:
+          - listitem [ref=e61]:
+            - img [ref=e62]
+            - generic [ref=e64]: Site d'un restaurant avec menu et réservation par téléphone
+          - listitem [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Portfolio d'un photographe guadeloupéen
+          - listitem [ref=e69]:
+            - img [ref=e70]
+            - generic [ref=e72]: Site d'un artisan avec galerie photos
+          - listitem [ref=e73]:
+            - img [ref=e74]
+            - generic [ref=e76]: Présentation d'un gîte avec formulaire de contact
+        - heading "Caractéristiques:" [level=5] [ref=e77]
+        - list [ref=e78]:
+          - listitem [ref=e79]: • Navigation simple page par page
+          - listitem [ref=e80]: • Contenu majoritairement statique
+          - listitem [ref=e81]: • Peu d'interaction avec l'utilisateur
+          - listitem [ref=e82]: • Pas de compte utilisateur
+          - listitem [ref=e83]: • Pas de traitement complexe de données
+      - 'heading "Application Web : Outil Interactif et Fonctionnel" [level=3] [ref=e84]'
+      - paragraph [ref=e85]:
+        - text: Une
+        - strong [ref=e86]: application web
+        - text: est un
+        - strong [ref=e87]: logiciel accessible via navigateur
+        - text: qui permet d'effectuer des actions complexes, de gérer des données, d'interagir de manière dynamique.
+      - generic [ref=e88]:
+        - heading "Exemples concrets en Guadeloupe:" [level=4] [ref=e89]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - img [ref=e92]
+            - generic [ref=e94]: Plateforme de réservation pour activités touristiques 971
+          - listitem [ref=e95]:
+            - img [ref=e96]
+            - generic [ref=e98]: CRM pour gérer vos clients et devis
+          - listitem [ref=e99]:
+            - img [ref=e100]
+            - generic [ref=e102]: Marketplace locale type "Leboncoin Guadeloupe"
+          - listitem [ref=e103]:
+            - img [ref=e104]
+            - generic [ref=e106]: Outil de gestion de stock pour commerce
+          - listitem [ref=e107]:
+            - img [ref=e108]
+            - generic [ref=e110]: Plateforme de formation en ligne
+        - heading "Caractéristiques:" [level=5] [ref=e111]
+        - list [ref=e112]:
+          - listitem [ref=e113]: • Interface hautement interactive
+          - listitem [ref=e114]: • Comptes utilisateurs (connexion/inscription)
+          - listitem [ref=e115]: • Traitement de données en temps réel
+          - listitem [ref=e116]: • Logique métier complexe
+          - listitem [ref=e117]: • Base de données dynamique
+          - listitem [ref=e118]: • Fonctionnalités avancées (paiement, notifications, etc.)
+      - heading "Tableau Comparatif Rapide" [level=2] [ref=e119]
+      - table [ref=e121]:
+        - rowgroup [ref=e122]:
+          - row "Critère Site Web Application Web" [ref=e123]:
+            - columnheader "Critère" [ref=e124]
+            - columnheader "Site Web" [ref=e125]
+            - columnheader "Application Web" [ref=e126]
+        - rowgroup [ref=e127]:
+          - row "Objectif Informer, présenter Faire accomplir des tâches" [ref=e128]:
+            - cell "Objectif" [ref=e129]
+            - cell "Informer, présenter" [ref=e130]
+            - cell "Faire accomplir des tâches" [ref=e131]
+          - row "Complexité Faible à moyenne Moyenne à élevée" [ref=e132]:
+            - cell "Complexité" [ref=e133]
+            - cell "Faible à moyenne" [ref=e134]
+            - cell "Moyenne à élevée" [ref=e135]
+          - row "Prix Guadeloupe 599-2 000€ 2 000-50 000€" [ref=e136]:
+            - cell "Prix Guadeloupe" [ref=e137]
+            - cell "599-2 000€" [ref=e138]
+            - cell "2 000-50 000€" [ref=e139]
+          - row "Délai 1-4 semaines 1-6 mois" [ref=e140]:
+            - cell "Délai" [ref=e141]
+            - cell "1-4 semaines" [ref=e142]
+            - cell "1-6 mois" [ref=e143]
+          - row "Maintenance Faible Moyenne à élevée" [ref=e144]:
+            - cell "Maintenance" [ref=e145]
+            - cell "Faible" [ref=e146]
+            - cell "Moyenne à élevée" [ref=e147]
+          - row "Évolutivité Limitée Très élevée" [ref=e148]:
+            - cell "Évolutivité" [ref=e149]
+            - cell "Limitée" [ref=e150]
+            - cell "Très élevée" [ref=e151]
+          - row "Utilisateurs Visiteurs anonymes Comptes utilisateurs" [ref=e152]:
+            - cell "Utilisateurs" [ref=e153]
+            - cell "Visiteurs anonymes" [ref=e154]
+            - cell "Comptes utilisateurs" [ref=e155]
+          - row "Exemples Blog, vitrine, portfolio CRM, marketplace, SaaS" [ref=e156]:
+            - cell "Exemples" [ref=e157]
+            - cell "Blog, vitrine, portfolio" [ref=e158]
+            - cell "CRM, marketplace, SaaS" [ref=e159]
+      - heading "Avez-Vous Besoin d'un Site Web ou d'une Application ?" [level=2] [ref=e160]
+      - paragraph [ref=e161]: "Répondez à ces questions pour le savoir:"
+      - generic [ref=e162]:
+        - generic [ref=e163]:
+          - heading "Choisissez un SITE WEB si..." [level=3] [ref=e164]
+          - list [ref=e165]:
+            - listitem [ref=e166]:
+              - img [ref=e167]
+              - generic [ref=e169]:
+                - text: Votre objectif principal est de
+                - strong [ref=e170]: présenter votre activité
+            - listitem [ref=e171]:
+              - img [ref=e172]
+              - generic [ref=e174]:
+                - text: Vous voulez être
+                - strong [ref=e175]: trouvable sur Google
+                - text: localement
+            - listitem [ref=e176]:
+              - img [ref=e177]
+              - generic [ref=e179]:
+                - text: Vous avez besoin d'un
+                - strong [ref=e180]: formulaire de contact
+                - text: simple
+            - listitem [ref=e181]:
+              - img [ref=e182]
+              - generic [ref=e184]:
+                - text: Votre budget est
+                - strong [ref=e185]: limité
+                - text: (< 2 000€)
+            - listitem [ref=e186]:
+              - img [ref=e187]
+              - generic [ref=e189]:
+                - text: Vous voulez une solution
+                - strong [ref=e190]: rapide
+                - text: (2-4 semaines)
+          - generic [ref=e191]:
+            - paragraph [ref=e192]: "Profils concernés:"
+            - paragraph [ref=e193]: Artisan, Restaurant, Cabinet médical, Gîte, Photographe, Coach sportif, Commerce de détail
+        - generic [ref=e194]:
+          - heading "Choisissez une APPLICATION WEB si..." [level=3] [ref=e195]
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - img [ref=e198]
+              - generic [ref=e200]:
+                - text: Vous avez besoin de
+                - strong [ref=e201]: fonctionnalités complexes
+            - listitem [ref=e202]:
+              - img [ref=e203]
+              - generic [ref=e205]:
+                - text: Vos utilisateurs doivent
+                - strong [ref=e206]: créer un compte
+            - listitem [ref=e207]:
+              - img [ref=e208]
+              - generic [ref=e210]:
+                - text: Vous gérez des
+                - strong [ref=e211]: données importantes
+            - listitem [ref=e212]:
+              - img [ref=e213]
+              - generic [ref=e215]:
+                - text: Vous voulez
+                - strong [ref=e216]: automatiser des processus
+            - listitem [ref=e217]:
+              - img [ref=e218]
+              - generic [ref=e220]:
+                - text: Vous êtes prêt à investir
+                - strong [ref=e221]: 2 000€ et plus
+          - generic [ref=e222]:
+            - paragraph [ref=e223]: "Profils concernés:"
+            - paragraph [ref=e224]: Location de voitures, BTP, Centre de formation, Marketplace, Plateforme de mise en relation
+      - heading "Prix Développement Application Web en Guadeloupe (2026)" [level=2] [ref=e225]
+      - paragraph [ref=e226]: Le prix d'une application web varie énormément selon la complexité. Voici une grille détaillée pour le marché guadeloupéen.
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - heading "Application Simple" [level=4] [ref=e230]
+            - generic [ref=e231]: 2 000 - 5 000€
+          - list [ref=e232]:
+            - listitem [ref=e233]: • 5-10 fonctionnalités de base
+            - listitem [ref=e234]: • 1-3 types d'utilisateurs
+            - listitem [ref=e235]: • Design simple (template)
+            - listitem [ref=e236]: • Base de données basique
+            - listitem [ref=e237]: "• Délai: 3-6 semaines"
+          - paragraph [ref=e238]:
+            - strong [ref=e239]: "Exemples:"
+            - text: Système réservation simple, annuaire professionnel avec filtres
+        - generic [ref=e240]:
+          - generic [ref=e241]:
+            - heading "Application Moyenne" [level=4] [ref=e242]
+            - generic [ref=e243]: 5 000 - 15 000€
+          - list [ref=e244]:
+            - listitem [ref=e245]: • 10-20 fonctionnalités
+            - listitem [ref=e246]: • 3-5 types d'utilisateurs
+            - listitem [ref=e247]: • Design personnalisé
+            - listitem [ref=e248]: • Logique métier moyenne
+            - listitem [ref=e249]: • Intégrations (paiement, emails, etc.)
+            - listitem [ref=e250]: "• Délai: 2-3 mois"
+          - paragraph [ref=e251]:
+            - strong [ref=e252]: "Exemples:"
+            - text: CRM complet, plateforme formation, e-commerce avancé, marketplace locale
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - heading "Application Complexe" [level=4] [ref=e255]
+            - generic [ref=e256]: 15 000 - 50 000€
+          - list [ref=e257]:
+            - listitem [ref=e258]: • 20+ fonctionnalités
+            - listitem [ref=e259]: • Architecture complexe
+            - listitem [ref=e260]: • Multi-rôles avancés
+            - listitem [ref=e261]: • APIs tierces multiples
+            - listitem [ref=e262]: • Algorithmes métier
+            - listitem [ref=e263]: • Design haut de gamme
+            - listitem [ref=e264]: "• Délai: 3-6 mois"
+          - paragraph [ref=e265]:
+            - strong [ref=e266]: "Exemples:"
+            - text: Marketplace multi-vendeurs type Airbnb, plateforme SaaS, ERP complet
+      - heading "Notre Recommandation pour Entreprises Guadeloupéennes" [level=2] [ref=e267]
+      - generic [ref=e268]:
+        - heading "L'Approche Hybride (Recommandée)" [level=3] [ref=e269]
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - 'heading "Phase 1: Site Vitrine (599€ chez SolYB)" [level=4] [ref=e272]'
+            - list [ref=e273]:
+              - listitem [ref=e274]:
+                - img [ref=e275]
+                - generic [ref=e277]: Présence en ligne rapide
+              - listitem [ref=e278]:
+                - img [ref=e279]
+                - generic [ref=e281]: Référencement Google
+              - listitem [ref=e282]:
+                - img [ref=e283]
+                - generic [ref=e285]: Génération de leads
+          - generic [ref=e286]:
+            - 'heading "Phase 2: Application Web (3-6 mois après)" [level=4] [ref=e287]'
+            - list [ref=e288]:
+              - listitem [ref=e289]:
+                - img [ref=e290]
+                - generic [ref=e292]: Besoin validé
+              - listitem [ref=e293]:
+                - img [ref=e294]
+                - generic [ref=e296]: Budget constitué
+              - listitem [ref=e297]:
+                - img [ref=e298]
+                - generic [ref=e300]: Cahier des charges précis
+          - paragraph [ref=e301]:
+            - strong [ref=e302]: "Avantage:"
+            - text: ROI immédiat avec site vitrine, puis passage au niveau supérieur quand vous êtes prêt.
+      - 'heading "Conclusion: Site ou Application pour Votre Entreprise 971 ?" [level=2] [ref=e303]'
+      - paragraph [ref=e304]:
+        - strong [ref=e305]: 90% des TPE guadeloupéennes
+        - text: ont besoin d'un
+        - strong [ref=e306]: SITE WEB vitrine
+        - text: (599-1 500€) pour commencer.
+      - paragraph [ref=e307]:
+        - strong [ref=e308]: 10% ont besoin d'APPLICATION
+        - text: dès le départ (2 000€+) car leur modèle l'exige.
+      - paragraph [ref=e309]:
+        - strong [ref=e310]: "Notre conseil:"
+        - text: Commencez TOUJOURS par un site vitrine professionnel. Après quelques mois, si besoin confirmé, passez à l'application.
+    - generic [ref=e312]:
+      - heading "Besoin d'un Site Web ou d'une Application en Guadeloupe ?" [level=2] [ref=e313]
+      - paragraph [ref=e314]: SolYB vous accompagne dans votre projet digital.
+      - generic [ref=e315]:
+        - generic [ref=e316]:
+          - heading "Site vitrine" [level=3] [ref=e317]
+          - paragraph [ref=e318]: 599€
+          - paragraph [ref=e319]: Livré en 2 semaines
+        - generic [ref=e320]:
+          - heading "Application web" [level=3] [ref=e321]
+          - paragraph [ref=e322]: Sur mesure
+          - paragraph [ref=e323]: Dès 2 000€
+      - link "Devis gratuit sous 24h" [ref=e324] [cursor=pointer]:
+        - /url: /#contact
+  - contentinfo [ref=e325]:
+    - generic [ref=e326]:
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - generic [ref=e329] [cursor=pointer]:
+            - img "SolYB" [ref=e330]
+            - generic [ref=e331]: SolYB
+          - paragraph [ref=e332]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e333]: Expert local 971
+        - generic [ref=e335]:
+          - heading "Navigation" [level=3] [ref=e336]
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - link "Nos services" [ref=e339] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e340]:
+              - link "Réalisations" [ref=e341] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e342]:
+              - link "Nos tarifs" [ref=e343] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e344]:
+              - link "L'équipe" [ref=e345] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e346]:
+              - link "Parlons-en" [ref=e347] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e348]:
+          - heading "Services" [level=3] [ref=e349]
+          - list [ref=e350]:
+            - listitem [ref=e351]: Sites web sur-mesure
+            - listitem [ref=e352]: Applications métier
+            - listitem [ref=e353]:
+              - link "Facturation électronique 2026" [ref=e354] [cursor=pointer]:
+                - /url: /facturation-electronique
+            - listitem [ref=e355]:
+              - link "ResaGP — Gestion restaurant" [ref=e356] [cursor=pointer]:
+                - /url: /resagp
+            - listitem [ref=e357]: E-commerce
+            - listitem [ref=e358]: Maintenance & support
+        - generic [ref=e359]:
+          - heading "Contact" [level=3] [ref=e360]
+          - list [ref=e361]:
+            - listitem [ref=e362]:
+              - img [ref=e363]
+              - link "contact@solyb.gp" [ref=e366] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e367]:
+              - img [ref=e368]
+              - link "+590 690 XX XX XX" [ref=e370] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e371]:
+              - img [ref=e372]
+              - generic [ref=e375]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e376]:
+              - img [ref=e377]
+              - link "LinkedIn" [ref=e381] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e383]:
+        - paragraph [ref=e384]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e385]:
+          - link "Mentions légales" [ref=e386] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e387] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e389] [cursor=pointer]:
+    - img [ref=e390]

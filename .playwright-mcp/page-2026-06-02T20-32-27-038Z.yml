@@ -1,0 +1,132 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+        - /url: /admin
+        - img "SolYB" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: SolYB
+          - generic [ref=e10]: CRM Pro
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+    - generic [ref=e15]:
+      - generic [ref=e16]: Vos Produits
+      - generic [ref=e17]:
+        - link "SolYB Agence" [ref=e18] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e20]
+          - generic [ref=e22]: SolYB Agence
+        - link "FactuGP" [ref=e24] [cursor=pointer]:
+          - /url: /facturation-electronique
+          - img [ref=e26]
+          - generic [ref=e30]: FactuGP
+          - img [ref=e31]
+        - link "ResaGP" [ref=e33] [cursor=pointer]:
+          - /url: /resagp
+          - img [ref=e35]
+          - generic [ref=e40]: ResaGP
+          - img [ref=e41]
+    - generic [ref=e44]:
+      - generic [ref=e45]: Navigation
+      - navigation [ref=e46]:
+        - link "Pipeline / Leads" [ref=e47] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e48]
+          - generic [ref=e53]: Pipeline / Leads
+        - link "Planning" [ref=e54] [cursor=pointer]:
+          - /url: /admin/planning
+          - img [ref=e55]
+          - generic [ref=e57]: Planning
+        - link "Analytics" [ref=e58] [cursor=pointer]:
+          - /url: /admin/analytics
+          - img [ref=e59]
+          - generic [ref=e61]: Analytics
+        - link "Templates Email" [ref=e62] [cursor=pointer]:
+          - /url: /admin/templates
+          - img [ref=e63]
+          - generic [ref=e66]: Templates Email
+        - link "Paramètres" [ref=e67] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=e68]
+          - generic [ref=e71]: Paramètres
+    - generic [ref=e73]:
+      - generic [ref=e75]: "Y"
+      - generic [ref=e76]:
+        - generic [ref=e77]: Yacine B.
+        - generic [ref=e78]: v2.0 · Admin
+  - generic [ref=e79]:
+    - navigation [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - button [ref=e83] [cursor=pointer]:
+            - img [ref=e84]
+          - generic [ref=e85]:
+            - heading "Templates Email" [level=1] [ref=e86]
+            - paragraph [ref=e87]: Séquences automatiques
+        - generic [ref=e88]:
+          - button [ref=e90] [cursor=pointer]:
+            - img [ref=e91]
+          - button "Y" [ref=e96] [cursor=pointer]:
+            - generic [ref=e98]: "Y"
+    - main [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - heading "Templates d'emails" [level=1] [ref=e103]
+            - paragraph [ref=e104]: Gérez vos modèles d'emails et séquences automatiques
+          - button "Nouveau template" [ref=e105] [cursor=pointer]:
+            - img [ref=e106]
+            - text: Nouveau template
+        - generic [ref=e107]:
+          - img [ref=e108]
+          - textbox "Rechercher un template..." [ref=e111]
+        - generic [ref=e112]:
+          - generic [ref=e114]:
+            - img [ref=e116]
+            - generic [ref=e118]:
+              - heading "Séquences Automatiques" [level=2] [ref=e119]
+              - paragraph [ref=e120]: Emails envoyés automatiquement selon le parcours du lead
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]:
+                - generic [ref=e125]: "1"
+                - generic [ref=e126]:
+                  - generic [ref=e127]: Email de bienvenue
+                  - generic [ref=e128]: J+0
+              - generic [ref=e130]:
+                - button "Éditer" [ref=e131] [cursor=pointer]
+                - button "Stats" [ref=e132] [cursor=pointer]
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e136]: "2"
+                - generic [ref=e137]:
+                  - generic [ref=e138]: Cas client similaire
+                  - generic [ref=e139]: J+3
+              - generic [ref=e141]:
+                - button "Éditer" [ref=e142] [cursor=pointer]
+                - button "Stats" [ref=e143] [cursor=pointer]
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - generic [ref=e147]: "3"
+                - generic [ref=e148]:
+                  - generic [ref=e149]: Urgence douce
+                  - generic [ref=e150]: J+7
+              - generic [ref=e152]:
+                - button "Éditer" [ref=e153] [cursor=pointer]
+                - button "Stats" [ref=e154] [cursor=pointer]
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - generic [ref=e158]: "4"
+                - generic [ref=e159]:
+                  - generic [ref=e160]: Dernier contact
+                  - generic [ref=e161]: J+10
+              - generic [ref=e163]:
+                - button "Éditer" [ref=e164] [cursor=pointer]
+                - button "Stats" [ref=e165] [cursor=pointer]
+        - generic [ref=e166]:
+          - generic [ref=e168]:
+            - img [ref=e170]
+            - generic [ref=e173]:
+              - heading "Réponses Rapides" [level=2] [ref=e174]
+              - paragraph [ref=e175]: Templates pour répondre rapidement aux demandes
+          - generic [ref=e177]: Chargement...

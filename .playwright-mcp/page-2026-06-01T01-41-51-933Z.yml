@@ -1,0 +1,284 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - generic [ref=e8]: Facturation électronique 2026 — anticipez !
+        - link "En savoir plus →" [ref=e9] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - navigation [ref=e14]:
+      - generic [ref=e16]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e18]
+        - button "Ouvrir le menu" [ref=e19] [cursor=pointer]:
+          - img [ref=e20]
+      - generic [ref=e22]:
+        - link "Nos services" [ref=e23] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e24] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e25] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e26] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e27] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e28] [cursor=pointer]:
+          - /url: /#contact
+  - article [ref=e29]:
+    - generic [ref=e31]:
+      - link "Retour au blog" [ref=e32] [cursor=pointer]:
+        - /url: /blog
+        - img [ref=e33]
+        - text: Retour au blog
+      - generic [ref=e35]: Prix & Tarifs
+      - 'heading "Prix Création Site Web en Guadeloupe : Le Guide Complet 2026" [level=1] [ref=e36]'
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img [ref=e39]
+          - generic [ref=e41]: 27 décembre 2024
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - generic [ref=e46]: 12 min de lecture
+    - generic [ref=e48]:
+      - paragraph [ref=e49]:
+        - text: Vous êtes entrepreneur en Guadeloupe et vous vous demandez
+        - strong [ref=e50]: combien coûte réellement un site web en 2026
+        - text: "? Entre les agences qui affichent des tarifs de 5000€ et les freelances à 500€, difficile de s'y retrouver. Dans ce guide complet, nous comparons tous les prix du marché guadeloupéen pour vous aider à faire le bon choix."
+      - heading "Combien Coûte Vraiment un Site Web en Guadeloupe en 2026 ?" [level=2] [ref=e51]
+      - paragraph [ref=e52]: Le prix d'un site web en Guadeloupe varie énormément selon plusieurs critères. Voici ce que vous devez savoir avant de vous lancer.
+      - heading "Les Différents Types de Sites Web et Leurs Prix" [level=3] [ref=e53]
+      - generic [ref=e54]:
+        - heading "Site Vitrine (Site d'Entreprise Classique)" [level=4] [ref=e55]
+        - paragraph [ref=e56]: Un site vitrine présente votre activité, vos services et vos coordonnées. C'est l'option idéale pour les TPE, artisans, professions libérales et petits commerces guadeloupéens.
+        - table [ref=e58]:
+          - rowgroup [ref=e59]:
+            - row "Prestataire Prix minimum Prix maximum Délai moyen" [ref=e60]:
+              - columnheader "Prestataire" [ref=e61]
+              - columnheader "Prix minimum" [ref=e62]
+              - columnheader "Prix maximum" [ref=e63]
+              - columnheader "Délai moyen" [ref=e64]
+          - rowgroup [ref=e65]:
+            - row "Freelances 971 490€ 2 000€ 2-6 semaines" [ref=e66]:
+              - cell "Freelances 971" [ref=e67]
+              - cell "490€" [ref=e68]
+              - cell "2 000€" [ref=e69]
+              - cell "2-6 semaines" [ref=e70]
+            - row "Petites agences Guadeloupe 790€ 3 500€ 4-8 semaines" [ref=e71]:
+              - cell "Petites agences Guadeloupe" [ref=e72]
+              - cell "790€" [ref=e73]
+              - cell "3 500€" [ref=e74]
+              - cell "4-8 semaines" [ref=e75]
+            - row "Grandes agences 2 500€ 8 000€ 2-4 mois" [ref=e76]:
+              - cell "Grandes agences" [ref=e77]
+              - cell "2 500€" [ref=e78]
+              - cell "8 000€" [ref=e79]
+              - cell "2-4 mois" [ref=e80]
+            - row "Solutions DIY (Wix, etc.) 0€ (gratuit) 300€/an 1-2 semaines" [ref=e81]:
+              - cell "Solutions DIY (Wix, etc.)" [ref=e82]
+              - cell "0€ (gratuit)" [ref=e83]
+              - cell "300€/an" [ref=e84]
+              - cell "1-2 semaines" [ref=e85]
+        - paragraph [ref=e86]: "Prix moyen en Guadeloupe: 1 200€ pour un site vitrine professionnel de 5-7 pages."
+      - heading "Comparatif Complet des Agences Web en Guadeloupe (2026)" [level=3] [ref=e87]
+      - paragraph [ref=e88]: Nous avons analysé les principaux acteurs du marché guadeloupéen pour vous donner une vision claire des tarifs pratiqués.
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - heading "SolYB - Le Meilleur Rapport Qualité/Prix" [level=4] [ref=e91]
+          - generic [ref=e92]: 🏆 Recommandé
+        - paragraph [ref=e93]:
+          - strong [ref=e94]: "Localisation:"
+          - text: Baie-Mahault, Guadeloupe
+          - strong [ref=e95]: "Tarifs affichés:"
+          - text: ✅ Oui (transparence totale)
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - heading "Site vitrine" [level=5] [ref=e98]
+            - paragraph [ref=e99]: 599€
+            - paragraph [ref=e100]: "Livraison: 2 semaines"
+          - generic [ref=e101]:
+            - heading "Site e-commerce" [level=5] [ref=e102]
+            - paragraph [ref=e103]: 999€
+            - paragraph [ref=e104]: "Livraison: 3 semaines"
+          - generic [ref=e105]:
+            - heading "Application web" [level=5] [ref=e106]
+            - paragraph [ref=e107]: Sur devis
+            - paragraph [ref=e108]: Dès 2000€
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - img [ref=e111]
+            - generic [ref=e113]: Prix 24% moins cher que la moyenne Guadeloupe
+          - generic [ref=e114]:
+            - img [ref=e115]
+            - generic [ref=e117]: Livraison ultra-rapide (2 semaines)
+          - generic [ref=e118]:
+            - img [ref=e119]
+            - generic [ref=e121]: Technologie moderne avec IA intégrée
+          - generic [ref=e122]:
+            - img [ref=e123]
+            - generic [ref=e125]: Vous êtes propriétaire à 100% (pas d'abonnement piège)
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]: Maintenance abordable dès 29€/mois
+        - paragraph [ref=e130]:
+          - strong [ref=e131]: "Offre spéciale:"
+          - text: Offre lancement limitée à 30 places au tarif de 599€ (vs 899€ après).
+      - heading "Les Pièges à Éviter Absolument en Guadeloupe" [level=3] [ref=e132]
+      - 'heading "Piège #1 : Les Abonnements Mensuels Sans Propriété" [level=4] [ref=e133]'
+      - paragraph [ref=e134]:
+        - strong [ref=e135]: "Exemple:"
+        - text: 49€/mois pour un site vitrine
+      - paragraph [ref=e136]:
+        - text: ❌
+        - strong [ref=e137]: "Problème:"
+        - text: Après 2 ans vous avez payé 1 176€ et vous n'êtes TOUJOURS PAS propriétaire. Si vous arrêtez de payer, votre site disparaît.
+      - paragraph [ref=e138]:
+        - text: ✅
+        - strong [ref=e139]: "Solution:"
+        - text: Préférez un paiement unique. Avec 599€ chez SolYB, vous êtes propriétaire à vie.
+      - 'heading "Piège #2 : Les Prix \"À Partir De...\" Trompeurs" [level=4] [ref=e140]'
+      - paragraph [ref=e141]: "Agence: \"Site web à partir de 490€\""
+      - paragraph [ref=e142]: "Réalité après devis:"
+      - list [ref=e143]:
+        - listitem [ref=e144]: "Site de base: 490€"
+        - listitem [ref=e145]: "Design personnalisé: +400€"
+        - listitem [ref=e146]: "Formulaire contact: +150€"
+        - listitem [ref=e147]: "SEO: +300€"
+        - listitem [ref=e148]: "Responsive mobile: +200€"
+        - listitem [ref=e149]:
+          - strong [ref=e150]: "TOTAL RÉEL: 1 540€"
+      - paragraph [ref=e151]:
+        - text: ✅
+        - strong [ref=e152]: "Chez SolYB:"
+        - text: 599€ = prix FINAL tout inclus.
+      - heading "Notre Recommandation pour TPE Guadeloupéennes" [level=2] [ref=e153]
+      - generic [ref=e154]:
+        - heading "Budget Serré (< 800€)" [level=3] [ref=e155]
+        - generic [ref=e156]:
+          - 'heading "Choix #1: SolYB ⭐⭐⭐⭐⭐" [level=4] [ref=e157]'
+          - list [ref=e158]:
+            - listitem [ref=e159]:
+              - generic [ref=e160]: "Prix:"
+              - generic [ref=e161]: 599€
+            - listitem [ref=e162]:
+              - generic [ref=e163]: "Qualité:"
+              - generic [ref=e164]: Professionnelle
+            - listitem [ref=e165]:
+              - generic [ref=e166]: "Délai:"
+              - generic [ref=e167]: 2 semaines
+            - listitem [ref=e168]:
+              - generic [ref=e169]: "Technologie:"
+              - generic [ref=e170]: Moderne
+            - listitem [ref=e171]:
+              - generic [ref=e172]: "Verdict:"
+              - generic [ref=e173]: Meilleur rapport qualité/prix Guadeloupe
+        - paragraph [ref=e174]:
+          - text: ❌
+          - strong [ref=e175]: "À éviter:"
+          - text: Solutions Wix/Squarespace (peu professionnel) et abonnements type Kléia (trop cher sur durée)
+      - 'heading "Conclusion : Quel Prix est Juste pour Votre Site en Guadeloupe ?" [level=2] [ref=e176]'
+      - paragraph [ref=e177]:
+        - text: Un site vitrine professionnel en Guadeloupe ne devrait
+        - strong [ref=e178]: PAS coûter plus de 1 500€
+        - text: pour une TPE. Au-delà, vous payez la structure de l'agence, pas la qualité technique.
+      - generic [ref=e179]:
+        - heading "Notre Top 3 Recommandations 2026" [level=3] [ref=e180]
+        - generic [ref=e181]:
+          - generic [ref=e182]:
+            - generic [ref=e183]: 🥇
+            - generic [ref=e184]:
+              - heading "SolYB - 599€" [level=4] [ref=e185]
+              - paragraph [ref=e186]: Meilleur rapport qualité/prix, livraison rapide, technologie moderne
+          - generic [ref=e187]:
+            - generic [ref=e188]: 🥈
+            - generic [ref=e189]:
+              - heading "Les Accros du Web - 790€" [level=4] [ref=e190]
+              - paragraph [ref=e191]: Bon choix si SolYB complet, focus SEO
+          - generic [ref=e192]:
+            - generic [ref=e193]: 🥉
+            - generic [ref=e194]:
+              - heading "Freelance local vérifié - 800-1 200€" [level=4] [ref=e195]
+              - paragraph [ref=e196]: Pour projets très spécifiques
+    - generic [ref=e198]:
+      - heading "Besoin d'un Site Web Professionnel en Guadeloupe ?" [level=2] [ref=e199]
+      - paragraph [ref=e200]: SolYB vous livre un site complet en 2 semaines pour 599€.
+      - generic [ref=e201]:
+        - paragraph [ref=e202]: ✅ Site responsive mobile
+        - paragraph [ref=e203]: ✅ Hébergement + nom de domaine 1 an offert
+        - paragraph [ref=e204]: ✅ Création de contenu avec IA
+        - paragraph [ref=e205]: ✅ Référencement SEO de base
+        - paragraph [ref=e206]: ✅ Formation vidéo
+        - paragraph [ref=e207]: ✅ Support 30 jours
+      - link "Devis gratuit sous 24h" [ref=e208] [cursor=pointer]:
+        - /url: /#contact
+  - contentinfo [ref=e209]:
+    - generic [ref=e210]:
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - generic [ref=e213] [cursor=pointer]:
+            - img "SolYB" [ref=e214]
+            - generic [ref=e215]: SolYB
+          - paragraph [ref=e216]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e217]: Expert local 971
+        - generic [ref=e219]:
+          - heading "Navigation" [level=3] [ref=e220]
+          - list [ref=e221]:
+            - listitem [ref=e222]:
+              - link "Nos services" [ref=e223] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e224]:
+              - link "Réalisations" [ref=e225] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e226]:
+              - link "Nos tarifs" [ref=e227] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e228]:
+              - link "L'équipe" [ref=e229] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e230]:
+              - link "Parlons-en" [ref=e231] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e232]:
+          - heading "Services" [level=3] [ref=e233]
+          - list [ref=e234]:
+            - listitem [ref=e235]: Sites web sur-mesure
+            - listitem [ref=e236]: Applications métier
+            - listitem [ref=e237]:
+              - link "Facturation électronique 2026" [ref=e238] [cursor=pointer]:
+                - /url: /facturation-electronique
+            - listitem [ref=e239]:
+              - link "ResaGP — Gestion restaurant" [ref=e240] [cursor=pointer]:
+                - /url: /resagp
+            - listitem [ref=e241]: E-commerce
+            - listitem [ref=e242]: Maintenance & support
+        - generic [ref=e243]:
+          - heading "Contact" [level=3] [ref=e244]
+          - list [ref=e245]:
+            - listitem [ref=e246]:
+              - img [ref=e247]
+              - link "contact@solyb.gp" [ref=e250] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e251]:
+              - img [ref=e252]
+              - link "+590 690 XX XX XX" [ref=e254] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e255]:
+              - img [ref=e256]
+              - generic [ref=e259]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e260]:
+              - img [ref=e261]
+              - link "LinkedIn" [ref=e265] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e267]:
+        - paragraph [ref=e268]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e269]:
+          - link "Mentions légales" [ref=e270] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e271] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e273] [cursor=pointer]:
+    - img [ref=e274]

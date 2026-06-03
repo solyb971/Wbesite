@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolYB — Snapshot complet du site (style + contenu + structure)</title>
+<style>
+  /* ============================================================
+     STYLE GUIDE — PALETTE & TOKENS
+     ============================================================ */
+
+  /* COULEURS BRAND
+     --coral:     #FF6B47  (CTA principal, accents chauds)
+     --solar:     #F5A623  (Facturation électronique, alertes urgence)
+     --turquoise: #00D4AA  (Confiance, check marks, succès)
+     --violet:    #8B5CF6  (Application métier)
+     --rose:      #F43F7A  (Support, accent secondaire)
+     --lime:      #84CC16  (Expert local)
+     --sky:       #0EA5E9  (SaaS/Cloud)
+
+     BACKGROUNDS (dark theme)
+     --bg-base:    #0A0A0F  (fond global)
+     --bg-surface: #13131A  (cards)
+     --bg-card:    #1C1C26  (inputs, sous-cards)
+     --bg-border:  #2A2A38  (séparateurs, bordures)
+
+     TEXTE
+     --text-primary: #F0EDE8  (titres, texte important)
+     --text-muted:   #8B8B9E  (texte secondaire, descriptions)
+  */
+
+  /* TYPOGRAPHIE
+     display (titres H1-H3) : Syne — variable --font-syne
+     body (paragraphes, UI)  : Plus Jakarta Sans — variable --font-jakarta
+  */
+
+  /* RAYON DES COINS
+     Cards principales  : rounded-2xl (16px)
+     Boutons, badges    : rounded-xl (12px)
+     Tags, pills        : rounded-full
+  */
+
+  /* BOUTONS
+     Primaire   : bg-coral    text-white  px-8 py-4  rounded-xl  shadow-xl shadow-coral/25
+     Secondaire : border border-[#2A2A38] text-[#F0EDE8] bg-[#13131A]/50 backdrop-blur
+     Solar CTA  : bg-solar    text-[#0A0A0F] font-bold
+     Ghost link : text-coral hover:text-coral/80 with ArrowRight icon
+  */
+
+  /* CARDS PATTERN
+     bg-[#13131A] border border-[#2A2A38] rounded-2xl p-8
+     hover: hover:border-coral/30 hover:-translate-y-1 transition-all duration-300
+  */
+
+  /* SECTION BACKGROUNDS alternent entre #0A0A0F et #0D0D14 */
+
+  /* ============================================================
+     Pour la lecture rapide de ce snapshot :
+     Chaque section = un <section> avec data-id correspondant
+     à l'id d'ancre du site (services, facturation, tarifs, etc.)
+     ============================================================ */
+
+  body { font-family: Arial, sans-serif; line-height: 1.5; max-width: 960px; margin: 0 auto; padding: 2rem; }
+  h1 { font-size: 2rem; border-bottom: 3px solid #FF6B47; padding-bottom: .5rem; }
+  h2 { font-size: 1.5rem; color: #FF6B47; margin-top: 3rem; }
+  h3 { font-size: 1.1rem; color: #F5A623; margin-top: 1.5rem; }
+  .tag { display: inline-block; background: #FF6B47; color: white; font-size: .75rem; padding: 2px 10px; border-radius: 999px; margin-bottom: .5rem; }
+  .tag.solar { background: #F5A623; color: #0A0A0F; }
+  .tag.turquoise { background: #00D4AA; color: #0A0A0F; }
+  .meta { font-size: .8rem; color: #888; font-style: italic; margin-bottom: 1rem; }
+  pre { background: #f4f4f4; padding: 1rem; font-size: .8rem; overflow-x: auto; border-left: 4px solid #FF6B47; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: .3rem; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+  .cta-box { background: #fff8f5; border: 2px solid #FF6B47; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .note { background: #fffbf0; border-left: 4px solid #F5A623; padding: .75rem; margin: 1rem 0; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>SolYB.fr — Snapshot complet du site</h1>
+<p class="meta">
+  Généré le 29 mai 2026 · Stack: Next.js 15 / React 19 / TypeScript / Tailwind CSS 3 / Dark theme caraïbéen
+  · Ce fichier capture 100% du texte visible, la structure des sections et le design system pour faciliter une révision "studio level".
+</p>
+
+<div class="note">
+  <strong>Contexte business :</strong> SolYB est une agence digitale locale en Guadeloupe (Baie-Mahault, 971), fondée par Yacine Bouhassoun.
+  Positionnement : sérieux d'une agence + réactivité d'une petite structure + ancrage local. Angle différenciateur fort : l'une des rares agences en Guadeloupe à maîtriser la facturation électronique obligatoire 2026 (réforme DGFiP).
+  Cible : TPE/PME guadeloupéennes (coiffeurs, artisans, restaurateurs, professions libérales, commerçants).
+</div>
+
+<!-- ============================================================ -->
+<h2>DESIGN SYSTEM</h2>
+<!-- ============================================================ -->
+
+<h3>Palette de couleurs</h3>
+<pre>
+BACKGROUNDS (dark theme)
+  Base    : #0A0A0F  → fond global de page (alternance avec #0D0D14)
+  Surface : #13131A  → cards, panels
+  Card    : #1C1C26  → inputs, sous-éléments
+  Border  : #2A2A38  → bordures, séparateurs
+
+TEXTE
+  Primary : #F0EDE8  → titres, texte important (blanc cassé chaud)
+  Muted   : #8B8B9E  → texte secondaire, descriptions
+
+BRAND
+  Coral     : #FF6B47  → CTA principal, accents (bouton "Audit gratuit", hover states)
+  Solar     : #F5A623  → Facturation électronique, urgence, CTA secondaire
+  Turquoise : #00D4AA  → confiance, check marks, succès, "Sites web"
+  Violet    : #8B5CF6  → Application métier
+  Rose      : #F43F7A  → Support, headphones icon
+  Lime      : #84CC16  → Expert local 971
+  Sky       : #0EA5E9  → SaaS / Cloud
+</pre>
+
+<h3>Typographie</h3>
+<pre>
+font-display : Syne (Google Fonts) — utilisé pour H1, H2, H3, chiffres stats, logo
+font-sans    : Plus Jakarta Sans (Google Fonts) — corps de texte, UI, labels
+
+Tailles :
+  H1 hero   : text-7xl / text-8xl (responsive 4xl → 8xl)
+  H2 sections: text-4xl / text-5xl
+  H3 cards  : text-xl / text-2xl
+  Body      : text-sm à text-lg selon contexte
+  Captions  : text-xs (tags, badges, meta)
+</pre>
+
+<h3>Motifs UI récurrents</h3>
+<pre>
+Cards standard  : bg-[#13131A] border border-[#2A2A38] rounded-2xl p-8
+                  hover: hover:border-coral/30 hover:-translate-y-1 transition-all
+Cards accentuées: border-2 border-coral/40 (ou turquoise, solar selon service)
+Icônes          : bg-coral/10 rounded-xl p-3 avec icon colorée (pattern icon+background)
+Tags pill       : bg-color/10 text-color border border-color/20 px-3 py-1 rounded-full
+Bouton CTA 1    : bg-coral text-white px-8 py-4 rounded-xl shadow-xl shadow-coral/25 hover:scale-105
+Bouton CTA 2    : border border-[#2A2A38] text-[#F0EDE8] bg-[#13131A]/50 (ghost dark)
+Bouton solar    : bg-solar text-[#0A0A0F] font-bold (facturation only)
+Glow effects    : radial-gradient overlays semi-transparents (hero bg, featured cards)
+Grid overlay    : grille 60px × 60px opacity 4% sur le hero
+Séparateurs     : ligne h-px gradient from-transparent via-solar/50 to-transparent
+</pre>
+
+<h3>Animations</h3>
+<pre>
+hover:-translate-y-1         → lift effect sur cards
+hover:scale-105              → CTA buttons
+hover:scale-[1.04]           → plan populaire pricing
+group-hover:translate-x-1   → ArrowRight icons (inline links)
+animate-bounce               → scroll indicator hero
+animate-pulse                → dot "Expert local 971" dans footer
+</pre>
+
+<!-- ============================================================ -->
+<h2>STRUCTURE DE LA PAGE (ordre des sections)</h2>
+<!-- ============================================================ -->
+
+<ol>
+  <li>UrgencyBanner (bandeau dismissable)</li>
+  <li>Navigation (sticky header)</li>
+  <li>Hero (full screen)</li>
+  <li>Services (#services) — "4 expertises, 1 seule agence"</li>
+  <li>FacturationElectronique (#facturation) — section dédiée longue</li>
+  <li>Pricing (#tarifs) — "Tarifs Transparents"</li>
+  <li>TrustBadges — "Pourquoi nous choisir ?"</li>
+  <li>Process — "Comment ça marche ?"</li>
+  <li>Solutions (#solutions) — outils clés en main (SaaS sectoriels)</li>
+  <li>About (#apropos) — biographie Yacine + valeurs</li>
+  <li>Realisations (#realisations) — portfolio</li>
+  <li>FAQ (#faq) — accordion</li>
+  <li>Contact (#contact) — formulaire multi-étapes</li>
+  <li>Footer</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="s-banner">SECTION 0 — URGENCY BANNER</h2>
+<!-- ============================================================ -->
+<p class="meta">Bandeau pleine largeur, fond dégradé solar → coral, dismissable (sessionStorage)</p>
+
+<div class="card">
+  <p>⚠️ <strong>Facturation électronique : la réforme est en cours — anticipez dès maintenant</strong>
+  &nbsp;&nbsp;<span class="tag solar">En savoir plus →</span></p>
+  <p><em>Bouton X pour fermer</em></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-nav">SECTION 1 — NAVIGATION</h2>
+<!-- ============================================================ -->
+<p class="meta">Fond #0A0A0F, border-b #2A2A38, hauteur 80px. Logo SVG orange à gauche. Links à droite + CTA "Audit gratuit"</p>
+
+<div class="card">
+  <strong>Logo :</strong> SYB_orange.svg (hauteur 64px)<br>
+  <strong>Links desktop :</strong>
+  <ul>
+    <li>Nos services → /#services</li>
+    <li>Réalisations → /#realisations</li>
+    <li>Nos tarifs → /#tarifs</li>
+    <li>L'équipe → /#apropos</li>
+    <li>Parlons-en → /#contact</li>
+  </ul>
+  <strong>CTA :</strong> <span class="tag">Audit gratuit</span> → /#contact<br>
+  <strong>Mobile :</strong> menu hamburger (Menu/X icon), menu plein largeur avec les mêmes liens
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-hero">SECTION 2 — HERO</h2>
+<!-- ============================================================ -->
+<p class="meta">
+  min-h-screen · fond #0A0A0F avec 3 radial-gradients (coral 18%, solar 12%, turquoise 10%) +
+  grille 60px opacity 4% + soleil SVG caribéen opacity 3% centré
+</p>
+
+<h3>Contenu</h3>
+
+<div class="card">
+  <h1 style="font-size:1.2rem; border:none; padding:0; margin:0 0 .5rem;">
+    Votre entreprise mérite<br>
+    <span style="color:#FF6B47">un digital qui lui ressemble</span>
+  </h1>
+  <p>Nous créons des sites, des outils métier et des solutions digitales pour les entrepreneurs en Guadeloupe.
+  <strong>Le sérieux d'une agence, la réactivité d'une petite entreprise et la proximité locale.</strong></p>
+  <p style="color:#888; font-size:.85rem;">Basé à Baie-Mahault.</p>
+
+  <div style="margin: 1rem 0;">
+    <span class="tag">Découvrir nos services →</span>
+    &nbsp;
+    <span style="border:1px solid #ddd; padding:4px 12px; border-radius:8px; font-size:.85rem;">Audit gratuit</span>
+  </div>
+
+  <h3 style="color:#333; margin-top:1rem;">Stats (3 colonnes)</h3>
+  <div class="grid3">
+    <div class="card"><strong style="color:#FF6B47; font-size:1.5rem;">2-3 sem.</strong><br><small>Délai de livraison</small></div>
+    <div class="card"><strong style="color:#FF6B47; font-size:1.5rem;">100%</strong><br><small>Sur-mesure</small></div>
+    <div class="card"><strong style="color:#FF6B47; font-size:1.5rem;">2026</strong><br><small>Facturation électronique</small></div>
+  </div>
+
+  <h3 style="color:#333; margin-top:1rem;">Trust line</h3>
+  <p>
+    ● Expert local Guadeloupe &nbsp;·&nbsp;
+    ● Devis gratuit sous 24h &nbsp;·&nbsp;
+    ● Sans engagement
+  </p>
+  <p style="font-size:.8rem; color:#888;">scroll indicator ↓ animé (animate-bounce)</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-services">SECTION 3 — SERVICES</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · py-24 · 4 services : 3 cards standard + 1 card featured (Facturation)</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="font-size:1.2rem; border:none; color:#333;">4 expertises, <span style="color:#FF6B47">1 seule agence</span></h2>
+  <p>Un seul interlocuteur pour tout ce dont votre entreprise a besoin.
+  Site web, application mobile, facturation électronique, outils de gestion — nous construisons, nous accompagnons, et nous répondons quand vous appelez.</p>
+</div>
+
+<h3>Card 1 — Sites Web Sur-Mesure</h3>
+<div class="card">
+  <p><span class="tag turquoise">À partir de 599€</span></p>
+  <p><strong>Icon :</strong> Monitor (turquoise)</p>
+  <p>Un site qui donne envie d'appeler, de réserver, d'acheter — optimisé pour être trouvé sur Google par vos clients locaux.</p>
+  <ul>
+    <li>Design unique, aucun template</li>
+    <li>Référencement local inclus (votre ville, votre quartier)</li>
+    <li>Hébergement 1 an offert</li>
+    <li>Formation complète incluse</li>
+  </ul>
+  <p><em>Lien inline :</em> "Demander un devis →"</p>
+</div>
+
+<h3>Card 2 — Applications Métier</h3>
+<div class="card">
+  <p><span class="tag">Sur devis</span></p>
+  <p><strong>Icon :</strong> Smartphone (coral)</p>
+  <p>Des outils digitaux taillés pour votre activité — gestion, réservation, commande, fidélisation. Conçus pour les entreprises guadeloupéennes.</p>
+  <ul>
+    <li>Application web ou mobile</li>
+    <li>Interface adaptée à votre métier</li>
+    <li>Gestion des données en temps réel</li>
+    <li>Formation & support inclus</li>
+  </ul>
+</div>
+
+<h3>Card 3 — SaaS & Marketplace</h3>
+<div class="card">
+  <p><span class="tag solar">Sur devis</span></p>
+  <p><strong>Icon :</strong> Cloud (solar)</p>
+  <p>Vous avez une idée de plateforme ? Nous la construisons de A à Z — de la maquette au déploiement, optimisée pour la Caraïbe.</p>
+  <ul>
+    <li>Architecture SaaS scalable</li>
+    <li>Marketplace multi-vendeurs</li>
+    <li>Paiements sécurisés intégrés</li>
+    <li>Tableau de bord analytics</li>
+  </ul>
+</div>
+
+<h3>Card Featured — Facturation Électronique (pleine largeur, gradient solar/coral)</h3>
+<div class="cta-box">
+  <p><span class="tag">Obligatoire avant sept. 2026</span></p>
+  <p><strong>Icon :</strong> FileCheck (solar) + badge coral "Obligatoire avant sept. 2026"</p>
+  <h3 style="color:#F5A623;">Facturation Électronique Conforme</h3>
+  <p>La réforme arrive, et beaucoup de TPE guadeloupéennes ne savent pas encore par où commencer.
+  C'est normal — c'est technique, c'est nouveau, et les informations circulent mal.
+  <strong>Nous traduisons ces obligations en actions concrètes,</strong> adaptées à votre secteur et à votre taille.</p>
+  <p><strong>Tags :</strong> Conforme DGFiP · Intégration système · Audit gratuit · Accompagnement 971</p>
+  <p><strong>CTA :</strong> "En savoir plus →" (bg-solar, text-[#0A0A0F])</p>
+  <p><em>Glow effects : bg-solar/10 et bg-coral/10 blur-3xl en haut-droite et bas-gauche</em></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-facturation">SECTION 4 — FACTURATION ÉLECTRONIQUE</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0A0A0F] · Section longue · Ligne décorative solar/50 en haut + 2 glows (solar, coral)</p>
+
+<h3>Badge + Header</h3>
+<div class="card">
+  <p><span class="tag">⚠️ Obligatoire avant septembre 2026 en Guadeloupe</span></p>
+  <h2 style="border:none; font-size:1.2rem; color:#333;">La facturation électronique devient obligatoire.
+  <span style="color:#F5A623">SolYB vous accompagne.</span></h2>
+  <p>Que vous soyez coiffeur, artisan, restaurateur, prestataire de services ou que vous ne vous êtes pas encore lancé — si vous facturez d'autres professionnels, cette réforme vous concerne. Et septembre 2026, ça arrive vite.</p>
+</div>
+
+<h3>3 étapes (grid 3 colonnes)</h3>
+<div class="grid3">
+  <div class="card">
+    <p><strong style="color:#FF6B47">Icon : AlertTriangle</strong></p>
+    <p><strong>La réforme s'applique progressivement</strong></p>
+    <p>Réception obligatoire dès 2026 pour les grandes entreprises, émission obligatoire pour les TPE/PME à partir de 2027. Anticiper maintenant, c'est éviter la précipitation et les erreurs coûteuses.</p>
+  </div>
+  <div class="card">
+    <p><strong style="color:#F5A623">Icon : Zap</strong></p>
+    <p><strong>Nous intégrons une solution conforme DGFiP dans votre système</strong></p>
+    <p>Nous analysons votre activité, votre logiciel de facturation actuel et vos flux d'échange avec vos clients et fournisseurs. Nous choisissons ensemble la solution PDP adaptée et nous l'intégrons dans votre quotidien sans tout bouleverser.</p>
+  </div>
+  <div class="card">
+    <p><strong style="color:#00D4AA">Icon : CheckCircle</strong></p>
+    <p><strong>Vos factures partent et arrivent automatiquement, en conformité totale</strong></p>
+    <p>Émission, transmission, archivage légal — tout est automatisé. Vous ne changez pas votre façon de travailler, vous êtes simplement en conformité. Et nous restons disponibles pour répondre à vos questions.</p>
+  </div>
+</div>
+
+<h3>Bloc "Êtes-vous concerné ?" (grid 2 colonnes)</h3>
+<p><strong>Intro :</strong> Dès septembre 2026, toutes les entreprises de Guadeloupe assujetties à la TVA devront être en mesure de <strong>recevoir</strong> des factures électroniques. L'obligation d'<strong>émettre</strong> interviendra ensuite au 1er septembre 2027 pour les TPE, PME et micro-entreprises.</p>
+
+<div class="grid2">
+  <div class="card"><strong>🔧 Artisan BTP — maçon, électricien, plombier</strong><br>Le BTP est le premier secteur employeur de Guadeloupe. Dès que vous facturez une autre entreprise (promoteur, syndic, sous-traitant), vous êtes soumis à la réforme. Émission obligatoire : septembre 2027.</div>
+  <div class="card"><strong>🍴 Restaurant, traiteur, snack</strong><br>Vous livrez des buffets d'entreprise, vous facturez des comités ou des hôtels ? Ces opérations B2B tombent sous l'obligation. Même si votre activité est majoritairement B2C, l'e-reporting s'applique.</div>
+  <div class="card"><strong>🛍️ Commerce de détail et grossiste</strong><br>Le commerce représente la moitié du chiffre d'affaires des entreprises en Guadeloupe. Si vous avez des clients professionnels parmi vos acheteurs, chaque facture entre assujettis à la TVA est concernée.</div>
+  <div class="card"><strong>✂️ Coiffure, esthétique, bien-être</strong><br>Vous travaillez uniquement avec des particuliers ? Pas d'obligation d'émission — mais vous devrez tout de même recevoir des factures électroniques de vos fournisseurs dès septembre 2026 et transmettre vos données via l'e-reporting.</div>
+  <div class="card"><strong>💼 Profession libérale — consultant, formateur, agence, comptable</strong><br>Toute prestation facturée à une entreprise assujettie à la TVA entre dans le périmètre. Devis, honoraires, missions ponctuelles — tout est concerné.</div>
+  <div class="card"><strong>🚗 Garage, mécanique, réparation auto</strong><br>Vous facturez des entreprises pour l'entretien de leur flotte ? Obligation pleine. Vous travaillez uniquement avec des particuliers ? E-reporting uniquement.</div>
+  <div class="card"><strong>🚚 Transport, livraison, logistique</strong><br>Secteur en forte croissance aux Antilles. Toute prestation inter-entreprises est soumise à l'e-invoicing dès septembre 2027.</div>
+</div>
+
+<h3>Bloc sanctions</h3>
+<div class="cta-box">
+  <p>⚠️ <strong>Quelles sanctions en cas de non-conformité ?</strong></p>
+  <p>La loi de finances 2026 a précisé les amendes applicables : <strong>50 € par facture non conforme</strong>,
+  <strong>500 € puis 1 000 €</strong> pour l'absence de plateforme agréée après mise en demeure,
+  dans la limite de <strong>15 000 € par an</strong>.
+  Au-delà des amendes, un client grand compte peut rejeter vos factures non conformes dès septembre 2026,
+  ce qui allonge directement vos délais de paiement.</p>
+</div>
+
+<h3>Ce qui ne change pas pour vous</h3>
+<ul>
+  <li>✕ Vos factures aux particuliers : pas d'e-invoicing, mais e-reporting à transmettre</li>
+  <li>✕ Saint-Martin et Saint-Barthélemy : non concernés par la réforme</li>
+  <li>✕ Première infraction régularisée sous 30 jours : pas de sanction immédiate</li>
+</ul>
+
+<h3>Bloc différenciateur (gradient solar/coral, "971" watermark)</h3>
+<div class="card">
+  <p><strong style="color:#F5A623">Icon : FileCheck + "971" watermark opacity 5% en arrière-plan</strong></p>
+  <h3 style="color:#333;">SolYB — l'une des rares agences en Guadeloupe à maîtriser la facturation électronique</h3>
+  <p>Pendant que la majorité des agences restent sur du web classique, SolYB a investi pour maîtriser
+  l'intégration technique complète de la facturation électronique conforme DGFiP. Vous bénéficiez
+  d'un interlocuteur local unique qui comprend à la fois le digital <strong>et</strong> vos obligations fiscales.</p>
+</div>
+
+<h3>CTA final</h3>
+<div class="cta-box">
+  <p><strong>Prendre rendez-vous pour un audit gratuit →</strong> (bg-solar, full width mobile)</p>
+  <p style="color:#888; font-size:.85rem;">Réponse sous 24h — Disponible dans tout le 971 (Grande-Terre, Basse-Terre, Marie-Galante, Saint-Martin)</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-pricing">SECTION 5 — TARIFS</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0A0A0F] · 3 cards pricing + 3 info-cards + CTA bottom</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Tarifs Transparents</h2>
+  <p>Des prix clairs, adaptés aux entreprises guadeloupéennes — aucun frais caché</p>
+</div>
+
+<h3>Pricing Grid (3 colonnes, card "Business" scale-[1.04] et badge "Plus populaire")</h3>
+<div class="grid3">
+  <div class="card">
+    <p><span class="tag turquoise">border-turquoise</span></p>
+    <h3 style="color:#333;">Starter</h3>
+    <p style="color:#888; font-size:.85rem;">Site Vitrine</p>
+    <p style="font-size:2rem; font-weight:bold;">599€</p>
+    <p style="color:#F5A623; font-size:.8rem;">Tarif de lancement — places limitées</p>
+    <p style="font-size:.85rem; color:#666;">Parfait pour démarrer votre présence en ligne en Guadeloupe</p>
+    <p><em>Bouton ghost dark : "Choisir Starter"</em></p>
+    <ul>
+      <li>Site web 5 pages responsive</li>
+      <li>SEO local Guadeloupe inclus</li>
+      <li>Formulaire de contact</li>
+      <li>Hébergement + domaine 1 an inclus</li>
+      <li>Formation 1h en visio</li>
+      <li>3 révisions incluses</li>
+      <li>Support 1 mois par email</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-color:#FF6B47; border-width:2px;">
+    <p style="text-align:center;"><span class="tag">✦ Plus populaire</span></p>
+    <p><span class="tag">border-coral/60</span></p>
+    <h3 style="color:#333;">Business</h3>
+    <p style="color:#888; font-size:.85rem;">E-commerce</p>
+    <p style="font-size:2rem; font-weight:bold;">999€</p>
+    <p style="color:#F5A623; font-size:.8rem;">Tarif de lancement — places limitées</p>
+    <p style="font-size:.85rem; color:#666;">Solution complète pour vendre en ligne en Guadeloupe</p>
+    <p><em>Bouton coral plein : "Choisir Business"</em></p>
+    <ul>
+      <li>Boutique en ligne complète</li>
+      <li>Jusqu'à 20 produits inclus</li>
+      <li>Paiement sécurisé en ligne</li>
+      <li>Gestion livraison Guadeloupe</li>
+      <li>Design premium responsive</li>
+      <li>SEO local + Marketing</li>
+      <li>Formation 1h30 gestion boutique</li>
+      <li>3 révisions incluses</li>
+      <li>Support 2 mois par email</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p><span class="tag solar">border-solar</span></p>
+    <h3 style="color:#333;">Maintenance</h3>
+    <p style="color:#888; font-size:.85rem;">Support continu</p>
+    <p style="color:#888; font-size:.75rem;">Réservé aux projets réalisés par SolYB *</p>
+    <p style="font-size:2rem; font-weight:bold;">39€<span style="font-size:1rem; font-weight:normal;">/mois</span></p>
+    <p style="color:#F5A623; font-size:.8rem;">Tarif de lancement — places limitées</p>
+    <p style="font-size:.85rem; color:#666;">Votre site reste rapide, sécurisé et à jour — sans que vous ayez à vous en occuper. Inclus automatiquement dans chaque projet, ou souscrit après livraison.</p>
+    <p><em>Bouton ghost dark : "S'abonner"</em></p>
+    <ul>
+      <li>Mises à jour sécurité</li>
+      <li>Backup quotidien</li>
+      <li>Support prioritaire</li>
+      <li>Jusqu'à 1h de modifications/mois</li>
+      <li>Monitoring automatisé 24/7</li>
+      <li>Certificat SSL</li>
+      <li>Rapports mensuels</li>
+    </ul>
+    <p style="font-size:.75rem; color:#888;">* Disponible uniquement pour les sites et applications développés par SolYB.</p>
+  </div>
+</div>
+
+<h3>Info Cards (3 colonnes)</h3>
+<div class="grid3">
+  <div class="card"><strong>💳 Paiement Flexible</strong><br>50% à la commande, 50% à la livraison</div>
+  <div class="card"><strong>⚡ Livraison Rapide</strong><br>2 à 3 semaines selon le projet</div>
+  <div class="card"><strong>✅ Satisfaction Garantie</strong><br>Révisions illimitées jusqu'à satisfaction</div>
+</div>
+
+<h3>CTA bottom</h3>
+<p>Vous avez des questions sur nos tarifs ou besoin d'un devis facturation électronique ?<br>
+<strong>Contactez-nous pour un devis personnalisé →</strong></p>
+
+<!-- ============================================================ -->
+<h2 id="s-trust">SECTION 6 — TRUST BADGES</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · border-y border-[#2A2A38] · py-14 · grid 6 colonnes desktop</p>
+
+<h3>Header</h3>
+<p><strong>Pourquoi nous choisir ?</strong><br>Des garanties concrètes pour votre tranquillité</p>
+
+<h3>6 badges (icon rond + titre + description)</h3>
+<div class="grid3">
+  <div class="card"><strong style="color:#FF6B47">🛡️ Paiement Sécurisé</strong><br>Paiement sécurisé</div>
+  <div class="card"><strong style="color:#F5A623">🏆 Satisfaction Garantie</strong><br>3 révisions incluses</div>
+  <div class="card"><strong style="color:#00D4AA">⏱️ Livraison Rapide</strong><br>2 à 3 semaines</div>
+  <div class="card"><strong style="color:#8B5CF6">💳 Paiement en 2x</strong><br>50% à la commande</div>
+  <div class="card"><strong style="color:#F43F7A">🎧 Support Inclus</strong><br>3 mois d'assistance</div>
+  <div class="card"><strong style="color:#84CC16">✓ Expert Local 971</strong><br>Basé en Guadeloupe</div>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-process">SECTION 7 — PROCESS</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · py-24 · 4 étapes numérotées + CTA box</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Comment ça marche ?</h2>
+  <p>Un processus simple et transparent en 4 étapes — de l'audit gratuit à la livraison en 2 à 3 semaines.</p>
+</div>
+
+<h3>4 étapes (grid 4 colonnes desktop, hover:-translate-y-1)</h3>
+<div class="grid2">
+  <div class="card">
+    <p><strong style="color:#FF6B47">01 · Jour 1</strong></p>
+    <p><strong>Audit Gratuit</strong> <em>(Phone icon)</em></p>
+    <p>Un appel de 30 minutes pour comprendre vos besoins, vos objectifs et votre cible en Guadeloupe.</p>
+    <ul><li>Analyse de vos besoins</li><li>Définition de l'arborescence</li><li>Choix du design</li></ul>
+  </div>
+  <div class="card">
+    <p><strong style="color:#F5A623">02 · Jours 2-5</strong></p>
+    <p><strong>Proposition</strong> <em>(Palette icon)</em></p>
+    <p>Conception du design sur mesure avec 2 allers-retours — nous vous présentons une solution adaptée à votre activité.</p>
+    <ul><li>Design unique, sans template</li><li>2 révisions incluses</li><li>Validation par vous</li></ul>
+  </div>
+  <div class="card">
+    <p><strong style="color:#00D4AA">03 · Jours 6-12</strong></p>
+    <p><strong>Développement</strong> <em>(Code icon)</em></p>
+    <p>Intégration, fonctionnalités et tests sur tous les appareils. Vous validez à chaque étape.</p>
+    <ul><li>Code optimisé et sécurisé</li><li>Responsive mobile/tablette</li><li>Tests multi-navigateurs</li></ul>
+  </div>
+  <div class="card">
+    <p><strong style="color:#8B5CF6">04 · Jours 13-14</strong></p>
+    <p><strong>Livraison & Suivi</strong> <em>(Rocket icon)</em></p>
+    <p>Mise en ligne, formation complète et support 3 mois inclus. Nous restons disponibles.</p>
+    <ul><li>Formation 1h en visio</li><li>Documentation complète</li><li>Support 3 mois inclus</li></ul>
+  </div>
+</div>
+
+<h3>CTA box (centré, max-w-2xl, border-coral/20)</h3>
+<div class="cta-box">
+  <h3 style="color:#333;">Prêt à démarrer votre projet ?</h3>
+  <p>De la conception à la livraison en 2 à 3 semaines pour un site vitrine.</p>
+  <p><strong>Commencer maintenant</strong> (bg-coral)</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-solutions">SECTION 8 — SOLUTIONS</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0A0A0F] · Solutions sectorielles SaaS en développement · grid 2 colonnes · max-w-5xl</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Des outils clés en main</h2>
+  <p>En plus des projets sur-mesure, SolYB développe des solutions sectorielles prêtes à l'emploi — abonnement mensuel, zéro complexité technique.</p>
+</div>
+
+<div class="note">
+  <strong>Note :</strong> Les données détaillées des solutions (nom, features, pricing) viennent de <code>src/lib/solutions-data.ts</code> (non lu ici car données dynamiques). Le pattern UI des cards est : badge status (Clock), target, logo/icon, nom, tagline, description, liste features (Check), pricing séparé, CTA "Rejoindre la liste d'attente".
+</div>
+
+<p style="font-size:.85rem; color:#666;">Ces solutions sont développées et maintenues par SolYB — <em>contactez-nous pour être informé du lancement.</em></p>
+
+<!-- ============================================================ -->
+<h2 id="s-about">SECTION 9 — ABOUT</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0A0A0F] · layout 2 colonnes (bio + stats) puis grid valeurs + citation</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">À Propos de SolYB</h2>
+  <p>Votre partenaire digital local en Guadeloupe</p>
+</div>
+
+<h3>Colonne Gauche — Bio Yacine</h3>
+<div class="card">
+  <h3 style="color:#333;">Yacine Bouhassoun</h3>
+  <p style="color:#FF6B47;"><strong>Fondateur & Expert Digital — Baie-Mahault, Guadeloupe</strong></p>
+
+  <p>Je m'appelle Yacine. La Guadeloupe m'a construit, et j'ai envie de lui rendre la pareille.</p>
+  <p>Ma conviction : une île avec autant d'énergie entrepreneuriale mérite une couverture numérique à la hauteur. Pas des solutions importées qui ne collent pas à la réalité locale. Pas des tarifs pensés pour des marchés qui n'ont rien à voir avec le nôtre.</p>
+  <p>J'ai toujours été passionné d'informatique, curieux de tout, attiré par l'idée de créer plutôt que de subir. Et ce que j'observe aujourd'hui m'inquiète autant qu'il me motive : l'IA a rendu la création accessible à tout le monde. Des projets naissent en quelques heures — mais sans ossature, sans analyse, sans vision réelle de ce qu'il faudra faire pour tenir dans six mois. Les bonnes idées deviennent des prototypes fragiles. Le temps s'y perd. Et l'élan, souvent, aussi.</p>
+  <p>Ce que je propose aux TPE guadeloupéennes, c'est autre chose : un regard humain sur leur projet, une vraie réflexion avant d'écrire la première ligne de code, et la sécurité de déléguer des tâches qui semblent simples mais peuvent vite devenir un piège légal ou technique. Construire moins vite, mais construire vrai.</p>
+  <p>L'équipe SolYB intervient sur chaque projet — développement, design, intégration, conformité fiscale — pour vous garantir un résultat à la hauteur, avec l'ancrage local qui fait la différence.</p>
+
+  <p><strong>Skills tags :</strong> Next.js · React · WordPress · WooCommerce · Shopify · SEO Local ·
+  <span style="color:#F5A623">Facturation Électronique</span> · <span style="color:#F5A623">DGFiP</span> · Applications Métier</p>
+</div>
+
+<h3>Colonne Droite — Stats (grid 2×2)</h3>
+<div class="grid2">
+  <div class="card"><strong style="color:#FF6B47; font-size:1.8rem;">5+</strong><br>Ans d'expérience</div>
+  <div class="card"><strong style="color:#F5A623; font-size:1.8rem;">100%</strong><br>Sur-mesure garanti<br><small>Chaque projet est conçu spécifiquement pour votre activité — design, contenu et fonctionnalités adaptés à votre réalité terrain.</small></div>
+  <div class="card"><strong style="color:#00D4AA; font-size:1.8rem;">&lt; 24h</strong><br>Temps de réponse</div>
+  <div class="card"><strong style="color:#8B5CF6; font-size:1.8rem;">971</strong><br>Ancré en Guadeloupe</div>
+</div>
+
+<h3>Valeurs (grid 4 colonnes)</h3>
+<div class="grid2">
+  <div class="card"><strong style="color:#FF6B47">📍 Local & Disponible</strong><br>On est en Guadeloupe, pas à Paris. On se déplace, on répond vite.</div>
+  <div class="card"><strong style="color:#F5A623">⚡ Tout en un</strong><br>Un seul interlocuteur pour votre site, vos apps, votre conformité fiscale 2026.</div>
+  <div class="card"><strong style="color:#00D4AA">🎯 Sur-mesure</strong><br>Aucun template. Chaque solution est construite pour votre activité.</div>
+  <div class="card"><strong style="color:#8B5CF6">🎧 Support Continu</strong><br>3 mois de support inclus après livraison. Je reste disponible pour vos questions.</div>
+</div>
+
+<h3>Citation (gradient coral, border-coral/15, ")" watermark opacity 10%)</h3>
+<div class="cta-box">
+  <blockquote style="font-style:italic; font-size:1.1rem;">
+    "Mon objectif : aider les entrepreneurs guadeloupéens à développer leur activité grâce au digital,
+    avec des tarifs accessibles et un accompagnement personnalisé adapté à leur marché."
+  </blockquote>
+  <p><strong>Y</strong> — <strong>Yacine Bouhassoun</strong>, Fondateur SolYB — Guadeloupe 971<br>
+  <em>(Avatar : cercle bg-coral avec initiale "Y" en blanc)</em></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-realisations">SECTION 10 — RÉALISATIONS</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · grid 2 colonnes · données depuis src/lib/realisations-data.ts</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Nos Réalisations</h2>
+  <p>Des projets concrets, pensés et construits pour des entrepreneurs qui avancent.</p>
+</div>
+
+<div class="note">
+  <strong>Pattern RealisationCard :</strong> screenshot (h-60, object-top, hover:scale-105) + accent bar colorée en bas de l'image +
+  badge secteur (accentColor) + année (text-muted) + client (font-display) + projectType (accentColor) + description + tags pills.
+  Overlay au hover : bg-black/60 + bouton "Voir le site" blanc.
+</div>
+
+<h3>Dernière card — "Coming soon"</h3>
+<div class="card" style="border-style:dashed; text-align:center; min-height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+  <p style="font-size:2rem; color:#FF6B47;">+</p>
+  <strong>Votre projet ici</strong>
+  <p style="font-size:.85rem; color:#888;">Vous avez un projet digital ? Discutons-en — nous construisons des solutions adaptées à votre réalité terrain.</p>
+  <p><strong>Démarrer un projet →</strong></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-faq">SECTION 11 — FAQ</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · max-w-4xl · accordion (openIndex state) · icon HelpCircle + bg-coral/10</p>
+
+<h3>Header</h3>
+<div class="card">
+  <p><em>Icon : HelpCircle (coral) dans carré bg-coral/10 border-coral/20 rounded-2xl</em></p>
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Questions Fréquentes</h2>
+  <p>Tout ce que vous devez savoir — y compris sur la facturation électronique 2026</p>
+</div>
+
+<h3>Questions (9 items, accordion, border-coral/40 quand ouvert)</h3>
+<ol>
+  <li><strong>Qu'est-ce que la facturation électronique et pourquoi c'est obligatoire ?</strong><br>
+  La facturation électronique est une réforme de la DGFiP qui impose aux entreprises françaises d'émettre et recevoir leurs factures via une Plateforme de Dématérialisation Partenaire (PDP) agréée. La réforme s'applique en deux temps : obligation de réception dès 2026, obligation d'émission pour les TPE/PME à partir de 2027. Mieux vaut se mettre en conformité maintenant pour ne pas subir la pression de dernière minute.</li>
+
+  <li><strong>Mon entreprise est-elle concernée par la réforme de facturation électronique 2026 ?</strong><br>
+  Oui, si vous émettez ou recevez des factures entre professionnels (B2B) et que vous êtes assujetti à la TVA en France — y compris en Guadeloupe, Martinique et dans les autres DOM. Cela concerne les salons de coiffure, commerces, restaurants, artisans, professions libérales, prestataires de services, etc. Contactez-nous pour un audit gratuit afin de vérifier votre situation.</li>
+
+  <li><strong>Combien de temps pour créer mon site web ?</strong><br>
+  Un site vitrine est livré en 2 à 3 semaines, une boutique e-commerce en 3 à 4 semaines. Ces délais incluent la conception, le développement, les révisions et la formation. Pour les projets urgents, des options accélérées sont disponibles.</li>
+
+  <li><strong>Le plan maintenance SolYB est-il compatible avec mon site existant ?</strong><br>
+  Le plan maintenance SolYB est réservé aux sites et applications que nous avons développés. Cette approche nous permet de garantir des interventions rapides et fiables — nous connaissons le code, l'architecture et votre projet dans le détail. Si vous souhaitez refondre votre site existant, contactez-nous pour un devis.</li>
+
+  <li><strong>Que comprend exactement le prix de 599€ ?</strong><br>
+  Le prix inclut : design personnalisé et responsive, jusqu'à 5 pages, formulaire de contact, optimisation SEO local Guadeloupe (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement + nom de domaine 1 an inclus, formation 1h en visio, 3 révisions incluses, et 1 mois de support par email. Aucun frais caché.</li>
+
+  <li><strong>Comment se passe le paiement ?</strong><br>
+  Le paiement se fait en 2 fois : 50% à la commande pour démarrer le projet, et 50% à la livraison une fois que vous êtes satisfait. Paiement par virement bancaire. Le paiement par carte sera bientôt disponible en ligne. Facture fournie. Pour les projets à partir de 1 500€, un paiement en 3 fois est possible sur demande.</li>
+
+  <li><strong>Je suis à Marie-Galante, Saint-Martin ou dans une commune éloignée, vous pouvez intervenir ?</strong><br>
+  Absolument. SolYB intervient dans tout le 971 : Grande-Terre, Basse-Terre, Marie-Galante, Les Saintes, La Désirade, Saint-Martin et Saint-Barthélemy. Le travail se fait principalement à distance (visio, téléphone, email), ce qui permet d'accompagner efficacement des clients partout en Guadeloupe et dans les Caraïbes.</li>
+
+  <li><strong>Quelle est la différence entre un site vitrine et une application métier ?</strong><br>
+  Un site vitrine présente votre activité au grand public pour générer des contacts et des appels (ex : page Accueil, Services, Contact). Une application métier est un outil interactif conçu pour un usage professionnel spécifique : gestion de réservations, commandes en ligne, espace client, caisse enregistreuse, planning partagé, etc. Si vous hésitez entre les deux, notre audit gratuit vous aidera à choisir.</li>
+
+  <li><strong>Mon site sera-t-il bien référencé sur Google Guadeloupe ?</strong><br>
+  Chaque site inclut une optimisation SEO locale : structure technique optimisée, balises meta et Schema.org avec mention de la Guadeloupe, Pointe-à-Pitre, Basse-Terre et Les Abymes, vitesse de chargement, compatibilité mobile. Pour dominer Google localement avec 0 notoriété, on recommande en plus : une fiche Google My Business, des articles de blog ciblés et des citations locales (Pages Jaunes). Des offres dédiées sont disponibles.</li>
+</ol>
+
+<div class="cta-box">
+  <p>Vous avez d'autres questions ?<br>
+  <strong>Contactez-moi directement</strong> (bg-coral)</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-contact">SECTION 12 — CONTACT</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0D0D14] · layout 3 colonnes (1 + 2) : infos contact + formulaire multi-étapes</p>
+
+<h3>Header</h3>
+<div class="card">
+  <h2 style="border:none; font-size:1.2rem; color:#333;">Parlons de votre projet</h2>
+  <p>Remplissez le formulaire — nous vous recontactons sous 24h maximum, où que vous soyez en Guadeloupe.</p>
+</div>
+
+<h3>Colonne gauche — Infos Contact</h3>
+<div class="card">
+  <h3 style="color:#333;">Informations Contact</h3>
+  <ul>
+    <li>📧 <strong>Email :</strong> contact@solyb.gp</li>
+    <li>📞 <strong>Téléphone :</strong> +590 690 XX XX XX</li>
+    <li>📍 <strong>Localisation :</strong> Baie-Mahault, Guadeloupe 971</li>
+    <li>🕐 <strong>Disponibilité :</strong> Lun-Ven 9h-18h · Sam 10h-17h</li>
+  </ul>
+
+  <h4 style="margin-top:1rem;">Zone d'intervention</h4>
+  <p>Grande-Terre · Basse-Terre · Les Abymes · Pointe-à-Pitre · Baie-Mahault · Marie-Galante · Saint-Martin · Saint-Barthélemy</p>
+
+  <h4 style="margin-top:1rem;">Guarantees</h4>
+  <ul>
+    <li>● Réponse garantie sous 24h</li>
+    <li>● Aucun engagement</li>
+    <li>● Devis gratuit personnalisé</li>
+    <li>● Expert local Guadeloupe</li>
+  </ul>
+</div>
+
+<h3>Formulaire Multi-étapes (2 steps)</h3>
+<div class="card">
+  <p><strong>Progress bar coral</strong> (50% → 100%)</p>
+
+  <h4>Étape 1 — "Parlons de vous" (icon: User)</h4>
+  <p><em>3 informations pour commencer</em></p>
+  <ul>
+    <li>Votre nom * (input)</li>
+    <li>Votre email * (input)</li>
+    <li>Type de projet * (radio grid 2×3) :
+      <ul>
+        <li>🌐 Site Vitrine — 599€ (turquoise)</li>
+        <li>🛒 E-commerce — 999€ (coral)</li>
+        <li>📄 Facturation Élec. — Audit gratuit (solar)</li>
+        <li>📱 Application — Sur devis (violet)</li>
+        <li>☁️ SaaS / Marketplace — Sur devis (sky)</li>
+        <li>🎯 Sur mesure — Sur devis (lime)</li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong>CTA :</strong> "Continuer →" (bg-coral)</p>
+
+  <h4>Étape 2 — "Décrivez votre projet" (icon: FileText)</h4>
+  <p><em>Ces détails m'aideront à préparer votre devis</em></p>
+  <ul>
+    <li>Téléphone (optional)</li>
+    <li>Entreprise (optional)</li>
+    <li>Budget indicatif * (select) : &lt;500€ / 500-1000€ / 1000-2000€ / +2000€</li>
+    <li>Décrivez votre projet * (textarea, min 20 chars)</li>
+  </ul>
+  <p><strong>Boutons :</strong> "← Retour" (ghost) + "Envoyer ma demande" (coral, icône Send)</p>
+
+  <h4>Footer du formulaire (bordure supérieure)</h4>
+  <p>✓ Réponse sous 24h &nbsp;·&nbsp; ✓ Devis gratuit &nbsp;·&nbsp; ✓ Sans engagement</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s-footer">SECTION 13 — FOOTER</h2>
+<!-- ============================================================ -->
+<p class="meta">bg-[#0A0A0F] · border-t border-[#2A2A38] · grid 4 colonnes · py-14</p>
+
+<div class="card">
+  <div class="grid2">
+    <div>
+      <h4>Brand</h4>
+      <p><strong>Sol<span style="color:#FF6B47">YB</span></strong> (logo SVG + nom)</p>
+      <p>Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.</p>
+      <p><span class="tag">● Expert local 971</span> (dot animé pulse)</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li>Nos services</li>
+        <li>Réalisations</li>
+        <li>Nos tarifs</li>
+        <li>L'équipe</li>
+        <li>Parlons-en</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li>Sites web sur-mesure</li>
+        <li>Applications métier</li>
+        <li style="color:#F5A623">Facturation électronique 2026</li>
+        <li>SaaS & Marketplace</li>
+        <li>E-commerce</li>
+        <li>Maintenance & support</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>📧 contact@solyb.gp</li>
+        <li>📞 +590 690 XX XX XX</li>
+        <li>📍 Baie-Mahault, Guadeloupe 971</li>
+        <li>🔗 LinkedIn</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+  <p style="font-size:.8rem; color:#888;">© 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés. &nbsp;|&nbsp; Mentions légales &nbsp;|&nbsp; Confidentialité</p>
+</div>
+
+<!-- ============================================================ -->
+<h2>ÉLÉMENTS FLOTTANTS</h2>
+<!-- ============================================================ -->
+
+<h3>WhatsApp Button</h3>
+<p>Bouton flottant fixe en bas à droite (z-50). Icon WhatsApp vert + bulle de texte au hover. Non détaillé dans le snapshot — composant standard.</p>
+
+<h3>Crisp Chat</h3>
+<p>Widget chat Crisp injecté via script. Bubble en bas à droite (z-40).</p>
+
+<h3>UrgencyBanner (detaillé dans section 0)</h3>
+<p>Sticky en haut de page. Dismissable via sessionStorage.</p>
+
+<!-- ============================================================ -->
+<h2>PAGES SECONDAIRES (hors homepage)</h2>
+<!-- ============================================================ -->
+
+<h3>/tarifs — Page Tarifs dédiée</h3>
+<p>Reprend le composant Pricing avec metadata SEO spécifique.</p>
+
+<h3>/services — Page Services dédiée</h3>
+<p>Reprend le composant Services avec metadata SEO spécifique.</p>
+
+<h3>/merci — Page de remerciement</h3>
+<p>Affichée après soumission du formulaire de contact (redirection après 2s).</p>
+
+<h3>/blog — Pages blog</h3>
+<ul>
+  <li>/blog — index des articles</li>
+  <li>/blog/prix-site-web-guadeloupe</li>
+  <li>/blog/application-web-vs-site-web-guadeloupe</li>
+</ul>
+
+<h3>/application-web-guadeloupe — Landing page dédiée</h3>
+
+<!-- ============================================================ -->
+<h2>NOTES POUR L'AMÉLIORATION "STUDIO"</h2>
+<!-- ============================================================ -->
+
+<div class="note">
+  <strong>Points forts actuels :</strong>
+  <ul>
+    <li>Dark theme cohérent avec palette caribéenne distinctive (coral + solar = chaleur tropicale)</li>
+    <li>Typographie Syne (display) + Jakarta Sans (body) = combinaison moderne</li>
+    <li>Contenu copy très solide, ancrage local fort, différenciateur facturation électronique bien articulé</li>
+    <li>Structure de conversion logique (Hero → Services → Social proof → Pricing → Process → Contact)</li>
+  </ul>
+</div>
+
+<div class="cta-box">
+  <strong>Opportunités d'élévation vers "studio level" :</strong>
+  <ul>
+    <li>Section Témoignages actuellement en bg-white avec couleurs `text-primary` bleues (couleurs admin) — totalement décalée du dark theme, à refondre</li>
+    <li>Grid overlay du hero (opacity 4%) peu visible — à intensifier ou remplacer par un pattern plus signature</li>
+    <li>Manque de motion design / animations au scroll (fade-in, slide-up) sur les sections</li>
+    <li>Les cards services sont identiques en forme — différenciation visuelle plus forte possible</li>
+    <li>Le logo "SYB_orange.svg" n'est pas décrit textuellement — à voir avec le fichier réel</li>
+    <li>Pas de section "chiffres clés" ou "ticker" animé de type studio agency</li>
+    <li>La section About pourrait avoir une composition plus asymétrique / éditorial</li>
+    <li>Hero : le fond avec glows est beau mais le texte centré est classique — layout offset ou typographie giant pourrait élever</li>
+  </ul>
+</div>
+
+</body>
+</html>

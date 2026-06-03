@@ -1,0 +1,89 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0F"/>
+      <stop offset="60%" style="stop-color:#13131A"/>
+      <stop offset="100%" style="stop-color:#1C1C26"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="45%" r="40%">
+      <stop offset="0%" style="stop-color:#FF6B4720"/>
+      <stop offset="100%" style="stop-color:#FF6B4700"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="30%" r="35%">
+      <stop offset="0%" style="stop-color:#F5A62315"/>
+      <stop offset="100%" style="stop-color:#F5A62300"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Grid overlay subtil -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#F0EDE8" stroke-width="0.4" opacity="0.04"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ligne décorative gauche -->
+  <rect x="64" y="0" width="1" height="630" fill="#FF6B47" opacity="0.2"/>
+
+  <!-- Badge top-left -->
+  <rect x="88" y="56" width="180" height="28" rx="4" fill="#FF6B47" opacity="0.12"/>
+  <rect x="88" y="56" width="180" height="28" rx="4" fill="none" stroke="#FF6B47" stroke-width="1" opacity="0.4"/>
+  <text x="178" y="74" font-family="Georgia, serif" font-size="11" fill="#FF6B47" text-anchor="middle" letter-spacing="2" opacity="0.9">GUADELOUPE · 971</text>
+
+  <!-- Logo SolYB text -->
+  <text x="88" y="230" font-family="Georgia, serif" font-size="110" font-weight="700" fill="#F0EDE8" letter-spacing="-4" opacity="0.95">Sol</text>
+  <text x="328" y="230" font-family="Georgia, serif" font-size="110" font-weight="700" fill="#FF6B47" letter-spacing="-4" opacity="0.95">YB</text>
+
+  <!-- Tagline -->
+  <text x="88" y="285" font-family="Georgia, serif" font-size="28" fill="#8B8B9E" letter-spacing="1" font-style="italic">Agence Digitale Guadeloupe</text>
+
+  <!-- Séparateur -->
+  <rect x="88" y="320" width="600" height="1" fill="#2A2A38"/>
+
+  <!-- Services pills -->
+  <g transform="translate(88, 346)">
+    <!-- Sites Web -->
+    <rect width="148" height="36" rx="4" fill="#FF6B47" opacity="0.1"/>
+    <rect width="148" height="36" rx="4" fill="none" stroke="#FF6B47" stroke-width="1" opacity="0.3"/>
+    <text x="74" y="23" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#FF6B47" text-anchor="middle" font-weight="600">Sites Web Sur-Mesure</text>
+    <!-- Applications -->
+    <rect x="164" width="148" height="36" rx="4" fill="#00D4AA" opacity="0.1"/>
+    <rect x="164" width="148" height="36" rx="4" fill="none" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+    <text x="238" y="23" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#00D4AA" text-anchor="middle" font-weight="600">Applications Métier</text>
+    <!-- Facturation -->
+    <rect x="328" width="188" height="36" rx="4" fill="#F5A623" opacity="0.1"/>
+    <rect x="328" width="188" height="36" rx="4" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.3"/>
+    <text x="422" y="23" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F5A623" text-anchor="middle" font-weight="600">Facturation Électronique 2026</text>
+  </g>
+
+  <!-- Phrase accroche -->
+  <text x="88" y="450" font-family="'Trebuchet MS', sans-serif" font-size="18" fill="#8B8B9E" letter-spacing="0.5">Donnez vie à vos idées digitales — Expert local à Baie-Mahault</text>
+
+  <!-- CTA -->
+  <rect x="88" y="480" width="200" height="48" rx="6" fill="#FF6B47"/>
+  <text x="188" y="510" font-family="'Trebuchet MS', sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" font-weight="700" letter-spacing="0.5">Devis gratuit 24h →</text>
+
+  <!-- URL -->
+  <text x="88" y="578" font-family="'Courier New', monospace" font-size="14" fill="#5A5A6E" letter-spacing="1">solyb.com</text>
+
+  <!-- Éléments décoratifs droite -->
+  <circle cx="980" cy="200" r="160" fill="none" stroke="#FF6B47" stroke-width="1" opacity="0.06"/>
+  <circle cx="980" cy="200" r="120" fill="none" stroke="#FF6B47" stroke-width="1" opacity="0.04"/>
+  <circle cx="980" cy="200" r="80"  fill="none" stroke="#FF6B47" stroke-width="1" opacity="0.08"/>
+  <text x="980" y="185" font-family="Georgia, serif" font-size="72" fill="#FF6B47" text-anchor="middle" opacity="0.08" font-weight="900">S</text>
+  <text x="980" y="240" font-family="Georgia, serif" font-size="72" fill="#FF6B47" text-anchor="middle" opacity="0.08" font-weight="900">YB</text>
+
+  <!-- Stats en bas droite -->
+  <g transform="translate(760, 440)">
+    <text x="0"   y="0" font-family="Georgia, serif" font-size="36" fill="#FF6B47" font-weight="700">2-3</text>
+    <text x="0"   y="22" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#5A5A6E" letter-spacing="2">SEM. LIVRAISON</text>
+    <text x="160" y="0" font-family="Georgia, serif" font-size="36" fill="#00D4AA" font-weight="700">100%</text>
+    <text x="160" y="22" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#5A5A6E" letter-spacing="2">SUR-MESURE</text>
+    <text x="360" y="0" font-family="Georgia, serif" font-size="36" fill="#F5A623" font-weight="700">24H</text>
+    <text x="360" y="22" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#5A5A6E" letter-spacing="2">RÉPONSE</text>
+  </g>
+</svg>

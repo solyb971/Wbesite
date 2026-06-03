@@ -1,0 +1,5 @@
+[    5690ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[    8287ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/_next/static/webpack/d3b533c3d51650c0.webpack.hot-update.json:0
+[   12596ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[   16074ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ webpack-internal:///(app-pages-browser)/./src/components/site/CrispChat.tsx:17
+[   16082ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ webpack-internal:///(app-pages-browser)/./src/components/site/CrispChat.tsx:17

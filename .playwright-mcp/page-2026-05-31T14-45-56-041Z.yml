@@ -1,0 +1,273 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+        - /url: /admin
+        - img "SolYB" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: SolYB
+          - generic [ref=e10]: CRM Pro
+      - generic [ref=e11]:
+        - generic [ref=e12]: Vos Produits
+        - generic [ref=e13]:
+          - link "SolYB Agence" [ref=e14] [cursor=pointer]:
+            - /url: /admin
+            - img [ref=e16]
+            - generic [ref=e18]: SolYB Agence
+          - link "FactuGP" [ref=e20] [cursor=pointer]:
+            - /url: /facturation-electronique
+            - img [ref=e22]
+            - generic [ref=e26]: FactuGP
+            - img [ref=e27]
+          - link "ResaGP" [ref=e29] [cursor=pointer]:
+            - /url: /resagp
+            - img [ref=e31]
+            - generic [ref=e36]: ResaGP
+            - img [ref=e37]
+      - generic [ref=e40]:
+        - generic [ref=e41]: Navigation
+        - navigation [ref=e42]:
+          - link "Pipeline / Leads" [ref=e43] [cursor=pointer]:
+            - /url: /admin
+            - img [ref=e44]
+            - generic [ref=e49]: Pipeline / Leads
+          - link "Planning" [ref=e50] [cursor=pointer]:
+            - /url: /admin/planning
+            - img [ref=e51]
+            - generic [ref=e53]: Planning
+          - link "Analytics" [ref=e54] [cursor=pointer]:
+            - /url: /admin/analytics
+            - img [ref=e55]
+            - generic [ref=e57]: Analytics
+          - link "Templates Email" [ref=e58] [cursor=pointer]:
+            - /url: /admin/templates
+            - img [ref=e59]
+            - generic [ref=e62]: Templates Email
+          - link "Paramètres" [ref=e63] [cursor=pointer]:
+            - /url: /admin/settings
+            - img [ref=e64]
+            - generic [ref=e67]: Paramètres
+      - generic [ref=e69]:
+        - generic [ref=e71]: "Y"
+        - generic [ref=e72]:
+          - generic [ref=e73]: Yacine B.
+          - generic [ref=e74]: v2.0 · Admin
+    - generic [ref=e75]:
+      - navigation [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e79]:
+            - heading "Pipeline" [level=1] [ref=e80]
+            - paragraph [ref=e81]: Leads & opportunités
+          - generic [ref=e84]: Live
+          - generic [ref=e85]:
+            - button [ref=e87] [cursor=pointer]:
+              - img [ref=e88]
+            - button "Y Yacine" [ref=e93] [cursor=pointer]:
+              - generic [ref=e95]: "Y"
+              - generic [ref=e96]: Yacine
+      - main [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - heading "Pipeline" [level=1] [ref=e102]
+              - paragraph [ref=e103]: Gérez vos leads et opportunités
+            - button "Nouveau lead" [ref=e104] [cursor=pointer]:
+              - img [ref=e105]
+              - text: Nouveau lead
+          - generic [ref=e106]:
+            - generic [ref=e107] [cursor=pointer]:
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - img [ref=e111]
+                  - generic [ref=e113]: SolYB Agence
+                - img [ref=e114]
+              - generic [ref=e116]:
+                - generic [ref=e117]:
+                  - generic [ref=e118]: "2"
+                  - generic [ref=e119]: Leads
+                - generic [ref=e120]:
+                  - generic [ref=e121]: 0%
+                  - generic [ref=e122]: Conv.
+                - generic [ref=e123]:
+                  - generic [ref=e124]: 0.0k
+                  - generic [ref=e125]: CA €
+            - generic [ref=e126] [cursor=pointer]:
+              - generic [ref=e127]:
+                - generic [ref=e128]:
+                  - img [ref=e130]
+                  - generic [ref=e134]: FactuGP
+                - img [ref=e135]
+              - generic [ref=e137]:
+                - generic [ref=e138]:
+                  - generic [ref=e139]: "0"
+                  - generic [ref=e140]: Leads
+                - generic [ref=e141]:
+                  - generic [ref=e142]: 0%
+                  - generic [ref=e143]: Conv.
+                - generic [ref=e144]:
+                  - generic [ref=e145]: 0.0k
+                  - generic [ref=e146]: CA €
+              - generic [ref=e147]: En attente des premières inscriptions
+            - generic [ref=e148] [cursor=pointer]:
+              - generic [ref=e149]:
+                - generic [ref=e150]:
+                  - img [ref=e152]
+                  - generic [ref=e157]: ResaGP
+                - img [ref=e158]
+              - generic [ref=e160]:
+                - generic [ref=e161]:
+                  - generic [ref=e162]: "0"
+                  - generic [ref=e163]: Leads
+                - generic [ref=e164]:
+                  - generic [ref=e165]: 0%
+                  - generic [ref=e166]: Conv.
+                - generic [ref=e167]:
+                  - generic [ref=e168]: 0.0k
+                  - generic [ref=e169]: CA €
+              - generic [ref=e170]: En attente des premières inscriptions
+          - generic [ref=e171]:
+            - generic [ref=e173]:
+              - img [ref=e176]
+              - generic [ref=e181]:
+                - paragraph [ref=e182]: "2"
+                - paragraph [ref=e183]: Total Leads
+                - paragraph [ref=e184]: Tous produits
+            - generic [ref=e186]:
+              - img [ref=e189]
+              - generic [ref=e193]:
+                - paragraph [ref=e194]: "1"
+                - paragraph [ref=e195]: Nouveaux
+                - paragraph [ref=e196]: cette période
+            - generic [ref=e198]:
+              - img [ref=e201]
+              - generic [ref=e204]:
+                - paragraph [ref=e205]: 0%
+                - paragraph [ref=e206]: Taux Conversion
+                - paragraph [ref=e207]: 0 gagnés
+            - generic [ref=e209]:
+              - img [ref=e212]
+              - generic [ref=e214]:
+                - paragraph [ref=e215]: 0€
+                - paragraph [ref=e216]: CA Estimé
+                - paragraph [ref=e217]: leads gagnés
+          - generic [ref=e219]:
+            - generic [ref=e220]:
+              - heading "Offre de Lancement SolYB" [level=3] [ref=e221]: Offre de Lancement SolYB
+              - paragraph [ref=e223]: "Objectif : 30 clients · 2 inscrits"
+            - generic [ref=e224]:
+              - generic [ref=e225]: "28"
+              - generic [ref=e226]: places restantes
+          - generic [ref=e229]:
+            - button "Tous" [ref=e230] [cursor=pointer]:
+              - img [ref=e231]
+              - text: Tous
+            - button "SolYB Agence" [ref=e236] [cursor=pointer]:
+              - img [ref=e237]
+              - text: SolYB Agence
+            - button "FactuGP" [ref=e239] [cursor=pointer]:
+              - img [ref=e240]
+              - text: FactuGP
+            - button "ResaGP" [ref=e244] [cursor=pointer]:
+              - img [ref=e245]
+              - text: ResaGP
+          - generic [ref=e251]:
+            - generic [ref=e252]:
+              - img [ref=e253]
+              - textbox "Rechercher un lead (nom, email, entreprise...)" [ref=e256]
+            - button "Filtres" [ref=e257] [cursor=pointer]:
+              - img [ref=e258]
+              - generic [ref=e260]: Filtres
+          - generic [ref=e261]:
+            - generic [ref=e263]:
+              - generic [ref=e265]:
+                - heading "Nouveau" [level=3] [ref=e266]:
+                  - generic [ref=e268]: Nouveau
+                - generic [ref=e269]: "1"
+              - 'button "Jean Dupont Restaurant Le Soleil 75 vitrine 750€ jean@exemple.gp +590690123456 Normal il y a moins d’une minute 🎯 Offre lancement #12" [ref=e271] [cursor=pointer]':
+                - generic [ref=e272]:
+                  - generic [ref=e273]:
+                    - heading "Jean Dupont" [level=4] [ref=e274]
+                    - generic [ref=e275]:
+                      - img [ref=e276]
+                      - generic [ref=e280]: Restaurant Le Soleil
+                  - generic [ref=e281]:
+                    - img [ref=e282]
+                    - generic [ref=e284]: "75"
+                - generic [ref=e285]:
+                  - generic [ref=e286]: vitrine
+                  - generic [ref=e287]: 750€
+                - generic [ref=e288]:
+                  - generic [ref=e289]:
+                    - img [ref=e290]
+                    - generic [ref=e293]: jean@exemple.gp
+                  - generic [ref=e294]:
+                    - img [ref=e295]
+                    - generic [ref=e297]: "+590690123456"
+                - generic [ref=e298]:
+                  - generic [ref=e299]:
+                    - img [ref=e300]
+                    - generic [ref=e302]: Normal
+                  - generic [ref=e303]:
+                    - img [ref=e304]
+                    - generic [ref=e306]: il y a moins d’une minute
+                - generic [ref=e308]: "🎯 Offre lancement #12"
+            - generic [ref=e310]:
+              - generic [ref=e312]:
+                - heading "Contact établi" [level=3] [ref=e313]:
+                  - generic [ref=e315]: Contact établi
+                - generic [ref=e316]: "1"
+              - 'button "Marie Martin Boutique Créole 82 ecommerce 1500€ marie@boutique.gp Urgent il y a 2 jours 🎯 Offre lancement #8" [ref=e318] [cursor=pointer]':
+                - generic [ref=e319]:
+                  - generic [ref=e320]:
+                    - heading "Marie Martin" [level=4] [ref=e321]
+                    - generic [ref=e322]:
+                      - img [ref=e323]
+                      - generic [ref=e327]: Boutique Créole
+                  - generic [ref=e328]:
+                    - img [ref=e329]
+                    - generic [ref=e331]: "82"
+                - generic [ref=e332]:
+                  - generic [ref=e333]: ecommerce
+                  - generic [ref=e334]: 1500€
+                - generic [ref=e336]:
+                  - img [ref=e337]
+                  - generic [ref=e340]: marie@boutique.gp
+                - generic [ref=e341]:
+                  - generic [ref=e342]:
+                    - img [ref=e343]
+                    - generic [ref=e345]: Urgent
+                  - generic [ref=e346]:
+                    - img [ref=e347]
+                    - generic [ref=e349]: il y a 2 jours
+                - generic [ref=e351]: "🎯 Offre lancement #8"
+            - generic [ref=e353]:
+              - generic [ref=e355]:
+                - heading "Devis envoyé" [level=3] [ref=e356]:
+                  - generic [ref=e358]: Devis envoyé
+                - generic [ref=e359]: "0"
+              - paragraph [ref=e362]: Aucun lead
+            - generic [ref=e364]:
+              - generic [ref=e366]:
+                - heading "Gagné" [level=3] [ref=e367]:
+                  - generic [ref=e369]: Gagné
+                - generic [ref=e370]: "0"
+              - paragraph [ref=e373]: Aucun lead
+            - generic [ref=e375]:
+              - generic [ref=e377]:
+                - heading "Perdu" [level=3] [ref=e378]:
+                  - generic [ref=e380]: Perdu
+                - generic [ref=e381]: "0"
+              - paragraph [ref=e384]: Aucun lead
+          - status [ref=e385]
+  - generic [ref=e390] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e391]:
+      - img [ref=e392]
+    - generic [ref=e395]:
+      - button "Open issues overlay" [ref=e396]:
+        - generic [ref=e397]:
+          - generic [ref=e398]: "0"
+          - generic [ref=e399]: "1"
+        - generic [ref=e400]: Issue
+      - button "Collapse issues badge" [ref=e401]:
+        - img [ref=e402]
+  - alert [ref=e404]

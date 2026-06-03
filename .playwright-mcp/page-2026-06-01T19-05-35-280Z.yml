@@ -1,0 +1,428 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - link "SolYB FactuGP" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img "SolYB" [ref=e8]
+        - generic [ref=e9]:
+          - text: Factu
+          - emphasis [ref=e10]: GP
+      - generic [ref=e11]:
+        - link "Fonctionnalités" [ref=e12] [cursor=pointer]:
+          - /url: "#fonctionnalites"
+        - link "TVA DOM" [ref=e13] [cursor=pointer]:
+          - /url: "#tva"
+        - link "Conformité" [ref=e14] [cursor=pointer]:
+          - /url: "#conformite"
+        - link "Tarifs" [ref=e15] [cursor=pointer]:
+          - /url: "#tarifs"
+        - link "Contact" [ref=e16] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Audit gratuit" [ref=e17] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Audit gratuit
+        - img [ref=e18]
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]: Réforme obligatoire · Septembre 2026
+      - heading "Facturation électronique simple" [level=1] [ref=e26]:
+        - text: Facturation
+        - text: électronique
+        - generic [ref=e28]: simple
+      - paragraph [ref=e29]:
+        - text: À partir de septembre 2026,
+        - strong [ref=e30]: toutes les entreprises qui paient la TVA
+        - text: devront envoyer et recevoir leurs factures en format électronique certifié. FactuGP est la seule solution construite pour les DOM.
+      - generic [ref=e31]:
+        - link "Demander un audit gratuit" [ref=e32] [cursor=pointer]:
+          - /url: "#contact"
+          - img [ref=e33]
+          - text: Demander un audit gratuit
+        - link "Découvrir la solution" [ref=e36] [cursor=pointer]:
+          - /url: "#fonctionnalites"
+          - img [ref=e37]
+          - text: Découvrir la solution
+      - generic [ref=e41]:
+        - generic [ref=e42]: Conforme DGFiP
+        - generic [ref=e44]: TVA DOM native
+        - generic [ref=e46]: RGPD · Hébergé en France
+        - generic [ref=e48]: Essai 30 jours
+    - generic [ref=e51]:
+      - generic [ref=e53]:
+        - generic [ref=e55]:
+          - text: Boulangerie Soleil des Alizés
+          - generic [ref=e56]: SIREN 123 456 789 · TVA FR12345678900
+        - generic [ref=e57]:
+          - text: CONFORME
+          - text: DGFiP
+          - img [ref=e58]
+      - generic [ref=e60]:
+        - text: FACTURE N°
+        - generic [ref=e61]: 2026-0147
+      - generic [ref=e63]:
+        - generic [ref=e64]: Date d'émission
+        - generic [ref=e65]: 15 juin 2026
+      - generic [ref=e66]:
+        - generic [ref=e67]: Échéance
+        - generic [ref=e68]: 15 juillet 2026
+      - generic [ref=e69]:
+        - generic [ref=e70]: Client
+        - generic [ref=e71]: Hôtel Karukéra SAS
+      - separator [ref=e72]
+      - generic [ref=e73]:
+        - generic [ref=e74]: Désignation
+        - generic [ref=e75]: HT
+        - generic [ref=e76]: TTC
+      - generic [ref=e77]:
+        - generic [ref=e78]: Viennoiseries (×120)
+        - generic [ref=e79]: 240,00 €
+        - generic [ref=e80]: 260,40 €
+      - generic [ref=e81]:
+        - generic [ref=e82]: Pains spéciaux (×50)
+        - generic [ref=e83]: 125,00 €
+        - generic [ref=e84]: 135,62 €
+      - generic [ref=e85]:
+        - generic [ref=e86]: Livraison Baie-Mahault
+        - generic [ref=e87]: 30,00 €
+        - generic [ref=e88]: 32,55 €
+      - generic [ref=e89]:
+        - generic [ref=e90]: TOTAL TTC (TVA 8,5 %)
+        - generic [ref=e91]: 428,57 €
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - text: Format Factur-X EN 16931 · PDF/A-3
+        - generic [ref=e96]:
+          - img [ref=e97]
+          - text: Transmis Chorus Pro DOM · Ref. CP-2026-0147
+        - generic [ref=e99]:
+          - img [ref=e100]
+          - text: E-reporting DGFiP envoyé automatiquement
+  - generic [ref=e103]:
+    - generic [ref=e104]:
+      - generic [ref=e105]: Compte à rebours
+      - generic [ref=e106]: Obligation légale — 1er septembre 2026
+      - generic [ref=e107]: Toutes les entreprises qui paient la TVA · Des amendes dès la première facture non conforme
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]: "0"
+        - generic [ref=e111]: Jours
+      - generic [ref=e112]: ":"
+      - generic [ref=e113]:
+        - generic [ref=e114]: "00"
+        - generic [ref=e115]: Heures
+      - generic [ref=e116]: ":"
+      - generic [ref=e117]:
+        - generic [ref=e118]: "00"
+        - generic [ref=e119]: Min
+      - generic [ref=e120]: ":"
+      - generic [ref=e121]:
+        - generic [ref=e122]: "00"
+        - generic [ref=e123]: Sec
+    - link "Être accompagné →" [ref=e124] [cursor=pointer]:
+      - /url: "#contact"
+      - img [ref=e125]
+      - text: Être accompagné →
+  - generic [ref=e129]:
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - img [ref=e132]
+        - text: Fonctionnalités
+      - heading "Tout ce qu'il faut, rien à configurer" [level=2] [ref=e135]:
+        - text: Tout ce qu'il faut,
+        - emphasis [ref=e136]: rien à configurer
+      - paragraph [ref=e137]: De la création de la facture jusqu'à sa transmission aux impôts — FactuGP gère toute la chaîne avec les règles fiscales propres aux DOM, déjà intégrées.
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]: "01"
+        - img [ref=e142]
+        - generic [ref=e145]: Factures au bon format
+        - generic [ref=e146]: Standard légal Factur-X EN 16931
+        - generic [ref=e147]: Vos factures sont créées dans le format officiel exigé par l'État — un fichier PDF lisible par l'humain et une pièce XML lisible par les machines. Compatible avec Chorus Pro DOM.
+        - generic [ref=e148]:
+          - generic [ref=e149]: Factur-X
+          - generic [ref=e150]: EN 16931
+          - generic [ref=e151]: Chorus Pro
+          - generic [ref=e152]: PDF/A-3
+      - generic [ref=e153]:
+        - generic [ref=e154]: "02"
+        - img [ref=e156]
+        - generic [ref=e159]: TVA DOM déjà réglée
+        - generic [ref=e160]: Taux 8,5 % · 2,1 % préconfigurés
+        - generic [ref=e161]: En Guadeloupe, Martinique, Réunion et Guyane, la TVA est différente de la métropole. FactuGP l'applique automatiquement selon votre activité — vous n'avez rien à configurer.
+        - generic [ref=e162]:
+          - generic [ref=e163]: 8,5 %
+          - generic [ref=e164]: 2,1 %
+          - generic [ref=e165]: Exonérations
+          - generic [ref=e166]: Multi-taux
+      - generic [ref=e167]:
+        - generic [ref=e168]: "03"
+        - img [ref=e170]
+        - generic [ref=e173]: Déclaration automatique
+        - generic [ref=e174]: Transmission directe à l'administration
+        - generic [ref=e175]: Les informations de vos ventes et encaissements partent automatiquement vers les impôts. Fini la saisie manuelle — FactuGP le fait pour vous, en temps réel.
+        - generic [ref=e176]:
+          - generic [ref=e177]: E-reporting
+          - generic [ref=e178]: FEC DGFiP
+          - generic [ref=e179]: Automatique
+          - generic [ref=e180]: Temps réel
+      - generic [ref=e181]:
+        - generic [ref=e182]: "04"
+        - img [ref=e184]
+        - generic [ref=e187]: Module BTP
+        - generic [ref=e188]: TVA auto-liquidée & sous-traitance
+        - generic [ref=e189]: Dans le bâtiment, c'est le client qui paye la TVA à la place du sous-traitant. FactuGP gère cette règle automatiquement et produit les documents légaux correspondants.
+        - generic [ref=e190]:
+          - generic [ref=e191]: Auto-liquidée
+          - generic [ref=e192]: BTP
+          - generic [ref=e193]: Art. 283
+          - generic [ref=e194]: Sous-traitance
+      - generic [ref=e195]:
+        - generic [ref=e196]: "05"
+        - img [ref=e198]
+        - generic [ref=e205]: Lecture automatique des factures reçues
+        - generic [ref=e206]: Scan & import en 3 secondes
+        - generic [ref=e207]: Photographiez ou déposez une facture fournisseur. L'IA lit le montant, la date et le numéro de TVA. Vous vérifiez en un coup d'œil, on enregistre le reste.
+        - generic [ref=e208]:
+          - generic [ref=e209]: OCR
+          - generic [ref=e210]: IA
+          - generic [ref=e211]: PDF
+          - generic [ref=e212]: Auto-import
+      - generic [ref=e213]:
+        - generic [ref=e214]: "06"
+        - img [ref=e216]
+        - generic [ref=e221]: Devis & relances clients
+        - generic [ref=e222]: Devis → Facture en 1 clic
+        - generic [ref=e223]: Créez un devis, transformez-le en facture d'un clic, et laissez FactuGP envoyer les relances en cas d'impayé. Tout depuis un seul outil.
+        - generic [ref=e224]:
+          - generic [ref=e225]: Devis
+          - generic [ref=e226]: Relances
+          - generic [ref=e227]: CRM
+          - generic [ref=e228]: Pipeline
+  - generic [ref=e231]:
+    - generic [ref=e232]:
+      - generic [ref=e233]:
+        - img [ref=e234]
+        - text: Fiscalité DOM
+      - heading "Taux de TVA Guadeloupe & DOM" [level=2] [ref=e237]:
+        - text: Taux de TVA
+        - emphasis [ref=e238]: Guadeloupe & DOM
+      - paragraph [ref=e239]: En Guadeloupe et dans les DOM, la TVA n'est pas la même qu'en métropole — les taux sont plus bas. FactuGP connaît les bons taux et les applique automatiquement selon ce que vous vendez.
+      - generic [ref=e240]:
+        - strong [ref=e241]: "Base légale : CGI Articles 294 à 297 A"
+        - text: Ces taux sont fixés par la loi. FactuGP applique le bon taux selon votre activité (code NAF) et le type de vente — vous n'avez rien à vérifier.
+    - generic [ref=e243]:
+      - generic [ref=e244]:
+        - generic [ref=e245]: 8,5 %
+        - generic [ref=e246]:
+          - generic [ref=e247]: Taux normal
+          - generic [ref=e248]: Ventes de biens, prestations de services
+          - generic [ref=e249]: CGI art. 296
+      - generic [ref=e250]:
+        - generic [ref=e251]: 2,1 %
+        - generic [ref=e252]:
+          - generic [ref=e253]: Taux réduit
+          - generic [ref=e254]: Médicaments, presse, restauration
+          - generic [ref=e255]: CGI art. 296 bis
+      - generic [ref=e256]:
+        - generic [ref=e257]: 0 %
+        - generic [ref=e258]:
+          - generic [ref=e259]: Taux zéro
+          - generic [ref=e260]: Exportations, livraisons intracommunautaires
+          - generic [ref=e261]: Exonération
+      - generic [ref=e262]:
+        - generic [ref=e263]: 1,05 %
+        - generic [ref=e264]:
+          - generic [ref=e265]: Agricole
+          - generic [ref=e266]: Productions agricoles DOM
+          - generic [ref=e267]: Spécifique DOM
+  - generic [ref=e269]:
+    - generic [ref=e270]:
+      - generic [ref=e271]:
+        - img [ref=e272]
+        - text: Secteurs concernés
+      - heading "Vous payez la TVA ? Vous êtes concerné." [level=2] [ref=e276]:
+        - text: Vous payez la TVA ?
+        - emphasis [ref=e277]: Vous êtes concerné.
+      - paragraph [ref=e278]: Dès septembre 2026, toute entreprise qui paye la TVA en Guadeloupe doit facturer au format électronique officiel — quel que soit son secteur.
+    - generic [ref=e279]:
+      - generic [ref=e280]:
+        - img [ref=e282]
+        - generic [ref=e286]: Commerce & négoce
+        - generic [ref=e287]: Caisse NF 525, B2B/B2C
+      - generic [ref=e288]:
+        - img [ref=e290]
+        - generic [ref=e292]: Artisanat & services
+        - generic [ref=e293]: Devis, factures, relances
+      - generic [ref=e294]:
+        - img [ref=e296]
+        - generic [ref=e300]: Professions libérales
+        - generic [ref=e301]: Honoraires, e-invoicing
+      - generic [ref=e302]:
+        - img [ref=e304]
+        - generic [ref=e307]: BTP & construction
+        - generic [ref=e308]: TVA auto-liquidée, DGFiP
+      - generic [ref=e309]:
+        - img [ref=e311]
+        - generic [ref=e314]: Tourisme & hôtellerie
+        - generic [ref=e315]: Taxe séjour, ISCA NF 525
+      - generic [ref=e316]:
+        - img [ref=e318]
+        - generic [ref=e322]: Agriculture & pêche
+        - generic [ref=e323]: Taux réduits, exonérations
+  - generic [ref=e325]:
+    - generic [ref=e326]:
+      - generic [ref=e327]:
+        - img [ref=e328]
+        - text: Certifications & Conformité
+      - heading "100% conforme, sans effort de votre côté" [level=2] [ref=e332]:
+        - text: 100% conforme,
+        - emphasis [ref=e333]: sans effort de votre côté
+      - paragraph [ref=e334]: FactuGP respecte toutes les normes exigées par l'État — en France et en Europe. Chaque facture que vous émettez est automatiquement valide et légalement protégée.
+    - generic [ref=e335]:
+      - generic [ref=e336]:
+        - img [ref=e338]
+        - generic [ref=e341]: Factur-X EN 16931
+      - generic [ref=e342]:
+        - img [ref=e344]
+        - generic [ref=e347]: RGPD Conforme
+      - generic [ref=e348]:
+        - img [ref=e350]
+        - generic [ref=e354]: Hébergé en France
+      - generic [ref=e355]:
+        - img [ref=e357]
+        - generic [ref=e359]: Chorus Pro DOM
+      - generic [ref=e360]:
+        - img [ref=e362]
+        - generic [ref=e365]: E-reporting DGFiP
+      - generic [ref=e366]:
+        - img [ref=e368]
+        - generic [ref=e372]: ISCA NF 525
+      - generic [ref=e373]:
+        - img [ref=e375]
+        - generic [ref=e379]: FEC DGFiP
+      - generic [ref=e380]:
+        - img [ref=e382]
+        - generic [ref=e385]: TVA DOM Native
+  - generic [ref=e387]:
+    - generic [ref=e388]:
+      - generic [ref=e389]:
+        - img [ref=e390]
+        - text: Tarifs
+      - heading "Un prix fixe, aucune surprise" [level=2] [ref=e394]:
+        - text: Un prix fixe,
+        - emphasis [ref=e395]: aucune surprise
+      - paragraph [ref=e396]: Abonnement mensuel. Pas de frais cachés, pas de commission à chaque facture émise.
+    - generic [ref=e397]:
+      - generic [ref=e398]:
+        - generic [ref=e399]: Starter
+        - generic [ref=e400]:
+          - text: 39€
+          - subscript [ref=e401]: /mois
+        - separator [ref=e402]
+        - list [ref=e403]:
+          - listitem [ref=e404]: ✓ Jusqu'à 50 factures/mois
+          - listitem [ref=e405]: ✓ Format Factur-X EN 16931
+          - listitem [ref=e406]: ✓ TVA DOM préconfigurée
+          - listitem [ref=e407]: ✓ Export FEC DGFiP
+          - listitem [ref=e408]: ✓ Support email
+          - listitem [ref=e409]: — Module BTP
+          - listitem [ref=e410]: — OCR fournisseurs
+          - listitem [ref=e411]: — CRM & pipeline
+        - link "Commencer" [ref=e412] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e413]:
+        - generic [ref=e414]: Recommandé
+        - generic [ref=e415]: Pro
+        - generic [ref=e416]:
+          - text: 79€
+          - subscript [ref=e417]: /mois
+        - separator [ref=e418]
+        - list [ref=e419]:
+          - listitem [ref=e420]: ✓ Factures illimitées
+          - listitem [ref=e421]: ✓ Tout du plan Starter
+          - listitem [ref=e422]: ✓ E-reporting DGFiP automatique
+          - listitem [ref=e423]: ✓ Module BTP & sous-traitance
+          - listitem [ref=e424]: ✓ OCR fournisseurs IA
+          - listitem [ref=e425]: ✓ CRM & pipeline
+          - listitem [ref=e426]: ✓ Relances automatiques
+        - link "Essai gratuit 30 jours" [ref=e427] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e428]:
+        - generic [ref=e429]: Business
+        - generic [ref=e430]:
+          - text: 139€
+          - subscript [ref=e431]: /mois
+        - separator [ref=e432]
+        - list [ref=e433]:
+          - listitem [ref=e434]: ✓ Tout du plan Pro
+          - listitem [ref=e435]: ✓ Multi-établissements
+          - listitem [ref=e436]: ✓ Multi-utilisateurs illimités
+          - listitem [ref=e437]: ✓ API REST & webhooks
+          - listitem [ref=e438]: ✓ Support prioritaire local
+          - listitem [ref=e439]: ✓ Formation & onboarding
+        - link "Nous contacter" [ref=e440] [cursor=pointer]:
+          - /url: "#contact"
+    - paragraph [ref=e441]: 30 JOURS D'ESSAI GRATUIT · SANS CARTE BANCAIRE · RÉSILIATION À TOUT MOMENT
+  - generic [ref=e442]:
+    - text: FactuGP
+    - generic [ref=e443]:
+      - heading "Septembre 2026, c'est maintenant" [level=2] [ref=e444]:
+        - text: Septembre 2026,
+        - emphasis [ref=e445]: c'est maintenant
+      - paragraph [ref=e446]: Ne subissez pas la réforme — prenez les devants. On commence par faire le point gratuitement sur votre situation, puis on vous accompagne jusqu'à être 100% en règle.
+      - generic [ref=e447]:
+        - link "Demander un audit gratuit →" [ref=e448] [cursor=pointer]:
+          - /url: mailto:contact@solyb.com
+          - img [ref=e449]
+          - text: Demander un audit gratuit →
+        - link "Voir une démo" [ref=e452] [cursor=pointer]:
+          - /url: mailto:contact@solyb.com
+          - img [ref=e453]
+          - text: Voir une démo
+  - contentinfo [ref=e457]:
+    - generic [ref=e458]:
+      - generic [ref=e459]:
+        - generic [ref=e460]: FactuGP
+        - generic [ref=e461]: Solution de facturation électronique pour les entreprises de Guadeloupe et des DOM. Conforme DGFiP, TVA DOM native, hébergée en France.
+        - generic [ref=e462]: SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe
+      - generic [ref=e463]:
+        - generic [ref=e464]: Navigation
+        - list [ref=e465]:
+          - listitem [ref=e466]:
+            - link "Fonctionnalités" [ref=e467] [cursor=pointer]:
+              - /url: "#fonctionnalites"
+          - listitem [ref=e468]:
+            - link "TVA DOM" [ref=e469] [cursor=pointer]:
+              - /url: "#tva"
+          - listitem [ref=e470]:
+            - link "Conformité" [ref=e471] [cursor=pointer]:
+              - /url: "#conformite"
+          - listitem [ref=e472]:
+            - link "Tarifs" [ref=e473] [cursor=pointer]:
+              - /url: "#tarifs"
+          - listitem [ref=e474]:
+            - link "Contact" [ref=e475] [cursor=pointer]:
+              - /url: "#contact"
+      - generic [ref=e476]:
+        - generic [ref=e477]: Conformité
+        - list [ref=e478]:
+          - listitem [ref=e479]: Factur-X EN 16931
+          - listitem [ref=e480]: Chorus Pro DOM
+          - listitem [ref=e481]: E-reporting DGFiP
+          - listitem [ref=e482]: ISCA NF 525
+          - listitem [ref=e483]: FEC conforme
+          - listitem [ref=e484]: RGPD · Hébergé FR
+      - generic [ref=e485]:
+        - generic [ref=e486]: Contact
+        - list [ref=e487]:
+          - listitem [ref=e488]:
+            - link "contact@solyb.com" [ref=e489] [cursor=pointer]:
+              - /url: mailto:contact@solyb.com
+          - listitem [ref=e490]: Baie-Mahault · Guadeloupe 97122
+          - listitem [ref=e491]:
+            - link "solyb.com →" [ref=e492] [cursor=pointer]:
+              - /url: https://solyb.com
+    - generic [ref=e493]:
+      - generic [ref=e494]: © 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220
+      - generic [ref=e495]: Baie-Mahault · Guadeloupe · Tous droits réservés

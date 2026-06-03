@@ -1,0 +1,292 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - generic [ref=e8]: "Facturation électronique : la réforme est en cours — anticipez dès maintenant"
+        - link "En savoir plus →" [ref=e9] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - navigation [ref=e14]:
+      - generic [ref=e16]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e18]
+        - generic [ref=e19]:
+          - link "Nos services" [ref=e20] [cursor=pointer]:
+            - /url: /#services
+          - link "Réalisations" [ref=e21] [cursor=pointer]:
+            - /url: /#realisations
+          - link "Nos tarifs" [ref=e22] [cursor=pointer]:
+            - /url: /#tarifs
+          - link "L'équipe" [ref=e23] [cursor=pointer]:
+            - /url: /#apropos
+          - link "Parlons-en" [ref=e24] [cursor=pointer]:
+            - /url: /#contact
+          - link "Audit gratuit" [ref=e25] [cursor=pointer]:
+            - /url: /#contact
+  - main [ref=e26]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - img [ref=e30]
+        - text: Offre de lancement — places limitées
+      - heading "Tarifs Transparents" [level=1] [ref=e32]
+      - paragraph [ref=e33]: Le prix annoncé est le prix final — formation et support inclus. Aucun frais caché.
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Site Vitrine" [level=2] [ref=e38]
+          - paragraph [ref=e39]: Pour présenter votre activité
+        - generic [ref=e40]:
+          - generic [ref=e42]: 599€
+          - generic [ref=e43]:
+            - generic [ref=e44]: 999€
+            - generic [ref=e45]: Tarif de lancement
+        - list [ref=e46]:
+          - listitem [ref=e47]:
+            - img [ref=e48]
+            - text: Design unique, aucun template
+          - listitem [ref=e50]:
+            - img [ref=e51]
+            - text: 5 pages personnalisées
+          - listitem [ref=e53]:
+            - img [ref=e54]
+            - text: Formulaire de contact
+          - listitem [ref=e56]:
+            - img [ref=e57]
+            - text: SEO local Guadeloupe inclus
+          - listitem [ref=e59]:
+            - img [ref=e60]
+            - text: Hébergement + domaine 1 an inclus
+          - listitem [ref=e62]:
+            - img [ref=e63]
+            - text: Formation 2h en visio
+          - listitem [ref=e65]:
+            - img [ref=e66]
+            - text: 3 mois support inclus
+          - listitem [ref=e68]:
+            - img [ref=e69]
+            - text: Paiement en ligne
+          - listitem [ref=e72]:
+            - img [ref=e73]
+            - text: Gestion produits
+        - link "Choisir Site Vitrine" [ref=e76] [cursor=pointer]:
+          - /url: /#contact
+          - text: Choisir Site Vitrine
+          - img [ref=e77]
+      - generic [ref=e79]:
+        - generic [ref=e80]: Plus populaire
+        - generic [ref=e81]:
+          - heading "E-commerce" [level=2] [ref=e82]
+          - paragraph [ref=e83]: Pour vendre en ligne
+        - generic [ref=e84]:
+          - generic [ref=e86]: 999€
+          - generic [ref=e87]:
+            - generic [ref=e88]: 1699€
+            - generic [ref=e89]: Tarif de lancement
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - img [ref=e92]
+            - text: Tout du Site Vitrine +
+          - listitem [ref=e94]:
+            - img [ref=e95]
+            - text: Boutique en ligne complète
+          - listitem [ref=e97]:
+            - img [ref=e98]
+            - text: Paiement sécurisé (Stripe)
+          - listitem [ref=e100]:
+            - img [ref=e101]
+            - text: Gestion catalogue produits
+          - listitem [ref=e103]:
+            - img [ref=e104]
+            - text: Suivi des commandes
+          - listitem [ref=e106]:
+            - img [ref=e107]
+            - text: Configuration livraison Guadeloupe
+          - listitem [ref=e109]:
+            - img [ref=e110]
+            - text: Formation e-commerce 4h
+          - listitem [ref=e112]:
+            - img [ref=e113]
+            - text: 3 mois support inclus
+        - link "Choisir E-commerce" [ref=e115] [cursor=pointer]:
+          - /url: /#contact
+          - text: Choisir E-commerce
+          - img [ref=e116]
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - heading "Maintenance" [level=2] [ref=e120]
+          - paragraph [ref=e121]: Gardez votre site à jour
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: 39€
+            - generic [ref=e125]: /mois
+          - generic [ref=e126]:
+            - generic [ref=e127]: 69€/mois
+            - generic [ref=e128]: Tarif de lancement
+        - list [ref=e129]:
+          - listitem [ref=e130]:
+            - img [ref=e131]
+            - text: Mises à jour sécurité
+          - listitem [ref=e133]:
+            - img [ref=e134]
+            - text: Sauvegardes automatiques
+          - listitem [ref=e136]:
+            - img [ref=e137]
+            - text: Monitoring 24/7
+          - listitem [ref=e139]:
+            - img [ref=e140]
+            - text: Corrections bugs
+          - listitem [ref=e142]:
+            - img [ref=e143]
+            - text: Support prioritaire
+          - listitem [ref=e145]:
+            - img [ref=e146]
+            - text: Jusqu'à 1h de modifications/mois
+          - listitem [ref=e148]:
+            - img [ref=e149]
+            - text: Rapport mensuel
+          - listitem [ref=e151]:
+            - img [ref=e152]
+            - text: Refonte graphique
+          - listitem [ref=e155]:
+            - img [ref=e156]
+            - text: Nouvelles fonctionnalités majeures
+        - link "Choisir Maintenance" [ref=e159] [cursor=pointer]:
+          - /url: /#contact
+          - text: Choisir Maintenance
+          - img [ref=e160]
+    - generic [ref=e163]:
+      - heading "Nos Garanties" [level=2] [ref=e164]
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - img [ref=e168]
+          - heading "Livraison Garantie" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Votre site livré dans les délais annoncés ou remboursé
+        - generic [ref=e173]:
+          - img [ref=e175]
+          - heading "Satisfaction 100%" [level=3] [ref=e177]
+          - paragraph [ref=e178]: Modifications illimitées jusqu'à validation complète
+        - generic [ref=e179]:
+          - img [ref=e181]
+          - heading "Support Inclus" [level=3] [ref=e183]
+          - paragraph [ref=e184]: 3 mois de support technique inclus après livraison
+    - generic [ref=e186]:
+      - heading "Services Complémentaires" [level=2] [ref=e187]
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - img [ref=e191]
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]: SEO Local Guadeloupe
+              - generic [ref=e196]: 199€/mois
+            - paragraph [ref=e197]: Optimisation pour apparaître dans les recherches Google locales
+        - generic [ref=e198]:
+          - img [ref=e200]
+          - generic [ref=e202]:
+            - generic [ref=e203]:
+              - generic [ref=e204]: Contenu IA
+              - generic [ref=e205]: 150€/mois
+            - paragraph [ref=e206]: 20 posts réseaux sociaux + 4 articles blog par mois
+        - generic [ref=e207]:
+          - img [ref=e209]
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic [ref=e213]: Formation WordPress
+              - generic [ref=e214]: 299€
+            - paragraph [ref=e215]: Formation complète 6h pour gérer votre site en autonomie
+        - generic [ref=e216]:
+          - img [ref=e218]
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - generic [ref=e222]: Refonte graphique
+              - generic [ref=e223]: 399€
+            - paragraph [ref=e224]: Nouveau design pour votre site existant
+    - generic [ref=e226]:
+      - heading "Questions Fréquentes" [level=2] [ref=e227]
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - heading "Y a-t-il des frais cachés ?" [level=3] [ref=e230]
+          - paragraph [ref=e231]: Non. Le prix inclut design, développement, hébergement 1 an, formation et 3 mois de support. Seul le nom de domaine (~15€/an) est à prévoir si vous n'en avez pas.
+        - generic [ref=e232]:
+          - heading "Quels sont les délais de livraison ?" [level=3] [ref=e233]
+          - paragraph [ref=e234]: "Site vitrine : 10-14 jours. E-commerce : 14-21 jours. Ces délais sont garantis dès validation du brief et réception des contenus."
+        - generic [ref=e235]:
+          - heading "Comment se passe le paiement ?" [level=3] [ref=e236]
+          - paragraph [ref=e237]: 50% à la validation du devis, 50% à la livraison. Paiement par virement ou carte (Stripe).
+        - generic [ref=e238]:
+          - heading "L'offre de lancement est valable combien de temps ?" [level=3] [ref=e239]
+          - paragraph [ref=e240]: Limitée aux 30 premiers clients. Contactez-nous vite pour en profiter !
+    - generic [ref=e242]:
+      - heading "Prêt à démarrer ?" [level=2] [ref=e243]
+      - paragraph [ref=e244]: Demandez votre devis gratuit — réponse sous 24h, sans engagement.
+      - link "Obtenir mon devis gratuit" [ref=e245] [cursor=pointer]:
+        - /url: /#contact
+        - generic [ref=e246]:
+          - text: Obtenir mon devis gratuit
+          - img [ref=e247]
+  - contentinfo [ref=e249]:
+    - generic [ref=e250]:
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253] [cursor=pointer]:
+            - img "SolYB" [ref=e254]
+            - generic [ref=e255]: SolYB
+          - paragraph [ref=e256]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e257]: Expert local 971
+        - generic [ref=e259]:
+          - heading "Navigation" [level=3] [ref=e260]
+          - list [ref=e261]:
+            - listitem [ref=e262]:
+              - link "Nos services" [ref=e263] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e264]:
+              - link "Réalisations" [ref=e265] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e266]:
+              - link "Nos tarifs" [ref=e267] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e268]:
+              - link "L'équipe" [ref=e269] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e270]:
+              - link "Parlons-en" [ref=e271] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e272]:
+          - heading "Services" [level=3] [ref=e273]
+          - list [ref=e274]:
+            - listitem [ref=e275]: Sites web sur-mesure
+            - listitem [ref=e276]: Applications métier
+            - listitem [ref=e277]: Facturation électronique 2026
+            - listitem [ref=e278]: SaaS & Marketplace
+            - listitem [ref=e279]: E-commerce
+            - listitem [ref=e280]: Maintenance & support
+        - generic [ref=e281]:
+          - heading "Contact" [level=3] [ref=e282]
+          - list [ref=e283]:
+            - listitem [ref=e284]:
+              - img [ref=e285]
+              - link "contact@solyb.gp" [ref=e288] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e289]:
+              - img [ref=e290]
+              - link "+590 690 XX XX XX" [ref=e292] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e293]:
+              - img [ref=e294]
+              - generic [ref=e297]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e298]:
+              - img [ref=e299]
+              - link "LinkedIn" [ref=e303] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e305]:
+        - paragraph [ref=e306]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e307]:
+          - link "Mentions légales" [ref=e308] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e309] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e311] [cursor=pointer]:
+    - img [ref=e312]

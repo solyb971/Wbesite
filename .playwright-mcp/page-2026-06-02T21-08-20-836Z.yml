@@ -1,0 +1,1013 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "SolYB — Agence Digitale Guadeloupe" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "SolYB — Agence Digitale Guadeloupe" [ref=e7]
+      - generic [ref=e8]:
+        - link "Nos services" [ref=e9] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e10] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e11] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e12] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e13] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e14] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Votre entreprise mérite un digital qui lui ressemble" [level=1] [ref=e18]:
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - generic [ref=e22]: V
+              - generic [ref=e23]: o
+              - generic [ref=e24]: t
+              - generic [ref=e25]: r
+              - generic [ref=e26]: e
+            - generic [ref=e28]:
+              - generic [ref=e29]: e
+              - generic [ref=e30]: "n"
+              - generic [ref=e31]: t
+              - generic [ref=e32]: r
+              - generic [ref=e33]: e
+              - generic [ref=e34]: p
+              - generic [ref=e35]: r
+              - generic [ref=e36]: i
+              - generic [ref=e37]: s
+              - generic [ref=e38]: e
+            - generic [ref=e40]:
+              - generic [ref=e41]: m
+              - generic [ref=e42]: é
+              - generic [ref=e43]: r
+              - generic [ref=e44]: i
+              - generic [ref=e45]: t
+              - generic [ref=e46]: e
+          - generic [ref=e48]:
+            - generic [ref=e49]: u
+            - generic [ref=e50]: "n"
+            - generic "Digital, Rayonnement, Univers, Avenir" [ref=e52]
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: q
+              - generic [ref=e58]: u
+              - generic [ref=e59]: i
+            - generic [ref=e61]:
+              - generic [ref=e62]: l
+              - generic [ref=e63]: u
+              - generic [ref=e64]: i
+            - generic [ref=e66]:
+              - generic [ref=e67]: r
+              - generic [ref=e68]: e
+              - generic [ref=e69]: s
+              - generic [ref=e70]: s
+              - generic [ref=e71]: e
+              - generic [ref=e72]: m
+              - generic [ref=e73]: b
+              - generic [ref=e74]: l
+              - generic [ref=e75]: e
+        - paragraph [ref=e76]: Nous créons des sites, des outils métier et des solutions digitales pour les entrepreneurs en Guadeloupe. Le sérieux d'une agence, la réactivité d'une petite entreprise et la proximité locale.
+        - paragraph [ref=e77]: Basé à Baie-Mahault.
+        - generic [ref=e78]:
+          - link "Découvrir nos services" [ref=e79] [cursor=pointer]:
+            - /url: /#services
+            - text: Découvrir nos services
+            - img [ref=e80]
+          - link "Audit gratuit" [ref=e82] [cursor=pointer]:
+            - /url: /#contact
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e85]: 2-3 sem.
+            - generic [ref=e86]: Délai livraison
+          - generic [ref=e87]:
+            - generic [ref=e88]: 100%
+            - generic [ref=e89]: Sur-mesure
+          - generic [ref=e90]:
+            - generic [ref=e91]: "2026"
+            - generic [ref=e92]: Factu. élec.
+        - generic [ref=e93]:
+          - generic [ref=e94]: Expert local Guadeloupe
+          - generic [ref=e96]: Devis gratuit sous 24h
+          - generic [ref=e98]: Sans engagement
+      - generic [ref=e103]: SCROLL
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - img [ref=e109]
+            - generic [ref=e111]: Réponse sous 24h
+          - generic [ref=e112]: —
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - img [ref=e115]
+            - generic [ref=e118]: Expert local Guadeloupe 971
+          - generic [ref=e119]: —
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - img [ref=e122]
+            - generic [ref=e131]: 100% sur-mesure
+          - generic [ref=e132]: —
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e139]: Facturation électronique 2026
+          - generic [ref=e140]: —
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - generic [ref=e147]: Applications métier
+          - generic [ref=e148]: —
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - generic [ref=e153]: Devis gratuit sous 24h
+          - generic [ref=e154]: —
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - img [ref=e157]
+            - generic [ref=e160]: Conformité DGFiP
+          - generic [ref=e161]: —
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e164]
+            - generic [ref=e167]: SaaS & marketplace
+          - generic [ref=e168]: —
+        - generic [ref=e169]:
+          - generic [ref=e170]:
+            - img [ref=e171]
+            - generic [ref=e174]: Formation incluse
+          - generic [ref=e175]: —
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - img [ref=e178]
+            - generic [ref=e181]: Basé à Baie-Mahault
+          - generic [ref=e182]: —
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - img [ref=e186]
+            - generic [ref=e188]: Réponse sous 24h
+          - generic [ref=e189]: —
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - img [ref=e192]
+            - generic [ref=e195]: Expert local Guadeloupe 971
+          - generic [ref=e196]: —
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - img [ref=e199]
+            - generic [ref=e208]: 100% sur-mesure
+          - generic [ref=e209]: —
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - img [ref=e212]
+            - generic [ref=e216]: Facturation électronique 2026
+          - generic [ref=e217]: —
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - img [ref=e220]
+            - generic [ref=e224]: Applications métier
+          - generic [ref=e225]: —
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - img [ref=e228]
+            - generic [ref=e230]: Devis gratuit sous 24h
+          - generic [ref=e231]: —
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - img [ref=e234]
+            - generic [ref=e237]: Conformité DGFiP
+          - generic [ref=e238]: —
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - img [ref=e241]
+            - generic [ref=e244]: SaaS & marketplace
+          - generic [ref=e245]: —
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - img [ref=e248]
+            - generic [ref=e251]: Formation incluse
+          - generic [ref=e252]: —
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - img [ref=e255]
+            - generic [ref=e258]: Basé à Baie-Mahault
+          - generic [ref=e259]: —
+    - generic [ref=e261]:
+      - generic [ref=e262]:
+        - generic [ref=e263]: 0+
+        - paragraph [ref=e264]: PROJETS LIVRÉS
+      - generic [ref=e265]:
+        - generic [ref=e266]: 0%
+        - paragraph [ref=e267]: CLIENTS SATISFAITS
+      - generic [ref=e268]:
+        - generic [ref=e269]: 0H
+        - paragraph [ref=e270]: RÉPONSE GARANTIE
+    - generic [ref=e272]:
+      - generic [ref=e273]:
+        - heading "4 expertises, 1 seule agence" [level=2] [ref=e274]
+        - paragraph [ref=e275]: Un seul interlocuteur pour tout ce dont votre entreprise a besoin. Site web, application mobile, facturation électronique, outils de gestion — nous construisons, nous accompagnons, et nous répondons quand vous appelez.
+      - generic [ref=e276]:
+        - generic [ref=e278]:
+          - generic: "01"
+          - generic [ref=e279]:
+            - img [ref=e281]
+            - generic [ref=e284]: À partir de 599€
+            - heading "Sites Web Sur-Mesure" [level=3] [ref=e285]
+            - paragraph [ref=e286]: Un site qui donne envie d'appeler, de réserver, d'acheter — optimisé pour être trouvé sur Google par vos clients locaux.
+            - list [ref=e287]:
+              - listitem [ref=e288]: Design unique, aucun template
+              - listitem [ref=e290]: Référencement local inclus (votre ville, votre quartier)
+              - listitem [ref=e292]: Hébergement 1 an offert
+              - listitem [ref=e294]: Formation complète incluse
+            - generic [ref=e296]:
+              - generic [ref=e297]: À partir de 599€
+              - link "Demander un devis" [ref=e298] [cursor=pointer]:
+                - /url: /?service=vitrine#contact
+                - text: Demander un devis
+                - img [ref=e299]
+        - generic [ref=e302]:
+          - generic: "02"
+          - generic [ref=e303]:
+            - img [ref=e305]
+            - generic [ref=e308]: Sur devis
+            - heading "Applications Métier" [level=3] [ref=e309]
+            - paragraph [ref=e310]: Des outils digitaux taillés pour votre activité — gestion, réservation, commande, fidélisation. Conçus pour les entreprises guadeloupéennes.
+            - list [ref=e311]:
+              - listitem [ref=e312]: Application web ou mobile
+              - listitem [ref=e314]: Interface adaptée à votre métier
+              - listitem [ref=e316]: Gestion des données en temps réel
+              - listitem [ref=e318]: Formation & support inclus
+            - generic [ref=e320]:
+              - generic [ref=e321]: Sur devis
+              - link "Demander un devis" [ref=e322] [cursor=pointer]:
+                - /url: /?service=application#contact
+                - text: Demander un devis
+                - img [ref=e323]
+        - generic [ref=e326]:
+          - generic: "03"
+          - generic [ref=e327]:
+            - img [ref=e329]
+            - generic [ref=e332]: Sur devis
+            - heading "SaaS & Marketplace" [level=3] [ref=e333]
+            - paragraph [ref=e334]: Vous avez une idée de plateforme ? Nous la construisons de A à Z — de la maquette au déploiement, optimisée pour la Caraïbe.
+            - list [ref=e335]:
+              - listitem [ref=e336]: Architecture SaaS scalable
+              - listitem [ref=e338]: Marketplace multi-vendeurs
+              - listitem [ref=e340]: Paiements sécurisés intégrés
+              - listitem [ref=e342]: Tableau de bord analytics
+            - generic [ref=e344]:
+              - generic [ref=e345]: Sur devis
+              - link "Demander un devis" [ref=e346] [cursor=pointer]:
+                - /url: /?service=saas#contact
+                - text: Demander un devis
+                - img [ref=e347]
+      - generic [ref=e351]:
+        - generic [ref=e352]:
+          - generic [ref=e353]:
+            - img [ref=e355]
+            - generic [ref=e361]: ⚡ RÉFORME EN COURS
+          - heading "Facturation Électronique Conforme" [level=3] [ref=e362]
+          - paragraph [ref=e363]: La réforme arrive, et beaucoup de TPE guadeloupéennes ne savent pas encore par où commencer. C'est normal — c'est technique, c'est nouveau, et les informations circulent mal. Nous traduisons ces obligations en actions concrètes, adaptées à votre secteur et à votre taille.
+          - generic [ref=e364]:
+            - generic [ref=e365]: Conforme DGFiP
+            - generic [ref=e366]: Intégration système
+            - generic [ref=e367]: Audit gratuit
+            - generic [ref=e368]: Accompagnement 971
+        - generic [ref=e370]:
+          - link "Voir FactuGP" [ref=e371] [cursor=pointer]:
+            - /url: /facturation-electronique
+            - generic [ref=e372]:
+              - text: Voir FactuGP
+              - img [ref=e373]
+          - link "Audit gratuit — sans engagement" [ref=e375] [cursor=pointer]:
+            - /url: /?service=facturation#contact
+    - generic [ref=e378]:
+      - generic [ref=e379]:
+        - generic [ref=e380]:
+          - img [ref=e381]
+          - generic [ref=e383]: Obligatoire avant septembre 2026 en Guadeloupe
+        - heading "La facturation électronique devient obligatoire. SolYB vous accompagne." [level=2] [ref=e384]
+        - paragraph [ref=e385]: Que vous soyez coiffeur, artisan, restaurateur, prestataire de services ou que vous ne vous êtes pas encore lancé — si vous facturez d'autres professionnels, cette réforme vous concerne. Et septembre 2026, ça arrive vite.
+      - generic [ref=e386]:
+        - generic [ref=e387]:
+          - img [ref=e389]
+          - heading "La réforme s'applique progressivement" [level=3] [ref=e391]
+          - paragraph [ref=e392]: Réception obligatoire dès 2026 pour les grandes entreprises, émission obligatoire pour les TPE/PME à partir de 2027. Anticiper maintenant, c'est éviter la précipitation et les erreurs coûteuses.
+        - generic [ref=e393]:
+          - img [ref=e395]
+          - heading "Nous intégrons une solution conforme DGFiP dans votre système" [level=3] [ref=e397]
+          - paragraph [ref=e398]: Nous analysons votre activité, votre logiciel de facturation actuel et vos flux d'échange avec vos clients et fournisseurs. Nous choisissons ensemble la solution PDP adaptée et nous l'intégrons dans votre quotidien sans tout bouleverser.
+        - generic [ref=e399]:
+          - img [ref=e401]
+          - heading "Vos factures partent et arrivent automatiquement, en conformité totale" [level=3] [ref=e404]
+          - paragraph [ref=e405]: Émission, transmission, archivage légal — tout est automatisé. Vous ne changez pas votre façon de travailler, vous êtes simplement en conformité. Et nous restons disponibles pour répondre à vos questions.
+      - generic [ref=e406]:
+        - generic [ref=e407]:
+          - img [ref=e408]
+          - 'heading "Facture électronique obligatoire en Guadeloupe : êtes-vous concerné ?" [level=3] [ref=e412]'
+        - paragraph [ref=e413]:
+          - text: Dès septembre 2026, toutes les entreprises de Guadeloupe assujetties à la TVA devront être en mesure de
+          - strong [ref=e414]: recevoir
+          - text: des factures électroniques. L'obligation d'
+          - strong [ref=e415]: émettre
+          - text: interviendra ensuite au 1er septembre 2027 pour les TPE, PME et micro-entreprises. Si vous avez des clients professionnels, vous êtes concerné — quelle que soit la taille de votre structure.
+        - generic [ref=e416]:
+          - generic [ref=e417]:
+            - img [ref=e419]
+            - generic [ref=e421]:
+              - generic [ref=e422]: Artisan BTP — maçon, électricien, plombier
+              - generic [ref=e423]: "Le BTP est le premier secteur employeur de Guadeloupe. Dès que vous facturez une autre entreprise (promoteur, syndic, sous-traitant), vous êtes soumis à la réforme. Émission obligatoire : septembre 2027."
+          - generic [ref=e424]:
+            - img [ref=e426]
+            - generic [ref=e431]:
+              - generic [ref=e432]: Restaurant, traiteur, snack
+              - generic [ref=e433]: Vous livrez des buffets d'entreprise, vous facturez des comités ou des hôtels ? Ces opérations B2B tombent sous l'obligation. Même si votre activité est majoritairement B2C, l'e-reporting s'applique.
+          - generic [ref=e434]:
+            - img [ref=e436]
+            - generic [ref=e439]:
+              - generic [ref=e440]: Commerce de détail et grossiste
+              - generic [ref=e441]: Le commerce représente la moitié du chiffre d'affaires des entreprises en Guadeloupe. Si vous avez des clients professionnels parmi vos acheteurs, chaque facture entre assujettis à la TVA est concernée.
+          - generic [ref=e442]:
+            - img [ref=e444]
+            - generic [ref=e450]:
+              - generic [ref=e451]: Coiffure, esthétique, bien-être
+              - generic [ref=e452]: Vous travaillez uniquement avec des particuliers ? Pas d'obligation d'émission — mais vous devrez tout de même recevoir des factures électroniques de vos fournisseurs dès septembre 2026 et transmettre vos données via l'e-reporting.
+          - generic [ref=e453]:
+            - img [ref=e455]
+            - generic [ref=e458]:
+              - generic [ref=e459]: Profession libérale — consultant, formateur, agence, comptable
+              - generic [ref=e460]: Toute prestation facturée à une entreprise assujettie à la TVA entre dans le périmètre. Devis, honoraires, missions ponctuelles — tout est concerné.
+          - generic [ref=e461]:
+            - img [ref=e463]
+            - generic [ref=e467]:
+              - generic [ref=e468]: Garage, mécanique, réparation auto
+              - generic [ref=e469]: Vous facturez des entreprises pour l'entretien de leur flotte ? Obligation pleine. Vous travaillez uniquement avec des particuliers ? E-reporting uniquement.
+          - generic [ref=e470]:
+            - img [ref=e472]
+            - generic [ref=e477]:
+              - generic [ref=e478]: Transport, livraison, logistique
+              - generic [ref=e479]: Secteur en forte croissance aux Antilles. Toute prestation inter-entreprises est soumise à l'e-invoicing dès septembre 2027.
+        - generic [ref=e480]:
+          - heading "Quelles sanctions en cas de non-conformité ?" [level=3] [ref=e481]:
+            - img [ref=e482]
+            - text: Quelles sanctions en cas de non-conformité ?
+          - paragraph [ref=e484]: "La loi de finances 2026 a précisé les amendes applicables : 50 € par facture non conforme, 500 € puis 1 000 € pour l'absence de plateforme agréée après mise en demeure, dans la limite de 15 000 € par an. Au-delà des amendes, un client grand compte peut rejeter vos factures non conformes dès septembre 2026, ce qui allonge directement vos délais de paiement."
+        - generic [ref=e485]:
+          - heading "Ce qui ne change pas pour vous" [level=3] [ref=e486]
+          - list [ref=e487]:
+            - listitem [ref=e488]:
+              - img [ref=e489]
+              - text: "Vos factures aux particuliers : pas d'e-invoicing, mais e-reporting à transmettre"
+            - listitem [ref=e493]:
+              - img [ref=e494]
+              - text: "Saint-Martin et Saint-Barthélemy : non concernés par la réforme"
+            - listitem [ref=e498]:
+              - img [ref=e499]
+              - text: "Première infraction régularisée sous 30 jours : pas de sanction immédiate"
+        - paragraph [ref=e503]: Les entreprises établies en Guadeloupe, Martinique et La Réunion sont pleinement concernées par la facturation électronique obligatoire et l'e-reporting, la TVA étant applicable dans ces départements.
+        - link "En savoir plus sur la réforme → service-public.fr" [ref=e504] [cursor=pointer]:
+          - /url: https://www.service-public.fr/professionnels-entreprises/vosdroits/F31808
+      - generic [ref=e505]:
+        - generic: "971"
+        - generic [ref=e506]:
+          - img [ref=e508]
+          - generic [ref=e512]:
+            - heading "SolYB — l'une des rares agences en Guadeloupe à maîtriser la facturation électronique" [level=3] [ref=e513]
+            - paragraph [ref=e514]: Pendant que la majorité des agences restent sur du web classique, SolYB a investi pour maîtriser l'intégration technique complète de la facturation électronique conforme DGFiP. Vous bénéficiez d'un interlocuteur local unique qui comprend à la fois le digital et vos obligations fiscales.
+      - generic [ref=e515]:
+        - link "Prendre rendez-vous pour un audit gratuit" [ref=e516] [cursor=pointer]:
+          - /url: /#contact
+          - generic [ref=e517]:
+            - text: Prendre rendez-vous pour un audit gratuit
+            - img [ref=e518]
+        - paragraph [ref=e520]: Réponse sous 24h — Disponible dans tout le 971 (Grande-Terre, Basse-Terre, Marie-Galante, Saint-Martin)
+    - generic [ref=e522]:
+      - generic [ref=e523]:
+        - heading "Tarifs Transparents" [level=2] [ref=e524]
+        - paragraph [ref=e525]: Des prix clairs, adaptés aux entreprises guadeloupéennes — aucun frais caché
+      - generic [ref=e526]:
+        - generic [ref=e527]:
+          - generic [ref=e528]:
+            - heading "Starter" [level=3] [ref=e529]
+            - paragraph [ref=e530]: Site Vitrine
+          - generic [ref=e531]:
+            - generic [ref=e533]: 599€
+            - paragraph [ref=e534]: Tarif de lancement — places limitées
+          - paragraph [ref=e535]: Parfait pour démarrer votre présence en ligne en Guadeloupe
+          - link "Choisir Starter" [ref=e536] [cursor=pointer]:
+            - /url: /#contact
+          - list [ref=e537]:
+            - listitem [ref=e538]:
+              - img [ref=e539]
+              - generic [ref=e541]: Site web 5 pages responsive
+            - listitem [ref=e542]:
+              - img [ref=e543]
+              - generic [ref=e545]: SEO local Guadeloupe inclus
+            - listitem [ref=e546]:
+              - img [ref=e547]
+              - generic [ref=e549]: Formulaire de contact
+            - listitem [ref=e550]:
+              - img [ref=e551]
+              - generic [ref=e553]: Hébergement + domaine 1 an inclus
+            - listitem [ref=e554]:
+              - img [ref=e555]
+              - generic [ref=e557]: Formation 1h en visio
+            - listitem [ref=e558]:
+              - img [ref=e559]
+              - generic [ref=e561]: 3 révisions incluses
+            - listitem [ref=e562]:
+              - img [ref=e563]
+              - generic [ref=e565]: Support 1 mois par email
+        - generic [ref=e566]:
+          - generic [ref=e567]: Plus populaire
+          - generic [ref=e568]:
+            - heading "Business" [level=3] [ref=e569]
+            - paragraph [ref=e570]: E-commerce
+          - generic [ref=e571]:
+            - generic [ref=e573]: 999€
+            - paragraph [ref=e574]: Tarif de lancement — places limitées
+          - paragraph [ref=e575]: Solution complète pour vendre en ligne en Guadeloupe
+          - link "Choisir Business" [ref=e576] [cursor=pointer]:
+            - /url: /#contact
+          - list [ref=e577]:
+            - listitem [ref=e578]:
+              - img [ref=e579]
+              - generic [ref=e581]: Boutique en ligne complète
+            - listitem [ref=e582]:
+              - img [ref=e583]
+              - generic [ref=e585]: Jusqu'à 20 produits inclus
+            - listitem [ref=e586]:
+              - img [ref=e587]
+              - generic [ref=e589]: Paiement sécurisé en ligne
+            - listitem [ref=e590]:
+              - img [ref=e591]
+              - generic [ref=e593]: Gestion livraison Guadeloupe
+            - listitem [ref=e594]:
+              - img [ref=e595]
+              - generic [ref=e597]: Design premium responsive
+            - listitem [ref=e598]:
+              - img [ref=e599]
+              - generic [ref=e601]: SEO local + Marketing
+            - listitem [ref=e602]:
+              - img [ref=e603]
+              - generic [ref=e605]: Formation 1h30 gestion boutique
+            - listitem [ref=e606]:
+              - img [ref=e607]
+              - generic [ref=e609]: 3 révisions incluses
+            - listitem [ref=e610]:
+              - img [ref=e611]
+              - generic [ref=e613]: Support 2 mois par email
+        - generic [ref=e614]:
+          - generic [ref=e615]:
+            - heading "Maintenance" [level=3] [ref=e616]
+            - paragraph [ref=e617]: Support continu
+            - paragraph [ref=e618]: Réservé aux projets réalisés par SolYB *
+          - generic [ref=e619]:
+            - generic [ref=e620]:
+              - generic [ref=e621]: 39€
+              - generic [ref=e622]: /mois
+            - paragraph [ref=e623]: Tarif de lancement — places limitées
+          - paragraph [ref=e624]: Votre site reste rapide, sécurisé et à jour — sans que vous ayez à vous en occuper. Inclus automatiquement dans chaque projet, ou souscrit après livraison.
+          - link "S'abonner" [ref=e625] [cursor=pointer]:
+            - /url: /#contact
+          - list [ref=e626]:
+            - listitem [ref=e627]:
+              - img [ref=e628]
+              - generic [ref=e630]: Mises à jour sécurité
+            - listitem [ref=e631]:
+              - img [ref=e632]
+              - generic [ref=e634]: Backup quotidien
+            - listitem [ref=e635]:
+              - img [ref=e636]
+              - generic [ref=e638]: Support prioritaire
+            - listitem [ref=e639]:
+              - img [ref=e640]
+              - generic [ref=e642]: Jusqu'à 1h de modifications/mois
+            - listitem [ref=e643]:
+              - img [ref=e644]
+              - generic [ref=e646]: Monitoring automatisé 24/7
+            - listitem [ref=e647]:
+              - img [ref=e648]
+              - generic [ref=e650]: Certificat SSL
+            - listitem [ref=e651]:
+              - img [ref=e652]
+              - generic [ref=e654]: Rapports mensuels
+          - paragraph [ref=e655]: "* Disponible uniquement pour les sites et applications développés par SolYB."
+      - generic [ref=e656]:
+        - generic [ref=e657]:
+          - img [ref=e659]
+          - heading "Paiement Flexible" [level=4] [ref=e661]
+          - paragraph [ref=e662]: 50% à la commande, 50% à la livraison
+        - generic [ref=e663]:
+          - img [ref=e665]
+          - heading "Livraison Rapide" [level=4] [ref=e667]
+          - paragraph [ref=e668]: 2 à 3 semaines selon le projet
+        - generic [ref=e669]:
+          - img [ref=e671]
+          - heading "Satisfaction Garantie" [level=4] [ref=e674]
+          - paragraph [ref=e675]: Révisions illimitées jusqu'à satisfaction
+      - generic [ref=e676]:
+        - paragraph [ref=e677]: Vous avez des questions sur nos tarifs ou besoin d'un devis facturation électronique ?
+        - link "Contactez-nous pour un devis personnalisé" [ref=e678] [cursor=pointer]:
+          - /url: /#contact
+          - text: Contactez-nous pour un devis personnalisé
+          - img [ref=e679]
+    - generic [ref=e682]:
+      - generic [ref=e683]:
+        - heading "Pourquoi nous choisir ?" [level=3] [ref=e684]
+        - paragraph [ref=e685]: Des garanties concrètes pour votre tranquillité
+      - generic [ref=e686]:
+        - generic [ref=e687]:
+          - img [ref=e689]
+          - heading "Paiement Sécurisé" [level=4] [ref=e691]
+          - paragraph [ref=e692]: Paiement sécurisé
+        - generic [ref=e693]:
+          - img [ref=e695]
+          - heading "Satisfaction Garantie" [level=4] [ref=e698]
+          - paragraph [ref=e699]: 3 révisions incluses
+        - generic [ref=e700]:
+          - img [ref=e702]
+          - heading "Livraison Rapide" [level=4] [ref=e705]
+          - paragraph [ref=e706]: 2 à 3 semaines
+        - generic [ref=e707]:
+          - img [ref=e709]
+          - heading "Paiement en 2x" [level=4] [ref=e711]
+          - paragraph [ref=e712]: 50% à la commande
+        - generic [ref=e713]:
+          - img [ref=e715]
+          - heading "Support Inclus" [level=4] [ref=e717]
+          - paragraph [ref=e718]: 3 mois d'assistance
+        - generic [ref=e719]:
+          - img [ref=e721]
+          - heading "Expert Local 971" [level=4] [ref=e724]
+          - paragraph [ref=e725]: Basé en Guadeloupe
+    - generic [ref=e727]:
+      - generic [ref=e728]:
+        - heading "Comment ça marche ?" [level=2] [ref=e729]
+        - paragraph [ref=e730]: Un processus simple et transparent en 4 étapes — de l'audit gratuit à la livraison en 2 à 3 semaines.
+      - generic [ref=e732]:
+        - generic [ref=e733]:
+          - generic: "01"
+          - generic [ref=e734]:
+            - img [ref=e736]
+            - generic [ref=e738]: Jour 1
+            - heading "Audit Gratuit" [level=3] [ref=e739]
+            - paragraph [ref=e740]: Un appel de 30 minutes pour comprendre vos besoins, vos objectifs et votre cible en Guadeloupe.
+            - list [ref=e741]:
+              - listitem [ref=e742]: Analyse de vos besoins
+              - listitem [ref=e744]: Définition de l'arborescence
+              - listitem [ref=e746]: Choix du design
+        - generic [ref=e748]:
+          - generic: "02"
+          - generic [ref=e749]:
+            - img [ref=e751]
+            - generic [ref=e757]: Jours 2-5
+            - heading "Proposition" [level=3] [ref=e758]
+            - paragraph [ref=e759]: Conception du design sur mesure avec 2 allers-retours — nous vous présentons une solution adaptée à votre activité.
+            - list [ref=e760]:
+              - listitem [ref=e761]: Design unique, sans template
+              - listitem [ref=e763]: 2 révisions incluses
+              - listitem [ref=e765]: Validation par vous
+        - generic [ref=e767]:
+          - generic: "03"
+          - generic [ref=e768]:
+            - img [ref=e770]
+            - generic [ref=e773]: Jours 6-12
+            - heading "Développement" [level=3] [ref=e774]
+            - paragraph [ref=e775]: Intégration, fonctionnalités et tests sur tous les appareils. Vous validez à chaque étape.
+            - list [ref=e776]:
+              - listitem [ref=e777]: Code optimisé et sécurisé
+              - listitem [ref=e779]: Responsive mobile/tablette
+              - listitem [ref=e781]: Tests multi-navigateurs
+        - generic [ref=e783]:
+          - generic: "04"
+          - generic [ref=e784]:
+            - img [ref=e786]
+            - generic [ref=e791]: Jours 13-14
+            - heading "Livraison & Suivi" [level=3] [ref=e792]
+            - paragraph [ref=e793]: Mise en ligne, formation complète et support 3 mois inclus. Nous restons disponibles.
+            - list [ref=e794]:
+              - listitem [ref=e795]: Formation 1h en visio
+              - listitem [ref=e797]: Documentation complète
+              - listitem [ref=e799]: Support 3 mois inclus
+      - generic [ref=e801]:
+        - heading "Prêt à démarrer votre projet ?" [level=3] [ref=e802]
+        - paragraph [ref=e803]: De la conception à la livraison en 2 à 3 semaines pour un site vitrine.
+        - link "Commencer maintenant" [ref=e804] [cursor=pointer]:
+          - /url: /#contact
+          - generic [ref=e805]: Commencer maintenant
+    - generic [ref=e807]:
+      - generic [ref=e808]:
+        - heading "Des outils clés en main" [level=2] [ref=e809]
+        - paragraph [ref=e810]: En plus des projets sur-mesure, SolYB développe ses propres outils pour les entreprises guadeloupéennes — abonnement mensuel, prêts à l'emploi, sans complexité technique.
+      - generic [ref=e811]:
+        - generic [ref=e813]:
+          - generic [ref=e814]:
+            - generic [ref=e815]:
+              - img "ResaGP" [ref=e817]
+              - paragraph [ref=e818]: Restaurants et bars de Guadeloupe
+            - generic [ref=e819]: ✓ Disponible — essai 14 jours
+          - heading "ResaGP" [level=3] [ref=e820]
+          - paragraph [ref=e821]: Gérez votre restaurant sans payer de commission
+          - paragraph [ref=e822]: Réservations en ligne, plan de salle, fiches clients, rappels automatiques — tout ce dont votre restaurant a besoin, dans un seul outil. Sans payer une commission à chaque couvert.
+          - list [ref=e823]:
+            - listitem [ref=e824]:
+              - img [ref=e825]
+              - generic [ref=e827]: Réservations en ligne 24h/24, 7j/7
+            - listitem [ref=e828]:
+              - img [ref=e829]
+              - generic [ref=e831]: Plan de salle mis à jour en direct
+            - listitem [ref=e832]:
+              - img [ref=e833]
+              - generic [ref=e835]: Confirmations automatiques par SMS et email
+            - listitem [ref=e836]:
+              - img [ref=e837]
+              - generic [ref=e839]: Rappels envoyés automatiquement avant chaque repas
+            - listitem [ref=e840]:
+              - img [ref=e841]
+              - generic [ref=e843]: Fiches clients qui se remplissent toutes seules
+            - listitem [ref=e844]:
+              - img [ref=e845]
+              - generic [ref=e847]: Carte numérique avec QR code sur chaque table
+          - generic [ref=e848]:
+            - paragraph [ref=e849]: Essai gratuit 14 jours
+            - paragraph [ref=e850]: Sans carte bancaire • Sans commission par couvert
+          - generic [ref=e851]:
+            - link "Voir ResaGP" [ref=e852] [cursor=pointer]:
+              - /url: /resagp
+              - text: Voir ResaGP
+              - img [ref=e853]
+            - link "Essai gratuit" [ref=e857] [cursor=pointer]:
+              - /url: /resagp#contact
+        - generic [ref=e859]:
+          - generic [ref=e860]:
+            - generic [ref=e861]:
+              - generic [ref=e863]: F
+              - paragraph [ref=e864]: TPE et PME de Guadeloupe
+            - generic [ref=e865]: Lancement 2025
+          - heading "FactuGP" [level=3] [ref=e866]
+          - paragraph [ref=e867]: Prêt pour la réforme facturation 2026 — sans stress
+          - paragraph [ref=e868]: "À partir de septembre 2026, toutes les entreprises françaises doivent émettre leurs factures en format électronique. FactuGP s'occupe de tout : bon format, bonne TVA, envoi automatique aux impôts."
+          - list [ref=e869]:
+            - listitem [ref=e870]:
+              - img [ref=e871]
+              - generic [ref=e873]: Factures au format légal exigé par l'État
+            - listitem [ref=e874]:
+              - img [ref=e875]
+              - generic [ref=e877]: TVA Guadeloupe (8,5 % et 2,1 %) déjà configurée
+            - listitem [ref=e878]:
+              - img [ref=e879]
+              - generic [ref=e881]: Transmission automatique aux impôts
+            - listitem [ref=e882]:
+              - img [ref=e883]
+              - generic [ref=e885]: Devis transformé en facture en 1 clic
+            - listitem [ref=e886]:
+              - img [ref=e887]
+              - generic [ref=e889]: Relances automatiques en cas d'impayé
+            - listitem [ref=e890]:
+              - img [ref=e891]
+              - generic [ref=e893]: Compatible BTP, commerce, services, professions libérales
+          - generic [ref=e894]:
+            - paragraph [ref=e895]: À partir de 0 €/mois
+            - paragraph [ref=e896]: Déduction fiscale possible selon votre situation
+          - generic [ref=e897]:
+            - link "En savoir plus" [ref=e898] [cursor=pointer]:
+              - /url: /facturation-electronique
+              - text: En savoir plus
+              - img [ref=e899]
+            - link "Être informé du lancement" [ref=e903] [cursor=pointer]:
+              - /url: /#contact?sujet=FactuGP
+    - generic [ref=e905]:
+      - generic [ref=e906]:
+        - heading "À Propos de SolYB" [level=2] [ref=e907]
+        - paragraph [ref=e908]: Votre partenaire digital local en Guadeloupe
+      - generic [ref=e909]:
+        - generic [ref=e910]:
+          - generic [ref=e912]:
+            - generic [ref=e914]: FONDATEUR
+            - heading "Yacine Bouhassoun" [level=3] [ref=e915]
+            - paragraph [ref=e916]: Expert Digital — Baie-Mahault, Guadeloupe
+            - generic [ref=e917]:
+              - paragraph [ref=e919]: Je m'appelle Yacine. La Guadeloupe m'a construit, et j'ai envie de lui rendre la pareille.
+              - paragraph [ref=e920]: "Ma conviction : une île avec autant d'énergie entrepreneuriale mérite une couverture numérique à la hauteur. Pas des solutions importées qui ne collent pas à la réalité locale. Pas des tarifs pensés pour des marchés qui n'ont rien à voir avec le nôtre."
+              - paragraph [ref=e921]: "J'ai toujours été passionné d'informatique, curieux de tout, attiré par l'idée de créer plutôt que de subir. Et ce que j'observe aujourd'hui m'inquiète autant qu'il me motive : l'IA a rendu la création accessible à tout le monde. Des projets naissent en quelques heures — mais sans ossature, sans analyse, sans vision réelle de ce qu'il faudra faire pour tenir dans six mois. Les bonnes idées deviennent des prototypes fragiles. Le temps s'y perd. Et l'élan, souvent, aussi."
+              - paragraph [ref=e922]: "Ce que je propose aux TPE guadeloupéennes, c'est autre chose : un regard humain sur leur projet, une vraie réflexion avant d'écrire la première ligne de code, et la sécurité de déléguer des tâches qui semblent simples mais peuvent vite devenir un piège légal ou technique. Construire moins vite, mais construire vrai."
+              - paragraph [ref=e923]: L'équipe SolYB intervient sur chaque projet — développement, design, intégration, conformité fiscale — pour vous garantir un résultat à la hauteur, avec l'ancrage local qui fait la différence.
+          - generic [ref=e924]:
+            - generic [ref=e925]: Next.js
+            - generic [ref=e926]: React
+            - generic [ref=e927]: WordPress
+            - generic [ref=e928]: WooCommerce
+            - generic [ref=e929]: Shopify
+            - generic [ref=e930]: SEO Local
+            - generic [ref=e931]: Facturation Électronique
+            - generic [ref=e932]: DGFiP
+            - generic [ref=e933]: Applications Métier
+        - generic [ref=e935]:
+          - generic [ref=e936]:
+            - img [ref=e939]
+            - generic [ref=e943]: 5+
+            - generic [ref=e944]: Ans d'expérience
+            - generic [ref=e945]: En développement web & apps
+          - generic [ref=e946]:
+            - img [ref=e949]
+            - generic [ref=e958]: 100%
+            - generic [ref=e959]: Sur-mesure garanti
+            - generic [ref=e960]: Votre identité, votre solution
+          - generic [ref=e961]:
+            - img [ref=e964]
+            - generic [ref=e966]: < 24h
+            - generic [ref=e967]: Temps de réponse
+            - generic [ref=e968]: Même le week-end
+          - generic [ref=e969]:
+            - img [ref=e972]
+            - generic [ref=e975]: "971"
+            - generic [ref=e976]: Ancré en Guadeloupe
+            - generic [ref=e977]: Basé à Baie-Mahault
+      - generic [ref=e978]:
+        - generic [ref=e979]:
+          - img [ref=e981]
+          - heading "Local & Disponible" [level=4] [ref=e984]
+          - paragraph [ref=e985]: On est en Guadeloupe, pas à Paris. On se déplace, on répond vite.
+        - generic [ref=e986]:
+          - img [ref=e988]
+          - heading "Tout en un" [level=4] [ref=e990]
+          - paragraph [ref=e991]: Un seul interlocuteur pour votre site, vos apps, votre conformité fiscale 2026.
+        - generic [ref=e992]:
+          - img [ref=e994]
+          - heading "Sur-mesure" [level=4] [ref=e998]
+          - paragraph [ref=e999]: Aucun template. Chaque solution est construite pour votre activité.
+        - generic [ref=e1000]:
+          - img [ref=e1002]
+          - heading "Support Continu" [level=4] [ref=e1004]
+          - paragraph [ref=e1005]: 3 mois de support inclus après livraison. Je reste disponible pour vos questions.
+    - generic [ref=e1007]:
+      - generic [ref=e1008]:
+        - heading "Nos Réalisations" [level=2] [ref=e1009]
+        - paragraph [ref=e1010]: Des projets concrets, pensés et construits pour des entrepreneurs qui avancent.
+      - generic [ref=e1011]:
+        - generic [ref=e1013]:
+          - img "Liberty Drive Serenity — réalisé par SolYB" [ref=e1015]
+          - generic [ref=e1016]:
+            - generic [ref=e1017]:
+              - generic [ref=e1018]: Transport & Santé
+              - generic [ref=e1019]: "2025"
+            - heading "Liberty Drive Serenity" [level=3] [ref=e1020]
+            - paragraph [ref=e1021]: Site vitrine & Application de réservation
+            - paragraph [ref=e1022]: Plateforme de mise en relation entre soignants et chauffeurs professionnels pour la gestion des tournées quotidiennes. Interface double — espace Pro de santé et espace Chauffeur — avec devis en ligne et gestion des rendez-vous.
+            - generic [ref=e1023]:
+              - generic [ref=e1024]: Next.js
+              - generic [ref=e1025]: React
+              - generic [ref=e1026]: UI/UX Design
+              - generic [ref=e1027]: Application web
+              - generic [ref=e1028]: Guadeloupe
+        - generic [ref=e1030]:
+          - generic [ref=e1032]: +
+          - heading "Votre projet ici" [level=3] [ref=e1033]
+          - paragraph [ref=e1034]: Vous avez un projet digital ? Discutons-en — nous construisons des solutions adaptées à votre réalité terrain.
+          - link "Démarrer un projet" [ref=e1035] [cursor=pointer]:
+            - /url: /#contact
+            - text: Démarrer un projet
+            - img [ref=e1036]
+    - generic [ref=e1039]:
+      - generic [ref=e1040]:
+        - img [ref=e1042]
+        - heading "Questions Fréquentes" [level=2] [ref=e1045]
+        - paragraph [ref=e1046]: Tout ce que vous devez savoir — y compris sur la facturation électronique 2026
+      - generic [ref=e1047]:
+        - generic [ref=e1048]:
+          - heading "Qu'est-ce que la facturation électronique et pourquoi c'est obligatoire ?" [level=3] [ref=e1049]:
+            - button "Qu'est-ce que la facturation électronique et pourquoi c'est obligatoire ?" [expanded] [ref=e1050] [cursor=pointer]:
+              - generic [ref=e1051]: Qu'est-ce que la facturation électronique et pourquoi c'est obligatoire ?
+              - img [ref=e1052]
+          - generic [ref=e1055]: "La facturation électronique est une réforme de la DGFiP qui impose aux entreprises françaises d'émettre et recevoir leurs factures via une Plateforme de Dématérialisation Partenaire (PDP) agréée. La réforme s'applique en deux temps : obligation de réception dès 2026, obligation d'émission pour les TPE/PME à partir de 2027. Mieux vaut se mettre en conformité maintenant pour ne pas subir la pression de dernière minute."
+        - generic [ref=e1056]:
+          - heading "Mon entreprise est-elle concernée par la réforme de facturation électronique 2026 ?" [level=3] [ref=e1057]:
+            - button "Mon entreprise est-elle concernée par la réforme de facturation électronique 2026 ?" [ref=e1058] [cursor=pointer]:
+              - generic [ref=e1059]: Mon entreprise est-elle concernée par la réforme de facturation électronique 2026 ?
+              - img [ref=e1060]
+          - generic [ref=e1062]: Oui, si vous émettez ou recevez des factures entre professionnels (B2B) et que vous êtes assujetti à la TVA en France — y compris en Guadeloupe, Martinique et dans les autres DOM. Cela concerne les salons de coiffure, commerces, restaurants, artisans, professions libérales, prestataires de services, etc. Contactez-nous pour un audit gratuit afin de vérifier votre situation.
+        - generic [ref=e1063]:
+          - heading "Combien de temps pour créer mon site web ?" [level=3] [ref=e1064]:
+            - button "Combien de temps pour créer mon site web ?" [ref=e1065] [cursor=pointer]:
+              - generic [ref=e1066]: Combien de temps pour créer mon site web ?
+              - img [ref=e1067]
+          - generic [ref=e1069]: Un site vitrine est livré en 2 à 3 semaines, une boutique e-commerce en 3 à 4 semaines. Ces délais incluent la conception, le développement, les révisions et la formation. Pour les projets urgents, des options accélérées sont disponibles.
+        - generic [ref=e1070]:
+          - heading "Le plan maintenance SolYB est-il compatible avec mon site existant ?" [level=3] [ref=e1071]:
+            - button "Le plan maintenance SolYB est-il compatible avec mon site existant ?" [ref=e1072] [cursor=pointer]:
+              - generic [ref=e1073]: Le plan maintenance SolYB est-il compatible avec mon site existant ?
+              - img [ref=e1074]
+          - generic [ref=e1076]: Le plan maintenance SolYB est réservé aux sites et applications que nous avons développés. Cette approche nous permet de garantir des interventions rapides et fiables — nous connaissons le code, l'architecture et votre projet dans le détail. Si vous souhaitez refondre votre site existant, contactez-nous pour un devis.
+        - generic [ref=e1077]:
+          - heading "Que comprend exactement le prix de 599€ ?" [level=3] [ref=e1078]:
+            - button "Que comprend exactement le prix de 599€ ?" [ref=e1079] [cursor=pointer]:
+              - generic [ref=e1080]: Que comprend exactement le prix de 599€ ?
+              - img [ref=e1081]
+          - generic [ref=e1083]: "Le prix inclut : design personnalisé et responsive, jusqu'à 5 pages, formulaire de contact, optimisation SEO local Guadeloupe (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement + nom de domaine 1 an inclus, formation 1h en visio, 3 révisions incluses, et 1 mois de support par email. Aucun frais caché."
+        - generic [ref=e1084]:
+          - heading "Comment se passe le paiement ?" [level=3] [ref=e1085]:
+            - button "Comment se passe le paiement ?" [ref=e1086] [cursor=pointer]:
+              - generic [ref=e1087]: Comment se passe le paiement ?
+              - img [ref=e1088]
+          - generic [ref=e1090]: "Le paiement se fait en 2 fois : 50% à la commande pour démarrer le projet, et 50% à la livraison une fois que vous êtes satisfait. Paiement par virement bancaire. Le paiement par carte sera bientôt disponible en ligne. Facture fournie. Pour les projets à partir de 1 500€, un paiement en 3 fois est possible sur demande."
+        - generic [ref=e1091]:
+          - heading "Je suis à Marie-Galante, Saint-Martin ou dans une commune éloignée, vous pouvez intervenir ?" [level=3] [ref=e1092]:
+            - button "Je suis à Marie-Galante, Saint-Martin ou dans une commune éloignée, vous pouvez intervenir ?" [ref=e1093] [cursor=pointer]:
+              - generic [ref=e1094]: Je suis à Marie-Galante, Saint-Martin ou dans une commune éloignée, vous pouvez intervenir ?
+              - img [ref=e1095]
+          - generic [ref=e1097]: "Absolument. SolYB intervient dans tout le 971 : Grande-Terre, Basse-Terre, Marie-Galante, Les Saintes, La Désirade, Saint-Martin et Saint-Barthélemy. Le travail se fait principalement à distance (visio, téléphone, email), ce qui permet d'accompagner efficacement des clients partout en Guadeloupe et dans les Caraïbes."
+        - generic [ref=e1098]:
+          - heading "Quelle est la différence entre un site vitrine et une application métier ?" [level=3] [ref=e1099]:
+            - button "Quelle est la différence entre un site vitrine et une application métier ?" [ref=e1100] [cursor=pointer]:
+              - generic [ref=e1101]: Quelle est la différence entre un site vitrine et une application métier ?
+              - img [ref=e1102]
+          - generic [ref=e1104]: "Un site vitrine présente votre activité au grand public pour générer des contacts et des appels (ex : page Accueil, Services, Contact). Une application métier est un outil interactif conçu pour un usage professionnel spécifique : gestion de réservations, commandes en ligne, espace client, caisse enregistreuse, planning partagé, etc. Si vous hésitez entre les deux, notre audit gratuit vous aidera à choisir."
+        - generic [ref=e1105]:
+          - heading "Mon site sera-t-il bien référencé sur Google Guadeloupe ?" [level=3] [ref=e1106]:
+            - button "Mon site sera-t-il bien référencé sur Google Guadeloupe ?" [ref=e1107] [cursor=pointer]:
+              - generic [ref=e1108]: Mon site sera-t-il bien référencé sur Google Guadeloupe ?
+              - img [ref=e1109]
+          - generic [ref=e1111]: "Chaque site inclut une optimisation SEO locale : structure technique optimisée, balises meta et Schema.org avec mention de la Guadeloupe, Pointe-à-Pitre, Basse-Terre et Les Abymes, vitesse de chargement, compatibilité mobile. Pour dominer Google localement avec 0 notoriété, on recommande en plus : une fiche Google My Business, des articles de blog ciblés et des citations locales (Pages Jaunes). Des offres dédiées sont disponibles."
+      - generic [ref=e1112]:
+        - paragraph [ref=e1113]: Vous avez d'autres questions ?
+        - link "Contactez-moi directement" [ref=e1114] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e1115]: Contactez-moi directement
+    - generic [ref=e1117]:
+      - generic [ref=e1118]:
+        - heading "Parlons de votre projet" [level=2] [ref=e1119]
+        - paragraph [ref=e1120]: Remplissez le formulaire — nous vous recontactons sous 24h maximum, où que vous soyez en Guadeloupe.
+      - generic [ref=e1121]:
+        - generic [ref=e1122]:
+          - generic [ref=e1123]:
+            - heading "Informations Contact" [level=3] [ref=e1124]
+            - generic [ref=e1125]:
+              - generic [ref=e1126]:
+                - img [ref=e1128]
+                - generic [ref=e1131]:
+                  - generic [ref=e1132]: Email
+                  - link "contact@solyb.fr" [ref=e1133] [cursor=pointer]:
+                    - /url: mailto:contact@solyb.fr
+              - generic [ref=e1134]:
+                - img [ref=e1136]
+                - generic [ref=e1138]:
+                  - generic [ref=e1139]: Téléphone
+                  - link "+590 690 71 17 69" [ref=e1140] [cursor=pointer]:
+                    - /url: tel:+590690711769
+              - generic [ref=e1141]:
+                - img [ref=e1143]
+                - generic [ref=e1146]:
+                  - generic [ref=e1147]: Localisation
+                  - text: Baie-Mahault, Guadeloupe 971
+              - generic [ref=e1148]:
+                - img [ref=e1150]
+                - generic [ref=e1153]:
+                  - generic [ref=e1154]: Disponibilité
+                  - text: Lun-Ven 9h-18h · Sam 10h-17h
+          - generic [ref=e1155]:
+            - heading "Zone d'intervention" [level=4] [ref=e1156]
+            - generic [ref=e1157]:
+              - generic [ref=e1158]: Grande-Terre
+              - generic [ref=e1159]: Basse-Terre
+              - generic [ref=e1160]: Les Abymes
+              - generic [ref=e1161]: Pointe-à-Pitre
+              - generic [ref=e1162]: Baie-Mahault
+              - generic [ref=e1163]: Marie-Galante
+              - generic [ref=e1164]: Saint-Martin
+              - generic [ref=e1165]: Saint-Barthélemy
+          - list [ref=e1167]:
+            - listitem [ref=e1168]: Réponse garantie sous 24h
+            - listitem [ref=e1170]: Aucun engagement
+            - listitem [ref=e1172]: Devis gratuit personnalisé
+            - listitem [ref=e1174]: Expert local Guadeloupe
+        - generic [ref=e1177]:
+          - generic [ref=e1179]:
+            - generic [ref=e1180]: Étape 1 sur 2
+            - generic [ref=e1181]: Vos informations
+          - generic [ref=e1185]:
+            - generic [ref=e1186]:
+              - img [ref=e1188]
+              - heading "Parlons de vous" [level=3] [ref=e1191]
+              - paragraph [ref=e1192]: 3 informations pour commencer
+            - generic [ref=e1193]:
+              - generic [ref=e1194]: Votre nom *
+              - textbox "Jean Dupont" [ref=e1195]
+            - generic [ref=e1196]:
+              - generic [ref=e1197]: Votre email *
+              - textbox "jean@exemple.fr" [ref=e1198]
+            - generic [ref=e1199]:
+              - generic [ref=e1200]: Type de projet *
+              - generic [ref=e1201]:
+                - generic [ref=e1202] [cursor=pointer]:
+                  - radio "Site Vitrine 599€" [ref=e1203]
+                  - img [ref=e1204]
+                  - generic [ref=e1207]: Site Vitrine
+                  - generic [ref=e1208]: 599€
+                - generic [ref=e1209] [cursor=pointer]:
+                  - radio "E-commerce 999€" [ref=e1210]
+                  - img [ref=e1211]
+                  - generic [ref=e1215]: E-commerce
+                  - generic [ref=e1216]: 999€
+                - generic [ref=e1217] [cursor=pointer]:
+                  - radio "Facturation Élec. Audit gratuit" [ref=e1218]
+                  - img [ref=e1219]
+                  - generic [ref=e1223]: Facturation Élec.
+                  - generic [ref=e1224]: Audit gratuit
+                - generic [ref=e1225] [cursor=pointer]:
+                  - radio "Application Sur devis" [ref=e1226]
+                  - img [ref=e1227]
+                  - generic [ref=e1229]: Application
+                  - generic [ref=e1230]: Sur devis
+                - generic [ref=e1231] [cursor=pointer]:
+                  - radio "SaaS / Marketplace Sur devis" [ref=e1232]
+                  - img [ref=e1233]
+                  - generic [ref=e1235]: SaaS / Marketplace
+                  - generic [ref=e1236]: Sur devis
+                - generic [ref=e1237] [cursor=pointer]:
+                  - radio "Sur mesure Sur devis" [ref=e1238]
+                  - img [ref=e1239]
+                  - generic [ref=e1243]: Sur mesure
+                  - generic [ref=e1244]: Sur devis
+            - button "Continuer" [ref=e1245] [cursor=pointer]:
+              - text: Continuer
+              - img [ref=e1246]
+          - generic [ref=e1248]:
+            - generic [ref=e1249]:
+              - img [ref=e1250]
+              - text: Réponse sous 24h
+            - generic [ref=e1253]:
+              - img [ref=e1254]
+              - text: Devis gratuit
+            - generic [ref=e1257]:
+              - img [ref=e1258]
+              - text: Sans engagement
+  - contentinfo [ref=e1261]:
+    - generic [ref=e1262]:
+      - generic [ref=e1263]:
+        - generic [ref=e1264]:
+          - generic [ref=e1265] [cursor=pointer]:
+            - img "SolYB" [ref=e1266]
+            - generic [ref=e1267]: SolYB
+          - paragraph [ref=e1268]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e1269]: Expert local 971
+        - generic [ref=e1271]:
+          - heading "Navigation" [level=3] [ref=e1272]
+          - list [ref=e1273]:
+            - listitem [ref=e1274]:
+              - link "Nos services" [ref=e1275] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e1276]:
+              - link "Réalisations" [ref=e1277] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e1278]:
+              - link "Nos tarifs" [ref=e1279] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e1280]:
+              - link "L'équipe" [ref=e1281] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e1282]:
+              - link "Parlons-en" [ref=e1283] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e1284]:
+          - heading "Services" [level=3] [ref=e1285]
+          - list [ref=e1286]:
+            - listitem [ref=e1287]: Sites web sur-mesure
+            - listitem [ref=e1288]: Applications métier
+            - listitem [ref=e1289]:
+              - link "Facturation électronique 2026" [ref=e1290] [cursor=pointer]:
+                - /url: /facturation-electronique
+            - listitem [ref=e1291]:
+              - link "ResaGP — Gestion restaurant" [ref=e1292] [cursor=pointer]:
+                - /url: /resagp
+            - listitem [ref=e1293]: E-commerce
+            - listitem [ref=e1294]: Maintenance & support
+        - generic [ref=e1295]:
+          - heading "Contact" [level=3] [ref=e1296]
+          - list [ref=e1297]:
+            - listitem [ref=e1298]:
+              - img [ref=e1299]
+              - link "contact@solyb.fr" [ref=e1302] [cursor=pointer]:
+                - /url: mailto:contact@solyb.fr
+            - listitem [ref=e1303]:
+              - img [ref=e1304]
+              - link "+590 690 71 17 69" [ref=e1306] [cursor=pointer]:
+                - /url: tel:+590690711769
+            - listitem [ref=e1307]:
+              - img [ref=e1308]
+              - generic [ref=e1311]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e1312]:
+              - img [ref=e1313]
+              - link "LinkedIn" [ref=e1317] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e1319]:
+        - paragraph [ref=e1320]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e1321]:
+          - link "Mentions légales" [ref=e1322] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e1323] [cursor=pointer]:
+            - /url: /confidentialite

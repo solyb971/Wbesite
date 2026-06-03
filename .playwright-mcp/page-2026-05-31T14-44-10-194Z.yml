@@ -1,0 +1,198 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+        - /url: /admin
+        - img "SolYB" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: SolYB
+          - generic [ref=e10]: CRM Pro
+      - generic [ref=e11]:
+        - generic [ref=e12]: Vos Produits
+        - generic [ref=e13]:
+          - link "SolYB Agence" [ref=e14] [cursor=pointer]:
+            - /url: /admin
+            - img [ref=e16]
+            - generic [ref=e18]: SolYB Agence
+          - link "FactuGP" [ref=e20] [cursor=pointer]:
+            - /url: /facturation-electronique
+            - img [ref=e22]
+            - generic [ref=e26]: FactuGP
+            - img [ref=e27]
+          - link "ResaGP" [ref=e29] [cursor=pointer]:
+            - /url: /resagp
+            - img [ref=e31]
+            - generic [ref=e36]: ResaGP
+            - img [ref=e37]
+      - generic [ref=e40]:
+        - generic [ref=e41]: Navigation
+        - navigation [ref=e42]:
+          - link "Pipeline / Leads" [ref=e43] [cursor=pointer]:
+            - /url: /admin
+            - img [ref=e44]
+            - generic [ref=e49]: Pipeline / Leads
+          - link "Planning" [ref=e50] [cursor=pointer]:
+            - /url: /admin/planning
+            - img [ref=e51]
+            - generic [ref=e53]: Planning
+          - link "Analytics" [ref=e54] [cursor=pointer]:
+            - /url: /admin/analytics
+            - img [ref=e55]
+            - generic [ref=e57]: Analytics
+          - link "Templates Email" [ref=e58] [cursor=pointer]:
+            - /url: /admin/templates
+            - img [ref=e59]
+            - generic [ref=e62]: Templates Email
+          - link "Paramètres" [ref=e63] [cursor=pointer]:
+            - /url: /admin/settings
+            - img [ref=e64]
+            - generic [ref=e67]: Paramètres
+      - generic [ref=e69]:
+        - generic [ref=e71]: "Y"
+        - generic [ref=e72]:
+          - generic [ref=e73]: Yacine B.
+          - generic [ref=e74]: v2.0 · Admin
+    - generic [ref=e75]:
+      - navigation [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e79]:
+            - heading "Analytics" [level=1] [ref=e80]
+            - paragraph [ref=e81]: Performances multi-produits
+          - generic [ref=e84]: Live
+          - generic [ref=e85]:
+            - button [ref=e87] [cursor=pointer]:
+              - img [ref=e88]
+            - button "Y Yacine" [ref=e93] [cursor=pointer]:
+              - generic [ref=e95]: "Y"
+              - generic [ref=e96]: Yacine
+      - main [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e100]:
+            - heading "Analytics" [level=1] [ref=e101]
+            - paragraph [ref=e102]: Performances multi-produits en temps réel
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - img [ref=e106]
+                - generic [ref=e111]: Leads totaux
+              - generic [ref=e112]: "0"
+              - generic [ref=e113]: tous produits
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - img [ref=e116]
+                - generic [ref=e118]: CA total réalisé
+              - generic [ref=e119]: 0€
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - img [ref=e122]
+                - generic [ref=e125]: Pipeline global
+              - generic [ref=e126]: 0€
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - img [ref=e129]
+                - generic [ref=e133]: Conv. globale
+              - generic [ref=e134]: 0%
+          - generic [ref=e135]:
+            - button "SolYB Agence 0 leads 0% conv." [ref=e136] [cursor=pointer]:
+              - generic [ref=e137]:
+                - img [ref=e139]
+                - generic [ref=e141]: SolYB Agence
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - generic [ref=e144]: "0"
+                  - generic [ref=e145]: leads
+                - generic [ref=e146]:
+                  - generic [ref=e147]: 0%
+                  - generic [ref=e148]: conv.
+            - button "FactuGP 0 leads 0% conv." [ref=e149] [cursor=pointer]:
+              - generic [ref=e150]:
+                - img [ref=e152]
+                - generic [ref=e156]: FactuGP
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]: "0"
+                  - generic [ref=e160]: leads
+                - generic [ref=e161]:
+                  - generic [ref=e162]: 0%
+                  - generic [ref=e163]: conv.
+            - button "ResaGP 0 leads 0% conv." [ref=e164] [cursor=pointer]:
+              - generic [ref=e165]:
+                - img [ref=e167]
+                - generic [ref=e172]: ResaGP
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]: "0"
+                  - generic [ref=e176]: leads
+                - generic [ref=e177]:
+                  - generic [ref=e178]: 0%
+                  - generic [ref=e179]: conv.
+          - generic [ref=e180]:
+            - button "Vue globale" [ref=e181] [cursor=pointer]:
+              - img [ref=e182]
+              - text: Vue globale
+            - button "SolYB Agence" [ref=e187] [cursor=pointer]:
+              - img [ref=e188]
+              - text: SolYB Agence
+            - button "FactuGP" [ref=e190] [cursor=pointer]:
+              - img [ref=e191]
+              - text: FactuGP
+            - button "ResaGP" [ref=e195] [cursor=pointer]:
+              - img [ref=e196]
+              - text: ResaGP
+          - generic [ref=e201]:
+            - generic [ref=e204]:
+              - generic [ref=e205]:
+                - generic [ref=e206]:
+                  - img [ref=e207]
+                  - generic [ref=e212]: Total leads
+                - generic [ref=e213]: "0"
+              - generic [ref=e214]:
+                - generic [ref=e215]:
+                  - img [ref=e216]
+                  - generic [ref=e218]: CA réalisé
+                - generic [ref=e219]: 0€
+                - generic [ref=e220]: leads gagnés
+              - generic [ref=e221]:
+                - generic [ref=e222]:
+                  - img [ref=e223]
+                  - generic [ref=e226]: Pipeline
+                - generic [ref=e227]: 0€
+                - generic [ref=e228]: en cours
+              - generic [ref=e229]:
+                - generic [ref=e230]:
+                  - img [ref=e231]
+                  - generic [ref=e235]: Taux conv.
+                - generic [ref=e236]: 0%
+                - generic [ref=e237]: 0 gagnés
+              - generic [ref=e238]:
+                - generic [ref=e239]:
+                  - img [ref=e240]
+                  - generic [ref=e243]: Gagnés
+                - generic [ref=e244]: "0"
+            - generic [ref=e245]:
+              - generic [ref=e246]:
+                - heading "Funnel de conversion" [level=3] [ref=e247]
+                - generic [ref=e248]:
+                  - generic [ref=e249]:
+                    - generic [ref=e250]: Nouveau
+                    - generic [ref=e253]: 0%
+                  - generic [ref=e254]:
+                    - generic [ref=e255]: Contact
+                    - generic [ref=e258]: 0%
+                  - generic [ref=e259]:
+                    - generic [ref=e260]: Devis
+                    - generic [ref=e263]: 0%
+                  - generic [ref=e264]:
+                    - generic [ref=e265]: Gagné
+                    - generic [ref=e268]: 0%
+                  - generic [ref=e269]:
+                    - generic [ref=e270]: Perdu
+                    - generic [ref=e273]: 0%
+              - generic [ref=e274]:
+                - heading "Sources des leads" [level=3] [ref=e275]
+                - generic [ref=e276]:
+                  - generic [ref=e277]: ∅
+                  - paragraph [ref=e278]: Aucune donnée disponible
+  - button "Open Next.js Dev Tools" [ref=e284] [cursor=pointer]:
+    - img [ref=e285]
+  - alert [ref=e288]

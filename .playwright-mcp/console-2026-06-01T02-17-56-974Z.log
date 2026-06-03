@@ -1,0 +1,66 @@
+[    5054ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3001/:0
+[    5476ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[    5644ms] Error: Cannot find module './5611.js'
+Require stack:
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\webpack-runtime.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\pages\_document.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\require.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\load-components.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\utils.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\swc\options.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\swc\index.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\next-config-ts\transpile-config.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\config.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\next.js
+- C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\lib\start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\require-hook.js:57:36)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at __webpack_require__.f.require (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\webpack-runtime.js:190:28)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\webpack-runtime.js:103:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\webpack-runtime.js:102:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\webpack-runtime.js:154:22)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\pages\_document.js:1:327)
+    at Object.<anonymous> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\.next\server\pages\_document.js:1:374)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+    at requirePage (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\require.js:99:80)
+    at loadComponentsImpl (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\load-components.js:86:38)
+    at DevServer.findPageComponentsImpl (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\next-server.js:899:77)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\next-server.js:877:21)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\lib\trace\tracer.js:170:36)
+    at NoopContextManager.with (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NoopTracer.startActiveSpan (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18093)
+    at ProxyTracer.startActiveSpan (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18854)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\lib\trace\tracer.js:152:103)
+    at NoopContextManager.with (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NextTracerImpl.trace (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\lib\trace\tracer.js:152:28)
+    at DevServer.findPageComponents (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\next-server.js:872:41)
+    at DevServer.findPageComponents (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\dev\next-dev-server.js:705:28)
+    at async DevServer.renderErrorToResponseImpl (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\base-server.js:1687:26)
+    at async pipe.req.req (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\base-server.js:1610:30)
+    at async DevServer.pipeImpl (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\base-server.js:1025:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\next-server.js:408:21)
+    at async DevServer.handleRequestImpl (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\base-server.js:916:17)
+    at async (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\dev\next-dev-server.js:399:20)
+    at async Span.traceAsyncFn (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\trace\trace.js:157:20)
+    at async DevServer.handleRequest (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\server\dev\next-dev-server.js:395:24)
+[    5644ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45

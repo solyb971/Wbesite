@@ -1,0 +1,6 @@
+[   32418ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://play.google.com/log?format=json&hasfast=true:0
+[   32420ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData:0
+[   42272ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://play.google.com/log?format=json&hasfast=true:0
+[  517540ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ https://solyb-website.vercel.app/_next/static/chunks/app/(public)/layout-8e12311fe1732c67.js:0
+[  579901ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://solyb-website.vercel.app/mentions-legales?_rsc=1681w:0
+[  579902ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://solyb-website.vercel.app/confidentialite?_rsc=1681w:0

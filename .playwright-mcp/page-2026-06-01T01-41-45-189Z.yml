@@ -1,0 +1,152 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - generic [ref=e8]: Facturation électronique 2026 — anticipez !
+        - link "En savoir plus →" [ref=e9] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - navigation [ref=e14]:
+      - generic [ref=e16]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e18]
+        - button "Ouvrir le menu" [ref=e19] [cursor=pointer]:
+          - img [ref=e20]
+      - generic [ref=e22]:
+        - link "Nos services" [ref=e23] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e24] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e25] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e26] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e27] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e28] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=e29]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - img [ref=e33]
+        - text: Ressources & Guides
+      - heading "Blog Création Site Web en Guadeloupe" [level=1] [ref=e35]:
+        - text: Blog Création Site Web
+        - text: en Guadeloupe
+      - paragraph [ref=e36]: Guides pratiques, comparatifs et conseils pour entrepreneurs guadeloupéens qui souhaitent se lancer sur le web.
+    - generic [ref=e38]:
+      - article [ref=e39]:
+        - img [ref=e41]
+        - generic [ref=e43]:
+          - generic [ref=e44]: Prix & Tarifs
+          - 'heading "Prix Création Site Web en Guadeloupe : Le Guide Complet 2026" [level=2] [ref=e45]'
+          - paragraph [ref=e46]: Découvrez les vrais prix du marché guadeloupéen. Comparatif complet des agences, freelances et solutions DIY. De 599€ à 15 000€.
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - img [ref=e50]
+                - text: 26 décembre 2024
+              - generic [ref=e52]:
+                - img [ref=e53]
+                - text: 12 min
+            - link "Lire" [ref=e56] [cursor=pointer]:
+              - /url: /blog/prix-site-web-guadeloupe
+              - text: Lire
+              - img [ref=e57]
+      - article [ref=e59]:
+        - img [ref=e61]
+        - generic [ref=e63]:
+          - generic [ref=e64]: Guides
+          - 'heading "Application Web vs Site Web : Quelle Différence en Guadeloupe ?" [level=2] [ref=e65]'
+          - paragraph [ref=e66]: Site web ou application web ? Découvrez les différences, avantages et inconvénients pour faire le bon choix pour votre entreprise.
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - img [ref=e70]
+                - text: 26 décembre 2024
+              - generic [ref=e72]:
+                - img [ref=e73]
+                - text: 10 min
+            - link "Lire" [ref=e76] [cursor=pointer]:
+              - /url: /blog/application-web-vs-site-web-guadeloupe
+              - text: Lire
+              - img [ref=e77]
+    - generic [ref=e80]:
+      - heading "Prêt à créer votre site web ?" [level=2] [ref=e81]
+      - paragraph [ref=e82]: Site professionnel livré en 2 semaines à partir de 599€.
+      - link "Demander un devis gratuit" [ref=e83] [cursor=pointer]:
+        - /url: /#contact
+        - generic [ref=e84]:
+          - text: Demander un devis gratuit
+          - img [ref=e85]
+  - contentinfo [ref=e87]:
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91] [cursor=pointer]:
+            - img "SolYB" [ref=e92]
+            - generic [ref=e93]: SolYB
+          - paragraph [ref=e94]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e95]: Expert local 971
+        - generic [ref=e97]:
+          - heading "Navigation" [level=3] [ref=e98]
+          - list [ref=e99]:
+            - listitem [ref=e100]:
+              - link "Nos services" [ref=e101] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e102]:
+              - link "Réalisations" [ref=e103] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e104]:
+              - link "Nos tarifs" [ref=e105] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e106]:
+              - link "L'équipe" [ref=e107] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e108]:
+              - link "Parlons-en" [ref=e109] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e110]:
+          - heading "Services" [level=3] [ref=e111]
+          - list [ref=e112]:
+            - listitem [ref=e113]: Sites web sur-mesure
+            - listitem [ref=e114]: Applications métier
+            - listitem [ref=e115]:
+              - link "Facturation électronique 2026" [ref=e116] [cursor=pointer]:
+                - /url: /facturation-electronique
+            - listitem [ref=e117]:
+              - link "ResaGP — Gestion restaurant" [ref=e118] [cursor=pointer]:
+                - /url: /resagp
+            - listitem [ref=e119]: E-commerce
+            - listitem [ref=e120]: Maintenance & support
+        - generic [ref=e121]:
+          - heading "Contact" [level=3] [ref=e122]
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - img [ref=e125]
+              - link "contact@solyb.gp" [ref=e128] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e129]:
+              - img [ref=e130]
+              - link "+590 690 XX XX XX" [ref=e132] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e133]:
+              - img [ref=e134]
+              - generic [ref=e137]: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e138]:
+              - img [ref=e139]
+              - link "LinkedIn" [ref=e143] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e145]:
+        - paragraph [ref=e146]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e147]:
+          - link "Mentions légales" [ref=e148] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e149] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e151] [cursor=pointer]:
+    - img [ref=e152]

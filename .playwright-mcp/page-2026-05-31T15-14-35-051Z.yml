@@ -1,0 +1,68 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+      - /url: /admin
+      - img "SolYB" [ref=e7]
+      - generic [ref=e8]:
+        - generic [ref=e9]: SolYB
+        - generic [ref=e10]: CRM Pro
+    - generic [ref=e11]:
+      - generic [ref=e12]: Vos Produits
+      - generic [ref=e13]:
+        - link "SolYB Agence" [ref=e14] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e16]
+          - generic [ref=e18]: SolYB Agence
+        - link "FactuGP" [ref=e20] [cursor=pointer]:
+          - /url: /facturation-electronique
+          - img [ref=e22]
+          - generic [ref=e26]: FactuGP
+          - img [ref=e27]
+        - link "ResaGP" [ref=e29] [cursor=pointer]:
+          - /url: /resagp
+          - img [ref=e31]
+          - generic [ref=e36]: ResaGP
+          - img [ref=e37]
+    - generic [ref=e40]:
+      - generic [ref=e41]: Navigation
+      - navigation [ref=e42]:
+        - link "Pipeline / Leads" [ref=e43] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e44]
+          - generic [ref=e49]: Pipeline / Leads
+        - link "Planning" [ref=e50] [cursor=pointer]:
+          - /url: /admin/planning
+          - img [ref=e51]
+          - generic [ref=e53]: Planning
+        - link "Analytics" [ref=e54] [cursor=pointer]:
+          - /url: /admin/analytics
+          - img [ref=e55]
+          - generic [ref=e57]: Analytics
+        - link "Templates Email" [ref=e58] [cursor=pointer]:
+          - /url: /admin/templates
+          - img [ref=e59]
+          - generic [ref=e62]: Templates Email
+        - link "Paramètres" [ref=e63] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=e64]
+          - generic [ref=e67]: Paramètres
+    - generic [ref=e69]:
+      - generic [ref=e71]: "Y"
+      - generic [ref=e72]:
+        - generic [ref=e73]: Yacine B.
+        - generic [ref=e74]: v2.0 · Admin
+  - generic [ref=e75]:
+    - navigation [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e79]:
+          - heading "Pipeline" [level=1] [ref=e80]
+          - paragraph [ref=e81]: Leads & opportunités
+        - generic [ref=e84]: Live
+        - generic [ref=e85]:
+          - button [ref=e87] [cursor=pointer]:
+            - img [ref=e88]
+          - button "Y Yacine" [ref=e93] [cursor=pointer]:
+            - generic [ref=e95]: "Y"
+            - generic [ref=e96]: Yacine
+    - main [ref=e97]:
+      - paragraph [ref=e101]: Chargement...

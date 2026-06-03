@@ -1,0 +1,5 @@
+[ 1706427ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ https://solyb-website.vercel.app/_next/static/chunks/app/(public)/layout-8e12311fe1732c67.js:0
+[ 1884847ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://solyb-website.vercel.app/facturation:0
+[ 2710796ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ https://solyb-website.vercel.app/_next/static/chunks/app/(public)/layout-8e12311fe1732c67.js:0
+[ 2913132ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ https://solyb-website.vercel.app/_next/static/chunks/app/(public)/layout-8e12311fe1732c67.js:0
+[ 2994272ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ https://solyb-website.vercel.app/_next/static/chunks/app/(public)/layout-8e12311fe1732c67.js:0

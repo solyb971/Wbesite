@@ -1,0 +1,7 @@
+[     832ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[    5039ms] [LOG] [Fast Refresh] done in 4208ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[    6616ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[    6906ms] [WARNING] Image with src "/logo/SolYB_PNG_PACK_FINAL/01_Master_Color_Transparent/SolYB_color_transparent_512.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[    7023ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wjpdhkaoppccviqcridk.supabase.co/rest/v1/leads?select=*:0
+[    7025ms] [ERROR] Error fetching analytics: {message: TypeError: Failed to fetch, details: TypeError: Failed to fetch
+    at eval (webpack-in…rowser)/./src/app/admin/analytics/page.tsx:44:52), hint: , code: } @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56

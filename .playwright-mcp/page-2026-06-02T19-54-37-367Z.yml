@@ -1,0 +1,191 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - link "SolYB SolYB CRM Pro" [ref=e5] [cursor=pointer]:
+      - /url: /admin
+      - img "SolYB" [ref=e7]
+      - generic [ref=e8]:
+        - generic [ref=e9]: SolYB
+        - generic [ref=e10]: CRM Pro
+    - generic [ref=e11]:
+      - generic [ref=e12]: Vos Produits
+      - generic [ref=e13]:
+        - link "SolYB Agence" [ref=e14] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e16]
+          - generic [ref=e18]: SolYB Agence
+        - link "FactuGP" [ref=e20] [cursor=pointer]:
+          - /url: /facturation-electronique
+          - img [ref=e22]
+          - generic [ref=e26]: FactuGP
+          - img [ref=e27]
+        - link "ResaGP" [ref=e29] [cursor=pointer]:
+          - /url: /resagp
+          - img [ref=e31]
+          - generic [ref=e36]: ResaGP
+          - img [ref=e37]
+    - generic [ref=e40]:
+      - generic [ref=e41]: Navigation
+      - navigation [ref=e42]:
+        - link "Pipeline / Leads" [ref=e43] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e44]
+          - generic [ref=e49]: Pipeline / Leads
+        - link "Planning" [ref=e50] [cursor=pointer]:
+          - /url: /admin/planning
+          - img [ref=e51]
+          - generic [ref=e53]: Planning
+        - link "Analytics" [ref=e54] [cursor=pointer]:
+          - /url: /admin/analytics
+          - img [ref=e55]
+          - generic [ref=e57]: Analytics
+        - link "Templates Email" [ref=e58] [cursor=pointer]:
+          - /url: /admin/templates
+          - img [ref=e59]
+          - generic [ref=e62]: Templates Email
+        - link "Paramètres" [ref=e63] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=e64]
+          - generic [ref=e67]: Paramètres
+    - generic [ref=e69]:
+      - generic [ref=e71]: "Y"
+      - generic [ref=e72]:
+        - generic [ref=e73]: Yacine B.
+        - generic [ref=e74]: v2.0 · Admin
+  - generic [ref=e75]:
+    - navigation [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e79]:
+          - heading "Planning" [level=1] [ref=e80]
+          - paragraph [ref=e81]: Capacité & agenda
+        - generic [ref=e84]: Live
+        - generic [ref=e85]:
+          - button [ref=e87] [cursor=pointer]:
+            - img [ref=e88]
+          - button "Y Yacine" [ref=e93] [cursor=pointer]:
+            - generic [ref=e95]: "Y"
+            - generic [ref=e96]: Yacine
+    - main [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - heading "Planning" [level=1] [ref=e101]
+            - paragraph [ref=e102]: Gérez votre emploi du temps et votre charge de travail
+          - button "Nouvel événement" [ref=e103] [cursor=pointer]:
+            - img [ref=e104]
+            - text: Nouvel événement
+        - generic [ref=e105]:
+          - generic [ref=e107]:
+            - heading "Charge de travail" [level=2] [ref=e108]
+            - paragraph [ref=e109]:
+              - text: Semaine du 1 juin au 7 juin 2026
+              - img [ref=e110]
+          - generic [ref=e112]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: "Utilisé: 0h / 20h disponibles"
+              - generic [ref=e116]: 0% • Normal
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - generic [ref=e120]: 20h
+                - generic [ref=e121]: Disponible
+              - generic [ref=e122]:
+                - generic [ref=e123]: 0h
+                - generic [ref=e124]: Utilisé
+              - generic [ref=e125]:
+                - generic [ref=e126]: 20h
+                - generic [ref=e127]: Restant
+        - generic [ref=e128]:
+          - button "Semaine précédente" [ref=e129] [cursor=pointer]:
+            - img [ref=e130]
+            - text: Semaine précédente
+          - generic [ref=e132]:
+            - img [ref=e133]
+            - generic [ref=e135]: 1 juin — 7 juin 2026
+          - generic [ref=e136]:
+            - button "Aujourd'hui" [ref=e137] [cursor=pointer]
+            - button "Semaine suivante" [ref=e138] [cursor=pointer]:
+              - text: Semaine suivante
+              - img [ref=e139]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - text: Chargement des événements...
+          - table [ref=e146]:
+            - rowgroup [ref=e147]:
+              - row "Période lun. 1 mar. 2 mer. 3 jeu. 4 ven. 5 sam. 6 dim. 7" [ref=e148]:
+                - columnheader "Période" [ref=e149]
+                - columnheader "lun. 1" [ref=e150]:
+                  - generic [ref=e151]: lun.
+                  - generic [ref=e152]: "1"
+                - columnheader "mar. 2" [ref=e153]:
+                  - generic [ref=e154]: mar.
+                  - generic [ref=e155]: "2"
+                - columnheader "mer. 3" [ref=e156]:
+                  - generic [ref=e157]: mer.
+                  - generic [ref=e158]: "3"
+                - columnheader "jeu. 4" [ref=e159]:
+                  - generic [ref=e160]: jeu.
+                  - generic [ref=e161]: "4"
+                - columnheader "ven. 5" [ref=e162]:
+                  - generic [ref=e163]: ven.
+                  - generic [ref=e164]: "5"
+                - columnheader "sam. 6" [ref=e165]:
+                  - generic [ref=e166]: sam.
+                  - generic [ref=e167]: "6"
+                - columnheader "dim. 7" [ref=e168]:
+                  - generic [ref=e169]: dim.
+                  - generic [ref=e170]: "7"
+            - rowgroup [ref=e171]:
+              - row "Matin 6h–12h Libre Libre Libre Libre Libre Libre Libre" [ref=e172]:
+                - cell "Matin 6h–12h" [ref=e173]:
+                  - generic [ref=e174]: Matin
+                  - generic [ref=e175]: 6h–12h
+                - cell "Libre" [ref=e176]:
+                  - generic [ref=e177] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e178]:
+                  - generic [ref=e179] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e180]:
+                  - generic [ref=e181] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e182]:
+                  - generic [ref=e183] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e184]:
+                  - generic [ref=e185] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e186]:
+                  - generic [ref=e187] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e188]:
+                  - generic [ref=e189] [cursor=pointer]: Libre
+              - row "Après-midi 12h–18h Libre Libre Libre Libre Libre Libre Libre" [ref=e190]:
+                - cell "Après-midi 12h–18h" [ref=e191]:
+                  - generic [ref=e192]: Après-midi
+                  - generic [ref=e193]: 12h–18h
+                - cell "Libre" [ref=e194]:
+                  - generic [ref=e195] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e196]:
+                  - generic [ref=e197] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e198]:
+                  - generic [ref=e199] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e200]:
+                  - generic [ref=e201] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e202]:
+                  - generic [ref=e203] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e204]:
+                  - generic [ref=e205] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e206]:
+                  - generic [ref=e207] [cursor=pointer]: Libre
+              - row "Soirée 18h–21h Libre Libre Libre Libre Libre Libre Libre" [ref=e208]:
+                - cell "Soirée 18h–21h" [ref=e209]:
+                  - generic [ref=e210]: Soirée
+                  - generic [ref=e211]: 18h–21h
+                - cell "Libre" [ref=e212]:
+                  - generic [ref=e213] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e214]:
+                  - generic [ref=e215] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e216]:
+                  - generic [ref=e217] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e218]:
+                  - generic [ref=e219] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e220]:
+                  - generic [ref=e221] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e222]:
+                  - generic [ref=e223] [cursor=pointer]: Libre
+                - cell "Libre" [ref=e224]:
+                  - generic [ref=e225] [cursor=pointer]: Libre

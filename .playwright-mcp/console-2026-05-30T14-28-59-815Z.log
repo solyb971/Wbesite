@@ -1,0 +1,49 @@
+[      76ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[     480ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[     524ms] ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   x Expected '</', got 'jsx text (
+  |       )'
+     ,-[C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\components\site\Process.tsx:202:1]
+ 199 |               >
+ 200 |                 <span className="relative z-10">Commencer maintenant</span>
+ 201 |               </a>
+ 202 | ,->         </div>
+ 203 | `->       </div>
+ 204 |         </section>
+ 205 |       )
+ 206 |     }
+     `----
+
+
+Caused by:
+    Syntax Error
+    at processResult (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\webpack\bundle5.js:29:407086)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\webpack\bundle5.js:29:408881)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:8645)
+    at <unknown> (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:5019)
+    at r.callback (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:4039)
+[     518ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[     523ms] [ERROR] ./src/components/site/Process.tsx
+Error:   x Expected '</', got 'jsx text (
+  |       )'
+     ,-[C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\components\site\Process.tsx:202:1]
+ 199 |               >
+ 200 |                 <span className="relative z-10">Commencer maintenant</span>
+ 201 |               </a>
+ 202 | ,->         </div>
+ 203 | `->       </div>
+ 204 |         </section>
+ 205 |       )
+ 206 |     }
+     `----
+
+Caused by:
+    Syntax Error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[     723ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[   19958ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[   19979ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/637b16f6a68ea3e1.webpack.hot-update.json:0
+[   19979ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[   22165ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/637b16f6a68ea3e1.webpack.hot-update.json:0
+[   22165ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[   22250ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/637b16f6a68ea3e1.webpack.hot-update.json:0
+[   22250ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347

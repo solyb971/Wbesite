@@ -1,0 +1,62 @@
+[    8114ms] [LOG] [Fast Refresh] done in 9859ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/report-hmr-latency.js:13
+[   13217ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[   15037ms] [WARNING] Image with src "/realisations/lds.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[   15131ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ webpack-internal:///(app-pages-browser)/./src/components/site/CrispChat.tsx:17
+[   15181ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ webpack-internal:///(app-pages-browser)/./src/components/site/CrispChat.tsx:17
+[   15484ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="(public)/p...">
+      <SegmentTrieNode>
+      <HomePage>
+        <script>
+        <script>
+        <script>
+        <HomePage>
+          <main className="min-h-scre...">
+            <section>
+            <div>
+            <StatsSection>
+            <Services>
+            <FacturationElectronique>
+            <Pricing>
+            <TrustBadges>
+            <Process>
+            <section>
+            <About>
+            <section>
+            <FAQ>
+            <Contact>
+              <section id="contact" className="py-16 md:p...">
+                ...
+                  <div className="reveal lg:..." data-reveal-index="2">
+                    <ContactFormMultiStep>
+                      <Suspense fallback={<div>}>
+                        <ContactFormInner>
+                          <div className="bg-[#13131...">
+                            <div>
+                            <form onSubmit={function}>
+                              <div className="space-y-6">
+                                <div>
+                                <div>
+                                <div>
+                                <div>
+                                <button
+                                  type="button"
+                                  onClick={function nextStep}
+                                  className="w-full bg-coral hover:bg-coral-600 text-white px-8 py-4 rounded-xl font-s..."
+-                                 data-cursor-bound="1"
+                                >
+                            ...
+    ...
+ @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56

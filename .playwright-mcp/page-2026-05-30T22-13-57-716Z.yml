@@ -1,0 +1,310 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - img [ref=e6]
+          - text: "Facturation électronique : la réforme est en cours — anticipez dès maintenantFacturation électronique 2026 — anticipez !"
+        - link "En savoir plus →" [ref=e8] [cursor=pointer]:
+          - /url: "#facturation"
+      - button "Fermer" [ref=e9]:
+        - img [ref=e10]
+    - navigation [ref=e13]:
+      - generic [ref=e15]:
+        - link "SolYB — Agence Digitale Guadeloupe" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - img "SolYB — Agence Digitale Guadeloupe" [ref=e17]
+        - generic [ref=e18]:
+          - link "Nos services" [ref=e19] [cursor=pointer]:
+            - /url: /#services
+          - link "Réalisations" [ref=e20] [cursor=pointer]:
+            - /url: /#realisations
+          - link "Nos tarifs" [ref=e21] [cursor=pointer]:
+            - /url: /#tarifs
+          - link "L'équipe" [ref=e22] [cursor=pointer]:
+            - /url: /#apropos
+          - link "Parlons-en" [ref=e23] [cursor=pointer]:
+            - /url: /#contact
+          - link "Audit gratuit" [ref=e24] [cursor=pointer]:
+            - /url: /#contact
+        - button "Ouvrir le menu" [ref=e25]:
+          - img [ref=e26]
+      - generic [ref=e28]:
+        - link "Nos services" [ref=e29] [cursor=pointer]:
+          - /url: /#services
+        - link "Réalisations" [ref=e30] [cursor=pointer]:
+          - /url: /#realisations
+        - link "Nos tarifs" [ref=e31] [cursor=pointer]:
+          - /url: /#tarifs
+        - link "L'équipe" [ref=e32] [cursor=pointer]:
+          - /url: /#apropos
+        - link "Parlons-en" [ref=e33] [cursor=pointer]:
+          - /url: /#contact
+        - link "Audit gratuit" [ref=e34] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - img [ref=e39]
+        - text: Offre de lancement -40%
+      - heading "Tarifs Transparents" [level=1] [ref=e41]
+      - paragraph [ref=e42]: Aucun frais caché. Le prix annoncé est le prix final, formation et support inclus.
+    - generic [ref=e45]:
+      - generic [ref=e47]:
+        - heading "Site Vitrine" [level=3] [ref=e48]
+        - paragraph [ref=e49]: Pour présenter votre activité
+        - generic [ref=e50]:
+          - generic [ref=e52]: 599€
+          - generic [ref=e53]:
+            - generic [ref=e54]: 999€
+            - generic [ref=e55]: Économisez 400€
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - img [ref=e58]
+            - text: Design moderne responsive
+          - listitem [ref=e60]:
+            - img [ref=e61]
+            - text: 5 pages personnalisées
+          - listitem [ref=e63]:
+            - img [ref=e64]
+            - text: Formulaire de contact
+          - listitem [ref=e66]:
+            - img [ref=e67]
+            - text: Optimisation SEO
+          - listitem [ref=e69]:
+            - img [ref=e70]
+            - text: Hébergement 1 an inclus
+          - listitem [ref=e72]:
+            - img [ref=e73]
+            - text: Formation 2h
+          - listitem [ref=e75]:
+            - img [ref=e76]
+            - text: 3 mois support inclus
+          - listitem [ref=e78]:
+            - img [ref=e79]
+            - text: Paiement en ligne
+          - listitem [ref=e82]:
+            - img [ref=e83]
+            - text: Gestion produits
+        - link "Choisir ce plan" [ref=e86] [cursor=pointer]:
+          - /url: /#contact
+          - text: Choisir ce plan
+          - img [ref=e87]
+      - generic [ref=e89]:
+        - generic [ref=e90]: ⭐ Le plus populaire
+        - generic [ref=e91]:
+          - heading "E-commerce" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Pour vendre en ligne
+          - generic [ref=e94]:
+            - generic [ref=e96]: 999€
+            - generic [ref=e97]:
+              - generic [ref=e98]: 1699€
+              - generic [ref=e99]: Économisez 700€
+          - list [ref=e100]:
+            - listitem [ref=e101]:
+              - img [ref=e102]
+              - text: Tout du Site Vitrine +
+            - listitem [ref=e104]:
+              - img [ref=e105]
+              - text: Boutique en ligne complète
+            - listitem [ref=e107]:
+              - img [ref=e108]
+              - text: Paiement sécurisé (Stripe)
+            - listitem [ref=e110]:
+              - img [ref=e111]
+              - text: Gestion catalogue produits
+            - listitem [ref=e113]:
+              - img [ref=e114]
+              - text: Suivi des commandes
+            - listitem [ref=e116]:
+              - img [ref=e117]
+              - text: Configuration livraison
+            - listitem [ref=e119]:
+              - img [ref=e120]
+              - text: Formation e-commerce 4h
+            - listitem [ref=e122]:
+              - img [ref=e123]
+              - text: 3 mois support inclus
+          - link "Choisir ce plan" [ref=e125] [cursor=pointer]:
+            - /url: /#contact
+            - text: Choisir ce plan
+            - img [ref=e126]
+      - generic [ref=e129]:
+        - heading "Maintenance" [level=3] [ref=e130]
+        - paragraph [ref=e131]: Gardez votre site à jour
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e134]: 99€
+            - text: /mois
+          - generic [ref=e135]:
+            - generic [ref=e136]: 149€
+            - generic [ref=e137]: Économisez 50€
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - img [ref=e140]
+            - text: Mises à jour mensuelles
+          - listitem [ref=e142]:
+            - img [ref=e143]
+            - text: Sauvegardes automatiques
+          - listitem [ref=e145]:
+            - img [ref=e146]
+            - text: Surveillance 24/7
+          - listitem [ref=e148]:
+            - img [ref=e149]
+            - text: Corrections bugs
+          - listitem [ref=e151]:
+            - img [ref=e152]
+            - text: Support prioritaire
+          - listitem [ref=e154]:
+            - img [ref=e155]
+            - text: Modifications mineures
+          - listitem [ref=e157]:
+            - img [ref=e158]
+            - text: Rapport mensuel
+          - listitem [ref=e160]:
+            - img [ref=e161]
+            - text: Refonte graphique
+          - listitem [ref=e164]:
+            - img [ref=e165]
+            - text: Nouvelles fonctionnalités
+        - link "Choisir ce plan" [ref=e168] [cursor=pointer]:
+          - /url: /#contact
+          - text: Choisir ce plan
+          - img [ref=e169]
+    - generic [ref=e172]:
+      - generic [ref=e173]:
+        - heading "Services Complémentaires" [level=2] [ref=e174]
+        - paragraph [ref=e175]: Boostez votre présence en ligne avec nos services additionnels
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - heading "Contenu IA" [level=3] [ref=e179]
+            - generic [ref=e180]:
+              - generic [ref=e181]: 150€/mois
+              - generic [ref=e182]: 250€/mois
+          - paragraph [ref=e183]: 20 posts réseaux sociaux + 4 articles blog par mois
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - heading "SEO Local" [level=3] [ref=e186]
+            - generic [ref=e187]:
+              - generic [ref=e188]: 199€/mois
+              - generic [ref=e189]: 299€/mois
+          - paragraph [ref=e190]: Optimisation pour apparaître dans les recherches Google en Guadeloupe
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - heading "Formation WordPress" [level=3] [ref=e193]
+            - generic [ref=e194]:
+              - generic [ref=e195]: 299€
+              - generic [ref=e196]: 499€
+          - paragraph [ref=e197]: Formation complète 6h pour gérer votre site en autonomie
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - heading "Refonte graphique" [level=3] [ref=e200]
+            - generic [ref=e201]:
+              - generic [ref=e202]: 399€
+              - generic [ref=e203]: 599€
+          - paragraph [ref=e204]: Nouveau design pour votre site existant
+    - generic [ref=e206]:
+      - heading "Nos Garanties" [level=2] [ref=e208]
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - img [ref=e212]
+          - heading "Livraison Garantie" [level=3] [ref=e215]
+          - paragraph [ref=e216]: Votre site livré dans les délais annoncés ou remboursé
+        - generic [ref=e217]:
+          - img [ref=e219]
+          - heading "Satisfaction 100%" [level=3] [ref=e221]
+          - paragraph [ref=e222]: Modifications illimitées jusqu'à validation complète
+        - generic [ref=e223]:
+          - img [ref=e225]
+          - heading "Support Inclus" [level=3] [ref=e227]
+          - paragraph [ref=e228]: 3 mois de support technique inclus après livraison
+    - generic [ref=e230]:
+      - heading "Questions Fréquentes" [level=2] [ref=e232]
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - heading "Y a-t-il des frais cachés ?" [level=3] [ref=e235]
+          - paragraph [ref=e236]: "Non, aucun frais caché. Le prix annoncé inclut : design, développement, hébergement 1 an, formation et 3 mois de support. Seul le nom de domaine (~15€/an) est à prévoir si vous n'en avez pas."
+        - generic [ref=e237]:
+          - heading "Quels sont les délais de livraison ?" [level=3] [ref=e238]
+          - paragraph [ref=e239]: "Site vitrine : 10-14 jours. E-commerce : 14-21 jours. Ces délais sont garantis dès validation du brief initial et réception des contenus (textes, images)."
+        - generic [ref=e240]:
+          - heading "Comment se passe le paiement ?" [level=3] [ref=e241]
+          - paragraph [ref=e242]: "Paiement en 2 fois : 50% à la validation du devis, 50% à la livraison finale. Paiement par virement bancaire ou Stripe (carte bleue)."
+        - generic [ref=e243]:
+          - heading "L'offre de lancement est valable combien de temps ?" [level=3] [ref=e244]
+          - paragraph [ref=e245]: L'offre est limitée aux 30 premiers clients. Actuellement, il reste des places disponibles. Contactez-moi vite pour en profiter !
+        - generic [ref=e246]:
+          - heading "Puis-je gérer mon site moi-même après ?" [level=3] [ref=e247]
+          - paragraph [ref=e248]: Oui ! Une formation complète est incluse pour que vous puissiez modifier textes, images et ajouter du contenu en toute autonomie. Je reste disponible pendant 3 mois pour vos questions.
+    - generic [ref=e250]:
+      - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e251]
+      - paragraph [ref=e252]: Demandez votre devis gratuit et personnalisé en moins de 2 minutes
+      - link "Obtenir mon devis gratuit" [ref=e253] [cursor=pointer]:
+        - /url: /#contact
+        - text: Obtenir mon devis gratuit
+        - img [ref=e254]
+      - paragraph [ref=e256]: Réponse sous 24h • Aucun engagement • Devis 100% gratuit
+  - contentinfo [ref=e257]:
+    - generic [ref=e258]:
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - img "SolYB" [ref=e262]
+            - generic [ref=e263]: SolYB
+          - paragraph [ref=e264]: Agence digitale en Guadeloupe — sites web sur-mesure, applications métier, facturation électronique 2026 et SaaS pour TPE/PME.
+          - generic [ref=e265]: Expert local 971
+        - generic [ref=e266]:
+          - heading "Navigation" [level=3] [ref=e267]
+          - list [ref=e268]:
+            - listitem [ref=e269]:
+              - link "Nos services" [ref=e270] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=e271]:
+              - link "Réalisations" [ref=e272] [cursor=pointer]:
+                - /url: /#realisations
+            - listitem [ref=e273]:
+              - link "Nos tarifs" [ref=e274] [cursor=pointer]:
+                - /url: /#tarifs
+            - listitem [ref=e275]:
+              - link "L'équipe" [ref=e276] [cursor=pointer]:
+                - /url: /#apropos
+            - listitem [ref=e277]:
+              - link "Parlons-en" [ref=e278] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=e279]:
+          - heading "Services" [level=3] [ref=e280]
+          - list [ref=e281]:
+            - listitem [ref=e282]: Sites web sur-mesure
+            - listitem [ref=e283]: Applications métier
+            - listitem [ref=e284]: Facturation électronique 2026
+            - listitem [ref=e285]: SaaS & Marketplace
+            - listitem [ref=e286]: E-commerce
+            - listitem [ref=e287]: Maintenance & support
+        - generic [ref=e288]:
+          - heading "Contact" [level=3] [ref=e289]
+          - list [ref=e290]:
+            - listitem [ref=e291]:
+              - img [ref=e292]
+              - link "contact@solyb.gp" [ref=e295] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e296]:
+              - img [ref=e297]
+              - link "+590 690 XX XX XX" [ref=e299] [cursor=pointer]:
+                - /url: tel:+590690000000
+            - listitem [ref=e300]:
+              - img [ref=e301]
+              - text: Baie-Mahault, Guadeloupe 971
+            - listitem [ref=e304]:
+              - img [ref=e305]
+              - link "LinkedIn" [ref=e309] [cursor=pointer]:
+                - /url: https://linkedin.com/in/yacine-bouhassoun
+      - generic [ref=e311]:
+        - paragraph [ref=e312]: © 2026 SolYB (Solutions by Yacine Bouhassoun) — Agence Digitale Guadeloupe. Tous droits réservés.
+        - generic [ref=e313]:
+          - link "Mentions légales" [ref=e314] [cursor=pointer]:
+            - /url: /mentions-legales
+          - link "Confidentialité" [ref=e315] [cursor=pointer]:
+            - /url: /confidentialite
+  - button [ref=e317]:
+    - img

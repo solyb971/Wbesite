@@ -1,0 +1,93 @@
+import { NextRequest, NextResponse } from "next/server"
+import { createClient } from "@/lib/supabase/server"
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json()
+    const { format = "csv", filters = {} } = body
+
+    const supabase = await createClient()
+
+    // Récupérer les leads avec filtres
+    let query = supabase.from("leads").select("*")
+
+    if (filters.status) {
+      query = query.in("status", Array.isArray(filters.status) ? filters.status : [filters.status])
+    }
+
+    if (filters.activity_type) {
+      query = query.eq("activity_type", filters.activity_type)
+    }
+
+    if (filters.date_range) {
+      query = query
+        .gte("created_at", filters.date_range.start)
+        .lte("created_at", filters.date_range.end)
+    }
+
+    const { data: leads, error } = await query
+
+    if (error) {
+      throw error
+    }
+
+    if (format === "csv") {
+      // Générer CSV
+      const headers = [
+        "ID",
+        "Nom",
+        "Email",
+        "Téléphone",
+        "Entreprise",
+        "Type Projet",
+        "Budget",
+        "Statut",
+        "Score",
+        "Source",
+        "Créé le",
+      ]
+
+      const csvRows = [
+        headers.join(","),
+        ...leads!.map((lead) =>
+          [
+            lead.id,
+            `"${lead.name}"`,
+            lead.email,
+            lead.phone || "",
+            `"${lead.company || ""}"`,
+            lead.project_type,
+            lead.budget || "",
+            lead.status,
+            lead.score_total,
+            lead.source || "",
+            new Date(lead.created_at).toLocaleDateString("fr-FR"),
+          ].join(",")
+        ),
+      ]
+
+      const csv = csvRows.join("\n")
+
+      return new NextResponse(csv, {
+        headers: {
+          "Content-Type": "text/csv",
+          "Content-Disposition": `attachment; filename="solyb_leads_${new Date().toISOString().split("T")[0]}.csv"`,
+        },
+      })
+    }
+
+    if (format === "json") {
+      return NextResponse.json({
+        success: true,
+        data: leads,
+        count: leads!.length,
+        exported_at: new Date().toISOString(),
+      })
+    }
+
+    return NextResponse.json({ error: "Format non supporté" }, { status: 400 })
+  } catch (error: any) {
+    console.error("Export error:", error)
+    return NextResponse.json({ error: error.message }, { status: 500 })
+  }
+}

@@ -1,0 +1,359 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - link "SolYB ResaGP" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img "SolYB" [ref=e8]
+        - generic [ref=e9]:
+          - text: Resa
+          - emphasis [ref=e10]: GP
+      - link "Essai gratuit 14 jours" [ref=e11] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Essai gratuit 14 jours
+        - img [ref=e12]
+  - generic [ref=e16]:
+    - generic [ref=e17]: Zéro commission · RGPD conforme · Guadeloupe
+    - heading "La gestion restaurant simplifiée pour vos clients" [level=1] [ref=e20]:
+      - text: La gestion restaurant
+      - generic [ref=e23]: simplifiée
+      - emphasis [ref=e24]: pour vos clients
+    - paragraph [ref=e25]: Alternative française à Zenchef et TheFork Manager. Sans commission, 100 % conforme RGPD, opérationnel en moins de 5 minutes.
+    - generic [ref=e26]:
+      - link "Démarrer l'essai gratuit" [ref=e27] [cursor=pointer]:
+        - /url: "#contact"
+        - img [ref=e28]
+        - text: Démarrer l'essai gratuit
+      - link "Voir les fonctionnalités" [ref=e31] [cursor=pointer]:
+        - /url: "#fonctionnalites"
+        - img [ref=e32]
+        - text: Voir les fonctionnalités
+    - generic [ref=e35]:
+      - generic [ref=e36]: Sans commission
+      - generic [ref=e38]: 14 jours gratuit
+      - generic [ref=e40]: RGPD · France
+      - generic [ref=e42]: Setup 5 min
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e47]: "9"
+      - generic [ref=e48]: Modules intégrés
+    - generic [ref=e49]:
+      - generic [ref=e50]: 5 min
+      - generic [ref=e51]: Pour être opérationnel
+    - generic [ref=e52]:
+      - generic [ref=e53]: 14j
+      - generic [ref=e54]: Essai gratuit sans CB
+    - generic [ref=e55]:
+      - generic [ref=e56]: 0%
+      - generic [ref=e57]: Commission par couvert
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - img [ref=e62]
+        - text: Fonctionnalités
+      - heading "Tout ce dont votre restaurant a besoin, sans superflu" [level=2] [ref=e65]:
+        - text: Tout ce dont votre restaurant
+        - text: a besoin, sans superflu
+      - paragraph [ref=e66]: De la réservation à l'encaissement — un seul outil, accessible sur ordinateur, tablette et smartphone. Fini les logiciels en patchwork.
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]: "01"
+        - img [ref=e71]
+        - generic [ref=e74]: Réservations en ligne
+        - generic [ref=e75]: Disponible 24h/24 — 7j/7
+        - generic [ref=e76]: Vos clients réservent depuis votre site, Facebook ou un lien WhatsApp. Confirmation email + SMS dans la seconde. Zéro appel manqué.
+        - generic [ref=e77]:
+          - generic [ref=e78]: Confirmation instantanée
+          - generic [ref=e79]: Email auto
+          - generic [ref=e80]: SMS auto
+      - generic [ref=e81]:
+        - generic [ref=e82]: "02"
+        - img [ref=e84]
+        - generic [ref=e87]: Plan de salle en direct
+        - generic [ref=e88]: Statuts mis à jour en temps réel
+        - generic [ref=e89]: Visualisez toutes vos tables d'un coup d'œil. Déplacez-les à la souris pour réorganiser votre salle. Tout le monde voit la même chose simultanément.
+        - generic [ref=e90]:
+          - generic [ref=e91]: Drag & drop
+          - generic [ref=e92]: Sync live
+          - generic [ref=e93]: Multi-écrans
+      - generic [ref=e94]:
+        - generic [ref=e95]: "03"
+        - img [ref=e97]
+        - generic [ref=e100]: Appli service sur smartphone
+        - generic [ref=e101]: Fonctionne sans téléchargement
+        - generic [ref=e102]: Votre équipe accueille, installe, prend les commandes et encaisse directement depuis leur téléphone. Accessible dans le navigateur, aucune installation.
+        - generic [ref=e103]:
+          - generic [ref=e104]: Mobile-first
+          - generic [ref=e105]: Walk-in
+          - generic [ref=e106]: Caisse intégrée
+      - generic [ref=e107]:
+        - generic [ref=e108]: "04"
+        - img [ref=e110]
+        - generic [ref=e113]: Fiches clients automatiques
+        - generic [ref=e114]: Chaque visite enrichit la fiche
+        - generic [ref=e115]: "À chaque réservation, une fiche client se constitue : historique, allergies, occasions, préférences. Vos habitués sont reconnus. Les avis Google partent seuls."
+        - generic [ref=e116]:
+          - generic [ref=e117]: Historique
+          - generic [ref=e118]: Allergies
+          - generic [ref=e119]: Avis Google
+      - generic [ref=e120]:
+        - generic [ref=e121]: "05"
+        - img [ref=e123]
+        - generic [ref=e126]: Carte numérique & QR Code
+        - generic [ref=e127]: Mise à jour en un clic
+        - generic [ref=e128]: Vos clients scannent le QR Code sur la table. Plat épuisé ? Retirez-le en un clic — personne ne le voit plus. Pré-commandes depuis l'interface personnel.
+        - generic [ref=e129]:
+          - generic [ref=e130]: QR Code
+          - generic [ref=e131]: Ruptures live
+          - generic [ref=e132]: Pré-commandes
+      - generic [ref=e133]:
+        - generic [ref=e134]: "06"
+        - img [ref=e136]
+        - generic [ref=e139]: Statistiques sans effort
+        - generic [ref=e140]: 7j · 30j · 90j — en un coup d'œil
+        - generic [ref=e141]: Taux de remplissage, absences, créneaux les plus chargés, fidélisation. Tout s'affiche en graphiques clairs. Comparez avec la période précédente sans calculer.
+        - generic [ref=e142]:
+          - generic [ref=e143]: Remplissage
+          - generic [ref=e144]: Absences
+          - generic [ref=e145]: Fidélisation
+      - generic [ref=e146]:
+        - generic [ref=e147]: "07"
+        - img [ref=e149]
+        - generic [ref=e152]: Rappels anti-absences
+        - generic [ref=e153]: La veille + 2h avant, automatiquement
+        - generic [ref=e154]: "La veille du repas, email et SMS de rappel. Deux heures avant, un dernier SMS. Résultat : moins de tables vides, moins d'oublis. Vous n'avez rien à faire."
+        - generic [ref=e155]:
+          - generic [ref=e156]: Rappel J-1
+          - generic [ref=e157]: Rappel H-2
+          - generic [ref=e158]: Avis post-repas
+      - generic [ref=e159]:
+        - generic [ref=e160]: "08"
+        - img [ref=e162]
+        - generic [ref=e165]: Gestion d'équipe
+        - generic [ref=e166]: Owner · Manager · Host
+        - generic [ref=e167]: Invitez votre équipe par email en quelques secondes. Chacun voit uniquement ce dont il a besoin selon son rôle. Un journal trace toutes les actions.
+        - generic [ref=e168]:
+          - generic [ref=e169]: 3 rôles
+          - generic [ref=e170]: Invitation email
+          - generic [ref=e171]: Audit log
+      - generic [ref=e172]:
+        - generic [ref=e173]: "09"
+        - img [ref=e175]
+        - generic [ref=e178]: Encaissement à table
+        - generic [ref=e179]: CB · Espèces · Ticket resto
+        - generic [ref=e180]: En fin de repas, encaissement directement depuis l'appli. Pourboire calculé automatiquement. La table se libère et repasse propre sur le plan de salle.
+        - generic [ref=e181]:
+          - generic [ref=e182]: Multi-paiement
+          - generic [ref=e183]: Pourboire auto
+          - generic [ref=e184]: Clôture table
+  - generic [ref=e186]:
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - img [ref=e189]
+        - text: Cycle de vie d'une réservation
+      - heading "Du clic client à l'avis Google" [level=2] [ref=e192]:
+        - text: Du clic client
+        - text: à l'avis Google
+      - paragraph [ref=e193]: Chaque réservation suit un parcours entièrement automatisé. Rien ne tombe dans les oubliettes.
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e196]:
+          - img [ref=e197]
+          - generic [ref=e200]: "01"
+        - generic [ref=e201]: Réservation reçue
+        - generic [ref=e202]: Le client réserve en ligne. Confirmation immédiate par email et SMS.
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - img [ref=e205]
+          - generic [ref=e208]: "02"
+        - generic [ref=e209]: Rappels automatiques
+        - generic [ref=e210]: "La veille et 2h avant : rappels automatiques. Taux d'absence réduit."
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - img [ref=e213]
+          - generic [ref=e216]: "03"
+        - generic [ref=e217]: Accueil & installation
+        - generic [ref=e218]: L'hôte valide l'arrivée sur tablette. La table passe à occupée.
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - img [ref=e221]
+          - generic [ref=e224]: "04"
+        - generic [ref=e225]: Service & encaissement
+        - generic [ref=e226]: Commandes, suivi, addition et paiement — tout depuis l'appli.
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - img [ref=e229]
+          - generic [ref=e232]: "05"
+        - generic [ref=e233]: Avis post-repas
+        - generic [ref=e234]: 25h après le repas, une demande d'avis part automatiquement.
+  - generic [ref=e237]:
+    - generic [ref=e238]:
+      - generic [ref=e239]:
+        - img [ref=e240]
+        - text: Comparatif
+      - heading "ResaGP vs les leaders du marché" [level=2] [ref=e243]:
+        - text: ResaGP vs
+        - text: les leaders du marché
+      - paragraph [ref=e244]: Zenchef et TheFork prélèvent une commission sur chaque couvert. ResaGP facture un abonnement mensuel fixe — vos marges vous appartiennent entièrement.
+      - generic [ref=e245]:
+        - strong [ref=e246]: Support local Guadeloupe
+        - text: Un interlocuteur qui connaît votre marché. Pas de ticket perdu dans un centre d'appel international. Réponse sous 24h garantie.
+    - table [ref=e249]:
+      - rowgroup [ref=e250]:
+        - row "Critère Zenchef / TheFork ResaGP" [ref=e251]:
+          - columnheader "Critère" [ref=e252]
+          - columnheader "Zenchef / TheFork" [ref=e253]
+          - columnheader "ResaGP" [ref=e254]
+      - rowgroup [ref=e255]:
+        - row "Commission par couvert Oui Non" [ref=e256]:
+          - cell "Commission par couvert" [ref=e257]
+          - cell "Oui" [ref=e258]
+          - cell "Non" [ref=e259]
+        - row "Interface en français Partiel Oui" [ref=e260]:
+          - cell "Interface en français" [ref=e261]
+          - cell "Partiel" [ref=e262]
+          - cell "Oui" [ref=e263]
+        - row "Conformité RGPD Partiel Oui" [ref=e264]:
+          - cell "Conformité RGPD" [ref=e265]
+          - cell "Partiel" [ref=e266]
+          - cell "Oui" [ref=e267]
+        - row "Plan de salle interactif Oui Oui" [ref=e268]:
+          - cell "Plan de salle interactif" [ref=e269]
+          - cell "Oui" [ref=e270]
+          - cell "Oui" [ref=e271]
+        - row "CRM clients intégré Limité Oui" [ref=e272]:
+          - cell "CRM clients intégré" [ref=e273]
+          - cell "Limité" [ref=e274]
+          - cell "Oui" [ref=e275]
+        - row "Menu digital & QR Code Non Oui" [ref=e276]:
+          - cell "Menu digital & QR Code" [ref=e277]
+          - cell "Non" [ref=e278]
+          - cell "Oui" [ref=e279]
+        - row "Caisse intégrée Non Oui" [ref=e280]:
+          - cell "Caisse intégrée" [ref=e281]
+          - cell "Non" [ref=e282]
+          - cell "Oui" [ref=e283]
+        - row "Essai gratuit sans CB Non 14 jours" [ref=e284]:
+          - cell "Essai gratuit sans CB" [ref=e285]
+          - cell "Non" [ref=e286]
+          - cell "14 jours" [ref=e287]
+  - generic [ref=e289]:
+    - generic [ref=e290]:
+      - generic [ref=e291]:
+        - img [ref=e292]
+        - text: Nos formules
+      - heading "Simple, transparent, sans commission" [level=2] [ref=e295]:
+        - text: Simple, transparent,
+        - text: sans commission
+      - paragraph [ref=e296]: Un abonnement mensuel fixe. Aucune commission sur vos couverts, quelle que soit votre activité.
+    - generic [ref=e297]:
+      - generic [ref=e298]:
+        - generic [ref=e300]: Essentiel
+        - generic [ref=e301]:
+          - text: 59€
+          - subscript [ref=e302]: /mois
+        - separator [ref=e303]
+        - list [ref=e304]:
+          - listitem [ref=e305]: ✓ Réservation en ligne 24h/24
+          - listitem [ref=e306]: ✓ Confirmations email automatiques
+          - listitem [ref=e307]: ✓ Rappels J-1 et H-2
+          - listitem [ref=e308]: ✓ Support email
+          - listitem [ref=e309]: — Plan de salle
+          - listitem [ref=e310]: — SMS
+          - listitem [ref=e311]: — CRM clients
+          - listitem [ref=e312]: — Analytics
+          - listitem [ref=e313]: — Menu QR Code
+        - link "Démarrer l'essai gratuit" [ref=e314] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e315]:
+        - generic [ref=e317]: Recommandé
+        - generic [ref=e318]: Pro
+        - generic [ref=e319]:
+          - text: 99€
+          - subscript [ref=e320]: /mois
+        - separator [ref=e321]
+        - list [ref=e322]:
+          - listitem [ref=e323]: ✓ Tout du plan Essentiel
+          - listitem [ref=e324]: ✓ Plan de salle interactif
+          - listitem [ref=e325]: ✓ Rappels SMS
+          - listitem [ref=e326]: ✓ CRM clients
+          - listitem [ref=e327]: ✓ Analytics & Rapports
+          - listitem [ref=e328]: ✓ Menu QR Code
+          - listitem [ref=e329]: ✓ Avis Google automatiques
+          - listitem [ref=e330]: ✓ Application mobile service
+        - link "Démarrer l'essai gratuit" [ref=e331] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e332]:
+        - generic [ref=e334]: Business
+        - generic [ref=e335]:
+          - text: 149€
+          - subscript [ref=e336]: /mois
+        - separator [ref=e337]
+        - list [ref=e338]:
+          - listitem [ref=e339]: ✓ Tout du plan Pro
+          - listitem [ref=e340]: ✓ Établissements illimités
+          - listitem [ref=e341]: ✓ Cartes cadeaux
+          - listitem [ref=e342]: ✓ Équipe illimitée
+          - listitem [ref=e343]: ✓ Support prioritaire local
+          - listitem [ref=e344]: ✓ API REST & Webhooks
+        - link "Nous contacter" [ref=e345] [cursor=pointer]:
+          - /url: "#contact"
+    - paragraph [ref=e346]: RÉDUCTION ANNUELLE −17% · 14 JOURS D'ESSAI GRATUIT · SANS CARTE BANCAIRE · SANS ENGAGEMENT
+  - generic [ref=e347]:
+    - text: ResaGP
+    - generic [ref=e348]:
+      - heading "Gérez vos réservations sans commission." [level=2] [ref=e349]:
+        - text: Gérez vos réservations
+        - text: sans commission.
+      - paragraph [ref=e350]: 14 jours d'essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.
+      - generic [ref=e351]:
+        - link "Démarrer l'essai gratuit →" [ref=e352] [cursor=pointer]:
+          - /url: mailto:contact@solyb.com
+          - img [ref=e353]
+          - text: Démarrer l'essai gratuit →
+        - link "Voir une démo" [ref=e356] [cursor=pointer]:
+          - /url: mailto:contact@solyb.com
+          - img [ref=e357]
+          - text: Voir une démo
+  - contentinfo [ref=e360]:
+    - generic [ref=e361]:
+      - generic [ref=e362]:
+        - generic [ref=e363]: ResaGP
+        - generic [ref=e364]: Plateforme de gestion restaurant pour les établissements de Guadeloupe. Sans commission, conforme RGPD, hébergé en France.
+        - generic [ref=e365]: SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe
+      - generic [ref=e366]:
+        - generic [ref=e367]: Navigation
+        - list [ref=e368]:
+          - listitem [ref=e369]:
+            - link "Fonctionnalités" [ref=e370] [cursor=pointer]:
+              - /url: "#fonctionnalites"
+          - listitem [ref=e371]:
+            - link "Workflow" [ref=e372] [cursor=pointer]:
+              - /url: "#workflow"
+          - listitem [ref=e373]:
+            - link "Formules" [ref=e374] [cursor=pointer]:
+              - /url: "#formules"
+          - listitem [ref=e375]:
+            - link "Contact" [ref=e376] [cursor=pointer]:
+              - /url: "#contact"
+      - generic [ref=e377]:
+        - generic [ref=e378]: Avantages
+        - list [ref=e379]:
+          - listitem [ref=e380]: Zéro commission
+          - listitem [ref=e381]: Interface française
+          - listitem [ref=e382]: RGPD · Hébergé FR
+          - listitem [ref=e383]: CRM intégré
+          - listitem [ref=e384]: Menu digital
+          - listitem [ref=e385]: Support local
+      - generic [ref=e386]:
+        - generic [ref=e387]: Contact
+        - list [ref=e388]:
+          - listitem [ref=e389]:
+            - link "contact@solyb.com" [ref=e390] [cursor=pointer]:
+              - /url: mailto:contact@solyb.com
+          - listitem [ref=e391]: Baie-Mahault · Guadeloupe 97122
+          - listitem [ref=e392]:
+            - link "solyb.com →" [ref=e393] [cursor=pointer]:
+              - /url: https://solyb.com
+    - generic [ref=e394]:
+      - generic [ref=e395]: © 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220
+      - generic [ref=e396]: Baie-Mahault · Guadeloupe · Tous droits réservés

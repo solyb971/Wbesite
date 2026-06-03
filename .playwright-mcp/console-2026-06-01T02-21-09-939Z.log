@@ -1,0 +1,6 @@
+[     642ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/_next/static/chunks/main-app.js?v=1780280469999:0
+[     643ms] [ERROR] Refused to execute script from 'http://localhost:3001/_next/static/chunks/main-app.js?v=1780280469999' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled. @ http://localhost:3001/:0
+[     645ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/_next/static/chunks/app-pages-internals.js:0
+[     646ms] [ERROR] Refused to execute script from 'http://localhost:3001/_next/static/chunks/app-pages-internals.js' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled. @ http://localhost:3001/:0
+[     665ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3001/_next/static/chunks/app/(public)/page.js:0
+[     665ms] [ERROR] Refused to execute script from 'http://localhost:3001/_next/static/chunks/app/(public)/page.js' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled. @ http://localhost:3001/:632

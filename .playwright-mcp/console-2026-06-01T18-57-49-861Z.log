@@ -1,0 +1,263 @@
+[     241ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[    3995ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    4010ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[   12723ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   12723ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   15992ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   15992ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   17095ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   17756ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[   18216ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/resagp:0
+[   18623ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[   18787ms] Error: Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+
+    at getCssError (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\parseCss.js:24:16)
+    at getModuleBuildError (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\webpackModuleError.js:115:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\index.js:29:49)
+    at async (file://C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\index.js:27:21)
+[   18783ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[   18786ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   18798ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[   18859ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[   69685ms] [ERROR] ./src/app/resagp/resagp.module.css:8:1
+Syntax error: Selector ":global(:root)" is not pure (pure selectors must contain at least one local class or id)
+
+   6 | */
+   7 | 
+>  8 | :global(:root) {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810; @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   69685ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   70504ms] [ERROR] ./src/app/resagp/resagp.module.css:379:1
+Syntax error: Selector ":global(::-webkit-scrollbar)" is not pure (pure selectors must contain at least one local class or id)
+
+  377 | 
+  378 | /* Scrollbar */
+> 379 | :global(::-webkit-scrollbar) { width: 4px; }
+      | ^
+  380 | :global(::-webkit-scrollbar-track) { background: var(--rg-bg); }
+  381 | :global(::-webkit-scrollbar-thumb) { background: var(--rg-ac3); border-radius: 2px; } @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   70504ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   70506ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[   70532ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[   71226ms] [ERROR] ./src/app/resagp/resagp.module.css:379:1
+Syntax error: Selector ":global(::-webkit-scrollbar)" is not pure (pure selectors must contain at least one local class or id)
+
+  377 | 
+  378 | /* Scrollbar */
+> 379 | :global(::-webkit-scrollbar) { width: 4px; }
+      | ^
+  380 | :global(::-webkit-scrollbar-track) { background: var(--rg-bg); }
+  381 | :global(::-webkit-scrollbar-thumb) { background: var(--rg-ac3); border-radius: 2px; } @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   79808ms] [ERROR] ./src/app/resagp/resagp.module.css:379:1
+Syntax error: Selector ":global(::-webkit-scrollbar)" is not pure (pure selectors must contain at least one local class or id)
+
+  377 | 
+  378 | /* Scrollbar */
+> 379 | :global(::-webkit-scrollbar) { width: 4px; }
+      | ^
+  380 | :global(::-webkit-scrollbar-track) { background: var(--rg-bg); }
+  381 | :global(::-webkit-scrollbar-thumb) { background: var(--rg-ac3); border-radius: 2px; } @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   79808ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   79992ms] [ERROR] ./src/app/resagp/resagp.module.css:379:1
+Syntax error: Selector ":global(::-webkit-scrollbar)" is not pure (pure selectors must contain at least one local class or id)
+
+  377 | 
+  378 | /* Scrollbar */
+> 379 | :global(::-webkit-scrollbar) { width: 4px; }
+      | ^
+  380 | :global(::-webkit-scrollbar-track) { background: var(--rg-bg); }
+  381 | :global(::-webkit-scrollbar-thumb) { background: var(--rg-ac3); border-radius: 2px; } @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   79992ms] [ERROR] ./src/app/resagp/resagp.module.css
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+-- inner error --
+CssSyntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id) (8:1)
+
+   6 | */
+   7 | 
+>  8 | :root {
+     | ^
+   9 |   --rg-bg:     #0E0C08;
+  10 |   --rg-s1:     #1C1810;
+Generated code for C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[2]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[14].oneOf[5].use[3]!C:\Users\yassb\Desktop\Mes sites web\SolYB_website\src\app\resagp\resagp.module.css
+
+Import trace for requested module:
+./src/app/resagp/resagp.module.css
+./src/app/resagp/ResaGPPage.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[   80016ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[   81419ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/ed2b68ac13c3e6cb.webpack.hot-update.json:0
+[   81420ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347

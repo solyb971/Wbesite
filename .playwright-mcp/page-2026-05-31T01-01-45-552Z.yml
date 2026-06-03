@@ -1,0 +1,436 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "SolYB Facturation" [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e6]:
+        - link "Fonctionnalités" [ref=e7] [cursor=pointer]:
+          - /url: "#fonctionnalites"
+        - link "Modules" [ref=e8] [cursor=pointer]:
+          - /url: "#modules"
+        - link "Conformité" [ref=e9] [cursor=pointer]:
+          - /url: "#conformite"
+        - link "Tarifs" [ref=e10] [cursor=pointer]:
+          - /url: "#tarifs"
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Démarrer →" [ref=e12] [cursor=pointer]:
+        - /url: "#tarifs"
+  - generic [ref=e14]:
+    - generic [ref=e15]: Version 2026.3.0 · Conformité DGFiP totale
+    - heading "La facturation conforme pour les entreprises des DOM" [level=1] [ref=e17]:
+      - text: La facturation
+      - generic [ref=e19]: conforme
+      - text: pour les entreprises des DOM
+    - paragraph [ref=e20]: Chorus Pro, TVA DOM 8,5 % / 2,1 %, Factur-X EN 16931, FEC DGFiP — le premier logiciel de facturation pensé pour la Guadeloupe et les DOM.
+    - generic [ref=e21]:
+      - link "Essayer gratuitement →" [ref=e22] [cursor=pointer]:
+        - /url: "#tarifs"
+      - link "Voir les fonctionnalités" [ref=e23] [cursor=pointer]:
+        - /url: "#fonctionnalites"
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: "0"
+        - generic [ref=e27]: pages React
+      - generic [ref=e28]:
+        - generic [ref=e29]: 0+
+        - generic [ref=e30]: tables métier
+      - generic [ref=e31]:
+        - generic [ref=e32]: "0"
+        - generic [ref=e33]: modules
+      - generic [ref=e34]:
+        - generic [ref=e35]: 0%
+        - generic [ref=e36]: Conforme DGFiP
+  - generic [ref=e38]:
+    - generic [ref=e39]: FACTURATION ÉLECTRONIQUE · CHORUS PRO DOM · TVA 8,5% / 2,1% · FACTUR-X EN 16931 · FEC CONFORME DGFiP · MODULE BTP · CRM PIPELINE · ISCA NF 525 · E-REPORTING · TOURISME & HÉBERGEMENT · AGRICULTURE & PÊCHE · OCR FACTURES IA ·
+    - generic [ref=e40]: FACTURATION ÉLECTRONIQUE · CHORUS PRO DOM · TVA 8,5% / 2,1% · FACTUR-X EN 16931 · FEC CONFORME DGFiP · MODULE BTP · CRM PIPELINE · ISCA NF 525 · E-REPORTING · TOURISME & HÉBERGEMENT · AGRICULTURE & PÊCHE · OCR FACTURES IA ·
+  - generic [ref=e42]:
+    - generic [ref=e43]:
+      - heading "Fonctionnalités principales" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Une suite complète pour gérer votre facturation de A à Z
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: 📄
+        - heading "Factures & Devis" [level=3] [ref=e49]
+        - paragraph [ref=e50]: Création, envoi, suivi et archivage. Numérotation séquentielle sans trou, PDF/A-3, Factur-X NF Z55-900, signature électronique, relances automatiques J+10/J+30/J+60.
+        - generic [ref=e51]:
+          - generic [ref=e52]: Factur-X NF Z55-900
+          - generic [ref=e53]: PDF/A-3
+          - generic [ref=e54]: UBL 2.1
+          - generic [ref=e55]: Devis → Facture
+          - generic [ref=e56]: Relances auto
+      - generic [ref=e57]:
+        - generic [ref=e58]: 🏛️
+        - heading "Chorus Pro" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Envoi via API PISTE OAuth2 vers les collectivités DOM. 9 statuts de retour (EN_ATTENTE→COMPTABILISÉE), diagnostic connexion, gestion des erreurs intégrée.
+      - generic [ref=e61]:
+        - generic [ref=e62]: 📡
+        - heading "E-reporting DGFiP" [level=3] [ref=e63]
+        - paragraph [ref=e64]: Déclarations B2C mensuelles, format 18 colonnes DGFiP, envoi automatique le 5 du mois à 06h00 UTC-4.
+      - generic [ref=e65]:
+        - generic [ref=e66]: 📊
+        - heading "Comptabilité N1 + N2" [level=3] [ref=e67]
+        - paragraph [ref=e68]: Journaux (VTE/ACH/BNQ), grand livre, balance, lettrage, écritures d'inventaire, clôture exercice. États financiers PCG 2025 (bilan + CR 46 lignes). Export FEC certifié arrêté 29/07/2013.
+      - generic [ref=e69]:
+        - generic [ref=e70]: 🔐
+        - heading "ISCA / Anti-fraude NF 525" [level=3] [ref=e71]
+        - paragraph [ref=e72]: Chaîne HMAC-SHA256 inaltérable, 9 modes de paiement DOM, balance âgée 30/60/90 jours, attestation ISCA auto-éditeur (ISCA-SolYB-2026-001).
+      - generic [ref=e73]:
+        - generic [ref=e74]: 🤖
+        - heading "OCR Factures IA" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Extraction automatique via Claude Vision Haiku. Import factures fournisseurs en un clic, zéro ressaisie.
+        - generic [ref=e77]:
+          - generic [ref=e78]: IA intégrée
+          - generic [ref=e79]: Claude Vision
+      - generic [ref=e80]:
+        - generic [ref=e81]: 💰
+        - heading "Paiements & Trésorerie N3" [level=3] [ref=e82]
+        - paragraph [ref=e83]: Solde réel + prévisionnel 90 jours, rapprochement bancaire Open Banking DSP2 (BRED, CA Guadeloupe), QR SEPA EPC, Stripe, PayPlug. DSO automatique, alertes trésorerie.
+        - generic [ref=e84]:
+          - generic [ref=e85]: Open Banking DSP2
+          - generic [ref=e86]: Stripe & PayPlug
+          - generic [ref=e87]: QR SEPA EPC
+          - generic [ref=e88]: Trésorerie 90j
+          - generic [ref=e89]: Rapprochement auto
+      - generic [ref=e90]:
+        - generic [ref=e91]: 🎯
+        - heading "CRM Pipeline & Récurrences" [level=3] [ref=e92]
+        - paragraph [ref=e93]: Kanban 6 colonnes (PROSPECT→GAGNÉ), drag & drop HTML5 natif, probabilité et valeur pondérée. Facturation récurrente hebdo/mensuel/annuel avec envoi automatique à 07h00.
+  - generic [ref=e95]:
+    - generic [ref=e97]: Exclusivité DOM
+    - generic [ref=e98]:
+      - heading "Modules sectoriels DOM" [level=2] [ref=e99]
+      - paragraph [ref=e100]: Aucun concurrent national ne propose ces modules pensés pour les économies antillaises et des DOM.
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]: 🏗️
+        - heading "BTP" [level=3] [ref=e104]
+        - paragraph [ref=e105]: Situations de travaux, retenue de garantie 5 %, sous-traitance loi 75, facturation par avancement cumulé
+      - generic [ref=e106]:
+        - generic [ref=e107]: 🌴
+        - heading "Tourisme & Hébergement" [level=3] [ref=e108]
+        - paragraph [ref=e109]: Réservations, acompte 30 %, taxe de séjour, TVA 2,1 %, taux d'occupation, portail multilingue FR/EN
+      - generic [ref=e110]:
+        - generic [ref=e111]: 🌿
+        - heading "Agriculture & Pêche" [level=3] [ref=e112]
+        - paragraph [ref=e113]: Lots par produit (kg/tonne), TVA 2,1 % productions locales, 0 % export, suivi FEAGA
+      - generic [ref=e114]:
+        - generic [ref=e115]: 🤝
+        - heading "Commercial & Sous-traitants" [level=3] [ref=e116]
+        - paragraph [ref=e117]: Commissions représentants, contrats de maintenance, situations mensuelles, sous-traitance
+      - generic [ref=e118]:
+        - generic [ref=e119]: 🏢
+        - heading "Multi-établissements" [level=3] [ref=e120]
+        - paragraph [ref=e121]: Gestion centralisée multi-entités, consolidation des comptes, droits d'accès par site
+      - generic [ref=e122]:
+        - generic [ref=e123]: 📦
+        - heading "Gestion de Stock" [level=3] [ref=e124]
+        - paragraph [ref=e125]: Mouvements ENTREE/SORTIE/AJUSTEMENT, décrément automatique à signature BL, alertes rupture
+      - generic [ref=e126]:
+        - generic [ref=e127]: 💼
+        - heading "Journaux de Paie" [level=3] [ref=e128]
+        - paragraph [ref=e129]: Import Silae/PayFit CSV, écritures auto 641/645/421/431, statistiques masse salariale annuelle
+      - generic [ref=e130]:
+        - generic [ref=e131]: 🏦
+        - heading "Open Banking DSP2" [level=3] [ref=e132]
+        - paragraph [ref=e133]: Connexion BRED, CA Guadeloupe, rapprochement CSV/OFX automatique, soldes en temps réel
+  - generic [ref=e136]:
+    - generic [ref=e137]:
+      - generic [ref=e138]: Conformité réglementaire
+      - heading "Conforme à toutes les obligations légales" [level=2] [ref=e139]:
+        - text: Conforme à toutes
+        - text: les obligations légales
+      - paragraph [ref=e140]: Cadre réglementaire français 2026 respecté intégralement, avec les spécificités des Départements d'Outre-Mer.
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: 📋
+          - generic [ref=e144]:
+            - generic [ref=e145]: Factur-X NF Z55-900
+            - generic [ref=e146]: PDF/A-3 + XML CII EN 16931 embarqué — profil FR-EN 16931, conforme réforme 2026
+        - generic [ref=e147]:
+          - generic [ref=e148]: 🏛️
+          - generic [ref=e149]:
+            - generic [ref=e150]: Chorus Pro DOM
+            - generic [ref=e151]: API PISTE OAuth2 — envoi aux collectivités, 9 statuts retour, diagnostic intégré
+        - generic [ref=e152]:
+          - generic [ref=e153]: 📁
+          - generic [ref=e154]:
+            - generic [ref=e155]: FEC DGFiP
+            - generic [ref=e156]: Arrêté 29/07/2013 — 18 colonnes, UTF-8 BOM, SHA-256, export certifié
+        - generic [ref=e157]:
+          - generic [ref=e158]: 🗄️
+          - generic [ref=e159]:
+            - generic [ref=e160]: Archivage légal 10 ans
+            - generic [ref=e161]: Conservation avec horodatage SHA-256, piste d'audit HMAC, ZIP exercice signé
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - generic [ref=e165]: ✓
+        - generic [ref=e166]: Factur-X EN 16931
+      - generic [ref=e167]:
+        - generic [ref=e168]: ✓
+        - generic [ref=e169]: Chorus Pro
+      - generic [ref=e170]:
+        - generic [ref=e171]: ✓
+        - generic [ref=e172]: FEC DGFiP
+      - generic [ref=e173]:
+        - generic [ref=e174]: ✓
+        - generic [ref=e175]: ISCA NF 525
+      - generic [ref=e176]:
+        - generic [ref=e177]: ✓
+        - generic [ref=e178]: TVA DOM
+      - generic [ref=e179]:
+        - generic [ref=e180]: ✓
+        - generic [ref=e181]: E-reporting
+      - generic [ref=e182]:
+        - generic [ref=e183]: ✓
+        - generic [ref=e184]: UBL 2.1
+      - generic [ref=e185]:
+        - generic [ref=e186]: ✓
+        - generic [ref=e187]: Archivage 10 ans
+  - generic [ref=e188]:
+    - generic:
+      - generic: "971"
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - generic [ref=e192]: Guadeloupe 971
+        - heading "Pensé pour les spécificités DOM" [level=2] [ref=e193]:
+          - text: Pensé pour
+          - text: les spécificités DOM
+        - paragraph [ref=e194]: Taux TVA DOM applicables
+        - table [ref=e196]:
+          - rowgroup [ref=e197]:
+            - row "Taux Type Base légale" [ref=e198]:
+              - columnheader "Taux" [ref=e199]
+              - columnheader "Type" [ref=e200]
+              - columnheader "Base légale" [ref=e201]
+          - rowgroup [ref=e202]:
+            - row "8,5% Taux normal DOM CGI art. 296" [ref=e203]:
+              - cell "8,5%" [ref=e204]
+              - cell "Taux normal DOM" [ref=e205]
+              - cell "CGI art. 296" [ref=e206]
+            - row "2,1% Taux réduit DOM CGI art. 296 bis" [ref=e207]:
+              - cell "2,1%" [ref=e208]
+              - cell "Taux réduit DOM" [ref=e209]
+              - cell "CGI art. 296 bis" [ref=e210]
+            - row "1,05% Taux super-réduit CGI art. 298 septies" [ref=e211]:
+              - cell "1,05%" [ref=e212]
+              - cell "Taux super-réduit" [ref=e213]
+              - cell "CGI art. 298 septies" [ref=e214]
+            - row "0% Exportations / IC CGI art. 262" [ref=e215]:
+              - cell "0%" [ref=e216]
+              - cell "Exportations / IC" [ref=e217]
+              - cell "CGI art. 262" [ref=e218]
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e221]: 📋
+          - generic [ref=e222]:
+            - generic [ref=e223]: Mention CGI automatique
+            - generic [ref=e224]: Ajout automatique de "TVA non applicable, art. 296 du CGI" sur chaque facture émise en DOM
+        - generic [ref=e225]:
+          - generic [ref=e226]: 🕐
+          - generic [ref=e227]:
+            - generic [ref=e228]: Planification UTC-4
+            - generic [ref=e229]: Relances, e-reporting et sauvegardes respectent le fuseau horaire Guadeloupe (UTC-4)
+        - generic [ref=e230]:
+          - generic [ref=e231]: 🌍
+          - generic [ref=e232]:
+            - generic [ref=e233]: Portail multilingue FR/EN
+            - generic [ref=e234]: Documents clients et portail public disponibles en français et en anglais (?lang=en), token 30 jours
+        - generic [ref=e235]:
+          - generic [ref=e236]: 📑
+          - generic [ref=e237]:
+            - generic [ref=e238]: Réconciliation CA12 DOM
+            - generic [ref=e239]: Export pré-rempli pour la déclaration CA12, montants par taux TVA DOM automatiquement ventilés
+  - generic [ref=e241]:
+    - generic [ref=e242]:
+      - heading "Tarifs simples et transparents" [level=2] [ref=e243]
+      - paragraph [ref=e244]: Commencez gratuitement, évoluez à votre rythme — sans engagement
+    - generic [ref=e245]:
+      - generic [ref=e246]:
+        - generic [ref=e247]: Gratuit
+        - generic [ref=e248]: 0€
+        - generic [ref=e249]: pour démarrer
+        - list [ref=e250]:
+          - listitem [ref=e251]:
+            - generic [ref=e252]: ✓
+            - text: 10 factures/mois
+          - listitem [ref=e253]:
+            - generic [ref=e254]: ✓
+            - text: Devis & avoirs
+          - listitem [ref=e255]:
+            - generic [ref=e256]: ✓
+            - text: PDF personnalisé
+          - listitem [ref=e257]:
+            - generic [ref=e258]: ✓
+            - text: Export FEC basique
+          - listitem [ref=e259]:
+            - generic [ref=e260]: ✓
+            - text: Portail client
+          - listitem [ref=e261]:
+            - generic [ref=e262]: ✓
+            - text: TVA DOM automatique
+          - listitem [ref=e263]:
+            - generic [ref=e264]: ✓
+            - text: Support email
+          - listitem [ref=e265]:
+            - generic [ref=e266]: ✕
+            - generic [ref=e267]: Chorus Pro
+          - listitem [ref=e268]:
+            - generic [ref=e269]: ✕
+            - generic [ref=e270]: Modules BTP/Tourisme
+          - listitem [ref=e271]:
+            - generic [ref=e272]: ✕
+            - generic [ref=e273]: ISCA NF 525
+          - listitem [ref=e274]:
+            - generic [ref=e275]: ✕
+            - generic [ref=e276]: Open Banking DSP2
+        - link "Commencer gratuitement" [ref=e277] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e278]:
+        - generic [ref=e279]: Recommandé
+        - generic [ref=e280]: Starter
+        - generic [ref=e281]: 29€/mois
+        - generic [ref=e282]: 100 factures/mois
+        - list [ref=e283]:
+          - listitem [ref=e284]:
+            - generic [ref=e285]: ✓
+            - text: Tout du plan Gratuit
+          - listitem [ref=e286]:
+            - generic [ref=e287]: ✓
+            - text: 100 factures/mois
+          - listitem [ref=e288]:
+            - generic [ref=e289]: ✓
+            - text: Chorus Pro DOM
+          - listitem [ref=e290]:
+            - generic [ref=e291]: ✓
+            - text: E-reporting DGFiP
+          - listitem [ref=e292]:
+            - generic [ref=e293]: ✓
+            - text: CRM Pipeline
+          - listitem [ref=e294]:
+            - generic [ref=e295]: ✓
+            - text: Factures récurrentes
+          - listitem [ref=e296]:
+            - generic [ref=e297]: ✓
+            - text: Modules BTP & Tourisme
+          - listitem [ref=e298]:
+            - generic [ref=e299]: ✓
+            - text: Agriculture & Pêche
+          - listitem [ref=e300]:
+            - generic [ref=e301]: ✓
+            - text: Relances automatiques
+          - listitem [ref=e302]:
+            - generic [ref=e303]: ✓
+            - text: Support prioritaire
+        - link "Démarrer l'essai" [ref=e304] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e305]:
+        - generic [ref=e306]: Pro
+        - generic [ref=e307]: 79€/mois
+        - generic [ref=e308]: Factures illimitées
+        - list [ref=e309]:
+          - listitem [ref=e310]:
+            - generic [ref=e311]: ✓
+            - text: Tout du plan Starter
+          - listitem [ref=e312]:
+            - generic [ref=e313]: ✓
+            - text: Factures illimitées
+          - listitem [ref=e314]:
+            - generic [ref=e315]: ✓
+            - text: ISCA NF 525 complet
+          - listitem [ref=e316]:
+            - generic [ref=e317]: ✓
+            - text: OCR Factures IA
+          - listitem [ref=e318]:
+            - generic [ref=e319]: ✓
+            - text: Open Banking DSP2
+          - listitem [ref=e320]:
+            - generic [ref=e321]: ✓
+            - text: Multi-établissements
+          - listitem [ref=e322]:
+            - generic [ref=e323]: ✓
+            - text: Gestion de stock
+          - listitem [ref=e324]:
+            - generic [ref=e325]: ✓
+            - text: Silae/PayFit import
+          - listitem [ref=e326]:
+            - generic [ref=e327]: ✓
+            - text: API REST v1 & Webhooks
+          - listitem [ref=e328]:
+            - generic [ref=e329]: ✓
+            - text: Support dédié local 971
+        - link "Choisir Pro" [ref=e330] [cursor=pointer]:
+          - /url: "#contact"
+    - paragraph [ref=e331]: 💳 Paiement sécurisé · Sans engagement · Support local Guadeloupe
+  - generic [ref=e333]:
+    - heading "Prêt à passer à la facturation électronique conforme ?" [level=2] [ref=e334]:
+      - text: Prêt à passer à la facturation
+      - text: électronique conforme ?
+    - paragraph [ref=e335]: Anticipez l'obligation 2026. Démarrez gratuitement, sans carte bancaire.
+    - generic [ref=e336]:
+      - link "Essayer gratuitement →" [ref=e337] [cursor=pointer]:
+        - /url: mailto:contact@solyb.gp
+      - link "contact@solyb.gp" [ref=e338] [cursor=pointer]:
+        - /url: mailto:contact@solyb.gp
+  - contentinfo [ref=e339]:
+    - generic [ref=e340]:
+      - generic [ref=e341]:
+        - generic [ref=e342]:
+          - generic [ref=e343]: SolYB Facturation
+          - paragraph [ref=e344]: Logiciel de facturation électronique SaaS conçu pour les TPE/PME de Guadeloupe et des DOM.
+          - generic [ref=e345]: SIREN 102699220
+        - generic [ref=e346]:
+          - generic [ref=e347]: Navigation
+          - list [ref=e348]:
+            - listitem [ref=e349]:
+              - link "Fonctionnalités" [ref=e350] [cursor=pointer]:
+                - /url: "#fonctionnalites"
+            - listitem [ref=e351]:
+              - link "Modules DOM" [ref=e352] [cursor=pointer]:
+                - /url: "#modules"
+            - listitem [ref=e353]:
+              - link "Conformité" [ref=e354] [cursor=pointer]:
+                - /url: "#conformite"
+            - listitem [ref=e355]:
+              - link "Tarifs" [ref=e356] [cursor=pointer]:
+                - /url: "#tarifs"
+            - listitem [ref=e357]:
+              - link "Contact" [ref=e358] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=e359]:
+          - generic [ref=e360]: Conformités
+          - list [ref=e361]:
+            - listitem [ref=e362]:
+              - generic [ref=e363]: ✓
+              - text: Factur-X EN 16931
+            - listitem [ref=e364]:
+              - generic [ref=e365]: ✓
+              - text: Chorus Pro
+            - listitem [ref=e366]:
+              - generic [ref=e367]: ✓
+              - text: FEC DGFiP
+            - listitem [ref=e368]:
+              - generic [ref=e369]: ✓
+              - text: ISCA NF 525
+            - listitem [ref=e370]:
+              - generic [ref=e371]: ✓
+              - text: TVA DOM
+            - listitem [ref=e372]:
+              - generic [ref=e373]: ✓
+              - text: UBL 2.1
+            - listitem [ref=e374]:
+              - generic [ref=e375]: ✓
+              - text: Archivage 10 ans
+        - generic [ref=e376]:
+          - generic [ref=e377]: Contact
+          - list [ref=e378]:
+            - listitem [ref=e379]:
+              - link "contact@solyb.gp" [ref=e380] [cursor=pointer]:
+                - /url: mailto:contact@solyb.gp
+            - listitem [ref=e381]: Baie-Mahault, Guadeloupe 97122
+            - listitem [ref=e382]:
+              - link "solyb.fr →" [ref=e383] [cursor=pointer]:
+                - /url: https://solyb.fr
+      - generic [ref=e384]:
+        - generic [ref=e385]: © 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220
+        - generic [ref=e386]: Baie-Mahault, Guadeloupe · Tous droits réservés

@@ -1,0 +1,3 @@
+[    1621ms] [WARNING] Crisp: Missing NEXT_PUBLIC_CRISP_WEBSITE_ID in environment variables @ http://localhost:3000/_next/static/chunks/app/(public)/layout-98f2ae40078c8484.js:0
+[   33443ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/mentions-legales?_rsc=1681w:0
+[   33445ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/confidentialite?_rsc=1681w:0
