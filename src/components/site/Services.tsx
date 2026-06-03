@@ -1,53 +1,55 @@
-"use client"
-
-import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const services = [
   {
     num: "01",
     title: "Site Vitrine",
-    description: "Votre présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, accessible sur mobile, optimisé pour Google.",
+    description: "Présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, lisible sur mobile, optimisé pour Google.",
     contactParam: "vitrine",
+    wide: true,
   },
   {
     num: "02",
     title: "E-commerce",
-    description: "Boutique en ligne complète avec gestion des commandes, paiement sécurisé et tableau de bord simple à prendre en main.",
+    description: "Boutique complète avec paiement sécurisé et tableau de bord simple à prendre en main.",
     contactParam: "ecommerce",
+    wide: false,
   },
   {
     num: "03",
     title: "Application Métier",
-    description: "Outil sur mesure adapté à votre activité. Gestion, réservations, suivi client — ce dont vous avez besoin, rien de plus.",
+    description: "Outil sur mesure pour votre activité. Ce dont vous avez besoin, rien de plus.",
     contactParam: "application",
-    featured: true,
+    wide: false,
   },
 ]
 
 export default function Services() {
   return (
     <>
-      {/* ── Services section (light) ── */}
       <section
         id="services"
-        className="py-20 md:py-28 scroll-mt-20"
-        style={{ background: "#F5F2EC" }}
+        className="py-24 md:py-28 scroll-mt-20"
+        style={{ background: '#FFFFFF' }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
           {/* Header */}
-          <div className="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
+          <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
             <div>
-              <p className="text-xs tracking-[3px] uppercase mb-3" style={{ color: "#FF6B47" }}>
+              <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
+                <span className="w-5 h-px" style={{ background: '#C4472A' }} />
                 Services
-              </p>
-              <h2 className="font-display text-3xl md:text-[2.6rem] font-normal leading-tight text-[#1C1B18]">
-                Ce que nous<br />
-                <em className="italic" style={{ color: "#FF6B47" }}>construisons</em> pour vous
+              </div>
+              <h2
+                className="font-display font-black leading-none"
+                style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
+              >
+                Ce qu&apos;on<br />
+                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>construit</em>
               </h2>
             </div>
-            <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: "#5A5750" }}>
-              Des solutions pensées pour votre réalité locale — pas des templates. Chaque projet conçu de A à Z pour votre activité.
+            <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
+              Des solutions sur mesure pour votre réalité locale. Pas de template revendu — chaque projet est unique.
             </p>
           </div>
 
@@ -56,47 +58,58 @@ export default function Services() {
             {services.map((s) => (
               <div
                 key={s.num}
-                className="group rounded-2xl p-8 border transition-all duration-250 hover:-translate-y-1 flex flex-col"
-                style={{
-                  background: s.featured ? "#1C1B18" : "white",
-                  borderColor: s.featured ? "#2E2D29" : "#E2DED6",
-                  boxShadow: "none",
-                }}
+                className="group rounded-xl overflow-hidden flex flex-col"
+                style={{ border: '0.5px solid #DDD5C8' }}
               >
-                {/* Number */}
+                {/* Image placeholder */}
                 <div
-                  className="font-display text-5xl font-normal leading-none mb-5 transition-colors duration-200 group-hover:text-coral"
-                  style={{ color: s.featured ? "#2E2D29" : "#E2DED6" }}
+                  className="h-52 relative overflow-hidden"
+                  style={{
+                    background: s.num === "01"
+                      ? 'linear-gradient(135deg, #E8DDD0, #C8BFB5)'
+                      : s.num === "02"
+                      ? 'linear-gradient(135deg, #D0C8BE, #B8B0A6)'
+                      : 'linear-gradient(135deg, #B8B0A6, #A0988E)',
+                  }}
                 >
-                  {s.num}
+                  <div
+                    className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                    style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(14,13,11,0.5) 100%)' }}
+                  />
                 </div>
 
-                <h3
-                  className="font-display text-xl font-normal mb-3"
-                  style={{ color: s.featured ? "#F0EDE8" : "#1C1B18" }}
-                >
-                  {s.title}
-                </h3>
-
-                <p
-                  className="text-sm font-light leading-relaxed flex-1 mb-6"
-                  style={{ color: s.featured ? "#7A7870" : "#5A5750" }}
-                >
-                  {s.description}
-                </p>
-
-                <div
-                  className="flex items-center justify-between pt-5"
-                  style={{ borderTop: `0.5px solid ${s.featured ? "#2E2D29" : "#E2DED6"}` }}
-                >
-                  <Link
-                    href={`/?service=${s.contactParam}#contact`}
-                    className="flex items-center gap-1.5 text-sm font-light transition-colors hover:text-coral"
-                    style={{ color: s.featured ? "#9E9A92" : "#5A5750" }}
+                {/* Body */}
+                <div className="p-6 flex flex-col flex-1" style={{ background: '#F5F2ED' }}>
+                  <div
+                    className="font-display font-thin leading-none mb-4"
+                    style={{ fontSize: '48px', color: '#DDD5C8', lineHeight: 1 }}
                   >
-                    Demander un devis
-                    <ArrowRight className="w-4 h-4 text-coral" />
-                  </Link>
+                    {s.num}
+                  </div>
+                  <h3
+                    className="font-display font-bold mb-2"
+                    style={{ fontSize: '22px', color: '#0E0D0B' }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-xs font-light leading-relaxed mb-5 flex-1" style={{ color: '#7A7268', lineHeight: 1.65 }}>
+                    {s.description}
+                  </p>
+                  <div
+                    className="flex items-center justify-between pt-4"
+                    style={{ borderTop: '0.5px solid #DDD5C8' }}
+                  >
+                    <span className="text-xs font-light" style={{ color: '#B0A89E' }}>
+                      Sur devis
+                    </span>
+                    <Link
+                      href={`/?service=${s.contactParam}#contact`}
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
+                      style={{ background: '#C4472A' }}
+                    >
+                      →
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -104,42 +117,31 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Facturation banner (compact) ── */}
+      {/* Facturation banner */}
       <div
         className="border-y"
-        style={{
-          background: "#14130F",
-          borderColor: "#2E2D29",
-          padding: "2rem 0",
-        }}
+        style={{ background: '#F5F2ED', borderColor: '#DDD5C8', padding: '2.5rem 0' }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <div
               className="inline-flex items-center gap-2 text-xs tracking-widest uppercase rounded-full px-3 py-1 mb-2"
-              style={{
-                background: "rgba(184,118,10,0.12)",
-                border: "0.5px solid rgba(184,118,10,0.3)",
-                color: "#F5C060",
-              }}
+              style={{ background: 'rgba(184,118,10,0.1)', border: '0.5px solid rgba(184,118,10,0.3)', color: '#C49A20' }}
             >
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ background: "#F5C060", animation: "pulse 2s infinite" }}
-              />
-              Réforme en cours · Obligation 2026
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#C49A20', animation: 'pulse 2s infinite' }} />
+              Obligation 2026
             </div>
-            <p className="font-display text-lg font-normal text-[#F0EDE8]">
+            <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
               Facturation électronique — Êtes-vous conforme ?
             </p>
-            <p className="text-sm font-light mt-0.5" style={{ color: "#7A7870" }}>
+            <p className="text-sm font-light mt-0.5" style={{ color: '#7A7268' }}>
               Mise en conformité DGFiP rapide, adaptée aux entreprises guadeloupéennes.
             </p>
           </div>
           <Link
             href="/?service=facturation#contact"
-            className="whitespace-nowrap text-sm font-medium px-5 py-2.5 rounded-lg transition-opacity hover:opacity-80 flex-shrink-0"
-            style={{ background: "#B8760A", color: "white" }}
+            className="whitespace-nowrap text-sm font-normal px-5 py-2.5 rounded transition-opacity hover:opacity-80 flex-shrink-0 text-white"
+            style={{ background: '#B8760A' }}
           >
             Vérifier ma conformité
           </Link>

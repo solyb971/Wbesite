@@ -1,77 +1,64 @@
-"use client"
-
+'use client'
 import { useState } from "react"
-import { ChevronDown, HelpCircle } from "lucide-react"
 import { faqs } from "@/lib/faq-data"
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 bg-[#0D0D14]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 scroll-mt-20" style={{ background: '#F5F2ED' }}>
+      <div className="max-w-[780px] mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="reveal text-center mb-12" data-reveal-index="0">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-coral/10 border border-coral/20 rounded-2xl mb-6" style={{ animation: 'float 3s ease-in-out alternate infinite' }}>
-            <HelpCircle className="w-8 h-8 text-coral" />
+        <div className="reveal mb-10">
+          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
+            <span className="w-5 h-px" style={{ background: '#C4472A' }} />
+            FAQ
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-[#F0EDE8] mb-4">
-            Questions Fréquentes
+          <h2
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
+          >
+            Questions<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>fréquentes</em>
           </h2>
-          <p className="text-lg text-[#8B8B9E]">
-            Tout ce que vous devez savoir — y compris sur la facturation électronique 2026
-          </p>
         </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-3">
-          {faqs.map((faq, index) => (
+        {/* Items */}
+        <div className="reveal">
+          {faqs.slice(0, 5).map((faq, index) => (
             <div
               key={index}
-              className={`bg-[#13131A] border rounded-xl overflow-hidden transition-all duration-200 card-shadow ${
-                openIndex === index ? "border-coral/40" : "border-[#2A2A38] hover:border-[#3A3A48]"
-              }`}
+              style={{ borderBottom: '0.5px solid #DDD5C8' }}
             >
-              {/* h3 wrapping button = pattern accessible accordéon WAI-ARIA */}
-              <h3 className="m-0">
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-[#1C1C26]/50 transition-colors"
-                  aria-expanded={openIndex === index}
-                >
-                  <span className="font-semibold text-[#F0EDE8] text-base leading-snug">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-coral flex-shrink-0 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-              </h3>
-
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-[500px]" : "max-h-0"
-                }`}
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full text-left py-6 flex items-center justify-between gap-4 transition-colors"
+                style={{ color: openIndex === index ? '#C4472A' : '#0E0D0B', background: 'none', border: 'none' }}
+                aria-expanded={openIndex === index}
               >
-                <div className="px-6 pb-6 text-[#8B8B9E] leading-relaxed text-sm border-t border-[#2A2A38] pt-4">
+                <span className="text-sm font-normal leading-snug">{faq.question}</span>
+                <span
+                  className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-base transition-all duration-300"
+                  style={{
+                    border: '0.5px solid #DDD5C8',
+                    color: openIndex === index ? '#F5F2ED' : '#B0A89E',
+                    background: openIndex === index ? '#0E0D0B' : 'transparent',
+                    transform: openIndex === index ? 'rotate(45deg)' : 'none',
+                  }}
+                >
+                  +
+                </span>
+              </button>
+              <div
+                className="overflow-hidden transition-all duration-300"
+                style={{ maxHeight: openIndex === index ? '300px' : '0', paddingBottom: openIndex === index ? '1.5rem' : 0 }}
+              >
+                <p className="text-sm font-light leading-relaxed" style={{ color: '#7A7268', lineHeight: 1.8 }}>
                   {faq.answer}
-                </div>
+                </p>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-[#8B8B9E] mb-4">Vous avez d'autres questions ?</p>
-          <a
-            href="#contact"
-            className="btn-studio inline-flex items-center justify-center bg-coral hover:bg-coral-600 text-white px-8 py-3 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-coral/20"
-          >
-            <span className="relative z-10">Contactez-moi directement</span>
-          </a>
         </div>
       </div>
     </section>

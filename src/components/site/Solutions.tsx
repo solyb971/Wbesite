@@ -1,28 +1,25 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
 const solutions = [
   {
     num: "01",
     name: "ResaGP",
-    tagline: "Réservations pour restaurants — sans commission",
+    tagline: "Réservations restaurants — sans commission",
     description: "Réservations en ligne, plan de salle, rappels SMS automatiques et fiches clients. Tout ce dont votre restaurant a besoin, dans un seul outil.",
     status: "Disponible",
-    statusColor: "#00D4AA",
+    statusColor: "#16A34A",
     highlights: ["Essai 14 jours gratuit", "Sans commission par couvert", "Restaurants & bars 971"],
     cta: { label: "Voir ResaGP", href: "/resagp" },
-    featured: false,
   },
   {
     num: "02",
     name: "FactuGP",
     tagline: "Facturation électronique conforme 2026",
-    description: "À partir de septembre 2026, toutes les entreprises doivent émettre leurs factures électroniquement. FactuGP s'occupe de la conformité DGFiP pour vous.",
+    description: "À partir de septembre 2026, toutes les entreprises doivent émettre leurs factures électroniquement. FactuGP gère la conformité DGFiP pour vous.",
     status: "Bientôt disponible",
-    statusColor: "#F5A623",
+    statusColor: "#B8760A",
     highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "TPE & PME 971"],
     cta: { label: "En savoir plus", href: "/facturation-electronique" },
-    featured: true,
   },
 ]
 
@@ -30,90 +27,72 @@ export default function Solutions() {
   return (
     <section
       id="solutions"
-      className="py-20 md:py-28 scroll-mt-20"
-      style={{ background: "#0A0A0F" }}
+      className="py-24 md:py-28 scroll-mt-20"
+      style={{ background: '#F5F2ED' }}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-
-        {/* Header */}
-        <div className="reveal mb-12">
-          <p className="text-xs tracking-[3px] uppercase mb-3" style={{ color: "#FF6B47" }}>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="reveal mb-14">
+          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
+            <span className="w-5 h-px" style={{ background: '#C4472A' }} />
             Nos outils
-          </p>
-          <h2 className="font-display text-3xl md:text-[2.6rem] font-normal leading-tight text-[#F0EDE8]">
-            Des outils <em className="italic" style={{ color: "#FF6B47" }}>clés en main</em><br />
-            pour la Guadeloupe
+          </div>
+          <h2
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
+          >
+            Outils clés<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>en main</em>
           </h2>
         </div>
 
-        {/* Cards */}
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4">
           {solutions.map((s) => (
             <div
               key={s.name}
-              className="group rounded-2xl p-8 flex flex-col transition-all duration-250 hover:-translate-y-1"
-              style={{
-                background: s.featured ? "#14130F" : "#111110",
-                border: `0.5px solid ${s.featured ? "rgba(245,166,35,0.25)" : "rgba(255,255,255,0.06)"}`,
-              }}
+              className="group rounded-xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1"
+              style={{ background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}
             >
-              {/* Status */}
-              <div className="flex items-center gap-2 mb-6">
-                <span
-                  className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                  style={{ background: s.statusColor }}
-                />
-                <span className="text-xs tracking-wide" style={{ color: s.statusColor }}>
-                  {s.status}
-                </span>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: s.statusColor }} />
+                <span className="text-xs tracking-wide" style={{ color: s.statusColor }}>{s.status}</span>
               </div>
 
-              {/* Number + Name */}
               <div className="flex items-baseline gap-3 mb-2">
-                <span
-                  className="font-display text-4xl font-normal leading-none"
-                  style={{ color: "rgba(255,255,255,0.06)" }}
-                >
+                <span className="font-display font-thin text-4xl leading-none" style={{ color: '#DDD5C8' }}>
                   {s.num}
                 </span>
-                <h3 className="font-display text-2xl font-normal text-[#F0EDE8]">
+                <h3 className="font-display font-bold text-2xl" style={{ color: '#0E0D0B' }}>
                   {s.name}
                 </h3>
               </div>
 
-              <p className="text-sm font-medium mb-3" style={{ color: s.statusColor }}>
-                {s.tagline}
-              </p>
-
-              <p className="text-sm font-light leading-relaxed flex-1 mb-6" style={{ color: "#7A7870" }}>
+              <p className="text-sm font-medium mb-3" style={{ color: '#C4472A' }}>{s.tagline}</p>
+              <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: '#7A7268', lineHeight: 1.65 }}>
                 {s.description}
               </p>
 
-              {/* Highlights */}
-              <ul className="flex flex-col gap-2 mb-6">
+              <ul className="flex flex-col gap-1.5 mb-5">
                 {s.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: "#5A5750" }}>
+                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: '#B0A89E' }}>
                     <span className="w-px h-3 flex-shrink-0" style={{ background: s.statusColor, opacity: 0.5 }} />
                     {h}
                   </li>
                 ))}
               </ul>
 
-              {/* CTA */}
-              <div style={{ borderTop: "0.5px solid rgba(255,255,255,0.06)", paddingTop: "1.25rem" }}>
+              <div style={{ borderTop: '0.5px solid #DDD5C8', paddingTop: '1.25rem' }}>
                 <Link
                   href={s.cta.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-light transition-colors hover:text-coral"
-                  style={{ color: "#9E9A92" }}
+                  className="inline-flex items-center gap-1.5 text-sm font-light transition-colors hover:text-[#C4472A]"
+                  style={{ color: '#7A7268' }}
                 >
                   {s.cta.label}
-                  <ArrowRight className="w-4 h-4 text-coral" />
+                  <span style={{ color: '#C4472A' }}>→</span>
                 </Link>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

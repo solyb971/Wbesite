@@ -3,7 +3,7 @@ import ContactFormMultiStep from "./ContactFormMultiStep"
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-24 bg-[#0D0D14] scroll-mt-20 md:scroll-mt-36">
+    <section id="contact" className="py-16 md:py-24 scroll-mt-20 md:scroll-mt-36" style={{ background: '#F5F2ED' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="reveal text-center mb-10 md:mb-16" data-reveal-index="0">

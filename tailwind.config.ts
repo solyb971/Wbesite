@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-jakarta)', 'Inter', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         // SolYB brand palette — Caribbean dark

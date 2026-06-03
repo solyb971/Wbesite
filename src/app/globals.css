@@ -59,23 +59,48 @@
   }
 }
 
+/* ── SolYB v3 — Editorial palette ── */
+:root {
+  --ink:        #0E0D0B;
+  --smoke:      #F5F2ED;
+  --rust:       #C4472A;
+  --rust-l:     #E06245;
+  --rust-pale:  #FAF0EC;
+  --sand:       #E8DDD0;
+  --text:       #2E2A25;
+  --muted:      #7A7268;
+  --ghost:      #B0A89E;
+  --v3-border:  #DDD5C8;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--smoke);
+    color: var(--text);
     overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
   }
-  /* Scroll natif sur mobile — plus fluide et moins gourmand que le JS */
   @media (max-width: 767px) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
   }
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--rust);
+  z-index: 200;
+  width: 0;
+  transition: width .1s linear;
 }
 
 /* FactuGP — keyframes du mot typewriter (référencés en inline style depuis CSS Modules) */
@@ -422,6 +447,10 @@ section > .max-w-5xl {
 @keyframes blobDrift {
   from { transform: translate(0, 0) scale(1); }
   to   { transform: translate(-3%, 4%) scale(1.06); }
+}
+
+.ticker-track-v3 {
+  animation: tickerScroll 28s linear infinite;
 }
 
 @keyframes pulse {

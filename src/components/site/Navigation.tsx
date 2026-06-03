@@ -77,10 +77,8 @@ export default function Navigation() {
   const getLinkClass = (href: string) => {
     const hash = href.split('#')[1] ?? ''
     const isActive = activeSection === hash
-    return `relative text-sm font-medium transition-colors cursor-pointer
-      after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0
-      after:bg-coral after:transition-all after:duration-300 hover:after:w-full
-      ${isActive ? 'text-[#F0EDE8]' : 'text-[#8B8B9E] hover:text-[#F0EDE8]'}`
+    return `text-[13px] font-light transition-colors cursor-pointer
+      ${isActive ? 'text-[#0E0D0B]' : 'text-[#7A7268] hover:text-[#0E0D0B]'}`
   }
 
   return (
@@ -94,8 +92,13 @@ export default function Navigation() {
 
       <nav
         ref={navRef}
-        className="w-full bg-[#0A0A0F] border-b border-[#2A2A38]"
-        style={{ transition: 'transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)' }}
+        className="w-full border-b"
+        style={{
+          background: 'rgba(245,242,237,0.93)',
+          borderColor: '#DDD5C8',
+          backdropFilter: 'blur(14px)',
+          transition: 'transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -111,13 +114,9 @@ export default function Navigation() {
                 setNavAnim(true)
               }}
             >
-              <Image
-                src="/logo/SYB_orange.svg"
-                alt="SolYB — Agence Digitale Guadeloupe"
-                width={80} height={80}
-                className="h-16 w-auto"
-                priority
-              />
+                <span className="font-display text-[22px] font-bold tracking-tight" style={{ color: '#0E0D0B', letterSpacing: '-0.5px' }}>
+                Sol<em className="italic font-light not-italic" style={{ color: '#C4472A', fontStyle: 'italic' }}>YB</em>
+              </span>
             </a>
 
             {/* Desktop links */}
@@ -135,7 +134,10 @@ export default function Navigation() {
               <a
                 href="/#contact"
                 onClick={(e) => scrollToSection(e, '/#contact')}
-                className="bg-coral hover:bg-coral-600 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all hover:scale-105 shadow-lg shadow-coral/20 cursor-pointer"
+                className="text-white px-5 py-2 rounded text-xs font-normal transition-all cursor-pointer"
+              style={{ background: '#C4472A', letterSpacing: '0.3px' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#E06245')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#C4472A')}
               >
                 Audit gratuit
               </a>
@@ -144,7 +146,8 @@ export default function Navigation() {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-[#8B8B9E] hover:text-[#F0EDE8] hover:bg-[#1C1C26] transition-colors"
+              className="md:hidden p-2 rounded transition-colors"
+          style={{ color: '#7A7268' }}
               aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -154,7 +157,7 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden border-t border-[#2A2A38] bg-[#0A0A0F] overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden border-t overflow-hidden transition-all duration-300 ease-in-out ${
             mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -166,8 +169,8 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className={`block py-3 px-4 rounded-lg font-medium transition-colors hover:bg-[#1C1C26] cursor-pointer ${
-                    activeSection === hash ? 'text-[#F0EDE8]' : 'text-[#8B8B9E] hover:text-[#F0EDE8]'
+                  className={`block py-3 px-4 rounded font-light transition-colors cursor-pointer ${
+                    activeSection === hash ? 'text-[#0E0D0B]' : 'text-[#7A7268]'
                   }`}
                 >
                   {link.label}
@@ -177,7 +180,8 @@ export default function Navigation() {
             <a
               href="/#contact"
               onClick={(e) => scrollToSection(e, '/#contact')}
-              className="block bg-coral hover:bg-coral-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors text-center mt-2 cursor-pointer"
+              className="block text-white px-4 py-3 rounded font-normal text-sm transition-colors text-center mt-2 cursor-pointer"
+              style={{ background: '#C4472A' }}
             >
               Audit gratuit
             </a>

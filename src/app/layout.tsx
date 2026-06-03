@@ -1,20 +1,20 @@
 ﻿import type { Metadata } from "next"
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
+import { Fraunces, DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500", "700"],
+  variable: "--font-fraunces",
+  weight: ["100", "300", "700", "900"],
   style: ["normal", "italic"],
 })
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-jakarta",
-  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500"],
 })
 
 export const metadata: Metadata = {
@@ -105,7 +105,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${playfair.variable} ${jakarta.variable} font-sans`}>
+      <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             try {
