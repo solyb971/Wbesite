@@ -12,7 +12,6 @@ export default function PublicLayout({
   return (
     <>
       <ClientBackground />
-      <GrainOverlay />
 
       <div className="sticky top-0 z-50" data-sticky-header>
         {/* <UrgencyBanner /> */}
