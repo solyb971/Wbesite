@@ -106,23 +106,6 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              var path = window.location.pathname;
-              var isPrivate = path.startsWith('/admin') || path.startsWith('/login') || path.startsWith('/auth');
-              if (isPrivate) return;
-              var done = sessionStorage.getItem('splash_done');
-              var isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-              if (!done && !isMobile) {
-                var el = document.createElement('div');
-                el.id = 'splash-block';
-                el.style.cssText = 'position:fixed;inset:0;background:#0a0a0f;z-index:99999;';
-                document.documentElement.appendChild(el);
-              }
-            } catch(e) {}
-          })();
-        `}} />
         {children}
       </body>
     </html>
