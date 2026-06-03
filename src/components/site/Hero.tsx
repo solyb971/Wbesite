@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Content side */}
       <div
-        className="flex flex-col justify-center px-8 md:px-14 lg:px-16 pt-28 pb-16 col-span-2 md:col-span-1"
+        className="flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 pt-28 pb-20 col-span-2 md:col-span-1"
         style={{ background: '#F5F2ED' }}
       >
         {/* Tag */}
