@@ -1,13 +1,9 @@
 ﻿import { Metadata } from 'next'
 import Hero from "@/components/site/Hero"
-import Ticker from "@/components/site/Ticker"
-import StatsSection from "@/components/site/StatsSection"
+import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 import Services from "@/components/site/Services"
-import FacturationElectronique from "@/components/site/FacturationElectronique"
 import Process from "@/components/site/Process"
-import Pricing from "@/components/site/Pricing"
 import Solutions from "@/components/site/Solutions"
-import TrustBadges from "@/components/site/TrustBadges"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
 import FAQ from "@/components/site/FAQ"
@@ -179,13 +175,9 @@ export default function HomePage() {
       />
 
       <main className="min-h-screen bg-[#0A0A0F]">
+        <ScrollRevealInit />
         <Hero />
-        <Ticker />
-        <StatsSection />
         <Services />
-        <FacturationElectronique />
-        <Pricing />
-        <TrustBadges />
         <Process />
         <Solutions />
         <About />

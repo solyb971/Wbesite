@@ -14,11 +14,11 @@ export default function Navigation() {
   const navRef = useRef<HTMLElement>(null)
 
   const navLinks = [
-    { href: "/#services",      label: "Nos services" },
-    { href: "/#realisations",  label: "Réalisations" },
-    { href: "/#tarifs",        label: "Nos tarifs" },
-    { href: "/#apropos",       label: "L'équipe" },
-    { href: "/#contact",       label: "Parlons-en" },
+    { href: "/#services",     label: "Services" },
+    { href: "/#apropos",      label: "À propos" },
+    { href: "/tarifs",        label: "Tarifs" },
+    { href: "/#realisations", label: "Réalisations" },
+    { href: "/#contact",      label: "Contact" },
   ]
 
   // Hide/show nav on scroll direction

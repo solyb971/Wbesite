@@ -1,19 +1,20 @@
 ﻿import type { Metadata } from "next"
-import { Syne, Plus_Jakarta_Sans } from "next/font/google"
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 
-const syne = Syne({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-playfair",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 })
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600"],
 })
 
 export const metadata: Metadata = {
@@ -104,7 +105,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${syne.variable} ${jakarta.variable} font-sans`}>
+      <body className={`${playfair.variable} ${jakarta.variable} font-sans`}>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             try {
