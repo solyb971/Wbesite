@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Tokens de marque site public (ne pas utiliser dans /admin) ── */
+/* ── Tokens de marque site public (ne pas utiliser dans /admin) ──
+   Aliases vers la palette éditoriale "SolYB v3" définie plus bas.
+   Ne jamais dupliquer les valeurs littérales : utiliser var(--xxx). ── */
 :root {
-  --syb-cream: #F5F2ED;
-  --syb-ink: #0E0D0B;
-  --syb-stone: #7A7268;
-  --syb-stone-light: #B0A89E;
-  --syb-rust: #C4472A;
-  --syb-rust-light: #E8845F;
-  --syb-dark: #1a1410;
-  --syb-dark-soft: #2a2420;
-  --syb-gold: #B8760A;
-  --syb-border: #DDD5C8;
+  /* — Aliases palette éditoriale — */
+  --syb-cream:       var(--smoke);      /* #F5F2ED */
+  --syb-ink:         var(--ink);        /* #0E0D0B */
+  --syb-stone:       var(--muted);      /* #7A7268 */
+  --syb-stone-light: var(--ghost);      /* #B0A89E */
+  --syb-rust:        var(--rust);       /* #C4472A */
+  --syb-border:      var(--v3-border);  /* #DDD5C8 */
+
+  /* — Littéraux intentionnels (pas d'équivalent dans la palette) — */
+  --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
+  --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
+  --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
+  --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
 }
 
 @layer base {
