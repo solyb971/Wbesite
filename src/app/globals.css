@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tokens de marque site public (ne pas utiliser dans /admin) ── */
+:root {
+  --syb-cream: #F5F2ED;
+  --syb-ink: #0E0D0B;
+  --syb-stone: #7A7268;
+  --syb-stone-light: #B0A89E;
+  --syb-rust: #C4472A;
+  --syb-rust-light: #E8845F;
+  --syb-dark: #1a1410;
+  --syb-dark-soft: #2a2420;
+  --syb-gold: #B8760A;
+  --syb-border: #DDD5C8;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
