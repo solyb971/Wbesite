@@ -1,3 +1,5 @@
+import CountUp from "@/components/ui/CountUp"
+
 const figures = [
   { value: "5+", label: "ans d'expérience" },
   { value: "14j", label: "livraison moyenne" },
@@ -41,12 +43,11 @@ export default function About() {
         >
           {figures.map((f) => (
             <div key={f.label} className="pt-8">
-              <div
-                className="font-display font-black leading-none mb-2"
+              <CountUp
+                value={f.value}
+                className="font-display font-black leading-none mb-2 block"
                 style={{ fontSize: 'clamp(32px, 4vw, 52px)', color: 'var(--syb-rust)' }}
-              >
-                {f.value}
-              </div>
+              />
               <div className="text-xs font-light tracking-wide" style={{ color: 'var(--syb-stone)' }}>
                 {f.label}
               </div>

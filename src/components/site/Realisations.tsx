@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import ParallaxImage from "@/components/ui/ParallaxImage"
 import { realisations } from "@/lib/realisations-data"
 
 export default function Realisations() {
@@ -29,10 +30,10 @@ export default function Realisations() {
           </div>
           <Link
             href="/#contact"
-            className="text-sm font-light transition-colors hover:text-[#0E0D0B]"
+            className="cta-arrow text-sm font-light transition-colors hover:text-[#0E0D0B]"
             style={{ color: 'var(--syb-stone)' }}
           >
-            Démarrer un projet →
+            Démarrer un projet <span className="arrow">→</span>
           </Link>
         </div>
 
@@ -42,7 +43,16 @@ export default function Realisations() {
             className="relative rounded-2xl overflow-hidden"
             style={{ aspectRatio: '16/11', background: '#0e0c0a', border: '0.5px solid var(--syb-border)' }}
           >
-            <Image src={project.image} alt={project.client} fill className="object-cover object-top" />
+            <ParallaxImage className="absolute inset-0">
+              <Image
+                src={project.image}
+                alt={project.client}
+                fill
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="object-cover object-top"
+                style={{ transform: 'scale(1.12) translateY(var(--parallax, 0px))' }}
+              />
+            </ParallaxImage>
           </div>
           <div>
             <div className="text-xs tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-rust)' }}>
@@ -73,10 +83,10 @@ export default function Realisations() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
+                className="cta-arrow inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
                 style={{ background: 'var(--syb-rust)', padding: '12px 26px', borderRadius: '4px' }}
               >
-                Voir le projet →
+                Voir le projet <span className="arrow">→</span>
               </a>
             )}
           </div>

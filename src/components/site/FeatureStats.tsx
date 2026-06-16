@@ -1,3 +1,5 @@
+import CountUp from "@/components/ui/CountUp"
+
 const stats = [
   { value: "14j", label: "délai moyen de livraison" },
   { value: "24h", label: "réponse garantie" },
@@ -11,20 +13,6 @@ export default function FeatureStats() {
       className="py-20 relative overflow-hidden"
       style={{ background: '#C4472A' }}
     >
-      {/* Ghost text decoration */}
-      <div
-        className="absolute top-[-40px] right-[-20px] font-display font-black leading-none pointer-events-none select-none hidden lg:block"
-        style={{
-          fontSize: '220px',
-          color: 'rgba(255,255,255,0.05)',
-          lineHeight: 1,
-          whiteSpace: 'nowrap',
-        }}
-        aria-hidden
-      >
-        971
-      </div>
-
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Title */}
@@ -33,8 +21,8 @@ export default function FeatureStats() {
               className="font-display font-black leading-none"
               style={{ fontSize: 'clamp(36px, 4vw, 58px)', color: 'white', letterSpacing: '-2px' }}
             >
-              Une agence<br />locale qui<br />
-              <em className="italic" style={{ fontWeight: 300 }}>livre vraiment.</em>
+              Des chiffres<br />
+              <em className="italic" style={{ fontWeight: 300 }}>qui tiennent.</em>
             </h2>
           </div>
 
@@ -49,12 +37,11 @@ export default function FeatureStats() {
                   border: '1px solid rgba(255,255,255,0.15)',
                 }}
               >
-                <div
-                  className="font-display font-black leading-none mb-1"
+                <CountUp
+                  value={s.value}
+                  className="font-display font-black leading-none mb-1 block"
                   style={{ fontSize: '40px', color: 'white' }}
-                >
-                  {s.value}
-                </div>
+                />
                 <div className="text-xs font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   {s.label}
                 </div>

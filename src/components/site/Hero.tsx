@@ -34,14 +34,20 @@ export default function Hero() {
             fontSize: 'clamp(52px, 7vw, 104px)',
             letterSpacing: '-3px',
             color: 'var(--syb-cream)',
-            animation: 'fadeUp 0.7s 0.25s ease both',
           }}
           aria-label="Votre entreprise en ligne"
         >
-          Votre<br />entreprise<br />
+          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre</span>
+          <span className="block" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>entreprise</span>
           <em
             className="italic block"
-            style={{ fontWeight: 300, color: 'var(--syb-rust-light)', fontSize: '0.85em', letterSpacing: '-2px' }}
+            style={{
+              fontWeight: 300,
+              color: 'var(--syb-rust-light)',
+              fontSize: '0.85em',
+              letterSpacing: '-2px',
+              animation: 'fadeUp 0.7s 0.55s ease both',
+            }}
           >
             en ligne.
           </em>
@@ -50,14 +56,14 @@ export default function Hero() {
         {/* Subtitle */}
         <p
           className="font-light leading-relaxed mb-10 max-w-md"
-          style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.4s ease both' }}
+          style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
         >
           Sites vitrine, e-commerce et applications sur mesure pour les{' '}
           <span style={{ color: 'var(--syb-cream)' }}>TPE et PME de Guadeloupe</span>. Livré en 2–3 semaines.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap items-center gap-5" style={{ animation: 'fadeUp 0.7s 0.55s ease both' }}>
+        <div className="flex flex-wrap items-center gap-5" style={{ animation: 'fadeUp 0.7s 0.85s ease both' }}>
           <Link
             href="/#contact"
             className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
@@ -67,10 +73,10 @@ export default function Hero() {
           </Link>
           <Link
             href="/#services"
-            className="flex items-center gap-1.5 text-sm font-light transition-colors hover:text-white"
+            className="cta-arrow flex items-center gap-1.5 text-sm font-light transition-colors hover:text-white"
             style={{ color: '#b8ab9c' }}
           >
-            Voir les services →
+            Voir les services <span className="arrow">→</span>
           </Link>
         </div>
 
