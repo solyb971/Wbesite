@@ -3,86 +3,83 @@ import Link from "next/link"
 import { realisations } from "@/lib/realisations-data"
 
 export default function Realisations() {
+  const project = realisations[0]
+
   return (
     <section
       id="realisations"
-      className="py-24 scroll-mt-20 overflow-hidden"
+      className="py-24 md:py-28 scroll-mt-20 overflow-hidden"
       style={{ background: '#E8DDD0' }}
     >
-      {/* Header */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-10">
-        <div className="reveal flex items-end justify-between flex-wrap gap-4">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        {/* Header */}
+        <div className="reveal flex items-end justify-between flex-wrap gap-4 mb-12">
           <div>
-            <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
-              <span className="w-5 h-px" style={{ background: '#C4472A' }} />
+            <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
+              <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
               Réalisations
             </div>
             <h2
               className="font-display font-black leading-none"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
+              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
             >
-              Quelques<br />
-              <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>projets livrés</em>
+              Un projet,<br />
+              <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>livré pour de vrai</em>
             </h2>
           </div>
           <Link
             href="/#contact"
             className="text-sm font-light transition-colors hover:text-[#0E0D0B]"
-            style={{ color: '#7A7268' }}
+            style={{ color: 'var(--syb-stone)' }}
           >
             Démarrer un projet →
           </Link>
         </div>
-      </div>
 
-      {/* Horizontal scroll */}
-      <div
-        className="reveal flex gap-4 overflow-x-auto pb-4 px-6 md:px-12"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {realisations.map((item) => (
+        {/* Étude de cas */}
+        <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div
-            key={item.id}
-            className="flex-shrink-0 rounded-xl overflow-hidden"
-            style={{ width: '320px', background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}
+            className="relative rounded-2xl overflow-hidden"
+            style={{ aspectRatio: '16/11', background: '#0e0c0a', border: '0.5px solid var(--syb-border)' }}
           >
-            <div className="relative" style={{ height: '200px', background: '#C8BFB5' }}>
-              <Image
-                src={item.image}
-                alt={item.client}
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-            <div className="p-5">
-              <div className="text-xs tracking-[2px] uppercase mb-1.5" style={{ color: '#C4472A' }}>
-                {item.sector}
-              </div>
-              <div className="font-display font-bold text-lg mb-0.5" style={{ color: '#0E0D0B' }}>
-                {item.client}
-              </div>
-              <div className="text-xs font-light" style={{ color: '#7A7268' }}>
-                {item.projectType}
-              </div>
-            </div>
+            <Image src={project.image} alt={project.client} fill className="object-cover object-top" />
           </div>
-        ))}
-
-        {/* Placeholder card */}
-        <div
-          className="flex-shrink-0 rounded-xl flex flex-col items-center justify-center text-center p-8"
-          style={{ width: '320px', background: '#DDD5C8', border: '0.5px dashed #C8BFB5', minHeight: '300px' }}
-        >
-          <div className="text-2xl mb-3" style={{ color: '#B0A89E' }}>+</div>
-          <p className="font-display font-bold text-base mb-1" style={{ color: '#7A7268' }}>Votre projet ici</p>
-          <p className="text-xs font-light mb-4" style={{ color: '#B0A89E' }}>Discutons de votre idée</p>
-          <Link
-            href="/#contact"
-            className="text-xs font-light transition-colors hover:text-[#0E0D0B]"
-            style={{ color: '#7A7268' }}
-          >
-            Démarrer →
-          </Link>
+          <div>
+            <div className="text-xs tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-rust)' }}>
+              {project.sector}
+            </div>
+            <h3
+              className="font-display font-bold mb-4"
+              style={{ fontSize: 'clamp(26px, 3vw, 38px)', color: 'var(--syb-ink)', lineHeight: 1.05 }}
+            >
+              {project.client}
+            </h3>
+            <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.tags.map((t) => (
+                <span
+                  key={t}
+                  className="text-xs font-light rounded-full px-3 py-1"
+                  style={{ border: '0.5px solid var(--syb-border)', color: 'var(--syb-stone)' }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
+                style={{ background: 'var(--syb-rust)', padding: '12px 26px', borderRadius: '4px' }}
+              >
+                Voir le projet →
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>

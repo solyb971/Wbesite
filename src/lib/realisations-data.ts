@@ -22,6 +22,7 @@ export const realisations: Realisation[] = [
       "Plateforme de mise en relation entre soignants et chauffeurs professionnels pour la gestion des tournées quotidiennes. Interface double — espace Pro de santé et espace Chauffeur — avec devis en ligne et gestion des rendez-vous.",
     tags: ["Next.js", "React", "UI/UX Design", "Application web", "Guadeloupe"],
     image: "/realisations/lds.jpg",
+    url: "https://libertydriveserenity.com/",
     accentColor: "#F59E0B",
   },
 ]
