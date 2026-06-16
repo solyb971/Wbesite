@@ -1,8 +1,8 @@
 const steps = [
-  { num: "1", icon: "🤝", title: "Échange découverte", description: "45 minutes pour comprendre votre activité, vos clients et vos objectifs.", duration: "Jour 1 · Gratuit" },
-  { num: "2", icon: "📋", title: "Devis & validation",  description: "Devis clair envoyé sous 24h. Vous validez, on commence.",              duration: "Jour 2" },
-  { num: "3", icon: "🎨", title: "Conception & livraison", description: "Design, développement, tests. Vous validez chaque étape.",           duration: "2 à 3 semaines" },
-  { num: "4", icon: "🛟", title: "Support & suivi",    description: "3 mois de support inclus après la mise en ligne.",                      duration: "3 mois inclus" },
+  { num: "01", title: "Échange découverte", description: "45 minutes pour comprendre votre activité, vos clients et vos objectifs.", duration: "Jour 1 · Gratuit" },
+  { num: "02", title: "Devis & validation", description: "Devis clair envoyé sous 24h. Vous validez, on commence.", duration: "Jour 2" },
+  { num: "03", title: "Conception & livraison", description: "Design, développement, tests. Vous validez chaque étape.", duration: "2 à 3 semaines" },
+  { num: "04", title: "Support & suivi", description: "3 mois de support inclus après la mise en ligne.", duration: "3 mois inclus" },
 ]
 
 export default function Process() {
@@ -33,35 +33,23 @@ export default function Process() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="group rounded-xl p-7 relative overflow-hidden transition-all duration-250 hover:-translate-y-1"
-              style={{
-                background: '#FFFFFF',
-                border: '0.5px solid #DDD5C8',
-              }}
+              className="group rounded-xl p-7 relative overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+              style={{ background: '#FFFFFF', border: '0.5px solid var(--syb-border)' }}
             >
-              {/* Ghost number */}
+              {/* Numéro d'étape serif (visuel principal) */}
               <div
-                className="absolute bottom-[-20px] right-[-10px] font-display font-black pointer-events-none select-none leading-none"
-                style={{ fontSize: '100px', color: '#F0E8DC', lineHeight: 1 }}
-                aria-hidden
+                className="font-display font-black leading-none mb-5"
+                style={{ fontSize: '44px', color: 'var(--syb-rust)', lineHeight: 1 }}
               >
                 {step.num}
               </div>
-
-              {/* Content */}
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-5"
-                style={{ background: '#FAF0EC' }}
-              >
-                {step.icon}
-              </div>
-              <p className="text-sm font-medium mb-2" style={{ color: '#0E0D0B' }}>
+              <p className="text-sm font-medium mb-2" style={{ color: 'var(--syb-ink)' }}>
                 {step.title}
               </p>
-              <p className="text-xs font-light leading-relaxed mb-4" style={{ color: '#7A7268', lineHeight: 1.65 }}>
+              <p className="text-xs font-light leading-relaxed mb-4" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
                 {step.description}
               </p>
-              <p className="text-xs" style={{ color: '#C4472A' }}>
+              <p className="text-xs" style={{ color: 'var(--syb-rust)' }}>
                 {step.duration}
               </p>
             </div>
