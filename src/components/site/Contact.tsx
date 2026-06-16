@@ -53,7 +53,7 @@ export default function Contact() {
 
   const labelStyle: React.CSSProperties = {
     fontSize: '10px',
-    color: '#B0A89E',
+    color: 'var(--syb-stone-light)',
     letterSpacing: '2px',
     textTransform: 'uppercase' as const,
     display: 'block',
@@ -86,7 +86,7 @@ export default function Contact() {
                 <div key={item.label} className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: '#C4472A' }} />
                   <div>
-                    <span className="block text-xs uppercase tracking-wide font-normal" style={{ color: '#B0A89E', letterSpacing: '0.5px' }}>
+                    <span className="block text-xs uppercase tracking-wide font-normal" style={{ color: 'var(--syb-stone-light)', letterSpacing: '0.5px' }}>
                       {item.label}
                     </span>
                     <span className="text-sm font-light" style={{ color: '#2E2A25' }}>{item.value}</span>

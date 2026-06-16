@@ -41,7 +41,7 @@ export default function FAQ() {
                   className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-base transition-all duration-300"
                   style={{
                     border: '0.5px solid #DDD5C8',
-                    color: openIndex === index ? '#F5F2ED' : '#B0A89E',
+                    color: openIndex === index ? '#F5F2ED' : 'var(--syb-stone)',
                     background: openIndex === index ? '#0E0D0B' : 'transparent',
                     transform: openIndex === index ? 'rotate(45deg)' : 'none',
                   }}

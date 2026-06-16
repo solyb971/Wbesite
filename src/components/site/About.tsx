@@ -39,8 +39,8 @@ export default function About() {
         </h2>
 
         <div
-          className="reveal mx-auto mb-14 flex flex-col gap-5 text-left sm:text-center"
-          style={{ maxWidth: '680px' }}
+          className="reveal mx-auto mb-14 flex flex-col gap-5 text-left"
+          style={{ maxWidth: '620px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
             Une île avec autant d&apos;énergie entrepreneuriale mérite une couverture numérique à la

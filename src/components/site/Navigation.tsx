@@ -82,12 +82,13 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center cursor-pointer" aria-label="SolYB — accueil">
             <Image
-              src="/logo/solyb-mark.png"
+              src="/logo/SYB_orange.svg"
               alt="SolYB"
               width={512}
               height={512}
               className="h-9 w-auto"
               priority
+              unoptimized
             />
           </Link>
 

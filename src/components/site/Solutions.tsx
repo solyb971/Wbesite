@@ -73,7 +73,7 @@ export default function Solutions() {
 
               <ul className="flex flex-col gap-1.5 mb-5">
                 {s.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: '#B0A89E' }}>
+                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: 'var(--syb-stone)' }}>
                     <span className="w-px h-3 flex-shrink-0" style={{ background: s.statusColor, opacity: 0.5 }} />
                     {h}
                   </li>
