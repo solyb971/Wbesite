@@ -15,27 +15,49 @@ export default function About() {
     >
       <div className="max-w-[900px] mx-auto px-6 md:px-12 text-center">
         <div
-          className="reveal flex items-center justify-center gap-2.5 mb-6 text-xs tracking-[3px] uppercase"
+          className="reveal flex items-center justify-center gap-2.5 mb-5 text-xs tracking-[3px] uppercase"
           style={{ color: 'var(--syb-rust)' }}
         >
           <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
-          À propos
+          À propos · Yacine Bouhassoun — Fondateur, Baie-Mahault
         </div>
 
         <h2
-          className="reveal font-display font-black mb-12 mx-auto"
+          className="reveal font-display font-black mb-10 mx-auto"
           style={{
             fontSize: 'clamp(30px, 4.2vw, 56px)',
             letterSpacing: '-1.5px',
             color: 'var(--syb-ink)',
             lineHeight: 1.15,
-            maxWidth: '780px',
+            maxWidth: '820px',
           }}
         >
-          Une agence locale qui{' '}
-          <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>livre vraiment</em>
-          {' '}— du premier échange à la mise en ligne.
+          La Guadeloupe m&apos;a construit.{' '}
+          <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>
+            J&apos;ai envie de lui rendre la pareille.
+          </em>
         </h2>
+
+        <div
+          className="reveal mx-auto mb-14 flex flex-col gap-5 text-left sm:text-center"
+          style={{ maxWidth: '680px' }}
+        >
+          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+            Une île avec autant d&apos;énergie entrepreneuriale mérite une couverture numérique à la
+            hauteur — pas des solutions importées, pensées pour des marchés qui n&apos;ont rien à voir
+            avec le nôtre.
+          </p>
+          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+            L&apos;IA a rendu la création accessible à tous : des projets naissent en quelques heures,
+            mais sans ossature ni vision — de beaux prototypes qui ne tiennent pas six mois. Moi, je
+            construis moins vite, mais je construis vrai :{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>une vraie réflexion avant la première ligne de code.</span>
+          </p>
+          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+            Sur chaque projet, l&apos;équipe SolYB intervient de bout en bout — design, développement,
+            conformité fiscale — avec l&apos;ancrage local qui fait la différence.
+          </p>
+        </div>
 
         <div
           className="reveal grid grid-cols-3 gap-8 max-w-2xl mx-auto"

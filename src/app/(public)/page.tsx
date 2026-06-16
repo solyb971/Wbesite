@@ -5,6 +5,7 @@ import TickerV3 from "@/components/site/TickerV3"
 import Services from "@/components/site/Services"
 import FeatureStats from "@/components/site/FeatureStats"
 import Process from "@/components/site/Process"
+import LaunchPricing from "@/components/site/LaunchPricing"
 import Solutions from "@/components/site/Solutions"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
@@ -183,6 +184,7 @@ export default function HomePage() {
         <Services />
         <FeatureStats />
         <Process />
+        <LaunchPricing />
         <Solutions />
         <About />
         <Realisations />
