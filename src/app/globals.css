@@ -16,6 +16,7 @@
 
   /* — Littéraux intentionnels (pas d'équivalent dans la palette) — */
   --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
+  --syb-rust-deep:   #9A5A3A;   /* accent foncé (carte Application) */
   --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
   --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
   --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */

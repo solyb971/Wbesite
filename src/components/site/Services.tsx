@@ -4,21 +4,21 @@ const services = [
   {
     title: "Site Vitrine",
     tag: "Le plus demandé",
-    accent: "#C4472A",
+    accent: "var(--syb-rust)",
     description: "Présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, lisible sur mobile, optimisé pour Google.",
     contactParam: "vitrine",
   },
   {
     title: "E-commerce",
     tag: "Vente en ligne",
-    accent: "#E8845F",
+    accent: "var(--syb-rust-light)",
     description: "Boutique complète avec paiement sécurisé et tableau de bord simple à prendre en main.",
     contactParam: "ecommerce",
   },
   {
     title: "Application Métier",
     tag: "Sur mesure",
-    accent: "#9A5A3A",
+    accent: "var(--syb-rust-deep)",
     description: "Outil sur mesure pour votre activité. Ce dont vous avez besoin, rien de plus.",
     contactParam: "application",
   },
@@ -59,7 +59,7 @@ export default function Services() {
               <div
                 key={s.title}
                 className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
-                style={{ border: '0.5px solid var(--syb-border)', background: '#FFFFFF' }}
+                style={{ border: '0.5px solid var(--syb-border)', background: 'var(--syb-cream)' }}
               >
                 {/* Barre d'accent */}
                 <div style={{ height: '4px', background: s.accent }} />
