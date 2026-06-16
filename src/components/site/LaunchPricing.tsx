@@ -70,9 +70,10 @@ export default function LaunchPricing() {
             <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>de lancement</em>
           </h2>
           <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
-            Réservés à nos premiers projets — le temps de construire nos références locales.{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>Places limitées, soumises à conditions.</span>{' '}
-            Ensuite, les tarifs évolueront.
+            Des prix pensés pour vous permettre de{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>vous lancer sereinement</span>, pendant que je
+            construis mes premières références locales. Pas de piège, pas d&apos;engagement — juste un
+            bon moment pour démarrer.
           </p>
         </div>
 

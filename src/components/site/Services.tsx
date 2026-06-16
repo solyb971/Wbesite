@@ -6,6 +6,7 @@ const services = [
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
     description: "Présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, lisible sur mobile, optimisé pour Google.",
+    price: "Dès 599€",
     contactParam: "vitrine",
   },
   {
@@ -13,6 +14,7 @@ const services = [
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
     description: "Boutique complète avec paiement sécurisé et tableau de bord simple à prendre en main.",
+    price: "Dès 999€",
     contactParam: "ecommerce",
   },
   {
@@ -20,6 +22,7 @@ const services = [
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
     description: "Outil sur mesure pour votre activité. Ce dont vous avez besoin, rien de plus.",
+    price: "Sur devis",
     contactParam: "application",
   },
 ]
@@ -76,15 +79,15 @@ export default function Services() {
                     {s.description}
                   </p>
                   <div className="flex items-center justify-between pt-4" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
-                    <span className="text-xs font-light" style={{ color: 'var(--syb-stone-light)' }}>
-                      Sur devis
+                    <span className="font-display font-bold text-sm" style={{ color: 'var(--syb-ink)' }}>
+                      {s.price}
                     </span>
                     <Link
                       href={`/?service=${s.contactParam}#contact`}
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
-                      style={{ background: 'var(--syb-rust)' }}
+                      className="cta-arrow inline-flex items-center gap-1.5 text-xs font-normal transition-colors hover:text-[var(--syb-rust)]"
+                      style={{ color: 'var(--syb-stone)' }}
                     >
-                      →
+                      Demander un devis <span className="arrow" style={{ color: 'var(--syb-rust)' }}>→</span>
                     </Link>
                   </div>
                 </div>

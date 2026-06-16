@@ -2,6 +2,7 @@
 import Hero from "@/components/site/Hero"
 import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 import TickerV3 from "@/components/site/TickerV3"
+import Stakes from "@/components/site/Stakes"
 import Services from "@/components/site/Services"
 import FeatureStats from "@/components/site/FeatureStats"
 import Process from "@/components/site/Process"
@@ -181,6 +182,7 @@ export default function HomePage() {
         <ScrollRevealInit />
         <Hero />
         <TickerV3 />
+        <Stakes />
         <Services />
         <FeatureStats />
         <Process />

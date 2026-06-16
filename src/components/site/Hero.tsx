@@ -24,7 +24,7 @@ export default function Hero() {
           style={{ color: 'var(--syb-rust-light)', animation: 'fadeUp 0.6s 0.1s ease both' }}
         >
           <span className="w-6 h-px flex-shrink-0" style={{ background: 'var(--syb-rust)' }} />
-          Agence digitale locale
+          Sites &amp; outils web pour les TPE &amp; PME de Guadeloupe
         </div>
 
         {/* H1 */}
@@ -58,8 +58,8 @@ export default function Hero() {
           className="font-light leading-relaxed mb-10 max-w-md"
           style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
         >
-          Sites vitrine, e-commerce et applications sur mesure pour les{' '}
-          <span style={{ color: 'var(--syb-cream)' }}>TPE et PME de Guadeloupe</span>. Livré en 2–3 semaines.
+          Soyez <span style={{ color: 'var(--syb-cream)' }}>visible, crédible et trouvé par vos clients</span> —
+          avec un site qui vous ressemble et qui travaille pour vous. Livré en 2–3 semaines.
         </p>
 
         {/* CTAs */}
@@ -80,8 +80,13 @@ export default function Hero() {
           </Link>
         </div>
 
+        {/* Réassurance */}
+        <p className="mt-6 text-xs font-light" style={{ color: 'rgba(255,255,255,0.45)', animation: 'fadeUp 0.7s 1s ease both' }}>
+          Devis gratuit sous 24h · Sans engagement · Hébergement 1 an inclus
+        </p>
+
         {/* Label localisation */}
-        <div className="mt-16 text-xs tracking-[3px] uppercase" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <div className="mt-12 text-xs tracking-[3px] uppercase" style={{ color: 'rgba(255,255,255,0.3)' }}>
           Baie-Mahault · Guadeloupe · 971
         </div>
       </div>
