@@ -2,25 +2,25 @@ import Link from "next/link"
 
 const services = [
   {
-    num: "01",
     title: "Site Vitrine",
+    tag: "Le plus demandé",
+    accent: "#C4472A",
     description: "Présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, lisible sur mobile, optimisé pour Google.",
     contactParam: "vitrine",
-    wide: true,
   },
   {
-    num: "02",
     title: "E-commerce",
+    tag: "Vente en ligne",
+    accent: "#E8845F",
     description: "Boutique complète avec paiement sécurisé et tableau de bord simple à prendre en main.",
     contactParam: "ecommerce",
-    wide: false,
   },
   {
-    num: "03",
     title: "Application Métier",
+    tag: "Sur mesure",
+    accent: "#9A5A3A",
     description: "Outil sur mesure pour votre activité. Ce dont vous avez besoin, rien de plus.",
     contactParam: "application",
-    wide: false,
   },
 ]
 
@@ -57,55 +57,32 @@ export default function Services() {
           <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s) => (
               <div
-                key={s.num}
-                className="group rounded-xl overflow-hidden flex flex-col"
-                style={{ border: '0.5px solid #DDD5C8' }}
+                key={s.title}
+                className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
+                style={{ border: '0.5px solid var(--syb-border)', background: '#FFFFFF' }}
               >
-                {/* Image placeholder */}
-                <div
-                  className="h-52 relative overflow-hidden"
-                  style={{
-                    background: s.num === "01"
-                      ? 'linear-gradient(135deg, #E8DDD0, #C8BFB5)'
-                      : s.num === "02"
-                      ? 'linear-gradient(135deg, #D0C8BE, #B8B0A6)'
-                      : 'linear-gradient(135deg, #B8B0A6, #A0988E)',
-                  }}
-                >
-                  <div
-                    className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-                    style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(14,13,11,0.5) 100%)' }}
-                  />
-                </div>
+                {/* Barre d'accent */}
+                <div style={{ height: '4px', background: s.accent }} />
 
                 {/* Body */}
-                <div className="p-6 flex flex-col flex-1" style={{ background: '#F5F2ED' }}>
-                  <div
-                    className="font-display font-thin leading-none mb-4"
-                    style={{ fontSize: '48px', color: '#DDD5C8', lineHeight: 1 }}
-                  >
-                    {s.num}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="text-[11px] tracking-[2px] uppercase mb-4" style={{ color: 'var(--syb-stone-light)' }}>
+                    {s.tag}
                   </div>
-                  <h3
-                    className="font-display font-bold mb-2"
-                    style={{ fontSize: '22px', color: '#0E0D0B' }}
-                  >
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '22px', color: 'var(--syb-ink)' }}>
                     {s.title}
                   </h3>
-                  <p className="text-xs font-light leading-relaxed mb-5 flex-1" style={{ color: '#7A7268', lineHeight: 1.65 }}>
+                  <p className="text-xs font-light leading-relaxed mb-5 flex-1" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
                     {s.description}
                   </p>
-                  <div
-                    className="flex items-center justify-between pt-4"
-                    style={{ borderTop: '0.5px solid #DDD5C8' }}
-                  >
-                    <span className="text-xs font-light" style={{ color: '#B0A89E' }}>
+                  <div className="flex items-center justify-between pt-4" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
+                    <span className="text-xs font-light" style={{ color: 'var(--syb-stone-light)' }}>
                       Sur devis
                     </span>
                     <Link
                       href={`/?service=${s.contactParam}#contact`}
                       className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
-                      style={{ background: '#C4472A' }}
+                      style={{ background: 'var(--syb-rust)' }}
                     >
                       →
                     </Link>
