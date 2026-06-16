@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -79,8 +80,15 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <Link href="/" className="font-display font-bold text-xl cursor-pointer" style={{ color: '#0E0D0B', letterSpacing: '-0.5px' }}>
-            Sol<em className="italic" style={{ color: '#C4472A', fontWeight: 300 }}>YB</em>
+          <Link href="/" className="flex items-center cursor-pointer" aria-label="SolYB — accueil">
+            <Image
+              src="/logo/solyb-mark.png"
+              alt="SolYB"
+              width={512}
+              height={512}
+              className="h-9 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}

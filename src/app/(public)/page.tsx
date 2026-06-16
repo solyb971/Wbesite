@@ -1,7 +1,6 @@
 ﻿import { Metadata } from 'next'
 import Hero from "@/components/site/Hero"
 import ScrollRevealInit from "@/components/site/ScrollRevealInit"
-import TickerV3 from "@/components/site/TickerV3"
 import Stakes from "@/components/site/Stakes"
 import Services from "@/components/site/Services"
 import FeatureStats from "@/components/site/FeatureStats"
@@ -181,7 +180,6 @@ export default function HomePage() {
       <main className="min-h-screen bg-[#0A0A0F]">
         <ScrollRevealInit />
         <Hero />
-        <TickerV3 />
         <Stakes />
         <Services />
         <FeatureStats />
