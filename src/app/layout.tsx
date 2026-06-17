@@ -1,20 +1,20 @@
 ﻿import type { Metadata } from "next"
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
+import { Fraunces, DM_Sans } from "next/font/google"
 import "./globals.css"
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500"],
+  variable: "--font-fraunces",
+  weight: ["100", "300", "700", "900"],
   style: ["normal", "italic"],
 })
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-jakarta",
-  weight: ["300", "400", "500", "600"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500"],
 })
 
 export const metadata: Metadata = {
@@ -105,24 +105,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${playfair.variable} ${jakarta.variable} font-sans`}>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              var path = window.location.pathname;
-              var isPrivate = path.startsWith('/admin') || path.startsWith('/login') || path.startsWith('/auth');
-              if (isPrivate) return;
-              var done = sessionStorage.getItem('splash_done');
-              var isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-              if (!done && !isMobile) {
-                var el = document.createElement('div');
-                el.id = 'splash-block';
-                el.style.cssText = 'position:fixed;inset:0;background:#0a0a0f;z-index:99999;';
-                document.documentElement.appendChild(el);
-              }
-            } catch(e) {}
-          })();
-        `}} />
+      <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
         {children}
       </body>
     </html>

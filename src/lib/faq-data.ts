@@ -12,6 +12,14 @@ export const faqs = [
     answer: "Un site vitrine est livré en 2 à 3 semaines, une boutique e-commerce en 3 à 4 semaines. Ces délais incluent la conception, le développement, les révisions et la formation. Pour les projets urgents, des options accélérées sont disponibles.",
   },
   {
+    question: "À qui appartient mon site une fois livré ?",
+    answer: "Il est 100 % à vous : le code, les contenus, le nom de domaine et l'hébergement sont à votre nom. Aucun verrouillage propriétaire — vous restez libre de faire évoluer votre site ailleurs si un jour vous le souhaitez.",
+  },
+  {
+    question: "Où sont hébergés mon site et mes données ?",
+    answer: "Sur des serveurs situés en France et dans l'Union européenne, conformes au RGPD. Vos données et celles de vos clients restent protégées et localisées dans l'UE — jamais revendues.",
+  },
+  {
     question: "Le plan maintenance SolYB est-il compatible avec mon site existant ?",
     answer: "Le plan maintenance SolYB est réservé aux sites et applications que nous avons développés. Cette approche nous permet de garantir des interventions rapides et fiables — nous connaissons le code, l'architecture et votre projet dans le détail. Si vous souhaitez refondre votre site existant, contactez-nous pour un devis.",
   },

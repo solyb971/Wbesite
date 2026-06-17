@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Save, RotateCcw, Check } from "lucide-react"
+import { useSettings } from "@/hooks/useSettings"
 
 const defaultSettings = {
   company_name: "SolYB - Solutions by Yacine Bouhassoun",
@@ -24,8 +25,6 @@ const defaultSettings = {
   stop_on_reply: true, stop_on_status_change: true, send_copy: false,
 }
 
-const STORAGE_KEY = "solyb_crm_settings"
-
 const inp = "w-full px-3 py-2.5 bg-[#0A0F1E] border border-white/[0.08] rounded-xl text-[#C8D4E8] text-sm focus:outline-none focus:border-coral/40 transition-all placeholder-[#2E3A55]"
 const lbl = "block text-xs font-semibold text-[#6B7A99] mb-1.5"
 const section = "bg-[#0F1628] border border-white/[0.06] rounded-2xl overflow-hidden"
@@ -45,31 +44,21 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
 }
 
 export default function SettingsPage() {
-  const [settings, setSettings] = useState(defaultSettings)
+  const { settings, setSettings, save, loaded: isLoaded } = useSettings(defaultSettings)
   const [tab, setTab] = useState("general")
   const [isSaved, setIsSaved] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
 
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) {
-      try { setSettings({ ...defaultSettings, ...JSON.parse(saved) }) } catch {}
-    }
-    setIsLoaded(true)
-  }, [])
+  const set = (k: string, v: unknown) => setSettings(prev => ({ ...prev, [k]: v }))
 
-  const set = (k: string, v: any) => setSettings(prev => ({ ...prev, [k]: v }))
-
-  const handleSave = () => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...settings, brevo_api_key: "" }))
+  const handleSave = async () => {
+    await save(settings)
     setIsSaved(true)
     setTimeout(() => setIsSaved(false), 2000)
   }
 
   const handleReset = () => {
     if (confirm("Réinitialiser tous les paramètres aux valeurs par défaut ?")) {
-      setSettings(defaultSettings)
-      localStorage.removeItem(STORAGE_KEY)
+      save(defaultSettings)
     }
   }
 

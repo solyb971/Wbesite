@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tokens de marque site public (ne pas utiliser dans /admin) ──
+   Aliases vers la palette éditoriale "SolYB v3" définie plus bas.
+   Ne jamais dupliquer les valeurs littérales : utiliser var(--xxx). ── */
+:root {
+  /* — Aliases palette éditoriale — */
+  --syb-cream:       var(--smoke);      /* #F5F2ED */
+  --syb-ink:         var(--ink);        /* #0E0D0B */
+  --syb-stone:       var(--muted);      /* #7A7268 — 4.7:1 sur blanc (AA) */
+  --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
+  --syb-rust:        var(--rust);       /* #C4472A */
+  --syb-border:      var(--v3-border);  /* #DDD5C8 */
+
+  /* — Littéraux intentionnels (pas d'équivalent dans la palette) — */
+  --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
+  --syb-rust-deep:   #9A5A3A;   /* accent foncé (carte Application) */
+  --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
+  --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
+  --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,23 +79,48 @@
   }
 }
 
+/* ── SolYB v3 — Editorial palette ── */
+:root {
+  --ink:        #0E0D0B;
+  --smoke:      #F5F2ED;
+  --rust:       #C4472A;
+  --rust-l:     #E06245;
+  --rust-pale:  #FAF0EC;
+  --sand:       #E8DDD0;
+  --text:       #2E2A25;
+  --muted:      #7A7268;
+  --ghost:      #B0A89E;
+  --v3-border:  #DDD5C8;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--smoke);
+    color: var(--text);
     overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
   }
-  /* Scroll natif sur mobile — plus fluide et moins gourmand que le JS */
   @media (max-width: 767px) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
   }
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--rust);
+  z-index: 200;
+  width: 0;
+  transition: width .1s linear;
 }
 
 /* FactuGP — keyframes du mot typewriter (référencés en inline style depuis CSS Modules) */
@@ -147,13 +192,22 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLL REVEAL
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-/* Scroll reveal — fade up simple */
+/* Scroll reveal — fade up doux (courbe validée, plus organique que ease) */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Micro-interaction : flèche des CTA qui glisse au survol */
+.cta-arrow .arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-arrow:hover .arrow { transform: translateX(4px); }
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO ANIMATIONS
@@ -239,17 +293,6 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO â€” GLOW FLOAT
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes meshFloat {
-    0%, 100% { transform: scale(1) translate(0, 0); }
-    33%       { transform: scale(1.04) translate(10px, -8px); }
-    66%       { transform: scale(1.02) translate(-8px, 10px); }
-  }
-  @keyframes heroSunSpin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-}
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FLOAT â€” icon FAQ / Ã©lÃ©ments dÃ©coratifs
@@ -418,10 +461,18 @@ section > .max-w-5xl {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* Respecte le réglage système : pas d'animation d'entrée si reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  [style*="fadeUp"] { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
 
 @keyframes blobDrift {
   from { transform: translate(0, 0) scale(1); }
   to   { transform: translate(-3%, 4%) scale(1.06); }
+}
+
+.ticker-track-v3 {
+  animation: tickerScroll 28s linear infinite;
 }
 
 @keyframes pulse {

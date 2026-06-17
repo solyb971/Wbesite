@@ -1,10 +1,7 @@
-﻿'use client'
-
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
-
-const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
+import EarlyAccessForm from '@/components/site/EarlyAccessForm'
+import RevealOnScroll from '@/components/site/RevealOnScroll'
+import SmoothScroll from '@/components/ui/SmoothScroll'
+import Countdown from './Countdown'
 import {
   IconFileInvoice, IconReceipt2, IconRefresh, IconBuildingSkyscraper,
   IconBrain, IconUsers, IconBriefcase, IconAnchor, IconCertificate,
@@ -13,47 +10,32 @@ import {
 } from '@tabler/icons-react'
 import styles from './facturation.module.css'
 
-/* ─── CSS Modules approach — différent de ResaGP (CSS-in-JS) et SolYB (Tailwind) ─── */
-
-const DEADLINE = new Date('2026-09-01T00:00:00')
-function useCountdown() {
-  const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0 })
-  useEffect(() => {
-    const tick = () => {
-      const diff = DEADLINE.getTime() - Date.now()
-      if (diff <= 0) return
-      setT({ d: Math.floor(diff / 86400000), h: Math.floor((diff % 86400000) / 3600000), m: Math.floor((diff % 3600000) / 60000), s: Math.floor((diff % 60000) / 1000) })
-    }
-    tick(); const id = setInterval(tick, 1000); return () => clearInterval(id)
-  }, [])
-  return t
-}
-
-const WORDS = ['simple', 'conforme', 'automatique', 'sécurisée', '100% DOM']
+/* Server component — interactif isolé en îlots client (Countdown, RevealOnScroll,
+   SmoothScroll, EarlyAccessForm). Design « Ink / Pétrole / Sable ». */
 
 const FEATURES = [
-  { n: '01', icon: IconFileInvoice, title: 'Factures au bon format', sub: 'Standard légal Factur-X EN 16931', desc: 'Vos factures sont créées dans le format officiel exigé par l\'État — un fichier PDF lisible par l\'humain et une pièce XML lisible par les machines. Compatible avec Chorus Pro DOM.', tags: ['Factur-X', 'EN 16931', 'Chorus Pro', 'PDF/A-3'] },
-  { n: '02', icon: IconReceipt2, title: 'TVA DOM déjà réglée', sub: 'Taux 8,5 % · 2,1 % préconfigurés', desc: 'En Guadeloupe, Martinique, Réunion et Guyane, la TVA est différente de la métropole. FactuGP l\'applique automatiquement selon votre activité — vous n\'avez rien à configurer.', tags: ['8,5 %', '2,1 %', 'Exonérations', 'Multi-taux'] },
-  { n: '03', icon: IconRefresh, title: 'Déclaration automatique', sub: 'Transmission directe à l\'administration', desc: 'Les informations de vos ventes et encaissements partent automatiquement vers les impôts. Fini la saisie manuelle — FactuGP le fait pour vous, en temps réel.', tags: ['E-reporting', 'FEC DGFiP', 'Automatique', 'Temps réel'] },
-  { n: '04', icon: IconBuildingSkyscraper, title: 'Module BTP', sub: 'TVA auto-liquidée & sous-traitance', desc: 'Dans le bâtiment, c\'est le client qui paye la TVA à la place du sous-traitant. FactuGP gère cette règle automatiquement et produit les documents légaux correspondants.', tags: ['Auto-liquidée', 'BTP', 'Art. 283', 'Sous-traitance'] },
-  { n: '05', icon: IconBrain, title: 'Lecture automatique des factures reçues', sub: 'Scan & import en 3 secondes', desc: 'Photographiez ou déposez une facture fournisseur. L\'IA lit le montant, la date et le numéro de TVA. Vous vérifiez en un coup d\'œil, on enregistre le reste.', tags: ['Scan intelligent', 'IA', 'PDF', 'Import auto'] },
-  { n: '06', icon: IconUsers, title: 'Devis & relances clients', sub: 'Devis → Facture en 1 clic', desc: 'Créez un devis, transformez-le en facture d\'un clic, et laissez FactuGP envoyer les relances en cas d\'impayé. Tout depuis un seul outil.', tags: ['Devis', 'Relances', 'Suivi clients', 'Commercial'] },
+  { icon: IconFileInvoice, tag: 'Factur-X EN 16931', title: 'Factures au bon format', desc: 'Vos factures sont créées dans le format officiel exigé par l\'État — un PDF lisible par l\'humain et une pièce XML lisible par les machines. Compatible Chorus Pro DOM.', chips: ['Factur-X', 'EN 16931', 'PDF/A-3'] },
+  { icon: IconReceipt2, tag: 'TVA 8,5 % · 2,1 %', title: 'TVA DOM déjà réglée', desc: 'En Guadeloupe, Martinique, Réunion et Guyane, la TVA diffère de la métropole. FactuGP applique le bon taux automatiquement selon votre activité.', chips: ['8,5 %', '2,1 %', 'Multi-taux'] },
+  { icon: IconRefresh, tag: 'E-reporting DGFiP', title: 'Déclaration automatique', desc: 'Les informations de vos ventes et encaissements partent automatiquement vers les impôts. Fini la saisie manuelle — FactuGP le fait pour vous, en temps réel.', chips: ['E-reporting', 'FEC DGFiP', 'Temps réel'] },
+  { icon: IconBuildingSkyscraper, tag: 'Module BTP', title: 'TVA auto-liquidée', desc: 'Dans le bâtiment, c\'est le client qui paie la TVA à la place du sous-traitant. FactuGP gère cette règle automatiquement et produit les documents légaux.', chips: ['Auto-liquidée', 'Art. 283', 'Sous-traitance'] },
+  { icon: IconBrain, tag: 'OCR IA', title: 'Lecture des factures reçues', desc: 'Photographiez ou déposez une facture fournisseur. L\'IA lit le montant, la date et le numéro de TVA. Vous vérifiez en un coup d\'œil, on enregistre le reste.', chips: ['Scan IA', 'Import auto', 'PDF'] },
+  { icon: IconUsers, tag: 'Commercial', title: 'Devis & relances clients', desc: 'Créez un devis, transformez-le en facture d\'un clic, et laissez FactuGP envoyer les relances en cas d\'impayé. Tout depuis un seul outil.', chips: ['Devis', 'Relances', 'Suivi'] },
 ]
 
-const TVA_ROWS = [
-  { cat: 'Taux normal', rate: '8,5 %', base: 'Ventes de biens, prestations de services', note: 'CGI art. 296' },
-  { cat: 'Taux réduit', rate: '2,1 %', base: 'Médicaments, presse, restauration', note: 'CGI art. 296 bis' },
-  { cat: 'Taux zéro', rate: '0 %', base: 'Exportations, livraisons intracommunautaires', note: 'Exonération' },
-  { cat: 'Agricole', rate: '1,05 %', base: 'Productions agricoles DOM', note: 'Spécifique DOM' },
+const RATES = [
+  { value: '8,5', label: 'Taux normal', desc: 'Ventes de biens, prestations de services', ref: 'CGI art. 296', hl: true },
+  { value: '2,1', label: 'Taux réduit', desc: 'Médicaments, presse, restauration', ref: 'CGI art. 296 bis', hl: false },
+  { value: '0', label: 'Taux zéro', desc: 'Exportations, livraisons intracommunautaires', ref: 'Exonération', hl: false },
+  { value: '1,05', label: 'Agricole', desc: 'Productions agricoles DOM', ref: 'Spécifique DOM', hl: false },
 ]
 
 const SECTORS = [
-  { icon: IconBriefcase, name: 'Commerce & négoce', note: 'Caisse NF 525, B2B/B2C' },
-  { icon: IconBuildingBank, name: 'Artisanat & services', note: 'Devis, factures, relances' },
-  { icon: IconScale, name: 'Professions libérales', note: 'Honoraires, e-invoicing' },
-  { icon: IconBuildingSkyscraper, name: 'BTP & construction', note: 'TVA auto-liquidée, DGFiP' },
-  { icon: IconAnchor, name: 'Tourisme & hôtellerie', note: 'Taxe séjour, ISCA NF 525' },
-  { icon: IconWorld, name: 'Agriculture & pêche', note: 'Taux réduits, exonérations' },
+  { icon: IconBriefcase, name: 'Commerce & négoce', sub: 'Caisse NF 525, B2B/B2C' },
+  { icon: IconBuildingBank, name: 'Artisanat & services', sub: 'Devis, factures, relances' },
+  { icon: IconScale, name: 'Professions libérales', sub: 'Honoraires, e-invoicing' },
+  { icon: IconBuildingSkyscraper, name: 'BTP & construction', sub: 'TVA auto-liquidée, DGFiP' },
+  { icon: IconAnchor, name: 'Tourisme & hôtellerie', sub: 'Taxe séjour, ISCA NF 525' },
+  { icon: IconWorld, name: 'Agriculture & pêche', sub: 'Taux réduits, exonérations' },
 ]
 
 const STAMPS = [
@@ -67,135 +49,122 @@ const STAMPS = [
   { icon: IconReceipt2, label: 'TVA DOM\nNative' },
 ]
 
-const TICKER_ITEMS = ['FACTURATION ÉLECTRONIQUE', 'CHORUS PRO DOM', 'TVA 8,5 % / 2,1 %', 'FACTUR-X EN 16931', 'FEC CONFORME DGFiP', 'MODULE BTP', 'ISCA NF 525', 'E-REPORTING', 'OCR IA FOURNISSEURS', 'RGPD CONFORME', 'DOM 971']
+const STATS = [
+  { num: '24', lbl: 'Modules intégrés' },
+  { num: '100%', lbl: 'Conforme DGFiP 2026' },
+  { num: '3', lbl: 'Taux TVA DOM préconfigurés' },
+  { num: '5 min', lbl: 'Pour être opérationnel' },
+]
+
+const PLANS = [
+  { name: 'Starter', price: '29', featured: false, feats: ['Jusqu\'à 50 factures/mois', 'Format Factur-X EN 16931', 'TVA DOM préconfigurée', 'Export FEC DGFiP', 'Support email'], off: ['Module BTP', 'Lecture automatique des factures', 'Suivi commercial'], cta: 'Réserver mon accès' },
+  { name: 'Pro', price: '49', featured: true, feats: ['Factures illimitées', 'Tout du plan Starter', 'E-reporting DGFiP automatique', 'Module BTP & sous-traitance', 'Lecture automatique des factures', 'Suivi commercial', 'Relances automatiques'], off: [], cta: 'Réserver mon accès' },
+  { name: 'Expert', price: '79', featured: false, feats: ['Tout du plan Pro', 'Multi-établissements', 'Multi-utilisateurs illimités', 'API REST & webhooks', 'Support prioritaire local', 'Formation & onboarding'], off: [], cta: 'Nous contacter' },
+]
+
+const ROADMAP = [
+  { q: 'Q1 2026', status: 'done', title: 'Lancement FactuGP Beta', desc: 'Factures, devis, TVA DOM 8,5 % et 2,1 %, portail client, relances automatiques, PDF professionnel.' },
+  { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, Chorus Pro DOM, export FEC DGFiP certifié. Toutes les obligations 2026 respectées.' },
+  { q: 'Q3 2026', status: 'current', title: 'Suite complète disponible', desc: 'Module BTP, lecture automatique des factures, suivi commercial, modules Tourisme & Agriculture. Ouverture des accès.' },
+  { q: 'À venir', status: 'next', title: 'Plateforme Agréée DGFiP', desc: 'Certification auprès d\'une Plateforme Agréée DGFiP (PA) pour la transmission e-reporting en conditions réelles.' },
+]
+
+const TICKER_ITEMS = ['Facturation électronique', 'Chorus Pro DOM', 'TVA 8,5 % / 2,1 %', 'Factur-X EN 16931', 'FEC conforme DGFiP', 'Module BTP', 'ISCA NF 525', 'E-reporting', 'OCR IA fournisseurs', 'RGPD conforme', 'DOM 971']
+
+const NAV_LINKS: [string, string][] = [['#fonctionnalites', 'Fonctionnalités'], ['#tva', 'TVA DOM'], ['#conformite', 'Conformité'], ['#tarifs', 'Tarifs'], ['#contact', 'Contact']]
+
+function Logo() {
+  return (
+    <a href="#" className={styles.logo} aria-label="FactuGP — accueil">
+      Factu<em>GP</em><span className={styles.logoDot} />
+    </a>
+  )
+}
 
 export default function FacturationPage() {
-  const [wordIdx, setWordIdx] = useState(0)
-  const [wordIn, setWordIn] = useState(true)
-  const countdown = useCountdown()
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setWordIn(false)
-      setTimeout(() => { setWordIdx(i => (i + 1) % WORDS.length); setWordIn(true) }, 240)
-    }, 2400)
-    return () => clearInterval(id)
-  }, [])
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(styles.revealed); obs.unobserve(e.target) } })
-    }, { threshold: 0.07 })
-    document.querySelectorAll(`.${styles.reveal}`).forEach(el => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
   return (
     <div className={styles.page}>
       <SmoothScroll />
-      <div className={styles.ledger} aria-hidden />
-      <div className={styles.wrap}>
+      <RevealOnScroll revealClass={styles.reveal} revealedClass={styles.revealed} />
 
-        {/* NAV */}
-        <nav className={styles.nav}>
-          <div className={styles.navIn}>
-            <a href="#" className={styles.logo}>
-              <Image src="/logo/SYB_orange.svg" alt="SolYB" width={36} height={36} className={styles.logoImg} />
-              <span className={styles.logoText}>Factu<em>GP</em></span>
+      {/* NAV */}
+      <header className={styles.nav}>
+        <div className={`${styles.wrap} ${styles.navIn}`}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+            <Logo />
+            <a href="https://solyb.fr" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', textDecoration: 'none' }}>
+              par SolYB
             </a>
-            <div className={styles.navLinks}>
-              {[['#fonctionnalites','Fonctionnalités'],['#tva','TVA DOM'],['#tarifs','Tarifs'],['#roadmap','Feuille de route'],['#contact','Contact']].map(([h,l]) =>
-                <a key={h} href={h} className={styles.navLink}>{l}</a>
-              )}
-            </div>
-            <a href="#contact" className={styles.navBtn}>Accès anticipé <IconArrowRight size={14} style={{ display: 'inline' }} /></a>
           </div>
-        </nav>
+          <nav className={styles.navLinks}>
+            {NAV_LINKS.map(([h, l]) => <a key={h} href={h}>{l}</a>)}
+          </nav>
+          <a href="#contact" className={`${styles.btn} ${styles.btnGhost}`}>Accès anticipé</a>
+        </div>
+      </header>
 
+      <main>
         {/* HERO */}
-        <section style={{ background: '#EDE8D8', paddingTop: '60px' }}>
-          <div className={styles.hero}>
+        <section className={styles.hero}>
+          <div className={`${styles.wrap} ${styles.heroInner}`}>
             <div>
-              <div className={styles.betaBadge}>
-                <span className={styles.betaDot} />
-                v2026.3.0 · Conformité DGFiP totale
+              <div className={styles.heroPills}>
+                <span className={styles.pill}>v2026.3.0 · Conformité DGFiP totale</span>
+                <span className={`${styles.pill} ${styles.pillUrgent}`}>Réforme obligatoire · Septembre 2026</span>
               </div>
-              <div className={styles.kicker}>
-                <span className={styles.kickerLine} />
-                Réforme obligatoire · Septembre 2026
-              </div>
-              <h1 className={styles.h1}>
-                Facturation<br />
-                électronique<br />
-                <span className={styles.h1Rotating}>
-                  <span className={`${styles.h1Word} ${wordIn ? 'fp-wIn' : 'fp-wOut'}`} style={{ animation: wordIn ? 'fp-wIn 0.24s ease forwards' : 'fp-wOut 0.24s ease forwards' }}>{WORDS[wordIdx]}</span>
-                </span>
-              </h1>
-              <p className={styles.sub}>
-                À partir de septembre&nbsp;2026, <strong>toutes les entreprises qui paient la TVA</strong> devront envoyer et recevoir leurs factures en format électronique certifié. FactuGP est la seule solution construite pour les DOM.
+              <h1 className={styles.heroTitle}>Facturation électronique,<br /><em>sans la paperasse</em></h1>
+              <p className={styles.heroLead}>
+                À partir de septembre 2026, <b>toutes les entreprises qui paient la TVA</b> devront émettre et recevoir leurs factures au format électronique certifié. FactuGP est la seule solution construite depuis le départ pour les DOM.
               </p>
-              <div className={styles.ctas}>
-                <a href="#contact" className={styles.btnPrimary}>
-                  <IconFileInvoice size={16} /> Rejoindre la liste d&apos;attente
+              <div className={styles.heroActions}>
+                <a href="#contact" className={`${styles.btn} ${styles.btnSand}`}>
+                  Rejoindre la liste d&apos;attente <IconArrowRight size={16} />
                 </a>
-                <a href="#fonctionnalites" className={styles.btnSecondary}>
-                  <IconChartBar size={16} /> Voir les fonctionnalités
-                </a>
+                <a href="#fonctionnalites" className={`${styles.btn} ${styles.btnGhost}`}>Voir les fonctionnalités</a>
               </div>
-              <div className={styles.trust}>
+              <div className={styles.heroTrust}>
                 {['Conforme DGFiP', 'TVA DOM native', 'RGPD · Hébergé en France', 'Essai 30 jours'].map(t => (
-                  <span key={t} className={styles.trustItem}>
-                    <span className={styles.trustDot} />{t}
-                  </span>
+                  <span key={t}>{t}</span>
                 ))}
               </div>
             </div>
 
-            {/* Invoice document */}
-            <div className={styles.docCol}>
-              <div className={styles.doc}>
-                <div className={styles.docStripe} />
-                <div className={styles.docHeader}>
+            {/* Invoice mockup */}
+            <div className={`${styles.invoice} ${styles.reveal}`}>
+              <div className={styles.invoiceGlow} />
+              <div className={styles.invoiceCard}>
+                <svg className={styles.stamp} viewBox="0 0 200 200">
+                  <defs><path id="fxStampPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" /></defs>
+                  <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 5" />
+                  <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                  <text fontFamily="var(--ff-mono)" fontSize="11.5" letterSpacing="2.5" fill="currentColor">
+                    <textPath href="#fxStampPath" startOffset="2%">CONFORME · DGFiP DOM · EN 16931 ·</textPath>
+                  </text>
+                  <text x="100" y="96" textAnchor="middle" fontFamily="var(--ff-mono)" fontSize="17" fontWeight="600" fill="currentColor">FACTUR-X</text>
+                  <text x="100" y="116" textAnchor="middle" fontFamily="var(--ff-mono)" fontSize="10" letterSpacing="1.5" fill="currentColor">971 · 2026</text>
+                </svg>
+                <div className={styles.invoiceHead}>
                   <div>
-                    <div className={styles.docCo}>
-                      Boulangerie Soleil des Alizés
-                      <span className={styles.docCoSub}>SIREN 123 456 789 · TVA FR12345678900</span>
-                    </div>
+                    <div className={styles.invoiceCompany}>Boulangerie Soleil des Alizés</div>
+                    <div className={styles.invoiceSiren}>SIREN 123 456 789 · TVA FR12345678900</div>
                   </div>
-                  <div className={styles.docStamp}>
-                    CONFORME<br />DGFiP<br /><IconCheck size={12} />
+                  <div className={styles.invoiceMeta}>
+                    Émission <b>15 juin 2026</b><br />
+                    Échéance <b>15 juillet 2026</b>
                   </div>
                 </div>
-                <div className={styles.docNum}>
-                  FACTURE N° <span className={styles.docNumVal}>2026-0147<span className={styles.cursor} /></span>
-                </div>
-                <div className={styles.docRow}><span>Date d&apos;émission</span><span className={styles.docRowVal}>15 juin 2026</span></div>
-                <div className={styles.docRow}><span>Échéance</span><span className={styles.docRowVal}>15 juillet 2026</span></div>
-                <div className={styles.docRow}><span>Client</span><span className={styles.docRowVal}>Hôtel Karukéra SAS</span></div>
-                <hr className={styles.docSep} />
-                <div className={styles.docLineHead}>
-                  <span>Désignation</span><span>HT</span><span>TTC</span>
-                </div>
-                {[
-                  { desc: 'Viennoiseries (×120)', ht: '240,00 €', ttc: '260,40 €' },
-                  { desc: 'Pains spéciaux (×50)', ht: '125,00 €', ttc: '135,62 €' },
-                  { desc: 'Livraison Baie-Mahault', ht: '30,00 €', ttc: '32,55 €' },
-                ].map((l, i) => (
-                  <div key={i} className={styles.docLine}>
-                    <span style={{ color: '#0D1A0D' }}>{l.desc}</span>
-                    <span style={{ color: '#7A9A78' }}>{l.ht}</span>
-                    <span style={{ color: '#0D1A0D' }}>{l.ttc}</span>
-                  </div>
-                ))}
-                <div className={styles.docTotal}>
-                  <span>TOTAL TTC (TVA 8,5 %)</span>
-                  <span className={styles.docTotalVal}>428,57 €</span>
-                </div>
-                <div className={styles.docBadges}>
-                  {['Format Factur-X EN 16931 · PDF/A-3', 'Transmis Chorus Pro DOM · Ref. CP-2026-0147', 'E-reporting DGFiP envoyé automatiquement'].map(b => (
-                    <div key={b} className={styles.docBadge}>
-                      <IconCheck size={11} className={styles.docBadgeCheck} /> {b}
-                    </div>
+                <div className={styles.invoiceNum}>FACTURE N° 2026-0147 — Client : Hôtel Karukéra SAS</div>
+                <table className={styles.invoiceTable}>
+                  <tbody>
+                    <tr><td>Viennoiseries (×120)</td><td>260,40 €</td></tr>
+                    <tr><td>Pains spéciaux (×50)</td><td>135,62 €</td></tr>
+                    <tr><td>Livraison Baie-Mahault</td><td>32,55 €</td></tr>
+                    <tr className={styles.invoiceTotal}><td>TOTAL TTC (TVA 8,5 %)</td><td>428,57 €</td></tr>
+                  </tbody>
+                </table>
+                <div className={styles.invoiceChips}>
+                  {['Format Factur-X EN 16931 · PDF/A-3', 'Transmis Chorus Pro DOM · Réf. CP-2026-0147', 'E-reporting DGFiP envoyé automatiquement'].map(c => (
+                    <div key={c} className={styles.invoiceChip}><IconCheck size={13} /> {c}</div>
                   ))}
                 </div>
               </div>
@@ -203,89 +172,44 @@ export default function FacturationPage() {
           </div>
         </section>
 
-        {/* STATS STRIP */}
-        <div className={styles.statsStrip}>
-          <div className={styles.statsIn}>
-            {[
-              { num: '24', suf: '', lbl: 'Modules intégrés' },
-              { num: '100', suf: '%', lbl: 'Conforme DGFiP 2026' },
-              { num: '3', suf: '', lbl: 'Taux TVA DOM préconfigurés' },
-              { num: '5', suf: ' min', lbl: 'Pour être opérationnel' },
-            ].map((s, i) => (
-              <div key={i} className={styles.statItem}>
-                <span className={styles.statNum}>{s.num}{s.suf}</span>
-                <span className={styles.statLbl}>{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* COUNTDOWN */}
-        <div className={styles.countdown}>
-          <div className={styles.countdownIn}>
-            <div>
-              <div className={styles.countdownLabel}>Compte à rebours</div>
-              <div className={styles.countdownTitle}>Obligation légale — 1er septembre 2026</div>
-              <div className={styles.countdownSub}>Toutes les entreprises qui paient la TVA · Des amendes dès la première facture non conforme</div>
-            </div>
-            <div className={styles.ticks}>
-              <div className={styles.tick}>
-                <span className={styles.tickNum}>{countdown.d}</span>
-                <span className={styles.tickLbl}>Jours</span>
-              </div>
-              <span className={styles.tickSep}>:</span>
-              <div className={styles.tick}>
-                <span className={styles.tickNum}>{String(countdown.h).padStart(2,'0')}</span>
-                <span className={styles.tickLbl}>Heures</span>
-              </div>
-              <span className={styles.tickSep}>:</span>
-              <div className={styles.tick}>
-                <span className={styles.tickNum}>{String(countdown.m).padStart(2,'0')}</span>
-                <span className={styles.tickLbl}>Min</span>
-              </div>
-              <span className={styles.tickSep}>:</span>
-              <div className={styles.tick}>
-                <span className={styles.tickNum}>{String(countdown.s).padStart(2,'0')}</span>
-                <span className={styles.tickLbl}>Sec</span>
-              </div>
-            </div>
-            <a href="#contact" className={styles.countdownCta}>
-              <IconClockHour4 size={16} /> Réserver mon accès anticipé →
-            </a>
-          </div>
-        </div>
-
         {/* TICKER */}
         <div className={styles.ticker}>
           <div className={styles.tickerTrack}>
             {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-              <span key={i}>
-                <span className={styles.tickerItem}>{item}</span>
-                <span className={styles.tickerDot}>·</span>
-              </span>
+              <span key={i}><span className={styles.tickerItem}>{item}</span><span className={styles.tickerDot}>·</span></span>
             ))}
           </div>
         </div>
 
+        {/* STATS */}
+        <section className={styles.stats}>
+          <div className={`${styles.wrap} ${styles.statsIn}`}>
+            {STATS.map(s => (
+              <div key={s.lbl}>
+                <span className={styles.statNum}>{s.num}</span>
+                <span className={styles.statLbl}>{s.lbl}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* FONCTIONNALITÉS */}
         <section id="fonctionnalites" className={styles.section}>
-          <div className={styles.sectionIn}>
-            <div className={`${styles.reveal}`} style={{ marginBottom: '3rem', textAlign: 'center' }}>
-              <h2 className={styles.h2}>Tout ce qu&apos;il faut,<br /><em>rien à configurer</em></h2>
-              <p className={styles.lead} style={{ maxWidth: 540, margin: '0 auto' }}>De la création de la facture jusqu&apos;à sa transmission aux impôts — FactuGP gère toute la chaîne avec les règles fiscales propres aux DOM, déjà intégrées.</p>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>Fonctionnalités</span>
+              <h2 className={styles.sectionTitle}>Tout ce qu&apos;il faut, <em className={styles.accentSand}>rien à configurer</em></h2>
+              <p className={styles.lede}>De la création de la facture jusqu&apos;à sa transmission aux impôts — FactuGP gère toute la chaîne avec les règles fiscales propres aux DOM, déjà intégrées.</p>
             </div>
-            <div className={`${styles.feats} ${styles.reveal} ${styles.d1}`}>
-              {FEATURES.map((f, i) => (
-                <div key={i} className={styles.feat}>
-                  <div className={styles.featN}>{f.n}</div>
-                  <div className={styles.featIconWrap}>
-                    <f.icon size={22} strokeWidth={1.5} />
-                  </div>
-                  <div className={styles.featTitle}>{f.title}</div>
-                  <div className={styles.featSub}>{f.sub}</div>
-                  <div className={styles.featDesc}>{f.desc}</div>
-                  <div className={styles.featTags}>
-                    {f.tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
+            <div className={`${styles.featuresGrid} ${styles.reveal}`}>
+              {FEATURES.map(f => (
+                <div key={f.title} className={styles.featuresCard}>
+                  <div className={styles.featuresIcon}><f.icon size={20} strokeWidth={1.6} /></div>
+                  <span className={styles.featuresTag}>{f.tag}</span>
+                  <h3 className={styles.featuresTitle}>{f.title}</h3>
+                  <p className={styles.featuresDesc}>{f.desc}</p>
+                  <div className={styles.featuresChips}>
+                    {f.chips.map(c => <span key={c} className={styles.chip}>{c}</span>)}
                   </div>
                 </div>
               ))}
@@ -295,205 +219,184 @@ export default function FacturationPage() {
 
         {/* TVA DOM */}
         <section id="tva" className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionIn}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
-              <div className={styles.reveal}>
-                <h2 className={styles.h2}>Taux de TVA<br /><em>Guadeloupe & DOM</em></h2>
-                <p className={styles.lead} style={{ marginBottom: '2rem' }}>
-                  En Guadeloupe et dans les DOM, la TVA n&apos;est pas la même qu&apos;en métropole — les taux sont plus bas. FactuGP connaît les bons taux et les applique automatiquement selon ce que vous vendez.
-                </p>
-                <div style={{ padding: '1.25rem', background: '#FDFCF6', border: '1px solid #B8D4A8', borderLeft: '4px solid #C8912A', borderRadius: '4px', fontFamily: 'var(--font-sans)', fontSize: '0.85rem', color: '#5A7A58', lineHeight: 1.65, boxShadow: '0 2px 8px rgba(13,74,43,0.06)' }}>
-                  <strong style={{ color: '#0D1A0D' }}>Base légale : CGI Articles 294 à 297 A</strong><br />
-                  Ces taux sont fixés par la loi. FactuGP applique le bon taux selon votre activité (code NAF) et le type de vente — vous n&apos;avez rien à vérifier.
-                </div>
+          <div className={`${styles.wrap} ${styles.tvaInner}`}>
+            <div className={styles.reveal}>
+              <span className={styles.eyebrow}>TVA DOM</span>
+              <h2 className={styles.sectionTitle} style={{ marginTop: 16 }}>Les taux <em className={styles.accentSand}>Guadeloupe & DOM</em></h2>
+              <p className={styles.lede} style={{ marginTop: 16 }}>
+                En Guadeloupe et dans les DOM, la TVA est plus basse qu&apos;en métropole. FactuGP connaît les bons taux et les applique automatiquement selon ce que vous vendez.
+              </p>
+              <div className={styles.tvaLegal}>
+                <b>Base légale — CGI art. 294 à 297 A</b>
+                <p>Ces taux sont fixés par la loi. FactuGP applique le bon taux selon votre activité (code NAF) et le type de vente — vous n&apos;avez rien à vérifier.</p>
               </div>
-              <div className={`${styles.reveal} ${styles.d1}`}>
-                <div className={styles.tvaWrap}>
-                  {TVA_ROWS.map((r, i) => (
-                    <div key={i} className={styles.tvaCard}>
-                      <div className={styles.tvaRate}>{r.rate}</div>
-                      <div className={styles.tvaCardBody}>
-                        <div className={styles.tvaCardCat}>{r.cat}</div>
-                        <div className={styles.tvaCardBase}>{r.base}</div>
-                        <div className={styles.tvaCardNote}>{r.note}</div>
-                      </div>
-                    </div>
-                  ))}
+            </div>
+            <div className={`${styles.rates} ${styles.reveal}`}>
+              {RATES.map(r => (
+                <div key={r.label} className={`${styles.rateCard} ${r.hl ? styles.rateCardHighlight : ''}`}>
+                  <div className={styles.rateValue}>{r.value}<sup style={{ fontSize: '1rem', color: 'var(--sand)' }}> %</sup></div>
+                  <div className={styles.rateLabel}>{r.label}</div>
+                  <div className={styles.rateDesc}>{r.desc}</div>
+                  <div className={styles.rateRef}>{r.ref}</div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* SECTEURS */}
         <section className={styles.section}>
-          <div className={styles.sectionIn}>
-            <div className={`${styles.reveal}`} style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-              <h2 className={styles.h2}>Vous payez la TVA ?<br /><em>Vous êtes concerné.</em></h2>
-              <p className={styles.lead} style={{ maxWidth: 560, margin: '0 auto' }}>Dès septembre 2026, toute entreprise qui paye la TVA en Guadeloupe doit facturer au format électronique officiel — quel que soit son secteur.</p>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>Secteurs</span>
+              <h2 className={styles.sectionTitle}>Vous payez la TVA ? <em className={styles.accentSand}>Vous êtes concerné.</em></h2>
+              <p className={styles.lede}>Dès septembre 2026, toute entreprise assujettie à la TVA en Guadeloupe doit facturer au format électronique officiel — quel que soit son secteur.</p>
             </div>
-            <div className={`${styles.sectors} ${styles.reveal} ${styles.d1}`}>
-              {SECTORS.map((s, i) => (
-                <div key={i} className={styles.sector}>
-                  <div className={styles.sectorIconWrap}>
-                    <s.icon size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className={styles.sectorName}>{s.name}</div>
-                  <div className={styles.sectorNote}>{s.note}</div>
+            <div className={`${styles.sectorsGrid} ${styles.reveal}`}>
+              {SECTORS.map(s => (
+                <div key={s.name} className={styles.sectorCard}>
+                  <div className={styles.sectorIcon}><s.icon size={20} strokeWidth={1.6} /></div>
+                  <div className={styles.sectorTitle}>{s.name}</div>
+                  <div className={styles.sectorSub}>{s.sub}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CONFORMITÉ */}
-        <section id="conformite" className={`${styles.section} ${styles.sectionDark}`}>
-          <div className={styles.sectionIn} style={{ textAlign: 'center' }}>
-            <div className={`${styles.reveal}`} style={{ marginBottom: '1.5rem' }}>
-              <h2 className={styles.h2} style={{ textAlign: 'center', color: '#F5EDD8' }}>100% conforme,<br /><em style={{ color: '#C8912A' }}>sans effort de votre côté</em></h2>
-              <p className={styles.lead} style={{ maxWidth: 520, margin: '0 auto', color: 'rgba(245,237,216,0.6)' }}>
-                FactuGP respecte toutes les normes exigées par l&apos;État — en France et en Europe. Chaque facture que vous émettez est automatiquement valide et légalement protégée.
-              </p>
+        {/* CONFORMITÉ (mur de tampons) */}
+        <section id="conformite" className={`${styles.section} ${styles.sectionAlt}`}>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>Conformité</span>
+              <h2 className={styles.sectionTitle}>100 % conforme, <em className={styles.accentSand}>sans effort de votre côté</em></h2>
+              <p className={styles.lede}>FactuGP respecte toutes les normes exigées par l&apos;État — en France et en Europe. Chaque facture émise est automatiquement valide et légalement protégée.</p>
             </div>
-            <div className={`${styles.stamps} ${styles.reveal} ${styles.d1}`}>
-              {STAMPS.map((s, i) => (
-                <div key={i} className={styles.stamp}>
-                  <div className={styles.stampIconWrap}>
-                    <s.icon size={24} strokeWidth={1.5} />
-                  </div>
-                  <span className={styles.stampLbl}>{s.label}</span>
+            <div className={`${styles.badgesGrid} ${styles.reveal}`}>
+              {STAMPS.map(s => (
+                <div key={s.label} className={styles.badge}>
+                  <div className={styles.badgeStamp}><s.icon size={24} strokeWidth={1.5} /></div>
+                  <span className={styles.badgeLabel}>{s.label}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* PRICING */}
+        {/* COUNTDOWN */}
+        <section className={styles.section}>
+          <div className={styles.wrap}>
+            <div className={`${styles.countdownPanel} ${styles.reveal}`}>
+              <span className={`${styles.eyebrow} ${styles.eyebrowSand}`}>Compte à rebours</span>
+              <h2 className={styles.countdownTitle}>Obligation légale — 1<sup>er</sup> septembre 2026</h2>
+              <p className={styles.countdownSub}>Toutes les entreprises qui paient la TVA · des amendes dès la première facture non conforme.</p>
+              <Countdown />
+              <a href="#contact" className={`${styles.btn} ${styles.btnSand}`}><IconClockHour4 size={16} /> Réserver mon accès anticipé</a>
+            </div>
+          </div>
+        </section>
+
+        {/* TARIFS */}
         <section id="tarifs" className={styles.section}>
-          <div className={styles.sectionIn}>
-            <div className={`${styles.reveal}`} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <h2 className={styles.h2} style={{ textAlign: 'center' }}>Un prix fixe,<br /><em>aucune surprise</em></h2>
-              <p className={styles.lead}>Abonnement mensuel. Pas de frais cachés, pas de commission à chaque facture émise.</p>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>Tarifs</span>
+              <h2 className={styles.sectionTitle}>Un prix fixe, <em className={styles.accentSand}>aucune surprise</em></h2>
+              <p className={styles.lede}>Abonnement mensuel. Pas de frais cachés, pas de commission à chaque facture émise.</p>
             </div>
-            <div className={`${styles.plans} ${styles.reveal} ${styles.d1}`}>
-              {[
-                { tier: 'Starter', price: '29€', hl: false, feats: ['Jusqu\'à 50 factures/mois','Format Factur-X EN 16931','TVA DOM préconfigurée','Export FEC DGFiP','Support email'], off: ['Module BTP','Lecture automatique des factures','Suivi commercial'], btn: styles.planBtnOut, cta: 'Réserver mon accès' },
-                { tier: 'Pro', price: '49€', hl: true, badge: 'Recommandé', feats: ['Factures illimitées','Tout du plan Starter','E-reporting DGFiP automatique','Module BTP & sous-traitance','Lecture automatique des factures','Suivi commercial','Relances automatiques'], btn: styles.planBtnGold, cta: 'Réserver mon accès' },
-                { tier: 'Expert', price: '79€', hl: false, feats: ['Tout du plan Pro','Multi-établissements','Multi-utilisateurs illimités','API REST & webhooks','Support prioritaire local','Formation & onboarding'], btn: styles.planBtnFill, cta: 'Nous contacter' },
-              ].map((p, i) => (
-                <div key={i} className={`${styles.plan}${p.hl ? ' ' + styles.planHl : ''}`}>
-                  {p.badge && <div className={styles.planBadge}>{p.badge}</div>}
-                  <div className={styles.planTier}>{p.tier}</div>
-                  <div className={styles.planPrice}>{p.price}<sub className={styles.planPriceSub}>/mois</sub></div>
-                  <hr className={styles.planSep} />
-                  <ul className={styles.planFeats}>
-                    {p.feats.map(f => <li key={f} className={styles.featOn}>{f}</li>)}
-                    {(p.off || []).map(f => <li key={f} className={styles.featOff}>{f}</li>)}
+            <div className={`${styles.pricingGrid} ${styles.reveal}`}>
+              {PLANS.map(p => (
+                <div key={p.name} className={`${styles.plan} ${p.featured ? styles.planFeatured : ''}`}>
+                  {p.featured && <span className={styles.planRibbon}>Recommandé</span>}
+                  <div className={styles.planName}>{p.name}</div>
+                  <div className={styles.planPrice}>{p.price}€<span> /mois</span></div>
+                  <ul className={styles.planList}>
+                    {p.feats.map(f => <li key={f}><IconCheck size={15} /> {f}</li>)}
+                    {p.off.map(f => <li key={f} className={styles.planOff}>{f}</li>)}
                   </ul>
-                  <a href="#contact" className={p.btn}>{p.cta}</a>
+                  <a href="#contact" className={`${styles.btn} ${p.featured ? styles.btnSand : styles.btnGhost} ${styles.planCta}`}>{p.cta}</a>
                 </div>
               ))}
             </div>
-            <p style={{ textAlign: 'center', color: '#7A9A78', fontFamily: 'var(--font-mono)', fontSize: '0.65rem', marginTop: '2rem', letterSpacing: '0.06em' }}>
-              30 JOURS D&apos;ESSAI GRATUIT · SANS CARTE BANCAIRE · RÉSILIATION À TOUT MOMENT
-            </p>
+            <p className={styles.pricingNote}>30 jours d&apos;essai gratuit · sans carte bancaire · résiliation à tout moment</p>
           </div>
         </section>
 
         {/* ROADMAP */}
         <section id="roadmap" className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionIn}>
-            <div className={`${styles.reveal}`} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2 className={styles.h2}>Solution en cours<br /><em>de lancement</em></h2>
-              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>
-                FactuGP est en accès anticipé. Suivez les étapes du lancement et réservez votre place parmi les premiers utilisateurs.
-              </p>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>Feuille de route</span>
+              <h2 className={styles.sectionTitle}>Solution en cours <em className={styles.accentSand}>de lancement</em></h2>
+              <p className={styles.lede}>FactuGP est en accès anticipé. <strong style={{ color: 'var(--paper)' }}>Ce qui est coché fonctionne déjà aujourd&apos;hui</strong> ; le reste arrive avant l&apos;échéance. Réservez votre place parmi les premiers utilisateurs.</p>
             </div>
-            <div className={`${styles.roadmap} ${styles.reveal} ${styles.d1}`}>
-              {[
-                { q: 'Q1 2026', status: 'done', title: 'Lancement FactuGP Beta', desc: 'Factures, devis, TVA DOM 8,5 % et 2,1 %, portail client, relances automatiques, PDF professionnel.' },
-                { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, Chorus Pro DOM, export FEC DGFiP certifié. Toutes les obligations 2026 respectées.' },
-                { q: 'Q3 2026', status: 'current', title: 'Suite complète disponible', desc: 'Module BTP, lecture automatique des factures, suivi commercial, modules Tourisme & Agriculture. Ouverture des accès.' },
-                { q: 'À venir', status: 'next', title: 'Plateforme Agréée DGFiP', desc: 'Certification auprès d\'une Plateforme Agréée DGFiP (PA) pour la transmission e-reporting en conditions réelles.' },
-              ].map((step, i) => (
-                <div key={i} className={`${styles.rmStep} ${step.status === 'done' ? styles.rmDone : step.status === 'current' ? styles.rmCurrent : styles.rmNext}`}>
-                  <div className={styles.rmDot}>
-                    {step.status === 'done' ? <IconCheck size={16} strokeWidth={2.5} /> : step.status === 'current' ? <IconArrowRight size={16} strokeWidth={2} /> : <span />}
+            <div className={`${styles.roadmapList} ${styles.reveal}`}>
+              {ROADMAP.map(step => (
+                <div key={step.title} className={`${styles.roadmapItem} ${step.status === 'done' ? styles.roadmapDone : step.status === 'next' ? styles.roadmapNext : ''}`}>
+                  <div className={styles.roadmapMarker}>
+                    {step.status === 'done' ? <IconCheck size={15} strokeWidth={2.5} /> : step.status === 'current' ? <IconArrowRight size={15} /> : <span />}
                   </div>
-                  {i < 3 && <div className={styles.rmLine} />}
-                  <div className={styles.rmQ}>{step.q}</div>
-                  <div className={styles.rmTitle}>{step.title}</div>
-                  <div className={styles.rmDesc}>{step.desc}</div>
-                  {step.status === 'current' && (
-                    <a href="#contact" className={styles.rmCta}>Rejoindre la liste d&apos;attente →</a>
-                  )}
+                  <div className={styles.roadmapQuarter}>{step.q}</div>
+                  <div className={styles.roadmapTitle}>{step.title}</div>
+                  <div className={styles.roadmapDesc}>{step.desc}</div>
+                  {step.status === 'current' && <a href="#contact" className={styles.roadmapCta}>Rejoindre la liste d&apos;attente →</a>}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section id="contact" className={styles.ctaSection}>
-          <div className={styles.ctaIn}>
-            <h2 className={styles.ctaH}>
-              Septembre 2026,<br />
-              <em className={styles.ctaHem}>c&apos;est maintenant</em>
-            </h2>
-            <p className={styles.ctaP}>
-              Ne subissez pas la réforme — prenez les devants. On commence par faire le point gratuitement sur votre situation, puis on vous accompagne jusqu&apos;à être 100% en règle.
-            </p>
-            <div className={styles.ctaBtns}>
-              <a href="mailto:contact@solyb.fr" className={styles.ctaBtnGold}>
-                <IconFileInvoice size={16} /> Réserver mon accès anticipé →
-              </a>
-              <a href="mailto:contact@solyb.fr" className={styles.ctaBtnGhost}>
-                <IconChartBar size={16} /> Voir une démo
-              </a>
-            </div>
+        {/* FINAL CTA */}
+        <section id="contact" className={styles.finalCta}>
+          <div className={`${styles.wrap} ${styles.finalCtaInner}`}>
+            <h2 className={styles.finalCtaTitle}>Septembre 2026, <em>c&apos;est maintenant</em></h2>
+            <p className={styles.finalCtaLede}>Ne subissez pas la réforme — prenez les devants. On fait d&apos;abord le point gratuitement sur votre situation, puis on vous accompagne jusqu&apos;à être 100 % en règle.</p>
+            <EarlyAccessForm
+              theme={{
+                surface: '#132226', text: '#F3EFE6', muted: '#8FA39F',
+                border: 'rgba(243,239,230,0.18)', borderFocus: '#5FBDBE',
+                accent: '#E2A565', accentText: '#0A1316', radius: '12px',
+                fontMono: 'var(--font-mono)',
+              }}
+              source="factugp"
+              projectType="facturation"
+              productSource="factu_gp"
+              productName="FactuGP"
+            />
           </div>
         </section>
+      </main>
 
-        {/* FOOTER */}
-        <footer className={styles.footer}>
-          <div className={styles.footerIn}>
-            <div>
-              <div className={styles.footerBrand}>FactuGP</div>
-              <div className={styles.footerDesc}>Solution de facturation électronique pour les entreprises de Guadeloupe et des DOM. Conforme DGFiP, TVA DOM native, hébergée en France.</div>
-              <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
-            </div>
-            <div>
-              <div className={styles.footerColTitle}>Navigation</div>
-              <ul className={styles.footerList}>
-                {[['#fonctionnalites','Fonctionnalités'],['#tva','TVA DOM'],['#conformite','Conformité'],['#tarifs','Tarifs'],['#contact','Contact']].map(([h,l]) =>
-                  <li key={h}><a href={h}>{l}</a></li>
-                )}
-              </ul>
-            </div>
-            <div>
-              <div className={styles.footerColTitle}>Conformité</div>
-              <ul className={styles.footerList}>
-                {['Factur-X EN 16931','Chorus Pro DOM','E-reporting DGFiP','ISCA NF 525','FEC conforme','RGPD · Hébergé FR'].map(c =>
-                  <li key={c}><span style={{ color: '#5A7A58', fontFamily: 'var(--font-sans)', fontSize: '0.85rem' }}>{c}</span></li>
-                )}
-              </ul>
-            </div>
-            <div>
-              <div className={styles.footerColTitle}>Contact</div>
-              <ul className={styles.footerList}>
-                <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
-                <li><span style={{ color: '#5A7A58', fontSize: '0.85rem' }}>Baie-Mahault · Guadeloupe 97122</span></li>
-                <li style={{ marginTop: '0.5rem' }}><a href="https://solyb.fr">solyb.fr →</a></li>
-              </ul>
-            </div>
+      {/* FOOTER */}
+      <footer className={styles.footer}>
+        <div className={`${styles.wrap} ${styles.footerGrid}`}>
+          <div className={styles.footerBrand}>
+            <Logo />
+            <p>Facturation électronique pour les entreprises de Guadeloupe et des DOM. Conforme DGFiP, TVA DOM native, hébergée en France.</p>
+            <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
           </div>
-          <div className={styles.footerBar}>
-            <span>© 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220</span>
-            <span>Baie-Mahault · Guadeloupe · Tous droits réservés</span>
+          <div className={styles.footerCol}>
+            <h4>Navigation</h4>
+            <ul>{NAV_LINKS.map(([h, l]) => <li key={h}><a href={h}>{l}</a></li>)}</ul>
           </div>
-        </footer>
-
-      </div>
+          <div className={styles.footerCol}>
+            <h4>Conformité</h4>
+            <ul>{['Factur-X EN 16931', 'Chorus Pro DOM', 'E-reporting DGFiP', 'ISCA NF 525', 'FEC conforme', 'RGPD · Hébergé FR'].map(c => <li key={c}>{c}</li>)}</ul>
+          </div>
+          <div className={styles.footerCol}>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
+              <li>Baie-Mahault · Guadeloupe 97122</li>
+              <li><a href="https://solyb.fr">solyb.fr →</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className={`${styles.wrap} ${styles.footerBottom}`}>
+          <span>© 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220</span>
+          <span>Baie-Mahault · Guadeloupe · Tous droits réservés</span>
+        </div>
+      </footer>
     </div>
   )
 }

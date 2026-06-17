@@ -1,7 +1,36 @@
 import { NextRequest, NextResponse } from "next/server"
+import { createClient as createServiceClient } from "@supabase/supabase-js"
 import { contactSchema } from "@/lib/validations/contact-schema"
 import { createClient } from "@/lib/supabase/server"
 import { sendWelcomeEmail } from "@/lib/email/brevo"
+
+/**
+ * Lit les poids de scoring configurés dans l'admin (table `settings`,
+ * clé `crm_admin_settings`). `settings` est protégée par RLS (authenticated),
+ * donc on lit avec la clé service-role côté serveur. Fallback : poids par défaut.
+ */
+const DEFAULT_WEIGHTS = { budget: 20, clarity: 15, urgency: 20, fit: 15, responsiveness: 15, source: 15 }
+async function getScoringWeights() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !serviceKey) return DEFAULT_WEIGHTS
+  try {
+    const admin = createServiceClient(url, serviceKey)
+    const { data } = await admin.from("settings").select("value").eq("key", "crm_admin_settings").single()
+    const v = data?.value as Record<string, number> | undefined
+    if (!v) return DEFAULT_WEIGHTS
+    return {
+      budget: v.score_budget ?? DEFAULT_WEIGHTS.budget,
+      clarity: v.score_clarity ?? DEFAULT_WEIGHTS.clarity,
+      urgency: v.score_urgency ?? DEFAULT_WEIGHTS.urgency,
+      fit: v.score_fit ?? DEFAULT_WEIGHTS.fit,
+      responsiveness: v.score_responsiveness ?? DEFAULT_WEIGHTS.responsiveness,
+      source: v.score_source ?? DEFAULT_WEIGHTS.source,
+    }
+  } catch {
+    return DEFAULT_WEIGHTS
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,18 +68,30 @@ export async function POST(request: NextRequest) {
       ">2000": 2500,
     }
 
-    // Calculer scores de base
-    const score_budget = validatedData.budget in budgetMap ? 20 : 10
-    const score_clarity = validatedData.description.length > 100 ? 15 : validatedData.description.length > 50 ? 10 : 5
-    const score_urgency =
-      validatedData.urgency === "urgent" ? 20 :
-      validatedData.urgency === "high" ? 15 :
-      validatedData.urgency === "normal" ? 10 : 5
-    const score_fit = ["vitrine", "ecommerce"].includes(validatedData.project_type) ? 15 : 10
-    const score_source =
-      validatedData.source === "bouche-a-oreille" || validatedData.source === "referral" ? 15 :
-      validatedData.source === "linkedin" ? 10 :
-      validatedData.source === "site-web" ? 8 : 5
+    // Poids de scoring configurables (admin → table settings, via service-role)
+    const W = await getScoringWeights()
+
+    // Qualité de chaque critère (fraction 0–1), puis pondérée par le poids configuré
+    const fBudget = validatedData.budget in budgetMap ? 1 : 0.5
+    const descLen = validatedData.description.length
+    const fClarity = descLen > 100 ? 1 : descLen > 50 ? 0.66 : 0.33
+    const fUrgency =
+      validatedData.urgency === "urgent" ? 1 :
+      validatedData.urgency === "high" ? 0.75 :
+      validatedData.urgency === "normal" ? 0.5 : 0.25
+    const fFit = ["vitrine", "ecommerce"].includes(validatedData.project_type) ? 1 : 0.66
+    const fSource =
+      validatedData.source === "bouche-a-oreille" || validatedData.source === "referral" ? 1 :
+      validatedData.source === "linkedin" ? 0.66 :
+      validatedData.source === "site-web" ? 0.53 : 0.33
+
+    const score_budget = Math.round(fBudget * W.budget)
+    const score_clarity = Math.round(fClarity * W.clarity)
+    const score_urgency = Math.round(fUrgency * W.urgency)
+    const score_fit = Math.round(fFit * W.fit)
+    const score_responsiveness = 0 // Pas encore de réponse au moment de la création
+    const score_source = Math.round(fSource * W.source)
+    const score_total = score_budget + score_clarity + score_urgency + score_fit + score_responsiveness + score_source
 
     // Récupérer la position offre lancement
     const { data: offerTracking } = await supabase
@@ -61,6 +102,12 @@ export async function POST(request: NextRequest) {
 
     const launchOfferPosition = offerTracking ? offerTracking.slots_filled + 1 : null
     const isLaunchOffer = launchOfferPosition && launchOfferPosition <= 30
+
+    // Segmentation produit : explicite, sinon déduite de la source
+    const src = (validatedData.source || "").toLowerCase()
+    const product_source =
+      validatedData.product_source ??
+      (src.includes("resa") ? "resa_gp" : src.includes("factu") ? "factu_gp" : "solyb_agency")
 
     // Insérer le lead dans Supabase
     const { data: lead, error } = await supabase
@@ -78,11 +125,13 @@ export async function POST(request: NextRequest) {
         activity_type: "digital",
         source: validatedData.source,
         source_details: "Formulaire contact site web",
+        product_source,
+        score_total,
         score_budget,
         score_clarity,
         score_urgency,
         score_fit,
-        score_responsiveness: 0, // Pas encore de réponse
+        score_responsiveness,
         score_source,
         is_launch_offer: isLaunchOffer,
         launch_offer_position: launchOfferPosition,

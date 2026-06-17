@@ -1,7 +1,6 @@
 import Navigation from "@/components/site/Navigation"
 import Footer from "@/components/site/Footer"
-import UrgencyBanner from "@/components/site/UrgencyBanner"
-import GrainOverlay from "@/components/site/GrainOverlay"
+import ScrollProgress from "@/components/site/ScrollProgress"
 import { ClientBackground, ClientFooterExtras } from "@/components/site/ClientOnlyComponents"
 
 export default function PublicLayout({
@@ -12,7 +11,7 @@ export default function PublicLayout({
   return (
     <>
       <ClientBackground />
-      <GrainOverlay />
+      <ScrollProgress />
 
       <div className="sticky top-0 z-50" data-sticky-header>
         {/* <UrgencyBanner /> */}

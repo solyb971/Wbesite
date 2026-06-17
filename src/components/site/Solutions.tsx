@@ -1,148 +1,131 @@
-import { Check, ArrowRight, ExternalLink } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
-import { solutions, type Solution } from "@/lib/solutions-data"
 
-const colorMap = {
-  coral: {
-    icon: "text-coral",
-    iconBg: "bg-coral/10",
-    border: "border-coral/30 hover:border-coral/60",
-    badge: "bg-coral/10 text-coral border border-coral/20",
-    badgeLive: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-    check: "text-coral",
-    pricing: "text-coral",
-    cta: "bg-coral hover:bg-coral/90 text-white shadow-lg shadow-coral/20",
-    ctaSecondary: "border-coral/30 text-coral hover:bg-coral/10",
-  },
-  solar: {
-    icon: "text-solar",
-    iconBg: "bg-solar/10",
-    border: "border-solar/30 hover:border-solar/60",
-    badge: "bg-solar/10 text-solar border border-solar/20",
-    badgeLive: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-    check: "text-solar",
-    pricing: "text-solar",
-    cta: "bg-solar hover:bg-solar/90 text-[#0A0A0F] shadow-lg shadow-solar/20",
-    ctaSecondary: "border-solar/30 text-solar hover:bg-solar/10",
-  },
-  turquoise: {
-    icon: "text-turquoise",
-    iconBg: "bg-turquoise/10",
-    border: "border-turquoise/30 hover:border-turquoise/60",
-    badge: "bg-turquoise/10 text-turquoise border border-turquoise/20",
-    badgeLive: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-    check: "text-turquoise",
-    pricing: "text-turquoise",
-    cta: "bg-turquoise hover:bg-turquoise/90 text-[#0A0A0F] shadow-lg shadow-turquoise/20",
-    ctaSecondary: "border-turquoise/30 text-turquoise hover:bg-turquoise/10",
-  },
-}
-
-function SolutionCard({ solution }: { solution: Solution }) {
-  const colors = colorMap[solution.color]
-  const isLive = solution.status === "live"
-
+function ResaMark() {
   return (
-    <div className={`group relative bg-[#13131A] border-2 ${colors.border} rounded-2xl p-6 md:p-8 transition-all duration-300 flex flex-col`}>
-
-      {/* Logo + status */}
-      <div className="flex items-start justify-between mb-6">
-        <div>
-          {solution.logo ? (
-            <div className="w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center bg-white mb-3">
-              <Image
-                src={solution.logo}
-                alt={solution.name}
-                width={80}
-                height={80}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ) : (
-            <div className={`w-14 h-14 ${colors.iconBg} rounded-xl flex items-center justify-center mb-3`}>
-              <span className={`text-2xl font-bold ${colors.icon}`}>{solution.name[0]}</span>
-            </div>
-          )}
-          <p className="text-xs text-[#8B8B9E]">{solution.target}</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${isLive ? colors.badgeLive : colors.badge}`}>
-            {isLive ? "✓ " : ""}{solution.statusLabel}
-          </span>
-          {isLive && (
-            <span className="text-xs font-medium px-2.5 py-1.5 rounded-full bg-[#1C1C26] border border-[#2A2A38] text-[#8B8B9E]">
-              Essai 14 jours
-            </span>
-          )}
-        </div>
-      </div>
-
-      {/* Name + tagline */}
-      <h3 className="font-display text-2xl font-bold text-[#F0EDE8] mb-2">{solution.name}</h3>
-      <p className={`text-sm font-semibold ${colors.pricing} mb-3`}>{solution.tagline}</p>
-
-      {/* Description */}
-      <p className="text-sm text-[#8B8B9E] mb-6 leading-relaxed">{solution.description}</p>
-
-      {/* Features */}
-      <ul className="space-y-2.5 mb-6 flex-1">
-        {solution.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-3">
-            <Check className={`w-4 h-4 ${colors.check} mt-0.5 flex-shrink-0`} />
-            <span className="text-sm text-[#8B8B9E]">{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Pricing */}
-      <div className="border-t border-[#2A2A38] pt-4 mb-5">
-        <p className={`text-sm font-bold ${colors.pricing}`}>{solution.pricing}</p>
-        <p className="text-xs text-[#8B8B9E] mt-0.5">{solution.pricingDetail}</p>
-      </div>
-
-      {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-2.5">
-        <Link
-          href={solution.ctaHref}
-          className={`flex items-center justify-center gap-2 flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.02] ${colors.cta}`}
-        >
-          {solution.ctaLabel}
-          <ExternalLink className="w-4 h-4" />
-        </Link>
-        {solution.secondaryCta && (
-          <Link
-            href={solution.secondaryCta.href}
-            className={`flex items-center justify-center gap-2 flex-1 py-3 rounded-xl font-semibold text-sm border transition-all hover:scale-[1.02] ${colors.ctaSecondary}`}
-          >
-            {solution.secondaryCta.label}
-          </Link>
-        )}
-      </div>
-    </div>
+    <svg width="26" height="26" viewBox="0 0 88 88" fill="none" aria-hidden>
+      <rect x="2" y="2" width="84" height="84" rx="3" stroke="currentColor" strokeWidth="4" />
+      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="currentColor" />
+      <rect x="29" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="47" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="29" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="47" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+    </svg>
   )
 }
 
+function FactuMark() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M6 2h8l4 4v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9 9h6M9 12.5h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+const solutions = [
+  {
+    num: "01",
+    name: "ResaGP",
+    Mark: ResaMark,
+    accent: "#2E7D96",
+    tagline: "Réservations restaurants — sans commission",
+    description: "Réservations en ligne, plan de salle, rappels SMS automatiques et fiches clients. Tout ce dont votre restaurant a besoin, dans un seul outil.",
+    status: "Disponible",
+    statusColor: "#16A34A",
+    highlights: ["Essai 14 jours gratuit", "Sans commission par couvert", "Restaurants & bars 971"],
+    cta: { label: "Découvrir ResaGP", href: "/resagp" },
+  },
+  {
+    num: "02",
+    name: "FactuGP",
+    Mark: FactuMark,
+    accent: "#2E8C92",
+    tagline: "Facturation électronique conforme 2026",
+    description: "À partir de septembre 2026, toutes les entreprises doivent émettre leurs factures électroniquement. FactuGP gère la conformité DGFiP pour vous.",
+    status: "Bientôt disponible",
+    statusColor: "#B8760A",
+    highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "TPE & PME 971"],
+    cta: { label: "Découvrir FactuGP", href: "/facturation-electronique" },
+  },
+]
+
 export default function Solutions() {
   return (
-    <section id="solutions" className="py-24 bg-[#0A0A0F] scroll-mt-36">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 reveal" data-reveal-index="0">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-[#F0EDE8] mb-4">
-            Des outils clés en main
+    <section
+      id="solutions"
+      className="py-24 md:py-28 scroll-mt-20"
+      style={{ background: '#F5F2ED' }}
+    >
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="reveal mb-14">
+          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
+            <span className="w-5 h-px" style={{ background: '#C4472A' }} />
+            Nos outils
+          </div>
+          <h2
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
+          >
+            Des outils<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>déjà prêts pour vous</em>
           </h2>
-          <p className="text-lg text-[#8B8B9E] max-w-2xl mx-auto">
-            En plus des projets sur-mesure, SolYB développe ses propres outils pour les entreprises guadeloupéennes —
-            abonnement mensuel, prêts à l&apos;emploi, sans complexité technique.
+          <p className="text-sm font-light leading-relaxed max-w-md mt-5" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+            En plus du sur-mesure, j&apos;ai créé mes propres outils pour les entreprises d&apos;ici.
           </p>
         </div>
 
-        {/* Solutions grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {solutions.map((solution, index) => (
-            <div key={solution.id} className="reveal" data-reveal-index={String(index + 1)}>
-              <SolutionCard solution={solution} />
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4">
+          {solutions.map((s) => (
+            <div
+              key={s.name}
+              className="group rounded-xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1"
+              style={{ background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}
+            >
+              <div className="flex items-center justify-between mb-5">
+                <div
+                  className="w-11 h-11 rounded-lg flex items-center justify-center"
+                  style={{ background: `${s.accent}14`, border: `1px solid ${s.accent}40`, color: s.accent }}
+                >
+                  <s.Mark />
+                </div>
+                <span className="flex items-center gap-2 text-xs tracking-wide" style={{ color: s.statusColor }}>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: s.statusColor }} />
+                  {s.status}
+                </span>
+              </div>
+
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="font-display font-thin text-4xl leading-none" style={{ color: '#DDD5C8' }}>
+                  {s.num}
+                </span>
+                <h3 className="font-display font-bold text-2xl" style={{ color: '#0E0D0B' }}>
+                  {s.name}
+                </h3>
+              </div>
+
+              <p className="text-sm font-medium mb-3" style={{ color: '#C4472A' }}>{s.tagline}</p>
+              <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: '#7A7268', lineHeight: 1.65 }}>
+                {s.description}
+              </p>
+
+              <ul className="flex flex-col gap-1.5 mb-5">
+                {s.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: 'var(--syb-stone)' }}>
+                    <span className="w-px h-3 flex-shrink-0" style={{ background: s.statusColor, opacity: 0.5 }} />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <div style={{ borderTop: '0.5px solid #DDD5C8', paddingTop: '1.25rem' }}>
+                <Link
+                  href={s.cta.href}
+                  className="cta-arrow inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-80"
+                  style={{ color: s.accent }}
+                >
+                  {s.cta.label} <span className="arrow">→</span>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

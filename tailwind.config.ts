@@ -10,23 +10,23 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-jakarta)', 'Inter', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // SolYB brand palette — Caribbean dark
+        // SolYB brand palette — terre cuite (#C4472A) alignée sur le site public
         coral: {
-          DEFAULT: '#FF6B47',
-          50: '#FFF1ED',
-          100: '#FFE0D6',
-          200: '#FFC1AD',
-          300: '#FF9B85',
-          400: '#FF7D5E',
-          500: '#FF6B47',
-          600: '#FF4A1F',
-          700: '#E03000',
-          800: '#B02500',
-          900: '#801A00',
+          DEFAULT: '#C4472A',
+          50: '#FBEDE9',
+          100: '#F6D6CC',
+          200: '#EAB0A0',
+          300: '#DD8970',
+          400: '#D0644A',
+          500: '#C4472A',
+          600: '#A53A21',
+          700: '#842E1A',
+          800: '#5E2113',
+          900: '#3D150C',
         },
         solar: {
           DEFAULT: '#F5A623',

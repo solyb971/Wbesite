@@ -17,6 +17,29 @@ export const metadata: Metadata = {
   },
 }
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'FactuGP',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Web',
+  url: 'https://solyb.fr/facturation-electronique',
+  description: 'Logiciel de facturation électronique conforme DGFiP pour les TPE/PME de Guadeloupe et des DOM : Factur-X EN 16931, Chorus Pro DOM, TVA DOM 8,5 % / 2,1 %, e-reporting, FEC.',
+  inLanguage: 'fr',
+  provider: { '@type': 'Organization', name: 'SolYB', url: 'https://solyb.fr' },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Guadeloupe' },
+  offers: [
+    { '@type': 'Offer', name: 'Starter', price: '29', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+    { '@type': 'Offer', name: 'Pro', price: '49', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+    { '@type': 'Offer', name: 'Expert', price: '79', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+  ],
+}
+
 export default function Page() {
-  return <FacturationPage />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <FacturationPage />
+    </>
+  )
 }

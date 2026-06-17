@@ -13,9 +13,6 @@ export function ClientBackground() {
   return (
     <>
       <SmoothScroll />
-      <ConstellationsCanvas />
-      <SplashScreen />
-      <CustomCursor />
     </>
   )
 }

@@ -1,122 +1,101 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink, ArrowRight } from "lucide-react"
-import { realisations, type Realisation } from "@/lib/realisations-data"
-
-function RealisationCard({ item }: { item: Realisation }) {
-  return (
-    <div className="bg-[#13131A] border border-[#2A2A38] rounded-2xl overflow-hidden hover:border-[#3A3A48] transition-all duration-300 group flex flex-col card-elevation">
-      {/* Screenshot */}
-      <div className="relative h-60 overflow-hidden bg-[#0A0A0F] flex-shrink-0">
-        <Image
-          src={item.image}
-          alt={`${item.client} — réalisé par SolYB`}
-          fill
-          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-        />
-        {item.url && (
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-[#0A0A0F] px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 hover:bg-[#F0EDE8] transition-colors"
-            >
-              Voir le site
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          </div>
-        )}
-        {/* Accent bar */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-1 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
-          style={{ backgroundColor: item.accentColor }}
-        />
-      </div>
-
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center justify-between mb-3">
-          <span
-            className="text-xs font-semibold px-2.5 py-1 rounded-full"
-            style={{
-              color: item.accentColor,
-              backgroundColor: `${item.accentColor}18`,
-              border: `1px solid ${item.accentColor}30`,
-            }}
-          >
-            {item.sector}
-          </span>
-          <span className="text-xs text-[#8B8B9E]">{item.year}</span>
-        </div>
-
-        <h3 className="font-display text-xl font-bold text-[#F0EDE8] mb-0.5">{item.client}</h3>
-        <p className="text-sm font-medium mb-4" style={{ color: item.accentColor }}>
-          {item.projectType}
-        </p>
-
-        <p className="text-sm text-[#8B8B9E] leading-relaxed mb-5 flex-1">{item.description}</p>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {item.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs bg-[#1C1C26] border border-[#2A2A38] text-[#8B8B9E] px-2.5 py-1 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ComingSoonCard() {
-  return (
-    <div className="bg-[#13131A] border-2 border-dashed border-[#2A2A38] rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-[420px] hover:border-coral/30 transition-colors group card-elevation">
-      <div className="w-16 h-16 rounded-full bg-coral/10 flex items-center justify-center mb-4 group-hover:bg-coral/15 transition-colors">
-        <span className="text-2xl font-bold text-coral">+</span>
-      </div>
-      <h3 className="font-display text-lg font-bold text-[#F0EDE8] mb-2">Votre projet ici</h3>
-      <p className="text-sm text-[#8B8B9E] leading-relaxed mb-6 max-w-xs">
-        Vous avez un projet digital ? Discutons-en — nous construisons des solutions adaptées à votre réalité terrain.
-      </p>
-      <Link
-        href="/#contact"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-coral/80 transition-colors"
-      >
-        Démarrer un projet
-        <ArrowRight className="w-4 h-4" />
-      </Link>
-    </div>
-  )
-}
+import ParallaxImage from "@/components/ui/ParallaxImage"
+import { realisations } from "@/lib/realisations-data"
 
 export default function Realisations() {
+  const project = realisations[0]
+
   return (
-    <section id="realisations" className="py-24 bg-[#0D0D14] scroll-mt-36">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="realisations"
+      className="py-24 md:py-28 scroll-mt-20 overflow-hidden"
+      style={{ background: '#E8DDD0' }}
+    >
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="text-center mb-16 reveal" data-reveal-index="0">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-[#F0EDE8] mb-4">
-            Nos Réalisations
-          </h2>
-          <p className="text-lg text-[#8B8B9E] max-w-2xl mx-auto">
-            Des projets concrets, pensés et construits pour des entrepreneurs qui avancent.
-          </p>
+        <div className="reveal flex items-end justify-between flex-wrap gap-4 mb-12">
+          <div>
+            <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
+              <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
+              Réalisations
+            </div>
+            <h2
+              className="font-display font-black leading-none"
+              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
+            >
+              Un projet,<br />
+              <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>livré pour de vrai</em>
+            </h2>
+          </div>
+          <Link
+            href="/#contact"
+            className="cta-arrow text-sm font-light transition-colors hover:text-[#0E0D0B]"
+            style={{ color: 'var(--syb-stone)' }}
+          >
+            Démarrer un projet <span className="arrow">→</span>
+          </Link>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {realisations.map((item, index) => (
-            <div key={item.id} className="reveal" data-reveal-index={String(index + 1)}>
-              <RealisationCard item={item} />
+        {/* Étude de cas */}
+        <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div
+            className="relative rounded-2xl overflow-hidden"
+            style={{ aspectRatio: '16/11', background: '#0e0c0a', border: '0.5px solid var(--syb-border)' }}
+          >
+            <ParallaxImage className="absolute inset-0">
+              <Image
+                src={project.image}
+                alt={project.client}
+                fill
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="object-cover object-top"
+                style={{ transform: 'scale(1.12) translateY(var(--parallax, 0px))' }}
+              />
+            </ParallaxImage>
+          </div>
+          <div>
+            <div
+              className="inline-flex items-center gap-2 text-[11px] tracking-[1.5px] uppercase rounded-full px-3 py-1 mb-4"
+              style={{ background: 'rgba(22,163,74,0.08)', border: '0.5px solid rgba(22,163,74,0.3)', color: '#15803D' }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#16A34A' }} />
+              Projet réel · en ligne
             </div>
-          ))}
-          <div className="reveal" data-reveal-index={String(realisations.length + 1)}>
-            <ComingSoonCard />
+            <div className="text-xs tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-rust)' }}>
+              {project.sector}
+            </div>
+            <h3
+              className="font-display font-bold mb-4"
+              style={{ fontSize: 'clamp(26px, 3vw, 38px)', color: 'var(--syb-ink)', lineHeight: 1.05 }}
+            >
+              {project.client}
+            </h3>
+            <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.tags.map((t) => (
+                <span
+                  key={t}
+                  className="text-xs font-light rounded-full px-3 py-1"
+                  style={{ border: '0.5px solid var(--syb-border)', color: 'var(--syb-stone)' }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-arrow inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
+                style={{ background: 'var(--syb-rust)', padding: '12px 26px', borderRadius: '4px' }}
+              >
+                Voir le projet <span className="arrow">→</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

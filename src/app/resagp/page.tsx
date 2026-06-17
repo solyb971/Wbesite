@@ -17,6 +17,29 @@ export const metadata: Metadata = {
   },
 }
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'ResaGP',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://solyb.fr/resagp',
+  description: 'Plateforme de gestion de restaurant pour la Guadeloupe : réservation en ligne, plan de salle interactif, CRM clients, encaissement. Sans commission par couvert, conforme RGPD.',
+  inLanguage: 'fr',
+  provider: { '@type': 'Organization', name: 'SolYB', url: 'https://solyb.fr' },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Guadeloupe' },
+  offers: [
+    { '@type': 'Offer', name: 'Essentiel', price: '59', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+    { '@type': 'Offer', name: 'Pro', price: '99', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+    { '@type': 'Offer', name: 'Business', price: '149', priceCurrency: 'EUR', category: 'Abonnement mensuel' },
+  ],
+}
+
 export default function Page() {
-  return <ResaGPPage />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <ResaGPPage />
+    </>
+  )
 }
