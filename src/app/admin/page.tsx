@@ -26,18 +26,18 @@ const PRODUCTS: {
     id: "all",
     label: "Tous",
     icon: Users,
-    color: "#6B7A99",
-    textClass: "text-[#8090AA]",
+    color: "#9A8C78",
+    textClass: "text-[#A89880]",
     borderClass: "border-white/10",
     bgClass: "bg-white/[0.04]",
     ringClass: "ring-white/10",
-    dotClass: "bg-[#6B7A99]",
+    dotClass: "bg-[#9A8C78]",
   },
   {
     id: "solyb_agency",
     label: "SolYB Agence",
     icon: Zap,
-    color: "#FF6B47",
+    color: "#C4472A",
     textClass: "text-coral",
     borderClass: "border-coral/20",
     bgClass: "bg-coral/10",
@@ -92,7 +92,7 @@ function ProductOverviewCard({
 
   return (
     <div
-      className={`relative group bg-[#0F1628] border ${product.borderClass} rounded-2xl p-5 hover:border-opacity-50 transition-all duration-200 cursor-pointer overflow-hidden`}
+      className={`relative group bg-[#1F1813] border ${product.borderClass} rounded-2xl p-5 hover:border-opacity-50 transition-all duration-200 cursor-pointer overflow-hidden`}
       onClick={() => router.push("/admin/analytics")}
     >
       <div
@@ -107,21 +107,21 @@ function ProductOverviewCard({
           </div>
           <span className={`text-sm font-semibold ${product.textClass}`}>{product.label}</span>
         </div>
-        <ArrowRight className="w-4 h-4 text-[#2E3A55] group-hover:text-[#4B5870] transition-colors" />
+        <ArrowRight className="w-4 h-4 text-[#574C3D] group-hover:text-[#7E715E] transition-colors" />
       </div>
 
       <div className="grid grid-cols-3 gap-3">
         <div>
-          <div className="text-[#E2E8F8] text-xl font-bold">{filtered.length}</div>
-          <div className="text-[#3A4560] text-[10px] font-medium uppercase tracking-wide mt-0.5">Leads</div>
+          <div className="text-[#F5EDD8] text-xl font-bold">{filtered.length}</div>
+          <div className="text-[#6B5F4E] text-[10px] font-medium uppercase tracking-wide mt-0.5">Leads</div>
         </div>
         <div>
           <div className={`text-xl font-bold ${product.textClass}`}>{convRate}%</div>
-          <div className="text-[#3A4560] text-[10px] font-medium uppercase tracking-wide mt-0.5">Conv.</div>
+          <div className="text-[#6B5F4E] text-[10px] font-medium uppercase tracking-wide mt-0.5">Conv.</div>
         </div>
         <div>
-          <div className="text-[#E2E8F8] text-xl font-bold">{(revenue / 1000).toFixed(1)}k</div>
-          <div className="text-[#3A4560] text-[10px] font-medium uppercase tracking-wide mt-0.5">CA €</div>
+          <div className="text-[#F5EDD8] text-xl font-bold">{(revenue / 1000).toFixed(1)}k</div>
+          <div className="text-[#6B5F4E] text-[10px] font-medium uppercase tracking-wide mt-0.5">CA €</div>
         </div>
       </div>
 
@@ -166,7 +166,7 @@ export default function PipelinePage() {
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-2 border-coral/30 border-t-coral rounded-full animate-spin" />
-          <p className="text-[#4B5870] text-sm">Chargement...</p>
+          <p className="text-[#7E715E] text-sm">Chargement...</p>
         </div>
       </div>
     )
@@ -178,8 +178,8 @@ export default function PipelinePage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-[#E2E8F8] text-2xl font-bold">Pipeline</h1>
-          <p className="text-[#3A4560] text-sm mt-0.5">Gérez vos leads et opportunités</p>
+          <h1 className="text-[#F5EDD8] text-2xl font-bold">Pipeline</h1>
+          <p className="text-[#6B5F4E] text-sm mt-0.5">Gérez vos leads et opportunités</p>
         </div>
         <button
           onClick={() => setShowNewLead(true)}
@@ -204,7 +204,7 @@ export default function PipelinePage() {
           value={stats.total}
           sub={activeProduct !== "all" ? activeProductDef.label : "Tous produits"}
           icon={Users}
-          accent="#FF6B47"
+          accent="#C4472A"
           accentClass="text-coral"
           accentBg="bg-coral/10"
         />
@@ -239,15 +239,15 @@ export default function PipelinePage() {
 
       {/* Launch Offer — only for SolYB Agence */}
       {(activeProduct === "all" || activeProduct === "solyb_agency") && (
-        <div className="relative bg-[#0F1628] border border-coral/20 rounded-2xl p-5 overflow-hidden">
+        <div className="relative bg-[#1F1813] border border-coral/20 rounded-2xl p-5 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-coral/[0.03] to-transparent pointer-events-none" />
           <div className="relative flex items-center justify-between mb-3">
             <div>
-              <h3 className="text-[#E2E8F8] font-semibold text-sm flex items-center gap-2">
+              <h3 className="text-[#F5EDD8] font-semibold text-sm flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
                 Offre de Lancement SolYB
               </h3>
-              <p className="text-[#4B5870] text-xs mt-1">
+              <p className="text-[#7E715E] text-xs mt-1">
                 Objectif&nbsp;: 30 clients · {allLeads.filter(l => l.is_launch_offer).length} inscrits
               </p>
             </div>
@@ -255,7 +255,7 @@ export default function PipelinePage() {
               <div className="text-2xl font-bold text-coral">
                 {30 - allLeads.filter(l => l.is_launch_offer).length}
               </div>
-              <div className="text-[#4B5870] text-xs">places restantes</div>
+              <div className="text-[#7E715E] text-xs">places restantes</div>
             </div>
           </div>
           <div className="h-1.5 bg-white/[0.05] rounded-full overflow-hidden">
@@ -268,7 +268,7 @@ export default function PipelinePage() {
       )}
 
       {/* Product tabs */}
-      <div className="flex items-center gap-1.5 p-1 bg-[#0A0F1E] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none w-full sm:w-fit">
+      <div className="flex items-center gap-1.5 p-1 bg-[#15110B] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none w-full sm:w-fit">
         {PRODUCTS.map(p => {
           const Icon = p.icon
           const isActive = activeProduct === p.id
@@ -279,7 +279,7 @@ export default function PipelinePage() {
               className={`flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap shrink-0 ${
                 isActive
                   ? `${p.bgClass} ${p.textClass} ring-1 ${p.ringClass}`
-                  : "text-[#4B5870] hover:text-[#8090AA] hover:bg-white/[0.03]"
+                  : "text-[#7E715E] hover:text-[#A89880] hover:bg-white/[0.03]"
               }`}
             >
               <Icon className="w-3.5 h-3.5 shrink-0" />

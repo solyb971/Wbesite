@@ -7,8 +7,8 @@ import { createClient } from "@/lib/supabase/client"
 type ProductTab = "all" | "solyb_agency" | "factu_gp" | "resa_gp"
 
 const PRODUCTS = [
-  { id: "all" as ProductTab,          label: "Vue globale",    icon: Users,            color: "#6B7A99", textClass: "text-[#8090AA]", bgClass: "bg-white/[0.05]",    borderClass: "border-white/10",      ringClass: "ring-white/10" },
-  { id: "solyb_agency" as ProductTab, label: "SolYB Agence",  icon: Zap,              color: "#FF6B47", textClass: "text-coral",     bgClass: "bg-coral/10",        borderClass: "border-coral/20",      ringClass: "ring-coral/20" },
+  { id: "all" as ProductTab,          label: "Vue globale",    icon: Users,            color: "#9A8C78", textClass: "text-[#A89880]", bgClass: "bg-white/[0.05]",    borderClass: "border-white/10",      ringClass: "ring-white/10" },
+  { id: "solyb_agency" as ProductTab, label: "SolYB Agence",  icon: Zap,              color: "#C4472A", textClass: "text-coral",     bgClass: "bg-coral/10",        borderClass: "border-coral/20",      ringClass: "ring-coral/20" },
   { id: "factu_gp" as ProductTab,     label: "FactuGP",        icon: FileCheck,        color: "#10B981", textClass: "text-emerald-400", bgClass: "bg-emerald-500/10", borderClass: "border-emerald-500/20", ringClass: "ring-emerald-500/20" },
   { id: "resa_gp" as ProductTab,      label: "ResaGP",         icon: UtensilsCrossed,  color: "#F97316", textClass: "text-orange-400",  bgClass: "bg-orange-500/10",  borderClass: "border-orange-500/20",  ringClass: "ring-orange-500/20" },
 ]
@@ -53,14 +53,14 @@ function MetricCard({ label, value, sub, color, icon: Icon }: {
   label: string; value: string | number; sub?: string; color: string; icon: React.ElementType
 }) {
   return (
-    <div className="bg-[#0F1628] border border-white/[0.06] rounded-2xl p-5 hover:border-white/[0.12] transition-all group overflow-hidden relative">
+    <div className="bg-[#1F1813] border border-white/[0.06] rounded-2xl p-5 hover:border-white/[0.12] transition-all group overflow-hidden relative">
       <div className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-2xl pointer-events-none" style={{ background: `${color}25` }} />
       <div className="flex items-center gap-2 mb-3">
         <Icon className="w-4 h-4" style={{ color }} />
-        <span className="text-[#4B5870] text-xs font-medium">{label}</span>
+        <span className="text-[#7E715E] text-xs font-medium">{label}</span>
       </div>
-      <div className="text-[#E2E8F8] text-2xl font-bold">{value}</div>
-      {sub && <div className="text-[#2E3A55] text-xs mt-1">{sub}</div>}
+      <div className="text-[#F5EDD8] text-2xl font-bold">{value}</div>
+      {sub && <div className="text-[#574C3D] text-xs mt-1">{sub}</div>}
     </div>
   )
 }
@@ -69,7 +69,7 @@ function FunnelBar({ label, count, total, color }: { label: string; count: numbe
   const pct = total > 0 ? Math.round((count / total) * 100) : 0
   return (
     <div className="flex items-center gap-4">
-      <div className="w-20 text-[#6B7A99] text-sm font-medium shrink-0">{label}</div>
+      <div className="w-20 text-[#9A8C78] text-sm font-medium shrink-0">{label}</div>
       <div className="flex-1 bg-white/[0.04] rounded-full h-5 overflow-hidden">
         <div
           className="h-full rounded-full flex items-center justify-end pr-3 transition-all duration-700"
@@ -78,7 +78,7 @@ function FunnelBar({ label, count, total, color }: { label: string; count: numbe
           {count > 0 && <span className="text-white text-xs font-semibold">{count}</span>}
         </div>
       </div>
-      <div className="w-10 text-right text-[#4B5870] text-xs font-medium">{pct}%</div>
+      <div className="w-10 text-right text-[#7E715E] text-xs font-medium">{pct}%</div>
     </div>
   )
 }
@@ -91,7 +91,7 @@ function ProductPanel({ product, metrics, isLoading }: {
   const Icon = product.icon
   if (isLoading) return (
     <div className="flex items-center justify-center h-40">
-      <Loader2 className="w-6 h-6 animate-spin text-[#4B5870]" />
+      <Loader2 className="w-6 h-6 animate-spin text-[#7E715E]" />
     </div>
   )
 
@@ -107,13 +107,13 @@ function ProductPanel({ product, metrics, isLoading }: {
     <div className="space-y-5">
       {/* Header */}
       {product.id !== "all" && (
-        <div className={`flex items-center gap-3 px-4 py-3 bg-[#0A0F1E] border ${product.borderClass} rounded-xl`}>
+        <div className={`flex items-center gap-3 px-4 py-3 bg-[#15110B] border ${product.borderClass} rounded-xl`}>
           <div className={`w-8 h-8 ${product.bgClass} rounded-lg flex items-center justify-center`}>
             <Icon className={`w-4 h-4 ${product.textClass}`} />
           </div>
           <div>
             <div className={`text-sm font-semibold ${product.textClass}`}>{product.label}</div>
-            <div className="text-[#3A4560] text-xs">{metrics.total} leads enregistrés</div>
+            <div className="text-[#6B5F4E] text-xs">{metrics.total} leads enregistrés</div>
           </div>
           {metrics.total === 0 && product.id !== "solyb_agency" && (
             <div className={`ml-auto text-[10px] font-medium ${product.textClass} bg-current/10 px-2.5 py-1 rounded-full opacity-70`}>
@@ -134,8 +134,8 @@ function ProductPanel({ product, metrics, isLoading }: {
 
       {/* Funnel + Sources */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-[#0F1628] border border-white/[0.06] rounded-2xl p-5">
-          <h3 className="text-[#E2E8F8] font-semibold text-sm mb-4">Funnel de conversion</h3>
+        <div className="bg-[#1F1813] border border-white/[0.06] rounded-2xl p-5">
+          <h3 className="text-[#F5EDD8] font-semibold text-sm mb-4">Funnel de conversion</h3>
           <div className="space-y-3">
             {funnelSteps.map(s => (
               <FunnelBar key={s.label} label={s.label} count={s.count} total={metrics.total} color={s.color} />
@@ -143,24 +143,24 @@ function ProductPanel({ product, metrics, isLoading }: {
           </div>
         </div>
 
-        <div className="bg-[#0F1628] border border-white/[0.06] rounded-2xl p-5">
-          <h3 className="text-[#E2E8F8] font-semibold text-sm mb-4">Sources des leads</h3>
+        <div className="bg-[#1F1813] border border-white/[0.06] rounded-2xl p-5">
+          <h3 className="text-[#F5EDD8] font-semibold text-sm mb-4">Sources des leads</h3>
           {Object.keys(metrics.sources).length > 0 ? (
             <div className="space-y-2">
               {Object.entries(metrics.sources)
                 .sort(([,a],[,b]) => b - a)
                 .map(([source, count]) => (
                   <div key={source} className="flex items-center justify-between py-2.5 px-3 bg-white/[0.03] rounded-xl">
-                    <span className="text-[#8090AA] text-sm capitalize">{source.replace(/-/g, " ")}</span>
+                    <span className="text-[#A89880] text-sm capitalize">{source.replace(/-/g, " ")}</span>
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 rounded-full" style={{ width: `${Math.max(24, (count / Math.max(...Object.values(metrics.sources))) * 80)}px`, background: product.color }} />
-                      <span className="text-[#E2E8F8] text-sm font-semibold w-6 text-right">{count}</span>
+                      <span className="text-[#F5EDD8] text-sm font-semibold w-6 text-right">{count}</span>
                     </div>
                   </div>
                 ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center h-32 text-[#3A4560]">
+            <div className="flex flex-col items-center justify-center h-32 text-[#6B5F4E]">
               <div className="text-2xl mb-2">∅</div>
               <p className="text-xs">Aucune donnée disponible</p>
             </div>
@@ -215,14 +215,14 @@ export default function AnalyticsPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-[#E2E8F8] text-2xl font-bold">Analytics</h1>
-          <p className="text-[#3A4560] text-sm mt-0.5">Performances multi-produits en temps réel</p>
+          <h1 className="text-[#F5EDD8] text-2xl font-bold">Analytics</h1>
+          <p className="text-[#6B5F4E] text-sm mt-0.5">Performances multi-produits en temps réel</p>
         </div>
       </div>
 
       {/* Global summary — always visible */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <MetricCard label="Leads totaux" value={allLeads.length} sub="tous produits" color="#FF6B47" icon={Users} />
+        <MetricCard label="Leads totaux" value={allLeads.length} sub="tous produits" color="#C4472A" icon={Users} />
         <MetricCard label="CA total réalisé" value={`${globalRevenue.toLocaleString("fr-FR")}€`} color="#10B981" icon={DollarSign} />
         <MetricCard label="Pipeline global" value={`${globalPipeline.toLocaleString("fr-FR")}€`} color="#0EA5E9" icon={TrendingUp} />
         <MetricCard label="Conv. globale" value={`${globalConv}%`} color="#8B5CF6" icon={Target} />
@@ -239,7 +239,7 @@ export default function AnalyticsPage() {
             <button
               key={p.id}
               onClick={() => setActiveTab(p.id)}
-              className={`group text-left relative bg-[#0F1628] border ${activeTab === p.id ? p.borderClass + " ring-1 " + p.ringClass : "border-white/[0.06] hover:border-white/[0.12]"} rounded-2xl p-4 transition-all overflow-hidden`}
+              className={`group text-left relative bg-[#1F1813] border ${activeTab === p.id ? p.borderClass + " ring-1 " + p.ringClass : "border-white/[0.06] hover:border-white/[0.12]"} rounded-2xl p-4 transition-all overflow-hidden`}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" style={{ background: `linear-gradient(135deg, ${p.color}08, transparent)` }} />
               <div className="flex items-center gap-2.5 mb-3">
@@ -250,12 +250,12 @@ export default function AnalyticsPage() {
               </div>
               <div className="flex items-end justify-between">
                 <div>
-                  <div className="text-[#E2E8F8] text-xl font-bold">{pLeads.length}</div>
-                  <div className="text-[#3A4560] text-[10px] uppercase tracking-wide font-medium">leads</div>
+                  <div className="text-[#F5EDD8] text-xl font-bold">{pLeads.length}</div>
+                  <div className="text-[#6B5F4E] text-[10px] uppercase tracking-wide font-medium">leads</div>
                 </div>
                 <div className="text-right">
                   <div className={`text-xl font-bold ${p.textClass}`}>{pConv}%</div>
-                  <div className="text-[#3A4560] text-[10px] uppercase tracking-wide font-medium">conv.</div>
+                  <div className="text-[#6B5F4E] text-[10px] uppercase tracking-wide font-medium">conv.</div>
                 </div>
               </div>
             </button>
@@ -264,7 +264,7 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 p-1 bg-[#0A0F1E] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none w-full sm:w-fit">
+      <div className="flex items-center gap-1 p-1 bg-[#15110B] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none w-full sm:w-fit">
         {PRODUCTS.map(p => {
           const Icon = p.icon
           const isActive = activeTab === p.id
@@ -275,7 +275,7 @@ export default function AnalyticsPage() {
               className={`flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap shrink-0 ${
                 isActive
                   ? `${p.bgClass} ${p.textClass} ring-1 ${p.ringClass}`
-                  : "text-[#4B5870] hover:text-[#8090AA] hover:bg-white/[0.03]"
+                  : "text-[#7E715E] hover:text-[#A89880] hover:bg-white/[0.03]"
               }`}
             >
               <Icon className="w-3.5 h-3.5" />

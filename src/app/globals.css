@@ -481,3 +481,10 @@ section > .max-w-5xl {
 }
 
 
+
+/* ── Admin CRM — identité SolYB (dark chaud) : titres en Fraunces ── */
+.admin-shell h1,
+.admin-shell h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  letter-spacing: -0.01em;
+}

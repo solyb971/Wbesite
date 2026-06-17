@@ -86,17 +86,17 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
     isLaunchOffer !== undefined
 
   return (
-    <div className="bg-[#0F1628] border border-white/[0.06] rounded-2xl p-4">
+    <div className="bg-[#1F1813] border border-white/[0.06] rounded-2xl p-4">
       {/* Search Bar */}
       <div className="flex items-center gap-3">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3A4560]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B5F4E]" />
           <input
             type="text"
             value={search}
             onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Rechercher un lead (nom, email, entreprise...)"
-            className="w-full pl-9 pr-4 py-2.5 bg-white/[0.04] border border-white/[0.07] rounded-xl text-[#C8D4E8] placeholder-[#2E3A55] text-sm focus:outline-none focus:border-coral/40 focus:bg-white/[0.06] transition-all"
+            className="w-full pl-9 pr-4 py-2.5 bg-white/[0.04] border border-white/[0.07] rounded-xl text-[#E8DDC8] placeholder-[#574C3D] text-sm focus:outline-none focus:border-coral/40 focus:bg-white/[0.06] transition-all"
           />
         </div>
 
@@ -105,7 +105,7 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
             showFilters || hasActiveFilters
               ? "bg-coral/10 text-coral border-coral/30"
-              : "bg-white/[0.04] text-[#6B7A99] border-white/[0.07] hover:bg-white/[0.07] hover:text-[#A0AABF]"
+              : "bg-white/[0.04] text-[#9A8C78] border-white/[0.07] hover:bg-white/[0.07] hover:text-[#C2B79E]"
           }`}
         >
           <Filter className="w-4 h-4" />
@@ -120,7 +120,7 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-white/[0.07] text-[#6B7A99] hover:text-[#C8D4E8] hover:bg-white/[0.04] transition-all text-sm"
+            className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-white/[0.07] text-[#9A8C78] hover:text-[#E8DDC8] hover:bg-white/[0.04] transition-all text-sm"
           >
             <X className="w-4 h-4" />
             <span className="hidden md:inline">Réinit.</span>
@@ -133,14 +133,14 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
         <div className="mt-4 pt-4 border-t border-white/[0.05] space-y-4">
           {/* Status */}
           <div>
-            <label className="block text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest mb-2">Statut</label>
+            <label className="block text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-2">Statut</label>
             <div className="flex flex-wrap gap-1.5">
               {(["nouveau", "contact", "devis", "gagne", "perdu"] as LeadStatus[]).map((status) => (
                 <button key={status} onClick={() => toggleStatus(status)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     selectedStatus.includes(status)
                       ? "bg-coral/15 text-coral border border-coral/30"
-                      : "bg-white/[0.04] text-[#6B7A99] border border-white/[0.06] hover:bg-white/[0.07]"
+                      : "bg-white/[0.04] text-[#9A8C78] border border-white/[0.06] hover:bg-white/[0.07]"
                   }`}
                 >
                   {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -151,17 +151,17 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
 
           {/* Urgency */}
           <div>
-            <label className="block text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest mb-2">Urgence</label>
+            <label className="block text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-2">Urgence</label>
             <div className="flex flex-wrap gap-1.5">
               {([
                 { v: "urgent", label: "Très urgent", color: "bg-red-500/15 text-red-400 border-red-500/30" },
                 { v: "high",   label: "Urgent",      color: "bg-orange-500/15 text-orange-400 border-orange-500/30" },
                 { v: "normal", label: "Normal",      color: "bg-blue-500/15 text-blue-400 border-blue-500/30" },
-                { v: "low",    label: "Pas urgent",  color: "bg-white/[0.05] text-[#6B7A99] border-white/[0.08]" },
+                { v: "low",    label: "Pas urgent",  color: "bg-white/[0.05] text-[#9A8C78] border-white/[0.08]" },
               ] as const).map(({ v, label, color }) => (
                 <button key={v} onClick={() => toggleUrgency(v as LeadUrgency)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
-                    selectedUrgency.includes(v as LeadUrgency) ? color : "bg-white/[0.04] text-[#6B7A99] border-white/[0.06] hover:bg-white/[0.07]"
+                    selectedUrgency.includes(v as LeadUrgency) ? color : "bg-white/[0.04] text-[#9A8C78] border-white/[0.06] hover:bg-white/[0.07]"
                   }`}
                 >
                   {label}
@@ -172,14 +172,14 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
 
           {/* Activity */}
           <div>
-            <label className="block text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest mb-2">Type d'activité</label>
+            <label className="block text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-2">Type d'activité</label>
             <div className="flex flex-wrap gap-1.5">
               {(["digital", "content", "consulting"] as ActivityType[]).map((a) => (
                 <button key={a} onClick={() => toggleActivity(a)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${
                     selectedActivity.includes(a)
                       ? "bg-coral/15 text-coral border-coral/30"
-                      : "bg-white/[0.04] text-[#6B7A99] border-white/[0.06] hover:bg-white/[0.07]"
+                      : "bg-white/[0.04] text-[#9A8C78] border-white/[0.06] hover:bg-white/[0.07]"
                   }`}
                 >
                   {a === "digital" ? "Digital" : a === "content" ? "Contenu" : "Consulting"}
@@ -198,7 +198,7 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
             >
               {isLaunchOffer && <span className="text-white text-[10px] font-bold">✓</span>}
             </div>
-            <span className="text-sm font-medium text-[#6B7A99] group-hover:text-[#A0AABF] transition-colors">
+            <span className="text-sm font-medium text-[#9A8C78] group-hover:text-[#C2B79E] transition-colors">
               Offre de lancement uniquement
             </span>
           </label>

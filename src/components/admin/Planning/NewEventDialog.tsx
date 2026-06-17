@@ -20,8 +20,8 @@ const EVENT_TYPES = [
   { value: "personnel",    label: "Personnel" },
 ]
 
-const inputCls = "w-full px-3 py-2.5 bg-[#0A0F1E] border border-white/[0.08] rounded-xl text-[#C8D4E8] placeholder-[#2E3A55] text-sm focus:outline-none focus:border-coral/40 transition-all"
-const labelCls = "block text-xs font-semibold text-[#6B7A99] mb-1.5 uppercase tracking-wide"
+const inputCls = "w-full px-3 py-2.5 bg-[#15110B] border border-white/[0.08] rounded-xl text-[#E8DDC8] placeholder-[#574C3D] text-sm focus:outline-none focus:border-coral/40 transition-all"
+const labelCls = "block text-xs font-semibold text-[#9A8C78] mb-1.5 uppercase tracking-wide"
 
 export default function NewEventDialog({ isOpen, onClose, onSubmit }: NewEventDialogProps) {
   const [formData, setFormData] = useState({
@@ -49,14 +49,14 @@ export default function NewEventDialog({ isOpen, onClose, onSubmit }: NewEventDi
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="bg-[#0F1628] border border-white/[0.08] rounded-2xl w-full max-w-xl shadow-2xl" onClick={e => e.stopPropagation()}>
+      <div className="bg-[#1F1813] border border-white/[0.08] rounded-2xl w-full max-w-xl shadow-2xl" onClick={e => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.05]">
           <div>
-            <h3 className="text-[#E2E8F8] font-semibold">Nouvel événement</h3>
-            <p className="text-[#3A4560] text-xs mt-0.5">Planifiez un projet, appel ou rendez-vous</p>
+            <h3 className="text-[#F5EDD8] font-semibold">Nouvel événement</h3>
+            <p className="text-[#6B5F4E] text-xs mt-0.5">Planifiez un projet, appel ou rendez-vous</p>
           </div>
-          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-[#4B5870] hover:text-white transition-colors">
+          <button onClick={onClose} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-[#7E715E] hover:text-white transition-colors">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -105,7 +105,7 @@ export default function NewEventDialog({ isOpen, onClose, onSubmit }: NewEventDi
           </div>
 
           <div className="flex justify-end gap-3 pt-2">
-            <button type="button" onClick={onClose} className="px-4 py-2.5 rounded-xl border border-white/[0.08] text-[#8090AA] hover:text-[#E2E8F8] hover:bg-white/[0.05] transition-all text-sm font-medium">
+            <button type="button" onClick={onClose} className="px-4 py-2.5 rounded-xl border border-white/[0.08] text-[#A89880] hover:text-[#F5EDD8] hover:bg-white/[0.05] transition-all text-sm font-medium">
               Annuler
             </button>
             <button type="submit" className="px-4 py-2.5 rounded-xl bg-coral hover:bg-coral/90 text-white font-semibold text-sm transition-all shadow-lg shadow-coral/20">

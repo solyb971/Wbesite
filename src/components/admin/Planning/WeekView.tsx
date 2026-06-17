@@ -16,7 +16,7 @@ const EVENT_COLORS: Record<EventType, string> = {
   appel:        "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
   animation:    "bg-purple-500/15 text-purple-300 border-purple-500/30",
   distribution: "bg-orange-500/15 text-orange-300 border-orange-500/30",
-  cdd:          "bg-white/[0.05] text-[#6B7A99] border-white/[0.08]",
+  cdd:          "bg-white/[0.05] text-[#9A8C78] border-white/[0.08]",
   blocked:      "bg-red-500/15 text-red-300 border-red-500/30",
 }
 
@@ -38,9 +38,9 @@ export default function WeekView({ weekDays, events, loading = false }: WeekView
     })
 
   return (
-    <div className="bg-[#0F1628] border border-white/[0.06] rounded-2xl overflow-hidden">
+    <div className="bg-[#1F1813] border border-white/[0.06] rounded-2xl overflow-hidden">
       {loading && (
-        <div className="flex items-center justify-center p-3 gap-2 text-[#4B5870] text-sm border-b border-white/[0.05]">
+        <div className="flex items-center justify-center p-3 gap-2 text-[#7E715E] text-sm border-b border-white/[0.05]">
           <Loader2 className="w-3.5 h-3.5 animate-spin" />
           Chargement des événements...
         </div>
@@ -48,19 +48,19 @@ export default function WeekView({ weekDays, events, loading = false }: WeekView
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="border-b border-white/[0.05] bg-[#0A0F1E]">
+            <tr className="border-b border-white/[0.05] bg-[#15110B]">
               <th className="p-4 text-left w-28">
-                <span className="text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest">Période</span>
+                <span className="text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest">Période</span>
               </th>
               {weekDays.map((day) => (
                 <th
                   key={day.toISOString()}
                   className={`p-3 text-center ${isWeekend(day) ? "opacity-50" : ""}`}
                 >
-                  <div className="text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest">
+                  <div className="text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest">
                     {format(day, "EEE", { locale: fr })}
                   </div>
-                  <div className={`text-lg font-bold mt-0.5 ${isToday(day) ? "text-coral" : "text-[#E2E8F8]"}`}>
+                  <div className={`text-lg font-bold mt-0.5 ${isToday(day) ? "text-coral" : "text-[#F5EDD8]"}`}>
                     {format(day, "d")}
                   </div>
                   {isToday(day) && <div className="w-1 h-1 bg-coral rounded-full mx-auto mt-0.5" />}
@@ -72,8 +72,8 @@ export default function WeekView({ weekDays, events, loading = false }: WeekView
             {PERIODS.map((period) => (
               <tr key={period.label} className="border-b border-white/[0.04] last:border-0">
                 <td className="p-4 border-r border-white/[0.04]">
-                  <div className="font-semibold text-[#C8D4E8] text-sm">{period.label}</div>
-                  <div className="text-xs text-[#3A4560] mt-0.5">{period.sub}</div>
+                  <div className="font-semibold text-[#E8DDC8] text-sm">{period.label}</div>
+                  <div className="text-xs text-[#6B5F4E] mt-0.5">{period.sub}</div>
                 </td>
                 {weekDays.map((day) => {
                   const dayEvents = getEventsForDayPeriod(day, period.start, period.end)
@@ -101,7 +101,7 @@ export default function WeekView({ weekDays, events, loading = false }: WeekView
                           ))}
                         </div>
                       ) : (
-                        <div className="py-3 text-center text-[#2E3A55] text-xs hover:text-[#4B5870] hover:bg-white/[0.03] rounded-lg cursor-pointer transition-all">
+                        <div className="py-3 text-center text-[#574C3D] text-xs hover:text-[#7E715E] hover:bg-white/[0.03] rounded-lg cursor-pointer transition-all">
                           Libre
                         </div>
                       )}

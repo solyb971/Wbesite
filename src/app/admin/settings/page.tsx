@@ -25,9 +25,9 @@ const defaultSettings = {
   stop_on_reply: true, stop_on_status_change: true, send_copy: false,
 }
 
-const inp = "w-full px-3 py-2.5 bg-[#0A0F1E] border border-white/[0.08] rounded-xl text-[#C8D4E8] text-sm focus:outline-none focus:border-coral/40 transition-all placeholder-[#2E3A55]"
-const lbl = "block text-xs font-semibold text-[#6B7A99] mb-1.5"
-const section = "bg-[#0F1628] border border-white/[0.06] rounded-2xl overflow-hidden"
+const inp = "w-full px-3 py-2.5 bg-[#15110B] border border-white/[0.08] rounded-xl text-[#E8DDC8] text-sm focus:outline-none focus:border-coral/40 transition-all placeholder-[#574C3D]"
+const lbl = "block text-xs font-semibold text-[#9A8C78] mb-1.5"
+const section = "bg-[#1F1813] border border-white/[0.06] rounded-2xl overflow-hidden"
 const secHead = "px-5 py-4 border-b border-white/[0.05]"
 const secBody = "p-5 space-y-4"
 
@@ -84,13 +84,13 @@ export default function SettingsPage() {
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#E2E8F8]">Paramètres</h1>
-          <p className="text-[#4B5870] text-sm mt-0.5">Configurez votre système CRM</p>
+          <h1 className="text-2xl font-bold text-[#F5EDD8]">Paramètres</h1>
+          <p className="text-[#7E715E] text-sm mt-0.5">Configurez votre système CRM</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl border border-white/[0.08] text-[#8090AA] hover:text-[#E2E8F8] hover:bg-white/[0.05] transition-all text-xs sm:text-sm font-medium"
+            className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl border border-white/[0.08] text-[#A89880] hover:text-[#F5EDD8] hover:bg-white/[0.05] transition-all text-xs sm:text-sm font-medium"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Réinitialiser</span>
@@ -108,7 +108,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 p-1 bg-[#0A0F1E] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none">
+      <div className="flex items-center gap-1 p-1 bg-[#15110B] border border-white/[0.05] rounded-xl overflow-x-auto scrollbar-none">
         {TABS.map(t => (
           <button
             key={t.id}
@@ -116,7 +116,7 @@ export default function SettingsPage() {
             className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap shrink-0 ${
               tab === t.id
                 ? "bg-coral/10 text-coral ring-1 ring-coral/20"
-                : "text-[#4B5870] hover:text-[#8090AA] hover:bg-white/[0.03]"
+                : "text-[#7E715E] hover:text-[#A89880] hover:bg-white/[0.03]"
             }`}
           >
             {t.label}
@@ -128,8 +128,8 @@ export default function SettingsPage() {
       {tab === "general" && (
         <div className={section}>
           <div className={secHead}>
-            <h2 className="text-[#E2E8F8] font-semibold text-sm">Informations Entreprise</h2>
-            <p className="text-[#3A4560] text-xs mt-0.5">Coordonnées et informations publiques</p>
+            <h2 className="text-[#F5EDD8] font-semibold text-sm">Informations Entreprise</h2>
+            <p className="text-[#6B5F4E] text-xs mt-0.5">Coordonnées et informations publiques</p>
           </div>
           <div className={secBody}>
             <div>
@@ -162,8 +162,8 @@ export default function SettingsPage() {
       {tab === "scoring" && (
         <div className={section}>
           <div className={secHead}>
-            <h2 className="text-[#E2E8F8] font-semibold text-sm">Poids des Critères</h2>
-            <p className="text-[#3A4560] text-xs mt-0.5">Ajustez l&apos;importance de chaque critère (total = 100 pts)</p>
+            <h2 className="text-[#F5EDD8] font-semibold text-sm">Poids des Critères</h2>
+            <p className="text-[#6B5F4E] text-xs mt-0.5">Ajustez l&apos;importance de chaque critère (total = 100 pts)</p>
           </div>
           <div className="p-5 space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -217,8 +217,8 @@ export default function SettingsPage() {
           ].map(card => (
             <div key={card.title} className={section}>
               <div className={secHead}>
-                <h2 className="text-[#E2E8F8] font-semibold text-sm">{card.title}</h2>
-                <p className="text-[#3A4560] text-xs mt-0.5">{card.sub}</p>
+                <h2 className="text-[#F5EDD8] font-semibold text-sm">{card.title}</h2>
+                <p className="text-[#6B5F4E] text-xs mt-0.5">{card.sub}</p>
               </div>
               <div className="p-5">
                 <div className="grid grid-cols-2 gap-4">
@@ -227,7 +227,7 @@ export default function SettingsPage() {
                       <label className={lbl}>{f.label}</label>
                       <div className="flex items-center gap-2">
                         <input className={inp} type="number" value={settings[f.key as keyof typeof settings] as number} onChange={e => set(f.key, parseInt(e.target.value))} />
-                        <span className="text-[#4B5870] text-xs shrink-0">{f.suffix}</span>
+                        <span className="text-[#7E715E] text-xs shrink-0">{f.suffix}</span>
                       </div>
                     </div>
                   ))}
@@ -242,8 +242,8 @@ export default function SettingsPage() {
       {tab === "planning" && (
         <div className={section}>
           <div className={secHead}>
-            <h2 className="text-[#E2E8F8] font-semibold text-sm">Capacité & Horaires</h2>
-            <p className="text-[#3A4560] text-xs mt-0.5">Configurez votre disponibilité et vos horaires</p>
+            <h2 className="text-[#F5EDD8] font-semibold text-sm">Capacité & Horaires</h2>
+            <p className="text-[#6B5F4E] text-xs mt-0.5">Configurez votre disponibilité et vos horaires</p>
           </div>
           <div className={secBody}>
             <div className="grid grid-cols-2 gap-4">
@@ -251,19 +251,19 @@ export default function SettingsPage() {
                 <label className={lbl}>Heures / semaine</label>
                 <div className="flex items-center gap-2">
                   <input className={inp} type="number" value={settings.weekly_hours} onChange={e => set("weekly_hours", parseInt(e.target.value))} />
-                  <span className="text-[#4B5870] text-xs shrink-0">h</span>
+                  <span className="text-[#7E715E] text-xs shrink-0">h</span>
                 </div>
               </div>
               <div>
                 <label className={lbl}>Seuil alerte</label>
                 <div className="flex items-center gap-2">
                   <input className={inp} type="number" value={settings.alert_threshold} onChange={e => set("alert_threshold", parseInt(e.target.value))} />
-                  <span className="text-[#4B5870] text-xs shrink-0">%</span>
+                  <span className="text-[#7E715E] text-xs shrink-0">%</span>
                 </div>
               </div>
             </div>
             <div className="border-t border-white/[0.05] pt-4">
-              <h3 className="text-[#C8D4E8] font-semibold text-sm mb-4">Horaires de travail</h3>
+              <h3 className="text-[#E8DDC8] font-semibold text-sm mb-4">Horaires de travail</h3>
               <div className="space-y-4">
                 {[
                   { label: "Lun–Ven soirées", s: "weekday_start", e: "weekday_end" },
@@ -290,8 +290,8 @@ export default function SettingsPage() {
         <div className="space-y-4">
           <div className={section}>
             <div className={secHead}>
-              <h2 className="text-[#E2E8F8] font-semibold text-sm">Délais des Séquences</h2>
-              <p className="text-[#3A4560] text-xs mt-0.5">Délais entre les emails automatiques (en jours)</p>
+              <h2 className="text-[#F5EDD8] font-semibold text-sm">Délais des Séquences</h2>
+              <p className="text-[#6B5F4E] text-xs mt-0.5">Délais entre les emails automatiques (en jours)</p>
             </div>
             <div className="p-5">
               <div className="grid grid-cols-2 gap-4">
@@ -304,7 +304,7 @@ export default function SettingsPage() {
                   <div key={f.key}>
                     <label className={lbl}>{f.label}</label>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#4B5870] text-xs shrink-0">J+</span>
+                      <span className="text-[#7E715E] text-xs shrink-0">J+</span>
                       <input className={inp} type="number" min="0" value={settings[f.key]} onChange={e => set(f.key, parseInt(e.target.value) || 0)} />
                     </div>
                   </div>
@@ -315,8 +315,8 @@ export default function SettingsPage() {
 
           <div className={section}>
             <div className={secHead}>
-              <h2 className="text-[#E2E8F8] font-semibold text-sm">Configuration Brevo</h2>
-              <p className="text-[#3A4560] text-xs mt-0.5">API pour l&apos;envoi d&apos;emails automatiques</p>
+              <h2 className="text-[#F5EDD8] font-semibold text-sm">Configuration Brevo</h2>
+              <p className="text-[#6B5F4E] text-xs mt-0.5">API pour l&apos;envoi d&apos;emails automatiques</p>
             </div>
             <div className={secBody}>
               <div>
@@ -331,8 +331,8 @@ export default function SettingsPage() {
                 ] as const).map(f => (
                   <div key={f.key} className="flex items-center justify-between gap-4">
                     <div className="min-w-0">
-                      <div className="text-[#C8D4E8] text-sm font-medium">{f.label}</div>
-                      <div className="text-[#3A4560] text-xs mt-0.5">{f.sub}</div>
+                      <div className="text-[#E8DDC8] text-sm font-medium">{f.label}</div>
+                      <div className="text-[#6B5F4E] text-xs mt-0.5">{f.sub}</div>
                     </div>
                     <Toggle checked={settings[f.key]} onChange={v => set(f.key, v)} />
                   </div>

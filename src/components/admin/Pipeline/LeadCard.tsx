@@ -18,12 +18,12 @@ export default function LeadCard({ lead, onClick, isDragging = false }: LeadCard
     urgent: "text-red-400 bg-red-500/10 border-red-500/20",
     high:   "text-orange-400 bg-orange-500/10 border-orange-500/20",
     normal: "text-blue-400 bg-blue-500/10 border-blue-500/20",
-    low:    "text-[#6B7A99] bg-white/[0.04] border-white/[0.08]",
-  }[lead.urgency] ?? "text-[#6B7A99] bg-white/[0.04] border-white/[0.08]"
+    low:    "text-[#9A8C78] bg-white/[0.04] border-white/[0.08]",
+  }[lead.urgency] ?? "text-[#9A8C78] bg-white/[0.04] border-white/[0.08]"
 
   const urgencyLabel = { urgent: "Très urgent", high: "Urgent", normal: "Normal", low: "Pas urgent" }[lead.urgency] ?? lead.urgency
 
-  const scoreColor = lead.score_total >= 80 ? "text-emerald-400" : lead.score_total >= 60 ? "text-solar" : "text-[#4B5870]"
+  const scoreColor = lead.score_total >= 80 ? "text-emerald-400" : lead.score_total >= 60 ? "text-solar" : "text-[#7E715E]"
 
   return (
     <div
@@ -32,16 +32,16 @@ export default function LeadCard({ lead, onClick, isDragging = false }: LeadCard
       {...attributes}
       {...listeners}
       onClick={onClick}
-      className={`bg-[#111827] border border-white/[0.07] rounded-xl p-4 hover:border-white/[0.14] hover:bg-[#131C35] transition-all cursor-pointer select-none ${
+      className={`bg-[#201913] border border-white/[0.07] rounded-xl p-4 hover:border-white/[0.14] hover:bg-[#241C16] transition-all cursor-pointer select-none ${
         (isDragging || isSortableDragging) ? "opacity-40 scale-95" : ""
       }`}
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-3 gap-2">
         <div className="min-w-0 flex-1">
-          <h4 className="font-semibold text-[#E2E8F8] text-sm truncate">{lead.name}</h4>
+          <h4 className="font-semibold text-[#F5EDD8] text-sm truncate">{lead.name}</h4>
           {lead.company && (
-            <div className="flex items-center gap-1 text-xs text-[#4B5870] mt-0.5">
+            <div className="flex items-center gap-1 text-xs text-[#7E715E] mt-0.5">
               <Building2 className="w-3 h-3 shrink-0" />
               <span className="truncate">{lead.company}</span>
             </div>
@@ -58,11 +58,11 @@ export default function LeadCard({ lead, onClick, isDragging = false }: LeadCard
         <span className="text-xs font-medium px-2 py-1 rounded-lg bg-coral/10 text-coral border border-coral/20">
           {lead.project_type}
         </span>
-        <span className="text-sm font-bold text-[#E2E8F8]">{lead.budget}€</span>
+        <span className="text-sm font-bold text-[#F5EDD8]">{lead.budget}€</span>
       </div>
 
       {/* Contact */}
-      <div className="space-y-1 mb-3 text-xs text-[#4B5870]">
+      <div className="space-y-1 mb-3 text-xs text-[#7E715E]">
         <div className="flex items-center gap-1.5">
           <Mail className="w-3 h-3 shrink-0" />
           <span className="truncate">{lead.email}</span>
@@ -81,7 +81,7 @@ export default function LeadCard({ lead, onClick, isDragging = false }: LeadCard
           <AlertCircle className="w-3 h-3" />
           {urgencyLabel}
         </span>
-        <div className="flex items-center gap-1 text-xs text-[#3A4560]">
+        <div className="flex items-center gap-1 text-xs text-[#6B5F4E]">
           <Calendar className="w-3 h-3" />
           <span>{formatDistanceToNow(new Date(lead.created_at), { addSuffix: true, locale: fr })}</span>
         </div>
