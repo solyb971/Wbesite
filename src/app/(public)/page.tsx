@@ -9,6 +9,7 @@ import LaunchPricing from "@/components/site/LaunchPricing"
 import Solutions from "@/components/site/Solutions"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
+import Engagements from "@/components/site/Engagements"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
 import { faqs } from "@/lib/faq-data"
@@ -188,6 +189,7 @@ export default function HomePage() {
         <Solutions />
         <About />
         <Realisations />
+        <Engagements />
         <FAQ />
         <Contact />
       </main>
