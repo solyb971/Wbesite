@@ -1,10 +1,7 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
-
-const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
 import EarlyAccessForm from '@/components/site/EarlyAccessForm'
+import RevealOnScroll from '@/components/site/RevealOnScroll'
+import SmoothScroll from '@/components/ui/SmoothScroll'
+import Countdown from './Countdown'
 import {
   IconFileInvoice, IconReceipt2, IconRefresh, IconBuildingSkyscraper,
   IconBrain, IconUsers, IconBriefcase, IconAnchor, IconCertificate,
@@ -13,21 +10,8 @@ import {
 } from '@tabler/icons-react'
 import styles from './facturation.module.css'
 
-/* Refonte « Ink / Pétrole / Sable » — port de factugp-refonte.html (CSS Modules) */
-
-const DEADLINE = new Date('2026-09-01T00:00:00')
-function useCountdown() {
-  const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0 })
-  useEffect(() => {
-    const tick = () => {
-      const diff = DEADLINE.getTime() - Date.now()
-      if (diff <= 0) return
-      setT({ d: Math.floor(diff / 86400000), h: Math.floor((diff % 86400000) / 3600000), m: Math.floor((diff % 3600000) / 60000), s: Math.floor((diff % 60000) / 1000) })
-    }
-    tick(); const id = setInterval(tick, 1000); return () => clearInterval(id)
-  }, [])
-  return t
-}
+/* Server component — interactif isolé en îlots client (Countdown, RevealOnScroll,
+   SmoothScroll, EarlyAccessForm). Design « Ink / Pétrole / Sable ». */
 
 const FEATURES = [
   { icon: IconFileInvoice, tag: 'Factur-X EN 16931', title: 'Factures au bon format', desc: 'Vos factures sont créées dans le format officiel exigé par l\'État — un PDF lisible par l\'humain et une pièce XML lisible par les machines. Compatible Chorus Pro DOM.', chips: ['Factur-X', 'EN 16931', 'PDF/A-3'] },
@@ -89,26 +73,19 @@ const TICKER_ITEMS = ['Facturation électronique', 'Chorus Pro DOM', 'TVA 8,5 % 
 
 const NAV_LINKS: [string, string][] = [['#fonctionnalites', 'Fonctionnalités'], ['#tva', 'TVA DOM'], ['#conformite', 'Conformité'], ['#tarifs', 'Tarifs'], ['#contact', 'Contact']]
 
-export default function FacturationPage() {
-  const cd = useCountdown()
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(styles.revealed); obs.unobserve(e.target) } })
-    }, { threshold: 0.12 })
-    document.querySelectorAll(`.${styles.reveal}`).forEach(el => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
-  const Logo = () => (
+function Logo() {
+  return (
     <a href="#" className={styles.logo} aria-label="FactuGP — accueil">
       Factu<em>GP</em><span className={styles.logoDot} />
     </a>
   )
+}
 
+export default function FacturationPage() {
   return (
     <div className={styles.page}>
       <SmoothScroll />
+      <RevealOnScroll revealClass={styles.reveal} revealedClass={styles.revealed} />
 
       {/* NAV */}
       <header className={styles.nav}>
@@ -313,14 +290,7 @@ export default function FacturationPage() {
               <span className={`${styles.eyebrow} ${styles.eyebrowSand}`}>Compte à rebours</span>
               <h2 className={styles.countdownTitle}>Obligation légale — 1<sup>er</sup> septembre 2026</h2>
               <p className={styles.countdownSub}>Toutes les entreprises qui paient la TVA · des amendes dès la première facture non conforme.</p>
-              <div className={styles.countdownTimer}>
-                {[['Jours', cd.d], ['Heures', String(cd.h).padStart(2, '0')], ['Min', String(cd.m).padStart(2, '0')], ['Sec', String(cd.s).padStart(2, '0')]].map(([lbl, val]) => (
-                  <div key={lbl} className={styles.countdownUnit}>
-                    <span className={styles.countdownNum}>{val}</span>
-                    <span className={styles.countdownLabel}>{lbl}</span>
-                  </div>
-                ))}
-              </div>
+              <Countdown />
               <a href="#contact" className={`${styles.btn} ${styles.btnSand}`}><IconClockHour4 size={16} /> Réserver mon accès anticipé</a>
             </div>
           </div>

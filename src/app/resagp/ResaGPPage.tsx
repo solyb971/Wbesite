@@ -1,20 +1,16 @@
-﻿'use client'
-
-import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
-
-const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
-import EarlyAccessForm from '@/components/site/EarlyAccessForm'
+﻿import EarlyAccessForm from '@/components/site/EarlyAccessForm'
+import RevealOnScroll from '@/components/site/RevealOnScroll'
+import SmoothScroll from '@/components/ui/SmoothScroll'
+import PlanDeSalle from './PlanDeSalle'
 import {
   CalendarCheck, MapTrifold, DeviceMobile, Users, ForkKnife,
   ChartBar, Bell, Key, CreditCard, ArrowRight, CheckCircle,
   Clock, Storefront, WifiHigh, Star,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
 import styles from './resagp.module.css'
 
-/* ── CSS Modules + Phosphor Icons (duotone) + Fraunces serif
-   Thème Brasserie Moderne — charbon chaud + ambre candlelight
-   Différent de FactuGP (papier/vert) et SolYB (Tailwind/orange) ── */
+/* Server component — interactif isolé en îlots client (PlanDeSalle, RevealOnScroll,
+   SmoothScroll, EarlyAccessForm). Thème ardoise (charte ResaGP v1.1). */
 
 /* Marque ResaGP — table vue de dessus (charte v1.1) */
 function ResaMark({ size = 30 }: { size?: number }) {
@@ -26,25 +22,6 @@ function ResaMark({ size = 30 }: { size?: number }) {
       <rect x="47" y="22" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
       <rect x="29" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
       <rect x="47" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
-    </svg>
-  )
-}
-
-type TableStatus = 'libre' | 'occupee' | 'reservee'
-
-/* Table vue de dessus pour le plan de salle */
-function TableTop({ status }: { status: TableStatus }) {
-  const cfg = {
-    occupee:  { fill: '#7AAFC4',                stroke: 'none',    chair: '#F5EDD8', chairOp: 0.72 },
-    reservee: { fill: 'rgba(122,175,196,0.18)', stroke: '#7AAFC4', chair: '#7AAFC4', chairOp: 0.55 },
-    libre:    { fill: 'none',                   stroke: '#A89880', chair: '#A89880', chairOp: 0.4 },
-  }[status]
-  return (
-    <svg className={styles.dashTableTop} viewBox="0 0 44 44" fill="none" aria-hidden>
-      {[[14, 7], [23, 7], [14, 33], [23, 33]].map(([x, y], i) => (
-        <rect className={styles.dashTableRect} key={i} x={x} y={y} width="7" height="4" rx="1.5" fill={cfg.chair} opacity={cfg.chairOp} />
-      ))}
-      <rect className={styles.dashTableRect} x="12" y="14" width="20" height="16" rx="3" fill={cfg.fill} stroke={cfg.stroke} strokeWidth="1.3" />
     </svg>
   )
 }
@@ -82,39 +59,11 @@ const CMP_ROWS = [
 
 const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'CRM CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'ANALYTICS', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
 
-const INITIAL_TABLES: { n: string; s: TableStatus }[] = [
-  { n: 'T1', s: 'libre' }, { n: 'T2', s: 'occupee' }, { n: 'T3', s: 'occupee' },
-  { n: 'T4', s: 'reservee' }, { n: 'T5', s: 'libre' }, { n: 'T6', s: 'occupee' },
-  { n: 'T7', s: 'reservee' }, { n: 'T8', s: 'occupee' }, { n: 'T9', s: 'libre' },
-  { n: 'T10', s: 'occupee' }, { n: 'T11', s: 'reservee' }, { n: 'T12', s: 'occupee' },
-]
-const NEXT_STATUS: Record<TableStatus, TableStatus> = { libre: 'reservee', reservee: 'occupee', occupee: 'libre' }
-
 export default function ResaGPPage() {
-  const [tables, setTables] = useState(INITIAL_TABLES)
-
-  // Plan de salle vivant : une table change de statut en douceur à chaque tick
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let i = 0
-    const id = setInterval(() => {
-      setTables(prev => prev.map((t, idx) => (idx === i % prev.length ? { ...t, s: NEXT_STATUS[t.s] } : t)))
-      i++
-    }, 2200)
-    return () => clearInterval(id)
-  }, [])
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(styles.revealed); obs.unobserve(e.target) } })
-    }, { threshold: 0.07 })
-    document.querySelectorAll(`.${styles.reveal}`).forEach(el => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
   return (
     <div className={styles.page}>
       <SmoothScroll />
+      <RevealOnScroll revealClass={styles.reveal} revealedClass={styles.revealed} threshold={0.07} />
       <div className={styles.grain} aria-hidden />
       <div className={styles.wrap}>
 
@@ -206,14 +155,7 @@ export default function ResaGPPage() {
 
                 {/* Plan de salle */}
                 <div className={styles.dashSalleLabel}>Plan de salle — Terrasse</div>
-                <div className={styles.dashSalle}>
-                  {tables.map((t) => (
-                    <div key={t.n} className={styles.dashTable}>
-                      <TableTop status={t.s} />
-                      <span className={styles.dashTableLbl}>{t.n}</span>
-                    </div>
-                  ))}
-                </div>
+                <PlanDeSalle />
                 <div className={styles.dashLegend}>
                   <span className={styles.dashLegItem}><span className={styles.dashDotLibre} />Libre</span>
                   <span className={styles.dashLegItem}><span className={styles.dashDotOccupee} />Occupée</span>
