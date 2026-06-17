@@ -1,7 +1,6 @@
 ﻿'use client'
 
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 
 const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
@@ -16,7 +15,38 @@ import styles from './resagp.module.css'
    Thème Brasserie Moderne — charbon chaud + ambre candlelight
    Différent de FactuGP (papier/vert) et SolYB (Tailwind/orange) ── */
 
-const WORDS = ['simplifiée', 'sans commission', 'automatisée', 'tout-en-un', '100% française']
+/* Marque ResaGP — table vue de dessus (charte v1.1) */
+function ResaMark({ size = 30 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 88 88" fill="none" aria-hidden>
+      <rect x="2" y="2" width="84" height="84" rx="3" stroke="#7AAFC4" strokeWidth="1.4" />
+      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="#7AAFC4" />
+      <rect x="29" y="22" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
+      <rect x="47" y="22" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
+      <rect x="29" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
+      <rect x="47" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
+    </svg>
+  )
+}
+
+type TableStatus = 'libre' | 'occupee' | 'reservee'
+
+/* Table vue de dessus pour le plan de salle */
+function TableTop({ status }: { status: TableStatus }) {
+  const cfg = {
+    occupee:  { fill: '#7AAFC4',                stroke: 'none',    chair: '#F5EDD8', chairOp: 0.72 },
+    reservee: { fill: 'rgba(122,175,196,0.18)', stroke: '#7AAFC4', chair: '#7AAFC4', chairOp: 0.55 },
+    libre:    { fill: 'none',                   stroke: '#A89880', chair: '#A89880', chairOp: 0.4 },
+  }[status]
+  return (
+    <svg className={styles.dashTableTop} viewBox="0 0 44 44" fill="none" aria-hidden>
+      {[[14, 7], [23, 7], [14, 33], [23, 33]].map(([x, y], i) => (
+        <rect key={i} x={x} y={y} width="7" height="4" rx="1.5" fill={cfg.chair} opacity={cfg.chairOp} />
+      ))}
+      <rect x="12" y="14" width="20" height="16" rx="3" fill={cfg.fill} stroke={cfg.stroke} strokeWidth="1.3" />
+    </svg>
+  )
+}
 
 const FEATURES = [
   { n: '01', Icon: CalendarCheck, title: 'Réservations en ligne', sub: 'Disponible 24h/24 — 7j/7', desc: 'Vos clients réservent depuis votre site, Facebook ou un lien WhatsApp. Confirmation email + SMS dans la seconde. Zéro appel manqué.', tags: ['Confirmation instantanée', 'Email auto', 'SMS auto'] },
@@ -52,17 +82,6 @@ const CMP_ROWS = [
 const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'CRM CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'ANALYTICS', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
 
 export default function ResaGPPage() {
-  const [wordIdx, setWordIdx] = useState(0)
-  const [wordIn, setWordIn] = useState(true)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setWordIn(false)
-      setTimeout(() => { setWordIdx(i => (i + 1) % WORDS.length); setWordIn(true) }, 220)
-    }, 2600)
-    return () => clearInterval(id)
-  }, [])
-
   useEffect(() => {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(styles.revealed); obs.unobserve(e.target) } })
@@ -80,9 +99,9 @@ export default function ResaGPPage() {
         {/* NAV */}
         <nav className={styles.nav}>
           <div className={styles.navIn}>
-            <a href="#" className={styles.logo}>
-              <Image src="/logo/SYB_orange.svg" alt="SolYB" width={36} height={36} className={styles.logoImg} />
-              <span className={styles.logoText}>Resa<em>GP</em></span>
+            <a href="#" className={styles.logo} aria-label="ResaGP — accueil">
+              <ResaMark size={30} />
+              <span className={styles.logoText}>Resa<em className={styles.logoGp}>GP</em></span>
             </a>
             <div className={styles.navLinks}>
               {[['#fonctionnalites','Ce qu\'on fait'],['#workflow','Comment ça marche'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
@@ -105,12 +124,8 @@ export default function ResaGPPage() {
                 Zéro commission · RGPD conforme · Guadeloupe
               </div>
               <h1 className={styles.h1}>
-                La gestion restaurant<br />
-                <span className={styles.h1Strong}>
-                  <span className={styles.h1Rotating}>
-                    <span className={`${styles.h1Word} ${wordIn ? styles.wIn : styles.wOut}`}>{WORDS[wordIdx]}</span>
-                  </span>
-                </span>
+                Votre salle,<br />
+                <span className={styles.h1Strong}>vos règles.</span>
               </h1>
               <div className={styles.zeroCom}>
                 <span className={styles.zeroNum}>0%</span>
@@ -165,14 +180,15 @@ export default function ResaGPPage() {
                 {/* Plan de salle */}
                 <div className={styles.dashSalleLabel}>Plan de salle — Terrasse</div>
                 <div className={styles.dashSalle}>
-                  {[
+                  {([
                     { n:'T1', s:'libre' }, { n:'T2', s:'occupee' }, { n:'T3', s:'occupee' },
                     { n:'T4', s:'reservee' }, { n:'T5', s:'libre' }, { n:'T6', s:'occupee' },
                     { n:'T7', s:'reservee' }, { n:'T8', s:'occupee' }, { n:'T9', s:'libre' },
                     { n:'T10', s:'occupee' }, { n:'T11', s:'reservee' }, { n:'T12', s:'occupee' },
-                  ].map((t) => (
-                    <div key={t.n} className={`${styles.dashTable} ${styles['dashTable_' + t.s]}`}>
-                      {t.n}
+                  ] as { n: string; s: TableStatus }[]).map((t) => (
+                    <div key={t.n} className={styles.dashTable}>
+                      <TableTop status={t.s} />
+                      <span className={styles.dashTableLbl}>{t.n}</span>
                     </div>
                   ))}
                 </div>
@@ -352,7 +368,10 @@ export default function ResaGPPage() {
         <footer className={styles.footer}>
           <div className={styles.footerIn}>
             <div>
-              <div className={styles.footerBrand}>ResaGP</div>
+              <div className={styles.footerBrand}>
+                <ResaMark size={26} />
+                <span>Resa<em className={styles.logoGp}>GP</em></span>
+              </div>
               <div className={styles.footerDesc}>Plateforme de gestion restaurant pour les établissements de Guadeloupe. Sans commission, conforme RGPD, hébergé en France.</div>
               <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
             </div>
