@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
+import EarlyAccessForm from '@/components/site/EarlyAccessForm'
 import {
   IconFileInvoice, IconReceipt2, IconRefresh, IconBuildingSkyscraper,
   IconBrain, IconUsers, IconBriefcase, IconAnchor, IconCertificate,
@@ -375,10 +376,17 @@ export default function FacturationPage() {
           <div className={`${styles.wrap} ${styles.finalCtaInner}`}>
             <h2 className={styles.finalCtaTitle}>Septembre 2026, <em>c&apos;est maintenant</em></h2>
             <p className={styles.finalCtaLede}>Ne subissez pas la réforme — prenez les devants. On fait d&apos;abord le point gratuitement sur votre situation, puis on vous accompagne jusqu&apos;à être 100 % en règle.</p>
-            <div className={styles.finalCtaActions}>
-              <a href="mailto:contact@solyb.fr" className={`${styles.btn} ${styles.btnSand}`}><IconFileInvoice size={16} /> Réserver mon accès anticipé</a>
-              <a href="mailto:contact@solyb.fr" className={`${styles.btn} ${styles.btnGhost}`}><IconChartBar size={16} /> Voir une démo</a>
-            </div>
+            <EarlyAccessForm
+              theme={{
+                surface: '#132226', text: '#F3EFE6', muted: '#8FA39F',
+                border: 'rgba(243,239,230,0.18)', borderFocus: '#5FBDBE',
+                accent: '#E2A565', accentText: '#0A1316', radius: '12px',
+                fontMono: 'var(--font-mono)',
+              }}
+              source="factugp"
+              projectType="facturation"
+              productName="FactuGP"
+            />
           </div>
         </section>
       </main>

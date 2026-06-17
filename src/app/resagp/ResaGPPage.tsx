@@ -1,9 +1,10 @@
 ﻿'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const SmoothScroll = dynamic(() => import('@/components/ui/SmoothScroll'), { ssr: false })
+import EarlyAccessForm from '@/components/site/EarlyAccessForm'
 import {
   CalendarCheck, MapTrifold, DeviceMobile, Users, ForkKnife,
   ChartBar, Bell, Key, CreditCard, ArrowRight, CheckCircle,
@@ -41,9 +42,9 @@ function TableTop({ status }: { status: TableStatus }) {
   return (
     <svg className={styles.dashTableTop} viewBox="0 0 44 44" fill="none" aria-hidden>
       {[[14, 7], [23, 7], [14, 33], [23, 33]].map(([x, y], i) => (
-        <rect key={i} x={x} y={y} width="7" height="4" rx="1.5" fill={cfg.chair} opacity={cfg.chairOp} />
+        <rect className={styles.dashTableRect} key={i} x={x} y={y} width="7" height="4" rx="1.5" fill={cfg.chair} opacity={cfg.chairOp} />
       ))}
-      <rect x="12" y="14" width="20" height="16" rx="3" fill={cfg.fill} stroke={cfg.stroke} strokeWidth="1.3" />
+      <rect className={styles.dashTableRect} x="12" y="14" width="20" height="16" rx="3" fill={cfg.fill} stroke={cfg.stroke} strokeWidth="1.3" />
     </svg>
   )
 }
@@ -81,7 +82,28 @@ const CMP_ROWS = [
 
 const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'CRM CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'ANALYTICS', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
 
+const INITIAL_TABLES: { n: string; s: TableStatus }[] = [
+  { n: 'T1', s: 'libre' }, { n: 'T2', s: 'occupee' }, { n: 'T3', s: 'occupee' },
+  { n: 'T4', s: 'reservee' }, { n: 'T5', s: 'libre' }, { n: 'T6', s: 'occupee' },
+  { n: 'T7', s: 'reservee' }, { n: 'T8', s: 'occupee' }, { n: 'T9', s: 'libre' },
+  { n: 'T10', s: 'occupee' }, { n: 'T11', s: 'reservee' }, { n: 'T12', s: 'occupee' },
+]
+const NEXT_STATUS: Record<TableStatus, TableStatus> = { libre: 'reservee', reservee: 'occupee', occupee: 'libre' }
+
 export default function ResaGPPage() {
+  const [tables, setTables] = useState(INITIAL_TABLES)
+
+  // Plan de salle vivant : une table change de statut en douceur à chaque tick
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let i = 0
+    const id = setInterval(() => {
+      setTables(prev => prev.map((t, idx) => (idx === i % prev.length ? { ...t, s: NEXT_STATUS[t.s] } : t)))
+      i++
+    }, 2200)
+    return () => clearInterval(id)
+  }, [])
+
   useEffect(() => {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(styles.revealed); obs.unobserve(e.target) } })
@@ -180,12 +202,7 @@ export default function ResaGPPage() {
                 {/* Plan de salle */}
                 <div className={styles.dashSalleLabel}>Plan de salle — Terrasse</div>
                 <div className={styles.dashSalle}>
-                  {([
-                    { n:'T1', s:'libre' }, { n:'T2', s:'occupee' }, { n:'T3', s:'occupee' },
-                    { n:'T4', s:'reservee' }, { n:'T5', s:'libre' }, { n:'T6', s:'occupee' },
-                    { n:'T7', s:'reservee' }, { n:'T8', s:'occupee' }, { n:'T9', s:'libre' },
-                    { n:'T10', s:'occupee' }, { n:'T11', s:'reservee' }, { n:'T12', s:'occupee' },
-                  ] as { n: string; s: TableStatus }[]).map((t) => (
+                  {tables.map((t) => (
                     <div key={t.n} className={styles.dashTable}>
                       <TableTop status={t.s} />
                       <span className={styles.dashTableLbl}>{t.n}</span>
@@ -357,10 +374,17 @@ export default function ResaGPPage() {
           <div className={styles.ctaIn}>
             <h2 className={styles.ctaH}>Gérez vos réservations<br /><span className={styles.ctaHStrong}>sans commission.</span></h2>
             <p className={styles.ctaP}>14 jours d&apos;essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.</p>
-            <div className={styles.ctaBtns}>
-              <a href="mailto:contact@solyb.fr" className={styles.ctaBtnMain}><ForkKnife size={17} weight="duotone" /> Démarrer l&apos;essai gratuit →</a>
-              <a href="mailto:contact@solyb.fr" className={styles.ctaBtnGhost}><WifiHigh size={16} weight="duotone" /> Voir une démo</a>
-            </div>
+            <EarlyAccessForm
+              theme={{
+                surface: '#1A1713', text: '#F5EDD8', muted: '#A89880',
+                border: 'rgba(122,175,196,0.22)', borderFocus: '#7AAFC4',
+                accent: '#7AAFC4', accentText: '#0E0C08', radius: '3px',
+                fontMono: 'var(--font-space-mono)',
+              }}
+              source="resagp"
+              projectType="saas"
+              productName="ResaGP"
+            />
           </div>
         </section>
 
