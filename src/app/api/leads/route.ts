@@ -62,6 +62,12 @@ export async function POST(request: NextRequest) {
     const launchOfferPosition = offerTracking ? offerTracking.slots_filled + 1 : null
     const isLaunchOffer = launchOfferPosition && launchOfferPosition <= 30
 
+    // Segmentation produit : explicite, sinon déduite de la source
+    const src = (validatedData.source || "").toLowerCase()
+    const product_source =
+      validatedData.product_source ??
+      (src.includes("resa") ? "resa_gp" : src.includes("factu") ? "factu_gp" : "solyb_agency")
+
     // Insérer le lead dans Supabase
     const { data: lead, error } = await supabase
       .from("leads")
@@ -78,6 +84,7 @@ export async function POST(request: NextRequest) {
         activity_type: "digital",
         source: validatedData.source,
         source_details: "Formulaire contact site web",
+        product_source,
         score_budget,
         score_clarity,
         score_urgency,

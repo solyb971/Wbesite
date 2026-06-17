@@ -48,6 +48,12 @@ export const contactSchema = z.object({
     .string()
     .max(100)
     .default("site-web"),
+
+  // Produit concerné par le lead (pour la segmentation CRM multi-produits).
+  // Optionnel : si absent, l'API le déduit de `source`.
+  product_source: z
+    .enum(["solyb_agency", "factu_gp", "resa_gp"])
+    .optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>

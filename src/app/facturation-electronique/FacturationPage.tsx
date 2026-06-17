@@ -360,6 +360,7 @@ export default function FacturationPage() {
               }}
               source="factugp"
               projectType="facturation"
+              productSource="factu_gp"
               productName="FactuGP"
             />
           </div>

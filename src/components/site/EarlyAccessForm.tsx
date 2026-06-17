@@ -22,6 +22,7 @@ export default function EarlyAccessForm({
   theme,
   source,
   projectType,
+  productSource,
   productName,
   submitLabel = 'Réserver mon accès anticipé',
   successText = "On vous recontacte dès l'ouverture des accès — sous 24h en semaine.",
@@ -29,6 +30,7 @@ export default function EarlyAccessForm({
   theme: Theme
   source: string
   projectType: 'saas' | 'facturation' | 'application' | 'custom'
+  productSource: 'solyb_agency' | 'factu_gp' | 'resa_gp'
   productName: string
   submitLabel?: string
   successText?: string
@@ -49,6 +51,7 @@ export default function EarlyAccessForm({
           email: fd.get('email'),
           phone: fd.get('phone') || '',
           project_type: projectType,
+          product_source: productSource,
           budget: '500-1000',
           urgency: 'normal',
           source,

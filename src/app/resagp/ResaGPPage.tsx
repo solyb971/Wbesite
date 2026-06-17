@@ -330,6 +330,7 @@ export default function ResaGPPage() {
               }}
               source="resagp"
               projectType="saas"
+              productSource="resa_gp"
               productName="ResaGP"
               submitLabel="Démarrer l'essai gratuit"
               successText="On vous recontacte pour lancer votre essai — sous 24h en semaine."
