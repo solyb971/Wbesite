@@ -161,12 +161,12 @@
 
 /* ── Features ── */
 .featuresGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-l); overflow: hidden; }
-.featuresCard { background: var(--ink-soft); padding: 38px 32px; min-height: 288px; display: flex; flex-direction: column; gap: 14px; }
+.featuresCard { background: var(--ink-soft); padding: 38px 32px; min-height: 288px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
 .featuresIcon { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; color: var(--petrol-2); flex: none; }
 .featuresTag { font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); }
 .featuresTitle { font-family: var(--ff-display); font-size: 1.28rem; font-weight: 600; }
 .featuresDesc { color: var(--paper-dim); font-size: .91rem; line-height: 1.62; }
-.featuresChips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.featuresChips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: auto; padding-top: 6px; }
 .chip { font-family: var(--ff-mono); font-size: .66rem; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,.04); border: 1px solid var(--line); color: var(--muted); }
 @media (max-width:980px){ .featuresGrid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width:640px){ .featuresGrid { grid-template-columns: 1fr; } }
@@ -188,7 +188,7 @@
 
 /* ── Sectors ── */
 .sectorsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.sectorCard { border: 1px solid var(--line); border-radius: var(--radius-m); padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.sectorCard { border: 1px solid var(--line); border-radius: var(--radius-m); padding: 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
 .sectorCard:hover { border-color: var(--petrol-2); transform: translateY(-4px); background: var(--surface); }
 .sectorIcon { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; color: var(--petrol-2); margin-bottom: 4px; }
 .sectorTitle { font-family: var(--ff-display); font-size: 1.08rem; font-weight: 600; }

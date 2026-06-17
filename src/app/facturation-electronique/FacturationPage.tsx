@@ -133,16 +133,6 @@ export default function FacturationPage() {
             <div className={`${styles.invoice} ${styles.reveal}`}>
               <div className={styles.invoiceGlow} />
               <div className={styles.invoiceCard}>
-                <svg className={styles.stamp} viewBox="0 0 200 200">
-                  <defs><path id="fxStampPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" /></defs>
-                  <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 5" />
-                  <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                  <text fontFamily="var(--ff-mono)" fontSize="11.5" letterSpacing="2.5" fill="currentColor">
-                    <textPath href="#fxStampPath" startOffset="2%">CONFORME · DGFiP DOM · EN 16931 ·</textPath>
-                  </text>
-                  <text x="100" y="96" textAnchor="middle" fontFamily="var(--ff-mono)" fontSize="17" fontWeight="600" fill="currentColor">FACTUR-X</text>
-                  <text x="100" y="116" textAnchor="middle" fontFamily="var(--ff-mono)" fontSize="10" letterSpacing="1.5" fill="currentColor">971 · 2026</text>
-                </svg>
                 <div className={styles.invoiceHead}>
                   <div>
                     <div className={styles.invoiceCompany}>Boulangerie Soleil des Alizés</div>

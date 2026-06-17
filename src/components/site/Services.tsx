@@ -106,9 +106,9 @@ export default function Services() {
           <div>
             <div
               className="inline-flex items-center gap-2 text-xs tracking-widest uppercase rounded-full px-3 py-1 mb-2"
-              style={{ background: 'rgba(184,118,10,0.1)', border: '0.5px solid rgba(184,118,10,0.3)', color: '#C49A20' }}
+              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.28)', color: '#C4472A' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#C49A20', animation: 'pulse 2s infinite' }} />
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#C4472A', animation: 'pulse 2s infinite' }} />
               Obligation 2026
             </div>
             <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
@@ -121,7 +121,7 @@ export default function Services() {
           <Link
             href="/?service=facturation#contact"
             className="whitespace-nowrap text-sm font-normal px-5 py-2.5 rounded transition-opacity hover:opacity-80 flex-shrink-0 text-white"
-            style={{ background: '#B8760A' }}
+            style={{ background: '#C4472A' }}
           >
             Vérifier ma conformité
           </Link>

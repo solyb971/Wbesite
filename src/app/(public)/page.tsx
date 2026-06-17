@@ -15,9 +15,9 @@ import Contact from "@/components/site/Contact"
 import { faqs } from "@/lib/faq-data"
 
 export const metadata: Metadata = {
-  // ~55 chars — affiché en entier dans les résultats Google
-  title: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026',
-  description: 'Agence digitale à Baie-Mahault (971). Sites web sur-mesure dès 599€, applications métier, facturation électronique DGFiP 2026. Devis gratuit sous 24h — ancrée en Guadeloupe.',
+  // 54 chars — sans le suffixe template, affiché en entier dans Google
+  title: { absolute: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026' },
+  description: 'Agence digitale à Baie-Mahault (971). Sites web dès 599€, applications métier & facturation électronique 2026. Devis gratuit sous 24h.',
   keywords: [
     'agence digitale Guadeloupe',
     'création site web Guadeloupe',
@@ -144,7 +144,7 @@ export default function HomePage() {
     '@type': 'Organization',
     name: 'SolYB',
     url: 'https://solyb.fr',
-    logo: 'https://solyb.fr/og-image.jpg',
+    logo: 'https://solyb.fr/logo/syb-orange.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+590690711769',

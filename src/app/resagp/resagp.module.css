@@ -96,8 +96,8 @@
 
 .kicker {
   display: inline-flex; align-items: center; gap: 0.85rem;
-  font-family: var(--rg-mono); font-size: 0.65rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
+  font-family: var(--rg-sans); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--rg-ac); margin-bottom: 2rem;
 }
 .kickerLine { width: 28px; height: 1px; background: var(--rg-ac); opacity: 0.6; }
@@ -175,8 +175,8 @@
 .trust { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
 .trustItem {
   display: flex; align-items: center; gap: 0.5rem;
-  font-family: var(--rg-mono); font-size: 0.62rem;
-  color: var(--rg-mu); letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--rg-sans); font-size: 0.72rem; font-weight: 500;
+  color: var(--rg-mu2); letter-spacing: 0.04em; text-transform: none;
 }
 .trustDot { width: 5px; height: 5px; border-radius: 50%; background: var(--rg-ac); opacity: 0.7; flex-shrink: 0; }
 
@@ -351,7 +351,7 @@
 .cmpRow:hover { border-color: var(--rg-border2); }
 .cmpCrit { font-family: var(--rg-sans); font-size: 0.88rem; color: var(--rg-tx); }
 .cmpCol { text-align: center; font-family: var(--rg-sans); font-size: 0.82rem; }
-.cmpColHead { font-family: var(--rg-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; padding: 0.5rem 0.75rem; }
+.cmpColHead { font-family: var(--rg-sans); font-weight: 600; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 0.5rem 0.75rem; }
 .cmpOther { color: var(--rg-mu); }
 .cmpYes { color: var(--rg-ac); font-weight: 700; }
 .cmpNo  { color: var(--rg-mu); }
@@ -438,12 +438,12 @@
 .footerIn { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
 .footerBrand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--rg-serif); font-size: 1.3rem; font-weight: 700; font-style: italic; color: var(--rg-tx); margin-bottom: 0.75rem; }
 .footerDesc { font-family: var(--rg-sans); color: var(--rg-mu); font-size: 0.85rem; line-height: 1.65; }
-.footerSiren { font-family: var(--rg-mono); font-size: 0.62rem; color: var(--rg-mu); margin-top: 1rem; opacity: 0.6; }
-.footerColTitle { font-family: var(--rg-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rg-mu); margin-bottom: 0.9rem; }
+.footerSiren { font-family: var(--rg-sans); font-size: 0.72rem; color: var(--rg-mu); margin-top: 1rem; opacity: 0.7; }
+.footerColTitle { font-family: var(--rg-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rg-mu); margin-bottom: 0.9rem; }
 .footerList { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .footerList a { font-family: var(--rg-sans); color: var(--rg-mu2); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
 .footerList a:hover { color: var(--rg-ac); }
-.footerBar { max-width: 1200px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--rg-border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; color: var(--rg-mu); font-family: var(--rg-mono); font-size: 0.62rem; letter-spacing: 0.04em; }
+.footerBar { max-width: 1200px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--rg-border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; color: var(--rg-mu); font-family: var(--rg-sans); font-size: 0.72rem; letter-spacing: 0.02em; }
 
 /* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }

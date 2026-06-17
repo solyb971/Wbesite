@@ -87,7 +87,7 @@ export default function Navigation() {
               alt="SolYB"
               width={160}
               height={160}
-              className="h-9 w-auto"
+              className="h-11 w-auto"
               priority
             />
           </Link>
