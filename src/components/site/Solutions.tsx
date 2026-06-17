@@ -94,14 +94,9 @@ export default function Solutions() {
                 </span>
               </div>
 
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="font-display font-thin text-4xl leading-none" style={{ color: '#DDD5C8' }}>
-                  {s.num}
-                </span>
-                <h3 className="font-display font-bold text-2xl" style={{ color: '#0E0D0B' }}>
-                  {s.name}
-                </h3>
-              </div>
+              <h3 className="font-display font-bold text-2xl mb-2" style={{ color: '#0E0D0B' }}>
+                {s.name}
+              </h3>
 
               <p className="text-sm font-medium mb-3" style={{ color: '#C4472A' }}>{s.tagline}</p>
               <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: '#7A7268', lineHeight: 1.65 }}>

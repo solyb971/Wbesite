@@ -5,7 +5,7 @@ const services = [
     title: "Site Vitrine",
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
-    description: "Présence en ligne professionnelle, pensée pour votre clientèle locale. Rapide, lisible sur mobile, optimisé pour Google.",
+    description: "Le site qui vous rend visible sur Google et crédible auprès de vos clients. Rapide, impeccable sur mobile, pensé pour faire venir du monde.",
     price: "Dès 599€",
     contactParam: "vitrine",
   },
@@ -13,7 +13,7 @@ const services = [
     title: "E-commerce",
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
-    description: "Boutique complète avec paiement sécurisé et tableau de bord simple à prendre en main.",
+    description: "Vendez en ligne 24h/24. Boutique complète, paiement sécurisé, gestion simple — vous encaissez, on gère la technique.",
     price: "Dès 999€",
     contactParam: "ecommerce",
   },
@@ -21,7 +21,7 @@ const services = [
     title: "Application Métier",
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
-    description: "Outil sur mesure pour votre activité. Ce dont vous avez besoin, rien de plus.",
+    description: "L'outil sur mesure pour votre métier : réservation, gestion, suivi… exactement ce qu'il vous faut, rien de superflu.",
     price: "Sur devis",
     contactParam: "application",
   },
@@ -106,9 +106,9 @@ export default function Services() {
           <div>
             <div
               className="inline-flex items-center gap-2 text-xs tracking-widest uppercase rounded-full px-3 py-1 mb-2"
-              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.28)', color: '#C4472A' }}
+              style={{ background: 'rgba(46,140,146,0.08)', border: '0.5px solid rgba(46,140,146,0.30)', color: '#2E8C92' }}
             >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#C4472A', animation: 'pulse 2s infinite' }} />
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#2E8C92', animation: 'pulse 2s infinite' }} />
               Obligation 2026
             </div>
             <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
@@ -121,7 +121,7 @@ export default function Services() {
           <Link
             href="/?service=facturation#contact"
             className="whitespace-nowrap text-sm font-normal px-5 py-2.5 rounded transition-opacity hover:opacity-80 flex-shrink-0 text-white"
-            style={{ background: '#C4472A' }}
+            style={{ background: '#2E8C92' }}
           >
             Vérifier ma conformité
           </Link>
