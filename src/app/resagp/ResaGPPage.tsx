@@ -121,10 +121,15 @@ export default function ResaGPPage() {
         {/* NAV */}
         <nav className={styles.nav}>
           <div className={styles.navIn}>
-            <a href="#" className={styles.logo} aria-label="ResaGP — accueil">
-              <ResaMark size={30} />
-              <span className={styles.logoText}>Resa<em className={styles.logoGp}>GP</em></span>
-            </a>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+              <a href="#" className={styles.logo} aria-label="ResaGP — accueil">
+                <ResaMark size={30} />
+                <span className={styles.logoText}>Resa<em className={styles.logoGp}>GP</em></span>
+              </a>
+              <a href="https://solyb.fr" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: '0.58rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--rg-mu)', textDecoration: 'none' }}>
+                par SolYB
+              </a>
+            </div>
             <div className={styles.navLinks}>
               {[['#fonctionnalites','Ce qu\'on fait'],['#workflow','Comment ça marche'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
                 <a key={h} href={h} className={styles.navLink}>{l}</a>
@@ -384,6 +389,8 @@ export default function ResaGPPage() {
               source="resagp"
               projectType="saas"
               productName="ResaGP"
+              submitLabel="Démarrer l'essai gratuit"
+              successText="On vous recontacte pour lancer votre essai — sous 24h en semaine."
             />
           </div>
         </section>

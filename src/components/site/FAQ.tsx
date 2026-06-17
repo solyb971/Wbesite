@@ -25,7 +25,7 @@ export default function FAQ() {
 
         {/* Items */}
         <div className="reveal">
-          {faqs.slice(0, 5).map((faq, index) => (
+          {faqs.slice(0, 7).map((faq, index) => (
             <div
               key={index}
               style={{ borderBottom: '0.5px solid #DDD5C8' }}

@@ -113,7 +113,12 @@ export default function FacturationPage() {
       {/* NAV */}
       <header className={styles.nav}>
         <div className={`${styles.wrap} ${styles.navIn}`}>
-          <Logo />
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
+            <Logo />
+            <a href="https://solyb.fr" style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', textDecoration: 'none' }}>
+              par SolYB
+            </a>
+          </div>
           <nav className={styles.navLinks}>
             {NAV_LINKS.map(([h, l]) => <a key={h} href={h}>{l}</a>)}
           </nav>
@@ -353,7 +358,7 @@ export default function FacturationPage() {
             <div className={`${styles.head} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Feuille de route</span>
               <h2 className={styles.sectionTitle}>Solution en cours <em className={styles.accentSand}>de lancement</em></h2>
-              <p className={styles.lede}>FactuGP est en accès anticipé. Suivez les étapes du lancement et réservez votre place parmi les premiers utilisateurs.</p>
+              <p className={styles.lede}>FactuGP est en accès anticipé. <strong style={{ color: 'var(--paper)' }}>Ce qui est coché fonctionne déjà aujourd&apos;hui</strong> ; le reste arrive avant l&apos;échéance. Réservez votre place parmi les premiers utilisateurs.</p>
             </div>
             <div className={`${styles.roadmapList} ${styles.reveal}`}>
               {ROADMAP.map(step => (

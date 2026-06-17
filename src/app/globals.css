@@ -461,6 +461,10 @@ section > .max-w-5xl {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* Respecte le réglage système : pas d'animation d'entrée si reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  [style*="fadeUp"] { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
 
 @keyframes blobDrift {
   from { transform: translate(0, 0) scale(1); }

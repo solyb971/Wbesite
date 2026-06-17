@@ -23,11 +23,15 @@ export default function EarlyAccessForm({
   source,
   projectType,
   productName,
+  submitLabel = 'Réserver mon accès anticipé',
+  successText = "On vous recontacte dès l'ouverture des accès — sous 24h en semaine.",
 }: {
   theme: Theme
   source: string
   projectType: 'saas' | 'facturation' | 'application' | 'custom'
   productName: string
+  submitLabel?: string
+  successText?: string
 }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -83,8 +87,8 @@ export default function EarlyAccessForm({
         }}
       >
         <div style={{ fontSize: 30, color: theme.accent, marginBottom: 10 }}>✓</div>
-        <p style={{ color: theme.text, fontSize: 17, fontWeight: 600, marginBottom: 6 }}>Vous êtes sur la liste.</p>
-        <p style={{ color: theme.muted, fontSize: 14 }}>On vous recontacte dès l&apos;ouverture des accès — sous 24h en semaine.</p>
+        <p style={{ color: theme.text, fontSize: 17, fontWeight: 600, marginBottom: 6 }}>C&apos;est noté, merci.</p>
+        <p style={{ color: theme.muted, fontSize: 14 }}>{successText}</p>
       </div>
     )
   }
@@ -106,7 +110,7 @@ export default function EarlyAccessForm({
           fontFamily: 'inherit', opacity: status === 'sending' ? 0.7 : 1, transition: 'opacity .2s, transform .2s',
         }}
       >
-        {status === 'sending' ? 'Envoi…' : 'Réserver mon accès anticipé'}
+        {status === 'sending' ? 'Envoi…' : submitLabel}
       </button>
       {status === 'error' && (
         <p style={{ color: '#F87171', fontSize: 13, textAlign: 'center' }}>
