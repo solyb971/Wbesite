@@ -1,15 +1,23 @@
-﻿"use client"
+"use client"
 
 import { Suspense, useState, useEffect } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
-import { Lock, Mail, AlertCircle, Loader2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Lock, Mail, AlertCircle, Loader2, ArrowRight } from "lucide-react"
 import { login } from "@/lib/auth/actions"
 import { useAuth } from "@/hooks/useAuth"
+
+const inputBase: React.CSSProperties = {
+  background: "#120F0B",
+  border: "1px solid rgba(245,237,216,0.12)",
+  color: "#F5EDD8",
+  borderRadius: "10px",
+  padding: "12px 14px 12px 42px",
+  fontSize: "14px",
+  width: "100%",
+  outline: "none",
+  transition: "border-color .2s",
+}
 
 function LoginForm() {
   const router = useRouter()
@@ -21,11 +29,9 @@ function LoginForm() {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
-  // Rediriger si déjà authentifié
   useEffect(() => {
     if (!authLoading && user) {
-      const redirect = searchParams.get("redirect") || "/admin"
-      router.push(redirect)
+      router.push(searchParams.get("redirect") || "/admin")
     }
   }, [user, authLoading, router, searchParams])
 
@@ -34,145 +40,98 @@ function LoginForm() {
     setError("")
     setLoading(true)
 
-    // Mode mock : authentification locale sans Server Action
     if (process.env.NEXT_PUBLIC_USE_MOCK === "true") {
-      const redirect = searchParams.get("redirect") || "/admin"
-      window.location.href = redirect
+      window.location.href = searchParams.get("redirect") || "/admin"
       return
     }
 
     try {
       const result = await login(email, password)
-
       if (result.error) {
         setError(result.error)
         setLoading(false)
         return
       }
-
-      // Navigation complète pour que les cookies de session soient bien pris en compte
-      const redirect = searchParams.get("redirect") || "/admin"
-      window.location.href = redirect
-    } catch (err: any) {
-      setError(err.message || "Une erreur est survenue")
+      window.location.href = searchParams.get("redirect") || "/admin"
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue")
       setLoading(false)
     }
   }
 
-  // Afficher un loader pendant la vérification de l'authentification
-  if (authLoading) {
+  if (authLoading || user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-white to-secondary/10">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      <div className="min-h-screen flex items-center justify-center" style={{ background: "#120F0B" }}>
+        <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#C4472A" }} />
       </div>
     )
   }
 
-  // Ne pas afficher la page de login si déjà authentifié
-  if (user) {
-    return null
-  }
+  const onFocus = (e: React.FocusEvent<HTMLInputElement>) => { e.target.style.borderColor = "#C4472A" }
+  const onBlur = (e: React.FocusEvent<HTMLInputElement>) => { e.target.style.borderColor = "rgba(245,237,216,0.12)" }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-white to-secondary/10 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-4 text-center">
-          <div className="mx-auto">
-            <Image
-              src="/logo/SolYB_PNG_PACK_FINAL/01_Master_Color_Transparent/SolYB_color_transparent_2000.png"
-              alt="SolYB"
-              width={200}
-              height={60}
-              className="h-16 w-auto mx-auto"
-              priority
-            />
-          </div>
-          <CardTitle className="text-2xl font-bold">Connexion Admin</CardTitle>
-          <CardDescription>Accédez au dashboard CRM SolYB</CardDescription>
-        </CardHeader>
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden" style={{ background: "#120F0B" }}>
+      {/* Lueurs terre cuite */}
+      <div className="absolute pointer-events-none" style={{ top: "-200px", left: "-160px", width: "560px", height: "560px", borderRadius: "50%", background: "radial-gradient(circle, rgba(196,71,42,0.18), transparent 70%)" }} />
+      <div className="absolute pointer-events-none" style={{ bottom: "-220px", right: "-160px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(196,71,42,0.10), transparent 70%)" }} />
 
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-red-800">{error}</div>
-              </div>
-            )}
+      <div className="relative w-full max-w-md rounded-2xl p-8 sm:p-10" style={{ background: "#1A1511", border: "1px solid rgba(196,71,42,0.20)" }}>
+        {/* Logo + titre */}
+        <div className="flex flex-col items-center text-center mb-8">
+          <Image src="/logo/syb-orange.png" alt="SolYB" width={160} height={160} className="h-12 w-auto mb-5" priority />
+          <h1 className="font-display font-black" style={{ fontSize: "28px", color: "#F5EDD8", letterSpacing: "-0.5px" }}>
+            Espace <em className="italic font-light" style={{ color: "#C4472A" }}>admin</em>
+          </h1>
+          <p className="mt-2 text-sm" style={{ color: "#A89880" }}>Connectez-vous au CRM SolYB.</p>
+        </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="admin@solyb.fr"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
-                  required
-                  disabled={loading}
-                  autoComplete="email"
-                />
-              </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <div className="flex items-start gap-3 rounded-lg p-3" style={{ background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.25)" }}>
+              <AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#F87171" }} />
+              <div className="text-sm" style={{ color: "#F1B0A8" }}>{error}</div>
             </div>
+          )}
 
-            <div className="space-y-2">
-              <Label htmlFor="password">Mot de passe</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10"
-                  required
-                  disabled={loading}
-                  autoComplete="current-password"
-                />
-              </div>
+          <div>
+            <label htmlFor="email" className="block text-xs font-medium mb-1.5" style={{ color: "#A89880" }}>Email</label>
+            <div className="relative">
+              <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "#7E715E" }} />
+              <input id="email" type="email" placeholder="admin@solyb.fr" value={email} onChange={(e) => setEmail(e.target.value)} required disabled={loading} autoComplete="email" style={inputBase} onFocus={onFocus} onBlur={onBlur} />
             </div>
-
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Connexion en cours...
-                </>
-              ) : (
-                "Se connecter"
-              )}
-            </Button>
-          </form>
-
-          <div className="mt-6 pt-6 border-t text-center">
-            <p className="text-sm text-gray-600">
-              Mot de passe oublié ?{" "}
-              <button className="text-primary hover:underline font-medium">
-                Réinitialiser
-              </button>
-            </p>
           </div>
 
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <p className="text-xs text-blue-900 font-medium mb-2">Accès sécurisé</p>
-            <p className="text-xs text-blue-800">
-              Cette page est protégée. Seuls les administrateurs autorisés peuvent accéder au dashboard CRM.
-            </p>
+          <div>
+            <label htmlFor="password" className="block text-xs font-medium mb-1.5" style={{ color: "#A89880" }}>Mot de passe</label>
+            <div className="relative">
+              <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "#7E715E" }} />
+              <input id="password" type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required disabled={loading} autoComplete="current-password" style={inputBase} onFocus={onFocus} onBlur={onBlur} />
+            </div>
           </div>
-        </CardContent>
-      </Card>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-2 rounded-lg font-semibold transition-transform hover:-translate-y-px"
+            style={{ background: "#C4472A", color: "#fff", padding: "13px", fontSize: "15px", opacity: loading ? 0.7 : 1, cursor: loading ? "wait" : "pointer" }}
+          >
+            {loading ? (<><Loader2 className="w-4 h-4 animate-spin" /> Connexion…</>) : (<>Se connecter <ArrowRight className="w-4 h-4" /></>)}
+          </button>
+        </form>
+
+        <p className="mt-7 pt-6 text-center text-xs" style={{ borderTop: "1px solid rgba(245,237,216,0.08)", color: "#7E715E" }}>
+          Accès réservé aux administrateurs SolYB · Baie-Mahault, Guadeloupe
+        </p>
+      </div>
     </div>
   )
 }
 
 function LoginFallback() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-white to-secondary/10">
-      <Loader2 className="w-8 h-8 animate-spin text-primary" />
+    <div className="min-h-screen flex items-center justify-center" style={{ background: "#120F0B" }}>
+      <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#C4472A" }} />
     </div>
   )
 }
