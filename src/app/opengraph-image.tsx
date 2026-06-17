@@ -38,7 +38,7 @@ export default async function Image() {
             border: '1px solid rgba(255,107,71,0.4)',
             background: 'rgba(255,107,71,0.1)',
             borderRadius: '4px', padding: '6px 16px',
-            fontSize: '12px', color: '#FF6B47',
+            fontSize: '12px', color: '#C4472A',
             letterSpacing: '3px', textTransform: 'uppercase',
           }}>
             GUADELOUPE · 971
@@ -51,7 +51,7 @@ export default async function Image() {
           {/* Logo text */}
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
             <span style={{ fontSize: '96px', fontWeight: 700, color: '#F0EDE8', lineHeight: 1, letterSpacing: '-4px' }}>Sol</span>
-            <span style={{ fontSize: '96px', fontWeight: 700, color: '#FF6B47', lineHeight: 1, letterSpacing: '-4px' }}>YB</span>
+            <span style={{ fontSize: '96px', fontWeight: 700, color: '#C4472A', lineHeight: 1, letterSpacing: '-4px' }}>YB</span>
           </div>
 
           {/* Tagline */}
@@ -62,7 +62,7 @@ export default async function Image() {
           {/* Services pills */}
           <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
             {[
-              { label: 'Sites Web Sur-Mesure', color: '#FF6B47' },
+              { label: 'Sites Web Sur-Mesure', color: '#C4472A' },
               { label: 'Applications Métier', color: '#00D4AA' },
               { label: 'Facturation Élec. 2026', color: '#F5A623' },
             ].map(s => (
@@ -80,7 +80,7 @@ export default async function Image() {
         {/* Bottom row */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
           <div style={{
-            background: '#FF6B47', borderRadius: '6px',
+            background: '#C4472A', borderRadius: '6px',
             padding: '14px 32px', fontSize: '16px', fontWeight: 700,
             color: '#fff', fontFamily: 'sans-serif', letterSpacing: '0.5px',
           }}>
@@ -88,7 +88,7 @@ export default async function Image() {
           </div>
           <div style={{ display: 'flex', gap: '40px' }}>
             {[
-              { n: '2-3 sem.', l: 'Livraison', c: '#FF6B47' },
+              { n: '2-3 sem.', l: 'Livraison', c: '#C4472A' },
               { n: '100%', l: 'Sur-mesure', c: '#00D4AA' },
               { n: '24H', l: 'Réponse', c: '#F5A623' },
             ].map(s => (

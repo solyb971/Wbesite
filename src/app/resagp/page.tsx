@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'SolYB — Agence Digitale Guadeloupe',
-    images: [{ url: '/logo/SolYB_PNG_PACK_FINAL/03_Color_On_White/og-image.jpg', width: 1200, height: 630, alt: 'ResaGP — Gestion Restaurant Guadeloupe' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'ResaGP — Gestion Restaurant Guadeloupe' }],
   },
 }
 
@@ -35,10 +35,20 @@ const softwareSchema = {
   ],
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://solyb.fr' },
+    { '@type': 'ListItem', position: 2, name: 'ResaGP', item: 'https://solyb.fr/resagp' },
+  ],
+}
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ResaGPPage />
     </>
   )

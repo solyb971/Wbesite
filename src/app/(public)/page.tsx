@@ -42,7 +42,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'SolYB — Agence Digitale Guadeloupe',
-    image: 'https://solyb.fr/og-image.jpg',
+    image: 'https://solyb.fr/opengraph-image',
     '@id': 'https://solyb.fr',
     url: 'https://solyb.fr',
     telephone: '+590690711769',

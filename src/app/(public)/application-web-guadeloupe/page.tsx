@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'SolYB — Agence Digitale Guadeloupe',
-    images: [{ url: '/logo/SolYB_PNG_PACK_FINAL/03_Color_On_White/og-image.jpg', width: 1200, height: 630, alt: 'Développement Application Web Guadeloupe - SolYB' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Développement Application Web Guadeloupe - SolYB' }],
   },
 }
 

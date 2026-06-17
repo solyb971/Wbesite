@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'facturation-electronique-2026-guadeloupe',
+    title: 'Facturation Électronique 2026 en Guadeloupe : le guide TPE/PME',
+    excerpt: 'Dates, entreprises concernées, TVA DOM (8,5 % / 2,1 %), Chorus Pro, sanctions… Tout ce que les TPE/PME guadeloupéennes doivent savoir sur la réforme 2026.',
+    date: '2026-06-17',
+    readTime: '9 min',
+    category: 'Conformité 2026',
+    accentColor: 'text-coral',
+    accentBg: 'bg-coral/10',
+    borderColor: 'border-coral/20',
+  },
+  {
     slug: 'prix-site-web-guadeloupe',
     title: 'Prix Création Site Web en Guadeloupe : Le Guide Complet 2026',
     excerpt: 'Découvrez les vrais prix du marché guadeloupéen. Comparatif complet des agences, freelances et solutions DIY. De 599€ à 15 000€.',
