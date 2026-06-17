@@ -30,6 +30,11 @@ export function usePlanningEvents(weekStart: Date, weekEnd: Date) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // On dépend des valeurs primitives (ISO) et non de l'identité des objets Date,
+  // pour éviter toute boucle de refetch si un appelant recrée les Date à chaque render.
+  const startISO = weekStart.toISOString()
+  const endISO = weekEnd.toISOString()
+
   const fetchEvents = useCallback(async () => {
     setLoading(true)
     setError(null)
@@ -45,8 +50,8 @@ export function usePlanningEvents(weekStart: Date, weekEnd: Date) {
       const { data, error } = await supabase
         .from("planning_events")
         .select("*")
-        .gte("start_time", weekStart.toISOString())
-        .lte("end_time", weekEnd.toISOString())
+        .gte("start_time", startISO)
+        .lte("end_time", endISO)
         .order("start_time", { ascending: true })
 
       if (error) throw error
@@ -56,7 +61,7 @@ export function usePlanningEvents(weekStart: Date, weekEnd: Date) {
     } finally {
       setLoading(false)
     }
-  }, [weekStart, weekEnd])
+  }, [startISO, endISO])
 
   useEffect(() => { fetchEvents() }, [fetchEvents])
 

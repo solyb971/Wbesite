@@ -33,7 +33,7 @@ export function useSettings<T extends Record<string, unknown>>(defaults: T) {
       }
       try {
         const supabase = createClient()
-        const { data } = await supabase.from("settings").select("value").eq("key", DB_KEY).single()
+        const { data } = await supabase.from("settings").select("value").eq("key", DB_KEY).maybeSingle()
         if (active && data?.value && typeof data.value === "object") {
           setSettings((s) => ({ ...s, ...(data.value as Partial<T>) }))
         }

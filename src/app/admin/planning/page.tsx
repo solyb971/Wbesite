@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Plus, AlertTriangle, Loader2 } from "lucide-react"
 import { format, startOfWeek, endOfWeek, addWeeks, subWeeks, eachDayOfInterval } from "date-fns"
 import { fr } from "date-fns/locale"
@@ -16,9 +16,11 @@ export default function PlanningPage() {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [showNewEventDialog, setShowNewEventDialog] = useState(false)
 
-  const weekStart = startOfWeek(currentDate, { weekStartsOn: 1 })
-  const weekEnd   = endOfWeek(currentDate,   { weekStartsOn: 1 })
-  const weekDays  = eachDayOfInterval({ start: weekStart, end: weekEnd })
+  // Mémoïsé sur currentDate : sans ça, ces Date sont recréées à chaque render,
+  // ce qui relance fetchEvents en boucle infinie dans usePlanningEvents.
+  const weekStart = useMemo(() => startOfWeek(currentDate, { weekStartsOn: 1 }), [currentDate])
+  const weekEnd   = useMemo(() => endOfWeek(currentDate,   { weekStartsOn: 1 }), [currentDate])
+  const weekDays  = useMemo(() => eachDayOfInterval({ start: weekStart, end: weekEnd }), [weekStart, weekEnd])
 
   const { events, loading, error, createEvent, weeklyStats } = usePlanningEvents(weekStart, weekEnd)
 
