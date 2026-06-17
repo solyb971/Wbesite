@@ -12,8 +12,8 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/#services",     label: "Services" },
+    { href: "/#tarifs",       label: "Tarifs" },
     { href: "/#apropos",      label: "À propos" },
-    { href: "/tarifs",        label: "Tarifs" },
     { href: "/#realisations", label: "Réalisations" },
     { href: "/#contact",      label: "Contact" },
   ]
@@ -32,7 +32,7 @@ export default function Navigation() {
   }, [])
 
   useEffect(() => {
-    const ids = ['services', 'process', 'solutions', 'apropos', 'realisations', 'faq', 'contact']
+    const ids = ['services', 'tarifs', 'process', 'solutions', 'apropos', 'realisations', 'faq', 'contact']
     const observers: IntersectionObserver[] = []
     ids.forEach(id => {
       const el = document.getElementById(id)
@@ -50,13 +50,14 @@ export default function Navigation() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const hash = href.split('#')[1]
     if (!hash) return
+    const target = document.getElementById(hash)
+    // Section absente de la page courante (ex. page légale) → laisser le lien
+    // naviguer vers /#hash (charge la home puis saute à la section).
+    if (!target) return
     e.preventDefault()
     setMobileMenuOpen(false)
-    const target = document.getElementById(hash)
-    if (target) {
-      const offset = navRef.current?.getBoundingClientRect().height ?? 80
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' })
-    }
+    const offset = navRef.current?.getBoundingClientRect().height ?? 80
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' })
   }
 
   const getLinkClass = (href: string) => {

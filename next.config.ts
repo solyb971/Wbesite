@@ -18,6 +18,18 @@ const nextConfig: NextConfig = {
     ]
   },
 
+  // L'ancienne page /tarifs (design obsolète) est remplacée par la section
+  // tarifs de la home → redirection permanente pour préserver le SEO.
+  async redirects() {
+    return [
+      {
+        source: '/tarifs',
+        destination: '/#tarifs',
+        permanent: true,
+      },
+    ]
+  },
+
   // Optimisation images
   images: {
     formats: ['image/avif', 'image/webp'],
