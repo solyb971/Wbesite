@@ -40,9 +40,12 @@ export default function Solutions() {
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
           >
-            Outils clés<br />
-            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>en main</em>
+            Des outils<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>déjà prêts pour vous</em>
           </h2>
+          <p className="text-sm font-light leading-relaxed max-w-md mt-5" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+            En plus du sur-mesure, j&apos;ai créé mes propres outils pour les entreprises d&apos;ici.
+          </p>
         </div>
 
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4">

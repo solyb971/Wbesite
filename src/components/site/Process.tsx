@@ -17,15 +17,18 @@ export default function Process() {
         <div className="reveal mb-14">
           <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
             <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-            Comment ça marche
+            Travailler ensemble
           </div>
           <h2
-            className="font-display font-black leading-none"
+            className="font-display font-black leading-none mb-5"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
           >
             4 étapes,<br />
             <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>zéro surprise</em>
           </h2>
+          <p className="text-sm font-light leading-relaxed max-w-md" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+            De notre premier appel à la mise en ligne, vous savez toujours où on en est. Pas de jargon, pas de mauvaise surprise.
+          </p>
         </div>
 
         {/* Steps */}

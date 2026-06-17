@@ -47,12 +47,12 @@ export default function Services() {
                 className="font-display font-black leading-none"
                 style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
               >
-                Ce qu&apos;on<br />
-                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>construit</em>
+                On crée<br />
+                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>l&apos;outil qu&apos;il vous faut</em>
               </h2>
             </div>
             <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
-              Des solutions sur mesure pour votre réalité locale. Pas de template revendu — chaque projet est unique.
+              Pas de template recyclé. On part de votre métier, de vos clients, de votre quotidien — et on construit ce qui va vraiment vous servir.
             </p>
           </div>
 

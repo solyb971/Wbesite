@@ -21,8 +21,8 @@ export default function FeatureStats() {
               className="font-display font-black leading-none"
               style={{ fontSize: 'clamp(36px, 4vw, 58px)', color: 'white', letterSpacing: '-2px' }}
             >
-              Des chiffres<br />
-              <em className="italic" style={{ fontWeight: 300 }}>qui tiennent.</em>
+              Ce sur quoi<br />
+              <em className="italic" style={{ fontWeight: 300 }}>vous pouvez compter.</em>
             </h2>
           </div>
 

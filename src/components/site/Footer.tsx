@@ -7,12 +7,11 @@ export default function Footer() {
     <footer style={{ background: '#0E0D0B', borderTop: '0.5px solid #1a1814' }}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 flex-wrap">
         <Image
-          src="/logo/SYB_white.svg"
+          src="/logo/syb-white.png"
           alt="SolYB"
-          width={512}
-          height={512}
+          width={160}
+          height={160}
           className="h-8 w-auto"
-          unoptimized
         />
         <p className="text-xs font-light" style={{ color: '#948C80' }}>
           © {currentYear} SolYB — Agence digitale Guadeloupe
