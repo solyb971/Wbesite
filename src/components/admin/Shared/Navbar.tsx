@@ -54,7 +54,11 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
   const notifRef = useRef<HTMLDivElement>(null)
   const userRef  = useRef<HTMLDivElement>(null)
 
-  const page = PAGE_TITLES[pathname] ?? { title: "Dashboard", sub: "SolYB CRM" }
+  const page =
+    PAGE_TITLES[pathname] ??
+    (pathname.startsWith("/admin/leads/")
+      ? { title: "Fiche lead", sub: "Détail & suivi" }
+      : { title: "Dashboard", sub: "SolYB CRM" })
 
   // Notifications réelles : derniers leads reçus (7 jours)
   useEffect(() => {

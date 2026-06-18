@@ -1,7 +1,7 @@
 "use client"
 
 import { Lead } from "@/hooks/useLeads"
-import { FileText, Mail, Phone, Trash2, Download } from "lucide-react"
+import { FileText, Mail, Phone, Trash2, Download, Zap } from "lucide-react"
 import { generateQuotePDF } from "@/lib/utils/pdf"
 
 interface QuickActionsProps {
@@ -20,73 +20,67 @@ export default function QuickActions({ lead, onDelete }: QuickActionsProps) {
   }
 
   const handleCall = () => {
-    if (lead.phone) {
-      window.location.href = `tel:${lead.phone}`
-    }
+    if (lead.phone) window.location.href = `tel:${lead.phone}`
+  }
+
+  const handleExport = () => {
+    const dataUri =
+      "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(lead, null, 2))
+    const link = document.createElement("a")
+    link.setAttribute("href", dataUri)
+    link.setAttribute("download", `lead_${lead.id}.json`)
+    link.click()
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-4">Actions Rapides</h3>
+    <div className="bg-[#1F1813] rounded-2xl border border-white/[0.06] p-5">
+      <h3 className="text-sm font-bold text-[#F5EDD8] mb-4 flex items-center gap-2">
+        <Zap className="w-4 h-4 text-coral" />
+        Actions rapides
+      </h3>
 
-      <div className="space-y-3">
-        {/* Generate PDF Quote */}
-        <button
-          onClick={handleGeneratePDF}
-          className="w-full flex items-center space-x-3 px-4 py-3 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors"
-        >
-          <FileText className="w-5 h-5" />
-          <span>Générer Devis PDF</span>
-        </button>
+      {/* CTA principal pleine largeur */}
+      <button
+        onClick={handleGeneratePDF}
+        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-coral hover:bg-coral/90 text-white rounded-xl text-sm font-semibold transition-all hover:-translate-y-px mb-3"
+      >
+        <FileText className="w-4 h-4" />
+        Générer le devis PDF
+      </button>
 
-        {/* Send Email */}
-        <button
-          onClick={handleSendEmail}
-          className="w-full flex items-center space-x-3 px-4 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors"
-        >
-          <Mail className="w-5 h-5" />
-          <span>Envoyer Email</span>
-        </button>
-
-        {/* Call */}
-        {lead.phone && (
-          <button
-            onClick={handleCall}
-            className="w-full flex items-center space-x-3 px-4 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            <span>Appeler</span>
-          </button>
+      {/* Actions secondaires en grille compacte */}
+      <div className="grid grid-cols-2 gap-2">
+        <ActionBtn onClick={handleSendEmail} icon={<Mail className="w-4 h-4" />} label="Email" />
+        {lead.phone ? (
+          <ActionBtn onClick={handleCall} icon={<Phone className="w-4 h-4" />} label="Appeler" />
+        ) : (
+          <ActionBtn onClick={handleExport} icon={<Download className="w-4 h-4" />} label="Exporter" />
         )}
-
-        {/* Download Data */}
-        <button
-          onClick={() => {
-            const dataStr = JSON.stringify(lead, null, 2)
-            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr)
-            const exportFileDefaultName = `lead_${lead.id}.json`
-            const linkElement = document.createElement('a')
-            linkElement.setAttribute('href', dataUri)
-            linkElement.setAttribute('download', exportFileDefaultName)
-            linkElement.click()
-          }}
-          className="w-full flex items-center space-x-3 px-4 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-semibold transition-colors"
-        >
-          <Download className="w-5 h-5" />
-          <span>Exporter Données</span>
-        </button>
-
-        {/* Delete Lead */}
+        {lead.phone && (
+          <ActionBtn onClick={handleExport} icon={<Download className="w-4 h-4" />} label="Exporter" />
+        )}
         {onDelete && (
           <button
             onClick={onDelete}
-            className="w-full flex items-center space-x-3 px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-colors"
+            className="flex items-center justify-center gap-2 px-3 py-2.5 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg text-xs font-medium transition-colors"
           >
-            <Trash2 className="w-5 h-5" />
-            <span>Supprimer Lead</span>
+            <Trash2 className="w-4 h-4" />
+            Supprimer
           </button>
         )}
       </div>
     </div>
+  )
+}
+
+function ActionBtn({ onClick, icon, label }: { onClick: () => void; icon: React.ReactNode; label: string }) {
+  return (
+    <button
+      onClick={onClick}
+      className="flex items-center justify-center gap-2 px-3 py-2.5 bg-white/[0.04] hover:bg-white/[0.07] text-[#C2B79E] hover:text-[#F5EDD8] rounded-lg text-xs font-medium transition-colors"
+    >
+      {icon}
+      {label}
+    </button>
   )
 }

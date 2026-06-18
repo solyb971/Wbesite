@@ -8,7 +8,7 @@ import ScoreCard from "@/components/admin/LeadDetail/ScoreCard"
 import Notes from "@/components/admin/LeadDetail/Notes"
 import Profitability from "@/components/admin/LeadDetail/Profitability"
 import QuickActions from "@/components/admin/LeadDetail/QuickActions"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 
 interface PageProps {
@@ -24,17 +24,15 @@ export default function LeadDetailPage({ params }: PageProps) {
 
   const lead = leads.find((l) => l.id === resolvedParams.id)
 
-  const handleUpdate = async (updates: any) => {
+  const handleUpdate = async (updates: Partial<typeof lead>) => {
     if (!lead) return
 
-    // If only status changed, use the optimized status update
-    if (Object.keys(updates).length === 1 && updates.status) {
+    if (updates && Object.keys(updates).length === 1 && updates.status) {
       await updateLeadStatus(lead.id, updates.status)
       return
     }
 
-    // Full update for other fields
-    const result = await updateLead(lead.id, updates)
+    const result = await updateLead(lead.id, updates as Parameters<typeof updateLead>[1])
     if (!result.success) {
       console.error("Erreur mise à jour:", result.error)
     }
@@ -42,22 +40,16 @@ export default function LeadDetailPage({ params }: PageProps) {
 
   const handleDelete = async () => {
     if (!lead) return
-
     const result = await deleteLead(lead.id)
-    if (result.success) {
-      router.push("/admin")
-    }
+    if (result.success) router.push("/admin")
   }
 
   if (!lead) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Lead introuvable</h2>
-          <Link
-            href="/admin"
-            className="inline-flex items-center space-x-2 text-primary hover:underline"
-          >
+          <h2 className="text-2xl font-bold text-[#F5EDD8] mb-4">Lead introuvable</h2>
+          <Link href="/admin" className="inline-flex items-center gap-2 text-coral hover:underline">
             <ArrowLeft className="w-4 h-4" />
             <span>Retour au pipeline</span>
           </Link>
@@ -67,64 +59,56 @@ export default function LeadDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="space-y-6">
-      {/* Back Button */}
+    <div className="space-y-5">
+      {/* Back */}
       <Link
         href="/admin"
-        className="inline-flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors"
+        className="inline-flex items-center gap-2 text-[#7E715E] hover:text-[#F5EDD8] transition-colors text-sm font-medium"
       >
-        <ArrowLeft className="w-5 h-5" />
-        <span className="font-medium">Retour au pipeline</span>
+        <ArrowLeft className="w-4 h-4" />
+        <span>Retour au pipeline</span>
       </Link>
 
-      {/* Main Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column - Main Content */}
-        <div className="lg:col-span-2 space-y-6">
-          {/* Lead Info */}
+      {/* Grid : 12 colonnes pour une meilleure densité */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        {/* Colonne principale */}
+        <div className="lg:col-span-8 space-y-5">
           <LeadInfo lead={lead} onUpdate={handleUpdate} />
-
-          {/* Notes */}
           <Notes leadId={lead.id} />
         </div>
 
-        {/* Right Column - Sidebar */}
-        <div className="lg:col-span-1 space-y-6">
-          {/* Quick Actions */}
-          <QuickActions
-            lead={lead}
-            onDelete={() => setShowDeleteConfirm(true)}
-          />
-
-          {/* Score Card */}
+        {/* Colonne latérale */}
+        <div className="lg:col-span-4 space-y-5">
+          <QuickActions lead={lead} onDelete={() => setShowDeleteConfirm(true)} />
           <ScoreCard lead={lead} />
-
-          {/* Profitability */}
           <Profitability lead={lead} />
         </div>
       </div>
 
-      {/* Delete Confirmation Modal */}
+      {/* Confirmation suppression */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Confirmer la suppression</h3>
-            <p className="text-gray-600 mb-6">
-              Êtes-vous sûr de vouloir supprimer le lead <strong>{lead.name}</strong> ? Cette
-              action est irréversible et supprimera également toutes les notes, fichiers et
-              historiques associés.
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-[#1F1813] border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/50 max-w-md w-full p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
+                <AlertTriangle className="w-5 h-5 text-red-400" />
+              </div>
+              <h3 className="text-lg font-bold text-[#F5EDD8]">Confirmer la suppression</h3>
+            </div>
+            <p className="text-[#A89880] text-sm mb-6 leading-relaxed">
+              Supprimer le lead <strong className="text-[#F5EDD8]">{lead.name}</strong> ? Cette action est
+              irréversible et supprimera aussi ses notes, fichiers et historiques.
             </p>
-
-            <div className="flex items-center justify-end space-x-4">
+            <div className="flex items-center justify-end gap-3">
               <button
                 onClick={() => setShowDeleteConfirm(false)}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-5 py-2.5 border border-white/[0.1] text-[#A89880] hover:text-[#F5EDD8] hover:bg-white/[0.04] rounded-xl text-sm font-medium transition-colors"
               >
                 Annuler
               </button>
               <button
                 onClick={handleDelete}
-                className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-colors"
+                className="px-5 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-xl text-sm font-semibold transition-colors"
               >
                 Supprimer définitivement
               </button>
