@@ -14,12 +14,12 @@ import styles from './facturation.module.css'
    SmoothScroll, EarlyAccessForm). Design « Ink / Pétrole / Sable ». */
 
 const FEATURES = [
-  { icon: IconFileInvoice, tag: 'Factur-X EN 16931', title: 'Factures au bon format', desc: 'Vos factures sont créées dans le format officiel exigé par l\'État — un PDF lisible par l\'humain et une pièce XML lisible par les machines. Compatible Chorus Pro DOM.', chips: ['Factur-X', 'EN 16931', 'PDF/A-3'] },
-  { icon: IconReceipt2, tag: 'TVA 8,5 % · 2,1 %', title: 'TVA DOM déjà réglée', desc: 'En Guadeloupe, Martinique, Réunion et Guyane, la TVA diffère de la métropole. FactuGP applique le bon taux automatiquement selon votre activité.', chips: ['8,5 %', '2,1 %', 'Multi-taux'] },
-  { icon: IconRefresh, tag: 'E-reporting DGFiP', title: 'Déclaration automatique', desc: 'Les informations de vos ventes et encaissements partent automatiquement vers les impôts. Fini la saisie manuelle — FactuGP le fait pour vous, en temps réel.', chips: ['E-reporting', 'FEC DGFiP', 'Temps réel'] },
-  { icon: IconBuildingSkyscraper, tag: 'Module BTP', title: 'TVA auto-liquidée', desc: 'Dans le bâtiment, c\'est le client qui paie la TVA à la place du sous-traitant. FactuGP gère cette règle automatiquement et produit les documents légaux.', chips: ['Auto-liquidée', 'Art. 283', 'Sous-traitance'] },
-  { icon: IconBrain, tag: 'OCR IA', title: 'Lecture des factures reçues', desc: 'Photographiez ou déposez une facture fournisseur. L\'IA lit le montant, la date et le numéro de TVA. Vous vérifiez en un coup d\'œil, on enregistre le reste.', chips: ['Scan IA', 'Import auto', 'PDF'] },
-  { icon: IconUsers, tag: 'Commercial', title: 'Devis & relances clients', desc: 'Créez un devis, transformez-le en facture d\'un clic, et laissez FactuGP envoyer les relances en cas d\'impayé. Tout depuis un seul outil.', chips: ['Devis', 'Relances', 'Suivi'] },
+  { icon: IconFileInvoice, tag: 'Factur-X EN 16931', title: 'Vos factures au bon format, automatiquement', desc: 'Vous n\'avez rien à apprendre : vos factures sont créées dans le format exigé par l\'État — un PDF que vous pouvez lire normalement, accompagné d\'un fichier technique que les impôts peuvent lire. Compatible avec le format Chorus Pro DOM.', chips: ['Factur-X', 'EN 16931', 'PDF/A-3'] },
+  { icon: IconReceipt2, tag: 'TVA 8,5 % · 2,1 %', title: 'Le bon taux DOM, sans y penser', desc: 'En Guadeloupe, Martinique, Réunion et Guyane, la TVA n\'est pas celle de métropole. FactuGP applique automatiquement le taux qui correspond à votre activité — vous n\'avez pas à vous demander si c\'est 8,5 %, 2,1 % ou autre chose.', chips: ['8,5 %', '2,1 %', 'Multi-taux'] },
+  { icon: IconRefresh, tag: 'E-reporting DGFiP', title: 'Votre déclaration, prête à partir automatiquement', desc: 'FactuGP prépare automatiquement les informations de vos ventes et encaissements pour votre déclaration aux impôts. Plus de saisie manuelle de votre côté. La transmission directe sera activée dès l\'obtention de l\'agrément Plateforme Agréée (PA), actuellement en cours de demande.', chips: ['E-reporting', 'FEC DGFiP', 'Temps réel'] },
+  { icon: IconBuildingSkyscraper, tag: 'Module BTP', title: 'La TVA auto-liquidée, gérée pour vous', desc: 'Dans le bâtiment, c\'est le client qui paie la TVA à la place du sous-traitant — une règle qu\'on oublie facilement. FactuGP l\'applique automatiquement et produit les bons documents.', chips: ['Auto-liquidée', 'Art. 283', 'Sous-traitance'] },
+  { icon: IconBrain, tag: 'OCR IA', title: 'Vos factures reçues, lues à votre place', desc: 'Vous photographiez ou déposez une facture fournisseur, l\'IA en extrait le montant, la date et le numéro de TVA. Vous vérifiez en un coup d\'œil, le reste s\'enregistre seul.', chips: ['Scan IA', 'Import auto', 'PDF'] },
+  { icon: IconUsers, tag: 'Commercial', title: 'Devis, factures et relances, dans le même outil', desc: 'Vous créez un devis, vous le transformez en facture en un clic, et FactuGP relance pour vous en cas d\'impayé. Plus besoin d\'un outil à part pour ça.', chips: ['Devis', 'Relances', 'Suivi'] },
 ]
 
 const RATES = [
@@ -34,37 +34,40 @@ const SECTORS = [
   { icon: IconBuildingBank, name: 'Artisanat & services', sub: 'Devis, factures, relances' },
   { icon: IconScale, name: 'Professions libérales', sub: 'Honoraires, e-invoicing' },
   { icon: IconBuildingSkyscraper, name: 'BTP & construction', sub: 'TVA auto-liquidée, DGFiP' },
-  { icon: IconAnchor, name: 'Tourisme & hôtellerie', sub: 'Taxe séjour, ISCA NF 525' },
+  { icon: IconAnchor, name: 'Tourisme & hôtellerie', sub: 'Taxe de séjour, ISCA NF 525' },
   { icon: IconWorld, name: 'Agriculture & pêche', sub: 'Taux réduits, exonérations' },
 ]
 
-const STAMPS = [
+const STAMPS_DONE = [
   { icon: IconFileInvoice, label: 'Factur-X\nEN 16931' },
   { icon: IconShieldCheck, label: 'RGPD\nConforme' },
   { icon: IconWorld, label: 'Hébergé\nen France' },
-  { icon: IconBuildingBank, label: 'Chorus Pro\nDOM' },
-  { icon: IconRefresh, label: 'E-reporting\nDGFiP' },
-  { icon: IconCertificate, label: 'ISCA\nNF 525' },
   { icon: IconChartBar, label: 'FEC\nDGFiP' },
   { icon: IconReceipt2, label: 'TVA DOM\nNative' },
+  { icon: IconCertificate, label: 'ISCA\nNF 525' },
+]
+
+const STAMPS_PENDING = [
+  { icon: IconBuildingBank, label: 'Chorus Pro\nDOM' },
+  { icon: IconRefresh, label: 'E-reporting\nDGFiP' },
 ]
 
 const STATS = [
-  { num: '24', lbl: 'Modules intégrés' },
-  { num: '100%', lbl: 'Conforme DGFiP 2026' },
-  { num: '3', lbl: 'Taux TVA DOM préconfigurés' },
-  { num: '5 min', lbl: 'Pour être opérationnel' },
+  { num: '24', lbl: 'Modules déjà prêts' },
+  { num: '100%', lbl: 'Du format Factur-X intégré' },
+  { num: '3', lbl: 'Taux de TVA DOM automatiques' },
+  { num: '5 min', lbl: 'Pour créer votre compte' },
 ]
 
 const PLANS = [
   { name: 'Starter', price: '29', featured: false, feats: ['Jusqu\'à 50 factures/mois', 'Format Factur-X EN 16931', 'TVA DOM préconfigurée', 'Export FEC DGFiP', 'Support email'], off: ['Module BTP', 'Lecture automatique des factures', 'Suivi commercial'], cta: 'Réserver mon accès' },
-  { name: 'Pro', price: '49', featured: true, feats: ['Factures illimitées', 'Tout du plan Starter', 'E-reporting DGFiP automatique', 'Module BTP & sous-traitance', 'Lecture automatique des factures', 'Suivi commercial', 'Relances automatiques'], off: [], cta: 'Réserver mon accès' },
-  { name: 'Expert', price: '79', featured: false, feats: ['Tout du plan Pro', 'Multi-établissements', 'Multi-utilisateurs illimités', 'API REST & webhooks', 'Support prioritaire local', 'Formation & onboarding'], off: [], cta: 'Nous contacter' },
+  { name: 'Pro', price: '49', featured: true, feats: ['Factures illimitées', 'Tout le plan Starter', 'E-reporting DGFiP automatique', 'Module BTP & sous-traitance', 'Lecture automatique des factures', 'Suivi commercial', 'Relances automatiques'], off: [], cta: 'Réserver mon accès' },
+  { name: 'Expert', price: '79', featured: false, feats: ['Tout le plan Pro', 'Multi-établissements', 'Multi-utilisateurs illimités', 'API REST & webhooks', 'Support prioritaire local', 'Formation & onboarding'], off: [], cta: 'Nous contacter' },
 ]
 
 const ROADMAP = [
   { q: 'Q1 2026', status: 'done', title: 'Lancement FactuGP Beta', desc: 'Factures, devis, TVA DOM 8,5 % et 2,1 %, portail client, relances automatiques, PDF professionnel.' },
-  { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, Chorus Pro DOM, export FEC DGFiP certifié. Toutes les obligations 2026 respectées.' },
+  { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, format Chorus Pro DOM, export FEC DGFiP certifié. Toutes les briques techniques de la réforme 2026 intégrées.' },
   { q: 'Q3 2026', status: 'current', title: 'Suite complète disponible', desc: 'Module BTP, lecture automatique des factures, suivi commercial, modules Tourisme & Agriculture. Ouverture des accès.' },
   { q: 'À venir', status: 'next', title: 'Plateforme Agréée DGFiP', desc: 'Certification auprès d\'une Plateforme Agréée DGFiP (PA) pour la transmission e-reporting en conditions réelles.' },
 ]
@@ -109,12 +112,12 @@ export default function FacturationPage() {
           <div className={`${styles.wrap} ${styles.heroInner}`}>
             <div>
               <div className={styles.heroPills}>
-                <span className={styles.pill}>v2026.3.0 · Conformité DGFiP totale</span>
+                <span className={styles.pill}>v2026.3.0 · Format DGFiP respecté · Agrément PA en cours</span>
                 <span className={`${styles.pill} ${styles.pillUrgent}`}>Réforme obligatoire · Septembre 2026</span>
               </div>
-              <h1 className={styles.heroTitle}>Facturation électronique,<br /><em>sans la paperasse</em></h1>
+              <h1 className={styles.heroTitle}>La facturation électronique,<br /><em>sans vous compliquer la vie</em></h1>
               <p className={styles.heroLead}>
-                À partir de septembre 2026, <b>toutes les entreprises qui paient la TVA</b> devront émettre et recevoir leurs factures au format électronique certifié. FactuGP est la seule solution construite depuis le départ pour les DOM.
+                À partir de septembre 2026, <b>si vous payez la TVA</b>, vous devrez émettre et recevoir vos factures dans un format électronique certifié. FactuGP est pensé depuis le départ pour les DOM — pas une solution métropolitaine adaptée à la dernière minute.
               </p>
               <div className={styles.heroActions}>
                 <a href="#contact" className={`${styles.btn} ${styles.btnSand}`}>
@@ -123,7 +126,7 @@ export default function FacturationPage() {
                 <a href="#fonctionnalites" className={`${styles.btn} ${styles.btnGhost}`}>Voir les fonctionnalités</a>
               </div>
               <div className={styles.heroTrust}>
-                {['Conforme DGFiP', 'TVA DOM native', 'RGPD · Hébergé en France', 'Essai 30 jours'].map(t => (
+                {['Format Factur-X EN 16931', 'TVA DOM native', 'RGPD, hébergé en France', 'Essai 30 jours'].map(t => (
                   <span key={t}>{t}</span>
                 ))}
               </div>
@@ -153,7 +156,7 @@ export default function FacturationPage() {
                   </tbody>
                 </table>
                 <div className={styles.invoiceChips}>
-                  {['Format Factur-X EN 16931 · PDF/A-3', 'Transmis Chorus Pro DOM · Réf. CP-2026-0147', 'E-reporting DGFiP envoyé automatiquement'].map(c => (
+                  {['Format Factur-X EN 16931 · PDF/A-3', 'Compatible format Chorus Pro DOM', 'E-reporting DGFiP prêt · agrément PA en cours'].map(c => (
                     <div key={c} className={styles.invoiceChip}><IconCheck size={13} /> {c}</div>
                   ))}
                 </div>
@@ -189,7 +192,7 @@ export default function FacturationPage() {
             <div className={`${styles.head} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Fonctionnalités</span>
               <h2 className={styles.sectionTitle}>Tout ce qu&apos;il faut, <em className={styles.accentSand}>rien à configurer</em></h2>
-              <p className={styles.lede}>De la création de la facture jusqu&apos;à sa transmission aux impôts — FactuGP gère toute la chaîne avec les règles fiscales propres aux DOM, déjà intégrées.</p>
+              <p className={styles.lede}>De la création de la facture jusqu&apos;à sa déclaration fiscale, FactuGP gère toute la chaîne avec les règles fiscales des DOM déjà intégrées.</p>
             </div>
             <div className={`${styles.featuresGrid} ${styles.reveal}`}>
               {FEATURES.map(f => (
@@ -212,7 +215,7 @@ export default function FacturationPage() {
           <div className={`${styles.wrap} ${styles.tvaInner}`}>
             <div className={styles.reveal}>
               <span className={styles.eyebrow}>TVA DOM</span>
-              <h2 className={styles.sectionTitle} style={{ marginTop: 16 }}>Les taux <em className={styles.accentSand}>Guadeloupe & DOM</em></h2>
+              <h2 className={styles.sectionTitle} style={{ marginTop: 16 }}>Les taux <em className={styles.accentSand}>Guadeloupe & DOM</em>, déjà réglés</h2>
               <p className={styles.lede} style={{ marginTop: 16 }}>
                 En Guadeloupe et dans les DOM, la TVA est plus basse qu&apos;en métropole. FactuGP connaît les bons taux et les applique automatiquement selon ce que vous vendez.
               </p>
@@ -239,7 +242,7 @@ export default function FacturationPage() {
           <div className={styles.wrap}>
             <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Secteurs</span>
-              <h2 className={styles.sectionTitle}>Vous payez la TVA ? <em className={styles.accentSand}>Vous êtes concerné.</em></h2>
+              <h2 className={styles.sectionTitle}>Vous payez la TVA ? <em className={styles.accentSand}>Cette réforme vous concerne.</em></h2>
               <p className={styles.lede}>Dès septembre 2026, toute entreprise assujettie à la TVA en Guadeloupe doit facturer au format électronique officiel — quel que soit son secteur.</p>
             </div>
             <div className={`${styles.sectorsGrid} ${styles.reveal}`}>
@@ -259,16 +262,36 @@ export default function FacturationPage() {
           <div className={styles.wrap}>
             <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Conformité</span>
-              <h2 className={styles.sectionTitle}>100 % conforme, <em className={styles.accentSand}>sans effort de votre côté</em></h2>
-              <p className={styles.lede}>FactuGP respecte toutes les normes exigées par l&apos;État — en France et en Europe. Chaque facture émise est automatiquement valide et légalement protégée.</p>
+              <h2 className={styles.sectionTitle}>Les normes techniques, déjà respectées. <em className={styles.accentSand}>L&apos;agrément, en cours.</em></h2>
+              <p className={styles.lede}>FactuGP respecte déjà les normes techniques exigées par l&apos;État, en France et en Europe — format de facture, taux de TVA DOM, export FEC. La demande d&apos;agrément en tant que Plateforme Agréée (PA) auprès de la DGFiP est en cours : c&apos;est l&apos;étape qui permettra d&apos;activer la transmission e-reporting en conditions réelles.</p>
             </div>
-            <div className={`${styles.badgesGrid} ${styles.reveal}`}>
-              {STAMPS.map(s => (
-                <div key={s.label} className={styles.badge}>
-                  <div className={styles.badgeStamp}><s.icon size={24} strokeWidth={1.5} /></div>
-                  <span className={styles.badgeLabel}>{s.label}</span>
-                </div>
-              ))}
+
+            <div className={`${styles.reveal}`} style={{ marginBottom: '2.5rem' }}>
+              <div className={styles.eyebrow} style={{ display: 'flex', alignItems: 'center', gap: 8, justifyContent: 'center', marginBottom: '1.25rem' }}>
+                <IconCheck size={14} strokeWidth={2.5} /> Déjà respecté
+              </div>
+              <div className={styles.badgesGrid}>
+                {STAMPS_DONE.map(s => (
+                  <div key={s.label} className={styles.badge}>
+                    <div className={styles.badgeStamp}><s.icon size={24} strokeWidth={1.5} /></div>
+                    <span className={styles.badgeLabel}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={`${styles.reveal}`}>
+              <div className={styles.eyebrow} style={{ display: 'flex', alignItems: 'center', gap: 8, justifyContent: 'center', marginBottom: '1.25rem' }}>
+                <IconClockHour4 size={14} /> En cours d&apos;agrément PA
+              </div>
+              <div className={styles.badgesGrid} style={{ opacity: 0.62 }}>
+                {STAMPS_PENDING.map(s => (
+                  <div key={s.label} className={styles.badge}>
+                    <div className={styles.badgeStamp}><s.icon size={24} strokeWidth={1.5} /></div>
+                    <span className={styles.badgeLabel}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -278,8 +301,8 @@ export default function FacturationPage() {
           <div className={styles.wrap}>
             <div className={`${styles.countdownPanel} ${styles.reveal}`}>
               <span className={`${styles.eyebrow} ${styles.eyebrowSand}`}>Compte à rebours</span>
-              <h2 className={styles.countdownTitle}>Obligation légale — 1<sup>er</sup> septembre 2026</h2>
-              <p className={styles.countdownSub}>Toutes les entreprises qui paient la TVA · des amendes dès la première facture non conforme.</p>
+              <h2 className={styles.countdownTitle}>L&apos;échéance légale — 1<sup>er</sup> septembre 2026</h2>
+              <p className={styles.countdownSub}>Toute entreprise qui paie la TVA est concernée — et les amendes s&apos;appliquent dès la première facture non conforme. Mieux vaut s&apos;y préparer maintenant que dans l&apos;urgence de fin d&apos;été.</p>
               <Countdown />
               <a href="#contact" className={`${styles.btn} ${styles.btnSand}`}><IconClockHour4 size={16} /> Réserver mon accès anticipé</a>
             </div>
@@ -292,7 +315,7 @@ export default function FacturationPage() {
             <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Tarifs</span>
               <h2 className={styles.sectionTitle}>Un prix fixe, <em className={styles.accentSand}>aucune surprise</em></h2>
-              <p className={styles.lede}>Abonnement mensuel. Pas de frais cachés, pas de commission à chaque facture émise.</p>
+              <p className={styles.lede}>Un abonnement mensuel. Pas de frais cachés, pas de commission sur chaque facture émise.</p>
             </div>
             <div className={`${styles.pricingGrid} ${styles.reveal}`}>
               {PLANS.map(p => (
@@ -317,8 +340,8 @@ export default function FacturationPage() {
           <div className={styles.wrap}>
             <div className={`${styles.head} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Feuille de route</span>
-              <h2 className={styles.sectionTitle}>Solution en cours <em className={styles.accentSand}>de lancement</em></h2>
-              <p className={styles.lede}>FactuGP est en accès anticipé. <strong style={{ color: 'var(--paper)' }}>Ce qui est coché fonctionne déjà aujourd&apos;hui</strong> ; le reste arrive avant l&apos;échéance. Réservez votre place parmi les premiers utilisateurs.</p>
+              <h2 className={styles.sectionTitle}>Une solution qui se construit, <em className={styles.accentSand}>étape par étape</em></h2>
+              <p className={styles.lede}>FactuGP est en accès anticipé. <strong style={{ color: 'var(--paper)' }}>Ce qui est marqué fonctionne déjà aujourd&apos;hui</strong> ; le reste arrive avant l&apos;échéance. Réservez votre place parmi les premiers utilisateurs.</p>
             </div>
             <div className={`${styles.roadmapList} ${styles.reveal}`}>
               {ROADMAP.map(step => (
@@ -339,8 +362,8 @@ export default function FacturationPage() {
         {/* FINAL CTA */}
         <section id="contact" className={styles.finalCta}>
           <div className={`${styles.wrap} ${styles.finalCtaInner}`}>
-            <h2 className={styles.finalCtaTitle}>Septembre 2026, <em>c&apos;est maintenant</em></h2>
-            <p className={styles.finalCtaLede}>Ne subissez pas la réforme — prenez les devants. On fait d&apos;abord le point gratuitement sur votre situation, puis on vous accompagne jusqu&apos;à être 100 % en règle.</p>
+            <h2 className={styles.finalCtaTitle}>Septembre 2026 arrive vite. <em>Autant prendre les devants.</em></h2>
+            <p className={styles.finalCtaLede}>On fait d&apos;abord un point gratuit sur votre situation, puis on vous accompagne jusqu&apos;à être 100 % en règle.</p>
             <EarlyAccessForm
               theme={{
                 surface: '#132226', text: '#F3EFE6', muted: '#8FA39F',
@@ -353,6 +376,9 @@ export default function FacturationPage() {
               productSource="factu_gp"
               productName="FactuGP"
             />
+            <p className={styles.finalCtaLede} style={{ marginTop: '1rem', fontSize: '0.8rem', opacity: 0.7 }}>
+              Sans engagement · on ne partage jamais vos données.
+            </p>
           </div>
         </section>
       </main>
@@ -362,7 +388,7 @@ export default function FacturationPage() {
         <div className={`${styles.wrap} ${styles.footerGrid}`}>
           <div className={styles.footerBrand}>
             <Logo />
-            <p>Facturation électronique pour les entreprises de Guadeloupe et des DOM. Conforme DGFiP, TVA DOM native, hébergée en France.</p>
+            <p>Facturation électronique pour les entreprises de Guadeloupe et des DOM. Aux normes DGFiP, TVA DOM native, hébergée en France.</p>
             <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
           </div>
           <div className={styles.footerCol}>

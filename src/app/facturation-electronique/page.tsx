@@ -3,12 +3,12 @@ import FacturationPage from './FacturationPage'
 
 export const metadata: Metadata = {
   title: 'SolYB Facturation — Logiciel de Facturation Électronique Guadeloupe DOM',
-  description: 'Logiciel de facturation électronique conforme DGFiP pour les TPE/PME de Guadeloupe et des DOM. Chorus Pro, TVA DOM 8,5 %, Factur-X EN 16931, FEC. À partir de 0 €.',
+  description: 'Logiciel de facturation électronique au format DGFiP (Factur-X EN 16931) pour les TPE/PME de Guadeloupe et des DOM. TVA DOM 8,5 % / 2,1 %, export FEC. Agrément Plateforme Agréée en cours. Dès 29 €/mois.',
   keywords: ['facturation électronique Guadeloupe','logiciel facturation DOM','Chorus Pro Guadeloupe','TVA DOM 8,5%','Factur-X 971','FEC DGFiP Guadeloupe','ISCA NF 525'],
   alternates: { canonical: 'https://solyb.fr/facturation-electronique' },
   openGraph: {
     title: 'SolYB Facturation — Logiciel de Facturation Électronique DOM',
-    description: 'Facturation conforme DGFiP pour les TPE/PME de Guadeloupe. Chorus Pro, TVA DOM 8,5 % / 2,1 %, Factur-X EN 16931, FEC DGFiP. Plans dès 0 €.',
+    description: 'Facturation au format DGFiP pour les TPE/PME de Guadeloupe. TVA DOM 8,5 % / 2,1 %, Factur-X EN 16931, export FEC. Agrément Plateforme Agréée en cours. Dès 29 €/mois.',
     url: 'https://solyb.fr/facturation-electronique',
     type: 'website',
     locale: 'fr_FR',
@@ -24,7 +24,7 @@ const softwareSchema = {
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
   url: 'https://solyb.fr/facturation-electronique',
-  description: 'Logiciel de facturation électronique conforme DGFiP pour les TPE/PME de Guadeloupe et des DOM : Factur-X EN 16931, Chorus Pro DOM, TVA DOM 8,5 % / 2,1 %, e-reporting, FEC.',
+  description: 'Logiciel de facturation électronique au format DGFiP pour les TPE/PME de Guadeloupe et des DOM : Factur-X EN 16931, TVA DOM 8,5 % / 2,1 %, export FEC. Compatible format Chorus Pro DOM ; agrément Plateforme Agréée (PA) et e-reporting en cours d\'obtention.',
   inLanguage: 'fr',
   provider: { '@type': 'Organization', name: 'SolYB', url: 'https://solyb.fr' },
   areaServed: { '@type': 'AdministrativeArea', name: 'Guadeloupe' },
