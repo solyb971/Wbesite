@@ -29,10 +29,10 @@ export default function WhatsAppButton({
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-20 sm:bottom-6 left-6 z-50">
+      <div className="fixed bottom-20 sm:bottom-6 right-6 z-50">
         {/* Tooltip */}
         {showTooltip && !isOpen && (
-          <div className="absolute bottom-full left-0 mb-3 animate-bounce">
+          <div className="absolute bottom-full right-0 mb-3 animate-bounce">
             <div className="bg-[#13131A] border border-[#2A2A38] rounded-xl shadow-lg p-3 pr-8 text-sm max-w-[200px] relative">
               <button
                 onClick={() => setShowTooltip(false)}
@@ -42,14 +42,14 @@ export default function WhatsAppButton({
               </button>
               <p className="text-[#F0EDE8] font-semibold">Besoin d'aide ?</p>
               <p className="text-[#8B8B9E] text-xs mt-1">Contactez-moi sur WhatsApp !</p>
-              <div className="absolute -bottom-2 left-6 w-4 h-4 bg-[#13131A] border-b border-r border-[#2A2A38] transform rotate-45"></div>
+              <div className="absolute -bottom-2 right-6 w-4 h-4 bg-[#13131A] border-b border-r border-[#2A2A38] transform rotate-45"></div>
             </div>
           </div>
         )}
 
         {/* Expanded Chat Box */}
         {isOpen && (
-          <div className="absolute bottom-20 left-0 w-80 bg-[#13131A] border border-[#2A2A38] rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5">
+          <div className="absolute bottom-20 right-0 w-80 max-w-[calc(100vw-3rem)] bg-[#13131A] border border-[#2A2A38] rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5">
             {/* Header */}
             <div className="bg-coral p-4 text-white">
               <div className="flex items-center justify-between">
