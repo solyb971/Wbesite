@@ -27,23 +27,23 @@ function ResaMark({ size = 30 }: { size?: number }) {
 }
 
 const FEATURES = [
-  { n: '01', Icon: CalendarCheck, title: 'Réservations en ligne', sub: 'Disponible 24h/24 — 7j/7', desc: 'Vos clients réservent depuis votre site, Facebook ou un lien WhatsApp. Confirmation email + SMS dans la seconde. Zéro appel manqué.', tags: ['Confirmation instantanée', 'Email auto', 'SMS auto'] },
-  { n: '02', Icon: MapTrifold,    title: 'Plan de salle en direct', sub: 'Statuts mis à jour en temps réel', desc: 'Visualisez toutes vos tables d\'un coup d\'œil. Déplacez-les à la souris pour réorganiser votre salle. Tout le monde voit la même chose simultanément.', tags: ['Drag & drop', 'Sync live', 'Multi-écrans'] },
-  { n: '03', Icon: DeviceMobile,  title: 'Appli service sur smartphone', sub: 'Fonctionne sans téléchargement', desc: 'Votre équipe accueille, installe, prend les commandes et encaisse directement depuis leur téléphone. Accessible dans le navigateur, aucune installation.', tags: ['Mobile-first', 'Walk-in', 'Caisse intégrée'] },
-  { n: '04', Icon: Users,         title: 'Fiches clients automatiques', sub: 'Chaque visite enrichit la fiche', desc: 'À chaque réservation, une fiche client se constitue : historique, allergies, occasions, préférences. Vos habitués sont reconnus. Les avis Google partent seuls.', tags: ['Historique', 'Allergies', 'Avis Google'] },
-  { n: '05', Icon: ForkKnife,     title: 'Carte numérique & QR Code', sub: 'Mise à jour en un clic', desc: 'Vos clients scannent le QR Code sur la table. Plat épuisé ? Retirez-le en un clic — personne ne le voit plus. Pré-commandes depuis l\'interface personnel.', tags: ['QR Code', 'Ruptures live', 'Pré-commandes'] },
-  { n: '06', Icon: ChartBar,      title: 'Statistiques sans effort', sub: '7j · 30j · 90j — en un coup d\'œil', desc: 'Taux de remplissage, absences, créneaux les plus chargés, fidélisation. Tout s\'affiche en graphiques clairs. Comparez avec la période précédente sans calculer.', tags: ['Remplissage', 'Absences', 'Fidélisation'] },
-  { n: '07', Icon: Bell,          title: 'Rappels anti-absences', sub: 'La veille + 2h avant, automatiquement', desc: 'La veille du repas, email et SMS de rappel. Deux heures avant, un dernier SMS. Résultat : moins de tables vides, moins d\'oublis. Vous n\'avez rien à faire.', tags: ['Rappel J-1', 'Rappel H-2', 'Avis post-repas'] },
-  { n: '08', Icon: Key,           title: 'Gestion d\'équipe', sub: 'Owner · Manager · Host', desc: 'Invitez votre équipe par email en quelques secondes. Chacun voit uniquement ce dont il a besoin selon son rôle. Un journal trace toutes les actions.', tags: ['3 rôles', 'Invitation email', 'Audit log'] },
-  { n: '09', Icon: CreditCard,    title: 'Encaissement à table', sub: 'CB · Espèces · Ticket resto', desc: 'En fin de repas, encaissement directement depuis l\'appli. Pourboire calculé automatiquement. La table se libère et repasse propre sur le plan de salle.', tags: ['Multi-paiement', 'Pourboire auto', 'Clôture table'] },
+  { n: '01', Icon: CalendarCheck, title: 'Réservations en ligne', sub: 'Disponible 24h/24, 7j/7', desc: 'Un client veut réserver un dimanche à 23h, personne ne décroche. Avec ResaGP, il réserve lui-même depuis votre site, Facebook ou un lien WhatsApp. Confirmation email et SMS dans la seconde. Zéro appel manqué, zéro post-it perdu.', tags: ['Confirmation instantanée', 'Email auto', 'SMS auto'] },
+  { n: '02', Icon: MapTrifold,    title: 'Plan de salle en direct', sub: 'Mis à jour en temps réel', desc: 'Toute votre salle d\'un coup d\'œil, sur tablette ou écran. Vous déplacez les tables à la souris pour réorganiser, et toute l\'équipe voit la même chose en même temps — plus de « attends, je vérifie avec la cuisine ».', tags: ['Drag & drop', 'Sync live', 'Multi-écrans'] },
+  { n: '03', Icon: DeviceMobile,  title: 'Appli service sur smartphone', sub: 'Aucune installation', desc: 'Votre équipe accueille, installe et encaisse directement depuis son téléphone, sans rien télécharger. Pratique quand les serveurs changent de poste en plein service.', tags: ['Mobile-first', 'Walk-in', 'Caisse intégrée'] },
+  { n: '04', Icon: Users,         title: 'Fiches clients automatiques', sub: 'Chaque visite enrichit la fiche', desc: 'À chaque réservation, une fiche se remplit toute seule : historique, allergies, occasion spéciale. Vos habitués se sentent reconnus, sans que vous ayez à vous souvenir de tout. Les demandes d\'avis Google partent seules.', tags: ['Historique', 'Allergies', 'Avis Google'] },
+  { n: '05', Icon: ForkKnife,     title: 'Carte numérique & QR Code', sub: 'Mise à jour en un clic', desc: 'Le saumon est terminé en plein rush ? Retirez-le en un clic, plus personne ne peut le commander. Vos clients scannent la table et peuvent même précommander avant de s\'asseoir.', tags: ['QR Code', 'Ruptures live', 'Pré-commandes'] },
+  { n: '06', Icon: ChartBar,      title: 'Statistiques sans effort', sub: '7j · 30j · 90j, en un coup d\'œil', desc: 'Quel soir remplissez-vous le moins ? Quel jour les absences explosent ? Tout s\'affiche en graphiques clairs, sans tableur à remplir, comparé automatiquement à la période précédente.', tags: ['Remplissage', 'Absences', 'Fidélisation'] },
+  { n: '07', Icon: Bell,          title: 'Rappels anti-absences', sub: 'Veille + 2h avant, automatiquement', desc: 'Une table de 6 réservée à 20h qui ne vient pas, c\'est un service en moins ce soir. Rappel par email et SMS la veille, puis un dernier SMS deux heures avant. Vous n\'avez rien à faire, vous avez juste moins de tables vides.', tags: ['Rappel J-1', 'Rappel H-2', 'Avis post-repas'] },
+  { n: '08', Icon: Key,           title: 'Gestion d\'équipe', sub: 'Gérant · Manager · Hôte', desc: 'Vous invitez votre équipe par email en quelques secondes. Chacun voit uniquement ce dont il a besoin selon son rôle, et un historique garde une trace de chaque action.', tags: ['3 rôles', 'Invitation email', 'Journal des actions'] },
+  { n: '09', Icon: CreditCard,    title: 'Encaissement à table', sub: 'CB · Espèces · Ticket resto', desc: 'En fin de repas, vous encaissez directement depuis l\'appli. Le pourboire se calcule seul, et la table redevient libre instantanément sur le plan de salle.', tags: ['Multi-paiement', 'Pourboire auto', 'Clôture table'] },
 ]
 
 const WORKFLOW = [
   { Icon: CalendarCheck, step: '01', title: 'Réservation reçue', desc: 'Le client réserve en ligne. Confirmation immédiate par email et SMS.' },
-  { Icon: Bell,          step: '02', title: 'Rappels automatiques', desc: 'La veille et 2h avant : rappels automatiques. Taux d\'absence réduit.' },
-  { Icon: Storefront,    step: '03', title: 'Accueil & installation', desc: 'L\'hôte valide l\'arrivée sur tablette. La table passe à occupée.' },
-  { Icon: ForkKnife,     step: '04', title: 'Service & encaissement', desc: 'Commandes, suivi, addition et paiement — tout depuis l\'appli.' },
-  { Icon: Star,          step: '05', title: 'Avis post-repas', desc: '25h après le repas, une demande d\'avis part automatiquement.' },
+  { Icon: Bell,          step: '02', title: 'Rappels automatiques', desc: 'La veille et 2h avant : rappels automatiques. Moins d\'absences, sans un seul appel à passer.' },
+  { Icon: Storefront,    step: '03', title: 'Accueil & installation', desc: 'L\'hôte valide l\'arrivée sur tablette. La table passe à occupée en un geste.' },
+  { Icon: ForkKnife,     step: '04', title: 'Service & encaissement', desc: 'Commandes, suivi, addition et paiement — tout depuis l\'appli, sans repasser par la caisse.' },
+  { Icon: Star,          step: '05', title: 'Avis post-repas', desc: '25h après le repas, une demande d\'avis Google part toute seule.' },
 ]
 
 const CMP_ROWS = [
@@ -57,7 +57,7 @@ const CMP_ROWS = [
   { crit: 'Essai gratuit sans CB',        z: 'Non', gp: '14 jours' },
 ]
 
-const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'CRM CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'ANALYTICS', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
+const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'FICHES CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'STATISTIQUES', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
 
 export default function ResaGPPage() {
   return (
@@ -80,7 +80,7 @@ export default function ResaGPPage() {
               </a>
             </div>
             <div className={styles.navLinks}>
-              {[['#fonctionnalites','Ce qu\'on fait'],['#workflow','Comment ça marche'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
+              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
                 <a key={h} href={h} className={styles.navLink}>{l}</a>
               )}
             </div>
@@ -97,7 +97,7 @@ export default function ResaGPPage() {
               <div className={styles.kicker}>
                 <span className={styles.kickerDot} />
                 <span className={styles.kickerLine} />
-                Zéro commission · RGPD conforme · Guadeloupe
+                Essai gratuit 14 jours · Zéro commission · RGPD conforme · Guadeloupe
               </div>
               <h1 className={styles.h1}>
                 Votre salle,<br />
@@ -108,7 +108,7 @@ export default function ResaGPPage() {
                 <span className={styles.zeroTxt}>de commission<br /><em>sur vos couverts</em></span>
               </div>
               <p className={styles.sub}>
-                Gérez vos réservations, vos tables, vos commandes et vos encaissements depuis un seul outil. 100&nbsp;% français, zéro commission, prêt en 5&nbsp;minutes.
+                Réservations, plan de salle, commandes et encaissement : tout dans un seul outil, sans rien reverser sur ce que vous servez. Prêt en 5&nbsp;minutes, sans technicien.
               </p>
               <div className={styles.ctas}>
                 <a href="#contact" className={styles.btnPrimary}>
@@ -119,7 +119,7 @@ export default function ResaGPPage() {
                 </a>
               </div>
               <div className={styles.trust}>
-                {['Sans commission','14 jours gratuit','RGPD · France','Setup 5 min'].map(t => (
+                {['Sans commission','14 jours gratuits','RGPD · France','Setup 5 min'].map(t => (
                   <span key={t} className={styles.trustItem}><span className={styles.trustDot} />{t}</span>
                 ))}
               </div>
@@ -193,9 +193,9 @@ export default function ResaGPPage() {
         <div className={styles.stats}>
           <div className={styles.statsIn}>
             {[
-              { num: '9', suf: '', lbl: 'Modules intégrés' },
-              { num: '5', suf: ' min', lbl: 'Pour être opérationnel' },
-              { num: '14', suf: 'j', lbl: 'Essai gratuit sans CB' },
+              { num: '9', suf: '', lbl: 'Outils réunis en un seul' },
+              { num: '5', suf: ' min', lbl: 'Opérationnel avant ce soir' },
+              { num: '14', suf: 'j', lbl: 'Gratuits, sans carte bancaire' },
               { num: '0', suf: '%', lbl: 'Commission par couvert' },
             ].map((s, i) => (
               <div key={i}>
@@ -220,7 +220,7 @@ export default function ResaGPPage() {
           <div className={styles.sectionIn}>
             <div className={styles.reveal} style={{ marginBottom: '3rem' }}>
               <h2 className={styles.h2}>Tout ce dont votre restaurant<br /><span className={styles.h2Strong}>a besoin, dans un seul outil</span></h2>
-              <p className={styles.lead} style={{ maxWidth: 540 }}>Réservations, plan de salle, commandes, encaissement, rappels clients — tout se gère depuis votre téléphone, tablette ou ordinateur. Sans jongler entre plusieurs logiciels.</p>
+              <p className={styles.lead} style={{ maxWidth: 540 }}>Réservations, plan de salle, commandes, encaissement, rappels clients : tout se gère depuis votre téléphone, votre tablette ou votre ordinateur. Plus besoin de jongler entre trois applications et un carnet.</p>
             </div>
             <div className={`${styles.feats} ${styles.reveal} ${styles.d1}`}>
               {FEATURES.map((f, i) => (
@@ -242,7 +242,7 @@ export default function ResaGPPage() {
           <div className={styles.sectionIn}>
             <div className={styles.reveal} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
               <h2 className={styles.h2}>De la réservation<br /><span className={styles.h2Strong}>à l&apos;avis Google</span></h2>
-              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Votre client réserve, vous n&apos;avez rien à faire. Rappels, accueil, service, encaissement, demande d&apos;avis — tout part automatiquement au bon moment.</p>
+              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Le client réserve, vous n&apos;avez plus qu&apos;à bien le recevoir. Rappels, accueil, service, encaissement, demande d&apos;avis : tout part automatiquement au bon moment.</p>
             </div>
             <div className={`${styles.workflow} ${styles.reveal} ${styles.d1}`}>
               {WORKFLOW.map((w, i) => (
@@ -263,14 +263,14 @@ export default function ResaGPPage() {
         <section id="avantages" className={styles.section}>
           <div className={styles.sectionIn}>
             <div className={`${styles.reveal}`} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2 className={styles.h2}>Pourquoi choisir<br /><span className={styles.h2Strong}>ResaGP ?</span></h2>
-              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Une solution pensée pour les restaurateurs de Guadeloupe — pas une plateforme générique traduite à la va-vite.</p>
+              <h2 className={styles.h2}>Pensé pour votre salle,<br /><span className={styles.h2Strong}>pas pour une plateforme générique</span></h2>
+              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Trois différences qui comptent quand la salle est pleine et que le téléphone n&apos;arrête pas de sonner.</p>
             </div>
             <div className={`${styles.avGrid} ${styles.reveal} ${styles.d1}`}>
               {[
-                { icon: <Star size={28} weight="duotone" />, title: 'Zéro commission sur vos couverts', desc: 'Vous payez un abonnement fixe chaque mois, c\'est tout. Chaque couvert que vous servez vous appartient entièrement — ResaGP ne prend aucun pourcentage sur votre chiffre d\'affaires.' },
-                { icon: <WifiHigh size={28} weight="duotone" />, title: 'Opérationnel en 5 minutes', desc: 'Pas d\'installation, pas de technicien. Vous créez votre compte, vous configurez votre salle, et vos clients peuvent réserver en ligne immédiatement depuis votre site ou WhatsApp.' },
-                { icon: <Bell size={28} weight="duotone" />, title: 'Interlocuteur local, en Guadeloupe', desc: 'Vous avez une question, un problème ? Vous parlez à quelqu\'un qui connaît votre marché. Pas un centre d\'appel en métropole. Réponse sous 24h, en français, par quelqu\'un qui connaît la Guadeloupe.' },
+                { icon: <Star size={28} weight="duotone" />, title: 'Zéro commission sur vos couverts', desc: 'Un abonnement fixe, point final. Que vous fassiez 20 ou 200 couverts ce soir, vous payez le même prix chaque mois. Ce que vous servez vous appartient entièrement.' },
+                { icon: <WifiHigh size={28} weight="duotone" />, title: 'Opérationnel en 5 minutes', desc: 'Pas de technicien, pas d\'installation, pas de formation de trois jours. Vous créez votre compte, vous configurez votre salle, vos clients réservent en ligne dans l\'heure.' },
+                { icon: <Bell size={28} weight="duotone" />, title: 'Un interlocuteur en Guadeloupe', desc: 'Un problème pendant le rush du samedi soir ? Vous parlez à quelqu\'un qui connaît votre métier et votre île — pas un centre d\'appel à 7 000 km. Réponse sous 24h, en français.' },
               ].map((a, i) => (
                 <div key={i} className={styles.avCard}>
                   <div className={styles.avIcon}>{a.icon}</div>
@@ -286,14 +286,14 @@ export default function ResaGPPage() {
         <section id="formules" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.sectionIn}>
             <div className={styles.reveal} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-              <h2 className={styles.h2} style={{ textAlign: 'center' }}>Un prix fixe,<br /><span className={styles.h2Strong}>pas de mauvaises surprises</span></h2>
-              <p className={styles.lead}>Vous savez exactement ce que vous payez chaque mois. Aucune commission sur vos couverts, quel que soit votre remplissage.</p>
+              <h2 className={styles.h2} style={{ textAlign: 'center' }}>Un prix fixe,<br /><span className={styles.h2Strong}>pas de mauvaise surprise</span></h2>
+              <p className={styles.lead}>Vous savez exactement ce que vous payez chaque mois. Aucune commission sur vos couverts, que la salle soit pleine ou à moitié vide.</p>
             </div>
             <div className={`${styles.plans} ${styles.reveal} ${styles.d1}`}>
               {[
-                { formule: 'Essentiel', price: '59€', hl: false, feats: ['Réservation en ligne 24h/24','Confirmations email automatiques','Rappels J-1 et H-2','Support email'], off: ['Plan de salle','SMS','CRM clients','Analytics','Menu QR Code'], btn: styles.planBtnOut, cta: 'Démarrer l\'essai gratuit' },
-                { formule: 'Pro', price: '99€', hl: true, badge: 'Recommandé', feats: ['Tout du plan Essentiel','Plan de salle interactif','Rappels SMS','CRM clients','Analytics & Rapports','Menu QR Code','Avis Google automatiques','Application mobile service'], btn: styles.planBtnFill, cta: 'Démarrer l\'essai gratuit' },
-                { formule: 'Business', price: '149€', hl: false, feats: ['Tout du plan Pro','Établissements illimités','Cartes cadeaux','Équipe illimitée','Support prioritaire local','API REST & Webhooks'], btn: styles.planBtnOut, cta: 'Nous contacter' },
+                { formule: 'Essentiel', price: '59€', hl: false, feats: ['Réservation en ligne 24h/24','Confirmations email automatiques','Rappels J-1 et H-2','Support email'], off: ['Plan de salle','SMS','Fiches clients','Statistiques','Menu QR Code'], btn: styles.planBtnOut, cta: 'Démarrer l\'essai gratuit' },
+                { formule: 'Pro', price: '99€', hl: true, badge: 'Recommandé', feats: ['Tout le plan Essentiel','Plan de salle interactif','Rappels SMS','Fiches clients enrichies','Statistiques & rapports','Menu QR Code','Avis Google automatiques','Application mobile service'], btn: styles.planBtnFill, cta: 'Démarrer l\'essai gratuit' },
+                { formule: 'Business', price: '149€', hl: false, feats: ['Tout le plan Pro','Établissements illimités','Cartes cadeaux','Équipe illimitée','Support prioritaire local','API REST & Webhooks'], btn: styles.planBtnOut, cta: 'Nous contacter' },
               ].map((p, i) => (
                 <div key={i} className={`${styles.plan}${p.hl ? ' ' + styles.planHl : ''}`}>
                   <div className={styles.planAccent} />
@@ -319,7 +319,7 @@ export default function ResaGPPage() {
         <section id="contact" className={styles.ctaSection}>
           <div className={styles.ctaGlow} />
           <div className={styles.ctaIn}>
-            <h2 className={styles.ctaH}>Gérez vos réservations<br /><span className={styles.ctaHStrong}>sans commission.</span></h2>
+            <h2 className={styles.ctaH}>Arrêtez de payer une commission<br /><span className={styles.ctaHStrong}>sur ce que vous servez.</span></h2>
             <p className={styles.ctaP}>14 jours d&apos;essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.</p>
             <EarlyAccessForm
               theme={{
@@ -352,13 +352,13 @@ export default function ResaGPPage() {
             <div>
               <div className={styles.footerColTitle}>Navigation</div>
               <ul className={styles.footerList}>
-                {[['#fonctionnalites','Fonctionnalités'],['#workflow','Workflow'],['#formules','Formules'],['#contact','Contact']].map(([h,l]) => <li key={h}><a href={h}>{l}</a></li>)}
+                {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) => <li key={h}><a href={h}>{l}</a></li>)}
               </ul>
             </div>
             <div>
               <div className={styles.footerColTitle}>Avantages</div>
               <ul className={styles.footerList}>
-                {['Zéro commission','Interface française','RGPD · Hébergé FR','CRM intégré','Menu digital','Support local'].map(c => <li key={c}><span style={{ color: 'var(--rg-mu)', fontFamily: 'var(--rg-sans)', fontSize: '0.85rem' }}>{c}</span></li>)}
+                {['Zéro commission','Interface française','RGPD · Hébergé FR','Fiches clients','Menu digital','Support local'].map(c => <li key={c}><span style={{ color: 'var(--rg-mu)', fontFamily: 'var(--rg-sans)', fontSize: '0.85rem' }}>{c}</span></li>)}
               </ul>
             </div>
             <div>
