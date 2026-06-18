@@ -488,3 +488,29 @@ section > .max-w-5xl {
   font-family: var(--font-fraunces), Georgia, serif;
   letter-spacing: -0.01em;
 }
+
+/* ── Champs de formulaire aux couleurs du site ──
+   color-scheme: dark → menus déroulants natifs, sélecteurs de date et
+   spinners numériques rendus sombres. accent-color → surlignage terre cuite. */
+.admin-shell select,
+.admin-shell input,
+.admin-shell textarea,
+.login-shell select,
+.login-shell input,
+.login-shell textarea {
+  color-scheme: dark;
+  accent-color: #C4472A;
+}
+
+/* Liste d'options du <select> (Firefox / Windows) */
+.admin-shell select option,
+.login-shell select option {
+  background-color: #1F1813;
+  color: #F5EDD8;
+}
+
+/* Surlignage de sélection de texte dans l'admin */
+.admin-shell ::selection {
+  background-color: rgba(196, 71, 42, 0.30);
+  color: #F5EDD8;
+}

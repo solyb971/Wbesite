@@ -71,7 +71,7 @@ function LoginForm() {
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => { e.target.style.borderColor = "rgba(245,237,216,0.12)" }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden" style={{ background: "#120F0B" }}>
+    <div className="login-shell min-h-screen flex items-center justify-center p-4 relative overflow-hidden" style={{ background: "#120F0B" }}>
       {/* Lueurs terre cuite */}
       <div className="absolute pointer-events-none" style={{ top: "-200px", left: "-160px", width: "560px", height: "560px", borderRadius: "50%", background: "radial-gradient(circle, rgba(196,71,42,0.18), transparent 70%)" }} />
       <div className="absolute pointer-events-none" style={{ bottom: "-220px", right: "-160px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(196,71,42,0.10), transparent 70%)" }} />
