@@ -4,7 +4,7 @@ const stats = [
   { value: "14j", label: "délai moyen de livraison" },
   { value: "24h", label: "réponse garantie" },
   { value: "3 mois", label: "support inclus" },
-  { value: "100%", label: "sur-mesure garanti" },
+  { value: "100%", label: "sur mesure" },
 ]
 
 export default function FeatureStats() {

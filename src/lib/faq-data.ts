@@ -1,31 +1,31 @@
 export const faqs = [
   {
-    question: "Qu'est-ce que la facturation électronique et pourquoi c'est obligatoire ?",
-    answer: "La facturation électronique est une réforme de la DGFiP qui impose aux entreprises françaises d'émettre et recevoir leurs factures via une Plateforme de Dématérialisation Partenaire (PDP) agréée. La réforme s'applique en deux temps : obligation de réception dès 2026, obligation d'émission pour les TPE/PME à partir de 2027. Mieux vaut se mettre en conformité maintenant pour ne pas subir la pression de dernière minute.",
+    question: "Qu'est-ce que la facturation électronique, concrètement ?",
+    answer: "C'est une réforme de la DGFiP qui oblige les entreprises françaises à émettre et recevoir leurs factures via une plateforme agréée. Elle arrive en deux temps : réception obligatoire dès 2026, émission obligatoire pour les TPE/PME à partir de 2027. Mieux vaut s'y préparer maintenant que dans l'urgence.",
   },
   {
-    question: "Mon entreprise est-elle concernée par la réforme de facturation électronique 2026 ?",
-    answer: "Oui, si vous émettez ou recevez des factures entre professionnels (B2B) et que vous êtes assujetti à la TVA en France — y compris en Guadeloupe, Martinique et dans les autres DOM. Cela concerne les salons de coiffure, commerces, restaurants, artisans, professions libérales, prestataires de services, etc. Contactez-nous pour un audit gratuit afin de vérifier votre situation.",
+    question: "Est-ce que ça me concerne ?",
+    answer: "Oui, si vous facturez entre professionnels (B2B) et que vous êtes assujetti à la TVA — y compris en Guadeloupe. Salons de coiffure, commerces, restaurants, artisans, professions libérales : tous concernés. Contactez-nous pour un audit gratuit.",
   },
   {
-    question: "Combien de temps pour créer mon site web ?",
-    answer: "Un site vitrine est livré en 2 à 3 semaines, une boutique e-commerce en 3 à 4 semaines. Ces délais incluent la conception, le développement, les révisions et la formation. Pour les projets urgents, des options accélérées sont disponibles.",
+    question: "Combien de temps pour avoir mon site ?",
+    answer: "2 à 3 semaines pour un site vitrine, 3 à 4 semaines pour une boutique en ligne. Conception, développement, révisions et formation inclus. Des options accélérées existent pour les projets urgents.",
   },
   {
-    question: "À qui appartient mon site une fois livré ?",
-    answer: "Il est 100 % à vous : le code, les contenus, le nom de domaine et l'hébergement sont à votre nom. Aucun verrouillage propriétaire — vous restez libre de faire évoluer votre site ailleurs si un jour vous le souhaitez.",
+    question: "Le site m'appartient vraiment ?",
+    answer: "Oui, à 100%. Le code, les contenus, le nom de domaine et l'hébergement sont à votre nom. Vous restez libre de faire évoluer votre site ailleurs si vous le souhaitez un jour.",
   },
   {
-    question: "Où sont hébergés mon site et mes données ?",
-    answer: "Sur des serveurs situés en France et dans l'Union européenne, conformes au RGPD. Vos données et celles de vos clients restent protégées et localisées dans l'UE — jamais revendues.",
+    question: "Où sont hébergées mes données ?",
+    answer: "Sur des serveurs en France et dans l'Union européenne, conformes au RGPD. Vos données et celles de vos clients restent protégées et ne sont jamais revendues.",
   },
   {
-    question: "Le plan maintenance SolYB est-il compatible avec mon site existant ?",
-    answer: "Le plan maintenance SolYB est réservé aux sites et applications que nous avons développés. Cette approche nous permet de garantir des interventions rapides et fiables — nous connaissons le code, l'architecture et votre projet dans le détail. Si vous souhaitez refondre votre site existant, contactez-nous pour un devis.",
+    question: "Vous pouvez reprendre mon site actuel, fait par quelqu'un d'autre ?",
+    answer: "Le plan maintenance est réservé aux sites qu'on a nous-mêmes développés — on connaît le code et l'architecture en détail, ce qui nous permet d'intervenir vite et bien. Pour une refonte de votre site existant, contactez-nous pour un devis.",
   },
   {
-    question: "Que comprend exactement le prix de 599€ ?",
-    answer: "Le prix inclut : design personnalisé et responsive, jusqu'à 5 pages, formulaire de contact, optimisation SEO local Guadeloupe (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement + nom de domaine 1 an inclus, formation 1h en visio, 3 révisions incluses, et 1 mois de support par email. Aucun frais caché.",
+    question: "Qu'est-ce qui est inclus dans les 599€ ?",
+    answer: "Design personnalisé adapté au mobile, jusqu'à 5 pages, formulaire de contact, référencement local (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement et nom de domaine 1 an, formation 1h en visio, 3 révisions et 1 mois de support par email. Sans frais caché.",
   },
   {
     question: "Comment se passe le paiement ?",

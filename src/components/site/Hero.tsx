@@ -24,7 +24,7 @@ export default function Hero() {
           style={{ color: 'var(--syb-rust-light)', animation: 'fadeUp 0.6s 0.1s ease both' }}
         >
           <span className="w-6 h-px flex-shrink-0" style={{ background: 'var(--syb-rust)' }} />
-          Sites &amp; outils web pour les TPE &amp; PME de Guadeloupe
+          Sites internet pour les TPE &amp; PME de Guadeloupe
         </div>
 
         {/* H1 */}
@@ -35,10 +35,10 @@ export default function Hero() {
             letterSpacing: '-3px',
             color: 'var(--syb-cream)',
           }}
-          aria-label="Votre entreprise en ligne"
+          aria-label="Votre entreprise, visible en ligne"
         >
           <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre</span>
-          <span className="block" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>entreprise</span>
+          <span className="block" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>entreprise,</span>
           <em
             className="italic block"
             style={{
@@ -49,7 +49,7 @@ export default function Hero() {
               animation: 'fadeUp 0.7s 0.55s ease both',
             }}
           >
-            en ligne.
+            visible en ligne.
           </em>
         </h1>
 
@@ -58,8 +58,9 @@ export default function Hero() {
           className="font-light leading-relaxed mb-10 max-w-md"
           style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
         >
-          Soyez <span style={{ color: 'var(--syb-cream)' }}>visible, crédible et trouvé par vos clients</span> —
-          avec un site qui vous ressemble et qui travaille pour vous. Livré en 2–3 semaines.
+          Vos clients vous cherchent déjà sur Google. Avec un site{' '}
+          <span style={{ color: 'var(--syb-cream)' }}>clair et rapide</span>, ils vous trouvent —
+          et ils vous choisissent.
         </p>
 
         {/* CTAs */}
@@ -82,12 +83,12 @@ export default function Hero() {
 
         {/* Réassurance */}
         <p className="mt-6 text-xs font-light" style={{ color: 'rgba(255,255,255,0.45)', animation: 'fadeUp 0.7s 1s ease both' }}>
-          Devis gratuit sous 24h · Sans engagement · Hébergement 1 an inclus
+          Devis gratuit en 24h · Sans engagement · 1 an d&apos;hébergement inclus
         </p>
 
         {/* Label localisation */}
         <div className="mt-12 text-xs tracking-[3px] uppercase" style={{ color: 'rgba(255,255,255,0.3)' }}>
-          Baie-Mahault · Guadeloupe · 971
+          Baie-Mahault · Guadeloupe
         </div>
       </div>
     </section>

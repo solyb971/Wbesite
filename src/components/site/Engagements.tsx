@@ -5,15 +5,15 @@ const engagements = [
   },
   {
     title: "Un devis clair sous 24h",
-    text: "Un prix ferme et détaillé, sans surprise. Vous savez exactement ce que vous payez avant de vous engager.",
+    text: "Un prix ferme et détaillé, sans surprise. Vous savez ce que vous payez avant de vous engager.",
   },
   {
     title: "Vous payez en deux fois",
-    text: "50 % pour démarrer, 50 % à la livraison — une fois que vous êtes vraiment satisfait du résultat.",
+    text: "50 % pour démarrer, 50 % à la livraison — une fois que vous êtes vraiment satisfait.",
   },
   {
     title: "Je reste après la mise en ligne",
-    text: "Hébergement 1 an inclus et 3 mois de support. Je ne disparais pas une fois le site livré.",
+    text: "Hébergement 1 an et 1 à 2 mois de support inclus. Je ne disparais pas une fois le site livré.",
   },
 ]
 

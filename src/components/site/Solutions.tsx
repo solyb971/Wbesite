@@ -28,11 +28,11 @@ const solutions = [
     name: "ResaGP",
     Mark: ResaMark,
     accent: "#2E7D96",
-    tagline: "Réservations restaurants — sans commission",
-    description: "Réservations en ligne, plan de salle, rappels SMS automatiques et fiches clients. Tout ce dont votre restaurant a besoin, dans un seul outil.",
+    tagline: "Réservations restaurant — sans commission",
+    description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
     status: "Disponible",
     statusColor: "#16A34A",
-    highlights: ["Essai 14 jours gratuit", "Sans commission par couvert", "Restaurants & bars 971"],
+    highlights: ["Essai gratuit 14 jours", "Aucune commission par couvert", "Pensé pour les restaurants et bars"],
     cta: { label: "Découvrir ResaGP", href: "/resagp" },
   },
   {
@@ -41,10 +41,10 @@ const solutions = [
     Mark: FactuMark,
     accent: "#2E8C92",
     tagline: "Facturation électronique conforme 2026",
-    description: "À partir de septembre 2026, toutes les entreprises doivent émettre leurs factures électroniquement. FactuGP gère la conformité DGFiP pour vous.",
+    description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité DGFiP à votre place.",
     status: "Bientôt disponible",
     statusColor: "#B8760A",
-    highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "TPE & PME 971"],
+    highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "Pensé pour les TPE et PME du 971"],
     cta: { label: "Découvrir FactuGP", href: "/facturation-electronique" },
   },
 ]
@@ -66,11 +66,11 @@ export default function Solutions() {
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
           >
-            Des outils<br />
-            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>déjà prêts pour vous</em>
+            Des outils déjà prêts,<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>en plus du sur-mesure</em>
           </h2>
           <p className="text-sm font-light leading-relaxed max-w-md mt-5" style={{ color: '#7A7268', lineHeight: 1.75 }}>
-            En plus du sur-mesure, j&apos;ai créé mes propres outils pour les entreprises d&apos;ici.
+            J&apos;ai créé mes propres outils pour les entreprises d&apos;ici.
           </p>
         </div>
 

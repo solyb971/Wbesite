@@ -5,7 +5,7 @@ const services = [
     title: "Site Vitrine",
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
-    description: "Le site qui vous rend visible sur Google et crédible auprès de vos clients. Rapide, impeccable sur mobile, pensé pour faire venir du monde.",
+    description: "Un site clair et pro pour votre clientèle locale. Rapide, lisible sur mobile, bien placé sur Google.",
     price: "Dès 599€",
     contactParam: "vitrine",
   },
@@ -13,7 +13,7 @@ const services = [
     title: "E-commerce",
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
-    description: "Vendez en ligne 24h/24. Boutique complète, paiement sécurisé, gestion simple — vous encaissez, on gère la technique.",
+    description: "Une boutique en ligne complète, paiement sécurisé inclus, simple à gérer au quotidien.",
     price: "Dès 999€",
     contactParam: "ecommerce",
   },
@@ -21,7 +21,7 @@ const services = [
     title: "Application Métier",
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
-    description: "L'outil sur mesure pour votre métier : réservation, gestion, suivi… exactement ce qu'il vous faut, rien de superflu.",
+    description: "Un outil pensé pour votre activité. Ce dont vous avez besoin, rien de plus.",
     price: "Sur devis",
     contactParam: "application",
   },
@@ -47,12 +47,12 @@ export default function Services() {
                 className="font-display font-black leading-none"
                 style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
               >
-                On crée<br />
-                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>l&apos;outil qu&apos;il vous faut</em>
+                On vous construit<br />
+                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>l&apos;outil dont vous avez vraiment besoin</em>
               </h2>
             </div>
             <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
-              Pas de template recyclé. On part de votre métier, de vos clients, de votre quotidien — et on construit ce qui va vraiment vous servir.
+              Pas de modèle recyclé. On part de votre métier et de vos clients pour construire ce qui va réellement vous servir au quotidien.
             </p>
           </div>
 
@@ -112,10 +112,10 @@ export default function Services() {
               Obligation 2026
             </div>
             <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
-              Facturation électronique — Êtes-vous conforme ?
+              La facturation électronique devient obligatoire. Êtes-vous prêt ?
             </p>
             <p className="text-sm font-light mt-0.5" style={{ color: '#7A7268' }}>
-              Mise en conformité DGFiP rapide, adaptée aux entreprises guadeloupéennes.
+              On s&apos;occupe de votre mise en conformité DGFiP, pensée pour les entreprises de Guadeloupe.
             </p>
           </div>
           <Link

@@ -8,9 +8,9 @@ const plans = [
     price: "599",
     period: "€",
     features: [
-      "Site 5 pages responsive",
-      "SEO local Guadeloupe inclus",
-      "Hébergement + domaine 1 an",
+      "Site 5 pages, adapté au mobile",
+      "Référencement local Guadeloupe inclus",
+      "Hébergement + nom de domaine 1 an",
       "Formation 1h en visio",
       "3 révisions incluses",
       "Support 1 mois par email",
@@ -27,8 +27,8 @@ const plans = [
       "Boutique en ligne complète",
       "Jusqu'à 20 produits inclus",
       "Paiement sécurisé en ligne",
-      "Gestion livraison Guadeloupe",
-      "SEO local + marketing",
+      "Gestion de la livraison en Guadeloupe",
+      "Référencement local + marketing",
       "Formation 1h30 · support 2 mois",
     ],
     cta: { label: "Choisir Business", href: "/?service=ecommerce#contact" },
@@ -43,9 +43,9 @@ const plans = [
       "Mises à jour de sécurité",
       "Sauvegarde quotidienne",
       "Support prioritaire",
-      "1h de modifications/mois",
-      "Monitoring 24/7 · SSL",
-      "Rapports mensuels",
+      "1h de modifications par mois",
+      "Surveillance 24/7 · certificat SSL",
+      "Rapport mensuel",
     ],
     cta: { label: "S'abonner", href: "/?service=maintenance#contact" },
     featured: false,
@@ -66,14 +66,13 @@ export default function LaunchPricing() {
             className="font-display font-black leading-none mb-5"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
-            Des tarifs<br />
-            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>de lancement</em>
+            Des prix pour<br />
+            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>démarrer sereinement</em>
           </h2>
           <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
-            Des prix pensés pour vous permettre de{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>vous lancer sereinement</span>, pendant que je
-            construis mes premières références locales. Pas de piège, pas d&apos;engagement — juste un
-            bon moment pour démarrer.
+            Pendant que je construis mes premières références locales, j&apos;ai fixé des{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>tarifs simples et honnêtes</span>. Pas de piège,
+            pas d&apos;engagement.
           </p>
         </div>
 
@@ -167,7 +166,7 @@ export default function LaunchPricing() {
 
         {/* Réassurance */}
         <p className="reveal mt-8 text-xs font-light text-center" style={{ color: 'var(--syb-stone-light)' }}>
-          Paiement en 2× (50 % à la commande, 50 % à la livraison) · Devis gratuit · Sans engagement
+          Paiement en 2 fois (50 % à la commande, 50 % à la livraison) · Devis gratuit · Sans engagement
         </p>
       </div>
     </section>

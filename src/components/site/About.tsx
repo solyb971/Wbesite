@@ -49,7 +49,7 @@ export default function About() {
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
             L&apos;IA a rendu la création accessible à tous : des projets naissent en quelques heures,
-            mais sans ossature ni vision — de beaux prototypes qui ne tiennent pas six mois. Moi, je
+            mais sans réflexion ni vision derrière — de beaux prototypes qui ne tiennent pas six mois. Moi, je
             construis moins vite, mais je construis vrai :{' '}
             <span style={{ color: 'var(--syb-ink)' }}>une vraie réflexion avant la première ligne de code.</span>
           </p>

@@ -1,8 +1,8 @@
 const steps = [
-  { num: "01", title: "Échange découverte", description: "45 minutes pour comprendre votre activité, vos clients et vos objectifs.", duration: "Jour 1 · Gratuit" },
-  { num: "02", title: "Devis & validation", description: "Devis clair envoyé sous 24h. Vous validez, on commence.", duration: "Jour 2" },
-  { num: "03", title: "Conception & livraison", description: "Design, développement, tests. Vous validez chaque étape.", duration: "2 à 3 semaines" },
-  { num: "04", title: "Support & suivi", description: "3 mois de support inclus après la mise en ligne.", duration: "3 mois inclus" },
+  { num: "01", title: "Échange découverte", description: "45 minutes pour comprendre votre activité et ce dont vous avez besoin.", duration: "Jour 1 · Gratuit" },
+  { num: "02", title: "Devis & validation", description: "Un devis clair sous 24h. Vous validez, on démarre.", duration: "Jour 2" },
+  { num: "03", title: "Conception & livraison", description: "Design, développement, tests. Vous validez chaque étape avec nous.", duration: "2 à 3 semaines" },
+  { num: "04", title: "Support & suivi", description: "1 mois de support inclus après la mise en ligne, pour roder le tout ensemble.", duration: "1 mois inclus" },
 ]
 
 export default function Process() {
@@ -17,7 +17,7 @@ export default function Process() {
         <div className="reveal mb-14">
           <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
             <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-            Travailler ensemble
+            Méthode
           </div>
           <h2
             className="font-display font-black leading-none mb-5"
@@ -27,7 +27,7 @@ export default function Process() {
             <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>zéro surprise</em>
           </h2>
           <p className="text-sm font-light leading-relaxed max-w-md" style={{ color: '#7A7268', lineHeight: 1.75 }}>
-            De notre premier appel à la mise en ligne, vous savez toujours où on en est. Pas de jargon, pas de mauvaise surprise.
+            Du premier appel à la mise en ligne, vous savez toujours où on en est. Pas de jargon, pas de mauvaise surprise.
           </p>
         </div>
 

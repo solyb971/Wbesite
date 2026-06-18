@@ -8,16 +8,16 @@ export default function Stakes() {
       <div className="max-w-[860px] mx-auto px-6 md:px-12">
         <div className="reveal flex items-center gap-2.5 mb-6 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
           <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
-          Être visible, aujourd&apos;hui
+          Être visible aujourd&apos;hui
         </div>
 
         <h2
           className="reveal font-display font-black mb-8"
           style={{ fontSize: 'clamp(28px, 3.8vw, 46px)', letterSpacing: '-1.5px', color: 'var(--syb-ink)', lineHeight: 1.2 }}
         >
-          Vos clients vous cherchent sur Google{' '}
+          On vous trouve sur Google{' '}
           <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>
-            avant même de pousser votre porte.
+            avant même de passer votre porte.
           </em>
         </h2>
 
@@ -25,9 +25,9 @@ export default function Stakes() {
           className="reveal font-light mb-10"
           style={{ fontSize: '16px', lineHeight: 1.85, color: 'var(--syb-stone)', maxWidth: '620px' }}
         >
-          S&apos;ils ne vous trouvent pas, ils trouvent le concurrent d&apos;à côté. Un site clair,
-          rapide et bien référencé localement, c&apos;est ce qui transforme une simple recherche en
-          appel, en réservation, en client. C&apos;est précisément ce qu&apos;on construit.
+          Si votre site n&apos;apparaît pas dans les recherches, c&apos;est le concurrent d&apos;à côté
+          qui récupère l&apos;appel. Un site clair, rapide et bien référencé à Pointe-à-Pitre, aux Abymes
+          ou à Basse-Terre, c&apos;est ce qui transforme une recherche Google en client.
         </p>
 
         <div

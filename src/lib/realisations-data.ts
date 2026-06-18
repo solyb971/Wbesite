@@ -19,7 +19,7 @@ export const realisations: Realisation[] = [
     sector: "Transport & Santé",
     year: 2025,
     description:
-      "Plateforme de mise en relation entre soignants et chauffeurs professionnels pour la gestion des tournées quotidiennes. Interface double — espace Pro de santé et espace Chauffeur — avec devis en ligne et gestion des rendez-vous.",
+      "Une plateforme qui met en relation des soignants et des chauffeurs professionnels pour organiser leurs tournées du quotidien. Un espace pour les professionnels de santé, un espace pour les chauffeurs — avec devis en ligne et gestion des rendez-vous.",
     tags: ["Next.js", "React", "UI/UX Design", "Application web", "Guadeloupe"],
     image: "/realisations/lds.jpg",
     url: "https://libertydriveserenity.com/",

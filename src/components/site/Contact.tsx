@@ -2,7 +2,7 @@
 import { useState } from "react"
 
 const contactInfo = [
-  { label: "Localisation", value: "Baie-Mahault, Guadeloupe 971" },
+  { label: "Localisation", value: "Baie-Mahault, Guadeloupe 97122" },
   { label: "Réponse garantie", value: "Sous 24h en semaine" },
   { label: "Devis", value: "Gratuit et sans engagement" },
 ]
