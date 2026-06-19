@@ -197,7 +197,7 @@ export async function sendWelcomeEmail(
       <p style="margin: 0; font-weight: 600;">📞 Besoin d'échanger rapidement ?</p>
       <p style="margin: 10px 0 0 0;">
         Email : <a href="mailto:contact@solyb.fr" style="color: #2563eb;">contact@solyb.fr</a><br>
-        Téléphone : +590 690 71 17 69<br>
+        Téléphone : +590 690 42 67 92<br>
         Disponibilité : Lun-Ven 18h-21h, Sam-Dim 10h-18h
       </p>
     </div>

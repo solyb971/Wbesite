@@ -7,7 +7,7 @@ import { useSettings } from "@/hooks/useSettings"
 const defaultSettings = {
   company_name: "SolYB - Solutions by Yacine Bouhassoun",
   email: "contact@solyb.fr",
-  phone: "+590 690 71 17 69",
+  phone: "+590 690 42 67 92",
   website: "https://solyb.fr",
   address: "Guadeloupe, Antilles Françaises",
   score_budget: 20, score_clarity: 15, score_urgency: 20,

@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "590690711769", // Replace with your actual number
+  phoneNumber = "590690426792",
   message = "Bonjour ! Je suis intéressé(e) par vos services de création de site web.",
 }: WhatsAppButtonProps) {
   const [isOpen, setIsOpen] = useState(false)

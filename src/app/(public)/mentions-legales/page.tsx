@@ -40,7 +40,7 @@ export default function MentionsLegalesPage() {
           </li>
           <li>
             Téléphone :{' '}
-            <a href="tel:+590690711769" style={{ color: 'var(--syb-rust)' }}>+590 690 71 17 69</a>
+            <a href="tel:+590690426792" style={{ color: 'var(--syb-rust)' }}>+590 690 42 67 92</a>
           </li>
         </ul>
       </LegalSection>

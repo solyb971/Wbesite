@@ -45,7 +45,7 @@ export default function HomePage() {
     image: 'https://solyb.fr/opengraph-image',
     '@id': 'https://solyb.fr',
     url: 'https://solyb.fr',
-    telephone: '+590690711769',
+    telephone: '+590690426792',
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
@@ -147,7 +147,7 @@ export default function HomePage() {
     logo: 'https://solyb.fr/logo/syb-orange.png',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+590690711769',
+      telephone: '+590690426792',
       contactType: 'customer service',
       availableLanguage: 'French',
       areaServed: 'GP'
