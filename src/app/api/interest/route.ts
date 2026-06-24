@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { createClient as createServiceClient } from "@supabase/supabase-js"
 import { createClient } from "@/lib/supabase/server"
 import { sendAdminNotification } from "@/lib/email/brevo"
 import { z } from "zod"
@@ -28,7 +29,13 @@ export async function POST(request: NextRequest) {
 
     const data = interestSchema.parse(body)
 
-    const supabase = await createClient()
+    // Formulaire public traité côté serveur : écriture via service-role
+    // (contourne RLS + autorise le .select() de retour). Fallback client SSR.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+    const supabase = url && serviceKey
+      ? createServiceClient(url, serviceKey)
+      : await createClient()
 
     // Insert as a lead with product_source tag
     const { data: lead, error } = await supabase.from("leads").insert({
