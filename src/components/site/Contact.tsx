@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react"
+import HoneypotField from "@/components/site/HoneypotField"
 
 const contactInfo = [
   { label: "Localisation", value: "Baie-Mahault, Guadeloupe 97122" },
@@ -26,6 +27,7 @@ export default function Contact() {
           description: fd.get('description'),
           source: 'site-web',
           urgency: 'normal',
+          company_website: fd.get('company_website'),
         }),
       })
       if (!res.ok) throw new Error()
@@ -106,6 +108,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+                <HoneypotField />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label style={labelStyle}>Prénom & Nom</label>
@@ -157,6 +160,16 @@ export default function Contact() {
                 >
                   {status === 'sending' ? 'Envoi...' : 'Envoyer ma demande'}
                 </button>
+                <label className="flex items-start gap-2 text-xs cursor-pointer" style={{ color: 'var(--syb-stone-light)', marginTop: '2px', lineHeight: 1.5 }}>
+                  <input type="checkbox" name="consent" required style={{ marginTop: '2px', accentColor: '#C4472A', flexShrink: 0 }} />
+                  <span>
+                    J&apos;accepte que mes données soient utilisées pour traiter ma demande,
+                    conformément à la{' '}
+                    <a href="/confidentialite" style={{ color: '#C4472A', textDecoration: 'underline' }}>
+                      politique de confidentialité
+                    </a>. *
+                  </span>
+                </label>
               </form>
             )}
           </div>

@@ -7,6 +7,7 @@ const SmoothScroll        = dynamic(() => import('@/components/ui/SmoothScroll')
 const CustomCursor        = dynamic(() => import('@/components/site/CustomCursor'),      { ssr: false })
 const WhatsAppButton      = dynamic(() => import('@/components/site/WhatsAppButton'),    { ssr: false })
 const CrispChat           = dynamic(() => import('@/components/site/CrispChat'),         { ssr: false })
+const CookieConsent       = dynamic(() => import('@/components/site/CookieConsent'),     { ssr: false })
 const ExitIntentPopup     = dynamic(() => import('@/components/site/ExitIntentPopup'),   { ssr: false })
 
 export function ClientBackground() {
@@ -22,6 +23,7 @@ export function ClientFooterExtras() {
     <>
       <WhatsAppButton />
       <CrispChat />
+      <CookieConsent />
       {/* <ExitIntentPopup /> */}
     </>
   )

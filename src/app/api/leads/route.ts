@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient as createServiceClient } from "@supabase/supabase-js"
+import { z } from "zod"
 import { contactSchema } from "@/lib/validations/contact-schema"
 import { createClient } from "@/lib/supabase/server"
-import { sendWelcomeEmail } from "@/lib/email/brevo"
+import { sendWelcomeEmail, sendAdminNotification } from "@/lib/email/brevo"
 
 /**
  * Lit les poids de scoring configurés dans l'admin (table `settings`,
@@ -35,6 +36,13 @@ async function getScoringWeights() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+
+    // Honeypot anti-spam : champ-piège invisible (`company_website`).
+    // S'il est rempli, c'est un bot → on simule un succès sans rien enregistrer.
+    if (typeof body.company_website === "string" && body.company_website.trim() !== "") {
+      console.warn("🍯 Honeypot déclenché sur /api/leads — soumission ignorée")
+      return NextResponse.json({ success: true, message: "Demande envoyée avec succès !" })
+    }
 
     // Validation avec Zod
     const validatedData = contactSchema.parse(body)
@@ -157,6 +165,22 @@ export async function POST(request: NextRequest) {
       console.warn("⚠️ Email non envoyé (mode dégradé):", emailResult.error)
     }
 
+    // Notifier l'admin du nouveau lead (non bloquant)
+    const adminResult = await sendAdminNotification({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone || undefined,
+      company: lead.company || undefined,
+      project_type: lead.project_type,
+      budget: validatedData.budget,
+      description: lead.description,
+      urgency: lead.urgency,
+    })
+
+    if (adminResult.error) {
+      console.warn("⚠️ Notification admin non envoyée:", adminResult.error)
+    }
+
     console.log("✅ Lead créé avec succès:", lead.id)
 
     return NextResponse.json({
@@ -171,15 +195,17 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("❌ Erreur API /api/leads:", error)
 
-    if (error instanceof Error) {
+    // Erreurs de validation → message clair pour le visiteur
+    if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: error.message },
+        { error: error.errors[0]?.message || "Données du formulaire invalides" },
         { status: 400 }
       )
     }
 
+    // Toute autre erreur (DB, etc.) → message générique, pas de détail technique
     return NextResponse.json(
-      { error: "Une erreur est survenue" },
+      { error: "Une erreur est survenue. Merci de réessayer." },
       { status: 500 }
     )
   }

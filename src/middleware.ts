@@ -29,8 +29,12 @@ export async function middleware(request: NextRequest) {
   if (!supabaseUrl || !supabaseKey ||
       supabaseUrl.includes('your-project-url') ||
       supabaseKey.includes('your-anon-key')) {
-    // Si Supabase n'est pas configuré, autoriser l'accès (mode développement)
-    console.warn('⚠️  Supabase non configuré - Mode développement activé')
+    console.warn('⚠️  Supabase non configuré')
+    // Fail-closed : sans config d'auth, on ne laisse PAS passer /admin.
+    // (Le mode dev sans Supabase reste possible via NEXT_PUBLIC_USE_MOCK=true.)
+    if (request.nextUrl.pathname.startsWith('/admin')) {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
     return response
   }
 
