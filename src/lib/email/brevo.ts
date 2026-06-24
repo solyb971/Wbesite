@@ -27,10 +27,16 @@ interface BrevoResponse {
 const BREVO_API_KEY = process.env.BREVO_API_KEY
 const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email"
 
+// Expéditeur configurable : doit être un expéditeur VALIDÉ dans Brevo.
+// Par défaut solyb971@gmail.com (validé). Quand le domaine solyb.fr sera
+// authentifié dans Brevo, définir BREVO_SENDER_EMAIL=contact@solyb.fr.
 const DEFAULT_SENDER: EmailRecipient = {
-  email: "contact@solyb.fr",
-  name: "SolYB - Yacine Bouhassoun",
+  email: process.env.BREVO_SENDER_EMAIL || "solyb971@gmail.com",
+  name: process.env.BREVO_SENDER_NAME || "SolYB - Yacine Bouhassoun",
 }
+
+// Destinataire des notifications internes (nouveaux leads).
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "solyb971@gmail.com"
 
 /**
  * Send transactional email via Brevo API
@@ -378,7 +384,7 @@ export async function sendAdminNotification(
   `
 
   return sendTransactionalEmail({
-    to: [{ email: "contact@solyb.fr", name: "SolYB Admin" }],
+    to: [{ email: ADMIN_EMAIL, name: "SolYB Admin" }],
     subject: `🎯 Nouveau lead : ${leadData.name} - ${leadData.project_type}`,
     htmlContent,
   })
