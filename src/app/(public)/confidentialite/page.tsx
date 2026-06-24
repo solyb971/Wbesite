@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 /*
  * ⚠️ À VÉRIFIER par Yacine — cette politique reflète les outils détectés dans le projet
- * (Supabase, Brevo, Crisp, Vercel). Ajuste la liste des sous-traitants et les durées de
+ * (Supabase, Brevo, Vercel). Ajuste la liste des sous-traitants et les durées de
  * conservation si la réalité diffère. En cas de doute, faire relire par un juriste.
  */
 
@@ -30,7 +30,6 @@ export default function ConfidentialitePage() {
         <p>Nous collectons uniquement les données que vous nous communiquez volontairement :</p>
         <ul className="mt-2 space-y-1 list-disc pl-5">
           <li>via le formulaire de contact : nom, adresse email, téléphone, et le contenu de votre message ;</li>
-          <li>via la messagerie instantanée : les informations que vous choisissez d&apos;y indiquer ;</li>
           <li>des données techniques de navigation (statistiques d&apos;audience anonymisées).</li>
         </ul>
       </LegalSection>
@@ -52,7 +51,6 @@ export default function ConfidentialitePage() {
         <ul className="mt-2 space-y-1 list-disc pl-5">
           <li><strong>Supabase</strong> — hébergement de la base de données ;</li>
           <li><strong>Brevo</strong> — envoi des emails transactionnels ;</li>
-          <li><strong>Crisp</strong> — messagerie instantanée du site ;</li>
           <li><strong>Vercel</strong> — hébergement du site.</li>
         </ul>
         <p className="mt-2">
@@ -88,8 +86,8 @@ export default function ConfidentialitePage() {
       <LegalSection title="Cookies">
         <p>
           Le site utilise des cookies nécessaires à son fonctionnement ainsi que des cookies de mesure
-          d&apos;audience et de la messagerie instantanée. Vous pouvez configurer votre navigateur pour
-          les refuser ; certaines fonctionnalités pourraient alors être altérées.
+          d&apos;audience. Vous pouvez les accepter ou les refuser via le bandeau de consentement ;
+          certaines fonctionnalités pourraient alors être altérées.
         </p>
       </LegalSection>
 

@@ -71,8 +71,8 @@ export default function CookieConsent() {
       }}
     >
       <p style={{ flex: '1 1 280px', margin: 0, lineHeight: 1.55, color: '#CFC9C0' }}>
-        Nous utilisons des cookies pour le bon fonctionnement du site et la messagerie
-        instantanée. Vous pouvez accepter ou refuser ces traceurs.{' '}
+        Nous utilisons des cookies pour le bon fonctionnement du site et la mesure
+        d&apos;audience. Vous pouvez accepter ou refuser ces traceurs.{' '}
         <Link href="/confidentialite" style={{ color: '#E8845C', textDecoration: 'underline' }}>
           En savoir plus
         </Link>

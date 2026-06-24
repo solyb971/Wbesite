@@ -42,3 +42,15 @@ next-env.d.ts
 
 # Playwright MCP artifacts (captures, logs, snapshots)
 .playwright-mcp/
+
+# Captures d'écran de dev à la racine (audits, vérifs visuelles) — pas dans le repo
+/*.png
+/*.jpg
+/*.jpeg
+/mobile-audit/
+
+# Scripts & artefacts de vérification visuelle / debug
+/verify-visual.cjs
+/verify-visual.mjs
+/SITE_SNAPSHOT.html
+/errorlog.txt
