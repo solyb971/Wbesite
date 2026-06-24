@@ -65,8 +65,15 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Mode Production avec Supabase
-    const supabase = await createClient()
+    // Mode Production avec Supabase.
+    // Le formulaire est PUBLIC mais traité côté serveur : on écrit avec la clé
+    // service-role (contourne RLS proprement et autorise le .select() de retour).
+    // Fallback sur le client SSR si la clé service-role n'est pas configurée.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+    const supabase = url && serviceKey
+      ? createServiceClient(url, serviceKey)
+      : await createClient()
 
     // Convertir budget en nombre pour le calcul du score
     const budgetMap: Record<string, number> = {
