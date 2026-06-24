@@ -114,9 +114,9 @@ export default function WhatsAppButton({
           )}
         </button>
 
-        {/* Pulse Animation */}
+        {/* Pulse Animation — pointer-events-none : ne doit pas intercepter les clics du bouton */}
         {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-coral animate-ping opacity-25"></span>
+          <span className="absolute inset-0 rounded-full bg-coral animate-ping opacity-25 pointer-events-none"></span>
         )}
       </div>
     </>
