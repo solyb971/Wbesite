@@ -125,7 +125,8 @@ export async function GET(request: NextRequest) {
         <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px;">${alertSummary}</pre>
         <p>Connectez-vous au <a href="https://solyb.fr/admin">CRM</a> pour plus de détails.</p>
       `
-      await sendEmail("contact@solyb.fr", `Alertes CRM - ${new Date().toLocaleDateString("fr-FR")}`, htmlContent)
+      const adminEmail = process.env.ADMIN_EMAIL || "solyb971@gmail.com"
+      await sendEmail(adminEmail, `Alertes CRM - ${new Date().toLocaleDateString("fr-FR")}`, htmlContent)
     }
 
     return NextResponse.json({
