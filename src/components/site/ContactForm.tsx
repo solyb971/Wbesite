@@ -1,15 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { contactSchema, type ContactFormData } from "@/lib/validations/contact-schema"
 import { Send, Loader2, CheckCircle } from "lucide-react"
+import HoneypotField from "@/components/site/HoneypotField"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [consent, setConsent] = useState(false)
+  const [consentError, setConsentError] = useState(false)
+  const honeypotRef = useRef<HTMLInputElement>(null)
 
   const {
     register,
@@ -25,6 +29,11 @@ export default function ContactForm() {
   })
 
   const onSubmit = async (data: ContactFormData) => {
+    if (!consent) {
+      setConsentError(true)
+      return
+    }
+    setConsentError(false)
     setIsSubmitting(true)
     setError(null)
 
@@ -34,7 +43,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, company_website: honeypotRef.current?.value || "" }),
       })
 
       if (!response.ok) {
@@ -83,6 +92,8 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <HoneypotField ref={honeypotRef} />
+
       {/* Error Message */}
       {error && (
         <div className="bg-red-50 border-2 border-red-200 text-red-800 rounded-lg p-4">
@@ -295,6 +306,30 @@ export default function ContactForm() {
         <p className="text-sm text-gray-500 text-center mt-3">
           Je vous recontacte sous 24h maximum. Aucun engagement.
         </p>
+        <label className="flex items-start gap-2 mt-3 text-xs text-gray-500 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => {
+              setConsent(e.target.checked)
+              if (e.target.checked) setConsentError(false)
+            }}
+            className="mt-0.5 h-4 w-4 flex-shrink-0 accent-primary"
+          />
+          <span>
+            J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à
+            la{" "}
+            <a href="/confidentialite" className="underline hover:text-gray-700">
+              politique de confidentialité
+            </a>
+            . <span className="text-red-500">*</span>
+          </span>
+        </label>
+        {consentError && (
+          <p className="mt-1 text-sm text-red-500 text-center">
+            Veuillez accepter la politique de confidentialité pour continuer.
+          </p>
+        )}
       </div>
     </form>
   )

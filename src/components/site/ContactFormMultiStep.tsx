@@ -1,11 +1,12 @@
 "use client"
 
-import { useState, Suspense } from "react"
+import { useRef, useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { Send, Loader2, CheckCircle, ArrowRight, ArrowLeft, User, FileText, Globe, ShoppingCart, FileCheck, Smartphone, Cloud, Target } from "lucide-react"
+import HoneypotField from "@/components/site/HoneypotField"
 
 const step1Schema = z.object({
   name: z.string().min(2, "Nom requis"),
@@ -42,6 +43,9 @@ function ContactFormInner() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [consent, setConsent] = useState(false)
+  const [consentError, setConsentError] = useState(false)
+  const honeypotRef = useRef<HTMLInputElement>(null)
 
   const {
     register,
@@ -63,13 +67,18 @@ function ContactFormInner() {
   }
 
   const onSubmit = async (data: FormData) => {
+    if (!consent) {
+      setConsentError(true)
+      return
+    }
+    setConsentError(false)
     setIsSubmitting(true)
     setError(null)
     try {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, company_website: honeypotRef.current?.value || "" }),
       })
       if (!response.ok) {
         const errorData = await response.json()
@@ -128,6 +137,7 @@ function ContactFormInner() {
       )}
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        <HoneypotField ref={honeypotRef} />
         {/* Step 1 */}
         {step === 1 && (
           <div className="space-y-6">
@@ -308,6 +318,30 @@ function ContactFormInner() {
                 )}
               </button>
             </div>
+            <label className="flex items-start gap-2 mt-3 text-xs text-[#8B8B9E] leading-relaxed cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => {
+                  setConsent(e.target.checked)
+                  if (e.target.checked) setConsentError(false)
+                }}
+                className="mt-0.5 h-4 w-4 flex-shrink-0 accent-coral"
+              />
+              <span>
+                J&apos;accepte que mes données soient utilisées pour traiter ma demande,
+                conformément à la{" "}
+                <a href="/confidentialite" className="underline hover:text-[#F0EDE8]">
+                  politique de confidentialité
+                </a>
+                . <span className="text-coral">*</span>
+              </span>
+            </label>
+            {consentError && (
+              <p className="mt-1 text-xs text-coral text-center">
+                Veuillez accepter la politique de confidentialité pour continuer.
+              </p>
+            )}
           </div>
         )}
       </form>

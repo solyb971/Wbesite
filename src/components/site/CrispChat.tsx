@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import { Crisp, ChatboxColors } from "crisp-sdk-web"
+import { hasConsent, CONSENT_EVENT } from "@/components/site/CookieConsent"
 
 // Get your Website ID from Crisp Dashboard > Settings > Website Settings
 const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID || ""
@@ -13,16 +14,23 @@ export default function CrispChat() {
       return
     }
 
-    // Configure Crisp
-    Crisp.configure(CRISP_WEBSITE_ID)
+    let loaded = false
+    const loadCrisp = () => {
+      if (loaded) return
+      loaded = true
+      Crisp.configure(CRISP_WEBSITE_ID)
+      Crisp.setColorTheme(ChatboxColors.DeepOrange)
+    }
 
-    // Customize appearance (optional)
-    Crisp.setColorTheme(ChatboxColors.DeepOrange)
+    // RGPD : ne charger Crisp (cookies/traceurs) qu'après consentement.
+    if (hasConsent()) {
+      loadCrisp()
+      return
+    }
 
-
-    // Hide Crisp on specific pages if needed
-    // Crisp.chat.hide()
-
+    // Sinon, attendre l'acceptation du bandeau de cookies.
+    window.addEventListener(CONSENT_EVENT, loadCrisp)
+    return () => window.removeEventListener(CONSENT_EVENT, loadCrisp)
   }, [])
 
   return null

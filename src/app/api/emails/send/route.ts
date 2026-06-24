@@ -4,6 +4,13 @@ import { createClient } from "@/lib/supabase/server"
 
 export async function POST(request: NextRequest) {
   try {
+    // Vérifier authentification (envoi via le compte Brevo → réservé admin)
+    const supabase = await createClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    if (authError || !user) {
+      return NextResponse.json({ error: "Non autorisé" }, { status: 401 })
+    }
+
     const body = await request.json()
     const { lead_id, template_id, to, subject, html } = body
 
@@ -26,7 +33,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Logger l'envoi dans la base de données
-    const supabase = await createClient()
     const { error: logError } = await supabase.from("email_logs").insert({
       lead_id,
       template_id,
@@ -63,8 +69,8 @@ export async function POST(request: NextRequest) {
       messageId: result.messageId,
       message: "Email envoyé avec succès",
     })
-  } catch (error: any) {
+  } catch (error) {
     console.error("Send email error:", error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: "Erreur lors de l'envoi de l'email" }, { status: 500 })
   }
 }

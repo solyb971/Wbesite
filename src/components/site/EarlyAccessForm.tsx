@@ -1,6 +1,7 @@
 'use client'
 
 import { CSSProperties, useState } from 'react'
+import HoneypotField from '@/components/site/HoneypotField'
 
 type Theme = {
   surface: string
@@ -56,6 +57,7 @@ export default function EarlyAccessForm({
           urgency: 'normal',
           source,
           description: `Accès anticipé ${productName} (page produit).${message ? ' ' + message : ''}`,
+          company_website: fd.get('company_website'),
         }),
       })
       if (!res.ok) throw new Error()
@@ -98,12 +100,22 @@ export default function EarlyAccessForm({
 
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: 520, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <HoneypotField />
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
         <input name="name" type="text" required placeholder="Votre nom" style={input} onFocus={onFocus} onBlur={onBlur} />
         <input name="email" type="email" required placeholder="Email" style={input} onFocus={onFocus} onBlur={onBlur} />
       </div>
       <input name="phone" type="tel" placeholder="Téléphone (facultatif)" style={input} onFocus={onFocus} onBlur={onBlur} />
       <input name="message" type="text" placeholder="Votre activité / un mot (facultatif)" style={input} onFocus={onFocus} onBlur={onBlur} />
+      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 12, color: theme.muted, lineHeight: 1.5, cursor: 'pointer' }}>
+        <input type="checkbox" name="consent" required style={{ marginTop: 2, accentColor: theme.accent, flexShrink: 0 }} />
+        <span>
+          J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{' '}
+          <a href="/confidentialite" style={{ color: theme.accent, textDecoration: 'underline' }}>
+            politique de confidentialité
+          </a>. *
+        </span>
+      </label>
       <button
         type="submit"
         disabled={status === 'sending'}
@@ -120,7 +132,7 @@ export default function EarlyAccessForm({
           Une erreur est survenue. Réessayez ou écrivez à contact@solyb.fr.
         </p>
       )}
-      <p style={{ color: theme.muted, fontSize: 12, textAlign: 'center', fontFamily: theme.fontMono }}>
+      <p style={{ color: theme.muted, fontSize: 12, textAlign: 'center', fontFamily: theme.fontMono, lineHeight: 1.5 }}>
         Sans engagement · on ne partage jamais vos données.
       </p>
     </form>
