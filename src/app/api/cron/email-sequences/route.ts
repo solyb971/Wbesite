@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createAdminClient } from "@/lib/supabase/admin"
 import { sendEmail } from "@/lib/email/brevo"
 import { EmailTemplate, EmailTemplateKey } from "@/lib/email/templates"
 
@@ -12,7 +12,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
-    const supabase = await createClient()
+    // Service-role : le cron n'a pas de session → RLS bloquerait les lectures
+    const supabase = createAdminClient()
     const today = new Date()
 
     // Get leads with active email sequences
