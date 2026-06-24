@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Chorus Pro Guadeloupe',
     'TVA DOM 8,5%',
     'Factur-X Guadeloupe',
-    'PDP agréée DGFiP',
+    'plateforme dématérialisation partenaire PDP',
   ],
   alternates: {
     canonical: 'https://solyb.fr/blog/facturation-electronique-2026-guadeloupe',
@@ -204,9 +204,10 @@ export default function FacturationElectronique2026GuadeloupePage() {
             <div className="not-prose rounded-2xl p-8 my-10" style={{ background: 'linear-gradient(135deg, rgba(46,140,146,0.06), rgba(196,71,42,0.05))', border: '1px solid rgba(46,140,146,0.2)' }}>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">FactuGP — conçu pour les DOM</h3>
               <p className="text-gray-700 mb-5">
-                SolYB est l&apos;une des rares agences en Guadeloupe à maîtriser la facturation électronique conforme DGFiP.
+                SolYB accompagne les TPE/PME guadeloupéennes dans leur passage à la facturation électronique.
                 <strong> FactuGP</strong> applique la TVA DOM automatiquement, produit le format Factur-X et transmet vos
-                données aux impôts — un interlocuteur local unique qui comprend le digital et vos obligations fiscales.
+                données via une plateforme de dématérialisation partenaire (PDP) agréée — un interlocuteur local
+                unique qui comprend le digital et vos obligations fiscales.
               </p>
               <div className="flex flex-wrap gap-3">
                 {['TVA DOM 8,5 % / 2,1 %', 'Factur-X EN 16931', 'Chorus Pro DOM', 'E-reporting DGFiP'].map(t => (

@@ -102,8 +102,8 @@ export default function HomePage() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Facturation électronique conforme DGFiP Guadeloupe',
-            description: 'Intégration et mise en conformité avec la réforme de facturation électronique obligatoire 2026. Solution PDP agréée pour entreprises guadeloupéennes.',
+            name: 'Facturation électronique 2026 — accompagnement Guadeloupe',
+            description: 'Accompagnement et mise en conformité avec la réforme de facturation électronique obligatoire 2026, via le raccordement à une plateforme de dématérialisation partenaire (PDP) agréée par la DGFiP.',
           }
         },
         {
