@@ -6,6 +6,37 @@
 
 ---
 
+## ✅ Suivi des correctifs (mis à jour le 24 juin 2026)
+
+Tous les points **actionnables en code** ont été traités, déployés et validés en production (PR #2, #3, #4) :
+
+| Point | État |
+|---|---|
+| `/api/export` authentifié + CSV durci (anti-injection) | ✅ |
+| `/api/emails/send` authentifié | ✅ |
+| Webhook Brevo protégé (`BREVO_WEBHOOK_SECRET`) | ✅ |
+| Middleware fail-closed sur `/admin` | ✅ |
+| Messages d'erreur techniques masqués | ✅ |
+| Notification admin (`/api/leads` + `/api/interest`) | ✅ |
+| Honeypot anti-spam (4 formulaires) | ✅ |
+| Consentement cookies + case obligatoire RGPD | ✅ |
+| Migration `increment` (compteurs emails) | ✅ appliquée |
+| Bug formulaire (budget optionnel) | ✅ |
+| Bug clic WhatsApp (overlay) | ✅ |
+| Bug 500 insertion lead (service-role) | ✅ |
+| Expéditeur Brevo validé + notif vers `ADMIN_EMAIL` | ✅ |
+| Crisp retiré (WhatsApp conservé) | ✅ |
+| Nettoyage repo (~105 Mo de captures hors suivi) | ✅ |
+| Tests automatisés (Vitest, 25 tests) | ✅ |
+
+**Reste à faire (hors code, côté Yacine) :**
+- **Sentry / monitoring** : non installé (nécessite un compte + DSN). À scaffolder plus tard.
+- **Juridique** : compléter mentions légales (SIRET, forme juridique, TVA), rédiger les CGV, faire relire la politique de confidentialité, valider les claims FactuGP.
+- **Brevo** : authentifier le domaine `solyb.fr` puis passer `BREVO_SENDER_EMAIL=contact@solyb.fr`.
+- **Domaine** : faire pointer `solyb.fr` vers le projet Vercel `solyb-website` au lancement.
+
+---
+
 ## 1. Présentation générale
 
 ### Objet
