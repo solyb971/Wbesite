@@ -79,8 +79,11 @@ export async function POST(request: NextRequest) {
     // Poids de scoring configurables (admin → table settings, via service-role)
     const W = await getScoringWeights()
 
+    // Budget optionnel : null si non fourni (formulaire court de la home)
+    const budgetValue = validatedData.budget ? budgetMap[validatedData.budget] : null
+
     // Qualité de chaque critère (fraction 0–1), puis pondérée par le poids configuré
-    const fBudget = validatedData.budget in budgetMap ? 1 : 0.5
+    const fBudget = validatedData.budget && validatedData.budget in budgetMap ? 1 : 0.5
     const descLen = validatedData.description.length
     const fClarity = descLen > 100 ? 1 : descLen > 50 ? 0.66 : 0.33
     const fUrgency =
@@ -126,7 +129,7 @@ export async function POST(request: NextRequest) {
         phone: validatedData.phone || null,
         company: validatedData.company || null,
         project_type: validatedData.project_type,
-        budget: budgetMap[validatedData.budget],
+        budget: budgetValue,
         description: validatedData.description,
         urgency: validatedData.urgency,
         status: "nouveau",
@@ -172,7 +175,7 @@ export async function POST(request: NextRequest) {
       phone: lead.phone || undefined,
       company: lead.company || undefined,
       project_type: lead.project_type,
-      budget: validatedData.budget,
+      budget: validatedData.budget || "Non précisé",
       description: lead.description,
       urgency: lead.urgency,
     })

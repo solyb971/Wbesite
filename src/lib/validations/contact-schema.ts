@@ -31,9 +31,11 @@ export const contactSchema = z.object({
     { required_error: "Veuillez sélectionner un type de projet" }
   ),
 
-  budget: z.enum(["<500", "500-1000", "1000-2000", ">2000"], {
-    required_error: "Veuillez sélectionner une fourchette de budget",
-  }),
+  // Optionnel : le formulaire court de la home ne le collecte pas.
+  // Les formulaires détaillés (devis) l'envoient toujours.
+  budget: z
+    .enum(["<500", "500-1000", "1000-2000", ">2000"])
+    .optional(),
 
   description: z
     .string()
