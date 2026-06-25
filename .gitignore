@@ -43,6 +43,12 @@ next-env.d.ts
 # Playwright MCP artifacts (captures, logs, snapshots)
 .playwright-mcp/
 
+# Playwright e2e artefacts
+/test-results/
+/playwright-report/
+/blob-report/
+/.playwright/
+
 # Captures d'écran de dev à la racine (audits, vérifs visuelles) — pas dans le repo
 /*.png
 /*.jpg
