@@ -81,8 +81,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://solyb.fr',
   },
-  // Ajoute ton vrai code après avoir créé le compte sur search.google.com/search-console
-  // verification: { google: 'TON_CODE_ICI' },
+  // Vérification Google Search Console : colle ton code dans la variable
+  // NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION (Vercel). Absente = pas de balise.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
