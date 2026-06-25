@@ -43,6 +43,8 @@ export default function KanbanBoard({ leads, onLeadMove, onLeadClick }: KanbanBo
     setActiveId(event.active.id as string)
   }
 
+  const validStatuses = columns.map((c) => c.id)
+
   const handleDragEnd = async (event: DragEndEvent) => {
     const { active, over } = event
 
@@ -52,7 +54,23 @@ export default function KanbanBoard({ leads, onLeadMove, onLeadClick }: KanbanBo
     }
 
     const leadId = active.id as string
-    const newStatus = over.id as LeadStatus
+    const overId = over.id as string
+
+    // `over` peut être une colonne (= un statut) OU une autre carte (= un UUID de
+    // lead) car les cartes sont des cibles sortable. On résout toujours vers un
+    // statut valide : si on a lâché sur une carte, on prend le statut de SA colonne.
+    let newStatus: LeadStatus | undefined
+    if (validStatuses.includes(overId as LeadStatus)) {
+      newStatus = overId as LeadStatus
+    } else {
+      newStatus = leads.find((l) => l.id === overId)?.status
+    }
+
+    // Garde-fou : ne jamais écrire un statut hors colonnes (corromprait le lead).
+    if (!newStatus || !validStatuses.includes(newStatus)) {
+      setActiveId(null)
+      return
+    }
 
     // Only update if status changed
     const lead = leads.find((l) => l.id === leadId)
