@@ -19,8 +19,11 @@
 | **3 — Structure** | Réordonnancement home (engagements + preuve sociale avant tarifs), suppression section fantôme « Stakes », Engagements condensés + « je »→« on » | #17 |
 | **4 — Palette** | Fond crème chaud `#FFF9F6`, turquoise caraïbe `#00BFA5`, tokens `--syb-warm/teal/teal-deep` | #18 |
 | **5 — Conversion & mémorable** | Footer enrichi (email/WhatsApp/CTA), formulaire « (WhatsApp bienvenu) », badge hero « En ligne · Baie-Mahault · 971 » (point vert) | #19 |
+| **6 — Finitions** | Icônes cards services (U4), Maintenance hors grille (A2-6), WhatsApp dans la nav (A2-10), bande manifeste casse-grille (M1) | #21 |
 
-**Items résolus :** C1, C2, C5, T1, T2, T3, T5, U1, U2, U5, S1, S2, S3, S6, A2-1, A2-2, A2-3, A2-4, A2-5, A2-7, A2-8, A2-9, A2-11, A2-12, A2-13, M1 (palette/typo), M2.
+**Items résolus :** C1, C2, C5, T1, T2, T3, T5, U1, U2, U4, U5, S1, S2, S3, S6, A2-1, A2-2, A2-3, A2-4, A2-5, A2-6, A2-7, A2-8, A2-9, A2-10, A2-11, A2-12, A2-13, M1, M2.
+
+> ✅ **Tous les items faisables en code sont terminés.** Ne reste que ce qui dépend d'assets/contenus de Yacine.
 
 ### ⏳ Reste à faire — **hors code** (assets / décisions de Yacine)
 | Item | Quoi |
@@ -32,13 +35,8 @@
 | S6 (réseaux) | 🔗 Comptes Instagram / Facebook (sinon liens omis du footer) |
 | FactuGP | 📅 Confirmer la date « septembre 2026 » |
 
-### 🟢 Reste faisable en code (optionnel, non bloquant)
-| Item | Quoi |
-|---|---|
-| U4 | Icônes sur les cards de services (Tabler) |
-| A2-6 | Sortir « Maintenance » de la grille tarifaire 3 colonnes (« Et après la livraison ? ») |
-| A2-10 | Téléphone/WhatsApp dans le header de nav (déjà dans le footer) |
-| M1 (grid-break) | Élément qui « casse la grille » (titre géant / section fond nuit / carte GP SVG) |
+### 🟢 Reste faisable en code (optionnel)
+✅ **Terminé (Lot 6)** : U4 (icônes services), A2-6 (Maintenance hors grille), A2-10 (WhatsApp nav), M1 (bande manifeste casse-grille).
 
 ---
 
