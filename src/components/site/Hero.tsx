@@ -24,43 +24,43 @@ export default function Hero() {
           style={{ color: 'var(--syb-rust-light)', animation: 'fadeUp 0.6s 0.1s ease both' }}
         >
           <span className="w-6 h-px flex-shrink-0" style={{ background: 'var(--syb-rust)' }} />
-          Sites internet pour les TPE &amp; PME de Guadeloupe
+          Baie-Mahault · Guadeloupe 971
         </div>
 
         {/* H1 */}
         <h1
           className="font-display font-black leading-none mb-8"
           style={{
-            fontSize: 'clamp(52px, 7vw, 104px)',
+            fontSize: 'clamp(46px, 6.2vw, 92px)',
             letterSpacing: '-3px',
             color: 'var(--syb-cream)',
           }}
-          aria-label="Votre entreprise, visible en ligne"
+          aria-label="Votre clientèle locale vous cherche déjà"
         >
-          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre</span>
-          <span className="block" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>entreprise,</span>
+          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre clientèle locale</span>
           <em
             className="italic block"
             style={{
               fontWeight: 300,
               color: 'var(--syb-rust-light)',
-              fontSize: '0.85em',
+              fontSize: '0.9em',
               letterSpacing: '-2px',
-              animation: 'fadeUp 0.7s 0.55s ease both',
+              animation: 'fadeUp 0.7s 0.45s ease both',
             }}
           >
-            visible en ligne.
+            vous cherche déjà.
           </em>
         </h1>
 
         {/* Subtitle */}
         <p
-          className="font-light leading-relaxed mb-10 max-w-md"
+          className="font-light leading-relaxed mb-10 max-w-xl"
           style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
         >
-          Vos clients vous cherchent déjà sur Google. Avec un site{' '}
-          <span style={{ color: 'var(--syb-cream)' }}>clair et rapide</span>, ils vous trouvent —
-          et ils vous choisissent.
+          On construit des outils digitaux pour les entrepreneurs d&apos;ici — des sites, des
+          applications, des systèmes qui{' '}
+          <span style={{ color: 'var(--syb-cream)' }}>tiennent dans le temps</span>. Pas des vitrines
+          vides. Des leviers.
         </p>
 
         {/* CTAs */}
@@ -85,11 +85,6 @@ export default function Hero() {
         <p className="mt-6 text-xs font-light" style={{ color: 'rgba(255,255,255,0.45)', animation: 'fadeUp 0.7s 1s ease both' }}>
           Devis gratuit en 24h · Sans engagement · 1 an d&apos;hébergement inclus
         </p>
-
-        {/* Label localisation */}
-        <div className="mt-12 text-xs tracking-[3px] uppercase" style={{ color: 'rgba(255,255,255,0.3)' }}>
-          Baie-Mahault · Guadeloupe
-        </div>
       </div>
     </section>
   )

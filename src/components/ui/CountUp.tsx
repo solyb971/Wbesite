@@ -24,7 +24,9 @@ export default function CountUp({
   const suffix = match?.[3] ?? ''
 
   const ref = useRef<HTMLSpanElement>(null)
-  const [display, setDisplay] = useState(match ? `${prefix}0${suffix}` : value)
+  // Crédibilité + accessibilité + no-JS : on rend la VRAIE valeur d'emblée
+  // (jamais « 0 »). L'animation 0→cible ne se déclenche qu'à l'entrée dans le viewport.
+  const [display, setDisplay] = useState(value)
 
   useEffect(() => {
     const node = ref.current

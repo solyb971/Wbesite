@@ -1,9 +1,9 @@
 import CountUp from "@/components/ui/CountUp"
 
 const figures = [
-  { value: "5+", label: "ans d'expérience" },
-  { value: "14j", label: "livraison moyenne" },
-  { value: "971", label: "Guadeloupe" },
+  { value: "3+", label: "ans d'expérience" },
+  { value: "21j", label: "livraison moyenne" },
+  { value: "100%", label: "local" },
 ]
 
 export default function About() {
@@ -43,19 +43,20 @@ export default function About() {
           style={{ maxWidth: '620px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Une île avec autant d&apos;énergie entrepreneuriale mérite une couverture numérique à la
-            hauteur — pas des solutions importées, pensées pour des marchés qui n&apos;ont rien à voir
-            avec le nôtre.
+            Je m&apos;appelle Yacine. J&apos;ai grandi ici, j&apos;ai appris à coder ici, et j&apos;ai
+            lancé SolYB parce que les outils qu&apos;on proposait aux entrepreneurs guadeloupéens ne
+            ressemblaient pas à leur réalité.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            L&apos;IA a rendu la création accessible à tous : des projets naissent en quelques heures,
-            mais sans réflexion ni vision derrière — de beaux prototypes qui ne tiennent pas six mois. Moi, je
-            construis moins vite, mais je construis vrai :{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>une vraie réflexion avant la première ligne de code.</span>
+            La Guadeloupe a une énergie entrepreneuriale réelle — des restaurateurs, des artisans, des
+            commerçants qui méritent des outils à la hauteur de ce qu&apos;ils construisent. Pas des
+            templates importés de Paris ou de Bordeaux, pas des logiciels pensés pour un marché qui
+            n&apos;a rien à voir avec le nôtre.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Sur chaque projet, l&apos;équipe SolYB intervient de bout en bout — design, développement,
-            conformité fiscale — avec l&apos;ancrage local qui fait la différence.
+            Chez SolYB, on prend le temps de comprendre votre activité avant d&apos;écrire la première
+            ligne de code. C&apos;est plus long que de coller un template.{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>Mais ça tient.</span>
           </p>
         </div>
 

@@ -27,7 +27,7 @@ test.beforeEach(async ({ page }) => {
 test('le formulaire de contact se soumet avec succès (consentement coché)', async ({ page }) => {
   await fillContactForm(page)
   await page.check('input[name="consent"]')
-  await page.getByRole('button', { name: 'Envoyer ma demande' }).click()
+  await page.getByRole('button', { name: 'Recevoir mon devis gratuit' }).click()
 
   // Le composant affiche un état de succès avant de rediriger vers /merci.
   await expect(page.getByText('Demande envoyée !')).toBeVisible({ timeout: 10_000 })
@@ -39,7 +39,7 @@ test('la case de consentement est obligatoire', async ({ page }) => {
   const consent = page.locator('input[name="consent"]')
   await expect(consent).toHaveAttribute('required', '')
 
-  await page.getByRole('button', { name: 'Envoyer ma demande' }).click()
+  await page.getByRole('button', { name: 'Recevoir mon devis gratuit' }).click()
 
   // Aucun état de succès ne doit apparaître.
   await expect(page.getByText('Demande envoyée !')).toHaveCount(0)

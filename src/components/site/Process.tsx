@@ -1,5 +1,5 @@
 const steps = [
-  { num: "01", title: "Échange découverte", description: "45 minutes pour comprendre votre activité et ce dont vous avez besoin.", duration: "Jour 1 · Gratuit" },
+  { num: "01", title: "Échange découverte", description: "45 minutes pour comprendre votre activité et ce dont vous avez besoin — en visio ou en présentiel à Baie-Mahault.", duration: "Jour 1 · Gratuit" },
   { num: "02", title: "Devis & validation", description: "Un devis clair sous 24h. Vous validez, on démarre.", duration: "Jour 2" },
   { num: "03", title: "Conception & livraison", description: "Design, développement, tests. Vous validez chaque étape avec nous.", duration: "2 à 3 semaines" },
   { num: "04", title: "Support & suivi", description: "1 mois de support inclus après la mise en ligne, pour roder le tout ensemble.", duration: "1 mois inclus" },
