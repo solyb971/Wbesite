@@ -20,6 +20,7 @@ export default function Footer() {
           {[
             { href: "/mentions-legales", label: "Mentions légales" },
             { href: "/confidentialite",  label: "Confidentialité" },
+            { href: "/cgv",              label: "CGV" },
           ].map((l) => (
             <Link
               key={l.href}
