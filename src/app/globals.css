@@ -20,6 +20,9 @@
   --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
   --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
   --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
+  --syb-warm:        #FFF9F6;   /* fond crème chaud (sections claires, vs blanc pur) */
+  --syb-teal:        #00BFA5;   /* turquoise caraïbe — accent secondaire (fills / fond sombre) */
+  --syb-teal-deep:   #0E7C6B;   /* turquoise foncé — texte/CTA sur fond clair (contraste AA) */
 }
 
 @layer base {

@@ -54,7 +54,7 @@ const plans = [
 
 export default function LaunchPricing() {
   return (
-    <section id="tarifs" className="py-24 md:py-28 scroll-mt-20" style={{ background: '#FFFFFF' }}>
+    <section id="tarifs" className="py-24 md:py-28 scroll-mt-20" style={{ background: 'var(--syb-warm)' }}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="reveal mb-12 max-w-2xl">

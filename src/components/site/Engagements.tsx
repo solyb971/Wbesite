@@ -19,7 +19,7 @@ const engagements = [
 
 export default function Engagements() {
   return (
-    <section id="engagements" className="py-24 md:py-28 scroll-mt-20" style={{ background: '#FFFFFF' }}>
+    <section id="engagements" className="py-24 md:py-28 scroll-mt-20" style={{ background: 'var(--syb-warm)' }}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="reveal mb-14 max-w-2xl">
           <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>

@@ -11,7 +11,7 @@ export default function About() {
     <section
       id="apropos"
       className="py-28 md:py-36 scroll-mt-20"
-      style={{ background: '#FFFFFF' }}
+      style={{ background: 'var(--syb-warm)' }}
     >
       <div className="max-w-[900px] mx-auto px-6 md:px-12 text-center">
         <div

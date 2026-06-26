@@ -42,11 +42,12 @@ const config: Config = {
           900: '#493003',
         },
         turquoise: {
-          DEFAULT: '#00D4AA',
-          400: '#33DBAE',
-          500: '#00D4AA',
-          600: '#00A888',
-          700: '#007D66',
+          // Turquoise caraïbe — accent secondaire de marque (audit UI)
+          DEFAULT: '#00BFA5',
+          400: '#2FD9C0',
+          500: '#00BFA5',
+          600: '#00A188',
+          700: '#0E7C6B',
         },
         violet: {
           DEFAULT: '#8B5CF6',
