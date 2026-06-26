@@ -41,6 +41,12 @@ export async function GET() {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/cgv`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
