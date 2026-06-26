@@ -10,6 +10,38 @@
 
 ---
 
+## ✅ AVANCEMENT — 5 lots livrés (déployés en prod)
+
+| Lot | Périmètre | PR |
+|---|---|---|
+| **1 — Crédibilité & copy** | Stats sans « 0 » (CountUp), FeatureStats cohérent, About 1re pers. (sans IA / sans « conformité fiscale »), Tarifs (fin « premières références » + badge « Recommandé pour démarrer »), Hero (titre + césure H1 + sous-titre), CTA « Recevoir mon devis gratuit », Process « visio/présentiel » | #15 |
+| **2 — Copy services & sections** | Services (titre/intro/3 cards), Bandeau facturation (affirmatif + dates), Outils (« faits ici » + FactuGP sept. 2026), Réalisations (titre + résultat), Nav (« Ce qu'on fait… ») | #16 |
+| **3 — Structure** | Réordonnancement home (engagements + preuve sociale avant tarifs), suppression section fantôme « Stakes », Engagements condensés + « je »→« on » | #17 |
+| **4 — Palette** | Fond crème chaud `#FFF9F6`, turquoise caraïbe `#00BFA5`, tokens `--syb-warm/teal/teal-deep` | #18 |
+| **5 — Conversion & mémorable** | Footer enrichi (email/WhatsApp/CTA), formulaire « (WhatsApp bienvenu) », badge hero « En ligne · Baie-Mahault · 971 » (point vert) | #19 |
+
+**Items résolus :** C1, C2, C5, T1, T2, T3, T5, U1, U2, U5, S1, S2, S3, S6, A2-1, A2-2, A2-3, A2-4, A2-5, A2-7, A2-8, A2-9, A2-11, A2-12, A2-13, M1 (palette/typo), M2.
+
+### ⏳ Reste à faire — **hors code** (assets / décisions de Yacine)
+| Item | Quoi |
+|---|---|
+| C4 | 📷 Photo du fondateur (section À propos) |
+| C3 | 🗂️ 2-3 projets portfolio (ou démos concept) |
+| M4 | 💬 Témoignage réel — **en cours** (client Liberty Drive Serenity) |
+| M3 / S4 | 🖼️ Démo interactive / captures ResaGP — le plus « mémorable » |
+| S6 (réseaux) | 🔗 Comptes Instagram / Facebook (sinon liens omis du footer) |
+| FactuGP | 📅 Confirmer la date « septembre 2026 » |
+
+### 🟢 Reste faisable en code (optionnel, non bloquant)
+| Item | Quoi |
+|---|---|
+| U4 | Icônes sur les cards de services (Tabler) |
+| A2-6 | Sortir « Maintenance » de la grille tarifaire 3 colonnes (« Et après la livraison ? ») |
+| A2-10 | Téléphone/WhatsApp dans le header de nav (déjà dans le footer) |
+| M1 (grid-break) | Élément qui « casse la grille » (titre géant / section fond nuit / carte GP SVG) |
+
+---
+
 ## 📊 Scores de l'audit UI (point de départ)
 
 | Axe | Note |
