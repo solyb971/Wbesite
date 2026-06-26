@@ -1,10 +1,12 @@
 import Link from "next/link"
+import { Globe, ShoppingCart, Smartphone } from "lucide-react"
 
 const services = [
   {
     title: "Site Vitrine",
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
+    Icon: Globe,
     description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour Pointe-à-Pitre, Basse-Terre ou votre commune. Pas un template — votre identité.",
     price: "Dès 599€",
     contactParam: "vitrine",
@@ -13,6 +15,7 @@ const services = [
     title: "E-commerce",
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
+    Icon: ShoppingCart,
     description: "Une boutique complète, paiement sécurisé, gestion de la livraison en Guadeloupe. Conçue pour que vous la gériez seul, sans nous appeler pour chaque produit.",
     price: "Dès 999€",
     contactParam: "ecommerce",
@@ -21,6 +24,7 @@ const services = [
     title: "Application Métier",
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
+    Icon: Smartphone,
     description: "Un logiciel fait pour votre métier, pas pour le métier d'un autre. On part d'une feuille blanche et on construit ce que vous ne trouvez pas dans les solutions existantes.",
     price: "Sur devis",
     contactParam: "application",
@@ -69,8 +73,16 @@ export default function Services() {
 
                 {/* Body */}
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="text-[11px] tracking-[2px] uppercase mb-4" style={{ color: 'var(--syb-stone-light)' }}>
-                    {s.tag}
+                  <div className="flex items-center justify-between mb-4">
+                    <span
+                      className="w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.18)', color: s.accent }}
+                    >
+                      <s.Icon size={20} strokeWidth={1.6} />
+                    </span>
+                    <span className="text-[11px] tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
+                      {s.tag}
+                    </span>
                   </div>
                   <h3 className="font-display font-bold mb-2" style={{ fontSize: '22px', color: 'var(--syb-ink)' }}>
                     {s.title}

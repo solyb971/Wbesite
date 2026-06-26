@@ -8,6 +8,7 @@ import LaunchPricing from "@/components/site/LaunchPricing"
 import Solutions from "@/components/site/Solutions"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
+import Manifesto from "@/components/site/Manifesto"
 import Engagements from "@/components/site/Engagements"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
@@ -184,6 +185,7 @@ export default function HomePage() {
         <FeatureStats />
         <Engagements />
         <Realisations />
+        <Manifesto />
         <Process />
         <LaunchPricing />
         <About />

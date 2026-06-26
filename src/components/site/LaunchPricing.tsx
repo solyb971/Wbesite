@@ -34,23 +34,16 @@ const plans = [
     cta: { label: "Choisir Business", href: "/?service=ecommerce#contact" },
     featured: true,
   },
-  {
-    name: "Maintenance",
-    category: "Support continu",
-    price: "39",
-    period: "€/mois",
-    features: [
-      "Mises à jour de sécurité",
-      "Sauvegarde quotidienne",
-      "Support prioritaire",
-      "1h de modifications par mois",
-      "Surveillance 24/7 · certificat SSL",
-      "Rapport mensuel",
-    ],
-    cta: { label: "S'abonner", href: "/?service=maintenance#contact" },
-    featured: false,
-  },
 ]
+
+// La maintenance n'est pas une offre concurrente : c'est un prolongement après
+// la livraison → présentée à part (cf. audit A2-6).
+const maintenance = {
+  price: "39",
+  period: "€/mois",
+  features: ["Mises à jour & sécurité", "Sauvegarde quotidienne", "Support prioritaire", "1h de modifs/mois"],
+  cta: { label: "S'abonner", href: "/?service=maintenance#contact" },
+}
 
 export default function LaunchPricing() {
   return (
@@ -77,7 +70,7 @@ export default function LaunchPricing() {
         </div>
 
         {/* Plans */}
-        <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-3xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -162,6 +155,31 @@ export default function LaunchPricing() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Maintenance — prolongement après livraison (pas une 3e offre) */}
+        <div
+          className="reveal mt-4 max-w-3xl mx-auto rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
+        >
+          <div>
+            <div className="text-[11px] tracking-[2px] uppercase mb-1.5" style={{ color: 'var(--syb-teal-deep)' }}>
+              Et après la livraison ?
+            </div>
+            <p className="font-display font-bold mb-1" style={{ fontSize: '18px', color: 'var(--syb-ink)' }}>
+              Maintenance — {maintenance.price}{maintenance.period}
+            </p>
+            <p className="text-xs font-light" style={{ color: 'var(--syb-stone)' }}>
+              {maintenance.features.join(' · ')}. Pour ne jamais vous en occuper.
+            </p>
+          </div>
+          <Link
+            href={maintenance.cta.href}
+            className="cta-arrow inline-flex items-center justify-center gap-1.5 whitespace-nowrap text-sm font-normal flex-shrink-0 transition-transform hover:-translate-y-px"
+            style={{ background: 'transparent', color: 'var(--syb-ink)', border: '0.5px solid var(--syb-ink)', padding: '10px 22px', borderRadius: '4px' }}
+          >
+            {maintenance.cta.label} <span className="arrow">→</span>
+          </Link>
         </div>
 
         {/* Réassurance */}
