@@ -5,7 +5,7 @@ const services = [
     title: "Site Vitrine",
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
-    description: "Un site clair et pro pour votre clientèle locale. Rapide, lisible sur mobile, bien placé sur Google.",
+    description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour Pointe-à-Pitre, Basse-Terre ou votre commune. Pas un template — votre identité.",
     price: "Dès 599€",
     contactParam: "vitrine",
   },
@@ -13,7 +13,7 @@ const services = [
     title: "E-commerce",
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
-    description: "Une boutique en ligne complète, paiement sécurisé inclus, simple à gérer au quotidien.",
+    description: "Une boutique complète, paiement sécurisé, gestion de la livraison en Guadeloupe. Conçue pour que vous la gériez seul, sans nous appeler pour chaque produit.",
     price: "Dès 999€",
     contactParam: "ecommerce",
   },
@@ -21,7 +21,7 @@ const services = [
     title: "Application Métier",
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
-    description: "Un outil pensé pour votre activité. Ce dont vous avez besoin, rien de plus.",
+    description: "Un logiciel fait pour votre métier, pas pour le métier d'un autre. On part d'une feuille blanche et on construit ce que vous ne trouvez pas dans les solutions existantes.",
     price: "Sur devis",
     contactParam: "application",
   },
@@ -47,12 +47,12 @@ export default function Services() {
                 className="font-display font-black leading-none"
                 style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
               >
-                On vous construit<br />
-                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>l&apos;outil dont vous avez vraiment besoin</em>
+                Ce qu&apos;on construit<br />
+                <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>pour vous</em>
               </h2>
             </div>
             <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
-              Pas de modèle recyclé. On part de votre métier et de vos clients pour construire ce qui va réellement vous servir au quotidien.
+              Chaque projet repart de zéro. On part de vous, de votre marché, de vos clients en Guadeloupe — pas d&apos;un template qu&apos;on adapte.
             </p>
           </div>
 
@@ -112,10 +112,12 @@ export default function Services() {
               Obligation 2026
             </div>
             <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
-              La facturation électronique devient obligatoire. Êtes-vous prêt ?
+              La facturation électronique est obligatoire dès 2026. On s&apos;en occupe pour vous.
             </p>
-            <p className="text-sm font-light mt-0.5" style={{ color: '#7A7268' }}>
-              On s&apos;occupe de votre mise en conformité DGFiP, pensée pour les entreprises de Guadeloupe.
+            <p className="text-sm font-light mt-0.5 max-w-2xl" style={{ color: '#7A7268' }}>
+              Réception obligatoire dès septembre 2026, émission pour les TPE/PME à partir de 2027. On
+              vous connecte à une plateforme agréée DGFiP — sans jargon. Et notre outil FactuGP est déjà
+              pensé pour ça.
             </p>
           </div>
           <Link

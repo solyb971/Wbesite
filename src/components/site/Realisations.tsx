@@ -24,8 +24,8 @@ export default function Realisations() {
               className="font-display font-black leading-none"
               style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
             >
-              Un projet,<br />
-              <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>livré pour de vrai</em>
+              Ce qu&apos;on a<br />
+              <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>déjà construit</em>
             </h2>
           </div>
           <Link
@@ -71,9 +71,14 @@ export default function Realisations() {
             >
               {project.client}
             </h3>
-            <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
+            <p className="text-sm font-light leading-relaxed mb-4" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
               {project.description}
             </p>
+            {project.result && (
+              <p className="text-sm font-normal leading-relaxed mb-6" style={{ color: 'var(--syb-ink)', lineHeight: 1.8 }}>
+                {project.result}
+              </p>
+            )}
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tags.map((t) => (
                 <span

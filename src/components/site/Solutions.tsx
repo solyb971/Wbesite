@@ -42,10 +42,10 @@ const solutions = [
     accent: "#2E8C92",
     tagline: "Facturation électronique conforme 2026",
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité DGFiP à votre place.",
-    status: "Bientôt disponible",
+    status: "Disponible sept. 2026",
     statusColor: "#B8760A",
     highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "Pensé pour les TPE et PME du 971"],
-    cta: { label: "Découvrir FactuGP", href: "/facturation-electronique" },
+    cta: { label: "Rejoindre la liste d'attente", href: "/facturation-electronique" },
   },
 ]
 
@@ -66,11 +66,12 @@ export default function Solutions() {
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
           >
-            Des outils déjà prêts,<br />
-            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>en plus du sur-mesure</em>
+            ResaGP et FactuGP —<br />
+            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>nos outils, faits ici</em>
           </h2>
-          <p className="text-sm font-light leading-relaxed max-w-md mt-5" style={{ color: '#7A7268', lineHeight: 1.75 }}>
-            J&apos;ai créé mes propres outils pour les entreprises d&apos;ici.
+          <p className="text-sm font-light leading-relaxed max-w-lg mt-5" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+            La plupart des outils qu&apos;on recommande à nos clients sont conçus ailleurs, pour
+            d&apos;autres marchés. Alors on en a créé deux, pour Guadeloupe.
           </p>
         </div>
 

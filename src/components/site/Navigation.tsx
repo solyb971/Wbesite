@@ -11,10 +11,10 @@ export default function Navigation() {
   const navRef = useRef<HTMLElement>(null)
 
   const navLinks = [
-    { href: "/#services",     label: "Services" },
-    { href: "/#tarifs",       label: "Tarifs" },
-    { href: "/#apropos",      label: "À propos" },
-    { href: "/#realisations", label: "Réalisations" },
+    { href: "/#services",     label: "Ce qu'on fait" },
+    { href: "/#tarifs",       label: "Nos tarifs" },
+    { href: "/#apropos",      label: "Qui on est" },
+    { href: "/#realisations", label: "Nos projets" },
     { href: "/#contact",      label: "Contact" },
   ]
 
