@@ -1,19 +1,19 @@
 const engagements = [
   {
     title: "Un seul interlocuteur",
-    text: "Vous parlez directement à la personne qui conçoit et code votre projet. Pas de service client, pas d'intermédiaire.",
+    text: "Vous parlez directement à la personne qui code. Pas d'intermédiaire.",
   },
   {
-    title: "Un devis clair sous 24h",
-    text: "Un prix ferme et détaillé, sans surprise. Vous savez ce que vous payez avant de vous engager.",
+    title: "Devis clair sous 24h",
+    text: "Un prix ferme et détaillé, sans surprise.",
   },
   {
-    title: "Vous payez en deux fois",
-    text: "50 % pour démarrer, 50 % à la livraison — une fois que vous êtes vraiment satisfait.",
+    title: "Paiement en deux fois",
+    text: "50 % pour démarrer, 50 % à la livraison.",
   },
   {
-    title: "Je reste après la mise en ligne",
-    text: "Hébergement 1 an et 1 à 2 mois de support inclus. Je ne disparais pas une fois le site livré.",
+    title: "On reste après la livraison",
+    text: "Hébergement 1 an et support inclus. On ne disparaît pas une fois le site en ligne.",
   },
 ]
 
@@ -24,7 +24,7 @@ export default function Engagements() {
         <div className="reveal mb-14 max-w-2xl">
           <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
             <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
-            Pourquoi me faire confiance
+            Pourquoi nous faire confiance
           </div>
           <h2
             className="font-display font-black leading-none"
