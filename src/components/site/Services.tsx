@@ -33,7 +33,7 @@ export default function Services() {
       <section
         id="services"
         className="py-24 md:py-28 scroll-mt-20"
-        style={{ background: '#FFFFFF' }}
+        style={{ background: 'var(--syb-warm)' }}
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-12">
           {/* Header */}
