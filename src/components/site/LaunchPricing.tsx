@@ -66,13 +66,13 @@ export default function LaunchPricing() {
             className="font-display font-black leading-none mb-5"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
-            Des prix pour<br />
-            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>démarrer sereinement</em>
+            Des prix clairs,<br />
+            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>pour des projets réels</em>
           </h2>
           <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
-            Pendant que je construis mes premières références locales, j&apos;ai fixé des{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>tarifs simples et honnêtes</span>. Pas de piège,
-            pas d&apos;engagement.
+            Des tarifs pensés pour les entrepreneurs guadeloupéens.{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>Honnêtes, détaillés, sans mauvaise surprise.</span>{' '}
+            Paiement en deux fois, devis gratuit sous 24h.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export default function LaunchPricing() {
                   className="absolute top-4 right-4 text-[10px] tracking-[2px] uppercase rounded-full px-2.5 py-1"
                   style={{ background: 'var(--syb-rust)', color: '#fff' }}
                 >
-                  Plus populaire
+                  Recommandé pour démarrer
                 </div>
               )}
 

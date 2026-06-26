@@ -158,7 +158,7 @@ export default function Contact() {
                   className="w-full py-3.5 text-white text-sm font-normal rounded transition-all hover:opacity-90 disabled:opacity-60"
                   style={{ background: '#C4472A', marginTop: '4px' }}
                 >
-                  {status === 'sending' ? 'Envoi...' : 'Envoyer ma demande'}
+                  {status === 'sending' ? 'Envoi en cours...' : 'Recevoir mon devis gratuit'}
                 </button>
                 <label className="flex items-start gap-2 text-xs cursor-pointer" style={{ color: 'var(--syb-stone-light)', marginTop: '2px', lineHeight: 1.5 }}>
                   <input type="checkbox" name="consent" required style={{ marginTop: '2px', accentColor: '#C4472A', flexShrink: 0 }} />

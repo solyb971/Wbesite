@@ -1,9 +1,9 @@
 import CountUp from "@/components/ui/CountUp"
 
 const stats = [
-  { value: "14j", label: "délai moyen de livraison" },
+  { value: "21j", label: "livraison max" },
   { value: "24h", label: "réponse garantie" },
-  { value: "3 mois", label: "support inclus" },
+  { value: "1 an", label: "d'hébergement inclus" },
   { value: "100%", label: "sur mesure" },
 ]
 
