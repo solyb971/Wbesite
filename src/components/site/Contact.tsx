@@ -117,7 +117,7 @@ export default function Contact() {
                       onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
                   </div>
                   <div>
-                    <label style={labelStyle}>Téléphone</label>
+                    <label style={labelStyle}>Téléphone <span style={{ textTransform: 'none', letterSpacing: 0, color: 'var(--syb-teal-deep)' }}>(WhatsApp bienvenu)</span></label>
                     <input name="phone" type="tel" placeholder="0690 00 00 00" style={inputStyle}
                       onFocus={e => (e.target.style.borderColor = '#C4472A')}
                       onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
