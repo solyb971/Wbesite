@@ -6,14 +6,6 @@ export default function About() {
       style={{ background: 'var(--syb-warm)' }}
     >
       <div className="max-w-[900px] mx-auto px-6 md:px-12 text-center">
-        <div
-          className="reveal flex items-center justify-center gap-2.5 mb-5 text-xs tracking-[3px] uppercase"
-          style={{ color: 'var(--syb-rust)' }}
-        >
-          <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
-          À propos · Yacine Bouhassoun — Fondateur, Baie-Mahault
-        </div>
-
         <h2
           className="reveal font-display font-black mb-10 mx-auto"
           style={{

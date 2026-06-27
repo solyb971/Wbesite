@@ -58,10 +58,6 @@ export default function Solutions() {
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="reveal mb-14">
-          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
-            <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-            Nos outils
-          </div>
           <h2
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}

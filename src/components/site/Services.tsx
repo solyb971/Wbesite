@@ -65,10 +65,6 @@ export default function Services() {
         {/* Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
-              <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-              Services &amp; tarifs
-            </div>
             <h2
               className="font-display font-black leading-none"
               style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}

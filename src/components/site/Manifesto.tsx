@@ -31,10 +31,6 @@ export default function Manifesto() {
       </span>
 
       <div className="reveal relative z-10 max-w-[1100px] mx-auto px-6 md:px-12">
-        <div className="flex items-center gap-2.5 mb-6 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-teal)' }}>
-          <span className="w-5 h-px" style={{ background: 'var(--syb-teal)' }} />
-          Le credo
-        </div>
         <h2
           className="font-display font-black"
           style={{
