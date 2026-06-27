@@ -109,6 +109,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
+        {/* Pose la classe `.js` avant le rendu des sections : l'état masqué des
+            animations `.reveal` n'est appliqué que si JS est actif. Sans JS
+            (désactivé / bundle en échec), le contenu reste visible. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {children}
       </body>
     </html>
