@@ -22,7 +22,7 @@ const services = [
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
     Icon: ShoppingCart,
-    description: "Une boutique complète, à votre image, pouvant être gérée de manière autonome, incluant les services que vous voulez mettre en place comme le paiement en ligne sécurisé ou la gestion de la livraison.",
+    description: "Votre boutique en ligne, aux couleurs de votre marque. Vous la gérez en autonomie — paiement sécurisé, livraison, catalogue.",
     price: "Dès 999€",
     features: [
       "Boutique complète, autonome",
@@ -37,7 +37,7 @@ const services = [
     tag: "Sur mesure",
     accent: "var(--syb-rust-deep)",
     Icon: Smartphone,
-    description: "Un logiciel fait pour votre métier, pas pour le métier d'un autre. On part d'une feuille blanche et on construit ce que vous ne trouvez pas dans les solutions existantes.",
+    description: "Un logiciel fait pour votre métier, pas pour le métier d'un autre. Cahier des charges, architecture, intégrations — on construit tout de zéro pour votre logique.",
     price: "Sur devis",
     features: [
       "Cahier des charges sur-mesure",
@@ -134,10 +134,10 @@ export default function Services() {
 
                 <Link
                   href={`/?service=${s.contactParam}#contact`}
-                  className="cta-arrow inline-flex items-center justify-center gap-1.5 w-full text-sm font-normal transition-transform hover:-translate-y-px"
+                  className="inline-flex items-center justify-center w-full text-sm font-normal transition-transform hover:-translate-y-px"
                   style={{ background: 'var(--syb-rust)', color: '#fff', padding: '11px 22px', borderRadius: '4px' }}
                 >
-                  Demander un devis <span className="arrow">→</span>
+                  Demander un devis
                 </Link>
               </div>
             </div>
@@ -162,10 +162,10 @@ export default function Services() {
           </div>
           <Link
             href="/?service=maintenance#contact"
-            className="cta-arrow inline-flex items-center justify-center gap-1.5 whitespace-nowrap text-sm font-normal flex-shrink-0 transition-transform hover:-translate-y-px"
+            className="inline-flex items-center justify-center whitespace-nowrap text-sm font-normal flex-shrink-0 transition-transform hover:-translate-y-px"
             style={{ background: 'transparent', color: 'var(--syb-ink)', border: '0.5px solid var(--syb-ink)', padding: '10px 22px', borderRadius: '4px' }}
           >
-            S&apos;abonner <span className="arrow">→</span>
+            S&apos;abonner
           </Link>
         </div>
 

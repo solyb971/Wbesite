@@ -40,15 +40,10 @@ export default function About() {
             ressemblaient pas à leur réalité.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            La Guadeloupe a une énergie entrepreneuriale réelle — des restaurateurs, des artisans, des
-            commerçants qui méritent des outils à la hauteur de ce qu&apos;ils construisent. Pas des
-            templates importés de Paris ou de Bordeaux, pas des logiciels pensés pour un marché qui
-            n&apos;a rien à voir avec le nôtre.
-          </p>
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Chez SolYB, on prend le temps de comprendre votre activité avant d&apos;écrire la première
-            ligne de code. C&apos;est plus long que de coller un template.{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>Mais ça tient.</span>
+            Ici, les restaurateurs, artisans et commerçants méritent des outils à leur hauteur — pas
+            des templates importés de Paris, pensés pour un autre marché. Alors on prend le temps de
+            comprendre votre activité avant d&apos;écrire la première ligne de code.{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>C&apos;est plus long que de coller un template. Mais ça tient.</span>
           </p>
         </div>
       </div>

@@ -44,7 +44,7 @@ const solutions = [
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité DGFiP à votre place.",
     status: "Disponible sept. 2026",
     statusColor: "#B8760A",
-    highlights: ["TVA Guadeloupe préconfigurée", "Transmission DGFiP automatique", "Pensé pour les TPE et PME du 971"],
+    highlights: ["TVA Guadeloupe préconfigurée", "Envoi automatique aux impôts", "Pensé pour les TPE et PME du 971"],
     cta: { label: "Rejoindre la liste d'attente", href: "/facturation-electronique" },
   },
 ]

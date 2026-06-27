@@ -14,27 +14,18 @@ export default function Realisations() {
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="reveal flex items-end justify-between flex-wrap gap-4 mb-12">
-          <div>
-            <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
-              <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
-              Réalisations
-            </div>
-            <h2
-              className="font-display font-black leading-none"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
-            >
-              Ce qu&apos;on a<br />
-              <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>déjà construit</em>
-            </h2>
+        <div className="reveal mb-12">
+          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
+            <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
+            Réalisations
           </div>
-          <Link
-            href="/#contact"
-            className="cta-arrow text-sm font-light transition-colors hover:text-[#0E0D0B]"
-            style={{ color: 'var(--syb-stone)' }}
+          <h2
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
-            Démarrer un projet <span className="arrow">→</span>
-          </Link>
+            Ce qu&apos;on a<br />
+            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>déjà construit</em>
+          </h2>
         </div>
 
         {/* Étude de cas */}
@@ -95,13 +86,24 @@ export default function Realisations() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-arrow inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
+                className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
                 style={{ background: 'var(--syb-rust)', padding: '12px 26px', borderRadius: '4px' }}
               >
-                Voir le projet <span className="arrow">→</span>
+                Voir le projet
               </a>
             )}
           </div>
+        </div>
+
+        {/* CTA après l'étude de cas (logique de lecture : on voit le projet, puis on agit) */}
+        <div className="reveal mt-12 text-center">
+          <Link
+            href="/#contact"
+            className="cta-arrow inline-flex items-center gap-1.5 text-sm font-light transition-colors hover:text-[#0E0D0B]"
+            style={{ color: 'var(--syb-stone)' }}
+          >
+            Démarrer un projet comme celui-ci <span className="arrow">→</span>
+          </Link>
         </div>
       </div>
     </section>
