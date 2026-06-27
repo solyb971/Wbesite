@@ -1,11 +1,3 @@
-import CountUp from "@/components/ui/CountUp"
-
-const figures = [
-  { value: "3+", label: "ans d'expérience" },
-  { value: "21j", label: "livraison moyenne" },
-  { value: "100%", label: "local" },
-]
-
 export default function About() {
   return (
     <section
@@ -58,24 +50,6 @@ export default function About() {
             ligne de code. C&apos;est plus long que de coller un template.{' '}
             <span style={{ color: 'var(--syb-ink)' }}>Mais ça tient.</span>
           </p>
-        </div>
-
-        <div
-          className="reveal grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-          style={{ borderTop: '0.5px solid var(--syb-border)' }}
-        >
-          {figures.map((f) => (
-            <div key={f.label} className="pt-8">
-              <CountUp
-                value={f.value}
-                className="font-display font-black leading-none mb-2 block"
-                style={{ fontSize: 'clamp(32px, 4vw, 52px)', color: 'var(--syb-rust)' }}
-              />
-              <div className="text-xs font-light tracking-wide" style={{ color: 'var(--syb-stone)' }}>
-                {f.label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

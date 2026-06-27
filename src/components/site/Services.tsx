@@ -7,7 +7,7 @@ const services = [
     tag: "Le plus demandé",
     accent: "var(--syb-rust)",
     Icon: Globe,
-    description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour Pointe-à-Pitre, Basse-Terre ou votre commune. Pas un template — votre identité.",
+    description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour cibler votre région et étendre votre identité.",
     price: "Dès 599€",
     contactParam: "vitrine",
   },
@@ -16,7 +16,7 @@ const services = [
     tag: "Vente en ligne",
     accent: "var(--syb-rust-light)",
     Icon: ShoppingCart,
-    description: "Une boutique complète, paiement sécurisé, gestion de la livraison en Guadeloupe. Conçue pour que vous la gériez seul, sans nous appeler pour chaque produit.",
+    description: "Une boutique complète, à votre image, pouvant être gérée de manière autonome, incluant les services que vous voulez mettre en place comme le paiement en ligne sécurisé ou la gestion de la livraison.",
     price: "Dès 999€",
     contactParam: "ecommerce",
   },
@@ -56,7 +56,7 @@ export default function Services() {
               </h2>
             </div>
             <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
-              Chaque projet repart de zéro. On part de vous, de votre marché, de vos clients en Guadeloupe — pas d&apos;un template qu&apos;on adapte.
+              Chaque projet repart de zéro. On part de vous, de votre marché, de votre clientèle et de votre logique métier pour avoir la solution la plus optimisée possible à vos besoins.
             </p>
           </div>
 
@@ -109,38 +109,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Facturation banner */}
-      <div
-        className="border-y"
-        style={{ background: '#F5F2ED', borderColor: '#DDD5C8', padding: '2.5rem 0' }}
-      >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <div
-              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase rounded-full px-3 py-1 mb-2"
-              style={{ background: 'rgba(46,140,146,0.08)', border: '0.5px solid rgba(46,140,146,0.30)', color: '#2E8C92' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#2E8C92', animation: 'pulse 2s infinite' }} />
-              Obligation 2026
-            </div>
-            <p className="font-display font-bold text-lg" style={{ color: '#0E0D0B' }}>
-              La facturation électronique est obligatoire dès 2026. On s&apos;en occupe pour vous.
-            </p>
-            <p className="text-sm font-light mt-0.5 max-w-2xl" style={{ color: '#7A7268' }}>
-              Réception obligatoire dès septembre 2026, émission pour les TPE/PME à partir de 2027. On
-              vous connecte à une plateforme agréée DGFiP — sans jargon. Et notre outil FactuGP est déjà
-              pensé pour ça.
-            </p>
-          </div>
-          <Link
-            href="/?service=facturation#contact"
-            className="whitespace-nowrap text-sm font-normal px-5 py-2.5 rounded transition-opacity hover:opacity-80 flex-shrink-0 text-white"
-            style={{ background: '#2E8C92' }}
-          >
-            Vérifier ma conformité
-          </Link>
-        </div>
-      </div>
+      {/* Bandeau facturation électronique — GELÉ (détonnait trop). Conservé pour
+          réactivation ultérieure : remettre <FacturationBanner /> dans le fragment. */}
     </>
   )
 }

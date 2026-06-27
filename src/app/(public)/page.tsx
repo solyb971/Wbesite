@@ -2,8 +2,6 @@
 import Hero from "@/components/site/Hero"
 import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 import Services from "@/components/site/Services"
-import FeatureStats from "@/components/site/FeatureStats"
-import Process from "@/components/site/Process"
 import LaunchPricing from "@/components/site/LaunchPricing"
 import Solutions from "@/components/site/Solutions"
 import About from "@/components/site/About"
@@ -182,11 +180,9 @@ export default function HomePage() {
         <ScrollRevealInit />
         <Hero />
         <Services />
-        <FeatureStats />
         <Engagements />
         <Realisations />
         <Manifesto />
-        <Process />
         <LaunchPricing />
         <About />
         <Solutions />
