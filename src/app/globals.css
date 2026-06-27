@@ -195,15 +195,18 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLL REVEAL
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-/* Scroll reveal — fade up doux (courbe validée, plus organique que ease) */
-.reveal {
+/* Scroll reveal — fade up doux (courbe validée, plus organique que ease)
+   Filet de sécurité : l'état masqué n'est appliqué QUE si JS est actif (classe
+   `.js` posée tôt sur <html>). Sans JS (désactivé / bundle en échec), le contenu
+   reste visible — jamais de section blanche. */
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition:
     opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Micro-interaction : flèche des CTA qui glisse au survol */
 .cta-arrow .arrow {
