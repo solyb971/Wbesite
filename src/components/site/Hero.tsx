@@ -32,7 +32,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full" style={{ background: '#22C55E', opacity: 0.65 }} />
             <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#22C55E' }} />
           </span>
-          En ligne · Baie-Mahault · 971
+          Mis en ligne à Baie-Mahault · 97122
         </div>
 
         {/* H1 */}
@@ -43,9 +43,9 @@ export default function Hero() {
             letterSpacing: '-3px',
             color: 'var(--syb-cream)',
           }}
-          aria-label="Votre clientèle locale vous cherche déjà"
+          aria-label="Votre clientèle vous cherche déjà"
         >
-          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre clientèle locale</span>
+          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre clientèle</span>
           <em
             className="italic block"
             style={{
