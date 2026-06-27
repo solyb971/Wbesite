@@ -69,10 +69,6 @@ export default function Contact() {
 
           {/* Left — info */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
-              <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-              Contact
-            </div>
             <h2
               className="font-display font-black leading-none mb-5"
               style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}

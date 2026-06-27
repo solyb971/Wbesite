@@ -10,10 +10,6 @@ export default function FAQ() {
       <div className="max-w-[780px] mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="reveal mb-10">
-          <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: '#C4472A' }}>
-            <span className="w-5 h-px" style={{ background: '#C4472A' }} />
-            FAQ
-          </div>
           <h2
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
