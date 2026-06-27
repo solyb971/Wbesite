@@ -3,9 +3,9 @@ import RevealOnScroll from '@/components/site/RevealOnScroll'
 import SmoothScroll from '@/components/ui/SmoothScroll'
 import Countdown from './Countdown'
 import {
-  IconFileInvoice, IconReceipt2, IconRefresh, IconBuildingSkyscraper,
-  IconBrain, IconUsers, IconBriefcase, IconAnchor, IconCertificate,
-  IconScale, IconBuildingBank, IconChartBar, IconArrowRight,
+  IconFileInvoice, IconReceipt2, IconRefresh,
+  IconBrain, IconCertificate,
+  IconBuildingBank, IconChartBar, IconArrowRight,
   IconCheck, IconClockHour4, IconShieldCheck, IconWorld,
 } from '@tabler/icons-react'
 import styles from './facturation.module.css'
@@ -17,9 +17,7 @@ const FEATURES = [
   { icon: IconFileInvoice, tag: 'Factur-X EN 16931', title: 'Vos factures au bon format, automatiquement', desc: 'Vous n\'avez rien à apprendre : vos factures sont créées dans le format exigé par l\'État — un PDF que vous pouvez lire normalement, accompagné d\'un fichier technique que les impôts peuvent lire. Compatible avec le format Chorus Pro DOM.', chips: ['Factur-X', 'EN 16931', 'PDF/A-3'] },
   { icon: IconReceipt2, tag: 'TVA 8,5 % · 2,1 %', title: 'Le bon taux DOM, sans y penser', desc: 'En Guadeloupe, Martinique, Réunion et Guyane, la TVA n\'est pas celle de métropole. FactuGP applique automatiquement le taux qui correspond à votre activité — vous n\'avez pas à vous demander si c\'est 8,5 %, 2,1 % ou autre chose.', chips: ['8,5 %', '2,1 %', 'Multi-taux'] },
   { icon: IconRefresh, tag: 'E-reporting DGFiP', title: 'Votre déclaration, prête à partir automatiquement', desc: 'FactuGP prépare automatiquement les informations de vos ventes et encaissements pour votre déclaration aux impôts. Plus de saisie manuelle de votre côté. La transmission directe sera activée dès l\'obtention de l\'agrément Plateforme Agréée (PA), actuellement en cours de demande.', chips: ['E-reporting', 'FEC DGFiP', 'Temps réel'] },
-  { icon: IconBuildingSkyscraper, tag: 'Module BTP', title: 'La TVA auto-liquidée, gérée pour vous', desc: 'Dans le bâtiment, c\'est le client qui paie la TVA à la place du sous-traitant — une règle qu\'on oublie facilement. FactuGP l\'applique automatiquement et produit les bons documents.', chips: ['Auto-liquidée', 'Art. 283', 'Sous-traitance'] },
   { icon: IconBrain, tag: 'OCR IA', title: 'Vos factures reçues, lues à votre place', desc: 'Vous photographiez ou déposez une facture fournisseur, l\'IA en extrait le montant, la date et le numéro de TVA. Vous vérifiez en un coup d\'œil, le reste s\'enregistre seul.', chips: ['Scan IA', 'Import auto', 'PDF'] },
-  { icon: IconUsers, tag: 'Commercial', title: 'Devis, factures et relances, dans le même outil', desc: 'Vous créez un devis, vous le transformez en facture en un clic, et FactuGP relance pour vous en cas d\'impayé. Plus besoin d\'un outil à part pour ça.', chips: ['Devis', 'Relances', 'Suivi'] },
 ]
 
 const RATES = [
@@ -27,15 +25,6 @@ const RATES = [
   { value: '2,1', label: 'Taux réduit', desc: 'Médicaments, presse, restauration', ref: 'CGI art. 296 bis', hl: false },
   { value: '0', label: 'Taux zéro', desc: 'Exportations, livraisons intracommunautaires', ref: 'Exonération', hl: false },
   { value: '1,05', label: 'Agricole', desc: 'Productions agricoles DOM', ref: 'Spécifique DOM', hl: false },
-]
-
-const SECTORS = [
-  { icon: IconBriefcase, name: 'Commerce & négoce', sub: 'Caisse NF 525, B2B/B2C' },
-  { icon: IconBuildingBank, name: 'Artisanat & services', sub: 'Devis, factures, relances' },
-  { icon: IconScale, name: 'Professions libérales', sub: 'Honoraires, e-invoicing' },
-  { icon: IconBuildingSkyscraper, name: 'BTP & construction', sub: 'TVA auto-liquidée, DGFiP' },
-  { icon: IconAnchor, name: 'Tourisme & hôtellerie', sub: 'Taxe de séjour, ISCA NF 525' },
-  { icon: IconWorld, name: 'Agriculture & pêche', sub: 'Taux réduits, exonérations' },
 ]
 
 const STAMPS_DONE = [
@@ -50,19 +39,6 @@ const STAMPS_DONE = [
 const STAMPS_PENDING = [
   { icon: IconBuildingBank, label: 'Chorus Pro\nDOM' },
   { icon: IconRefresh, label: 'E-reporting\nDGFiP' },
-]
-
-const STATS = [
-  { num: '24', lbl: 'Modules déjà prêts' },
-  { num: '100%', lbl: 'Du format Factur-X intégré' },
-  { num: '3', lbl: 'Taux de TVA DOM automatiques' },
-  { num: '5 min', lbl: 'Pour créer votre compte' },
-]
-
-const PLANS = [
-  { name: 'Starter', price: '29', featured: false, feats: ['Jusqu\'à 50 factures/mois', 'Format Factur-X EN 16931', 'TVA DOM préconfigurée', 'Export FEC DGFiP', 'Support email'], off: ['Module BTP', 'Lecture automatique des factures', 'Suivi commercial'], cta: 'Réserver mon accès' },
-  { name: 'Pro', price: '49', featured: true, feats: ['Factures illimitées', 'Tout le plan Starter', 'E-reporting DGFiP automatique', 'Module BTP & sous-traitance', 'Lecture automatique des factures', 'Suivi commercial', 'Relances automatiques'], off: [], cta: 'Réserver mon accès' },
-  { name: 'Expert', price: '79', featured: false, feats: ['Tout le plan Pro', 'Multi-établissements', 'Multi-utilisateurs illimités', 'API REST & webhooks', 'Support prioritaire local', 'Formation & onboarding'], off: [], cta: 'Nous contacter' },
 ]
 
 const ROADMAP = [
@@ -126,7 +102,7 @@ export default function FacturationPage() {
                 <a href="#fonctionnalites" className={`${styles.btn} ${styles.btnGhost}`}>Voir les fonctionnalités</a>
               </div>
               <div className={styles.heroTrust}>
-                {['Format Factur-X EN 16931', 'TVA DOM native', 'RGPD, hébergé en France', 'Essai 30 jours'].map(t => (
+                {['Format Factur-X EN 16931', 'TVA DOM native', 'RGPD, hébergé en France', 'Accès anticipé'].map(t => (
                   <span key={t}>{t}</span>
                 ))}
               </div>
@@ -174,18 +150,6 @@ export default function FacturationPage() {
           </div>
         </div>
 
-        {/* STATS */}
-        <section className={styles.stats}>
-          <div className={`${styles.wrap} ${styles.statsIn}`}>
-            {STATS.map(s => (
-              <div key={s.lbl}>
-                <span className={styles.statNum}>{s.num}</span>
-                <span className={styles.statLbl}>{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* FONCTIONNALITÉS */}
         <section id="fonctionnalites" className={styles.section}>
           <div className={styles.wrap}>
@@ -231,26 +195,6 @@ export default function FacturationPage() {
                   <div className={styles.rateLabel}>{r.label}</div>
                   <div className={styles.rateDesc}>{r.desc}</div>
                   <div className={styles.rateRef}>{r.ref}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTEURS */}
-        <section className={styles.section}>
-          <div className={styles.wrap}>
-            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
-              <span className={styles.eyebrow}>Secteurs</span>
-              <h2 className={styles.sectionTitle}>Vous payez la TVA ? <em className={styles.accentSand}>Cette réforme vous concerne.</em></h2>
-              <p className={styles.lede}>Dès septembre 2026, toute entreprise assujettie à la TVA en Guadeloupe doit facturer au format électronique officiel — quel que soit son secteur.</p>
-            </div>
-            <div className={`${styles.sectorsGrid} ${styles.reveal}`}>
-              {SECTORS.map(s => (
-                <div key={s.name} className={styles.sectorCard}>
-                  <div className={styles.sectorIcon}><s.icon size={20} strokeWidth={1.6} /></div>
-                  <div className={styles.sectorTitle}>{s.name}</div>
-                  <div className={styles.sectorSub}>{s.sub}</div>
                 </div>
               ))}
             </div>
@@ -309,29 +253,22 @@ export default function FacturationPage() {
           </div>
         </section>
 
-        {/* TARIFS */}
+        {/* TARIFS — annoncés au lancement (en attente du partenariat PA) */}
         <section id="tarifs" className={styles.section}>
           <div className={styles.wrap}>
             <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <span className={styles.eyebrow}>Tarifs</span>
-              <h2 className={styles.sectionTitle}>Un prix fixe, <em className={styles.accentSand}>aucune surprise</em></h2>
-              <p className={styles.lede}>Un abonnement mensuel. Pas de frais cachés, pas de commission sur chaque facture émise.</p>
+              <h2 className={styles.sectionTitle}>Un prix clair, <em className={styles.accentSand}>annoncé au lancement</em></h2>
+              <p className={styles.lede}>
+                Un abonnement mensuel simple, sans commission sur vos factures. La grille tarifaire
+                sera communiquée à l&apos;ouverture des accès, une fois le partenariat avec une
+                Plateforme Agréée (PA) finalisé. Les inscrits à la liste d&apos;attente seront
+                prévenus en premier — avec un tarif préférentiel de lancement.
+              </p>
+              <a href="#contact" className={`${styles.btn} ${styles.btnSand}`} style={{ marginTop: '1.75rem' }}>
+                Rejoindre la liste d&apos;attente <IconArrowRight size={16} />
+              </a>
             </div>
-            <div className={`${styles.pricingGrid} ${styles.reveal}`}>
-              {PLANS.map(p => (
-                <div key={p.name} className={`${styles.plan} ${p.featured ? styles.planFeatured : ''}`}>
-                  {p.featured && <span className={styles.planRibbon}>Recommandé</span>}
-                  <div className={styles.planName}>{p.name}</div>
-                  <div className={styles.planPrice}>{p.price}€<span> /mois</span></div>
-                  <ul className={styles.planList}>
-                    {p.feats.map(f => <li key={f}><IconCheck size={15} /> {f}</li>)}
-                    {p.off.map(f => <li key={f} className={styles.planOff}>{f}</li>)}
-                  </ul>
-                  <a href="#contact" className={`${styles.btn} ${p.featured ? styles.btnSand : styles.btnGhost} ${styles.planCta}`}>{p.cta}</a>
-                </div>
-              ))}
-            </div>
-            <p className={styles.pricingNote}>30 jours d&apos;essai gratuit · sans carte bancaire · résiliation à tout moment</p>
           </div>
         </section>
 
