@@ -71,7 +71,7 @@ export default function Footer() {
               Un projet en tête ?
             </p>
             <p className="text-sm font-light mb-5" style={{ color: '#B0A89E', lineHeight: 1.6 }}>
-              Devis gratuit sous 24h, sans engagement.
+              Le code, les contenus et le domaine vous appartiennent à 100 %.
             </p>
             <Link
               href="/#contact"
