@@ -1,6 +1,7 @@
 ﻿import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+// Runtime Node par défaut (pas 'edge') : l'image OG est identique à chaque appel,
+// donc générée statiquement au build. Évite le warning Edge + un cold start.
 export const alt = 'SolYB — Agence Digitale Guadeloupe'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
