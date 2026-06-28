@@ -63,7 +63,7 @@ export default function Realisations() {
         {/* Header */}
         <div className="reveal mb-12 max-w-2xl">
           <h2
-            className="font-display font-black leading-none mb-5"
+            className="title-reveal font-display font-black leading-none mb-5"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
             Ce qu&apos;on a<br />
@@ -142,7 +142,7 @@ export default function Realisations() {
         </div>
 
         {/* Cartes outils */}
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-4">
           {tools.map((s) => (
             <div
               key={s.name}

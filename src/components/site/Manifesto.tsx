@@ -16,7 +16,7 @@ export default function Manifesto() {
       />
       <div className="reveal relative z-10 max-w-[1100px] mx-auto px-6 md:px-12">
         <h2
-          className="font-display font-black"
+          className="title-reveal font-display font-black"
           style={{
             fontSize: 'clamp(40px, 6.5vw, 96px)',
             letterSpacing: '-3px',
