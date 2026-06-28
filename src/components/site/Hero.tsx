@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: 'var(--syb-dark)' }}
+      className="relative flex items-center overflow-hidden"
+      style={{ background: 'var(--syb-dark)', minHeight: 'calc(100svh - 4rem)' }}
     >
       {/* Lueurs rust */}
       <div
@@ -17,7 +17,7 @@ export default function Hero() {
         style={{ background: 'radial-gradient(ellipse at 8% 92%, rgba(196,71,42,0.10) 0%, transparent 50%)' }}
       />
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 md:px-12 pt-32 pb-24">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 md:px-12 py-16">
         {/* Badge disponibilité — micro-interaction "vivant + local" */}
         <div
           className="inline-flex items-center gap-2.5 mb-8 text-xs tracking-[2px] uppercase rounded-full px-3.5 py-1.5"
@@ -71,19 +71,19 @@ export default function Hero() {
           vides. Des leviers.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-wrap items-center gap-5" style={{ animation: 'fadeUp 0.7s 0.85s ease both' }}>
+        {/* CTAs — primaire dominant, secondaire subordonné (lien texte discret) */}
+        <div className="flex flex-wrap items-center gap-x-7 gap-y-3" style={{ animation: 'fadeUp 0.7s 0.85s ease both' }}>
           <Link
             href="/#contact"
-            className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
-            style={{ background: 'var(--syb-rust)', padding: '14px 30px', borderRadius: '4px', letterSpacing: '0.3px' }}
+            className="inline-block text-white font-medium transition-transform hover:-translate-y-px"
+            style={{ background: 'var(--syb-rust)', padding: '15px 32px', borderRadius: '4px', fontSize: '15px', letterSpacing: '0.3px' }}
           >
             Demander un devis gratuit
           </Link>
           <Link
             href="/#services"
-            className="cta-arrow flex items-center gap-1.5 text-sm font-light transition-colors hover:text-white"
-            style={{ color: '#b8ab9c' }}
+            className="cta-arrow inline-flex items-center gap-1.5 font-light transition-colors hover:text-white"
+            style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px' }}
           >
             Voir les services <span className="arrow">→</span>
           </Link>
