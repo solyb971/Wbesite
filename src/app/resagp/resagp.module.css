@@ -480,17 +480,18 @@
 }
 
 /* ── DÉMO PRODUIT — galerie narrative (charte ardoise) ── */
-.demo { display: flex; flex-direction: column; }
+.demo { display: flex; flex-direction: column; max-width: 960px; margin: 0 auto; }
 
 .demoRow {
-  display: grid; grid-template-columns: 300px 1fr; gap: 48px;
-  align-items: center; padding: 44px 0; border-top: 1px solid var(--rg-border);
+  display: grid; grid-template-columns: 250px minmax(0, 520px); gap: 36px;
+  justify-content: center; align-items: center;
+  padding: 26px 0; border-top: 1px solid var(--rg-border);
 }
 .demoFlip .demoPhoneCol { order: 2; }
 .demoPhoneCol { display: flex; justify-content: center; }
 
-.demoWide { padding: 52px 0; border-top: 1px solid var(--rg-border); }
-.demoHead { max-width: 680px; margin: 0 0 28px; }
+.demoWide { padding: 32px 0; border-top: 1px solid var(--rg-border); }
+.demoHead { max-width: 680px; margin: 0 0 20px; }
 
 .demoNum {
   display: inline-flex; align-items: center; justify-content: center;
@@ -518,8 +519,8 @@
 
 /* Cadre téléphone (écrans client/POS) — encoche DANS le bezel, jamais sur l'image */
 .demoPhone {
-  width: 300px; max-width: 100%; position: relative;
-  border: 10px solid #0A0806; border-top-width: 26px; border-radius: 40px;
+  width: 250px; max-width: 100%; position: relative;
+  border: 9px solid #0A0806; border-top-width: 24px; border-radius: 36px;
   overflow: hidden; background: #0A0806;
   box-shadow: 0 24px 48px -22px rgba(0,0,0,0.6);
 }
