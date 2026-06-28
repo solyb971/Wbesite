@@ -4,7 +4,10 @@ import { useEffect } from "react"
 
 export default function ScrollRevealInit() {
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"))
+    // .reveal = fade-up · .reveal-stagger = cascade des enfants · .title-reveal = mask
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal, .reveal-stagger, .title-reveal")
+    )
 
     const revealAll = () => elements.forEach((el) => el.classList.add("visible"))
 

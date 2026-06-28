@@ -208,6 +208,50 @@
 }
 .js .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ── Reveal en cascade (stagger) — les enfants directs s'enchaînent ──
+   Le conteneur reste visible ; ses enfants montent un par un. */
+.js .reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+.js .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.04s; }
+.js .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
+.js .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.20s; }
+.js .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.28s; }
+.js .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.36s; }
+.js .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.44s; }
+
+/* ── Mask reveal — le titre se dévoile de haut en bas (signature, 2 titres) ── */
+.js .title-reveal {
+  clip-path: inset(0 0 110% 0);
+  transform: translateY(10px);
+  transition:
+    clip-path 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .title-reveal.visible { clip-path: inset(0 0 -12% 0); transform: translateY(0); }
+
+/* Respect strict de prefers-reduced-motion pour les nouveaux effets */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-stagger > *,
+  .title-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Hover enrichi des cartes services (barre d'accent + icône) ── */
+.service-card .service-accent { transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .service-card:hover .service-accent { height: 7px; }
+}
+
 /* Micro-interaction : flèche des CTA qui glisse au survol */
 .cta-arrow .arrow {
   display: inline-block;

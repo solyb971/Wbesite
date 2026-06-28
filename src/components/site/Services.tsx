@@ -83,15 +83,15 @@ export default function Services() {
         <div id="tarifs" className="scroll-mt-24" />
 
         {/* Cards grid */}
-        <div className="reveal grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-4">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
+              className="service-card group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
               style={{ border: '0.5px solid var(--syb-border)', background: 'var(--syb-cream)' }}
             >
               {/* Barre d'accent */}
-              <div style={{ height: '4px', background: s.accent }} />
+              <div className="service-accent" style={{ height: '4px', background: s.accent }} />
 
               {/* Body */}
               <div className="p-6 flex flex-col flex-1">

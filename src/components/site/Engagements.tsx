@@ -37,7 +37,7 @@ export default function Engagements() {
           </h2>
         </div>
 
-        <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
+        <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
           {engagements.map((e) => (
             <div key={e.title} className="flex gap-5">
               <span
