@@ -478,3 +478,58 @@
   .ctaBtns { flex-direction: column; }
   .ctaBtnMain, .ctaBtnGhost { text-align: center; justify-content: center; }
 }
+
+/* ── DÉMO PRODUIT — galerie narrative (charte ardoise) ── */
+.demo { display: flex; flex-direction: column; }
+
+.demoRow {
+  display: grid; grid-template-columns: 300px 1fr; gap: 48px;
+  align-items: center; padding: 44px 0; border-top: 1px solid var(--rg-border);
+}
+.demoFlip .demoPhoneCol { order: 2; }
+.demoPhoneCol { display: flex; justify-content: center; }
+
+.demoWide { padding: 52px 0; border-top: 1px solid var(--rg-border); }
+.demoHead { max-width: 680px; margin: 0 0 28px; }
+
+.demoNum {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--rg-ac); color: var(--rg-bg);
+  font-family: var(--rg-mono); font-weight: 700; font-size: 14px; margin-bottom: 14px;
+}
+.demoH { font-family: var(--rg-serif); font-size: clamp(20px, 2.6vw, 27px); line-height: 1.15; margin: 0 0 10px; color: var(--rg-tx); letter-spacing: -0.01em; }
+.demoP { color: var(--rg-mu2); margin: 0 0 16px; font-size: 15px; line-height: 1.65; }
+.demoHandoff {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--rg-ac);
+  background: var(--rg-glow); border: 1px solid var(--rg-border2);
+  border-radius: 8px; padding: 8px 13px;
+}
+
+/* Cadre navigateur (écrans admin) */
+.demoBrowser {
+  border: 1px solid var(--rg-border); border-radius: 12px; overflow: hidden;
+  background: var(--rg-s1); box-shadow: 0 24px 56px -28px rgba(0,0,0,0.55);
+}
+.demoBar { display: flex; align-items: center; gap: 6px; padding: 11px 14px; background: var(--rg-s2); border-bottom: 1px solid var(--rg-border); }
+.demoDot { width: 11px; height: 11px; border-radius: 50%; background: var(--rg-border2); }
+.demoUrl { flex: 1; margin-left: 10px; font-size: 11px; color: var(--rg-mu); background: var(--rg-bg); border: 1px solid var(--rg-border); border-radius: 99px; padding: 4px 12px; font-family: var(--rg-mono); }
+
+/* Cadre téléphone (écrans client/POS) — encoche DANS le bezel, jamais sur l'image */
+.demoPhone {
+  width: 300px; max-width: 100%; position: relative;
+  border: 10px solid #0A0806; border-top-width: 26px; border-radius: 40px;
+  overflow: hidden; background: #0A0806;
+  box-shadow: 0 24px 48px -22px rgba(0,0,0,0.6);
+}
+.demoPhone::before {
+  content: ""; position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+  width: 90px; height: 6px; border-radius: 99px; background: #2A2018; z-index: 2;
+}
+.demoImg { display: block; width: 100%; height: auto; }
+
+@media (max-width: 760px) {
+  .demoRow { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+  .demoFlip .demoPhoneCol { order: 0; }
+}

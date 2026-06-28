@@ -1,4 +1,5 @@
-﻿import EarlyAccessForm from '@/components/site/EarlyAccessForm'
+﻿import Image from 'next/image'
+import EarlyAccessForm from '@/components/site/EarlyAccessForm'
 import RevealOnScroll from '@/components/site/RevealOnScroll'
 import SmoothScroll from '@/components/ui/SmoothScroll'
 import PlanDeSalle from './PlanDeSalle'
@@ -46,6 +47,43 @@ const WORKFLOW = [
   { Icon: Star,          step: '05', title: 'Avis post-repas', desc: '25h après le repas, une demande d\'avis Google part toute seule.' },
 ]
 
+/* Démo produit — une réservation (Sophie) qui traverse les 8 modules.
+   kind: 'phone' (écran client/POS, capté en mobile) | 'browser' (écran admin). */
+const DEMO_STEPS = [
+  { n: 1, kind: 'phone',   img: '01_reservation.png',  alt: 'Réservation en ligne — widget client',
+    title: 'Sophie réserve une table pour 4, en 30 secondes',
+    desc: 'Depuis le widget du restaurant : couverts, date, créneau. Confirmation immédiate par email, 24h/24, sans appel téléphonique.',
+    handoff: 'La réservation part directement dans le système du restaurant' },
+  { n: 2, kind: 'browser', img: '02_planning.png', url: 'app.resagp.com/reservations', alt: 'Planning des réservations côté restaurateur',
+    title: 'Sa réservation apparaît instantanément côté restaurateur',
+    desc: 'Aucune ressaisie : la réservation de Sophie s\'affiche dans le planning du jour, avec son occasion « Anniversaire » et son nombre de couverts.',
+    handoff: 'Même réservation qu\'à l\'étape 1 — zéro double saisie' },
+  { n: 3, kind: 'phone',   img: '03_salle.png', alt: 'Plan de salle sur l\'app de salle',
+    title: 'En salle, on suit la table de Sophie d\'un coup d\'œil',
+    desc: 'Sur l\'application de salle, la couleur encode le statut et un minuteur indique depuis quand chaque table est occupée — sans lire de légende.',
+    handoff: 'Couleur + minuteur : le service se pilote en temps réel' },
+  { n: 4, kind: 'phone',   img: '04_commande.png', alt: 'Prise de commande place par place',
+    title: 'On prend la commande, place par place',
+    desc: 'Le serveur sélectionne un siège puis ajoute les plats. Chaque article est rattaché au bon convive — fini les erreurs de « qui a pris quoi ».',
+    handoff: 'La commande part en cuisine et alimente l\'addition' },
+  { n: 5, kind: 'phone',   img: '05_ticket.png', alt: 'Ticket ventilé par siège',
+    title: 'L\'addition se ventile toute seule, par siège',
+    desc: 'Le ticket se met à jour au fil de la commande : sous-total par convive, total global, prêt pour un paiement séparé ou groupé.',
+    handoff: 'Siège 1 et Siège 2 calculés automatiquement' },
+  { n: 6, kind: 'phone',   img: '06_encaissement.png', alt: 'Encaissement',
+    title: 'On encaisse, la table se libère',
+    desc: 'Carte, espèces ou paiement partagé : l\'encaissement se fait sur place. La table redevient disponible sur le plan de salle, automatiquement.',
+    handoff: 'Le chiffre d\'affaires remonte au tableau de bord' },
+  { n: 7, kind: 'phone',   img: '07_avis.png', alt: 'Demande d\'avis client',
+    title: 'Après le repas, Sophie est invitée à laisser un avis',
+    desc: 'Quelques heures plus tard, elle reçoit une invitation à noter son expérience. Les bons avis sont orientés vers Google, les retours négatifs restent privés.',
+    handoff: 'Chaque avis nourrit la fiche client et les statistiques' },
+  { n: 8, kind: 'browser', img: '08_analytics.png', url: 'app.resagp.com/analytics', alt: 'Tableau de bord analytique',
+    title: 'Le restaurateur voit tout remonter, en temps réel',
+    desc: 'Réservations, couverts, taux de remplissage, affluence par heure, clients fidèles, avis : chaque action des étapes précédentes alimente le tableau de bord.',
+    handoff: 'Toutes les données d\'un seul flux, déjà consolidées' },
+] as const
+
 const CMP_ROWS = [
   { crit: 'Commission par couvert',       z: 'Oui', gp: 'Non' },
   { crit: 'Interface en français',         z: 'Partiel', gp: 'Oui' },
@@ -80,7 +118,7 @@ export default function ResaGPPage() {
               </a>
             </div>
             <div className={styles.navLinks}>
-              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
+              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#demo','Démo'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
                 <a key={h} href={h} className={styles.navLink}>{l}</a>
               )}
             </div>
@@ -254,6 +292,54 @@ export default function ResaGPPage() {
                   <div className={styles.wfTitle}>{w.title}</div>
                   <div className={styles.wfDesc}>{w.desc}</div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DÉMO PRODUIT — galerie narrative (captures réelles) */}
+        <section id="demo" className={styles.section}>
+          <div className={styles.sectionIn}>
+            <div className={styles.reveal} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
+              <h2 className={styles.h2}>Une seule réservation.<br /><span className={styles.h2Strong}>Tous vos modules se parlent.</span></h2>
+              <p className={styles.lead} style={{ maxWidth: 560, margin: '0 auto' }}>
+                Suivez la soirée de Sophie : de sa réservation en ligne jusqu&apos;à son avis, l&apos;information circule automatiquement entre le plan de salle, la prise de commande au siège, l&apos;encaissement et le tableau de bord.
+              </p>
+            </div>
+
+            <div className={styles.demo}>
+              {DEMO_STEPS.map((s, i) => (
+                s.kind === 'browser' ? (
+                  <div key={s.n} className={`${styles.demoWide} ${styles.reveal}`}>
+                    <div className={styles.demoHead}>
+                      <span className={styles.demoNum}>{s.n}</span>
+                      <h3 className={styles.demoH}>{s.title}</h3>
+                      <p className={styles.demoP}>{s.desc}</p>
+                      <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
+                    </div>
+                    <div className={styles.demoBrowser}>
+                      <div className={styles.demoBar}>
+                        <span className={styles.demoDot} /><span className={styles.demoDot} /><span className={styles.demoDot} />
+                        <span className={styles.demoUrl}>{s.url}</span>
+                      </div>
+                      <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={1440} height={900} className={styles.demoImg} sizes="(min-width: 980px) 980px, 100vw" />
+                    </div>
+                  </div>
+                ) : (
+                  <div key={s.n} className={`${styles.demoRow} ${i % 2 === 1 ? styles.demoFlip : ''} ${styles.reveal}`}>
+                    <div className={styles.demoPhoneCol}>
+                      <div className={styles.demoPhone}>
+                        <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={430} height={932} className={styles.demoImg} sizes="300px" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className={styles.demoNum}>{s.n}</span>
+                      <h3 className={styles.demoH}>{s.title}</h3>
+                      <p className={styles.demoP}>{s.desc}</p>
+                      <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
+                    </div>
+                  </div>
+                )
               ))}
             </div>
           </div>
