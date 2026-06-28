@@ -3,11 +3,11 @@ export default function About() {
     <section
       id="apropos"
       className="py-28 md:py-36 scroll-mt-20"
-      style={{ background: 'var(--syb-warm)' }}
+      style={{ background: 'var(--syb-cream)' }}
     >
-      <div className="max-w-[900px] mx-auto px-6 md:px-12 text-center">
+      <div className="max-w-[900px] mx-auto px-6 md:px-12">
         <h2
-          className="reveal font-display font-black mb-10 mx-auto"
+          className="reveal font-display font-black mb-10"
           style={{
             fontSize: 'clamp(30px, 4.2vw, 56px)',
             letterSpacing: '-1.5px',
@@ -17,13 +17,13 @@ export default function About() {
           }}
         >
           La Guadeloupe m&apos;a construit.{' '}
-          <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>
+          <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>
             J&apos;ai envie de lui rendre la pareille.
-          </em>
+          </span>
         </h2>
 
         <div
-          className="reveal mx-auto mb-14 flex flex-col gap-5 text-left"
+          className="reveal mb-14 flex flex-col gap-5 text-left"
           style={{ maxWidth: '620px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>

@@ -3,6 +3,53 @@ import Link from "next/link"
 import ParallaxImage from "@/components/ui/ParallaxImage"
 import { realisations } from "@/lib/realisations-data"
 
+function ResaMark() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 88 88" fill="none" aria-hidden>
+      <rect x="2" y="2" width="84" height="84" rx="3" stroke="currentColor" strokeWidth="4" />
+      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="currentColor" />
+      <rect x="29" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="47" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="29" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+      <rect x="47" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
+    </svg>
+  )
+}
+
+function FactuMark() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M6 2h8l4 4v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9 9h6M9 12.5h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+const tools = [
+  {
+    name: "ResaGP",
+    Mark: ResaMark,
+    accent: "#2E7D96",
+    tagline: "Réservations restaurant — sans commission",
+    description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
+    status: "Disponible",
+    statusColor: "#16A34A",
+    highlights: ["Essai gratuit 14 jours", "Aucune commission par couvert", "Pensé pour les restaurants et bars"],
+    cta: { label: "Découvrir ResaGP", href: "/resagp" },
+  },
+  {
+    name: "FactuGP",
+    Mark: FactuMark,
+    accent: "#2E8C92",
+    tagline: "Facturation électronique conforme 2026",
+    description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
+    status: "Disponible sept. 2026",
+    statusColor: "#B8760A",
+    highlights: ["TVA Guadeloupe préconfigurée", "Envoi automatique aux impôts", "Pensé pour les TPE et PME du 971"],
+    cta: { label: "Rejoindre la liste d'attente", href: "/facturation-electronique" },
+  },
+]
+
 export default function Realisations() {
   const project = realisations[0]
 
@@ -10,18 +57,21 @@ export default function Realisations() {
     <section
       id="realisations"
       className="py-24 md:py-28 scroll-mt-20 overflow-hidden"
-      style={{ background: '#E8DDD0' }}
+      style={{ background: 'var(--syb-warm)' }}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="reveal mb-12">
+        <div className="reveal mb-12 max-w-2xl">
           <h2
-            className="font-display font-black leading-none"
+            className="font-display font-black leading-none mb-5"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
             Ce qu&apos;on a<br />
-            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>déjà construit</em>
+            <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>déjà construit</span>
           </h2>
+          <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.75 }}>
+            Un projet client livré et en ligne — et nos deux outils maison, conçus pour la Guadeloupe.
+          </p>
         </div>
 
         {/* Étude de cas */}
@@ -66,17 +116,6 @@ export default function Realisations() {
                 {project.result}
               </p>
             )}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {project.tags.map((t) => (
-                <span
-                  key={t}
-                  className="text-xs font-light rounded-full px-3 py-1"
-                  style={{ border: '0.5px solid var(--syb-border)', color: 'var(--syb-stone)' }}
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
             {project.url && (
               <a
                 href={project.url}
@@ -91,8 +130,71 @@ export default function Realisations() {
           </div>
         </div>
 
-        {/* CTA après l'étude de cas (logique de lecture : on voit le projet, puis on agit) */}
-        <div className="reveal mt-12 text-center">
+        {/* Sous-titre outils maison */}
+        <div className="reveal mt-20 mb-8">
+          <h3 className="font-display font-bold mb-2" style={{ fontSize: 'clamp(24px, 3vw, 36px)', color: 'var(--syb-ink)', letterSpacing: '-1px' }}>
+            Et nos propres outils, <span style={{ color: 'var(--syb-rust)' }}>faits ici</span>
+          </h3>
+          <p className="text-sm font-light leading-relaxed max-w-lg" style={{ color: 'var(--syb-stone)', lineHeight: 1.75 }}>
+            La plupart des outils qu&apos;on recommande sont conçus ailleurs, pour d&apos;autres marchés.
+            Alors on en a créé deux, pour la Guadeloupe.
+          </p>
+        </div>
+
+        {/* Cartes outils */}
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4">
+          {tools.map((s) => (
+            <div
+              key={s.name}
+              className="group rounded-xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1"
+              style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
+            >
+              <div className="flex items-center justify-between mb-5">
+                <div
+                  className="w-11 h-11 rounded-lg flex items-center justify-center"
+                  style={{ background: `${s.accent}14`, border: `1px solid ${s.accent}40`, color: s.accent }}
+                >
+                  <s.Mark />
+                </div>
+                <span className="flex items-center gap-2 text-xs tracking-wide" style={{ color: s.statusColor }}>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: s.statusColor }} />
+                  {s.status}
+                </span>
+              </div>
+
+              <h4 className="font-display font-bold text-2xl mb-2" style={{ color: 'var(--syb-ink)' }}>
+                {s.name}
+              </h4>
+
+              <p className="text-sm font-medium mb-3" style={{ color: 'var(--syb-rust)' }}>{s.tagline}</p>
+              <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
+                {s.description}
+              </p>
+
+              <ul className="flex flex-col gap-1.5 mb-5">
+                {s.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: 'var(--syb-stone)' }}>
+                    <span className="w-px h-3 flex-shrink-0" style={{ background: s.statusColor, opacity: 0.5 }} />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <div style={{ borderTop: '0.5px solid var(--syb-border)', paddingTop: '1.25rem' }}>
+                <Link
+                  href={s.cta.href}
+                  className="cta-arrow inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-80"
+                  style={{ color: s.accent }}
+                >
+                  {s.cta.label} <span className="arrow">→</span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA final */}
+        <div className="reveal mt-12">
           <Link
             href="/#contact"
             className="cta-arrow inline-flex items-center gap-1.5 text-sm font-light transition-colors hover:text-[#0E0D0B]"

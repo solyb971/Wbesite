@@ -63,7 +63,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 scroll-mt-20" style={{ background: '#F5F2ED' }}>
+    <section id="contact" className="py-24 scroll-mt-20" style={{ background: 'var(--syb-cream)' }}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
@@ -74,7 +74,7 @@ export default function Contact() {
               style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
             >
               Parlons<br />
-              <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>de votre projet.</em>
+              <span style={{ fontWeight: 900, color: '#C4472A' }}>de votre projet.</span>
             </h2>
             <p className="text-sm font-light leading-relaxed mb-8" style={{ color: '#7A7268', lineHeight: 1.75 }}>
               45 minutes pour comprendre votre besoin. Gratuit, sans engagement. Devis envoyé sous 24h.

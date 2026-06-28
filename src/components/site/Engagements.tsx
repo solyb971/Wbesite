@@ -19,7 +19,7 @@ const engagements = [
 
 export default function Engagements() {
   return (
-    <section id="engagements" className="py-24 md:py-28 scroll-mt-20" style={{ background: 'var(--syb-warm)' }}>
+    <section id="engagements" className="py-24 md:py-28 scroll-mt-20" style={{ background: 'var(--syb-cream)' }}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="reveal mb-14 max-w-2xl">
           <h2
@@ -27,7 +27,7 @@ export default function Engagements() {
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
           >
             Pas de promesses.<br />
-            <em className="italic" style={{ fontWeight: 300, color: 'var(--syb-rust)' }}>Des engagements.</em>
+            <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>Des engagements.</span>
           </h2>
         </div>
 
