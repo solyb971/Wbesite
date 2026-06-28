@@ -1,17 +1,23 @@
+import { User, FileText, CreditCard, LifeBuoy } from "lucide-react"
+
 const engagements = [
   {
+    Icon: User,
     title: "Un seul interlocuteur",
     text: "Vous parlez directement à la personne qui code. Pas d'intermédiaire.",
   },
   {
+    Icon: FileText,
     title: "Devis clair sous 24h",
     text: "Un prix ferme et détaillé, sans surprise.",
   },
   {
+    Icon: CreditCard,
     title: "Paiement en deux fois",
     text: "50 % pour démarrer, 50 % à la livraison.",
   },
   {
+    Icon: LifeBuoy,
     title: "On reste après la livraison",
     text: "Hébergement 1 an et support inclus. On ne disparaît pas une fois le site en ligne.",
   },
@@ -32,13 +38,13 @@ export default function Engagements() {
         </div>
 
         <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
-          {engagements.map((e, i) => (
+          {engagements.map((e) => (
             <div key={e.title} className="flex gap-5">
               <span
-                className="font-display font-black leading-none flex-shrink-0"
-                style={{ fontSize: '28px', color: 'var(--syb-rust)', letterSpacing: '-0.5px' }}
+                className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.18)', color: 'var(--syb-rust)' }}
               >
-                0{i + 1}
+                <e.Icon size={20} strokeWidth={1.6} />
               </span>
               <div>
                 <h3 className="font-display font-bold mb-2" style={{ fontSize: '19px', color: 'var(--syb-ink)' }}>
