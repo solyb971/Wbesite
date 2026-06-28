@@ -300,7 +300,7 @@ export default function ResaGPPage() {
         {/* DÉMO PRODUIT — galerie narrative (captures réelles) */}
         <section id="demo" className={styles.section}>
           <div className={styles.sectionIn}>
-            <div className={styles.reveal} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
+            <div className={styles.reveal} style={{ marginBottom: '2.25rem', textAlign: 'center' }}>
               <h2 className={styles.h2}>Une seule réservation.<br /><span className={styles.h2Strong}>Tous vos modules se parlent.</span></h2>
               <p className={styles.lead} style={{ maxWidth: 560, margin: '0 auto' }}>
                 Suivez la soirée de Sophie : de sa réservation en ligne jusqu&apos;à son avis, l&apos;information circule automatiquement entre le plan de salle, la prise de commande au siège, l&apos;encaissement et le tableau de bord.
