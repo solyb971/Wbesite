@@ -5,6 +5,7 @@ const services = [
   {
     title: "Site Vitrine",
     tag: "Le plus demandé",
+    featured: true,
     accent: "var(--syb-rust)",
     Icon: Globe,
     description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour cibler votre région et étendre votre identité.",
@@ -70,7 +71,7 @@ export default function Services() {
               style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
             >
               Ce qu&apos;on construit<br />
-              <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>pour vous</em>
+              <span style={{ fontWeight: 900, color: '#C4472A' }}>pour vous</span>
             </h2>
           </div>
           <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
@@ -101,9 +102,18 @@ export default function Services() {
                   >
                     <s.Icon size={20} strokeWidth={1.6} />
                   </span>
-                  <span className="text-[11px] tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
-                    {s.tag}
-                  </span>
+                  {s.featured ? (
+                    <span
+                      className="text-[10px] tracking-[1.5px] uppercase rounded-full px-2.5 py-1 font-medium"
+                      style={{ background: 'var(--syb-rust)', color: '#fff' }}
+                    >
+                      {s.tag}
+                    </span>
+                  ) : (
+                    <span className="text-[11px] tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
+                      {s.tag}
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-display font-bold mb-2" style={{ fontSize: '22px', color: 'var(--syb-ink)' }}>
                   {s.title}
@@ -133,7 +143,7 @@ export default function Services() {
                   className="inline-flex items-center justify-center w-full text-sm font-normal transition-transform hover:-translate-y-px"
                   style={{ background: 'var(--syb-rust)', color: '#fff', padding: '11px 22px', borderRadius: '4px' }}
                 >
-                  Demander un devis
+                  Demander un devis gratuit
                 </Link>
               </div>
             </div>

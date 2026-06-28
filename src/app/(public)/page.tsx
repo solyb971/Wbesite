@@ -2,7 +2,6 @@
 import Hero from "@/components/site/Hero"
 import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 import Services from "@/components/site/Services"
-import Solutions from "@/components/site/Solutions"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
 import Manifesto from "@/components/site/Manifesto"
@@ -183,7 +182,6 @@ export default function HomePage() {
         <Realisations />
         <Manifesto />
         <About />
-        <Solutions />
         <FAQ />
         <Contact />
       </main>

@@ -6,7 +6,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 scroll-mt-20" style={{ background: '#F5F2ED' }}>
+    <section id="faq" className="py-24 scroll-mt-20" style={{ background: 'var(--syb-warm)' }}>
       <div className="max-w-[780px] mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="reveal mb-10">
@@ -15,7 +15,7 @@ export default function FAQ() {
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
           >
             Questions<br />
-            <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>fréquentes</em>
+            <span style={{ fontWeight: 900, color: '#C4472A' }}>fréquentes</span>
           </h2>
         </div>
 
