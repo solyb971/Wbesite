@@ -531,7 +531,41 @@
 }
 .demoImg { display: block; width: 100%; height: auto; }
 
+/* Recadrage des captures téléphone : on montre le haut (header + action),
+   ratio plus court → moins de vide, plus lisible. */
+.demoPhone .demoImg,
+.demoPhoneSm .demoImg {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: top center;
+  height: auto;
+}
+
+/* Trio POS — 3 petits téléphones groupés sous un seul texte */
+.demoTrio { padding: 26px 0; border-top: 1px solid var(--rg-border); }
+.demoTrioRow {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; justify-items: center; align-items: start;
+  max-width: 720px; margin: 0 auto;
+}
+.demoTrioItem { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 0; }
+.demoCap {
+  font-family: var(--rg-sans); font-size: 0.78rem; font-weight: 600;
+  color: var(--rg-mu2); letter-spacing: 0.02em;
+}
+.demoPhoneSm {
+  width: 200px; max-width: 100%; position: relative;
+  border: 8px solid #0A0806; border-top-width: 20px; border-radius: 30px;
+  overflow: hidden; background: #0A0806;
+  box-shadow: 0 18px 36px -20px rgba(0,0,0,0.55);
+}
+.demoPhoneSm::before {
+  content: ""; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  width: 72px; height: 5px; border-radius: 99px; background: #2A2018; z-index: 2;
+}
+
 @media (max-width: 760px) {
   .demoRow { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
   .demoFlip .demoPhoneCol { order: 0; }
+  .demoTrioRow { grid-template-columns: 1fr; gap: 28px; max-width: 240px; }
 }

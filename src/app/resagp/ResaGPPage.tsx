@@ -5,8 +5,7 @@ import SmoothScroll from '@/components/ui/SmoothScroll'
 import PlanDeSalle from './PlanDeSalle'
 import {
   CalendarCheck, MapTrifold, DeviceMobile, Users, ForkKnife,
-  ChartBar, Bell, Key, CreditCard, ArrowRight,
-  Storefront, Star,
+  ChartBar, Bell, CreditCard, ArrowRight,
 } from '@phosphor-icons/react/dist/ssr'
 import styles from './resagp.module.css'
 
@@ -28,60 +27,46 @@ function ResaMark({ size = 30 }: { size?: number }) {
 }
 
 const FEATURES = [
-  { n: '01', Icon: CalendarCheck, title: 'Réservations en ligne', sub: 'Disponible 24h/24, 7j/7', desc: 'Un client veut réserver un dimanche à 23h, personne ne décroche. Avec ResaGP, il réserve lui-même depuis votre site, Facebook ou un lien WhatsApp. Confirmation email et SMS dans la seconde. Zéro appel manqué, zéro post-it perdu.', tags: ['Confirmation instantanée', 'Email auto', 'SMS auto'] },
-  { n: '02', Icon: MapTrifold,    title: 'Plan de salle en direct', sub: 'Mis à jour en temps réel', desc: 'Toute votre salle d\'un coup d\'œil, sur tablette ou écran. Vous déplacez les tables à la souris pour réorganiser, et toute l\'équipe voit la même chose en même temps — plus de « attends, je vérifie avec la cuisine ».', tags: ['Drag & drop', 'Sync live', 'Multi-écrans'] },
-  { n: '03', Icon: DeviceMobile,  title: 'Appli service sur smartphone', sub: 'Aucune installation', desc: 'Votre équipe accueille, installe et encaisse directement depuis son téléphone, sans rien télécharger. Pratique quand les serveurs changent de poste en plein service.', tags: ['Mobile-first', 'Walk-in', 'Caisse intégrée'] },
-  { n: '04', Icon: Users,         title: 'Fiches clients automatiques', sub: 'Chaque visite enrichit la fiche', desc: 'À chaque réservation, une fiche se remplit toute seule : historique, allergies, occasion spéciale. Vos habitués se sentent reconnus, sans que vous ayez à vous souvenir de tout. Les demandes d\'avis Google partent seules.', tags: ['Historique', 'Allergies', 'Avis Google'] },
-  { n: '05', Icon: ForkKnife,     title: 'Carte numérique & QR Code', sub: 'Mise à jour en un clic', desc: 'Le saumon est terminé en plein rush ? Retirez-le en un clic, plus personne ne peut le commander. Vos clients scannent la table et peuvent même précommander avant de s\'asseoir.', tags: ['QR Code', 'Ruptures live', 'Pré-commandes'] },
-  { n: '06', Icon: ChartBar,      title: 'Statistiques sans effort', sub: '7j · 30j · 90j, en un coup d\'œil', desc: 'Quel soir remplissez-vous le moins ? Quel jour les absences explosent ? Tout s\'affiche en graphiques clairs, sans tableur à remplir, comparé automatiquement à la période précédente.', tags: ['Remplissage', 'Absences', 'Fidélisation'] },
-  { n: '07', Icon: Bell,          title: 'Rappels anti-absences', sub: 'Veille + 2h avant, automatiquement', desc: 'Une table de 6 réservée à 20h qui ne vient pas, c\'est un service en moins ce soir. Rappel par email et SMS la veille, puis un dernier SMS deux heures avant. Vous n\'avez rien à faire, vous avez juste moins de tables vides.', tags: ['Rappel J-1', 'Rappel H-2', 'Avis post-repas'] },
-  { n: '08', Icon: Key,           title: 'Gestion d\'équipe', sub: 'Gérant · Manager · Hôte', desc: 'Vous invitez votre équipe par email en quelques secondes. Chacun voit uniquement ce dont il a besoin selon son rôle, et un historique garde une trace de chaque action.', tags: ['3 rôles', 'Invitation email', 'Journal des actions'] },
-  { n: '09', Icon: CreditCard,    title: 'Encaissement à table', sub: 'CB · Espèces · Ticket resto', desc: 'En fin de repas, vous encaissez directement depuis l\'appli. Le pourboire se calcule seul, et la table redevient libre instantanément sur le plan de salle.', tags: ['Multi-paiement', 'Pourboire auto', 'Clôture table'] },
+  { n: '01', Icon: CalendarCheck, title: 'Réservations en ligne', sub: 'Disponible 24h/24, 7j/7', desc: 'Vos clients réservent depuis votre site, Facebook ou WhatsApp. Confirmation email et SMS immédiate. Zéro appel manqué.', tags: ['24h/24', 'Email & SMS auto'] },
+  { n: '02', Icon: MapTrifold,    title: 'Plan de salle en direct', sub: 'Mis à jour en temps réel', desc: 'Toute votre salle d\'un coup d\'œil, sur tablette ou écran. Toute l\'équipe voit la même chose, en même temps.', tags: ['Drag & drop', 'Sync live'] },
+  { n: '03', Icon: DeviceMobile,  title: 'Service sur smartphone', sub: 'Aucune installation', desc: 'Accueil, commande et encaissement depuis le téléphone de l\'équipe, sans rien télécharger.', tags: ['Mobile-first', 'Caisse intégrée'] },
+  { n: '04', Icon: Users,         title: 'Fiches clients automatiques', sub: 'Chaque visite enrichit la fiche', desc: 'Historique, allergies, occasions : la fiche se remplit toute seule. Vos habitués se sentent reconnus.', tags: ['Historique', 'Avis Google'] },
+  { n: '05', Icon: ForkKnife,     title: 'Carte numérique & QR Code', sub: 'Mise à jour en un clic', desc: 'Une rupture ? Retirez le plat en un clic. Vos clients scannent la table et peuvent précommander.', tags: ['QR Code', 'Ruptures live'] },
+  { n: '06', Icon: Bell,          title: 'Rappels anti-absences', sub: 'Veille + 2h avant', desc: 'Rappel email et SMS la veille, puis 2h avant. Vous ne faites rien, vous avez juste moins de tables vides.', tags: ['Rappel J-1', 'Rappel H-2'] },
 ]
 
-const WORKFLOW = [
-  { Icon: CalendarCheck, step: '01', title: 'Réservation reçue', desc: 'Le client réserve en ligne. Confirmation immédiate par email et SMS.' },
-  { Icon: Bell,          step: '02', title: 'Rappels automatiques', desc: 'La veille et 2h avant : rappels automatiques. Moins d\'absences, sans un seul appel à passer.' },
-  { Icon: Storefront,    step: '03', title: 'Accueil & installation', desc: 'L\'hôte valide l\'arrivée sur tablette. La table passe à occupée en un geste.' },
-  { Icon: ForkKnife,     step: '04', title: 'Service & encaissement', desc: 'Commandes, suivi, addition et paiement — tout depuis l\'appli, sans repasser par la caisse.' },
-  { Icon: Star,          step: '05', title: 'Avis post-repas', desc: '25h après le repas, une demande d\'avis Google part toute seule.' },
-]
-
-/* Démo produit — une réservation (Sophie) qui traverse les 8 modules.
-   kind: 'phone' (écran client/POS, capté en mobile) | 'browser' (écran admin). */
+/* Démo produit — une réservation (Sophie) qui traverse le système, en 6 temps.
+   kind: 'phone' (client/POS) | 'browser' (admin) | 'trio' (3 écrans POS groupés). */
 const DEMO_STEPS = [
   { n: 1, kind: 'phone',   img: '01_reservation.png',  alt: 'Réservation en ligne — widget client',
-    title: 'Sophie réserve une table pour 4, en 30 secondes',
-    desc: 'Depuis le widget du restaurant : couverts, date, créneau. Confirmation immédiate par email, 24h/24, sans appel téléphonique.',
-    handoff: 'La réservation part directement dans le système du restaurant' },
+    title: 'Sophie réserve en 30 secondes',
+    desc: 'Couverts, date, créneau depuis le widget du restaurant. Confirmation immédiate par email, 24h/24, sans appel.',
+    handoff: 'La réservation part directement dans le système' },
   { n: 2, kind: 'browser', img: '02_planning.png', url: 'app.resagp.com/reservations', alt: 'Planning des réservations côté restaurateur',
-    title: 'Sa réservation apparaît instantanément côté restaurateur',
-    desc: 'Aucune ressaisie : la réservation de Sophie s\'affiche dans le planning du jour, avec son occasion « Anniversaire » et son nombre de couverts.',
-    handoff: 'Même réservation qu\'à l\'étape 1 — zéro double saisie' },
+    title: 'Elle apparaît instantanément côté salle',
+    desc: 'Aucune ressaisie : la réservation s\'affiche dans le planning du jour, avec l\'occasion « Anniversaire » et le nombre de couverts.',
+    handoff: 'Zéro double saisie' },
   { n: 3, kind: 'phone',   img: '03_salle.png', alt: 'Plan de salle sur l\'app de salle',
-    title: 'En salle, on suit la table de Sophie d\'un coup d\'œil',
-    desc: 'Sur l\'application de salle, la couleur encode le statut et un minuteur indique depuis quand chaque table est occupée — sans lire de légende.',
-    handoff: 'Couleur + minuteur : le service se pilote en temps réel' },
-  { n: 4, kind: 'phone',   img: '04_commande.png', alt: 'Prise de commande place par place',
-    title: 'On prend la commande, place par place',
-    desc: 'Le serveur sélectionne un siège puis ajoute les plats. Chaque article est rattaché au bon convive — fini les erreurs de « qui a pris quoi ».',
-    handoff: 'La commande part en cuisine et alimente l\'addition' },
-  { n: 5, kind: 'phone',   img: '05_ticket.png', alt: 'Ticket ventilé par siège',
-    title: 'L\'addition se ventile toute seule, par siège',
-    desc: 'Le ticket se met à jour au fil de la commande : sous-total par convive, total global, prêt pour un paiement séparé ou groupé.',
-    handoff: 'Siège 1 et Siège 2 calculés automatiquement' },
-  { n: 6, kind: 'phone',   img: '06_encaissement.png', alt: 'Encaissement',
-    title: 'On encaisse, la table se libère',
-    desc: 'Carte, espèces ou paiement partagé : l\'encaissement se fait sur place. La table redevient disponible sur le plan de salle, automatiquement.',
+    title: 'On suit sa table d\'un coup d\'œil',
+    desc: 'Sur l\'app de salle, la couleur encode le statut et un minuteur indique depuis quand la table est occupée — sans lire de légende.',
+    handoff: 'Le service se pilote en temps réel' },
+  { n: 4, kind: 'trio',
+    imgs: [
+      { img: '04_commande.png', alt: 'Prise de commande place par place', cap: 'Commande au siège' },
+      { img: '05_ticket.png',   alt: 'Ticket ventilé par siège',          cap: 'Addition ventilée' },
+      { img: '06_encaissement.png', alt: 'Encaissement',                   cap: 'Encaissement' },
+    ],
+    title: 'Commande, addition et encaissement, au même endroit',
+    desc: 'On prend la commande place par place, l\'addition se ventile toute seule par siège, et on encaisse sur place (carte, espèces ou partagé). La table se libère automatiquement.',
     handoff: 'Le chiffre d\'affaires remonte au tableau de bord' },
-  { n: 7, kind: 'phone',   img: '07_avis.png', alt: 'Demande d\'avis client',
-    title: 'Après le repas, Sophie est invitée à laisser un avis',
-    desc: 'Quelques heures plus tard, elle reçoit une invitation à noter son expérience. Les bons avis sont orientés vers Google, les retours négatifs restent privés.',
-    handoff: 'Chaque avis nourrit la fiche client et les statistiques' },
-  { n: 8, kind: 'browser', img: '08_analytics.png', url: 'app.resagp.com/analytics', alt: 'Tableau de bord analytique',
-    title: 'Le restaurateur voit tout remonter, en temps réel',
-    desc: 'Réservations, couverts, taux de remplissage, affluence par heure, clients fidèles, avis : chaque action des étapes précédentes alimente le tableau de bord.',
-    handoff: 'Toutes les données d\'un seul flux, déjà consolidées' },
+  { n: 5, kind: 'phone',   img: '07_avis.png', alt: 'Demande d\'avis client',
+    title: 'Après le repas, l\'avis part tout seul',
+    desc: 'Une invitation à noter l\'expérience est envoyée automatiquement. Les bons avis sont orientés vers Google, les retours négatifs restent privés.',
+    handoff: 'Chaque avis nourrit la fiche client' },
+  { n: 6, kind: 'browser', img: '08_analytics.png', url: 'app.resagp.com/analytics', alt: 'Tableau de bord analytique',
+    title: 'Tout remonte au tableau de bord',
+    desc: 'Réservations, couverts, remplissage, affluence par heure, fidélité, avis : chaque action précédente alimente le tableau de bord. Une seule source de vérité.',
+    handoff: 'Toutes les données d\'un seul flux' },
 ] as const
 
 const CMP_ROWS = [
@@ -118,7 +103,7 @@ export default function ResaGPPage() {
               </a>
             </div>
             <div className={styles.navLinks}>
-              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#demo','Démo'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
+              {[['#fonctionnalites','Fonctionnalités'],['#demo','Démo'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
                 <a key={h} href={h} className={styles.navLink}>{l}</a>
               )}
             </div>
@@ -258,28 +243,6 @@ export default function ResaGPPage() {
           </div>
         </section>
 
-        {/* WORKFLOW */}
-        <section id="workflow" className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionIn}>
-            <div className={styles.reveal} style={{ marginBottom: '3.5rem', textAlign: 'center' }}>
-              <h2 className={styles.h2}>De la réservation<br /><span className={styles.h2Strong}>à l&apos;avis Google</span></h2>
-              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Le client réserve, vous n&apos;avez plus qu&apos;à bien le recevoir. Rappels, accueil, service, encaissement, demande d&apos;avis : tout part automatiquement au bon moment.</p>
-            </div>
-            <div className={`${styles.workflow} ${styles.reveal} ${styles.d1}`}>
-              {WORKFLOW.map((w, i) => (
-                <div key={i} className={styles.wfStep}>
-                  <div className={styles.wfDot}>
-                    <w.Icon size={24} weight="duotone" />
-                    <span className={styles.wfNum}>{w.step}</span>
-                  </div>
-                  <div className={styles.wfTitle}>{w.title}</div>
-                  <div className={styles.wfDesc}>{w.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* DÉMO PRODUIT — galerie narrative (captures réelles) */}
         <section id="demo" className={styles.section}>
           <div className={styles.sectionIn}>
@@ -291,39 +254,57 @@ export default function ResaGPPage() {
             </div>
 
             <div className={styles.demo}>
-              {DEMO_STEPS.map((s, i) => (
-                s.kind === 'browser' ? (
-                  <div key={s.n} className={`${styles.demoWide} ${styles.reveal}`}>
-                    <div className={styles.demoHead}>
-                      <span className={styles.demoNum}>{s.n}</span>
-                      <h3 className={styles.demoH}>{s.title}</h3>
-                      <p className={styles.demoP}>{s.desc}</p>
-                      <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
-                    </div>
-                    <div className={styles.demoBrowser}>
-                      <div className={styles.demoBar}>
-                        <span className={styles.demoDot} /><span className={styles.demoDot} /><span className={styles.demoDot} />
-                        <span className={styles.demoUrl}>{s.url}</span>
-                      </div>
-                      <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={1440} height={900} className={styles.demoImg} sizes="(min-width: 980px) 980px, 100vw" />
-                    </div>
+              {DEMO_STEPS.map((s, i) => {
+                const head = (
+                  <div>
+                    <span className={styles.demoNum}>{s.n}</span>
+                    <h3 className={styles.demoH}>{s.title}</h3>
+                    <p className={styles.demoP}>{s.desc}</p>
+                    <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
                   </div>
-                ) : (
+                )
+                if (s.kind === 'browser') {
+                  return (
+                    <div key={s.n} className={`${styles.demoWide} ${styles.reveal}`}>
+                      <div className={styles.demoHead}>{head}</div>
+                      <div className={styles.demoBrowser}>
+                        <div className={styles.demoBar}>
+                          <span className={styles.demoDot} /><span className={styles.demoDot} /><span className={styles.demoDot} />
+                          <span className={styles.demoUrl}>{s.url}</span>
+                        </div>
+                        <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={1440} height={900} className={styles.demoImg} sizes="(min-width: 980px) 980px, 100vw" />
+                      </div>
+                    </div>
+                  )
+                }
+                if (s.kind === 'trio') {
+                  return (
+                    <div key={s.n} className={`${styles.demoTrio} ${styles.reveal}`}>
+                      <div className={styles.demoHead} style={{ textAlign: 'center', margin: '0 auto 1.75rem' }}>{head}</div>
+                      <div className={styles.demoTrioRow}>
+                        {s.imgs.map((p) => (
+                          <figure key={p.img} className={styles.demoTrioItem}>
+                            <div className={styles.demoPhoneSm}>
+                              <Image src={`/resagp/demo/${p.img}`} alt={p.alt} width={430} height={932} className={styles.demoImg} sizes="220px" />
+                            </div>
+                            <figcaption className={styles.demoCap}>{p.cap}</figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </div>
+                  )
+                }
+                return (
                   <div key={s.n} className={`${styles.demoRow} ${i % 2 === 1 ? styles.demoFlip : ''} ${styles.reveal}`}>
                     <div className={styles.demoPhoneCol}>
                       <div className={styles.demoPhone}>
-                        <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={430} height={932} className={styles.demoImg} sizes="300px" />
+                        <Image src={`/resagp/demo/${s.img}`} alt={s.alt} width={430} height={932} className={styles.demoImg} sizes="280px" />
                       </div>
                     </div>
-                    <div>
-                      <span className={styles.demoNum}>{s.n}</span>
-                      <h3 className={styles.demoH}>{s.title}</h3>
-                      <p className={styles.demoP}>{s.desc}</p>
-                      <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
-                    </div>
+                    {head}
                   </div>
                 )
-              ))}
+              })}
             </div>
           </div>
         </section>
@@ -398,7 +379,7 @@ export default function ResaGPPage() {
             <div>
               <div className={styles.footerColTitle}>Navigation</div>
               <ul className={styles.footerList}>
-                {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) => <li key={h}><a href={h}>{l}</a></li>)}
+                {[['#fonctionnalites','Fonctionnalités'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) => <li key={h}><a href={h}>{l}</a></li>)}
               </ul>
             </div>
             <div>
