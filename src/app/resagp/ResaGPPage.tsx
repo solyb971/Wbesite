@@ -17,12 +17,12 @@ import styles from './resagp.module.css'
 function ResaMark({ size = 30 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 88 88" fill="none" aria-hidden>
-      <rect x="2" y="2" width="84" height="84" rx="3" stroke="#7AAFC4" strokeWidth="1.4" />
-      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="#7AAFC4" />
-      <rect x="29" y="22" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
-      <rect x="47" y="22" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
-      <rect x="29" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
-      <rect x="47" y="61" width="12" height="5" rx="2" fill="#F5EDD8" opacity="0.72" />
+      <rect x="2" y="2" width="84" height="84" rx="3" stroke="#0E7C7B" strokeWidth="1.4" />
+      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="#0E7C7B" />
+      <rect x="29" y="22" width="12" height="5" rx="2" fill="#173E3C" opacity="0.55" />
+      <rect x="47" y="22" width="12" height="5" rx="2" fill="#173E3C" opacity="0.55" />
+      <rect x="29" y="61" width="12" height="5" rx="2" fill="#173E3C" opacity="0.55" />
+      <rect x="47" y="61" width="12" height="5" rx="2" fill="#173E3C" opacity="0.55" />
     </svg>
   )
 }
@@ -409,10 +409,10 @@ export default function ResaGPPage() {
             <p className={styles.ctaP}>14 jours d&apos;essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.</p>
             <EarlyAccessForm
               theme={{
-                surface: '#1A1713', text: '#F5EDD8', muted: '#A89880',
-                border: 'rgba(122,175,196,0.22)', borderFocus: '#7AAFC4',
-                accent: '#7AAFC4', accentText: '#0E0C08', radius: '3px',
-                fontMono: 'var(--font-space-mono)',
+                surface: '#FFFFFF', text: '#173E3C', muted: '#7A6B58',
+                border: '#E0DBC9', borderFocus: '#0E7C7B',
+                accent: '#0E7C7B', accentText: '#F4F2E8', radius: '11px',
+                fontMono: 'var(--font-figtree)',
               }}
               source="resagp"
               projectType="saas"
