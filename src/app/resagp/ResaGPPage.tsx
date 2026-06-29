@@ -5,8 +5,8 @@ import SmoothScroll from '@/components/ui/SmoothScroll'
 import PlanDeSalle from './PlanDeSalle'
 import {
   CalendarCheck, MapTrifold, DeviceMobile, Users, ForkKnife,
-  ChartBar, Bell, Key, CreditCard, ArrowRight, CheckCircle,
-  Clock, Storefront, WifiHigh, Star,
+  ChartBar, Bell, Key, CreditCard, ArrowRight,
+  Storefront, Star,
 } from '@phosphor-icons/react/dist/ssr'
 import styles from './resagp.module.css'
 
@@ -118,7 +118,7 @@ export default function ResaGPPage() {
               </a>
             </div>
             <div className={styles.navLinks}>
-              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#demo','Démo'],['#avantages','Pourquoi ResaGP'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
+              {[['#fonctionnalites','Fonctionnalités'],['#workflow','Comment ça marche'],['#demo','Démo'],['#formules','Tarifs'],['#contact','Contact']].map(([h,l]) =>
                 <a key={h} href={h} className={styles.navLink}>{l}</a>
               )}
             </div>
@@ -227,23 +227,6 @@ export default function ResaGPPage() {
           </div>
         </section>
 
-        {/* STATS */}
-        <div className={styles.stats}>
-          <div className={styles.statsIn}>
-            {[
-              { num: '9', suf: '', lbl: 'Outils réunis en un seul' },
-              { num: '5', suf: ' min', lbl: 'Opérationnel avant ce soir' },
-              { num: '14', suf: 'j', lbl: 'Gratuits, sans carte bancaire' },
-              { num: '0', suf: '%', lbl: 'Commission par couvert' },
-            ].map((s, i) => (
-              <div key={i}>
-                <span className={styles.statNum}>{s.num}{s.suf}</span>
-                <span className={styles.statLbl}>{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* TICKER */}
         <div className={styles.ticker}>
           <div className={styles.tickerTrack}>
@@ -340,29 +323,6 @@ export default function ResaGPPage() {
                     </div>
                   </div>
                 )
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* AVANTAGES */}
-        <section id="avantages" className={styles.section}>
-          <div className={styles.sectionIn}>
-            <div className={`${styles.reveal}`} style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2 className={styles.h2}>Pensé pour votre salle,<br /><span className={styles.h2Strong}>pas pour une plateforme générique</span></h2>
-              <p className={styles.lead} style={{ maxWidth: 480, margin: '0 auto' }}>Trois différences qui comptent quand la salle est pleine et que le téléphone n&apos;arrête pas de sonner.</p>
-            </div>
-            <div className={`${styles.avGrid} ${styles.reveal} ${styles.d1}`}>
-              {[
-                { icon: <Star size={28} weight="duotone" />, title: 'Zéro commission sur vos couverts', desc: 'Un abonnement fixe, point final. Que vous fassiez 20 ou 200 couverts ce soir, vous payez le même prix chaque mois. Ce que vous servez vous appartient entièrement.' },
-                { icon: <WifiHigh size={28} weight="duotone" />, title: 'Opérationnel en 5 minutes', desc: 'Pas de technicien, pas d\'installation, pas de formation de trois jours. Vous créez votre compte, vous configurez votre salle, vos clients réservent en ligne dans l\'heure.' },
-                { icon: <Bell size={28} weight="duotone" />, title: 'Un interlocuteur en Guadeloupe', desc: 'Un problème pendant le rush du samedi soir ? Vous parlez à quelqu\'un qui connaît votre métier et votre île — pas un centre d\'appel à 7 000 km. Réponse sous 24h, en français.' },
-              ].map((a, i) => (
-                <div key={i} className={styles.avCard}>
-                  <div className={styles.avIcon}>{a.icon}</div>
-                  <div className={styles.avTitle}>{a.title}</div>
-                  <div className={styles.avDesc}>{a.desc}</div>
-                </div>
               ))}
             </div>
           </div>
