@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import Link from "next/link"
 import { ArrowRight, Check, Globe, ShoppingCart, Smartphone } from "lucide-react"
+import Breadcrumbs from "@/components/site/Breadcrumbs"
 
 export const metadata: Metadata = {
-  title: 'Services Web & Applications - SolYB Guadeloupe 971',
+  title: 'Services Web & Applications en Guadeloupe 971',
   description: 'Sites vitrines (599€), e-commerce (999€), applications web sur mesure en Guadeloupe. Technologie React/Next.js. Livraison 2 semaines. Devis gratuit.',
   keywords: ['services web Guadeloupe', 'création site vitrine 971', 'e-commerce Guadeloupe', 'application web sur mesure', 'développement web Guadeloupe'],
   alternates: { canonical: 'https://solyb.fr/services' },
@@ -82,8 +83,10 @@ export default function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main style={{ background: 'var(--syb-warm)' }}>
 
+        <Breadcrumbs items={[{ name: 'Services', href: '/services' }]} />
+
         {/* Hero */}
-        <section className="pt-28 md:pt-36 pb-12 px-6">
+        <section className="pt-8 md:pt-10 pb-12 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"

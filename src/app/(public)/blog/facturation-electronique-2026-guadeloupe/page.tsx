@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, Check, AlertTriangle } from 'lucide-react'
+import { Calendar, Clock, Check, AlertTriangle } from 'lucide-react'
+import Breadcrumbs from '@/components/site/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Facturation Électronique 2026 en Guadeloupe : Guide TPE/PME',
@@ -93,14 +94,10 @@ export default function FacturationElectronique2026GuadeloupePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       <article className="min-h-screen bg-white">
+        <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Facturation électronique 2026', href: '/blog/facturation-electronique-2026-guadeloupe' }]} />
         {/* Header */}
-        <header className="pt-24 pb-12 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, rgba(196,71,42,0.06), rgba(232,132,95,0.05))' }}>
+        <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, rgba(196,71,42,0.06), rgba(232,132,95,0.05))' }}>
           <div className="max-w-3xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center mb-6 transition-colors" style={{ color: RUST }}>
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Retour au blog
-            </Link>
-
             <div className="inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4" style={{ background: 'rgba(196,71,42,0.1)', color: RUST }}>
               Conformité 2026
             </div>

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: {
     // 55 chars max pour ne pas être tronqué par Google
     default: 'SolYB — Agence Digitale Guadeloupe 971',
-    template: '%s | SolYB Guadeloupe'
+    template: '%s | SolYB'
   },
   description: 'Agence digitale à Baie-Mahault, Guadeloupe. Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME. Devis gratuit sous 24h.',
   keywords: [

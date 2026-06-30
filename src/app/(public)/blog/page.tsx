@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock, BookOpen, FileText, Tag, GitCompare } from 'lucide-react'
+import Breadcrumbs from '@/components/site/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Blog Création Site Web Guadeloupe - Conseils & Actualités | SolYB',
+  title: 'Blog Création Site Web Guadeloupe — Conseils & Actualités',
   description: 'Guides pratiques et conseils pour créer votre site web en Guadeloupe. Prix, comparatifs, tutoriels pour entrepreneurs guadeloupéens.',
   keywords: ['blog web Guadeloupe', 'création site web conseils', 'prix site web 971', 'guide entrepreneur Guadeloupe'],
   alternates: { canonical: 'https://solyb.fr/blog' },
@@ -65,8 +66,10 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main style={{ background: 'var(--syb-warm)' }}>
 
+        <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }]} />
+
         {/* Hero */}
-        <section className="pt-28 md:pt-36 pb-12 px-6">
+        <section className="pt-8 md:pt-10 pb-12 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"

@@ -2,7 +2,7 @@
 import FacturationPage from './FacturationPage'
 
 export const metadata: Metadata = {
-  title: 'SolYB Facturation — Logiciel de Facturation Électronique Guadeloupe DOM',
+  title: 'Facturation Électronique 2026 — Guadeloupe & DOM',
   description: 'Logiciel de facturation électronique au format DGFiP (Factur-X EN 16931) pour les TPE/PME de Guadeloupe et des DOM. TVA DOM 8,5 % / 2,1 %, export FEC. Agrément Plateforme Agréée en cours. Dès 29 €/mois.',
   keywords: ['facturation électronique Guadeloupe','logiciel facturation DOM','Chorus Pro Guadeloupe','TVA DOM 8,5%','Factur-X 971','FEC DGFiP Guadeloupe','ISCA NF 525'],
   alternates: { canonical: 'https://solyb.fr/facturation-electronique' },

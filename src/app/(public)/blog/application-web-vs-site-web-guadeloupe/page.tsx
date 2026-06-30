@@ -1,6 +1,7 @@
 ﻿import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, Check, X } from 'lucide-react'
+import { Calendar, Clock, Check, X } from 'lucide-react'
+import Breadcrumbs from '@/components/site/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Application Web vs Site Web : Que Choisir pour Votre Entreprise en Guadeloupe ?',
@@ -70,17 +71,10 @@ export default function ApplicationVsSiteWebPage() {
       />
 
       <article className="min-h-screen bg-white">
+        <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Application web vs site web', href: '/blog/application-web-vs-site-web-guadeloupe' }]} />
         {/* Header */}
-        <header className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="max-w-4xl mx-auto">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-primary hover:text-primary-600 mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Retour au blog
-            </Link>
-
             <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
               Guides
             </div>
