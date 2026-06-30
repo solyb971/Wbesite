@@ -13,6 +13,7 @@ export default function Footer() {
     { href: "/#tarifs", label: "Nos tarifs" },
     { href: "/#realisations", label: "Nos projets" },
     { href: "/#apropos", label: "Qui on est" },
+    { href: "/blog", label: "Blog" },
   ]
 
   const legalLinks = [
