@@ -242,7 +242,7 @@ export default function FacturationPage() {
         <section id="conformite" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.wrap}>
             <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
-              <h2 className={styles.sectionTitle}>Les normes techniques, déjà respectées. <em className={styles.accentSand}>L&apos;agrément, en cours.</em></h2>
+              <h2 className={styles.sectionTitle}>Techniquement prêts. <em className={styles.accentSand}>Officiellement bientôt.</em></h2>
               <p className={styles.lede}>FactuGP respecte déjà les normes techniques exigées par l&apos;État, en France et en Europe — format de facture, taux de TVA DOM, export FEC. La demande d&apos;agrément en tant que Plateforme Agréée (PA) auprès de la DGFiP est en cours : c&apos;est l&apos;étape qui permettra d&apos;activer la transmission e-reporting en conditions réelles.</p>
             </div>
 
@@ -280,7 +280,6 @@ export default function FacturationPage() {
         <section className={styles.section}>
           <div className={styles.wrap}>
             <div className={`${styles.countdownPanel} ${styles.reveal}`}>
-              <span className={`${styles.eyebrow} ${styles.eyebrowSand}`}>Compte à rebours</span>
               <h2 className={styles.countdownTitle}>L&apos;échéance légale — 1<sup>er</sup> septembre 2026</h2>
               <p className={styles.countdownSub}>Toute entreprise qui paie la TVA est concernée — et les amendes s&apos;appliquent dès la première facture non conforme. Mieux vaut s&apos;y préparer maintenant que dans l&apos;urgence de fin d&apos;été.</p>
               <Countdown />
