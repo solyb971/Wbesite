@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import EarlyAccessForm from '@/components/site/EarlyAccessForm'
 import RevealOnScroll from '@/components/site/RevealOnScroll'
 import SmoothScroll from '@/components/ui/SmoothScroll'
@@ -41,6 +42,25 @@ const STAMPS_PENDING = [
   { icon: IconRefresh, label: 'E-reporting\nDGFiP' },
 ]
 
+/* Démo produit — 5 écrans réels (captures de l'app), mockup navigateur. */
+const DEMO_STEPS = [
+  { n: 1, img: 'demo-02-dashboard.jpeg', url: 'app.factugp.fr/tableau-de-bord', alt: 'Tableau de bord FactuGP',
+    title: 'Tout votre pilotage, en un coup d\'œil',
+    desc: 'Alertes réglementaires (réforme 2026, e-reporting), chiffre d\'affaires, factures émises et en retard, trésorerie et top clients. Vous voyez où vous en êtes dès la connexion.' },
+  { n: 2, img: 'demo-04-facture-detail.jpeg', url: 'app.factugp.fr/factures', alt: 'Facture au format Factur-X',
+    title: 'Des factures conformes, sans rien configurer',
+    desc: 'Chaque facture est émise au format Factur-X EN 16931 exigé par l\'État, avec la TVA DOM 8,5 % appliquée automatiquement. Encaissements, avoirs, envoi par email : tout au même endroit.' },
+  { n: 3, img: 'demo-08-fiscal-dom.jpeg', url: 'app.factugp.fr/fiscal', alt: 'Synthèse fiscale DOM',
+    title: 'Le fiscal DOM, géré nativement',
+    desc: 'TVA collectée par taux, impôt sur les sociétés avec abattement DOM (art. 44 quaterdecies), acomptes TVA CA12 : FactuGP calcule tout. Aucun logiciel de métropole ne le fait.' },
+  { n: 4, img: 'demo-09-ereporting.jpeg', url: 'app.factugp.fr/ereporting', alt: 'Suivi e-reporting DGFiP',
+    title: 'Votre e-reporting 2026, suivi mois par mois',
+    desc: 'Un calendrier clair des déclarations (envoyé, brouillon, manquant, à venir) et la génération des déclarations de transactions. Vous ne ratez aucune échéance.' },
+  { n: 5, img: 'demo-17-portail-public.jpeg', url: 'app.factugp.fr/portail', alt: 'Portail public client',
+    title: 'Ce que voit votre client',
+    desc: 'Une facture soignée, sans compte à créer, bilingue FR/EN, avec téléchargement du PDF Factur-X et paiement en ligne. Votre image de marque jusqu\'au bout.' },
+] as const
+
 const ROADMAP = [
   { q: 'Q1 2026', status: 'done', title: 'Lancement FactuGP Beta', desc: 'Factures, devis, TVA DOM 8,5 % et 2,1 %, portail client, relances automatiques, PDF professionnel.' },
   { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, format Chorus Pro DOM, export FEC DGFiP certifié. Toutes les briques techniques de la réforme 2026 intégrées.' },
@@ -50,7 +70,7 @@ const ROADMAP = [
 
 const TICKER_ITEMS = ['Facturation électronique', 'Chorus Pro DOM', 'TVA 8,5 % / 2,1 %', 'Factur-X EN 16931', 'FEC conforme DGFiP', 'Module BTP', 'ISCA NF 525', 'E-reporting', 'OCR IA fournisseurs', 'RGPD conforme', 'DOM 971']
 
-const NAV_LINKS: [string, string][] = [['#fonctionnalites', 'Fonctionnalités'], ['#tva', 'TVA DOM'], ['#conformite', 'Conformité'], ['#tarifs', 'Tarifs'], ['#contact', 'Contact']]
+const NAV_LINKS: [string, string][] = [['#fonctionnalites', 'Fonctionnalités'], ['#demo', 'Démo'], ['#tva', 'TVA DOM'], ['#conformite', 'Conformité'], ['#tarifs', 'Tarifs'], ['#contact', 'Contact']]
 
 function Logo() {
   return (
@@ -167,6 +187,35 @@ export default function FacturationPage() {
                   <p className={styles.featuresDesc}>{f.desc}</p>
                   <div className={styles.featuresChips}>
                     {f.chips.map(c => <span key={c} className={styles.chip}>{c}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DÉMO PRODUIT — captures réelles */}
+        <section id="demo" className={`${styles.section} ${styles.sectionAlt}`}>
+          <div className={styles.wrap}>
+            <div className={`${styles.head} ${styles.reveal}`}>
+              <span className={styles.eyebrow}>La démo</span>
+              <h2 className={styles.sectionTitle}>Pas une promesse. <em className={styles.accentSand}>Un vrai logiciel.</em></h2>
+              <p className={styles.lede}>FactuGP existe déjà et tourne aujourd&apos;hui. Voici ce que vous utiliserez au quotidien.</p>
+            </div>
+            <div className={styles.demo}>
+              {DEMO_STEPS.map(s => (
+                <div key={s.n} className={`${styles.demoStep} ${styles.reveal}`}>
+                  <div className={styles.demoHead}>
+                    <span className={styles.demoNum}>{s.n}</span>
+                    <h3 className={styles.demoTitle}>{s.title}</h3>
+                    <p className={styles.demoDesc}>{s.desc}</p>
+                  </div>
+                  <div className={styles.demoBrowser}>
+                    <div className={styles.demoBar}>
+                      <span className={styles.demoDot} /><span className={styles.demoDot} /><span className={styles.demoDot} />
+                      <span className={styles.demoUrl}>{s.url}</span>
+                    </div>
+                    <Image src={`/factugp/demo/${s.img}`} alt={s.alt} width={1100} height={860} className={styles.demoImg} sizes="(min-width: 980px) 980px, 100vw" />
                   </div>
                 </div>
               ))}
