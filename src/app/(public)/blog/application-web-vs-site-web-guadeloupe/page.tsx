@@ -21,22 +21,12 @@ export const metadata: Metadata = {
     description: 'Site web ou application web ? Découvrez quelle solution choisir pour votre entreprise en Guadeloupe.',
     url: 'https://solyb.fr/blog/application-web-vs-site-web-guadeloupe',
     type: 'article',
-    publishedTime: '2024-12-27',
+    publishedTime: '2026-04-22',
     authors: ['Yacine Bouhassoun'],
   },
 }
 
 export default function ApplicationVsSiteWebPage() {
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://solyb.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://solyb.fr/blog' },
-      { '@type': 'ListItem', position: 3, name: 'Application Web vs Site Web Guadeloupe', item: 'https://solyb.fr/blog/application-web-vs-site-web-guadeloupe' },
-    ],
-  }
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -57,14 +47,13 @@ export default function ApplicationVsSiteWebPage() {
         addressCountry: 'GP'
       }
     },
-    datePublished: '2024-12-27',
-    dateModified: '2024-12-27',
+    datePublished: '2026-04-22',
+    dateModified: '2026-04-22',
     mainEntityOfPage: 'https://solyb.fr/blog/application-web-vs-site-web-guadeloupe'
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -86,7 +75,7 @@ export default function ApplicationVsSiteWebPage() {
             <div className="flex items-center space-x-6 text-gray-600">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
-                <span>27 décembre 2024</span>
+                <span>22 avril 2026</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5" />

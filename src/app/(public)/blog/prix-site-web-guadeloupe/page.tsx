@@ -21,22 +21,12 @@ export const metadata: Metadata = {
     description: 'Comparatif détaillé des prix pour créer un site web en Guadeloupe. De 599€ à 15 000€, tous les tarifs expliqués.',
     url: 'https://solyb.fr/blog/prix-site-web-guadeloupe',
     type: 'article',
-    publishedTime: '2024-12-27',
+    publishedTime: '2026-05-12',
     authors: ['Yacine Bouhassoun'],
   },
 }
 
 export default function PrixSiteWebGuadeloupePage() {
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://solyb.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://solyb.fr/blog' },
-      { '@type': 'ListItem', position: 3, name: 'Prix Création Site Web Guadeloupe', item: 'https://solyb.fr/blog/prix-site-web-guadeloupe' },
-    ],
-  }
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -57,14 +47,13 @@ export default function PrixSiteWebGuadeloupePage() {
         addressCountry: 'GP'
       }
     },
-    datePublished: '2024-12-27',
-    dateModified: '2024-12-27',
+    datePublished: '2026-05-12',
+    dateModified: '2026-05-12',
     mainEntityOfPage: 'https://solyb.fr/blog/prix-site-web-guadeloupe'
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -86,7 +75,7 @@ export default function PrixSiteWebGuadeloupePage() {
             <div className="flex items-center space-x-6 text-gray-600">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
-                <span>27 décembre 2024</span>
+                <span>12 mai 2026</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5" />

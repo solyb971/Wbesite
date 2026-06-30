@@ -32,15 +32,6 @@ export const metadata: Metadata = {
 const RUST = '#C4472A'
 
 export default function FacturationElectronique2026GuadeloupePage() {
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://solyb.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://solyb.fr/blog' },
-      { '@type': 'ListItem', position: 3, name: 'Facturation électronique 2026 en Guadeloupe', item: 'https://solyb.fr/blog/facturation-electronique-2026-guadeloupe' },
-    ],
-  }
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -89,7 +80,6 @@ export default function FacturationElectronique2026GuadeloupePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
