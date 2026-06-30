@@ -29,7 +29,8 @@ const tools = [
   {
     name: "ResaGP",
     Mark: ResaMark,
-    accent: "#2E7D96",
+    accent: "#0E7C7B",          // lagon (DA ResaGP)
+    preview: "/resagp/demo/02_planning.png",  // capture produit réelle
     tagline: "Réservations restaurant — sans commission",
     description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
     status: "Disponible",
@@ -40,7 +41,8 @@ const tools = [
   {
     name: "FactuGP",
     Mark: FactuMark,
-    accent: "#2E8C92",
+    accent: "#2E8C92",          // pétrole (DA FactuGP)
+    preview: null,              // produit pas encore construit → header stylisé
     tagline: "Facturation électronique conforme 2026",
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
     status: "Disponible sept. 2026",
@@ -146,9 +148,30 @@ export default function Realisations() {
           {tools.map((s) => (
             <div
               key={s.name}
-              className="group rounded-xl p-7 flex flex-col transition-all duration-250 hover:-translate-y-1"
+              className="group rounded-xl overflow-hidden flex flex-col transition-all duration-250 hover:-translate-y-1"
               style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
             >
+              {/* Aperçu visuel — capture produit réelle, ou header stylisé si indisponible */}
+              <div
+                className="relative overflow-hidden"
+                style={{ height: 168, background: `linear-gradient(135deg, ${s.accent}, ${s.accent}cc)` }}
+              >
+                {s.preview ? (
+                  <Image
+                    src={s.preview}
+                    alt={`Aperçu ${s.name}`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ color: 'rgba(255,255,255,0.92)' }}>
+                    <div style={{ transform: 'scale(3.2)' }}><s.Mark /></div>
+                  </div>
+                )}
+              </div>
+
+              <div className="p-7 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-5">
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center"
@@ -166,7 +189,7 @@ export default function Realisations() {
                 {s.name}
               </h4>
 
-              <p className="text-sm font-medium mb-3" style={{ color: 'var(--syb-rust)' }}>{s.tagline}</p>
+              <p className="text-sm font-medium mb-3" style={{ color: s.accent }}>{s.tagline}</p>
               <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
                 {s.description}
               </p>
@@ -188,6 +211,7 @@ export default function Realisations() {
                 >
                   {s.cta.label} <span className="arrow">→</span>
                 </Link>
+              </div>
               </div>
             </div>
           ))}
