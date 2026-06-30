@@ -45,7 +45,6 @@
   color: var(--petrol-2); display: inline-flex; gap: 8px; align-items: center;
 }
 .eyebrowSand { color: var(--sand); }
-.eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
 
 .sectionTitle {
   font-family: var(--ff-display); font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.7rem);
