@@ -69,7 +69,7 @@ export default function EarlyAccessForm({
   }
 
   const input: CSSProperties = {
-    background: 'transparent',
+    background: theme.surface,
     border: `1px solid ${theme.border}`,
     color: theme.text,
     borderRadius: theme.radius,

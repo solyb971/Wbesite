@@ -117,11 +117,6 @@ export default function ResaGPPage() {
         <section style={{ background: 'var(--rg-bg)', paddingTop: '62px' }}>
           <div className={styles.hero}>
             <div>
-              <div className={styles.kicker}>
-                <span className={styles.kickerDot} />
-                <span className={styles.kickerLine} />
-                Essai gratuit 14 jours · Zéro commission · RGPD conforme · Guadeloupe
-              </div>
               <h1 className={styles.h1}>
                 Votre salle,<br />
                 <span className={styles.h1Strong}>vos règles.</span>
@@ -257,8 +252,10 @@ export default function ResaGPPage() {
               {DEMO_STEPS.map((s, i) => {
                 const head = (
                   <div>
-                    <span className={styles.demoNum}>{s.n}</span>
-                    <h3 className={styles.demoH}>{s.title}</h3>
+                    <div className={styles.demoTitleRow}>
+                      <span className={styles.demoNum}>{s.n}</span>
+                      <h3 className={styles.demoH}>{s.title}</h3>
+                    </div>
                     <p className={styles.demoP}>{s.desc}</p>
                     <span className={styles.demoHandoff}><ArrowRight size={15} weight="bold" />{s.handoff}</span>
                   </div>

@@ -198,7 +198,7 @@
   position: relative; z-index: 1;
   font-family: var(--rg-sans);
 }
-.dashAccent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--rg-ac3), var(--rg-ac), var(--rg-ac2)); border-radius: 4px 4px 0 0; }
+.dashAccent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--rg-ac); border-radius: 4px 4px 0 0; }
 
 .dashHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rg-border); }
 .dashBrand { font-family: var(--rg-serif); font-size: 1rem; font-weight: 700; font-style: normal; color: var(--rg-tx); }
@@ -388,7 +388,7 @@
 .planHl:hover { border-color: var(--rg-ac2); box-shadow: 0 0 0 1px var(--rg-ac2), 0 0 80px rgba(14,124,123,0.18); }
 .planAccent {
   position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, var(--rg-ac3), var(--rg-ac), var(--rg-ac2));
+  background: var(--rg-ac);
   opacity: 0; transition: opacity 0.25s;
 }
 .planHl .planAccent { opacity: 1; }
@@ -494,13 +494,14 @@
 .demoWide { padding: 32px 0; border-top: 1px solid var(--rg-border); }
 .demoHead { max-width: 680px; margin: 0 0 20px; }
 
+.demoTitleRow { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .demoNum {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 50%;
+  width: 34px; height: 34px; border-radius: 50%; flex: none;
   background: var(--rg-ac); color: var(--rg-bg);
-  font-family: var(--rg-mono); font-weight: 700; font-size: 14px; margin-bottom: 14px;
+  font-family: var(--rg-mono); font-weight: 700; font-size: 14px;
 }
-.demoH { font-family: var(--rg-serif); font-size: clamp(20px, 2.6vw, 27px); line-height: 1.15; margin: 0 0 10px; color: var(--rg-tx); letter-spacing: -0.01em; }
+.demoH { font-family: var(--rg-serif); font-size: clamp(20px, 2.6vw, 27px); line-height: 1.15; margin: 0; color: var(--rg-tx); letter-spacing: -0.01em; }
 .demoP { color: var(--rg-mu2); margin: 0 0 16px; font-size: 15px; line-height: 1.65; }
 .demoHandoff {
   display: inline-flex; align-items: center; gap: 8px;
@@ -543,6 +544,7 @@
 
 /* Trio POS — 3 petits téléphones groupés sous un seul texte */
 .demoTrio { padding: 26px 0; border-top: 1px solid var(--rg-border); }
+.demoTrio .demoTitleRow { justify-content: center; }
 .demoTrioRow {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 20px; justify-items: center; align-items: start;
