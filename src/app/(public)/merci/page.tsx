@@ -3,7 +3,7 @@ import Link from "next/link"
 import { CheckCircle, Mail, Clock, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Merci pour votre demande - SolYB",
+  title: "Merci pour votre demande",
   description: "Votre demande a été envoyée avec succès. Je vous recontacte sous 24h maximum.",
   robots: { index: false, follow: false },
 }
