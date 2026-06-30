@@ -240,15 +240,16 @@
 .demo { display: flex; flex-direction: column; gap: 8px; max-width: 760px; margin: 0 auto; }
 .demoStep { padding: 24px 0; border-top: 1px solid var(--line); }
 .demoStep:first-child { border-top: none; }
-.demoHead { max-width: 680px; margin: 0 0 22px; }
+.demoHead { max-width: 680px; margin: 0 auto 22px; text-align: center; }
+.demoTitleRow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; }
 .demoNum {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px; border-radius: 8px;
+  width: 32px; height: 32px; border-radius: 8px; flex: none;
   background: rgba(46,140,146,0.12); border: 1px solid rgba(46,140,146,0.35);
-  color: var(--petrol-2); font-weight: 700; font-size: 14px; margin-bottom: 14px;
+  color: var(--petrol-2); font-weight: 700; font-size: 14px;
 }
-.demoTitle { font-family: Georgia, serif; font-weight: 600; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.15; margin: 0 0 10px; color: var(--paper); }
-.demoDesc { color: var(--paper-dim); margin: 0; font-size: 15px; line-height: 1.65; }
+.demoTitle { font-family: Georgia, serif; font-weight: 600; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.15; margin: 0; color: var(--paper); }
+.demoDesc { color: var(--paper-dim); margin: 0 auto; max-width: 600px; font-size: 15px; line-height: 1.65; }
 .demoBrowser {
   border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
   background: var(--ink-soft); box-shadow: 0 24px 56px -28px rgba(0,0,0,0.6);

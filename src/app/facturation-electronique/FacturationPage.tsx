@@ -162,7 +162,7 @@ export default function FacturationPage() {
         {/* FONCTIONNALITÉS */}
         <section id="fonctionnalites" className={styles.section}>
           <div className={styles.wrap}>
-            <div className={`${styles.head} ${styles.reveal}`}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <h2 className={styles.sectionTitle}>Tout ce qu&apos;il faut, <em className={styles.accentSand}>rien à configurer</em></h2>
               <p className={styles.lede}>De la création de la facture jusqu&apos;à sa déclaration fiscale, FactuGP gère toute la chaîne avec les règles fiscales des DOM déjà intégrées.</p>
             </div>
@@ -185,7 +185,7 @@ export default function FacturationPage() {
         {/* DÉMO PRODUIT — captures réelles */}
         <section id="demo" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.wrap}>
-            <div className={`${styles.head} ${styles.reveal}`}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <h2 className={styles.sectionTitle}>Pas une promesse. <em className={styles.accentSand}>Un vrai logiciel.</em></h2>
               <p className={styles.lede}>FactuGP existe déjà et tourne aujourd&apos;hui. Voici ce que vous utiliserez au quotidien.</p>
             </div>
@@ -193,8 +193,10 @@ export default function FacturationPage() {
               {DEMO_STEPS.map(s => (
                 <div key={s.n} className={`${styles.demoStep} ${styles.reveal}`}>
                   <div className={styles.demoHead}>
-                    <span className={styles.demoNum}>{s.n}</span>
-                    <h3 className={styles.demoTitle}>{s.title}</h3>
+                    <div className={styles.demoTitleRow}>
+                      <span className={styles.demoNum}>{s.n}</span>
+                      <h3 className={styles.demoTitle}>{s.title}</h3>
+                    </div>
                     <p className={styles.demoDesc}>{s.desc}</p>
                   </div>
                   <div className={styles.demoBrowser}>
@@ -308,7 +310,7 @@ export default function FacturationPage() {
         {/* ROADMAP */}
         <section id="roadmap" className={`${styles.section} ${styles.sectionAlt}`}>
           <div className={styles.wrap}>
-            <div className={`${styles.head} ${styles.reveal}`}>
+            <div className={`${styles.head} ${styles.headCenter} ${styles.reveal}`}>
               <h2 className={styles.sectionTitle}>Une solution qui se construit, <em className={styles.accentSand}>étape par étape</em></h2>
               <p className={styles.lede}>FactuGP est en accès anticipé. <strong style={{ color: 'var(--paper)' }}>Ce qui est marqué fonctionne déjà aujourd&apos;hui</strong> ; le reste arrive avant l&apos;échéance. Réservez votre place parmi les premiers utilisateurs.</p>
             </div>
