@@ -42,7 +42,7 @@ const tools = [
     name: "FactuGP",
     Mark: FactuMark,
     accent: "#2E8C92",          // pétrole (DA FactuGP)
-    preview: null,              // produit pas encore construit → header stylisé
+    preview: "/factugp/demo/demo-02-dashboard.jpeg",  // capture produit réelle
     tagline: "Facturation électronique conforme 2026",
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
     status: "Disponible sept. 2026",
