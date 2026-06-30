@@ -1,6 +1,6 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react'
+import { ArrowRight, Calendar, Clock, BookOpen, FileText, Tag, GitCompare } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Blog Création Site Web Guadeloupe - Conseils & Actualités | SolYB',
@@ -25,31 +25,28 @@ const articles = [
     date: '2026-06-17',
     readTime: '9 min',
     category: 'Conformité 2026',
-    accentColor: 'text-coral',
-    accentBg: 'bg-coral/10',
-    borderColor: 'border-coral/20',
+    accent: '#2E8C92',     // pétrole (rappel FactuGP)
+    Icon: FileText,
   },
   {
     slug: 'prix-site-web-guadeloupe',
-    title: 'Prix Création Site Web en Guadeloupe : Le Guide Complet 2026',
+    title: 'Prix Création Site Web en Guadeloupe : le guide complet 2026',
     excerpt: 'Découvrez les vrais prix du marché guadeloupéen. Comparatif complet des agences, freelances et solutions DIY. De 599€ à 15 000€.',
-    date: '2024-12-27',
+    date: '2026-05-12',
     readTime: '12 min',
     category: 'Prix & Tarifs',
-    accentColor: 'text-solar',
-    accentBg: 'bg-solar/10',
-    borderColor: 'border-solar/20',
+    accent: '#B8760A',     // or éditorial
+    Icon: Tag,
   },
   {
     slug: 'application-web-vs-site-web-guadeloupe',
-    title: 'Application Web vs Site Web : Quelle Différence en Guadeloupe ?',
+    title: 'Application web vs site web : quelle différence en Guadeloupe ?',
     excerpt: 'Site web ou application web ? Découvrez les différences, avantages et inconvénients pour faire le bon choix pour votre entreprise.',
-    date: '2024-12-27',
+    date: '2026-04-22',
     readTime: '10 min',
     category: 'Guides',
-    accentColor: 'text-turquoise',
-    accentBg: 'bg-turquoise/10',
-    borderColor: 'border-turquoise/20',
+    accent: '#0E7C6B',     // teal caraïbe
+    Icon: GitCompare,
   },
 ]
 
@@ -66,59 +63,68 @@ export default function BlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main className="min-h-screen bg-[#0A0A0F]">
+      <main style={{ background: 'var(--syb-warm)' }}>
 
         {/* Hero */}
-        <section className="pt-20 md:pt-28 pb-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-coral/10 border border-coral/20 text-coral px-4 py-2 rounded-full mb-8 text-sm font-semibold">
-              <BookOpen className="w-4 h-4" />
-              Ressources & Guides
-            </div>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-[#F0EDE8] mb-6">
-              Blog Création Site Web<br />
-              <span className="text-coral">en Guadeloupe</span>
+        <section className="pt-28 md:pt-36 pb-12 px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
+              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.2)', color: 'var(--syb-rust)' }}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              Ressources & guides
+            </span>
+            <h1 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(40px, 6vw, 68px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}>
+              Blog création site web<br />
+              <span style={{ color: 'var(--syb-rust)' }}>en Guadeloupe</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#8B8B9E] max-w-2xl mx-auto">
-              Guides pratiques, comparatifs et conseils pour entrepreneurs guadeloupéens
-              qui souhaitent se lancer sur le web.
+            <p className="text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto" style={{ color: 'var(--syb-stone)' }}>
+              Guides pratiques, comparatifs et conseils pour les entrepreneurs guadeloupéens qui souhaitent se lancer sur le web.
             </p>
           </div>
         </section>
 
         {/* Articles */}
-        <section className="pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {articles.map((a, i) => (
-              <article key={i} className={`bg-[#13131A] border ${a.borderColor} rounded-2xl overflow-hidden hover:border-coral/30 transition-all group`}>
-                {/* Image placeholder */}
-                <div className={`h-48 ${a.accentBg} flex items-center justify-center border-b border-[#2A2A38]`}>
-                  <BookOpen className={`w-16 h-16 ${a.accentColor} opacity-30`} />
-                </div>
-
-                <div className="p-7">
-                  <span className={`inline-block ${a.accentBg} ${a.accentColor} border ${a.borderColor} px-3 py-1 rounded-full text-xs font-semibold mb-4`}>
+        <section className="pb-16 px-6">
+          <div className="reveal-stagger max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            {articles.map((a) => (
+              <article
+                key={a.slug}
+                className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
+                style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
+              >
+                {/* Couverture stylisée */}
+                <Link href={`/blog/${a.slug}`} className="relative block h-44 overflow-hidden" style={{ background: `linear-gradient(135deg, ${a.accent}, ${a.accent}bb)` }}>
+                  <a.Icon
+                    className="absolute -right-4 -bottom-4 transition-transform duration-500 group-hover:scale-110"
+                    style={{ width: 132, height: 132, color: 'rgba(255,255,255,0.16)' }}
+                    strokeWidth={1.2}
+                  />
+                  <span className="absolute left-5 top-5 inline-block rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide" style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', backdropFilter: 'blur(4px)' }}>
                     {a.category}
                   </span>
+                  <a.Icon className="absolute left-5 bottom-5 w-7 h-7" style={{ color: 'rgba(255,255,255,0.9)' }} strokeWidth={1.6} />
+                </Link>
 
-                  <h2 className="font-display text-xl font-bold text-[#F0EDE8] mb-3 leading-snug group-hover:text-coral transition-colors">
+                <div className="p-6 flex flex-col flex-1">
+                  <h2 className="font-display font-bold mb-2 leading-snug transition-colors" style={{ fontSize: '20px', color: 'var(--syb-ink)' }}>
                     {a.title}
                   </h2>
+                  <p className="text-sm font-light leading-relaxed mb-5 flex-1" style={{ color: 'var(--syb-stone)', lineHeight: 1.6 }}>{a.excerpt}</p>
 
-                  <p className="text-sm text-[#8B8B9E] leading-relaxed mb-5">{a.excerpt}</p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-xs text-[#8B8B9E]">
-                      <span className="flex items-center gap-1">
+                  <div className="flex items-center justify-between pt-4" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
+                    <div className="flex items-center gap-4 text-xs" style={{ color: 'var(--syb-stone-light)' }}>
+                      <span className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />
                         {new Date(a.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />
                         {a.readTime}
                       </span>
                     </div>
-                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 text-coral hover:text-coral-400 font-semibold text-sm transition-colors">
+                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 font-medium text-sm transition-transform hover:translate-x-0.5" style={{ color: a.accent }}>
                       Lire <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -129,12 +135,16 @@ export default function BlogPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0D14] border-t border-[#2A2A38] text-center">
+        <section className="py-20 px-6 text-center" style={{ background: 'var(--syb-cream)', borderTop: '0.5px solid var(--syb-border)' }}>
           <div className="max-w-2xl mx-auto">
-            <h2 className="font-display text-3xl font-bold text-[#F0EDE8] mb-4">Prêt à créer votre site web ?</h2>
-            <p className="text-[#8B8B9E] mb-8">Site professionnel livré en 2 semaines à partir de 599€.</p>
-            <Link href="/#contact" className="btn-studio inline-flex items-center gap-2 bg-coral text-white px-8 py-4 font-bold text-lg shadow-xl shadow-coral/20">
-              <span className="relative z-10 flex items-center gap-2">Demander un devis gratuit <ArrowRight className="w-5 h-5" /></span>
+            <h2 className="font-display font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--syb-ink)' }}>Prêt à créer votre site web ?</h2>
+            <p className="mb-8 font-light" style={{ color: 'var(--syb-stone)' }}>Site professionnel livré en 2 semaines, à partir de 599€.</p>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 font-medium text-base transition-transform hover:-translate-y-px"
+              style={{ background: 'var(--syb-rust)', color: '#fff', padding: '15px 32px', borderRadius: '4px' }}
+            >
+              Demander un devis gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
