@@ -19,6 +19,7 @@ export default function Navigation() {
     { href: "/#tarifs",       label: "Nos tarifs" },
     { href: "/#apropos",      label: "Qui on est" },
     { href: "/#realisations", label: "Nos projets" },
+    { href: "/blog",          label: "Blog" },
     { href: "/#contact",      label: "Contact" },
   ]
 
