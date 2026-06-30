@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Check, Code2, Database, Smartphone, Zap, Shield, TrendingUp } from 'lucide-react'
 
@@ -19,55 +19,51 @@ export const metadata: Metadata = {
 }
 
 const features = [
-  { icon: Code2, title: "Technologies Modernes", desc: "React, Next.js, Node.js — les meilleures technologies pour des applications performantes", color: "text-coral", bg: "bg-coral/10" },
-  { icon: Database, title: "Base de Données Robuste", desc: "PostgreSQL, Supabase — sécurité et performance garanties pour vos données", color: "text-turquoise", bg: "bg-turquoise/10" },
-  { icon: Smartphone, title: "Responsive & Mobile", desc: "Applications adaptées à tous les écrans — ordinateur, tablette, smartphone", color: "text-solar", bg: "bg-solar/10" },
-  { icon: Shield, title: "Sécurité Maximale", desc: "Authentification, chiffrement, sauvegardes automatiques", color: "text-violet", bg: "bg-violet/10" },
-  { icon: Zap, title: "Performance Optimale", desc: "Temps de chargement ultra-rapides, expérience utilisateur fluide", color: "text-coral", bg: "bg-coral/10" },
-  { icon: TrendingUp, title: "Évolutive", desc: "Architecture modulaire permettant d'ajouter des fonctionnalités facilement", color: "text-turquoise", bg: "bg-turquoise/10" },
+  { icon: Code2, title: "Technologies modernes", desc: "React, Next.js, Node.js — les meilleures technologies pour des applications performantes." },
+  { icon: Database, title: "Base de données robuste", desc: "PostgreSQL, Supabase — sécurité et performance garanties pour vos données." },
+  { icon: Smartphone, title: "Responsive & mobile", desc: "Applications adaptées à tous les écrans — ordinateur, tablette, smartphone." },
+  { icon: Shield, title: "Sécurité maximale", desc: "Authentification, chiffrement, sauvegardes automatiques." },
+  { icon: Zap, title: "Performance optimale", desc: "Temps de chargement ultra-rapides, expérience utilisateur fluide." },
+  { icon: TrendingUp, title: "Évolutive", desc: "Architecture modulaire permettant d'ajouter des fonctionnalités facilement." },
 ]
 
 const useCases = [
   {
-    title: "CRM Sur Mesure",
-    desc: "Gestion de clients, suivi des ventes, automatisation des tâches",
+    title: "CRM sur mesure",
+    desc: "Gestion de clients, suivi des ventes, automatisation des tâches.",
     price: "À partir de 2 500€",
-    accentColor: "text-coral",
-    borderColor: "border-coral/30",
+    accent: "var(--syb-rust)",
     features: ["Gestion contacts & clients", "Pipeline de vente", "Tableaux de bord analytics", "Automatisation emails", "Intégration calendrier"],
   },
   {
-    title: "Système de Réservation",
-    desc: "Réservations en ligne pour restaurants, hôtels, services",
+    title: "Système de réservation",
+    desc: "Réservations en ligne pour restaurants, hôtels, services.",
     price: "À partir de 1 800€",
-    accentColor: "text-turquoise",
-    borderColor: "border-turquoise/30",
+    accent: "var(--syb-teal-deep)",
     features: ["Calendrier disponibilités", "Réservation en temps réel", "Paiement en ligne", "Notifications SMS/Email", "Gestion multi-utilisateurs"],
   },
   {
-    title: "Plateforme E-learning",
-    desc: "Formation en ligne, cours vidéo, quiz et certifications",
+    title: "Plateforme e-learning",
+    desc: "Formation en ligne, cours vidéo, quiz et certifications.",
     price: "À partir de 3 000€",
-    accentColor: "text-solar",
-    borderColor: "border-solar/30",
+    accent: "var(--syb-gold)",
     features: ["Hébergement cours vidéo", "Quiz & évaluations", "Suivi progression", "Certificats automatiques", "Espace étudiant/formateur"],
   },
   {
-    title: "Portail Intranet",
-    desc: "Espace collaboratif pour entreprises et associations",
+    title: "Portail intranet",
+    desc: "Espace collaboratif pour entreprises et associations.",
     price: "À partir de 2 000€",
-    accentColor: "text-violet",
-    borderColor: "border-violet/30",
+    accent: "var(--syb-rust-deep)",
     features: ["Gestion documents", "Messagerie interne", "Gestion de projets", "Annuaire employés", "Permissions par rôle"],
   },
 ]
 
 const steps = [
-  { n: "1", title: "Analyse de vos besoins", desc: "Appel découverte gratuit de 30 min pour comprendre votre projet et vos objectifs" },
-  { n: "2", title: "Devis détaillé", desc: "Proposition technique et financière sous 48h avec planning prévisionnel" },
-  { n: "3", title: "Développement", desc: "Réalisation de votre application avec suivi hebdomadaire et démos régulières" },
-  { n: "4", title: "Tests & Formation", desc: "Tests complets, corrections, et formation de vos équipes à l'utilisation" },
-  { n: "5", title: "Mise en ligne", desc: "Déploiement sur serveurs sécurisés avec support technique inclus" },
+  { n: "1", title: "Analyse de vos besoins", desc: "Appel découverte gratuit de 30 min pour comprendre votre projet et vos objectifs." },
+  { n: "2", title: "Devis détaillé", desc: "Proposition technique et financière sous 48h avec planning prévisionnel." },
+  { n: "3", title: "Développement", desc: "Réalisation de votre application avec suivi hebdomadaire et démos régulières." },
+  { n: "4", title: "Tests & formation", desc: "Tests complets, corrections, et formation de vos équipes à l'utilisation." },
+  { n: "5", title: "Mise en ligne", desc: "Déploiement sur serveurs sécurisés avec support technique inclus." },
 ]
 
 export default function ApplicationWebPage() {
@@ -85,46 +81,51 @@ export default function ApplicationWebPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main className="min-h-screen bg-[#0A0A0F]">
+      <main style={{ background: 'var(--syb-warm)' }}>
 
         {/* Hero */}
-        <section className="pt-20 md:pt-28 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-turquoise/10 border border-turquoise/20 text-turquoise px-4 py-2 rounded-full mb-8 text-sm font-semibold">
-              <Code2 className="w-4 h-4" />
+        <section className="pt-28 md:pt-36 pb-16 px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
+              style={{ background: 'rgba(14,124,107,0.08)', border: '0.5px solid rgba(14,124,107,0.22)', color: 'var(--syb-teal-deep)' }}
+            >
+              <Code2 className="w-3.5 h-3.5" />
               Développement sur mesure
-            </div>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-[#F0EDE8] mb-6">
-              Applications Web<br />
-              <span className="text-coral">Sur Mesure en Guadeloupe</span>
+            </span>
+            <h1 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(40px, 6vw, 68px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}>
+              Applications web<br />
+              <span style={{ color: 'var(--syb-rust)' }}>sur mesure en Guadeloupe</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#8B8B9E] max-w-3xl mx-auto mb-10">
-              Transformez vos processus métier avec une application web personnalisée.
-              CRM, réservation, e-learning, portail intranet — nous développons la solution
-              qui répond exactement à vos besoins.
+            <p className="text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-9" style={{ color: 'var(--syb-stone)' }}>
+              Transformez vos processus métier avec une application web personnalisée. CRM, réservation, e-learning, portail intranet — on développe la solution qui répond exactement à vos besoins.
             </p>
-            <Link href="/#contact" className="btn-studio inline-flex items-center gap-2 bg-coral text-white px-8 py-4 font-bold text-lg shadow-xl shadow-coral/20">
-              <span className="relative z-10 flex items-center gap-2">Demander un devis gratuit <ArrowRight className="w-5 h-5" /></span>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 font-medium text-base transition-transform hover:-translate-y-px"
+              style={{ background: 'var(--syb-rust)', color: '#fff', padding: '15px 32px', borderRadius: '4px' }}
+            >
+              Demander un devis gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
 
         {/* Features */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0D0D14] border-y border-[#2A2A38]">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F0EDE8] text-center mb-12">
-              Pourquoi Choisir Une Application Sur Mesure ?
+        <section className="py-20 px-6" style={{ background: 'var(--syb-cream)', borderTop: '0.5px solid var(--syb-border)', borderBottom: '0.5px solid var(--syb-border)' }}>
+          <div className="max-w-[1100px] mx-auto">
+            <h2 className="font-display font-bold text-center mb-12" style={{ fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--syb-ink)' }}>
+              Pourquoi une application sur mesure ?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {features.map((f, i) => {
+            <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {features.map((f) => {
                 const Icon = f.icon
                 return (
-                  <div key={i} className="bg-[#13131A] border border-[#2A2A38] rounded-xl p-6 hover:border-coral/20 transition-colors">
-                    <div className={`w-12 h-12 ${f.bg} rounded-xl flex items-center justify-center mb-4`}>
-                      <Icon className={`w-6 h-6 ${f.color}`} />
+                  <div key={f.title} className="rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1" style={{ background: 'var(--syb-warm)', border: '0.5px solid var(--syb-border)' }}>
+                    <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.18)', color: 'var(--syb-rust)' }}>
+                      <Icon className="w-5 h-5" strokeWidth={1.6} />
                     </div>
-                    <h3 className="font-display font-bold text-[#F0EDE8] mb-2">{f.title}</h3>
-                    <p className="text-sm text-[#8B8B9E] leading-relaxed">{f.desc}</p>
+                    <h3 className="font-display font-bold mb-2" style={{ fontSize: '18px', color: 'var(--syb-ink)' }}>{f.title}</h3>
+                    <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.6 }}>{f.desc}</p>
                   </div>
                 )
               })}
@@ -133,31 +134,38 @@ export default function ApplicationWebPage() {
         </section>
 
         {/* Use Cases */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F0EDE8] text-center mb-4">
-              Exemples d&apos;Applications Développées
+        <section className="py-20 px-6">
+          <div className="max-w-[1100px] mx-auto">
+            <h2 className="font-display font-bold text-center mb-3" style={{ fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--syb-ink)' }}>
+              Exemples d&apos;applications développées
             </h2>
-            <p className="text-[#8B8B9E] text-center mb-12 max-w-2xl mx-auto">
-              Des solutions concrètes pour des besoins réels d&apos;entreprises guadeloupéennes
+            <p className="text-center font-light mb-12 max-w-xl mx-auto" style={{ color: 'var(--syb-stone)' }}>
+              Des solutions concrètes pour des besoins réels d&apos;entreprises guadeloupéennes.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {useCases.map((u, i) => (
-                <div key={i} className={`bg-[#13131A] border-2 ${u.borderColor} rounded-2xl p-8 flex flex-col`}>
-                  <h3 className={`font-display text-2xl font-bold ${u.accentColor} mb-2`}>{u.title}</h3>
-                  <p className="text-[#8B8B9E] text-sm mb-4">{u.desc}</p>
-                  <p className={`font-display text-xl font-bold ${u.accentColor} mb-6`}>{u.price}</p>
-                  <ul className="space-y-2.5 mb-8 flex-1">
-                    {u.features.map((f, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-sm text-[#8B8B9E]">
-                        <Check className="w-4 h-4 text-turquoise flex-shrink-0 mt-0.5" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/#contact" className="w-full inline-flex items-center justify-center gap-2 bg-[#1C1C26] hover:bg-[#2A2A38] text-[#F0EDE8] border border-[#2A2A38] hover:border-coral/30 px-6 py-3 rounded-xl font-semibold transition-all">
-                    Discuter de ce projet <ArrowRight className="w-4 h-4" />
-                  </Link>
+            <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-4">
+              {useCases.map((u) => (
+                <div key={u.title} className="service-card group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1" style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}>
+                  <div className="service-accent" style={{ height: '4px', background: u.accent }} />
+                  <div className="p-7 flex flex-col flex-1">
+                    <h3 className="font-display font-bold mb-1" style={{ fontSize: '22px', color: 'var(--syb-ink)' }}>{u.title}</h3>
+                    <p className="text-sm font-light mb-4" style={{ color: 'var(--syb-stone)' }}>{u.desc}</p>
+                    <p className="font-display font-bold mb-5" style={{ fontSize: '18px', color: u.accent }}>{u.price}</p>
+                    <ul className="flex flex-col gap-2 mb-6 flex-1">
+                      {u.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm font-light" style={{ color: 'var(--syb-stone)', lineHeight: 1.45 }}>
+                          <Check className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: u.accent }} />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href="/#contact"
+                      className="inline-flex items-center justify-center gap-2 w-full text-sm font-normal transition-transform hover:-translate-y-px"
+                      style={{ background: 'transparent', color: 'var(--syb-ink)', border: '0.5px solid var(--syb-ink)', padding: '11px 22px', borderRadius: '4px' }}
+                    >
+                      Discuter de ce projet <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
@@ -165,18 +173,18 @@ export default function ApplicationWebPage() {
         </section>
 
         {/* Process */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0D0D14] border-y border-[#2A2A38]">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-display text-3xl font-bold text-[#F0EDE8] text-center mb-12">Comment Ça Marche ?</h2>
-            <div className="space-y-4">
-              {steps.map((s, i) => (
-                <div key={i} className="flex items-start gap-5 bg-[#13131A] border border-[#2A2A38] rounded-xl p-5 hover:border-coral/20 transition-colors">
-                  <div className="w-10 h-10 bg-coral rounded-full flex items-center justify-center font-display font-bold text-white text-sm flex-shrink-0">
+        <section className="py-20 px-6" style={{ background: 'var(--syb-cream)', borderTop: '0.5px solid var(--syb-border)', borderBottom: '0.5px solid var(--syb-border)' }}>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-display font-bold text-center mb-12" style={{ fontSize: 'clamp(28px, 4vw, 42px)', color: 'var(--syb-ink)' }}>Comment ça marche ?</h2>
+            <div className="reveal-stagger flex flex-col gap-3">
+              {steps.map((s) => (
+                <div key={s.n} className="flex items-start gap-5 rounded-xl p-5 transition-transform duration-300 hover:-translate-y-0.5" style={{ background: 'var(--syb-warm)', border: '0.5px solid var(--syb-border)' }}>
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm flex-shrink-0" style={{ background: 'var(--syb-rust)', color: '#fff' }}>
                     {s.n}
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[#F0EDE8] mb-1">{s.title}</h3>
-                    <p className="text-sm text-[#8B8B9E]">{s.desc}</p>
+                    <h3 className="font-display font-bold mb-1" style={{ fontSize: '17px', color: 'var(--syb-ink)' }}>{s.title}</h3>
+                    <p className="text-sm font-light" style={{ color: 'var(--syb-stone)' }}>{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -185,12 +193,16 @@ export default function ApplicationWebPage() {
         </section>
 
         {/* CTA Final */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-6 text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F0EDE8] mb-4">Prêt à digitaliser votre entreprise ?</h2>
-            <p className="text-[#8B8B9E] mb-8">Discutons de votre projet lors d&apos;un appel découverte gratuit de 30 minutes.</p>
-            <Link href="/#contact" className="btn-studio inline-flex items-center gap-2 bg-coral text-white px-8 py-4 font-bold text-lg shadow-xl shadow-coral/20">
-              <span className="relative z-10 flex items-center gap-2">Réserver mon appel gratuit <ArrowRight className="w-5 h-5" /></span>
+            <h2 className="font-display font-bold mb-4" style={{ fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--syb-ink)' }}>Prêt à digitaliser votre entreprise ?</h2>
+            <p className="mb-8 font-light" style={{ color: 'var(--syb-stone)' }}>Discutons de votre projet lors d&apos;un appel découverte gratuit de 30 minutes.</p>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 font-medium text-base transition-transform hover:-translate-y-px"
+              style={{ background: 'var(--syb-rust)', color: '#fff', padding: '15px 32px', borderRadius: '4px' }}
+            >
+              Réserver mon appel gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
