@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next"
 import { Fraunces, DM_Sans } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const fraunces = Fraunces({
@@ -114,6 +115,7 @@ export default function RootLayout({
             (désactivé / bundle en échec), le contenu reste visible. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {children}
+        <Analytics />
       </body>
     </html>
   )
