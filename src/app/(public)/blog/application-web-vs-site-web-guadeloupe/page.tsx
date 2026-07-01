@@ -62,9 +62,9 @@ export default function ApplicationVsSiteWebPage() {
       <article className="min-h-screen bg-white">
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Application web vs site web', href: '/blog/application-web-vs-site-web-guadeloupe' }]} />
         {/* Header */}
-        <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C4472A]/[0.06] to-[#E8845F]/[0.05]">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-[#C4472A]/10 text-[#C4472A] px-3 py-1 rounded-full text-sm font-semibold mb-4">
               Guides
             </div>
 
@@ -87,7 +87,7 @@ export default function ApplicationVsSiteWebPage() {
 
         {/* Content */}
         <div className="px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-4xl mx-auto prose prose-lg">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:font-display prose-a:text-[#C4472A]">
             <p className="lead">
               Vous êtes entrepreneur en Guadeloupe et vous hésitez entre créer un <strong>site web classique</strong> ou
               développer une <strong>application web sur mesure</strong> ? Cette question revient souvent lors de nos
@@ -108,23 +108,23 @@ export default function ApplicationVsSiteWebPage() {
               Il présente votre entreprise, vos services, vos coordonnées et permet aux visiteurs de vous contacter.
             </p>
 
-            <div className="not-prose bg-blue-50 rounded-2xl p-8 my-8">
+            <div className="not-prose bg-[#FBF0EC] rounded-2xl p-8 my-8">
               <h4 className="text-xl font-bold text-gray-900 mb-4">Exemples concrets en Guadeloupe:</h4>
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Site d'un restaurant avec menu et réservation par téléphone</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Portfolio d'un photographe guadeloupéen</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Site d'un artisan avec galerie photos</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Présentation d'un gîte avec formulaire de contact</span>
                 </li>
               </ul>
@@ -146,27 +146,27 @@ export default function ApplicationVsSiteWebPage() {
               d'effectuer des actions complexes, de gérer des données, d'interagir de manière dynamique.
             </p>
 
-            <div className="not-prose bg-green-50 rounded-2xl p-8 my-8">
+            <div className="not-prose bg-[#E9F5F2] rounded-2xl p-8 my-8">
               <h4 className="text-xl font-bold text-gray-900 mb-4">Exemples concrets en Guadeloupe:</h4>
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Plateforme de réservation pour activités touristiques 971</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">CRM pour gérer vos clients et devis</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Marketplace locale type "Leboncoin Guadeloupe"</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Outil de gestion de stock pour commerce</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700">Plateforme de formation en ligne</span>
                 </li>
               </ul>
@@ -186,7 +186,7 @@ export default function ApplicationVsSiteWebPage() {
 
             <div className="not-prose overflow-x-auto my-8">
               <table className="w-full bg-white rounded-xl overflow-hidden shadow-md">
-                <thead className="bg-primary text-white">
+                <thead style={{ background: "#C4472A" }} className="text-white">
                   <tr>
                     <th className="text-left py-4 px-4">Critère</th>
                     <th className="text-left py-4 px-4">Site Web</th>
@@ -206,7 +206,7 @@ export default function ApplicationVsSiteWebPage() {
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="py-4 px-4 font-semibold">Prix Guadeloupe</td>
-                    <td className="py-4 px-4 text-green-600 font-bold">599-2 000€</td>
+                    <td className="py-4 px-4 text-[#0E7C6B] font-bold">599-2 000€</td>
                     <td className="py-4 px-4 text-orange-600 font-bold">2 000-50 000€</td>
                   </tr>
                   <tr className="border-b border-gray-200 bg-gray-50">
@@ -244,32 +244,32 @@ export default function ApplicationVsSiteWebPage() {
 
             <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
               {/* Site Web */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-[#FBF0EC] to-[#F6E4DD] rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Choisissez un SITE WEB si...</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Votre objectif principal est de <strong>présenter votre activité</strong></span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous voulez être <strong>trouvable sur Google</strong> localement</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous avez besoin d'un <strong>formulaire de contact</strong> simple</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Votre budget est <strong>limité</strong> (&lt; 2 000€)</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous voulez une solution <strong>rapide</strong> (2-4 semaines)</span>
                   </li>
                 </ul>
 
-                <div className="mt-6 pt-6 border-t border-blue-200">
+                <div className="mt-6 pt-6 border-t border-[#C4472A]/20">
                   <p className="font-semibold text-gray-900 mb-2">Profils concernés:</p>
                   <p className="text-sm text-gray-700">
                     Artisan, Restaurant, Cabinet médical, Gîte, Photographe, Coach sportif, Commerce de détail
@@ -278,32 +278,32 @@ export default function ApplicationVsSiteWebPage() {
               </div>
 
               {/* Application Web */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-[#E9F5F2] to-[#D8EDE8] rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Choisissez une APPLICATION WEB si...</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous avez besoin de <strong>fonctionnalités complexes</strong></span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vos utilisateurs doivent <strong>créer un compte</strong></span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous gérez des <strong>données importantes</strong></span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous voulez <strong>automatiser des processus</strong></span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">Vous êtes prêt à investir <strong>2 000€ et plus</strong></span>
                   </li>
                 </ul>
 
-                <div className="mt-6 pt-6 border-t border-green-200">
+                <div className="mt-6 pt-6 border-t border-[#0E7C6B]/20">
                   <p className="font-semibold text-gray-900 mb-2">Profils concernés:</p>
                   <p className="text-sm text-gray-700">
                     Location de voitures, BTP, Centre de formation, Marketplace, Plateforme de mise en relation
@@ -323,7 +323,7 @@ export default function ApplicationVsSiteWebPage() {
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-xl font-bold text-gray-900">Application Simple</h4>
-                  <span className="text-2xl font-bold text-primary">2 000 - 5 000€</span>
+                  <span className="text-2xl font-bold text-[#C4472A]">2 000 - 5 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
                   <li className="text-gray-700">• 5-10 fonctionnalités de base</li>
@@ -337,10 +337,10 @@ export default function ApplicationVsSiteWebPage() {
                 </p>
               </div>
 
-              <div className="bg-white border-2 border-primary rounded-2xl p-6">
+              <div className="bg-white border-2 border-[#C4472A] rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-xl font-bold text-gray-900">Application Moyenne</h4>
-                  <span className="text-2xl font-bold text-primary">5 000 - 15 000€</span>
+                  <span className="text-2xl font-bold text-[#C4472A]">5 000 - 15 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
                   <li className="text-gray-700">• 10-20 fonctionnalités</li>
@@ -358,7 +358,7 @@ export default function ApplicationVsSiteWebPage() {
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-xl font-bold text-gray-900">Application Complexe</h4>
-                  <span className="text-2xl font-bold text-primary">15 000 - 50 000€</span>
+                  <span className="text-2xl font-bold text-[#C4472A]">15 000 - 50 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
                   <li className="text-gray-700">• 20+ fonctionnalités</li>
@@ -377,41 +377,41 @@ export default function ApplicationVsSiteWebPage() {
 
             <h2>Notre Recommandation pour Entreprises Guadeloupéennes</h2>
 
-            <div className="not-prose bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 my-8">
+            <div className="not-prose bg-gradient-to-br from-[#C4472A]/[0.08] to-[#E8845F]/[0.06] rounded-2xl p-8 my-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">L'Approche Hybride (Recommandée)</h3>
 
               <div className="space-y-6">
                 <div className="bg-white rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-primary mb-3">Phase 1: Site Vitrine (599€ chez SolYB)</h4>
+                  <h4 className="text-lg font-bold text-[#C4472A] mb-3">Phase 1: Site Vitrine (599€ chez SolYB)</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Présence en ligne rapide</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Référencement Google</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Génération de leads</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="bg-white rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-primary mb-3">Phase 2: Application Web (3-6 mois après)</h4>
+                  <h4 className="text-lg font-bold text-[#C4472A] mb-3">Phase 2: Application Web (3-6 mois après)</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Besoin validé</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Budget constitué</span>
                     </li>
                     <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">Cahier des charges précis</span>
                     </li>
                   </ul>
@@ -441,7 +441,7 @@ export default function ApplicationVsSiteWebPage() {
         </div>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary to-primary-600">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C4472A] to-[#a63a22]">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Besoin d'un Site Web ou d'une Application en Guadeloupe ?
@@ -463,7 +463,7 @@ export default function ApplicationVsSiteWebPage() {
             </div>
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
+              className="inline-flex items-center justify-center bg-white text-[#C4472A] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
             >
               Devis gratuit sous 24h
             </Link>
