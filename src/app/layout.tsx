@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next"
 import { Fraunces, DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 
 const fraunces = Fraunces({
@@ -116,6 +117,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
