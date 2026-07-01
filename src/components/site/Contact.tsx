@@ -3,7 +3,7 @@ import { useState } from "react"
 import HoneypotField from "@/components/site/HoneypotField"
 
 const contactInfo = [
-  { label: "Localisation", value: "Baie-Mahault, Guadeloupe 97122" },
+  { label: "Localisation", value: "Guadeloupe" },
   { label: "Réponse garantie", value: "Sous 24h en semaine" },
   { label: "Devis", value: "Gratuit et sans engagement" },
 ]

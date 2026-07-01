@@ -10,12 +10,8 @@ export const metadata: Metadata = {
 }
 
 /*
- * ⚠️ À COMPLÉTER par Yacine — les champs entre crochets [ ] doivent être
- * remplis avec les informations légales réelles de l'entreprise :
- *   - Forme juridique (auto-entrepreneur / EI / EURL / SASU…)
- *   - Numéro SIRET / SIREN
- *   - Numéro de TVA intracommunautaire (si assujetti)
- * L'hébergeur indiqué (Vercel) suppose un déploiement sur Vercel — à ajuster si autre.
+ * Infos légales SASU complétées (2026-07). Le RCS est déduit du SIREN
+ * (greffe de Pointe-à-Pitre) — à vérifier sur l'extrait Kbis.
  */
 
 export default function MentionsLegalesPage() {
@@ -23,17 +19,19 @@ export default function MentionsLegalesPage() {
     <LegalShell eyebrow="Informations légales" titleTop="Mentions" titleAccent="légales">
       <LegalSection title="Éditeur du site">
         <p>
-          Le site <strong>solyb.fr</strong> est édité par <strong>SolYB</strong>, [forme juridique —
-          ex. entreprise individuelle], dont le siège social est situé :
+          Le site <strong>solyb.fr</strong> est édité par <strong>SolYB</strong>, société par actions
+          simplifiée unipersonnelle (SASU), dont le siège social est situé :
         </p>
         <p className="mt-2">
-          Impasse la coulée verte, Moudong Nord<br />
-          97122 Baie-Mahault, Guadeloupe
+          Route de Tambour<br />
+          97170 Petit-Bourg, Guadeloupe
         </p>
         <ul className="mt-3 space-y-1">
-          <li>Responsable de la publication : Yacine Bouhassoun</li>
-          <li>SIRET : [numéro SIRET à compléter]</li>
-          <li>Numéro de TVA intracommunautaire : [le cas échéant]</li>
+          <li>Président et responsable de la publication : Yacine Bouhassoun</li>
+          <li>SIRET : 102 699 220 00012</li>
+          <li>RCS Pointe-à-Pitre : 102 699 220</li>
+          <li>Capital social : 1 000 €</li>
+          <li>Numéro de TVA intracommunautaire : FR64102699220</li>
           <li>
             Email :{' '}
             <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust-ink)' }}>contact@solyb.fr</a>

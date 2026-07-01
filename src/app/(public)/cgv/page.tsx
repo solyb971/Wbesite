@@ -41,13 +41,13 @@ export default function CGVPage() {
 
       <LegalSection title="2. Prestataire">
         <p>
-          <strong>SolYB</strong>, [forme juridique — ex. entreprise individuelle], représentée par
+          <strong>SolYB</strong>, société par actions simplifiée unipersonnelle (SASU), représentée par
           Yacine Bouhassoun.
         </p>
         <ul className="mt-2 space-y-1">
-          <li>Siège : Impasse la coulée verte, Moudong Nord, 97122 Baie-Mahault, Guadeloupe</li>
-          <li>SIRET : [numéro SIRET à compléter]</li>
-          <li>TVA : [n° de TVA intracommunautaire, ou « TVA non applicable, art. 293 B du CGI »]</li>
+          <li>Siège : Route de Tambour, 97170 Petit-Bourg, Guadeloupe</li>
+          <li>SIRET : 102 699 220 00012 — RCS Pointe-à-Pitre 102 699 220</li>
+          <li>TVA intracommunautaire : FR64102699220</li>
           <li>
             Contact :{' '}
             <a href="mailto:contact@solyb.fr" style={rust}>contact@solyb.fr</a>{' '}

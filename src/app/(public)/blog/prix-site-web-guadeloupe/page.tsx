@@ -37,7 +37,7 @@ export default function PrixSiteWebGuadeloupePage() {
     publisher: {
       '@type': 'Organization',
       name: 'SolYB',
-      address: { '@type': 'PostalAddress', addressLocality: 'Baie-Mahault', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
     datePublished: '2026-05-12',
     dateModified: '2026-05-12',
@@ -146,7 +146,7 @@ export default function PrixSiteWebGuadeloupePage() {
 
         <h2>Et SolYB dans tout ça ?</h2>
         <p>
-          Pour être transparent : <strong>SolYB est une jeune agence basée à Baie-Mahault</strong>. Pour ses premiers
+          Pour être transparent : <strong>SolYB est une jeune agence guadeloupéenne</strong>. Pour ses premiers
           clients, elle propose un <strong>tarif de lancement de 599 € pour un site vitrine</strong> (hébergement et
           nom de domaine offerts la première année, formation et support inclus). C&apos;est un tarif volontairement
           accessible, <strong>réservé aux premiers projets et amené à évoluer</strong> ensuite. Les prix sont affichés

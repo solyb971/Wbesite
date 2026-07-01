@@ -8,7 +8,7 @@ const badges = [
   { icon: Clock,       title: "Livraison Rapide",       description: "2 à 3 semaines",           iconColor: "text-turquoise", iconBg: "bg-turquoise/10" },
   { icon: CreditCard,  title: "Paiement en 2x",         description: "50% à la commande",        iconColor: "text-violet",    iconBg: "bg-violet/10" },
   { icon: Headphones,  title: "Support Inclus",          description: "3 mois d'assistance",     iconColor: "text-rose",      iconBg: "bg-rose/10" },
-  { icon: CheckCircle, title: "Ancré en Guadeloupe",     description: "Baie-Mahault · 971",      iconColor: "text-lime",      iconBg: "bg-lime/10" },
+  { icon: CheckCircle, title: "Ancré en Guadeloupe",     description: "Guadeloupe · 971",      iconColor: "text-lime",      iconBg: "bg-lime/10" },
 ]
 
 interface TrustBadgesProps {

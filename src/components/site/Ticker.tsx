@@ -15,7 +15,7 @@ const items: Item[] = [
   { icon: ShieldCheck,   text: "Conformité DGFiP" },
   { icon: Globe,         text: "SaaS & marketplace" },
   { icon: GraduationCap, text: "Formation incluse" },
-  { icon: Cpu,           text: "Basé à Baie-Mahault" },
+  { icon: Cpu,           text: "Basé en Guadeloupe" },
 ]
 
 function TickerContent() {

@@ -121,7 +121,7 @@ function LoginForm() {
         </form>
 
         <p className="mt-7 pt-6 text-center text-xs" style={{ borderTop: "1px solid rgba(245,237,216,0.08)", color: "#7E715E" }}>
-          Accès réservé aux administrateurs SolYB · Baie-Mahault, Guadeloupe
+          Accès réservé aux administrateurs SolYB · Guadeloupe
         </p>
       </div>
     </div>

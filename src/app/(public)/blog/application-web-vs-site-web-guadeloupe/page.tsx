@@ -41,7 +41,7 @@ export default function ApplicationVsSiteWebPage() {
     publisher: {
       '@type': 'Organization',
       name: 'SolYB',
-      address: { '@type': 'PostalAddress', addressLocality: 'Baie-Mahault', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
     datePublished: '2026-04-22',
     dateModified: '2026-04-22',

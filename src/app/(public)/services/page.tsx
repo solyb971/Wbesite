@@ -70,7 +70,7 @@ export default function ServicesPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Création de site web',
-    provider: { '@type': 'LocalBusiness', name: 'SolYB', address: { '@type': 'PostalAddress', addressLocality: 'Baie-Mahault', addressRegion: 'Guadeloupe', postalCode: '97122', addressCountry: 'GP' } },
+    provider: { '@type': 'LocalBusiness', name: 'SolYB', address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', postalCode: '97170', addressCountry: 'GP' } },
     areaServed: { '@type': 'Place', name: 'Guadeloupe' },
     offers: [
       { '@type': 'Offer', name: 'Site Vitrine Professionnel', price: '599', priceCurrency: 'EUR', description: 'Site vitrine responsive avec hébergement' },

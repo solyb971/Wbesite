@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm font-light mb-5" style={{ color: '#B0A89E', lineHeight: 1.6 }}>
-              Agence digitale · Baie-Mahault, Guadeloupe 971
+              Agence digitale · Guadeloupe 971
             </p>
             <div className="flex flex-col gap-2 text-sm font-light">
               <a href="mailto:contact@solyb.fr" className="transition-colors hover:text-white" style={{ color: '#B0A89E' }}>
@@ -95,7 +95,7 @@ export default function Footer() {
           style={{ borderTop: '0.5px solid #1a1814' }}
         >
           <p className="text-xs font-light" style={{ color: '#938B7D' }}>
-            © {currentYear} SolYB — Agence digitale · Baie-Mahault 97122, Guadeloupe
+            © {currentYear} SolYB — Agence digitale · Guadeloupe
           </p>
           <div className="flex flex-wrap gap-6">
             {legalLinks.map((l) => (

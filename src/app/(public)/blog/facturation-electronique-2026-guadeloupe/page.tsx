@@ -44,7 +44,7 @@ export default function FacturationElectronique2026GuadeloupePage() {
       '@type': 'Organization',
       name: 'SolYB',
       logo: { '@type': 'ImageObject', url: 'https://solyb.fr/logo/syb-orange.png' },
-      address: { '@type': 'PostalAddress', addressLocality: 'Baie-Mahault', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
     image: 'https://solyb.fr/opengraph-image',
     datePublished: '2026-06-17',
