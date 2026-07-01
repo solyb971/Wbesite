@@ -13,7 +13,7 @@ import { faqs } from "@/lib/faq-data"
 export const metadata: Metadata = {
   // 54 chars — sans le suffixe template, affiché en entier dans Google
   title: { absolute: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026' },
-  description: 'Agence digitale en Guadeloupe (971). Sites web dès 599€, applications métier & facturation électronique 2026. Devis gratuit sous 24h.',
+  description: 'Agence digitale en Guadeloupe : sites web dès 599€, applications métier et facturation électronique 2026. Un seul interlocuteur, devis gratuit sous 24h.',
   keywords: [
     'agence digitale Guadeloupe',
     'création site web Guadeloupe',
