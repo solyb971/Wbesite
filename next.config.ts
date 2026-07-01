@@ -27,6 +27,13 @@ const nextConfig: NextConfig = {
         destination: '/#tarifs',
         permanent: true,
       },
+      // Page /application-web-guadeloupe supprimée → redirigée vers /services
+      // pour préserver le SEO (URL déjà connue de Google) et éviter les 404.
+      {
+        source: '/application-web-guadeloupe',
+        destination: '/services',
+        permanent: true,
+      },
     ]
   },
 

@@ -60,7 +60,7 @@ const services = [
     features: ["Cahier des charges sur-mesure", "Architecture React / Next.js", "Base de données robuste", "Intégrations (paiement, email…)", "Évolutif dans le temps", "Devis détaillé sous 24h"],
     idealFor: ["TPE/PME", "Réseaux & franchises", "Secteurs réglementés"],
     deliveryTime: "Selon le projet",
-    href: "/application-web-guadeloupe",
+    href: "/?service=application#contact",
     cta: "Découvrir les applications",
   },
 ]

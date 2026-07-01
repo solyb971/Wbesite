@@ -17,12 +17,6 @@ export async function GET() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/application-web-guadeloupe`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/facturation-electronique`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
