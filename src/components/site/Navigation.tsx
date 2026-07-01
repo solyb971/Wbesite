@@ -86,15 +86,21 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center cursor-pointer" aria-label="SolYB — accueil">
+          <Link href="/" className="flex items-center gap-2.5 cursor-pointer" aria-label="SolYB — accueil">
             <Image
               src="/logo/syb-orange.png"
-              alt="SolYB"
+              alt=""
               width={160}
               height={160}
               className="h-11 w-auto"
               priority
             />
+            <span
+              className="font-display font-black leading-none"
+              style={{ fontSize: '22px', letterSpacing: '-0.5px', color: 'var(--syb-ink)' }}
+            >
+              SolYB
+            </span>
           </Link>
 
           {/* Desktop links */}
