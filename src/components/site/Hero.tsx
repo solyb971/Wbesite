@@ -48,10 +48,10 @@ export default function Hero() {
           className="font-light leading-relaxed mb-10 max-w-xl"
           style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
         >
-          On construit des outils digitaux pour les entrepreneurs d&apos;ici — des sites, des
-          applications, des systèmes qui{' '}
-          <span style={{ color: 'var(--syb-cream)' }}>tiennent dans le temps</span>. Pas des vitrines
-          vides. Des leviers.
+          Chaque jour, des clients tapent une recherche pensant vous trouver — et tombent sur un
+          concurrent mieux référencé. On construit des outils digitaux pour les entrepreneurs
+          d&apos;ici : sites, applications, systèmes pensés pour être{' '}
+          <span style={{ color: 'var(--syb-cream)' }}>trouvés</span>, pas juste pour exister.
         </p>
 
         {/* CTAs — primaire dominant, secondaire subordonné (lien texte discret) */}

@@ -91,7 +91,7 @@ export default function ApplicationWebPage() {
           <div className="max-w-3xl mx-auto text-center">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
-              style={{ background: 'rgba(14,124,107,0.08)', border: '0.5px solid rgba(14,124,107,0.22)', color: 'var(--syb-teal-deep)' }}
+              style={{ background: 'rgba(14,124,107,0.08)', border: '0.5px solid rgba(14,124,107,0.22)', color: '#0C7060' }}
             >
               <Code2 className="w-3.5 h-3.5" />
               Développement sur mesure

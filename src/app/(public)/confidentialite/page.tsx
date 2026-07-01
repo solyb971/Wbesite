@@ -22,7 +22,7 @@ export default function ConfidentialitePage() {
         <p>
           Le responsable du traitement des données collectées sur ce site est <strong>SolYB</strong>,
           représenté par Yacine Bouhassoun. Pour toute question relative à vos données :{' '}
-          <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust)' }}>contact@solyb.fr</a>.
+          <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust-ink)' }}>contact@solyb.fr</a>.
         </p>
       </LegalSection>
 
@@ -72,11 +72,11 @@ export default function ConfidentialitePage() {
           Conformément au RGPD et à la loi « Informatique et Libertés », vous disposez d&apos;un droit
           d&apos;accès, de rectification, d&apos;effacement, d&apos;opposition, de limitation et de
           portabilité de vos données. Vous pouvez les exercer à tout moment en écrivant à{' '}
-          <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust)' }}>contact@solyb.fr</a>.
+          <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust-ink)' }}>contact@solyb.fr</a>.
         </p>
         <p className="mt-2">
           Vous pouvez également introduire une réclamation auprès de la CNIL (
-          <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--syb-rust)' }}>
+          <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--syb-rust-ink)' }}>
             cnil.fr
           </a>
           ).
@@ -94,7 +94,7 @@ export default function ConfidentialitePage() {
       <LegalSection title="Plus d'informations">
         <p>
           Pour les informations relatives à l&apos;éditeur et à l&apos;hébergement, consultez les{' '}
-          <Link href="/mentions-legales" style={{ color: 'var(--syb-rust)' }}>mentions légales</Link>.
+          <Link href="/mentions-legales" style={{ color: 'var(--syb-rust-ink)' }}>mentions légales</Link>.
         </p>
       </LegalSection>
     </LegalShell>

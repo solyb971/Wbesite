@@ -76,7 +76,7 @@ export default function Contact() {
               Parlons<br />
               <span style={{ fontWeight: 900, color: '#C4472A' }}>de votre projet.</span>
             </h2>
-            <p className="text-sm font-light leading-relaxed mb-8" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+            <p className="text-sm font-light leading-relaxed mb-8" style={{ color: '#736B5F', lineHeight: 1.75 }}>
               45 minutes pour comprendre votre besoin. Gratuit, sans engagement. Devis envoyé sous 24h.
             </p>
             <div className="flex flex-col gap-4">
@@ -100,7 +100,7 @@ export default function Contact() {
               <div className="rounded-xl p-10 text-center" style={{ background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}>
                 <div className="text-4xl mb-4">✓</div>
                 <h3 className="font-display font-bold text-xl mb-2" style={{ color: '#0E0D0B' }}>Demande envoyée !</h3>
-                <p className="text-sm font-light" style={{ color: '#7A7268' }}>Je vous recontacte sous 24h maximum.</p>
+                <p className="text-sm font-light" style={{ color: '#736B5F' }}>Je vous recontacte sous 24h maximum.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
@@ -126,8 +126,8 @@ export default function Contact() {
                     onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
                 </div>
                 <div>
-                  <label style={labelStyle}>Type de projet</label>
-                  <select name="project_type" required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
+                  <label style={labelStyle} htmlFor="project_type">Type de projet</label>
+                  <select id="project_type" name="project_type" required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
                     onFocus={e => (e.target.style.borderColor = '#C4472A')}
                     onBlur={e => (e.target.style.borderColor = '#DDD5C8')}>
                     <option value="">Sélectionnez...</option>
@@ -161,7 +161,7 @@ export default function Contact() {
                   <span>
                     J&apos;accepte que mes données soient utilisées pour traiter ma demande,
                     conformément à la{' '}
-                    <a href="/confidentialite" style={{ color: '#C4472A', textDecoration: 'underline' }}>
+                    <a href="/confidentialite" style={{ color: '#B84126', textDecoration: 'underline' }}>
                       politique de confidentialité
                     </a>. *
                   </span>

@@ -29,13 +29,14 @@ export default function WhatsAppButton({
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-20 sm:bottom-6 right-6 z-50">
+      <div role="complementary" aria-label="Contact rapide" className="fixed bottom-20 sm:bottom-6 right-6 z-50">
         {/* Tooltip */}
         {showTooltip && !isOpen && (
           <div className="absolute bottom-full right-0 mb-3 animate-bounce">
             <div className="bg-[#13131A] border border-[#2A2A38] rounded-xl shadow-lg p-3 pr-8 text-sm max-w-[200px] relative">
               <button
                 onClick={() => setShowTooltip(false)}
+                aria-label="Fermer l'infobulle"
                 className="absolute top-1 right-1 text-[#8B8B9E] hover:text-[#F0EDE8]"
               >
                 <X className="w-4 h-4" />
@@ -101,6 +102,7 @@ export default function WhatsAppButton({
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le contact WhatsApp" : "Contacter par WhatsApp"}
           className={`w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${
             isOpen ? "bg-[#2A2A38]" : "bg-coral hover:bg-coral-600"
           }`}

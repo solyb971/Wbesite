@@ -29,7 +29,12 @@ export default function Footer() {
 
           {/* Marque + contact */}
           <div>
-            <Image src="/logo/syb-white.png" alt="SolYB" width={160} height={160} className="h-9 w-auto mb-4" />
+            <div className="flex items-center gap-2.5 mb-4">
+              <Image src="/logo/syb-white.png" alt="" width={160} height={160} className="h-9 w-auto" />
+              <span className="font-display font-black leading-none" style={{ fontSize: '20px', letterSpacing: '-0.5px', color: '#F0EDE8' }}>
+                SolYB
+              </span>
+            </div>
             <p className="text-sm font-light mb-5" style={{ color: '#B0A89E', lineHeight: 1.6 }}>
               Agence digitale · Baie-Mahault, Guadeloupe 971
             </p>
@@ -54,7 +59,7 @@ export default function Footer() {
 
           {/* Liens rapides */}
           <div>
-            <p className="text-xs uppercase tracking-[2px] mb-4" style={{ color: '#6B645A' }}>Navigation</p>
+            <p className="text-xs uppercase tracking-[2px] mb-4" style={{ color: '#938B7D' }}>Navigation</p>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map((l) => (
                 <li key={l.href}>
@@ -89,7 +94,7 @@ export default function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
           style={{ borderTop: '0.5px solid #1a1814' }}
         >
-          <p className="text-xs font-light" style={{ color: '#6B645A' }}>
+          <p className="text-xs font-light" style={{ color: '#938B7D' }}>
             © {currentYear} SolYB — Agence digitale · Baie-Mahault 97122, Guadeloupe
           </p>
           <div className="flex flex-wrap gap-6">

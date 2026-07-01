@@ -362,15 +362,15 @@ export default function FacturationPage() {
             <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
           </div>
           <div className={styles.footerCol}>
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul>{NAV_LINKS.map(([h, l]) => <li key={h}><a href={h}>{l}</a></li>)}</ul>
           </div>
           <div className={styles.footerCol}>
-            <h4>Conformité</h4>
+            <h3>Conformité</h3>
             <ul>{['Factur-X EN 16931', 'Chorus Pro DOM', 'E-reporting DGFiP', 'ISCA NF 525', 'FEC conforme', 'RGPD · Hébergé FR'].map(c => <li key={c}>{c}</li>)}</ul>
           </div>
           <div className={styles.footerCol}>
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <ul>
               <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
               <li>Baie-Mahault · Guadeloupe 97122</li>

@@ -11,6 +11,8 @@ type Theme = {
   borderFocus: string
   accent: string
   accentText: string
+  /** Variante foncée de l'accent, pour le texte-lien sur fond clair (AA). Fallback : accent. */
+  accentInk?: string
   radius: string
   fontMono?: string
 }
@@ -111,7 +113,7 @@ export default function EarlyAccessForm({
         <input type="checkbox" name="consent" required style={{ marginTop: 2, accentColor: theme.accent, flexShrink: 0 }} />
         <span>
           J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à la{' '}
-          <a href="/confidentialite" style={{ color: theme.accent, textDecoration: 'underline' }}>
+          <a href="/confidentialite" style={{ color: theme.accentInk ?? theme.accent, textDecoration: 'underline' }}>
             politique de confidentialité
           </a>. *
         </span>

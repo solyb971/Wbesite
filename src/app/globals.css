@@ -9,9 +9,10 @@
   /* — Aliases palette éditoriale — */
   --syb-cream:       var(--smoke);      /* #F5F2ED */
   --syb-ink:         var(--ink);        /* #0E0D0B */
-  --syb-stone:       var(--muted);      /* #7A7268 — 4.7:1 sur blanc (AA) */
+  --syb-stone:       #736B5F;           /* assombri depuis #7A7268 → ≥4.5:1 aussi sur crème #F5F2ED (AA) */
   --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
   --syb-rust:        var(--rust);       /* #C4472A */
+  --syb-rust-ink:    #B84126;           /* rust assombri pour texte-lien sur crème (AA ≥4.5:1) */
   --syb-border:      var(--v3-border);  /* #DDD5C8 */
 
   /* — Littéraux intentionnels (pas d'équivalent dans la palette) — */
@@ -564,3 +565,76 @@ section > .max-w-5xl {
   background-color: rgba(196, 71, 42, 0.30);
   color: #F5EDD8;
 }
+
+/* ══════════════════════════════════════════════════════════
+   CORPS RÉDACTIONNEL DES ARTICLES (DA « SolYB v3 »)
+   Remplace @tailwindcss/typography (non installé). L'accent de
+   chaque article est passé via --article-accent / --article-link.
+   ══════════════════════════════════════════════════════════ */
+.article-body {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--syb-stone);
+}
+.article-body > * + * { margin-top: 1.25rem; }
+
+.article-body .lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--syb-stone);
+}
+
+.article-body h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(26px, 3.4vw, 34px);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--syb-ink);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.article-body h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(19px, 2.2vw, 23px);
+  line-height: 1.25;
+  color: var(--syb-ink);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.article-body h2 + p,
+.article-body h3 + p { margin-top: 0; }
+
+.article-body p { margin-top: 1.25rem; }
+.article-body strong { color: var(--syb-ink); font-weight: 600; }
+.article-body em { font-style: italic; }
+
+.article-body a {
+  color: var(--article-link, var(--syb-rust-ink));
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-body ul,
+.article-body ol { margin-top: 1.25rem; padding-left: 1.5rem; }
+.article-body li { margin-top: 0.5rem; }
+.article-body ul > li { list-style: none; position: relative; }
+.article-body ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--article-accent, var(--syb-rust));
+}
+.article-body ol { list-style: decimal; }
+.article-body ol > li { padding-left: 0.25rem; }
+.article-body ol > li::marker { color: var(--article-link, var(--syb-rust-ink)); font-weight: 600; }
+
+/* Les blocs custom (encadrés, tableaux) neutralisent la mise en forme du corps */
+.article-body .not-prose > * + * { margin-top: 0; }

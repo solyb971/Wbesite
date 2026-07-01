@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Calendar, Clock, BookOpen, FileText, Tag, GitCompare } from 'lucide-react'
+import { ArrowRight, Calendar, Clock, FileText, Tag, GitCompare } from 'lucide-react'
 import Breadcrumbs from '@/components/site/Breadcrumbs'
+import ScrollRevealInit from '@/components/site/ScrollRevealInit'
 
 export const metadata: Metadata = {
   title: 'Blog Création Site Web Guadeloupe — Conseils & Actualités',
@@ -26,7 +27,8 @@ const articles = [
     date: '2026-06-17',
     readTime: '9 min',
     category: 'Conformité 2026',
-    accent: '#2E8C92',     // pétrole (rappel FactuGP)
+    accent: '#2E8C92',     // pétrole (rappel FactuGP) — couverture/icônes
+    textAccent: '#1F6E73', // pétrole assombri pour texte (AA sur crème)
     Icon: FileText,
   },
   {
@@ -36,7 +38,8 @@ const articles = [
     date: '2026-05-12',
     readTime: '12 min',
     category: 'Prix & Tarifs',
-    accent: '#B8760A',     // or éditorial
+    accent: '#B8760A',     // or éditorial — couverture/icônes
+    textAccent: '#96600A', // or assombri pour texte (AA sur crème)
     Icon: Tag,
   },
   {
@@ -46,7 +49,8 @@ const articles = [
     date: '2026-04-22',
     readTime: '10 min',
     category: 'Guides',
-    accent: '#0E7C6B',     // teal caraïbe
+    accent: '#0E7C6B',     // teal caraïbe — couverture/icônes
+    textAccent: '#0E7C6B', // teal (déjà AA sur crème : 4,57)
     Icon: GitCompare,
   },
 ]
@@ -64,6 +68,7 @@ export default function BlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ScrollRevealInit />
       <main style={{ background: 'var(--syb-warm)' }}>
 
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }]} />
@@ -71,14 +76,7 @@ export default function BlogPage() {
         {/* Hero */}
         <section className="pt-8 md:pt-10 pb-12 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
-              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.2)', color: 'var(--syb-rust)' }}
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              Ressources & guides
-            </span>
-            <h1 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(40px, 6vw, 68px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}>
+            <h1 className="font-display font-black leading-none mb-6 pt-2" style={{ fontSize: 'clamp(40px, 6vw, 68px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}>
               Blog création site web<br />
               <span style={{ color: 'var(--syb-rust)' }}>en Guadeloupe</span>
             </h1>
@@ -127,7 +125,7 @@ export default function BlogPage() {
                         {a.readTime}
                       </span>
                     </div>
-                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 font-medium text-sm transition-transform hover:translate-x-0.5" style={{ color: a.accent }}>
+                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 font-medium text-sm transition-transform hover:translate-x-0.5" style={{ color: a.textAccent }}>
                       Lire <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

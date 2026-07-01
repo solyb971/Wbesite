@@ -222,7 +222,7 @@
 .footerBrand .logo { margin-bottom: 14px; }
 .footerBrand p { color: var(--muted); font-size: .88rem; max-width: 280px; margin-bottom: 14px; }
 .footerSiren { font-family: var(--ff-mono); font-size: .76rem; color: var(--muted); }
-.footerCol h4 { font-family: var(--ff-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); margin-bottom: 16px; }
+.footerCol h3 { font-family: var(--ff-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); margin-bottom: 16px; }
 .footerCol li { font-size: .88rem; color: var(--paper-dim); margin-bottom: 10px; }
 .footerCol a { color: inherit; text-decoration: none; }
 .footerCol a:hover { color: var(--petrol-2); }
