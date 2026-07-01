@@ -62,7 +62,7 @@ export default function BlogPage() {
     name: 'Blog SolYB - Création Site Web Guadeloupe',
     description: 'Conseils et guides pour créer son site web en Guadeloupe',
     url: 'https://solyb.fr/blog',
-    publisher: { '@type': 'Organization', name: 'SolYB', address: { '@type': 'PostalAddress', addressLocality: 'Baie-Mahault', addressRegion: 'Guadeloupe', addressCountry: 'GP' } },
+    publisher: { '@type': 'Organization', name: 'SolYB', address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' } },
   }
 
   return (

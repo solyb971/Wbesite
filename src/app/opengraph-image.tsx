@@ -57,7 +57,7 @@ export default async function Image() {
 
           {/* Tagline */}
           <div style={{ fontSize: '26px', color: '#8B8B9E', fontStyle: 'italic', letterSpacing: '0.5px' }}>
-            Agence Digitale Guadeloupe — Baie-Mahault
+            Agence Digitale Guadeloupe
           </div>
 
           {/* Services pills */}

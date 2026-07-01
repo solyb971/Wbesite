@@ -359,7 +359,7 @@ export default function FacturationPage() {
           <div className={styles.footerBrand}>
             <Logo />
             <p>Facturation électronique pour les entreprises de Guadeloupe et des DOM. Aux normes DGFiP, TVA DOM native, hébergée en France.</p>
-            <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
+            <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Petit-Bourg, Guadeloupe</div>
           </div>
           <div className={styles.footerCol}>
             <h3>Navigation</h3>
@@ -373,14 +373,14 @@ export default function FacturationPage() {
             <h3>Contact</h3>
             <ul>
               <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
-              <li>Baie-Mahault · Guadeloupe 97122</li>
+              <li>Petit-Bourg · Guadeloupe 97170</li>
               <li><a href="https://solyb.fr">solyb.fr →</a></li>
             </ul>
           </div>
         </div>
         <div className={`${styles.wrap} ${styles.footerBottom}`}>
           <span>© 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220</span>
-          <span>Baie-Mahault · Guadeloupe · Tous droits réservés</span>
+          <span>Guadeloupe · Tous droits réservés</span>
         </div>
       </footer>
     </div>

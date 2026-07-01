@@ -373,7 +373,7 @@ export default function ResaGPPage() {
                 <span>Resa<em className={styles.logoGp}>GP</em></span>
               </div>
               <div className={styles.footerDesc}>Plateforme de gestion restaurant pour les établissements de Guadeloupe. Sans commission, conforme RGPD, hébergé en France.</div>
-              <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Baie-Mahault, Guadeloupe</div>
+              <div className={styles.footerSiren}>SolYB — SIREN 102699220 · Petit-Bourg, Guadeloupe</div>
             </div>
             <div>
               <div className={styles.footerColTitle}>Navigation</div>
@@ -391,14 +391,14 @@ export default function ResaGPPage() {
               <div className={styles.footerColTitle}>Contact</div>
               <ul className={styles.footerList}>
                 <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
-                <li><span style={{ color: 'var(--rg-mu)', fontSize: '0.85rem' }}>Baie-Mahault · Guadeloupe 97122</span></li>
+                <li><span style={{ color: 'var(--rg-mu)', fontSize: '0.85rem' }}>Petit-Bourg · Guadeloupe 97170</span></li>
                 <li style={{ marginTop: '0.5rem' }}><a href="https://solyb.fr">solyb.fr →</a></li>
               </ul>
             </div>
           </div>
           <div className={styles.footerBar}>
             <span>© 2026 SolYB — Solutions by Yacine Bouhassoun · SIREN 102699220</span>
-            <span>Baie-Mahault · Guadeloupe · Tous droits réservés</span>
+            <span>Guadeloupe · Tous droits réservés</span>
           </div>
         </footer>
 

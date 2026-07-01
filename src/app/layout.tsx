@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: 'SolYB — Agence Digitale Guadeloupe 971',
     template: '%s | SolYB'
   },
-  description: 'Agence digitale à Baie-Mahault, Guadeloupe. Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME. Devis gratuit sous 24h.',
+  description: 'Agence digitale en Guadeloupe. Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME. Devis gratuit sous 24h.',
   keywords: [
     'agence digitale Guadeloupe',
     'création site web Guadeloupe',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     url: 'https://solyb.fr',
     siteName: 'SolYB Guadeloupe',
     title: 'SolYB — Agence Digitale Guadeloupe 971',
-    description: 'Sites web, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence basée à Baie-Mahault. Devis gratuit sous 24h.',
+    description: 'Sites web, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence au service de toute la Guadeloupe. Devis gratuit sous 24h.',
     images: [
       {
         // Image OG dédiée 1200×630 à créer dans /public/og-image.jpg
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'SolYB — Agence Digitale Guadeloupe 971',
-    description: 'Sites web sur-mesure, applications métier, facturation électronique 2026. Agence guadeloupéenne basée à Baie-Mahault.',
+    description: 'Sites web sur-mesure, applications métier, facturation électronique 2026. Agence guadeloupéenne au service de toute la Guadeloupe.',
     images: ['/opengraph-image'],
   },
   robots: {
