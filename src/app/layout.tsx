@@ -107,7 +107,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
         {/* Pose la classe `.js` avant le rendu des sections : l'état masqué des
             animations `.reveal` n'est appliqué que si JS est actif. Sans JS
