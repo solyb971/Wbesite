@@ -8,7 +8,7 @@ const ACCENT_INK = '#1F6E73'  // variante texte (AA sur crème)
 
 export const metadata: Metadata = {
   title: 'Facturation Électronique 2026 en Guadeloupe : Guide TPE/PME',
-  description: 'Facturation électronique obligatoire 2026 en Guadeloupe et DOM : dates, entreprises concernées, TVA DOM (8,5 % / 2,1 %), Chorus Pro, sanctions. Le guide clair pour les TPE/PME.',
+  description: 'Facturation électronique 2026 en Guadeloupe : dates, entreprises concernées, TVA DOM, Chorus Pro, sanctions. Le guide clair pour les TPE/PME des DOM.',
   keywords: [
     'facturation électronique 2026 Guadeloupe',
     'facturation électronique DOM',
