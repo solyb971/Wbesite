@@ -29,7 +29,8 @@ const tools = [
   {
     name: "ResaGP",
     Mark: ResaMark,
-    accent: "#0E7C7B",          // lagon (DA ResaGP)
+    accent: "#0E7C7B",          // lagon (DA ResaGP) — icônes/bordures
+    textAccent: "#0C6E6D",      // lagon assombri pour texte (AA sur crème)
     preview: "/resagp/demo/02_planning.png",  // capture produit réelle
     tagline: "Réservations restaurant — sans commission",
     description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
@@ -41,7 +42,8 @@ const tools = [
   {
     name: "FactuGP",
     Mark: FactuMark,
-    accent: "#2E8C92",          // pétrole (DA FactuGP)
+    accent: "#2E8C92",          // pétrole (DA FactuGP) — icônes/bordures
+    textAccent: "#1F6E73",      // pétrole assombri pour texte (AA sur crème)
     preview: "/factugp/demo/demo-02-dashboard.jpeg",  // capture produit réelle
     tagline: "Facturation électronique conforme 2026",
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
@@ -189,7 +191,7 @@ export default function Realisations() {
                 {s.name}
               </h4>
 
-              <p className="text-sm font-medium mb-3" style={{ color: s.accent }}>{s.tagline}</p>
+              <p className="text-sm font-medium mb-3" style={{ color: s.textAccent }}>{s.tagline}</p>
               <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
                 {s.description}
               </p>
@@ -207,7 +209,7 @@ export default function Realisations() {
                 <Link
                   href={s.cta.href}
                   className="cta-arrow inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-80"
-                  style={{ color: s.accent }}
+                  style={{ color: s.textAccent }}
                 >
                   {s.cta.label} <span className="arrow">→</span>
                 </Link>

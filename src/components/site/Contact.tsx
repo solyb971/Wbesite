@@ -126,8 +126,8 @@ export default function Contact() {
                     onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
                 </div>
                 <div>
-                  <label style={labelStyle}>Type de projet</label>
-                  <select name="project_type" required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
+                  <label style={labelStyle} htmlFor="project_type">Type de projet</label>
+                  <select id="project_type" name="project_type" required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
                     onFocus={e => (e.target.style.borderColor = '#C4472A')}
                     onBlur={e => (e.target.style.borderColor = '#DDD5C8')}>
                     <option value="">Sélectionnez...</option>

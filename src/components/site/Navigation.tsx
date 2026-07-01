@@ -68,7 +68,7 @@ export default function Navigation() {
   const getLinkClass = (href: string) => {
     const hash = href.split('#')[1] ?? ''
     const isActive = activeSection === hash
-    return `text-[13px] font-light transition-colors cursor-pointer ${isActive ? 'text-[#0E0D0B]' : 'text-[#7A7268] hover:text-[#0E0D0B]'}`
+    return `text-[13px] font-light transition-colors cursor-pointer ${isActive ? 'text-[#0E0D0B]' : 'text-[#736B5F] hover:text-[#0E0D0B]'}`
   }
 
   return (

@@ -9,7 +9,7 @@
   /* — Aliases palette éditoriale — */
   --syb-cream:       var(--smoke);      /* #F5F2ED */
   --syb-ink:         var(--ink);        /* #0E0D0B */
-  --syb-stone:       var(--muted);      /* #7A7268 — 4.7:1 sur blanc (AA) */
+  --syb-stone:       #736B5F;           /* assombri depuis #7A7268 → ≥4.5:1 aussi sur crème #F5F2ED (AA) */
   --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
   --syb-rust:        var(--rust);       /* #C4472A */
   --syb-border:      var(--v3-border);  /* #DDD5C8 */

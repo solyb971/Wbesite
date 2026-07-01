@@ -101,6 +101,7 @@ export default function WhatsAppButton({
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le contact WhatsApp" : "Contacter par WhatsApp"}
           className={`w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${
             isOpen ? "bg-[#2A2A38]" : "bg-coral hover:bg-coral-600"
           }`}

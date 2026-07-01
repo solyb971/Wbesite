@@ -113,6 +113,7 @@ export default function ResaGPPage() {
           </div>
         </nav>
 
+        <main>
         {/* HERO */}
         <section style={{ background: 'var(--rg-bg)', paddingTop: '62px' }}>
           <div className={styles.hero}>
@@ -361,6 +362,7 @@ export default function ResaGPPage() {
             />
           </div>
         </section>
+        </main>
 
         {/* FOOTER */}
         <footer className={styles.footer}>

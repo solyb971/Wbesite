@@ -113,7 +113,7 @@ export default function ApplicationVsSiteWebPage() {
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2">
                   <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Site d'un restaurant avec menu et réservation par téléphone</span>
+                  <span className="text-gray-700">Site d'un restaurant avec menu et informations pratiques</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Check className="w-5 h-5 text-[#C4472A] flex-shrink-0 mt-0.5" />
@@ -147,27 +147,19 @@ export default function ApplicationVsSiteWebPage() {
             </p>
 
             <div className="not-prose bg-[#E9F5F2] rounded-2xl p-8 my-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Exemples concrets en Guadeloupe:</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Trois cas réels qu'on a développés:</h4>
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2">
                   <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Plateforme de réservation pour activités touristiques 971</span>
+                  <span className="text-gray-700"><Link href="/libertydriveserenity" className="underline decoration-dotted">Liberty Drive Serenity</Link> — plateforme qui met en relation soignants et chauffeurs pour organiser leurs tournées, avec espaces dédiés et gestion des rendez-vous. En ligne et utilisée au quotidien.</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">CRM pour gérer vos clients et devis</span>
+                  <span className="text-gray-700"><Link href="/resagp" className="underline decoration-dotted">ResaGP</Link> — réservation, planning de salle, prise de commande et encaissement pour un restaurant.</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Marketplace locale type "Leboncoin Guadeloupe"</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Outil de gestion de stock pour commerce</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Plateforme de formation en ligne</span>
+                  <span className="text-gray-700"><Link href="/facturation-electronique" className="underline decoration-dotted">FactuGP</Link> — facturation électronique conforme, TVA DOM automatique, e-reporting vers la DGFiP.</span>
                 </li>
               </ul>
 
@@ -207,7 +199,7 @@ export default function ApplicationVsSiteWebPage() {
                   <tr className="border-b border-gray-200">
                     <td className="py-4 px-4 font-semibold">Prix Guadeloupe</td>
                     <td className="py-4 px-4 text-[#0E7C6B] font-bold">599-2 000€</td>
-                    <td className="py-4 px-4 text-orange-600 font-bold">2 000-50 000€</td>
+                    <td className="py-4 px-4 text-[#C4472A] font-bold">2 000-50 000€</td>
                   </tr>
                   <tr className="border-b border-gray-200 bg-gray-50">
                     <td className="py-4 px-4 font-semibold">Délai</td>
@@ -375,67 +367,25 @@ export default function ApplicationVsSiteWebPage() {
               </div>
             </div>
 
-            <h2>Notre Recommandation pour Entreprises Guadeloupéennes</h2>
-
-            <div className="not-prose bg-gradient-to-br from-[#C4472A]/[0.08] to-[#E8845F]/[0.06] rounded-2xl p-8 my-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">L'Approche Hybride (Recommandée)</h3>
-
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-[#C4472A] mb-3">Phase 1: Site Vitrine (599€ chez SolYB)</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Présence en ligne rapide</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Référencement Google</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Génération de leads</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-[#C4472A] mb-3">Phase 2: Application Web (3-6 mois après)</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Besoin validé</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Budget constitué</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <Check className="w-5 h-5 text-[#0E7C6B] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">Cahier des charges précis</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <p className="text-gray-700 font-semibold">
-                  <strong>Avantage:</strong> ROI immédiat avec site vitrine, puis passage au niveau supérieur quand vous êtes prêt.
-                </p>
-              </div>
-            </div>
-
-            <h2>Conclusion: Site ou Application pour Votre Entreprise 971 ?</h2>
+            <h2>Une approche par étapes, plutôt qu'un choix figé</h2>
 
             <p>
-              <strong>90% des TPE guadeloupéennes</strong> ont besoin d'un <strong>SITE WEB vitrine</strong> (599-1 500€) pour commencer.
+              Dans les faits, la plupart des projets ne se posent pas comme un choix définitif. Sur <strong>Liberty Drive
+              Serenity</strong>, on a commencé par cadrer le besoin réel — deux publics distincts (soignants et
+              chauffeurs), chacun avec son espace et ses actions propres — avant d'écrire une ligne de code applicatif.
+              Beaucoup de projets qui semblent nécessiter une « application » au premier abord se résument en réalité à
+              un site vitrine avec un ou deux formulaires bien pensés. L'inverse est vrai aussi : certains sites vitrines
+              tournent en rond parce que le vrai besoin (gérer un planning, des commandes, des comptes clients) est une
+              logique applicative qu'un site classique ne peut pas porter.
             </p>
 
-            <p>
-              <strong>10% ont besoin d'APPLICATION</strong> dès le départ (2 000€+) car leur modèle l'exige.
-            </p>
+            <h2>Conclusion</h2>
 
             <p>
-              <strong>Notre conseil:</strong> Commencez TOUJOURS par un site vitrine professionnel.
-              Après quelques mois, si besoin confirmé, passez à l'application.
+              Le bon réflexe : partez du <strong>problème concret</strong> que vous voulez résoudre, pas du format.
+              Si la réponse est « faire savoir que j'existe et être trouvé sur Google », un site vitrine suffit. Si la
+              réponse est « faire accomplir une action précise à mes utilisateurs » (réserver, commander, gérer un
+              compte), c'est une application.
             </p>
           </div>
         </div>
@@ -444,28 +394,16 @@ export default function ApplicationVsSiteWebPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C4472A] to-[#a63a22]">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Besoin d'un Site Web ou d'une Application en Guadeloupe ?
+              Un besoin précis, encore flou sur le format ?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              SolYB vous accompagne dans votre projet digital.
+              On en discute ensemble et on vous dit honnêtement si un site suffit ou s'il vous faut une application.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Site vitrine</h3>
-                <p className="text-4xl font-bold mb-2">599€</p>
-                <p className="text-white/80">Livré en 2 semaines</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2">Application web</h3>
-                <p className="text-4xl font-bold mb-2">Sur mesure</p>
-                <p className="text-white/80">Dès 2 000€</p>
-              </div>
-            </div>
             <Link
               href="/#contact"
               className="inline-flex items-center justify-center bg-white text-[#C4472A] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
             >
-              Devis gratuit sous 24h
+              Échanger sur votre projet
             </Link>
           </div>
         </section>

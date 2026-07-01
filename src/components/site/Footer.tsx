@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Liens rapides */}
           <div>
-            <p className="text-xs uppercase tracking-[2px] mb-4" style={{ color: '#6B645A' }}>Navigation</p>
+            <p className="text-xs uppercase tracking-[2px] mb-4" style={{ color: '#938B7D' }}>Navigation</p>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map((l) => (
                 <li key={l.href}>
@@ -89,7 +89,7 @@ export default function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
           style={{ borderTop: '0.5px solid #1a1814' }}
         >
-          <p className="text-xs font-light" style={{ color: '#6B645A' }}>
+          <p className="text-xs font-light" style={{ color: '#938B7D' }}>
             © {currentYear} SolYB — Agence digitale · Baie-Mahault 97122, Guadeloupe
           </p>
           <div className="flex flex-wrap gap-6">
