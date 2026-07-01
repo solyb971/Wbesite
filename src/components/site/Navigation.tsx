@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 const WHATSAPP_URL =
@@ -13,6 +14,10 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>("")
   const navRef = useRef<HTMLElement>(null)
+  const pathname = usePathname()
+
+  // Referme le menu mobile à chaque changement de page (Blog, retour navigateur…)
+  useEffect(() => { setMobileMenuOpen(false) }, [pathname])
 
   const navLinks = [
     { href: "/#services",     label: "Services" },
@@ -53,6 +58,9 @@ export default function Navigation() {
   }, [])
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Toujours refermer le menu mobile au clic, même quand le lien change de
+    // page (Blog) ou pointe vers une section absente de la page courante.
+    setMobileMenuOpen(false)
     const hash = href.split('#')[1]
     if (!hash) return
     const target = document.getElementById(hash)
@@ -60,7 +68,6 @@ export default function Navigation() {
     // naviguer vers /#hash (charge la home puis saute à la section).
     if (!target) return
     e.preventDefault()
-    setMobileMenuOpen(false)
     const offset = navRef.current?.getBoundingClientRect().height ?? 80
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' })
   }
@@ -176,6 +183,7 @@ export default function Navigation() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
             className="py-3 px-3 rounded text-sm font-light flex items-center gap-2"
             style={{ color: '#7A7268' }}
           >
