@@ -9,10 +9,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const navLinks = [
-    { href: "/#services", label: "Ce qu'on fait" },
+    { href: "/#services", label: "Services" },
     { href: "/#tarifs", label: "Nos tarifs" },
     { href: "/#realisations", label: "Nos projets" },
-    { href: "/#apropos", label: "Qui on est" },
+    { href: "/#apropos", label: "L'histoire" },
     { href: "/blog", label: "Blog" },
   ]
 
@@ -90,7 +90,7 @@ export default function Footer() {
           style={{ borderTop: '0.5px solid #1a1814' }}
         >
           <p className="text-xs font-light" style={{ color: '#6B645A' }}>
-            © {currentYear} SolYB — Agence digitale Guadeloupe
+            © {currentYear} SolYB — Agence digitale · Baie-Mahault 97122, Guadeloupe
           </p>
           <div className="flex flex-wrap gap-6">
             {legalLinks.map((l) => (

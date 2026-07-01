@@ -18,23 +18,6 @@ export default function Hero() {
       />
 
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 md:px-12 py-16">
-        {/* Badge disponibilité — micro-interaction "vivant + local" */}
-        <div
-          className="inline-flex items-center gap-2.5 mb-8 text-xs tracking-[2px] uppercase rounded-full px-3.5 py-1.5"
-          style={{
-            color: 'var(--syb-cream)',
-            background: 'rgba(255,255,255,0.05)',
-            border: '0.5px solid rgba(255,255,255,0.14)',
-            animation: 'fadeUp 0.6s 0.1s ease both',
-          }}
-        >
-          <span className="relative flex h-2 w-2 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full" style={{ background: '#22C55E', opacity: 0.65 }} />
-            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#22C55E' }} />
-          </span>
-          Mis en ligne à Baie-Mahault · 97122
-        </div>
-
         {/* H1 */}
         <h1
           className="font-display font-black leading-none mb-8"
