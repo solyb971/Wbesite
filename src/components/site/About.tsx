@@ -16,7 +16,7 @@ export default function About() {
             maxWidth: '820px',
           }}
         >
-          La Guadeloupe m&apos;a construit.{' '}
+          La Guadeloupe m&apos;a construit.<br />
           <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>
             J&apos;ai envie de lui rendre la pareille.
           </span>
