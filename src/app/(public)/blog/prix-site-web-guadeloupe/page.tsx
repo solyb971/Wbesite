@@ -49,7 +49,7 @@ export default function PrixSiteWebGuadeloupePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <article className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Prix création site web', href: '/blog/prix-site-web-guadeloupe' }]} />
 
         {/* Header */}
@@ -189,7 +189,7 @@ export default function PrixSiteWebGuadeloupePage() {
             </Link>
           </div>
         </section>
-      </article>
+      </main>
     </>
   )
 }

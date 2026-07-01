@@ -59,7 +59,7 @@ export default function ApplicationVsSiteWebPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <article className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Application web vs site web', href: '/blog/application-web-vs-site-web-guadeloupe' }]} />
         {/* Header */}
         <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#C4472A]/[0.06] to-[#E8845F]/[0.05]">
@@ -314,7 +314,7 @@ export default function ApplicationVsSiteWebPage() {
             <div className="not-prose space-y-6 my-8">
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-xl font-bold text-gray-900">Application Simple</h4>
+                  <h3 className="text-xl font-bold text-gray-900">Application Simple</h3>
                   <span className="text-2xl font-bold text-[#C4472A]">2 000 - 5 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
@@ -331,7 +331,7 @@ export default function ApplicationVsSiteWebPage() {
 
               <div className="bg-white border-2 border-[#C4472A] rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-xl font-bold text-gray-900">Application Moyenne</h4>
+                  <h3 className="text-xl font-bold text-gray-900">Application Moyenne</h3>
                   <span className="text-2xl font-bold text-[#C4472A]">5 000 - 15 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
@@ -349,7 +349,7 @@ export default function ApplicationVsSiteWebPage() {
 
               <div className="bg-white border-2 border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-xl font-bold text-gray-900">Application Complexe</h4>
+                  <h3 className="text-xl font-bold text-gray-900">Application Complexe</h3>
                   <span className="text-2xl font-bold text-[#C4472A]">15 000 - 50 000€</span>
                 </div>
                 <ul className="space-y-2 mb-4">
@@ -407,7 +407,7 @@ export default function ApplicationVsSiteWebPage() {
             </Link>
           </div>
         </section>
-      </article>
+      </main>
     </>
   )
 }

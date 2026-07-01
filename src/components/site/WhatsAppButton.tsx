@@ -29,7 +29,7 @@ export default function WhatsAppButton({
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-20 sm:bottom-6 right-6 z-50">
+      <div role="complementary" aria-label="Contact rapide" className="fixed bottom-20 sm:bottom-6 right-6 z-50">
         {/* Tooltip */}
         {showTooltip && !isOpen && (
           <div className="absolute bottom-full right-0 mb-3 animate-bounce">

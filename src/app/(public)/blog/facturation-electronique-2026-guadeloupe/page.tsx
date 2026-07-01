@@ -83,7 +83,7 @@ export default function FacturationElectronique2026GuadeloupePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      <article className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: 'Facturation électronique 2026', href: '/blog/facturation-electronique-2026-guadeloupe' }]} />
         {/* Header */}
         <header className="pt-6 pb-12 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, rgba(196,71,42,0.06), rgba(232,132,95,0.05))' }}>
@@ -235,7 +235,7 @@ export default function FacturationElectronique2026GuadeloupePage() {
             </div>
           </div>
         </section>
-      </article>
+      </main>
     </>
   )
 }
