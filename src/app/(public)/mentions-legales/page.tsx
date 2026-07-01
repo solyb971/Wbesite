@@ -36,11 +36,11 @@ export default function MentionsLegalesPage() {
           <li>Numéro de TVA intracommunautaire : [le cas échéant]</li>
           <li>
             Email :{' '}
-            <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust)' }}>contact@solyb.fr</a>
+            <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust-ink)' }}>contact@solyb.fr</a>
           </li>
           <li>
             Téléphone :{' '}
-            <a href="tel:+590690426792" style={{ color: 'var(--syb-rust)' }}>+590 690 42 67 92</a>
+            <a href="tel:+590690426792" style={{ color: 'var(--syb-rust-ink)' }}>+590 690 42 67 92</a>
           </li>
         </ul>
       </LegalSection>
@@ -49,7 +49,7 @@ export default function MentionsLegalesPage() {
         <p>
           Le site est hébergé par <strong>Vercel Inc.</strong><br />
           340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br />
-          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--syb-rust)' }}>
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--syb-rust-ink)' }}>
             vercel.com
           </a>
         </p>
@@ -70,7 +70,7 @@ export default function MentionsLegalesPage() {
           Les informations recueillies via les formulaires du site font l&apos;objet d&apos;un
           traitement destiné à répondre à vos demandes. Pour en savoir plus sur la gestion de vos
           données et l&apos;exercice de vos droits, consultez notre{' '}
-          <Link href="/confidentialite" style={{ color: 'var(--syb-rust)' }}>
+          <Link href="/confidentialite" style={{ color: 'var(--syb-rust-ink)' }}>
             politique de confidentialité
           </Link>.
         </p>

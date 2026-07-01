@@ -27,7 +27,7 @@ export const metadata: Metadata = {
  */
 
 export default function CGVPage() {
-  const rust = { color: 'var(--syb-rust)' }
+  const rust = { color: 'var(--syb-rust-ink)' }
   return (
     <LegalShell eyebrow="Conditions de vente" titleTop="Conditions générales" titleAccent="de vente">
       <LegalSection title="1. Objet">

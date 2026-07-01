@@ -76,7 +76,7 @@ export default function BlogPage() {
           <div className="max-w-3xl mx-auto text-center">
             <span
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
-              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.2)', color: 'var(--syb-rust)' }}
+              style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.2)', color: '#B84126' }}
             >
               <BookOpen className="w-3.5 h-3.5" />
               Ressources & guides

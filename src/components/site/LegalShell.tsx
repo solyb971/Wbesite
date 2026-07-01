@@ -15,7 +15,7 @@ export function LegalShell({
   return (
     <main className="min-h-screen pt-28 pb-24" style={{ background: 'var(--syb-cream)' }}>
       <article className="max-w-[760px] mx-auto px-6 md:px-8">
-        <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust)' }}>
+        <div className="flex items-center gap-2.5 mb-3 text-xs tracking-[3px] uppercase" style={{ color: 'var(--syb-rust-ink)' }}>
           <span className="w-5 h-px" style={{ background: 'var(--syb-rust)' }} />
           {eyebrow}
         </div>

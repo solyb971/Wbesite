@@ -348,9 +348,9 @@ export default function ResaGPPage() {
             <p className={styles.ctaP}>14 jours d&apos;essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.</p>
             <EarlyAccessForm
               theme={{
-                surface: '#FFFFFF', text: '#173E3C', muted: '#7A6B58',
+                surface: '#FFFFFF', text: '#173E3C', muted: '#6E6050',
                 border: '#E0DBC9', borderFocus: '#0E7C7B',
-                accent: '#0E7C7B', accentText: '#F4F2E8', radius: '11px',
+                accent: '#0E7C7B', accentText: '#FFFFFF', accentInk: '#0C6E6D', radius: '11px',
                 fontMono: 'var(--font-figtree)',
               }}
               source="resagp"

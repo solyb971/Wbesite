@@ -35,7 +35,8 @@ const tools = [
     tagline: "Réservations restaurant — sans commission",
     description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
     status: "Disponible",
-    statusColor: "#16A34A",
+    statusColor: "#16A34A",   // pastille
+    statusText: "#147038",    // texte statut (AA sur crème)
     highlights: ["Essai gratuit 14 jours", "Aucune commission par couvert", "Pensé pour les restaurants et bars"],
     cta: { label: "Découvrir ResaGP", href: "/resagp" },
   },
@@ -48,7 +49,8 @@ const tools = [
     tagline: "Facturation électronique conforme 2026",
     description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
     status: "Disponible sept. 2026",
-    statusColor: "#B8760A",
+    statusColor: "#B8760A",   // pastille
+    statusText: "#96600A",    // texte statut (AA sur crème)
     highlights: ["TVA Guadeloupe préconfigurée", "Envoi automatique aux impôts", "Pensé pour les TPE et PME du 971"],
     cta: { label: "Rejoindre la liste d'attente", href: "/facturation-electronique" },
   },
@@ -98,7 +100,7 @@ export default function Realisations() {
           <div>
             <div
               className="inline-flex items-center gap-2 text-[11px] tracking-[1.5px] uppercase rounded-full px-3 py-1 mb-4"
-              style={{ background: 'rgba(22,163,74,0.08)', border: '0.5px solid rgba(22,163,74,0.3)', color: '#15803D' }}
+              style={{ background: 'rgba(22,163,74,0.08)', border: '0.5px solid rgba(22,163,74,0.3)', color: '#147038' }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#16A34A' }} />
               Projet réel · en ligne
@@ -181,7 +183,7 @@ export default function Realisations() {
                 >
                   <s.Mark />
                 </div>
-                <span className="flex items-center gap-2 text-xs tracking-wide" style={{ color: s.statusColor }}>
+                <span className="flex items-center gap-2 text-xs tracking-wide" style={{ color: s.statusText }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: s.statusColor }} />
                   {s.status}
                 </span>

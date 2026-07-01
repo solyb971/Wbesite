@@ -82,7 +82,7 @@ export default function MerciPage() {
 
         <p className="text-center text-sm text-[#8B8B9E] mt-6">
           Une question urgente ?{" "}
-          <a href="mailto:contact@solyb.fr" className="text-coral hover:underline font-semibold">
+          <a href="mailto:contact@solyb.fr" className="hover:underline font-semibold" style={{ color: '#E06245' }}>
             contact@solyb.fr
           </a>
         </p>

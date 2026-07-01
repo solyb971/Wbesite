@@ -36,6 +36,7 @@ export default function WhatsAppButton({
             <div className="bg-[#13131A] border border-[#2A2A38] rounded-xl shadow-lg p-3 pr-8 text-sm max-w-[200px] relative">
               <button
                 onClick={() => setShowTooltip(false)}
+                aria-label="Fermer l'infobulle"
                 className="absolute top-1 right-1 text-[#8B8B9E] hover:text-[#F0EDE8]"
               >
                 <X className="w-4 h-4" />
