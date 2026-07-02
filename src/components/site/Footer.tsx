@@ -30,8 +30,8 @@ export default function Footer() {
           {/* Marque + contact */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/logo/syb-white.png" alt="" width={160} height={160} className="h-9 w-auto" />
-              <span className="font-display font-black leading-none" style={{ fontSize: '20px', letterSpacing: '-0.5px', color: '#F0EDE8' }}>
+              <Image src="/logo/syb-white.png" alt="Logo SolYB — agence digitale en Guadeloupe" width={160} height={160} className="h-9 w-auto" />
+              <span aria-hidden="true" className="font-display font-black leading-none" style={{ fontSize: '20px', letterSpacing: '-0.5px', color: '#F0EDE8' }}>
                 SolYB
               </span>
             </div>
