@@ -16,7 +16,7 @@ export default function TickerV3() {
           <div
             key={i}
             className="flex items-center gap-6 px-8 flex-shrink-0"
-            style={{ fontSize: '11px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#5A5650' }}
+            style={{ fontSize: '12px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#5A5650' }}
           >
             <span>{item}</span>
             <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#C4472A' }} />
