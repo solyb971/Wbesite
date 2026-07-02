@@ -89,7 +89,7 @@ export default function ServicesPage() {
         <section className="pt-8 md:pt-10 pb-12 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-[11px] tracking-[2px] uppercase font-medium"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-xs tracking-[2px] uppercase font-medium"
               style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.2)', color: '#B84126' }}
             >
               Offre de lancement — places limitées
@@ -123,11 +123,11 @@ export default function ServicesPage() {
                       <s.Icon size={20} strokeWidth={1.6} />
                     </span>
                     {s.popular ? (
-                      <span className="text-[10px] tracking-[1.5px] uppercase rounded-full px-2.5 py-1 font-medium" style={{ background: 'var(--syb-rust)', color: '#fff' }}>
+                      <span className="text-xs tracking-[1.5px] uppercase rounded-full px-2.5 py-1 font-medium" style={{ background: 'var(--syb-rust)', color: '#fff' }}>
                         Plus populaire
                       </span>
                     ) : (
-                      <span className="text-[11px] tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
+                      <span className="text-xs tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
                         {s.tagline}
                       </span>
                     )}
@@ -135,7 +135,7 @@ export default function ServicesPage() {
 
                   <h2 className="font-display font-bold mb-1" style={{ fontSize: '22px', color: 'var(--syb-ink)' }}>{s.name}</h2>
                   {s.popular && (
-                    <p className="text-[11px] tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-stone-light)' }}>{s.tagline}</p>
+                    <p className="text-xs tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-stone-light)' }}>{s.tagline}</p>
                   )}
 
                   {/* Prix */}
@@ -160,7 +160,7 @@ export default function ServicesPage() {
 
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {s.idealFor.map((t) => (
-                      <span key={t} className="text-[11px] px-2 py-1 rounded-full" style={{ background: 'rgba(196,71,42,0.06)', border: '0.5px solid var(--syb-border)', color: 'var(--syb-stone)' }}>{t}</span>
+                      <span key={t} className="text-xs px-2 py-1 rounded-full" style={{ background: 'rgba(196,71,42,0.06)', border: '0.5px solid var(--syb-border)', color: 'var(--syb-stone)' }}>{t}</span>
                     ))}
                   </div>
 

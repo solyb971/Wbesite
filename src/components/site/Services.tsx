@@ -104,13 +104,13 @@ export default function Services() {
                   </span>
                   {s.featured ? (
                     <span
-                      className="text-[10px] tracking-[1.5px] uppercase rounded-full px-2.5 py-1 font-medium"
+                      className="text-xs tracking-[1.5px] uppercase rounded-full px-2.5 py-1 font-medium"
                       style={{ background: 'var(--syb-rust)', color: '#fff' }}
                     >
                       {s.tag}
                     </span>
                   ) : (
-                    <span className="text-[11px] tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
+                    <span className="text-xs tracking-[2px] uppercase" style={{ color: 'var(--syb-stone-light)' }}>
                       {s.tag}
                     </span>
                   )}
@@ -156,7 +156,7 @@ export default function Services() {
           style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
         >
           <div>
-            <div className="text-[11px] tracking-[2px] uppercase mb-1.5" style={{ color: 'var(--syb-teal-deep)' }}>
+            <div className="text-xs tracking-[2px] uppercase mb-1.5" style={{ color: 'var(--syb-teal-deep)' }}>
               Et après la livraison ?
             </div>
             <p className="font-display font-bold mb-1" style={{ fontSize: '18px', color: 'var(--syb-ink)' }}>

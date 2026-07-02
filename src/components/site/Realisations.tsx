@@ -99,7 +99,7 @@ export default function Realisations() {
           </div>
           <div>
             <div
-              className="inline-flex items-center gap-2 text-[11px] tracking-[1.5px] uppercase rounded-full px-3 py-1 mb-4"
+              className="inline-flex items-center gap-2 text-xs tracking-[1.5px] uppercase rounded-full px-3 py-1 mb-4"
               style={{ background: 'rgba(22,163,74,0.08)', border: '0.5px solid rgba(22,163,74,0.3)', color: '#147038' }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#16A34A' }} />

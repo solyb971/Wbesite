@@ -54,9 +54,9 @@ export default function Contact() {
   }
 
   const labelStyle: React.CSSProperties = {
-    fontSize: '10px',
+    fontSize: '12px',
     color: 'var(--syb-stone-light)',
-    letterSpacing: '2px',
+    letterSpacing: '1.5px',
     textTransform: 'uppercase' as const,
     display: 'block',
     marginBottom: '6px',

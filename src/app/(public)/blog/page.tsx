@@ -102,7 +102,7 @@ export default function BlogPage() {
                     style={{ width: 132, height: 132, color: 'rgba(255,255,255,0.16)' }}
                     strokeWidth={1.2}
                   />
-                  <span className="absolute left-5 top-5 inline-block rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide" style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', backdropFilter: 'blur(4px)' }}>
+                  <span className="absolute left-5 top-5 inline-block rounded-full px-3 py-1 text-xs font-semibold tracking-wide" style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', backdropFilter: 'blur(4px)' }}>
                     {a.category}
                   </span>
                   <a.Icon className="absolute left-5 bottom-5 w-7 h-7" style={{ color: 'rgba(255,255,255,0.9)' }} strokeWidth={1.6} />
