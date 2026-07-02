@@ -96,7 +96,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-2.5 cursor-pointer" aria-label="SolYB — accueil">
             <Image
               src="/logo/syb-orange.png"
-              alt=""
+              alt="Logo SolYB — agence digitale en Guadeloupe"
               width={160}
               height={160}
               className="h-11 w-auto"
