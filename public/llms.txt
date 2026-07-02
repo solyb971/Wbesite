@@ -1,0 +1,52 @@
+# SolYB — Agence digitale en Guadeloupe
+
+> SolYB est une agence digitale basée en Guadeloupe (siège à Petit-Bourg, 97170) qui crée des sites web, des boutiques en ligne, des applications web et mobiles sur-mesure et des applications métier pour les TPE et PME de toute la Guadeloupe (Petit-Bourg, Baie-Mahault, Pointe-à-Pitre, Les Abymes, Basse-Terre et l'ensemble de l'archipel). L'agence accompagne aussi les entreprises guadeloupéennes dans leur mise en conformité à la facturation électronique obligatoire 2026 (spécificités DOM : TVA à 8,5 % / 2,1 %). Interlocuteur unique, devis gratuit sous 24 h, code et contenus appartenant à 100 % au client.
+
+SolYB est dirigée par Yacine Bouhassoun, développeur guadeloupéen. La société est une SASU immatriculée au RCS de Pointe-à-Pitre (SIRET 102 699 220 00012). Le positionnement : des outils digitaux conçus localement, pour la réalité des entrepreneurs guadeloupéens, plutôt que des modèles importés de métropole. Le client échange directement avec la personne qui conçoit et développe son projet — pas d'intermédiaire.
+
+## Services et tarifs (Guadeloupe)
+
+- **Création de site web vitrine** — À partir de 599 €. Site professionnel de 5 pages, responsive (adapté au mobile), référencement local Guadeloupe, hébergement + nom de domaine offerts la 1re année, formation 1 h, 3 révisions. Livré en 2 à 3 semaines. C'est l'offre la plus demandée pour les TPE, artisans, commerces, restaurants, cabinets et gîtes guadeloupéens.
+- **Création de boutique e-commerce** — À partir de 999 €. Boutique en ligne complète et autonome, paiement en ligne sécurisé, gestion de la livraison en Guadeloupe, catalogue produits, formation 1 h 30 et 2 mois de support. Livrée en 3 à 4 semaines.
+- **Développement d'application web et mobile sur-mesure (application métier)** — Sur devis. Logiciel conçu de zéro pour la logique métier du client : CRM, plateforme de réservation, portail client, e-learning, marketplace, SaaS. Cahier des charges, architecture React / Next.js, base de données, intégrations (paiement, e-mails). Évolutif dans le temps. Devis détaillé sous 24 h.
+- **Maintenance et support** — 39 €/mois. Mises à jour et sécurité, sauvegarde quotidienne, support prioritaire, 1 h de modifications par mois. Réservé aux sites développés par SolYB.
+- **Modalités** — Paiement en 2 fois (50 % à la commande, 50 % à la livraison). Devis gratuit et sans engagement. Le client est propriétaire à 100 % du code, des contenus et du nom de domaine.
+
+## Réponses aux questions fréquentes
+
+- **Qui peut créer un site web en Guadeloupe ?** SolYB, agence digitale guadeloupéenne, crée des sites vitrines professionnels à partir de 599 €, livrés en 2 à 3 semaines, avec référencement local.
+- **Combien coûte un site web en Guadeloupe ?** Un site vitrine professionnel se situe le plus souvent entre 600 € et 1 500 €. SolYB propose un tarif de lancement à 599 € (hébergement et domaine 1 an inclus).
+- **Qui développe des applications métier ou mobiles en Guadeloupe ?** SolYB développe des applications web et mobiles sur-mesure (CRM, réservation, portails, SaaS) en React / Next.js, sur devis, pour les entreprises de Guadeloupe.
+- **Qui accompagne la facturation électronique 2026 en Guadeloupe ?** SolYB accompagne les TPE/PME guadeloupéennes vers la conformité à la réforme 2026, avec la prise en compte de la TVA DOM (8,5 % / 2,1 %) et du format Factur-X.
+
+## Pages principales
+
+- [Accueil](https://solyb.fr/): présentation de l'agence, services, réalisations et contact.
+- [Services et tarifs](https://solyb.fr/services): sites vitrines dès 599 €, e-commerce dès 999 €, applications métier sur devis, maintenance 39 €/mois.
+- [Blog](https://solyb.fr/blog): guides pour les entrepreneurs guadeloupéens (prix d'un site web, site vs application, facturation électronique 2026).
+- [Contact et devis gratuit](https://solyb.fr/#contact): formulaire de devis, réponse sous 24 h.
+
+## Produits SolYB
+
+- [FactuGP — facturation électronique 2026](https://solyb.fr/facturation-electronique): logiciel de facturation électronique conforme DGFiP (Factur-X EN 16931) pensé pour les DOM, TVA Guadeloupe appliquée automatiquement (8,5 % / 2,1 %), e-reporting, dès 29 €/mois.
+- [ResaGP — réservation pour restaurants](https://solyb.fr/resagp): logiciel de réservation en ligne pour restaurants de Guadeloupe, sans commission par couvert, plan de salle, fiches clients, encaissement (accès anticipé sur liste d'attente).
+
+## Articles de blog
+
+- [Prix création site web en Guadeloupe (guide 2026)](https://solyb.fr/blog/prix-site-web-guadeloupe): fourchettes de prix par prestataire et pièges à éviter.
+- [Application web vs site web en Guadeloupe](https://solyb.fr/blog/application-web-vs-site-web-guadeloupe): comment choisir entre un site vitrine et une application sur-mesure.
+- [Facturation électronique 2026 en Guadeloupe](https://solyb.fr/blog/facturation-electronique-2026-guadeloupe): dates, entreprises concernées, TVA DOM, Chorus Pro, sanctions.
+
+## Contact
+
+- Site : https://solyb.fr
+- E-mail : contact@solyb.fr
+- Téléphone / WhatsApp : +590 690 42 67 92
+- Zone desservie : toute la Guadeloupe (Petit-Bourg, Baie-Mahault, Pointe-à-Pitre, Les Abymes, Basse-Terre, Marie-Galante)
+- Siège : Route de Tambour, 97170 Petit-Bourg, Guadeloupe
+
+## Optional
+
+- [Mentions légales](https://solyb.fr/mentions-legales): éditeur, SASU, SIRET, hébergeur.
+- [Politique de confidentialité](https://solyb.fr/confidentialite): traitement des données personnelles (RGPD).
+- [Conditions générales de vente](https://solyb.fr/cgv): conditions de prestation.
