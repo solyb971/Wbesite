@@ -108,7 +108,7 @@ export default function ResaGPPage() {
               )}
             </div>
             <a href="#contact" className={styles.navBtn}>
-              Essai gratuit 14 jours <ArrowRight size={13} weight="bold" style={{ display:'inline', verticalAlign:'middle' }} />
+              Rejoindre la liste d&apos;attente <ArrowRight size={13} weight="bold" style={{ display:'inline', verticalAlign:'middle' }} />
             </a>
           </div>
         </nav>
@@ -131,14 +131,14 @@ export default function ResaGPPage() {
               </p>
               <div className={styles.ctas}>
                 <a href="#contact" className={styles.btnPrimary}>
-                  <ForkKnife size={16} weight="duotone" /> Démarrer l&apos;essai gratuit
+                  <ForkKnife size={16} weight="duotone" /> Rejoindre la liste d&apos;attente
                 </a>
                 <a href="#fonctionnalites" className={styles.btnSecondary}>
                   <ChartBar size={16} weight="duotone" /> Voir les fonctionnalités
                 </a>
               </div>
               <div className={styles.trust}>
-                {['Sans commission','14 jours gratuits','RGPD · France','Setup 5 min'].map(t => (
+                {['Sans commission','Accès anticipé bientôt','RGPD · France','Setup 5 min'].map(t => (
                   <span key={t} className={styles.trustItem}><span className={styles.trustDot} />{t}</span>
                 ))}
               </div>
@@ -316,8 +316,8 @@ export default function ResaGPPage() {
             </div>
             <div className={`${styles.plans} ${styles.reveal} ${styles.d1}`}>
               {[
-                { formule: 'Essentiel', price: '59€', hl: false, feats: ['Réservation en ligne 24h/24','Confirmations email automatiques','Rappels J-1 et H-2','Support email'], off: ['Plan de salle','SMS','Fiches clients','Statistiques','Menu QR Code'], btn: styles.planBtnOut, cta: 'Démarrer l\'essai gratuit' },
-                { formule: 'Pro', price: '99€', hl: true, badge: 'Recommandé', feats: ['Tout le plan Essentiel','Plan de salle interactif','Rappels SMS','Fiches clients enrichies','Statistiques & rapports','Menu QR Code','Avis Google automatiques','Application mobile service'], btn: styles.planBtnFill, cta: 'Démarrer l\'essai gratuit' },
+                { formule: 'Essentiel', price: '59€', hl: false, feats: ['Réservation en ligne 24h/24','Confirmations email automatiques','Rappels J-1 et H-2','Support email'], off: ['Plan de salle','SMS','Fiches clients','Statistiques','Menu QR Code'], btn: styles.planBtnOut, cta: 'Rejoindre la liste d\'attente' },
+                { formule: 'Pro', price: '99€', hl: true, badge: 'Recommandé', feats: ['Tout le plan Essentiel','Plan de salle interactif','Rappels SMS','Fiches clients enrichies','Statistiques & rapports','Menu QR Code','Avis Google automatiques','Application mobile service'], btn: styles.planBtnFill, cta: 'Rejoindre la liste d\'attente' },
                 { formule: 'Business', price: '149€', hl: false, feats: ['Tout le plan Pro','Établissements illimités','Cartes cadeaux','Équipe illimitée','Support prioritaire local','API REST & Webhooks'], btn: styles.planBtnOut, cta: 'Nous contacter' },
               ].map((p, i) => (
                 <div key={i} className={`${styles.plan}${p.hl ? ' ' + styles.planHl : ''}`}>
@@ -335,7 +335,7 @@ export default function ResaGPPage() {
               ))}
             </div>
             <p style={{ textAlign: 'center', color: 'var(--rg-mu)', fontFamily: 'var(--rg-mono)', fontSize: '0.62rem', marginTop: '2rem', letterSpacing: '0.06em' }}>
-              RÉDUCTION ANNUELLE −17% · 14 JOURS D&apos;ESSAI GRATUIT · SANS CARTE BANCAIRE · SANS ENGAGEMENT
+              RÉDUCTION ANNUELLE −17% · ACCÈS ANTICIPÉ POUR LA LISTE D&apos;ATTENTE · SANS ENGAGEMENT
             </p>
           </div>
         </section>
@@ -345,7 +345,7 @@ export default function ResaGPPage() {
           <div className={styles.ctaGlow} />
           <div className={styles.ctaIn}>
             <h2 className={styles.ctaH}>Arrêtez de payer une commission<br /><span className={styles.ctaHStrong}>sur ce que vous servez.</span></h2>
-            <p className={styles.ctaP}>14 jours d&apos;essai gratuit, sans carte bancaire. Opérationnel en moins de 5 minutes. Vos données restent en France.</p>
+            <p className={styles.ctaP}>Inscrivez-vous à la liste d&apos;attente : vous serez les premiers prévenus à l&apos;ouverture, avec un accès anticipé. Vos données restent en France.</p>
             <EarlyAccessForm
               theme={{
                 surface: '#FFFFFF', text: '#173E3C', muted: '#6E6050',
@@ -357,8 +357,8 @@ export default function ResaGPPage() {
               projectType="saas"
               productSource="resa_gp"
               productName="ResaGP"
-              submitLabel="Démarrer l'essai gratuit"
-              successText="On vous recontacte pour lancer votre essai — sous 24h en semaine."
+              submitLabel="Rejoindre la liste d'attente"
+              successText="Vous êtes sur la liste — on vous prévient dès l'ouverture, avec un accès anticipé."
             />
           </div>
         </section>

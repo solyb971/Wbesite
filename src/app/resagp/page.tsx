@@ -3,12 +3,12 @@ import ResaGPPage from './ResaGPPage'
 
 export const metadata: Metadata = {
   title: 'ResaGP — Réservations Restaurant Guadeloupe, sans commission',
-  description: 'Logiciel de réservation en ligne pour restaurants en Guadeloupe : plan de salle, fiches clients, encaissement. Sans commission. Essai gratuit 14 jours.',
+  description: 'Logiciel de réservation en ligne pour restaurants en Guadeloupe : plan de salle, fiches clients, encaissement. Sans commission. Rejoignez la liste d’attente.',
   keywords: ['réservation restaurant Guadeloupe','logiciel restauration DOM','gestion restaurant sans commission','alternative TheFork Guadeloupe','CRM restaurant','plan de salle restaurant','widget réservation'],
   alternates: { canonical: 'https://solyb.fr/resagp' },
   openGraph: {
     title: 'ResaGP — Gestion Restaurant Tout-en-Un | Sans Commission',
-    description: 'Alternative française à Zenchef / TheFork Manager. Sans commission, conforme RGPD, opérationnel en moins de 5 minutes. Essai gratuit 14 jours sans carte bancaire.',
+    description: 'Alternative française à Zenchef / TheFork Manager. Sans commission, conforme RGPD, opérationnel en moins de 5 minutes. Rejoignez la liste d’attente.',
     url: 'https://solyb.fr/resagp',
     type: 'website',
     locale: 'fr_FR',

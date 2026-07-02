@@ -34,11 +34,11 @@ const tools = [
     preview: "/resagp/demo/02_planning.png",  // capture produit réelle
     tagline: "Réservations restaurant — sans commission",
     description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
-    status: "Disponible",
-    statusColor: "#16A34A",   // pastille
-    statusText: "#147038",    // texte statut (AA sur crème)
-    highlights: ["Essai gratuit 14 jours", "Aucune commission par couvert", "Pensé pour les restaurants et bars"],
-    cta: { label: "Découvrir ResaGP", href: "/resagp" },
+    status: "Bientôt disponible",
+    statusColor: "#B8760A",   // pastille (ambre — en préparation)
+    statusText: "#96600A",    // texte statut (AA sur crème)
+    highlights: ["Aucune commission par couvert", "Pensé pour les restaurants et bars", "Accès anticipé bientôt ouvert"],
+    cta: { label: "Rejoindre la liste d'attente", href: "/resagp" },
   },
   {
     name: "FactuGP",
