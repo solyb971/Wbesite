@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
 import { blogTags } from '@/lib/blog-meta'
 
@@ -79,8 +78,10 @@ export default function ApplicationVsSiteWebPage() {
     ],
   }
 
+  // Puce unique de la charte : rond plein en couleur d'accent (aligné sur la
+  // 1re ligne de texte). Sert de marqueur pour toutes les listes des encadrés.
   const bullet = (color: string) => (
-    <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color }} />
+    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: color }} />
   )
 
   return (
@@ -141,15 +142,15 @@ export default function ApplicationVsSiteWebPage() {
               "Présentation d'un gîte avec formulaire de contact",
               "Cabinet (médical, juridique, conseil) avec prise de contact",
             ].map((t) => (
-              <li key={t} className="flex items-start gap-2">{bullet(SITE)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
+              <li key={t} className="flex items-start gap-2.5">{bullet(SITE)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
             ))}
           </ul>
           <p className="font-display font-bold mt-6 mb-3" style={{ fontSize: '15px', color: 'var(--syb-ink)' }}>Ce qui le caractérise</p>
-          <ul className="space-y-1.5 m-0" style={{ color: 'var(--syb-stone)' }}>
-            <li>Navigation simple, page par page</li>
-            <li>Contenu majoritairement statique</li>
-            <li>Peu ou pas d&rsquo;interaction complexe</li>
-            <li>Pas de compte utilisateur, pas de traitement de données lourd</li>
+          <ul className="space-y-2 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+            <li className="flex items-start gap-2.5">{bullet(SITE)}<span>Navigation simple, page par page</span></li>
+            <li className="flex items-start gap-2.5">{bullet(SITE)}<span>Contenu majoritairement statique</span></li>
+            <li className="flex items-start gap-2.5">{bullet(SITE)}<span>Peu ou pas d&rsquo;interaction complexe</span></li>
+            <li className="flex items-start gap-2.5">{bullet(SITE)}<span>Pas de compte utilisateur, pas de traitement de données lourd</span></li>
           </ul>
         </ArticleCallout>
         <p>
@@ -169,16 +170,16 @@ export default function ApplicationVsSiteWebPage() {
         <ArticleCallout accent={ACCENT}>
           <p className="font-display font-bold mb-4" style={{ fontSize: '18px', color: 'var(--syb-ink)' }}>Trois applications, trois problèmes concrets</p>
           <ul className="space-y-3 m-0 list-none p-0">
-            <li className="flex items-start gap-2">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/libertydriveserenity" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>Liberty Drive Serenity</Link> — le problème : mettre en relation des soignants et des chauffeurs pour organiser des tournées. Un site vitrine n&rsquo;aurait rien résolu. Il fallait deux espaces distincts, des comptes, des devis en ligne et une gestion de rendez-vous. C&rsquo;est une application, en ligne et utilisée au quotidien.</span></li>
-            <li className="flex items-start gap-2">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/resagp" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>ResaGP</Link> — le problème : gérer les réservations, le plan de salle, les commandes et l&rsquo;encaissement d&rsquo;un restaurant. Là encore, une vitrine ne suffit pas : il faut de la logique métier, du temps réel, des rôles d&rsquo;équipe.</span></li>
-            <li className="flex items-start gap-2">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/facturation-electronique" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>FactuGP</Link> — le problème : produire des factures électroniques conformes, appliquer la TVA DOM automatiquement et transmettre les données aux impôts. Un traitement de données réglementé, impossible à faire avec un simple site.</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/libertydriveserenity" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>Liberty Drive Serenity</Link> — le problème : mettre en relation des soignants et des chauffeurs pour organiser des tournées. Un site vitrine n&rsquo;aurait rien résolu. Il fallait deux espaces distincts, des comptes, des devis en ligne et une gestion de rendez-vous. C&rsquo;est une application, en ligne et utilisée au quotidien.</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/resagp" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>ResaGP</Link> — le problème : gérer les réservations, le plan de salle, les commandes et l&rsquo;encaissement d&rsquo;un restaurant. Là encore, une vitrine ne suffit pas : il faut de la logique métier, du temps réel, des rôles d&rsquo;équipe.</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}><Link href="/facturation-electronique" className="underline underline-offset-2" style={{ color: ACCENT_INK }}>FactuGP</Link> — le problème : produire des factures électroniques conformes, appliquer la TVA DOM automatiquement et transmettre les données aux impôts. Un traitement de données réglementé, impossible à faire avec un simple site.</span></li>
           </ul>
           <p className="font-display font-bold mt-6 mb-3" style={{ fontSize: '15px', color: 'var(--syb-ink)' }}>Ce qui la caractérise</p>
-          <ul className="space-y-1.5 m-0" style={{ color: 'var(--syb-stone)' }}>
-            <li>Interface interactive, comptes utilisateurs</li>
-            <li>Traitement de données en temps réel</li>
-            <li>Logique métier et base de données dynamique</li>
-            <li>Fonctionnalités avancées (paiement, notifications, tableaux de bord…)</li>
+          <ul className="space-y-2 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span>Interface interactive, comptes utilisateurs</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span>Traitement de données en temps réel</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span>Logique métier et base de données dynamique</span></li>
+            <li className="flex items-start gap-2.5">{bullet(ACCENT)}<span>Fonctionnalités avancées (paiement, notifications, tableaux de bord…)</span></li>
           </ul>
         </ArticleCallout>
 
@@ -230,7 +231,7 @@ export default function ApplicationVsSiteWebPage() {
                 <>Votre budget est <strong>maîtrisé</strong> (moins de 2 000 €)</>,
                 <>Vous voulez une solution <strong>rapide</strong> (2 à 4 semaines)</>,
               ].map((t, i) => (
-                <li key={i} className="flex items-start gap-2">{bullet(SITE)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
+                <li key={i} className="flex items-start gap-2.5">{bullet(SITE)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
               ))}
             </ul>
             <div className="mt-5 pt-5" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
@@ -249,7 +250,7 @@ export default function ApplicationVsSiteWebPage() {
                 <>Vous voulez <strong>automatiser un processus</strong></>,
                 <>Vous êtes prêt à investir <strong>2 000 € et plus</strong></>,
               ].map((t, i) => (
-                <li key={i} className="flex items-start gap-2">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
+                <li key={i} className="flex items-start gap-2.5">{bullet(ACCENT)}<span style={{ color: 'var(--syb-stone)' }}>{t}</span></li>
               ))}
             </ul>
             <div className="mt-5 pt-5" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
@@ -274,8 +275,10 @@ export default function ApplicationVsSiteWebPage() {
                 <h3 className="font-display font-bold m-0" style={{ fontSize: '20px', color: 'var(--syb-ink)' }}>{c.titre}</h3>
                 <span className="font-display font-bold" style={{ fontSize: '22px', color: ACCENT_INK }}>{c.prix}</span>
               </div>
-              <ul className="space-y-1.5 mb-4 m-0" style={{ color: 'var(--syb-stone)' }}>
-                {c.points.map((p) => <li key={p}>{p}</li>)}
+              <ul className="space-y-1.5 mb-4 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+                {c.points.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5">{bullet(ACCENT)}<span>{p}</span></li>
+                ))}
               </ul>
               <p className="text-sm m-0" style={{ color: 'var(--syb-stone-light)' }}><strong style={{ color: 'var(--syb-stone)' }}>Exemples :</strong> {c.ex}</p>
             </div>
