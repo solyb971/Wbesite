@@ -24,18 +24,36 @@ export default function About() {
 
         <div
           className="reveal mb-14 flex flex-col gap-5 text-left"
-          style={{ maxWidth: '620px' }}
+          style={{ maxWidth: '640px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Je m&apos;appelle Yacine. J&apos;ai grandi ici, j&apos;ai appris à coder ici, et j&apos;ai
-            lancé SolYB parce que les outils qu&apos;on proposait aux entrepreneurs guadeloupéens ne
-            ressemblaient pas à leur réalité.
+            Je m&apos;appelle Yacine. J&apos;ai grandi sur cette île, j&apos;ai appris à coder ici, et
+            contrairement à ce qu&apos;on répète aux jeunes d&apos;ici — que leur avenir se joue
+            ailleurs, en métropole — je n&apos;ai jamais eu envie de partir. J&apos;ai eu envie de
+            prouver le contraire&nbsp;: qu&apos;on peut bâtir, depuis la Guadeloupe, des choses qui
+            servent vraiment les gens d&apos;ici.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Ici, les restaurateurs, artisans et commerçants méritent des outils à leur hauteur — pas
-            des templates importés de Paris, pensés pour un autre marché. Alors on prend le temps de
-            comprendre votre activité avant d&apos;écrire la première ligne de code.{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>C&apos;est plus long que de coller un template. Mais ça tient.</span>
+            J&apos;ai lancé SolYB en voyant nos restaurateurs, nos artisans, nos commerçants se battre
+            avec des outils qui ne leur ressemblaient pas&nbsp;: des taux de TVA qui ne sont pas les
+            nôtres, des templates importés de Paris, des logiciels qui ignorent tout de leur quotidien.
+            Ce qui leur manquait, ce n&apos;était pas une agence de plus. C&apos;était quelqu&apos;un
+            d&apos;ici, qui connaît leur réalité et prend leur métier au sérieux.
+          </p>
+          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+            Alors on prend le temps. On s&apos;assoit avec vous, on écoute comment vous travaillez
+            vraiment, avant d&apos;écrire la première ligne de code. C&apos;est plus long que de coller
+            un template.{' '}
+            <span style={{ color: 'var(--syb-ink)' }}>Mais ce qu&apos;on livre vous ressemble — et surtout, ça tient.</span>
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: '17px', lineHeight: 1.6, color: 'var(--syb-rust)', fontStyle: 'italic', marginTop: '0.5rem' }}
+          >
+            La Guadeloupe m&apos;a tout donné. SolYB, c&apos;est ma façon de lui rendre la pareille.
+          </p>
+          <p style={{ fontSize: '13px', letterSpacing: '0.5px', color: 'var(--syb-stone-light)' }}>
+            — Yacine Bouhassoun, fondateur de SolYB · Petit-Bourg, Guadeloupe
           </p>
         </div>
       </div>
