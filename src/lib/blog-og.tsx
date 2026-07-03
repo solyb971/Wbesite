@@ -1,25 +1,37 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 /**
  * Vignette de partage / miniature pour les articles de blog.
- * DA « SolYB v3 » : fond dark caribéen, glow d'accent par rubrique, titre
- * éditorial, mot-symbole SolYB. Générée statiquement au build (runtime Node).
- *
- * Sert d'og:image (partage réseaux) ET se télécharge en PNG à l'URL
- * /blog/<slug>/opengraph-image pour republier sur LinkedIn / Facebook.
+ * DA « SolYB v3 » : fond dark caribéen, logo SYB, titre en Fraunces (vraie
+ * police chargée), barre + glow d'accent par rubrique, tags contextuels.
+ * Générée statiquement au build (runtime Node) — sert d'og:image ET se
+ * télécharge en PNG à /blog/<slug>/opengraph-image.
  */
 
 export const blogOgSize = { width: 1200, height: 630 }
 export const blogOgContentType = 'image/png'
 
+// Polices + logo chargés une fois (build-time)
+const root = process.cwd()
+const fraunces900 = readFileSync(join(root, 'src/assets/fonts/Fraunces-900.ttf'))
+const dmSans400 = readFileSync(join(root, 'src/assets/fonts/DMSans-400.ttf'))
+const dmSans600 = readFileSync(join(root, 'src/assets/fonts/DMSans-600.ttf'))
+const logoUri =
+  'data:image/png;base64,' +
+  readFileSync(join(root, 'public/logo/syb-white.png')).toString('base64')
+
 export function renderBlogOg({
   title,
   category,
   accent,
+  tags = [],
 }: {
   title: string
   category: string
   accent: string
+  tags?: string[]
 }) {
   return new ImageResponse(
     (
@@ -27,105 +39,92 @@ export function renderBlogOg({
         style={{
           width: 1200,
           height: 630,
-          background: 'linear-gradient(135deg, #0A0A0F 0%, #13131A 60%, #1C1C26 100%)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: '60px 72px',
-          fontFamily: 'Georgia, serif',
+          background: 'linear-gradient(135deg, #0A0A0F 0%, #13131A 55%, #1C1C26 100%)',
+          padding: '54px 64px',
           position: 'relative',
           overflow: 'hidden',
+          fontFamily: 'DM Sans',
+          color: '#F0EDE8',
         }}
       >
-        {/* Glow d'accent (couleur de la rubrique) */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-120px',
-            right: '-80px',
-            width: '520px',
-            height: '520px',
-            borderRadius: '50%',
-            background: `radial-gradient(circle, ${accent}26 0%, transparent 70%)`,
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-140px',
-            left: '-100px',
-            width: '420px',
-            height: '420px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(196,71,42,0.10) 0%, transparent 70%)',
-          }}
-        />
+        {/* Glows */}
+        <div style={{ position: 'absolute', top: -160, right: -120, width: 560, height: 560, borderRadius: '50%', background: `radial-gradient(circle, ${accent}38 0%, transparent 68%)` }} />
+        <div style={{ position: 'absolute', bottom: -190, left: -130, width: 470, height: 470, borderRadius: '50%', background: 'radial-gradient(circle, rgba(196,71,42,0.13) 0%, transparent 68%)' }} />
+        {/* Barre d'accent gauche */}
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 8, background: accent }} />
 
-        {/* Haut : rubrique + domaine */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        {/* Header : logo + marque · badge rubrique */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logoUri} width={50} height={50} alt="" style={{ marginRight: 15 }} />
+            <span style={{ fontFamily: 'Fraunces', fontSize: 33, fontWeight: 900, letterSpacing: -1 }}>SolYB</span>
+          </div>
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
               border: `1px solid ${accent}66`,
-              background: `${accent}1A`,
-              borderRadius: '4px',
-              padding: '8px 18px',
-              fontSize: '15px',
-              color: accent,
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              fontFamily: 'sans-serif',
+              background: `${accent}1F`,
+              borderRadius: 6,
+              padding: '9px 20px',
+              fontSize: 16,
               fontWeight: 600,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: accent,
             }}
           >
-            <div style={{ width: '18px', height: '2px', background: accent }} />
             {category}
           </div>
-          <div style={{ color: '#6B645A', fontSize: '15px', letterSpacing: '2px', fontFamily: 'sans-serif' }}>
-            solyb.fr / blog
-          </div>
         </div>
 
-        {/* Titre de l'article */}
-        <div
-          style={{
-            display: 'flex',
-            fontSize: '62px',
-            fontWeight: 700,
-            color: '#F0EDE8',
-            lineHeight: 1.08,
-            letterSpacing: '-1.5px',
-            maxWidth: '960px',
-          }}
-        >
-          {title}
+        {/* Titre + tags (centre) */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1, paddingTop: 10 }}>
+          <div style={{ display: 'flex', fontFamily: 'Fraunces', fontSize: 66, fontWeight: 900, lineHeight: 1.05, letterSpacing: -1.5, maxWidth: 940 }}>
+            {title}
+          </div>
+          {tags.length > 0 && (
+            <div style={{ display: 'flex', marginTop: 32 }}>
+              {tags.map((t) => (
+                <div
+                  key={t}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginRight: 12,
+                    border: '1px solid rgba(240,237,232,0.16)',
+                    background: 'rgba(240,237,232,0.05)',
+                    borderRadius: 100,
+                    padding: '9px 18px',
+                    fontSize: 18,
+                    color: '#D8D3CC',
+                  }}
+                >
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: accent, marginRight: 10 }} />
+                  {t}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Bas : mot-symbole + accroche */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-            <span style={{ fontSize: '40px', fontWeight: 700, color: '#F0EDE8', lineHeight: 1, letterSpacing: '-1.5px' }}>Sol</span>
-            <span style={{ fontSize: '40px', fontWeight: 700, color: '#C4472A', lineHeight: 1, letterSpacing: '-1.5px' }}>YB</span>
-            <span style={{ fontSize: '17px', color: '#8B8B9E', fontStyle: 'italic', marginLeft: '14px', fontFamily: 'sans-serif' }}>
-              Agence digitale · Guadeloupe
-            </span>
-          </div>
-          <div
-            style={{
-              fontSize: '15px',
-              color: accent,
-              fontFamily: 'sans-serif',
-              fontWeight: 600,
-              letterSpacing: '0.5px',
-            }}
-          >
-            Devis gratuit sous 24 h →
-          </div>
+        {/* Footer */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(240,237,232,0.10)', paddingTop: 22 }}>
+          <span style={{ fontSize: 20, color: '#8B8B9E', letterSpacing: 1 }}>solyb.fr / blog</span>
+          <span style={{ fontSize: 20, fontWeight: 600, color: accent }}>Devis gratuit sous 24 h →</span>
         </div>
       </div>
     ),
-    { ...blogOgSize }
+    {
+      ...blogOgSize,
+      fonts: [
+        { name: 'Fraunces', data: fraunces900, weight: 900, style: 'normal' },
+        { name: 'DM Sans', data: dmSans400, weight: 400, style: 'normal' },
+        { name: 'DM Sans', data: dmSans600, weight: 600, style: 'normal' },
+      ],
+    }
   )
 }
