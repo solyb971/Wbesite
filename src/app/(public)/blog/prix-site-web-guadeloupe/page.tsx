@@ -202,12 +202,12 @@ export default function PrixSiteWebGuadeloupePage() {
           Un «&nbsp;site à partir de 490 €&nbsp;» se transforme souvent une fois le devis détaillé arrivé :
         </p>
         <ArticleCallout accent={ACCENT}>
-          <ul className="space-y-1.5 m-0" style={{ color: 'var(--syb-stone)' }}>
-            <li>Site de base : 490 €</li>
-            <li>Design personnalisé : +400 €</li>
-            <li>Formulaire de contact : +150 €</li>
-            <li>Référencement de base : +300 €</li>
-            <li>Version mobile : +200 €</li>
+          <ul className="space-y-1.5 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span>Site de base : 490 €</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span>Design personnalisé : +400 €</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span>Formulaire de contact : +150 €</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span>Référencement de base : +300 €</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span>Version mobile : +200 €</span></li>
           </ul>
           <p className="mt-3 mb-0 font-semibold" style={{ color: ACCENT_INK }}>Total réel : 1 540 € — soit plus du triple du prix d&rsquo;appel.</p>
         </ArticleCallout>
@@ -228,9 +228,9 @@ export default function PrixSiteWebGuadeloupePage() {
         <h2>Combien prévoir selon votre besoin ?</h2>
         <ArticleCallout accent={ACCENT}>
           <ul className="space-y-3 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
-            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget serré (moins de 800 €)</strong> — Freelance local ou jeune agence, site vitrine simple mais soigné. Vérifiez les réalisations, et surtout que vous serez propriétaire.</li>
-            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget moyen (800 – 2 000 €)</strong> — Site vitrine complet, design sur-mesure, SEO local. Le meilleur rapport qualité-prix pour la plupart des TPE guadeloupéennes.</li>
-            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget ambitieux (2 000 € et plus)</strong> — Boutique e-commerce, fonctionnalités avancées, ou application métier sur-mesure conçue pour votre logique.</li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span><strong style={{ color: 'var(--syb-ink)' }}>Budget serré (moins de 800 €)</strong> — Freelance local ou jeune agence, site vitrine simple mais soigné. Vérifiez les réalisations, et surtout que vous serez propriétaire.</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span><strong style={{ color: 'var(--syb-ink)' }}>Budget moyen (800 – 2 000 €)</strong> — Site vitrine complet, design sur-mesure, SEO local. Le meilleur rapport qualité-prix pour la plupart des TPE guadeloupéennes.</span></li>
+            <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} /><span><strong style={{ color: 'var(--syb-ink)' }}>Budget ambitieux (2 000 € et plus)</strong> — Boutique e-commerce, fonctionnalités avancées, ou application métier sur-mesure conçue pour votre logique.</span></li>
           </ul>
         </ArticleCallout>
 

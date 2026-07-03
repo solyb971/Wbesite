@@ -281,10 +281,10 @@ export default function FacturationElectronique2026GuadeloupePage() {
           <AlertTriangle className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: 'var(--syb-rust)' }} />
           <div style={{ color: 'var(--syb-stone)' }}>
             <p className="font-semibold mb-2" style={{ color: 'var(--syb-ink)' }}>Ce que vous risquez</p>
-            <ul className="space-y-1.5">
-              <li><strong>15 €</strong> par facture non émise au format électronique, dans la limite de 15 000 € par an ;</li>
-              <li><strong>250 €</strong> par transmission d&rsquo;e-reporting manquante ou erronée, également plafonnée à 15 000 € par an ;</li>
-              <li><strong>500 €</strong>, puis <strong>1 000 € par trimestre</strong> après mise en demeure, si vous n&rsquo;avez aucune solution pour recevoir vos factures dès septembre 2026.</li>
+            <ul className="space-y-2 m-0 list-none p-0">
+              <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--syb-rust)' }} /><span><strong>15 €</strong> par facture non émise au format électronique, dans la limite de 15 000 € par an ;</span></li>
+              <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--syb-rust)' }} /><span><strong>250 €</strong> par transmission d&rsquo;e-reporting manquante ou erronée, également plafonnée à 15 000 € par an ;</span></li>
+              <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--syb-rust)' }} /><span><strong>500 €</strong>, puis <strong>1 000 € par trimestre</strong> après mise en demeure, si vous n&rsquo;avez aucune solution pour recevoir vos factures dès septembre 2026.</span></li>
             </ul>
             <p className="mt-3 text-sm">Ces montants restent modestes à l&rsquo;unité, mais ils s&rsquo;additionnent vite pour un commerce qui émet des dizaines de factures par mois.</p>
           </div>
