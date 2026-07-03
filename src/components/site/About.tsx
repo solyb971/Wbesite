@@ -27,11 +27,9 @@ export default function About() {
           style={{ maxWidth: '640px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Je m&apos;appelle Yacine. J&apos;ai grandi sur cette île, j&apos;ai appris à coder ici, et
-            contrairement à ce qu&apos;on répète aux jeunes d&apos;ici — que leur avenir se joue
-            ailleurs, en métropole — je n&apos;ai jamais eu envie de partir. J&apos;ai eu envie de
-            prouver le contraire&nbsp;: qu&apos;on peut bâtir, depuis la Guadeloupe, des choses qui
-            servent vraiment les gens d&apos;ici.
+            Je m&apos;appelle Yacine. J&apos;ai grandi sur cette île, puis je suis parti me former et
+            travailler ailleurs, comme beaucoup d&apos;ici. Mais je suis revenu — pour mettre ce que
+            j&apos;avais appris au service des entrepreneurs guadeloupéens, depuis la Guadeloupe.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
             J&apos;ai lancé SolYB en voyant nos restaurateurs, nos artisans, nos commerçants se battre
