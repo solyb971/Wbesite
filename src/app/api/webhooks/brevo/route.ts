@@ -8,6 +8,21 @@ import { createClient } from "@/lib/supabase/server"
  */
 export async function POST(request: NextRequest) {
   try {
+    // Vérification d'un secret partagé : Brevo ne signe pas ses payloads, on
+    // protège donc l'endpoint via un token attendu dans l'URL configurée côté
+    // Brevo (ex: https://solyb.fr/api/webhooks/brevo?token=XXXX) ou un header.
+    const secret = process.env.BREVO_WEBHOOK_SECRET
+    if (secret) {
+      const provided =
+        request.nextUrl.searchParams.get("token") ||
+        request.headers.get("x-webhook-token")
+      if (provided !== secret) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+      }
+    } else {
+      console.warn("⚠️ BREVO_WEBHOOK_SECRET non configuré — webhook non protégé")
+    }
+
     const body = await request.json()
     const { event, email, "message-id": messageId, link, date } = body
 
@@ -102,9 +117,9 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ success: true, event })
-  } catch (error: any) {
+  } catch (error) {
     console.error("Webhook error:", error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: "Webhook processing error" }, { status: 500 })
   }
 }
 

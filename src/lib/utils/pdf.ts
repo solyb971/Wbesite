@@ -213,7 +213,7 @@ export function generateQuotePDF(lead: Lead): jsPDF {
   doc.setTextColor(grayColor)
   doc.setFont("helvetica", "normal")
   doc.text("SolYB - Solutions digitales en Guadeloupe", 105, pageHeight - 20, { align: "center" })
-  doc.text("Email: contact@solyb.fr | Tél: +590 690 71 17 69", 105, pageHeight - 15, {
+  doc.text("Email: contact@solyb.fr | Tél: +590 690 42 67 92", 105, pageHeight - 15, {
     align: "center",
   })
   doc.text("Antilles Françaises", 105, pageHeight - 10, { align: "center" })

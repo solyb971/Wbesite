@@ -1,0 +1,63 @@
+import { User, FileText, CreditCard, LifeBuoy } from "lucide-react"
+
+const engagements = [
+  {
+    Icon: User,
+    title: "Un seul interlocuteur",
+    text: "Vous parlez directement à la personne qui code. Pas d'intermédiaire.",
+  },
+  {
+    Icon: FileText,
+    title: "Devis clair sous 24h",
+    text: "Un prix ferme et détaillé, sans surprise.",
+  },
+  {
+    Icon: CreditCard,
+    title: "Paiement en deux fois",
+    text: "50 % pour démarrer, 50 % à la livraison.",
+  },
+  {
+    Icon: LifeBuoy,
+    title: "On reste après la livraison",
+    text: "Hébergement 1 an et support inclus. On ne disparaît pas une fois le site en ligne.",
+  },
+]
+
+export default function Engagements() {
+  return (
+    <section id="engagements" className="py-24 md:py-28 scroll-mt-20" style={{ background: 'var(--syb-cream)' }}>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="reveal mb-14 max-w-2xl">
+          <h2
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
+          >
+            Pas de promesses.<br />
+            <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>Des engagements.</span>
+          </h2>
+        </div>
+
+        <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
+          {engagements.map((e) => (
+            <div key={e.title} className="flex gap-5">
+              <span
+                className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ background: 'rgba(196,71,42,0.08)', border: '0.5px solid rgba(196,71,42,0.18)', color: 'var(--syb-rust)' }}
+              >
+                <e.Icon size={20} strokeWidth={1.6} />
+              </span>
+              <div>
+                <h3 className="font-display font-bold mb-2" style={{ fontSize: '19px', color: 'var(--syb-ink)' }}>
+                  {e.title}
+                </h3>
+                <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.75 }}>
+                  {e.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

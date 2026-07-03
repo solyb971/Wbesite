@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "590690711769", // Replace with your actual number
+  phoneNumber = "590690426792",
   message = "Bonjour ! Je suis intéressé(e) par vos services de création de site web.",
 }: WhatsAppButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,27 +29,28 @@ export default function WhatsAppButton({
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed bottom-20 sm:bottom-6 left-6 z-50">
+      <div role="complementary" aria-label="Contact rapide" className="fixed bottom-20 sm:bottom-6 right-6 z-50">
         {/* Tooltip */}
         {showTooltip && !isOpen && (
-          <div className="absolute bottom-full left-0 mb-3 animate-bounce">
+          <div className="absolute bottom-full right-0 mb-3 animate-bounce">
             <div className="bg-[#13131A] border border-[#2A2A38] rounded-xl shadow-lg p-3 pr-8 text-sm max-w-[200px] relative">
               <button
                 onClick={() => setShowTooltip(false)}
+                aria-label="Fermer l'infobulle"
                 className="absolute top-1 right-1 text-[#8B8B9E] hover:text-[#F0EDE8]"
               >
                 <X className="w-4 h-4" />
               </button>
               <p className="text-[#F0EDE8] font-semibold">Besoin d'aide ?</p>
               <p className="text-[#8B8B9E] text-xs mt-1">Contactez-moi sur WhatsApp !</p>
-              <div className="absolute -bottom-2 left-6 w-4 h-4 bg-[#13131A] border-b border-r border-[#2A2A38] transform rotate-45"></div>
+              <div className="absolute -bottom-2 right-6 w-4 h-4 bg-[#13131A] border-b border-r border-[#2A2A38] transform rotate-45"></div>
             </div>
           </div>
         )}
 
         {/* Expanded Chat Box */}
         {isOpen && (
-          <div className="absolute bottom-20 left-0 w-80 bg-[#13131A] border border-[#2A2A38] rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5">
+          <div className="absolute bottom-20 right-0 w-80 max-w-[calc(100vw-3rem)] bg-[#13131A] border border-[#2A2A38] rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5">
             {/* Header */}
             <div className="bg-coral p-4 text-white">
               <div className="flex items-center justify-between">
@@ -101,6 +102,7 @@ export default function WhatsAppButton({
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le contact WhatsApp" : "Contacter par WhatsApp"}
           className={`w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 ${
             isOpen ? "bg-[#2A2A38]" : "bg-coral hover:bg-coral-600"
           }`}
@@ -114,9 +116,9 @@ export default function WhatsAppButton({
           )}
         </button>
 
-        {/* Pulse Animation */}
+        {/* Pulse Animation — pointer-events-none : ne doit pas intercepter les clics du bouton */}
         {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-coral animate-ping opacity-25"></span>
+          <span className="absolute inset-0 rounded-full bg-coral animate-ping opacity-25 pointer-events-none"></span>
         )}
       </div>
     </>

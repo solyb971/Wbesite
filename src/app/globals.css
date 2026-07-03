@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tokens de marque site public (ne pas utiliser dans /admin) ──
+   Aliases vers la palette éditoriale "SolYB v3" définie plus bas.
+   Ne jamais dupliquer les valeurs littérales : utiliser var(--xxx). ── */
+:root {
+  /* — Aliases palette éditoriale — */
+  --syb-cream:       var(--smoke);      /* #F5F2ED */
+  --syb-ink:         var(--ink);        /* #0E0D0B */
+  --syb-stone:       #736B5F;           /* assombri depuis #7A7268 → ≥4.5:1 aussi sur crème #F5F2ED (AA) */
+  --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
+  --syb-rust:        var(--rust);       /* #C4472A */
+  --syb-rust-ink:    #B84126;           /* rust assombri pour texte-lien sur crème (AA ≥4.5:1) */
+  --syb-border:      var(--v3-border);  /* #DDD5C8 */
+
+  /* — Littéraux intentionnels (pas d'équivalent dans la palette) — */
+  --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
+  --syb-rust-deep:   #9A5A3A;   /* accent foncé (carte Application) */
+  --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
+  --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
+  --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
+  --syb-warm:        #FFF9F6;   /* fond crème chaud (sections claires, vs blanc pur) */
+  --syb-teal:        #00BFA5;   /* turquoise caraïbe — accent secondaire (fills / fond sombre) */
+  --syb-teal-deep:   #0E7C6B;   /* turquoise foncé — texte/CTA sur fond clair (contraste AA) */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,23 +83,48 @@
   }
 }
 
+/* ── SolYB v3 — Editorial palette ── */
+:root {
+  --ink:        #0E0D0B;
+  --smoke:      #F5F2ED;
+  --rust:       #C4472A;
+  --rust-l:     #E06245;
+  --rust-pale:  #FAF0EC;
+  --sand:       #E8DDD0;
+  --text:       #2E2A25;
+  --muted:      #7A7268;
+  --ghost:      #B0A89E;
+  --v3-border:  #DDD5C8;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--smoke);
+    color: var(--text);
     overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
   }
-  /* Scroll natif sur mobile — plus fluide et moins gourmand que le JS */
   @media (max-width: 767px) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
   }
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--rust);
+  z-index: 200;
+  width: 0;
+  transition: width .1s linear;
 }
 
 /* FactuGP — keyframes du mot typewriter (référencés en inline style depuis CSS Modules) */
@@ -93,24 +142,7 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GRAIN OVERLAY
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9997;
-  pointer-events: none;
-  opacity: 0.045;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  animation: grainShift 0.12s steps(2) infinite;
-}
-
-@keyframes grainShift {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-2px, 2px); }
-  50%  { transform: translate(2px, -2px); }
-  75%  { transform: translate(-1px, -1px); }
-  100% { transform: translate(1px, 1px); }
-}
+/* grain-overlay removed */
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CUSTOM CURSOR (desktop only)
@@ -164,9 +196,69 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLL REVEAL
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-/* .reveal neutralisé — animations gérées par Framer Motion */
-.reveal { opacity: 1; transform: none; }
-.reveal.visible { opacity: 1; transform: none; }
+/* Scroll reveal — fade up doux (courbe validée, plus organique que ease)
+   Filet de sécurité : l'état masqué n'est appliqué QUE si JS est actif (classe
+   `.js` posée tôt sur <html>). Sans JS (désactivé / bundle en échec), le contenu
+   reste visible — jamais de section blanche. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Reveal en cascade (stagger) — les enfants directs s'enchaînent ──
+   Le conteneur reste visible ; ses enfants montent un par un. */
+.js .reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+.js .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.04s; }
+.js .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
+.js .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.20s; }
+.js .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.28s; }
+.js .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.36s; }
+.js .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.44s; }
+
+/* ── Mask reveal — le titre se dévoile de haut en bas (signature, 2 titres) ── */
+.js .title-reveal {
+  clip-path: inset(0 0 110% 0);
+  transform: translateY(10px);
+  transition:
+    clip-path 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .title-reveal.visible { clip-path: inset(0 0 -12% 0); transform: translateY(0); }
+
+/* Respect strict de prefers-reduced-motion pour les nouveaux effets */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-stagger > *,
+  .title-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Hover enrichi des cartes services (barre d'accent + icône) ── */
+.service-card .service-accent { transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .service-card:hover .service-accent { height: 7px; }
+}
+
+/* Micro-interaction : flèche des CTA qui glisse au survol */
+.cta-arrow .arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-arrow:hover .arrow { transform: translateX(4px); }
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO ANIMATIONS
@@ -252,17 +344,6 @@
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO â€” GLOW FLOAT
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes meshFloat {
-    0%, 100% { transform: scale(1) translate(0, 0); }
-    33%       { transform: scale(1.04) translate(10px, -8px); }
-    66%       { transform: scale(1.02) translate(-8px, 10px); }
-  }
-  @keyframes heroSunSpin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-}
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FLOAT â€” icon FAQ / Ã©lÃ©ments dÃ©coratifs
@@ -426,4 +507,134 @@ section > .max-w-5xl {
   z-index: 6;
 }
 
+/* ── HERO (version publique) ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Respecte le réglage système : pas d'animation d'entrée si reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  [style*="fadeUp"] { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
 
+@keyframes blobDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-3%, 4%) scale(1.06); }
+}
+
+.ticker-track-v3 {
+  animation: tickerScroll 28s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+
+
+/* ── Admin CRM — identité SolYB (dark chaud) : titres en Fraunces ── */
+.admin-shell h1,
+.admin-shell h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+/* ── Champs de formulaire aux couleurs du site ──
+   color-scheme: dark → menus déroulants natifs, sélecteurs de date et
+   spinners numériques rendus sombres. accent-color → surlignage terre cuite. */
+.admin-shell select,
+.admin-shell input,
+.admin-shell textarea,
+.login-shell select,
+.login-shell input,
+.login-shell textarea {
+  color-scheme: dark;
+  accent-color: #C4472A;
+}
+
+/* Liste d'options du <select> (Firefox / Windows) */
+.admin-shell select option,
+.login-shell select option {
+  background-color: #1F1813;
+  color: #F5EDD8;
+}
+
+/* Surlignage de sélection de texte dans l'admin */
+.admin-shell ::selection {
+  background-color: rgba(196, 71, 42, 0.30);
+  color: #F5EDD8;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CORPS RÉDACTIONNEL DES ARTICLES (DA « SolYB v3 »)
+   Remplace @tailwindcss/typography (non installé). L'accent de
+   chaque article est passé via --article-accent / --article-link.
+   ══════════════════════════════════════════════════════════ */
+.article-body {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--syb-stone);
+}
+.article-body > * + * { margin-top: 1.25rem; }
+
+.article-body .lead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--syb-stone);
+}
+
+.article-body h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(26px, 3.4vw, 34px);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--syb-ink);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.article-body h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(19px, 2.2vw, 23px);
+  line-height: 1.25;
+  color: var(--syb-ink);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.article-body h2 + p,
+.article-body h3 + p { margin-top: 0; }
+
+.article-body p { margin-top: 1.25rem; }
+.article-body strong { color: var(--syb-ink); font-weight: 600; }
+.article-body em { font-style: italic; }
+
+.article-body a {
+  color: var(--article-link, var(--syb-rust-ink));
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-body ul,
+.article-body ol { margin-top: 1.25rem; padding-left: 1.5rem; }
+.article-body li { margin-top: 0.5rem; }
+.article-body ul > li { list-style: none; position: relative; }
+.article-body ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--article-accent, var(--syb-rust));
+}
+.article-body ol { list-style: decimal; }
+.article-body ol > li { padding-left: 0.25rem; }
+.article-body ol > li::marker { color: var(--article-link, var(--syb-rust-ink)); font-weight: 600; }
+
+/* Les blocs custom (encadrés, tableaux) neutralisent la mise en forme du corps */
+.article-body .not-prose > * + * { margin-top: 0; }

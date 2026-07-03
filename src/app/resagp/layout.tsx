@@ -1,28 +1,21 @@
-import { Fraunces, Outfit, Space_Mono } from 'next/font/google'
+import { Bricolage_Grotesque, Figtree } from 'next/font/google'
 import type { ReactNode } from 'react'
 
-const fraunces = Fraunces({
+// DA « Lagon » — Bricolage Grotesque (display) + Figtree (corps). Aucun monospace.
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fraunces',
-  weight: ['300', '400', '600', '700', '900'],
-  style: ['normal', 'italic'],
-})
-
-const outfit = Outfit({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-outfit',
+  variable: '--font-bricolage',
   weight: ['400', '500', '600', '700'],
 })
 
-const mono = Space_Mono({
+const figtree = Figtree({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-mono',
-  weight: ['400', '700'],
+  variable: '--font-figtree',
+  weight: ['400', '500', '600', '700'],
 })
 
 export default function ResaGPLayout({ children }: { children: ReactNode }) {
-  return <div className={`${fraunces.variable} ${outfit.variable} ${mono.variable}`}>{children}</div>
+  return <div className={`${bricolage.variable} ${figtree.variable}`}>{children}</div>
 }

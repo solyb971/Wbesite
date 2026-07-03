@@ -16,15 +16,15 @@ export default function Column({ id, title, color, leads, onLeadClick }: ColumnP
 
   return (
     <div className="flex-shrink-0 w-72 sm:w-80">
-      <div className={`bg-[#0A0F1E] border rounded-2xl h-full transition-colors ${isOver ? "border-coral/30 bg-coral/[0.02]" : "border-white/[0.06]"}`}>
+      <div className={`bg-[#15110B] border rounded-2xl h-full transition-colors ${isOver ? "border-coral/30 bg-coral/[0.02]" : "border-white/[0.06]"}`}>
         {/* Header */}
         <div className="px-4 py-3 border-b border-white/[0.05]">
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-[#C8D4E8] text-sm flex items-center gap-2">
+            <h3 className="font-semibold text-[#E8DDC8] text-sm flex items-center gap-2">
               <span className={`w-2.5 h-2.5 rounded-full ${color}`} />
               {title}
             </h3>
-            <span className="bg-white/[0.06] text-[#6B7A99] px-2 py-0.5 rounded-full text-xs font-semibold">
+            <span className="bg-white/[0.06] text-[#9A8C78] px-2 py-0.5 rounded-full text-xs font-semibold">
               {leads.length}
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function Column({ id, title, color, leads, onLeadClick }: ColumnP
           </SortableContext>
 
           {leads.length === 0 && (
-            <div className="text-center text-[#2E3A55] py-10">
+            <div className="text-center text-[#574C3D] py-10">
               <p className="text-sm">Aucun lead</p>
             </div>
           )}

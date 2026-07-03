@@ -31,9 +31,11 @@ export const contactSchema = z.object({
     { required_error: "Veuillez sélectionner un type de projet" }
   ),
 
-  budget: z.enum(["<500", "500-1000", "1000-2000", ">2000"], {
-    required_error: "Veuillez sélectionner une fourchette de budget",
-  }),
+  // Optionnel : le formulaire court de la home ne le collecte pas.
+  // Les formulaires détaillés (devis) l'envoient toujours.
+  budget: z
+    .enum(["<500", "500-1000", "1000-2000", ">2000"])
+    .optional(),
 
   description: z
     .string()
@@ -48,6 +50,12 @@ export const contactSchema = z.object({
     .string()
     .max(100)
     .default("site-web"),
+
+  // Produit concerné par le lead (pour la segmentation CRM multi-produits).
+  // Optionnel : si absent, l'API le déduit de `source`.
+  product_source: z
+    .enum(["solyb_agency", "factu_gp", "resa_gp"])
+    .optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>

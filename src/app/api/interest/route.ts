@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
+import { createClient as createServiceClient } from "@supabase/supabase-js"
 import { createClient } from "@/lib/supabase/server"
+import { sendAdminNotification } from "@/lib/email/brevo"
 import { z } from "zod"
 
 const interestSchema = z.object({
@@ -18,9 +20,22 @@ const PRODUCT_LABELS: Record<string, string> = {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+
+    // Honeypot anti-spam : champ-piège invisible rempli = bot → faux succès.
+    if (typeof body.company_website === "string" && body.company_website.trim() !== "") {
+      console.warn("🍯 Honeypot déclenché sur /api/interest — soumission ignorée")
+      return NextResponse.json({ success: true })
+    }
+
     const data = interestSchema.parse(body)
 
-    const supabase = await createClient()
+    // Formulaire public traité côté serveur : écriture via service-role
+    // (contourne RLS + autorise le .select() de retour). Fallback client SSR.
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+    const supabase = url && serviceKey
+      ? createServiceClient(url, serviceKey)
+      : await createClient()
 
     // Insert as a lead with product_source tag
     const { data: lead, error } = await supabase.from("leads").insert({
@@ -50,6 +65,21 @@ export async function POST(request: NextRequest) {
       console.error("[/api/interest] Supabase error:", error)
       // Still return success to user (don't expose DB errors)
       return NextResponse.json({ success: true })
+    }
+
+    // Notifier l'admin de l'inscription (non bloquant)
+    const adminResult = await sendAdminNotification({
+      name:         data.name,
+      email:        data.email,
+      phone:        data.phone || undefined,
+      project_type: PRODUCT_LABELS[data.product_source],
+      budget:       "—",
+      description:  data.message ?? `Inscription via ${PRODUCT_LABELS[data.product_source]}`,
+      urgency:      "normal",
+    })
+
+    if (adminResult.error) {
+      console.warn("[/api/interest] Notification admin non envoyée:", adminResult.error)
     }
 
     return NextResponse.json({ success: true, id: lead?.id })

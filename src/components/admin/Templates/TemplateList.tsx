@@ -59,7 +59,7 @@ export default function TemplateList({ searchQuery, onSelectTemplate }: Template
   }
 
   const filtered = templates.filter(t => t.name.toLowerCase().includes(searchQuery.toLowerCase()))
-  const catColor = (cat: string) => CATEGORY_COLORS[cat] ?? "bg-white/[0.05] text-[#6B7A99] border-white/[0.08]"
+  const catColor = (cat: string) => CATEGORY_COLORS[cat] ?? "bg-white/[0.05] text-[#9A8C78] border-white/[0.08]"
 
   return (
     <>
@@ -67,22 +67,22 @@ export default function TemplateList({ searchQuery, onSelectTemplate }: Template
         {filtered.map((t) => (
           <div
             key={t.id}
-            className="flex items-start justify-between gap-3 p-4 bg-[#0A0F1E] border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all cursor-pointer"
+            className="flex items-start justify-between gap-3 p-4 bg-[#15110B] border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all cursor-pointer"
             onClick={() => onSelectTemplate(t.id)}
           >
             <div className="min-w-0 flex-1">
-              <div className="text-[#C8D4E8] font-medium text-sm truncate">{t.name}</div>
+              <div className="text-[#E8DDC8] font-medium text-sm truncate">{t.name}</div>
               <div className="flex items-center gap-2 mt-1.5 flex-wrap">
                 <span className={`inline-flex px-2 py-0.5 rounded-md text-[10px] font-semibold border ${catColor(t.category)}`}>
                   {t.category}
                 </span>
-                <span className="text-[#3A4560] text-xs">Utilisé {t.uses} fois</span>
+                <span className="text-[#6B5F4E] text-xs">Utilisé {t.uses} fois</span>
               </div>
             </div>
             <div className="flex gap-1.5 shrink-0">
               <button
                 onClick={(e) => { e.stopPropagation(); setPreview(t) }}
-                className="px-2.5 py-1.5 rounded-lg border border-white/[0.07] text-[#8090AA] hover:text-[#E2E8F8] hover:bg-white/[0.05] transition-all text-xs font-medium"
+                className="px-2.5 py-1.5 rounded-lg border border-white/[0.07] text-[#A89880] hover:text-[#F5EDD8] hover:bg-white/[0.05] transition-all text-xs font-medium"
               >
                 Voir
               </button>
@@ -100,22 +100,22 @@ export default function TemplateList({ searchQuery, onSelectTemplate }: Template
       {/* Preview modal */}
       {preview && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setPreview(null)}>
-          <div className="bg-[#0F1628] border border-white/[0.08] rounded-2xl w-full max-w-xl shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1F1813] border border-white/[0.08] rounded-2xl w-full max-w-xl shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="flex items-start justify-between px-5 py-4 border-b border-white/[0.05]">
               <div>
-                <h3 className="text-[#E2E8F8] font-semibold text-sm">{preview.name}</h3>
+                <h3 className="text-[#F5EDD8] font-semibold text-sm">{preview.name}</h3>
                 <span className={`inline-flex mt-1 px-2 py-0.5 rounded-md text-[10px] font-semibold border ${catColor(preview.category)}`}>{preview.category}</span>
               </div>
-              <button onClick={() => setPreview(null)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-[#4B5870] hover:text-white transition-colors text-lg leading-none">×</button>
+              <button onClick={() => setPreview(null)} className="p-1.5 rounded-lg hover:bg-white/[0.06] text-[#7E715E] hover:text-white transition-colors text-lg leading-none">×</button>
             </div>
             <div className="p-5 space-y-4">
               <div>
-                <div className="text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest mb-1.5">Objet</div>
-                <div className="text-[#C8D4E8] text-sm bg-[#0A0F1E] border border-white/[0.05] rounded-xl px-3 py-2">{preview.subject}</div>
+                <div className="text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-1.5">Objet</div>
+                <div className="text-[#E8DDC8] text-sm bg-[#15110B] border border-white/[0.05] rounded-xl px-3 py-2">{preview.subject}</div>
               </div>
               <div>
-                <div className="text-[10px] font-semibold text-[#3A4560] uppercase tracking-widest mb-1.5">Corps</div>
-                <div className="text-[#C8D4E8] text-sm bg-[#0A0F1E] border border-white/[0.05] rounded-xl px-3 py-3 whitespace-pre-wrap leading-relaxed">{preview.body}</div>
+                <div className="text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-1.5">Corps</div>
+                <div className="text-[#E8DDC8] text-sm bg-[#15110B] border border-white/[0.05] rounded-xl px-3 py-3 whitespace-pre-wrap leading-relaxed">{preview.body}</div>
               </div>
               <button
                 onClick={(e) => { handleUse(preview, e); setPreview(null) }}

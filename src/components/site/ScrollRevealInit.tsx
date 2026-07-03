@@ -4,12 +4,25 @@ import { useEffect } from "react"
 
 export default function ScrollRevealInit() {
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"))
+    // .reveal = fade-up · .reveal-stagger = cascade des enfants · .title-reveal = mask
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal, .reveal-stagger, .title-reveal")
+    )
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      elements.forEach((el) => el.classList.add("visible"))
+    const revealAll = () => elements.forEach((el) => el.classList.add("visible"))
+
+    // Reduced motion ou IntersectionObserver indisponible → tout afficher direct.
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      typeof IntersectionObserver === "undefined"
+    ) {
+      revealAll()
       return
     }
+
+    // Filet de sécurité : si l'observer ne s'est pas déclenché (cas rare), on
+    // force l'affichage de tout après un délai — jamais de section bloquée à 0.
+    const failsafe = setTimeout(revealAll, 3000)
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -32,6 +45,7 @@ export default function ScrollRevealInit() {
     elements.forEach((el) => observer.observe(el))
 
     return () => {
+      clearTimeout(failsafe)
       observer.disconnect()
     }
   }, [])

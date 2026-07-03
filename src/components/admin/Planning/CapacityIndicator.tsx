@@ -17,7 +17,7 @@ export default function CapacityIndicator({ total, used, remaining, percentage }
       {/* Barre de progression */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-[#8090AA]">Utilisé : {used}h / {total}h disponibles</span>
+          <span className="text-sm text-[#A89880]">Utilisé : {used}h / {total}h disponibles</span>
           <span className={`text-sm font-bold ${statusColor}`}>{percentage}% • {statusLabel}</span>
         </div>
         <div className="w-full bg-white/[0.06] rounded-full h-3 overflow-hidden">
@@ -30,17 +30,17 @@ export default function CapacityIndicator({ total, used, remaining, percentage }
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="text-center p-3 bg-[#0A0F1E] border border-white/[0.05] rounded-xl">
-          <div className="text-2xl font-bold text-[#E2E8F8]">{total}h</div>
-          <div className="text-xs text-[#3A4560]">Disponible</div>
+        <div className="text-center p-3 bg-[#15110B] border border-white/[0.05] rounded-xl">
+          <div className="text-2xl font-bold text-[#F5EDD8]">{total}h</div>
+          <div className="text-xs text-[#6B5F4E]">Disponible</div>
         </div>
-        <div className="text-center p-3 bg-[#0A0F1E] border border-white/[0.05] rounded-xl">
+        <div className="text-center p-3 bg-[#15110B] border border-white/[0.05] rounded-xl">
           <div className={`text-2xl font-bold ${statusColor}`}>{used}h</div>
-          <div className="text-xs text-[#3A4560]">Utilisé</div>
+          <div className="text-xs text-[#6B5F4E]">Utilisé</div>
         </div>
-        <div className="text-center p-3 bg-[#0A0F1E] border border-white/[0.05] rounded-xl">
+        <div className="text-center p-3 bg-[#15110B] border border-white/[0.05] rounded-xl">
           <div className={`text-2xl font-bold ${statusColor}`}>{remaining}h</div>
-          <div className="text-xs text-[#3A4560]">Restant</div>
+          <div className="text-xs text-[#6B5F4E]">Restant</div>
         </div>
       </div>
     </div>

@@ -1,23 +1,19 @@
 ﻿import { Metadata } from 'next'
 import Hero from "@/components/site/Hero"
-import Ticker from "@/components/site/Ticker"
-import StatsSection from "@/components/site/StatsSection"
+import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 import Services from "@/components/site/Services"
-import FacturationElectronique from "@/components/site/FacturationElectronique"
-import Process from "@/components/site/Process"
-import Pricing from "@/components/site/Pricing"
-import Solutions from "@/components/site/Solutions"
-import TrustBadges from "@/components/site/TrustBadges"
 import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
+import Manifesto from "@/components/site/Manifesto"
+import Engagements from "@/components/site/Engagements"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
 import { faqs } from "@/lib/faq-data"
 
 export const metadata: Metadata = {
-  // ~55 chars — affiché en entier dans les résultats Google
-  title: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026',
-  description: 'Agence digitale à Baie-Mahault (971). Sites web sur-mesure dès 599€, applications métier, facturation électronique DGFiP 2026. Devis gratuit sous 24h — ancrée en Guadeloupe.',
+  // 54 chars — sans le suffixe template, affiché en entier dans Google
+  title: { absolute: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026' },
+  description: 'Agence digitale en Guadeloupe : sites web dès 599€, applications métier et facturation électronique 2026. Un seul interlocuteur, devis gratuit sous 24h.',
   keywords: [
     'agence digitale Guadeloupe',
     'création site web Guadeloupe',
@@ -31,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://solyb.fr' },
   openGraph: {
     title: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026',
-    description: 'Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence basée à Baie-Mahault. Devis gratuit.',
+    description: 'Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence au service de toute la Guadeloupe. Devis gratuit.',
     url: 'https://solyb.fr',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SolYB — Agence Digitale Guadeloupe' }],
   },
@@ -42,23 +38,23 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'SolYB — Agence Digitale Guadeloupe',
-    image: 'https://solyb.fr/og-image.jpg',
+    image: 'https://solyb.fr/opengraph-image',
     '@id': 'https://solyb.fr',
     url: 'https://solyb.fr',
-    telephone: '+590690711769',
+    telephone: '+590690426792',
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Impasse la coulée verte, Moudong Nord',
-      addressLocality: 'Baie-Mahault',
+      streetAddress: 'Route de Tambour',
+      addressLocality: 'Petit-Bourg',
       addressRegion: 'Guadeloupe',
-      postalCode: '97122',
+      postalCode: '97170',
       addressCountry: 'GP'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 16.2667,
-      longitude: -61.5833
+      latitude: 16.1908,
+      longitude: -61.5906
     },
     openingHoursSpecification: [
       {
@@ -68,16 +64,15 @@ export default function HomePage() {
         closes: '18:00'
       }
     ],
-    sameAs: [
-      'https://www.facebook.com/solyb',
-      'https://www.linkedin.com/company/solyb'
-    ],
-    description: 'Agence digitale en Guadeloupe. Création de sites web sur-mesure, applications métier, facturation électronique obligatoire 2026 et SaaS pour TPE/PME. Ancrée à Baie-Mahault.',
+    // sameAs (Facebook / LinkedIn) retiré temporairement : profils pas
+    // encore créés. À remettre dès que les pages existent (backlinks + E-E-A-T).
+    description: 'Agence digitale en Guadeloupe. Création de sites web sur-mesure, applications métier, facturation électronique obligatoire 2026 et SaaS pour TPE/PME. Au service de toute la Guadeloupe.',
     areaServed: [
-      { '@type': 'City', name: 'Pointe-à-Pitre' },
-      { '@type': 'City', name: 'Basse-Terre' },
-      { '@type': 'City', name: 'Les Abymes' },
+      { '@type': 'City', name: 'Petit-Bourg' },
       { '@type': 'City', name: 'Baie-Mahault' },
+      { '@type': 'City', name: 'Pointe-à-Pitre' },
+      { '@type': 'City', name: 'Les Abymes' },
+      { '@type': 'City', name: 'Basse-Terre' },
       { '@type': 'City', name: 'Marie-Galante' },
       { '@type': 'AdministrativeArea', name: 'Guadeloupe' },
     ],
@@ -102,8 +97,8 @@ export default function HomePage() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Facturation électronique conforme DGFiP Guadeloupe',
-            description: 'Intégration et mise en conformité avec la réforme de facturation électronique obligatoire 2026. Solution PDP agréée pour entreprises guadeloupéennes.',
+            name: 'Facturation électronique 2026 — accompagnement Guadeloupe',
+            description: 'Accompagnement et mise en conformité avec la réforme de facturation électronique obligatoire 2026, via le raccordement à une plateforme de dématérialisation partenaire (PDP) agréée par la DGFiP.',
           }
         },
         {
@@ -144,10 +139,10 @@ export default function HomePage() {
     '@type': 'Organization',
     name: 'SolYB',
     url: 'https://solyb.fr',
-    logo: 'https://solyb.fr/og-image.jpg',
+    logo: 'https://solyb.fr/logo/syb-orange.png',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+590690711769',
+      telephone: '+590690426792',
       contactType: 'customer service',
       availableLanguage: 'French',
       areaServed: 'GP'
@@ -156,9 +151,9 @@ export default function HomePage() {
     founders: [{ '@type': 'Person', name: 'Yacine Bouhassoun' }],
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Baie-Mahault',
+      addressLocality: 'Petit-Bourg',
       addressRegion: 'Guadeloupe',
-      postalCode: '97122',
+      postalCode: '97170',
       addressCountry: 'GP'
     }
   }
@@ -179,17 +174,13 @@ export default function HomePage() {
       />
 
       <main className="min-h-screen bg-[#0A0A0F]">
+        <ScrollRevealInit />
         <Hero />
-        <Ticker />
-        <StatsSection />
         <Services />
-        <FacturationElectronique />
-        <Pricing />
-        <TrustBadges />
-        <Process />
-        <Solutions />
-        <About />
+        <Engagements />
         <Realisations />
+        <Manifesto />
+        <About />
         <FAQ />
         <Contact />
       </main>

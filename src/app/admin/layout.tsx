@@ -12,7 +12,7 @@ export default function AdminLayout({
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="dark min-h-screen bg-[#07080F]">
+    <div className="admin-shell dark min-h-screen bg-[#120F0B]">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="lg:pl-64">
         <Navbar onMenuClick={() => setSidebarOpen(true)} />

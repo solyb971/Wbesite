@@ -17,12 +17,12 @@ export default function StatsCard({
   sub,
   change,
   icon: Icon,
-  accent = "#FF6B47",
+  accent = "#C4472A",
   accentClass = "text-coral",
   accentBg = "bg-coral/10",
 }: StatsCardProps) {
   return (
-    <div className="group relative bg-[#0F1628] border border-white/[0.06] rounded-2xl p-5 hover:border-white/[0.12] hover:bg-[#131C35] transition-all duration-200 overflow-hidden">
+    <div className="group relative bg-[#1F1813] border border-white/[0.06] rounded-2xl p-5 hover:border-white/[0.12] hover:bg-[#241C16] transition-all duration-200 overflow-hidden">
       {/* Subtle glow on hover */}
       <div
         className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none"
@@ -51,9 +51,9 @@ export default function StatsCard({
 
         {/* Value */}
         <div className="space-y-0.5">
-          <p className="text-2xl font-bold text-[#E2E8F8] tracking-tight">{value}</p>
-          <p className="text-sm font-medium text-[#4B5870]">{title}</p>
-          {sub && <p className="text-xs text-[#2E3A55]">{sub}</p>}
+          <p className="text-2xl font-bold text-[#F5EDD8] tracking-tight">{value}</p>
+          <p className="text-sm font-medium text-[#7E715E]">{title}</p>
+          {sub && <p className="text-xs text-[#574C3D]">{sub}</p>}
         </div>
       </div>
     </div>

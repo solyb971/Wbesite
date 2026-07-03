@@ -1,376 +1,292 @@
-﻿import { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, Check } from 'lucide-react'
+import { Metadata } from 'next'
+import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
+import { blogTags } from '@/lib/blog-meta'
+
+const ACCENT = '#B8760A'                 // or éditorial — éléments visuels
+const ACCENT_INK = 'var(--syb-rust-ink)' // textes/liens harmonisés sur le rust de la home
 
 export const metadata: Metadata = {
   title: 'Prix Création Site Web en Guadeloupe : Le Guide Complet 2026',
-  description: 'Combien coûte un site web en Guadeloupe ? Comparatif complet des agences web 971. Prix de 599€ à 15 000€. Guide pratique pour TPE guadeloupéennes.',
+  description: 'Combien coûte vraiment un site web en Guadeloupe ? Fourchettes par prestataire, ce qui fait varier le tarif, coût réel sur 3 ans et pièges à éviter. Guide neutre pour TPE.',
   keywords: [
     'prix site web Guadeloupe',
     'tarif création site 971',
     'agence web Guadeloupe prix',
     'coût site internet Guadeloupe',
     'devis site web Guadeloupe',
+    'combien coûte un site vitrine Guadeloupe',
   ],
   alternates: {
     canonical: 'https://solyb.fr/blog/prix-site-web-guadeloupe',
   },
   openGraph: {
-    title: 'Prix Site Web Guadeloupe 2026 - Guide Complet',
-    description: 'Comparatif détaillé des prix pour créer un site web en Guadeloupe. De 599€ à 15 000€, tous les tarifs expliqués.',
+    title: 'Prix Site Web Guadeloupe 2026 — Le Guide Complet',
+    description: 'Comparatif détaillé des prix pour créer un site web en Guadeloupe : fourchettes par prestataire, coût réel sur 3 ans et pièges à éviter.',
     url: 'https://solyb.fr/blog/prix-site-web-guadeloupe',
     type: 'article',
-    publishedTime: '2024-12-27',
+    publishedTime: '2026-05-12',
+    modifiedTime: '2026-07-02',
     authors: ['Yacine Bouhassoun'],
   },
 }
 
 export default function PrixSiteWebGuadeloupePage() {
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://solyb.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://solyb.fr/blog' },
-      { '@type': 'ListItem', position: 3, name: 'Prix Création Site Web Guadeloupe', item: 'https://solyb.fr/blog/prix-site-web-guadeloupe' },
-    ],
-  }
-
-  const jsonLd = {
+  const articleLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: 'Prix Création Site Web en Guadeloupe : Le Guide Complet 2026',
-    description: 'Guide complet des prix pour créer un site web en Guadeloupe en 2026',
-    author: {
-      '@type': 'Person',
-      name: 'Yacine Bouhassoun',
-      url: 'https://solyb.fr'
-    },
+    description: 'Guide neutre et détaillé des prix pour créer un site web en Guadeloupe en 2026 : fourchettes par prestataire, coût réel sur 3 ans, pièges à éviter.',
+    author: { '@type': 'Person', name: 'Yacine Bouhassoun', url: 'https://solyb.fr' },
     publisher: {
       '@type': 'Organization',
       name: 'SolYB',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Baie-Mahault',
-        addressRegion: 'Guadeloupe',
-        addressCountry: 'GP'
-      }
+      logo: { '@type': 'ImageObject', url: 'https://solyb.fr/logo/syb-orange.png' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
-    datePublished: '2024-12-27',
-    dateModified: '2024-12-27',
-    mainEntityOfPage: 'https://solyb.fr/blog/prix-site-web-guadeloupe'
+    datePublished: '2026-05-12',
+    dateModified: '2026-07-02',
+    mainEntityOfPage: 'https://solyb.fr/blog/prix-site-web-guadeloupe',
+  }
+
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Combien coûte un site web en Guadeloupe en 2026 ?',
+        acceptedAnswer: { '@type': 'Answer', text: "Pour une TPE guadeloupéenne, un site vitrine professionnel se situe le plus souvent entre 600 € et 1 500 €. Un freelance local démarre autour de 490-2 000 €, une petite agence entre 790 et 3 500 €, une grande agence entre 2 500 et 8 000 €. Une boutique e-commerce démarre plus haut (souvent 1 500-4 000 €). Au-delà, vous payez surtout la structure du prestataire." },
+      },
+      {
+        '@type': 'Question',
+        name: "Pourquoi deux sites au même nombre de pages n'ont pas le même prix ?",
+        acceptedAnswer: { '@type': 'Answer', text: "Le prix dépend surtout du design (sur-mesure ou template), du nombre de fonctionnalités (formulaire, réservation, multilingue, espace membre), de la présence d'une boutique en ligne, du travail de référencement (SEO local), et de ce qui est inclus (hébergement, domaine, formation, maintenance). Deux sites de 5 pages peuvent aller du simple au triple selon ces critères." },
+      },
+      {
+        '@type': 'Question',
+        name: "Faut-il payer son site en une fois ou par abonnement mensuel ?",
+        acceptedAnswer: { '@type': 'Answer', text: "Attention aux offres à « 49 €/mois » : sur deux ou trois ans, elles reviennent souvent plus cher, et surtout vous n'êtes généralement pas propriétaire du site — si vous arrêtez de payer, il disparaît. Privilégiez, quand c'est possible, un paiement unique qui vous rend propriétaire du code, des contenus et du nom de domaine." },
+      },
+      {
+        '@type': 'Question',
+        name: "Le prix inclut-il l'hébergement et le nom de domaine ?",
+        acceptedAnswer: { '@type': 'Answer', text: "Cela dépend du prestataire. Certains incluent l'hébergement et le domaine la première année, d'autres les facturent à part (souvent 50 à 150 €/an au total). Demandez toujours un devis qui précise ce qui est inclus, et vérifiez que le domaine sera bien à VOTRE nom, pas à celui de l'agence." },
+      },
+    ],
   }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
-      <article className="min-h-screen bg-white">
-        {/* Header */}
-        <header className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="max-w-4xl mx-auto">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-primary hover:text-primary-600 mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Retour au blog
-            </Link>
+      <ArticleShell
+        category="Prix & Tarifs"
+        accent={ACCENT}
+        accentInk={ACCENT_INK}
+        title="Prix création site web en Guadeloupe : le guide complet 2026"
+        date="2026-05-12"
+        readTime="11 min"
+        crumbLabel="Prix création site web"
+        crumbHref="/blog/prix-site-web-guadeloupe"
+        tags={blogTags['prix-site-web-guadeloupe']}
+        cta={{
+          heading: 'Envie d’un devis clair, sans surprise ?',
+          text: 'On affiche nos tarifs et on vous livre un site vitrine professionnel en 2 à 3 semaines. Devis gratuit sous 24 h, sans engagement.',
+          primary: { label: 'Demander un devis', href: '/#contact' },
+        }}
+      >
+        <p className="lead">
+          Combien coûte <strong>vraiment</strong> un site web en Guadeloupe en 2026 ? Entre la grande agence qui annonce
+          5 000 € et le freelance à 500 €, difficile de savoir où se situe le juste prix — et surtout, ce que vous payez
+          réellement. Ce guide fait le point, de façon <strong>neutre</strong> : les fourchettes du marché guadeloupéen,
+          ce qui fait varier un devis du simple au triple, le coût réel d&rsquo;un site sur trois ans, et les pièges à
+          repérer avant de signer.
+        </p>
 
-            <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
-              Prix & Tarifs
-            </div>
+        <h2>Combien coûte vraiment un site web en Guadeloupe ?</h2>
+        <p>
+          Commençons par une réponse honnête : <strong>«&nbsp;ça dépend&nbsp;»</strong>. Non pas pour éluder la question,
+          mais parce qu&rsquo;un «&nbsp;site web&nbsp;» peut désigner une simple carte de visite en ligne comme une
+          boutique complète avec paiement. Cela dit, on peut donner des repères clairs. Pour une TPE guadeloupéenne
+          (artisan, commerce, restaurant, cabinet, gîte), un <strong>site vitrine professionnel se situe le plus souvent
+          entre 600 € et 1 500 €</strong>. En dessous, méfiance sur la qualité ou la propriété ; au-dessus, vous payez
+          souvent surtout la structure de l&rsquo;agence, pas le site lui-même.
+        </p>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Prix Création Site Web en Guadeloupe : Le Guide Complet 2026
-            </h1>
-
-            <div className="flex items-center space-x-6 text-gray-600">
-              <div className="flex items-center space-x-2">
-                <Calendar className="w-5 h-5" />
-                <span>27 décembre 2024</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-5 h-5" />
-                <span>12 min de lecture</span>
-              </div>
-            </div>
+        <h2>Les fourchettes de prix par prestataire</h2>
+        <p>
+          Le prix d&rsquo;un site vitrine dépend d&rsquo;abord de <strong>qui le réalise</strong>. Voici les ordres de
+          grandeur constatés en Guadeloupe pour un site professionnel de 5 à 7 pages.
+        </p>
+        <ArticleCallout accent={ACCENT}>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ borderBottom: `2px solid ${ACCENT}` }}>
+                  <th className="text-left py-3 px-3" style={{ color: 'var(--syb-ink)' }}>Prestataire</th>
+                  <th className="text-left py-3 px-3" style={{ color: 'var(--syb-ink)' }}>Fourchette</th>
+                  <th className="text-left py-3 px-3" style={{ color: 'var(--syb-ink)' }}>Délai moyen</th>
+                </tr>
+              </thead>
+              <tbody style={{ color: 'var(--syb-stone)' }}>
+                <tr style={{ borderBottom: '0.5px solid var(--syb-border)' }}><td className="py-3 px-3">Freelance local</td><td className="py-3 px-3">490 € – 2 000 €</td><td className="py-3 px-3">2 – 6 semaines</td></tr>
+                <tr style={{ borderBottom: '0.5px solid var(--syb-border)' }}><td className="py-3 px-3">Petite agence 971</td><td className="py-3 px-3">790 € – 3 500 €</td><td className="py-3 px-3">4 – 8 semaines</td></tr>
+                <tr style={{ borderBottom: '0.5px solid var(--syb-border)' }}><td className="py-3 px-3">Grande agence</td><td className="py-3 px-3">2 500 € – 8 000 €</td><td className="py-3 px-3">2 – 4 mois</td></tr>
+                <tr><td className="py-3 px-3">Solution DIY (Wix…)</td><td className="py-3 px-3">0 € – 300 €/an</td><td className="py-3 px-3">1 – 2 semaines</td></tr>
+              </tbody>
+            </table>
           </div>
-        </header>
+          <p className="mt-5 mb-0 text-sm font-semibold" style={{ color: ACCENT_INK }}>
+            Le meilleur rapport qualité-prix pour une TPE se trouve généralement entre 1 000 et 1 500 €, chez un indépendant ou une petite agence.
+          </p>
+        </ArticleCallout>
+        <p>
+          Deux précisions utiles. Le <strong>«&nbsp;faites-le vous-même&nbsp;»</strong> (Wix, Squarespace…) semble gratuit
+          ou presque, mais il vous coûte surtout du <strong>temps</strong> — souvent des dizaines d&rsquo;heures — pour un
+          résultat rarement optimisé pour Google, et vous restez locataire de la plateforme. À l&rsquo;autre bout, la
+          <strong> grande agence</strong> facture aussi ses locaux, ses commerciaux et ses chefs de projet : une part
+          importante du prix ne va pas dans votre site. Entre les deux, l&rsquo;indépendant ou la petite structure offre
+          souvent le meilleur équilibre.
+        </p>
 
-        {/* Content */}
-        <div className="px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-4xl mx-auto prose prose-lg">
-            <p className="lead">
-              Vous êtes entrepreneur en Guadeloupe et vous vous demandez <strong>combien coûte réellement un site web en 2026</strong> ?
-              Entre les agences qui affichent des tarifs de 5000€ et les freelances à 500€, difficile de s'y retrouver.
-              Dans ce guide complet, nous comparons tous les prix du marché guadeloupéen pour vous aider à faire le bon choix.
-            </p>
+        <h2>Ce qui fait varier le prix, du simple au triple</h2>
+        <p>
+          Deux sites au même nombre de pages peuvent avoir des prix très différents. Voici les facteurs qui pèsent
+          vraiment&nbsp;:
+        </p>
+        <ul>
+          <li><strong>Design sur-mesure ou template.</strong> Un thème acheté 40 € et adapté coûte forcément moins cher qu&rsquo;une maquette dessinée spécifiquement pour votre marque. Le template va plus vite ; le sur-mesure vous démarque.</li>
+          <li><strong>Nombre de pages et de fonctionnalités.</strong> Une page «&nbsp;contact&nbsp;» est simple ; une prise de rendez-vous en ligne, un espace membre, un site multilingue ou un formulaire complexe demandent du développement supplémentaire.</li>
+          <li><strong>E-commerce.</strong> Dès qu&rsquo;il y a paiement, gestion des stocks, livraison et fiches produits, on change de catégorie : une boutique démarre plus haut qu&rsquo;un site vitrine (souvent 1 500-4 000 €).</li>
+          <li><strong>Le référencement (SEO).</strong> Un site simplement «&nbsp;en ligne&nbsp;» ne se trouve pas tout seul sur Google. Un site pensé pour être <strong>trouvé</strong> (structure, contenus, SEO local Guadeloupe) demande plus de travail — mais c&rsquo;est lui qui vous ramène des clients.</li>
+          <li><strong>Les contenus.</strong> Qui écrit les textes ? Qui fournit les photos ? Si le prestataire s&rsquo;en charge (rédaction, séance photo), c&rsquo;est un vrai poste de coût — souvent sous-estimé.</li>
+          <li><strong>Hébergement, domaine et maintenance.</strong> Parfois inclus la première année, parfois facturés à part. C&rsquo;est le nerf du «&nbsp;coût réel&nbsp;», qu&rsquo;on détaille juste après.</li>
+        </ul>
 
-            <h2>Combien Coûte Vraiment un Site Web en Guadeloupe en 2026 ?</h2>
+        <h2>Le vrai coût d&rsquo;un site : pensez sur 3 ans, pas juste à la création</h2>
+        <p>
+          C&rsquo;est le point que la plupart des comparatifs oublient. Le prix affiché est le <strong>prix de
+          création</strong>. Mais un site vit ensuite : il faut l&rsquo;héberger, renouveler le domaine, le mettre à
+          jour, le sécuriser. Pour comparer honnêtement deux devis, regardez le <strong>coût total sur 3 ans</strong>.
+        </p>
+        <ArticleCallout accent={ACCENT}>
+          <p className="font-semibold mb-3" style={{ color: 'var(--syb-ink)' }}>Deux offres à 1 200 € qui ne se valent pas</p>
+          <ul className="space-y-2.5 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+            <li className="flex items-start gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} />
+              <span><strong style={{ color: 'var(--syb-ink)' }}>Offre A</strong> — 1 200 € tout compris, hébergement et domaine offerts la 1<sup>re</sup> année, puis ~100 €/an. Sur 3 ans : <strong>~1 400 €</strong>, et vous êtes propriétaire.</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: ACCENT }} />
+              <span><strong style={{ color: 'var(--syb-ink)' }}>Offre B</strong> — «&nbsp;49 €/mois&nbsp;», rien à payer au départ. Sur 3 ans : <strong>~1 760 €</strong>, et si vous arrêtez, le site disparaît. Vous n&rsquo;avez jamais rien possédé.</span>
+            </li>
+          </ul>
+          <p className="mt-4 mb-0 text-sm font-semibold" style={{ color: ACCENT_INK }}>
+            Même «&nbsp;prix&nbsp;» affiché, réalité très différente. Toujours raisonner sur la durée.
+          </p>
+        </ArticleCallout>
 
-            <p>
-              Le prix d'un site web en Guadeloupe varie énormément selon plusieurs critères.
-              Voici ce que vous devez savoir avant de vous lancer.
-            </p>
+        <h2>Les pièges qui font gonfler (ou disparaître) votre investissement</h2>
 
-            <h3>Les Différents Types de Sites Web et Leurs Prix</h3>
+        <h3>1. L&rsquo;abonnement mensuel sans propriété</h3>
+        <p>
+          Certaines offres proposent un site pour «&nbsp;49 €/mois&nbsp;». C&rsquo;est confortable au départ, mais sur
+          deux ou trois ans, cela chiffre — et surtout, <strong>vous n&rsquo;êtes pas propriétaire</strong> : le jour où
+          vous arrêtez de payer, le site s&rsquo;éteint. Vous avez loué, pas acheté. Quand c&rsquo;est possible,
+          préférez un <strong>paiement unique</strong> qui vous rend propriétaire.
+        </p>
 
-            <div className="not-prose bg-primary/5 rounded-2xl p-8 my-8">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">Site Vitrine (Site d'Entreprise Classique)</h4>
-              <p className="text-gray-700 mb-6">
-                Un site vitrine présente votre activité, vos services et vos coordonnées.
-                C'est l'option idéale pour les TPE, artisans, professions libérales et petits commerces guadeloupéens.
-              </p>
+        <h3>2. Le prix «&nbsp;à partir de…&nbsp;» trompeur</h3>
+        <p>
+          Un «&nbsp;site à partir de 490 €&nbsp;» se transforme souvent une fois le devis détaillé arrivé :
+        </p>
+        <ArticleCallout accent={ACCENT}>
+          <ul className="space-y-1.5 m-0" style={{ color: 'var(--syb-stone)' }}>
+            <li>Site de base : 490 €</li>
+            <li>Design personnalisé : +400 €</li>
+            <li>Formulaire de contact : +150 €</li>
+            <li>Référencement de base : +300 €</li>
+            <li>Version mobile : +200 €</li>
+          </ul>
+          <p className="mt-3 mb-0 font-semibold" style={{ color: ACCENT_INK }}>Total réel : 1 540 € — soit plus du triple du prix d&rsquo;appel.</p>
+        </ArticleCallout>
+        <p>
+          La parade est simple : demandez toujours un <strong>devis complet et final</strong>, en faisant préciser ce qui
+          est inclus (design, mobile, formulaire, SEO, hébergement, domaine, formation, révisions) avant de vous engager.
+        </p>
 
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-2 border-primary">
-                      <th className="text-left py-3 px-4">Prestataire</th>
-                      <th className="text-left py-3 px-4">Prix minimum</th>
-                      <th className="text-left py-3 px-4">Prix maximum</th>
-                      <th className="text-left py-3 px-4">Délai moyen</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-gray-200">
-                      <td className="py-3 px-4">Freelances 971</td>
-                      <td className="py-3 px-4">490€</td>
-                      <td className="py-3 px-4">2 000€</td>
-                      <td className="py-3 px-4">2-6 semaines</td>
-                    </tr>
-                    <tr className="border-b border-gray-200">
-                      <td className="py-3 px-4">Petites agences Guadeloupe</td>
-                      <td className="py-3 px-4">790€</td>
-                      <td className="py-3 px-4">3 500€</td>
-                      <td className="py-3 px-4">4-8 semaines</td>
-                    </tr>
-                    <tr className="border-b border-gray-200">
-                      <td className="py-3 px-4">Grandes agences</td>
-                      <td className="py-3 px-4">2 500€</td>
-                      <td className="py-3 px-4">8 000€</td>
-                      <td className="py-3 px-4">2-4 mois</td>
-                    </tr>
-                    <tr className="border-b border-gray-200">
-                      <td className="py-3 px-4">Solutions DIY (Wix, etc.)</td>
-                      <td className="py-3 px-4">0€ (gratuit)</td>
-                      <td className="py-3 px-4">300€/an</td>
-                      <td className="py-3 px-4">1-2 semaines</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+        <h3>3. À qui appartient votre domaine ?</h3>
+        <p>
+          C&rsquo;est le piège le plus vicieux, parce qu&rsquo;on ne le découvre qu&rsquo;en cas de brouille. Certains
+          prestataires enregistrent le nom de domaine <strong>à leur nom</strong>, pas au vôtre. Résultat : si vous
+          voulez partir, vous ne pouvez pas emmener votre adresse (votre référencement, vos cartes de visite, vos
+          e-mails…). Exigez que le <strong>domaine, l&rsquo;hébergement et les accès soient à votre nom</strong>, dès le
+          départ. C&rsquo;est votre bien.
+        </p>
 
-              <p className="mt-6 text-lg font-semibold text-primary">
-                Prix moyen en Guadeloupe: 1 200€ pour un site vitrine professionnel de 5-7 pages.
-              </p>
-            </div>
+        <h2>Combien prévoir selon votre besoin ?</h2>
+        <ArticleCallout accent={ACCENT}>
+          <ul className="space-y-3 m-0 list-none p-0" style={{ color: 'var(--syb-stone)' }}>
+            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget serré (moins de 800 €)</strong> — Freelance local ou jeune agence, site vitrine simple mais soigné. Vérifiez les réalisations, et surtout que vous serez propriétaire.</li>
+            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget moyen (800 – 2 000 €)</strong> — Site vitrine complet, design sur-mesure, SEO local. Le meilleur rapport qualité-prix pour la plupart des TPE guadeloupéennes.</li>
+            <li><strong style={{ color: 'var(--syb-ink)' }}>Budget ambitieux (2 000 € et plus)</strong> — Boutique e-commerce, fonctionnalités avancées, ou application métier sur-mesure conçue pour votre logique.</li>
+          </ul>
+        </ArticleCallout>
 
-            <h3>Comparatif Complet des Agences Web en Guadeloupe (2026)</h3>
+        <h2>Comment bien lire un devis de site web</h2>
+        <p>
+          Avant de signer, passez le devis à ce petit filtre. Un bon prestataire répondra sans détour à chacun de ces
+          points&nbsp;:
+        </p>
+        <ol>
+          <li><strong>Que contient exactement le prix ?</strong> (nombre de pages, design, mobile, formulaire, SEO)</li>
+          <li><strong>L&rsquo;hébergement et le domaine sont-ils inclus, et à quel tarif ensuite ?</strong></li>
+          <li><strong>Serai-je propriétaire du site, du domaine et des accès ?</strong></li>
+          <li><strong>Qui écrit les textes et fournit les photos ?</strong></li>
+          <li><strong>Combien de révisions sont comprises ? Y a-t-il une formation ?</strong></li>
+          <li><strong>Que se passe-t-il après la livraison ?</strong> (maintenance, support, mises à jour)</li>
+        </ol>
 
-            <p>
-              Nous avons analysé les principaux acteurs du marché guadeloupéen pour vous donner
-              une vision claire des tarifs pratiqués.
-            </p>
+        <h2>Et SolYB dans tout ça ?</h2>
+        <p>
+          Pour être transparent : <strong>SolYB est une jeune agence guadeloupéenne</strong>. Pour ses premiers clients,
+          elle propose un <strong>tarif de lancement de 599 € pour un site vitrine</strong> (hébergement et nom de domaine
+          offerts la première année, formation et support inclus), avec la possibilité de <strong>payer en deux fois</strong>.
+          C&rsquo;est un tarif volontairement accessible, réservé aux premiers projets et amené à évoluer. Nos prix sont
+          affichés publiquement, et le site vous appartient à 100 % — code, contenus et domaine. Quel que soit le
+          prestataire que vous choisirez, exigez cette même transparence.
+        </p>
 
-            <div className="not-prose bg-green-50 border-2 border-green-500 rounded-2xl p-8 my-8">
-              <div className="flex items-start justify-between mb-4">
-                <h4 className="text-2xl font-bold text-gray-900">SolYB - Le Meilleur Rapport Qualité/Prix</h4>
-                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">🏆 Recommandé</span>
-              </div>
+        <h2>Questions fréquentes</h2>
+        <h3>Un site pas cher, c&rsquo;est forcément un mauvais site ?</h3>
+        <p>
+          Non. Un freelance local ou une jeune agence peut livrer un excellent site à petit prix. Le vrai critère
+          n&rsquo;est pas le montant seul, mais ce qui est inclus, la qualité des réalisations, et le fait que vous
+          soyez propriétaire. Méfiez-vous surtout des prix «&nbsp;trop beaux&nbsp;» sans devis détaillé.
+        </p>
+        <h3>Faut-il un site ou juste une page Facebook / Google ?</h3>
+        <p>
+          Une fiche Google Business et une page Facebook sont indispensables et gratuites, mais elles ne remplacent pas
+          un site : vous ne contrôlez ni leur design, ni leurs règles, et vous n&rsquo;êtes pas propriétaire. Le site est
+          votre base, que vous complétez avec ces plateformes.
+        </p>
+        <h3>Combien de temps pour avoir mon site ?</h3>
+        <p>
+          Comptez 2 à 3 semaines pour un site vitrine, 3 à 4 semaines pour une boutique en ligne, une fois les contenus
+          réunis. L&rsquo;étape la plus longue est souvent de rassembler textes et photos — anticipez-la.
+        </p>
 
-              <p className="text-gray-700 mb-6">
-                <strong>Localisation:</strong> Baie-Mahault, Guadeloupe<br />
-                <strong>Tarifs affichés:</strong> ✅ Oui (transparence totale)
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-white rounded-lg p-4">
-                  <h5 className="font-bold text-gray-900 mb-2">Site vitrine</h5>
-                  <p className="text-3xl font-bold text-primary mb-2">599€</p>
-                  <p className="text-sm text-gray-600">Livraison: 2 semaines</p>
-                </div>
-                <div className="bg-white rounded-lg p-4">
-                  <h5 className="font-bold text-gray-900 mb-2">Site e-commerce</h5>
-                  <p className="text-3xl font-bold text-primary mb-2">999€</p>
-                  <p className="text-sm text-gray-600">Livraison: 3 semaines</p>
-                </div>
-                <div className="bg-white rounded-lg p-4">
-                  <h5 className="font-bold text-gray-900 mb-2">Application web</h5>
-                  <p className="text-3xl font-bold text-primary mb-2">Sur devis</p>
-                  <p className="text-sm text-gray-600">Dès 2000€</p>
-                </div>
-              </div>
-
-              <div className="space-y-2 mb-6">
-                <div className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Prix 24% moins cher que la moyenne Guadeloupe</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Livraison ultra-rapide (2 semaines)</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Technologie moderne avec IA intégrée</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Vous êtes propriétaire à 100% (pas d'abonnement piège)</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Maintenance abordable dès 29€/mois</span>
-                </div>
-              </div>
-
-              <p className="text-sm text-gray-700">
-                <strong>Offre spéciale:</strong> Offre lancement limitée à 30 places au tarif de 599€ (vs 899€ après).
-              </p>
-            </div>
-
-            <h3>Les Pièges à Éviter Absolument en Guadeloupe</h3>
-
-            <h4>Piège #1 : Les Abonnements Mensuels Sans Propriété</h4>
-
-            <p>
-              <strong>Exemple:</strong> 49€/mois pour un site vitrine
-            </p>
-
-            <p>
-              ❌ <strong>Problème:</strong> Après 2 ans vous avez payé 1 176€ et vous n'êtes TOUJOURS PAS propriétaire.
-              Si vous arrêtez de payer, votre site disparaît.
-            </p>
-
-            <p>
-              ✅ <strong>Solution:</strong> Préférez un paiement unique. Avec 599€ chez SolYB, vous êtes propriétaire à vie.
-            </p>
-
-            <h4>Piège #2 : Les Prix "À Partir De..." Trompeurs</h4>
-
-            <p>
-              Agence: "Site web à partir de 490€"
-            </p>
-
-            <p>Réalité après devis:</p>
-            <ul>
-              <li>Site de base: 490€</li>
-              <li>Design personnalisé: +400€</li>
-              <li>Formulaire contact: +150€</li>
-              <li>SEO: +300€</li>
-              <li>Responsive mobile: +200€</li>
-              <li><strong>TOTAL RÉEL: 1 540€</strong></li>
-            </ul>
-
-            <p>
-              ✅ <strong>Chez SolYB:</strong> 599€ = prix FINAL tout inclus.
-            </p>
-
-            <h2>Notre Recommandation pour TPE Guadeloupéennes</h2>
-
-            <div className="not-prose bg-blue-50 rounded-2xl p-8 my-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Budget Serré (&lt; 800€)</h3>
-
-              <div className="mb-6">
-                <h4 className="text-xl font-bold text-primary mb-3">Choix #1: SolYB ⭐⭐⭐⭐⭐</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start space-x-2">
-                    <span className="font-semibold text-gray-700 min-w-24">Prix:</span>
-                    <span className="text-gray-700">599€</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="font-semibold text-gray-700 min-w-24">Qualité:</span>
-                    <span className="text-gray-700">Professionnelle</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="font-semibold text-gray-700 min-w-24">Délai:</span>
-                    <span className="text-gray-700">2 semaines</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="font-semibold text-gray-700 min-w-24">Technologie:</span>
-                    <span className="text-gray-700">Moderne</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="font-semibold text-gray-700 min-w-24">Verdict:</span>
-                    <span className="text-gray-700 font-bold">Meilleur rapport qualité/prix Guadeloupe</span>
-                  </li>
-                </ul>
-              </div>
-
-              <p className="text-sm text-gray-600">
-                ❌ <strong>À éviter:</strong> Solutions Wix/Squarespace (peu professionnel) et abonnements type Kléia (trop cher sur durée)
-              </p>
-            </div>
-
-            <h2>Conclusion : Quel Prix est Juste pour Votre Site en Guadeloupe ?</h2>
-
-            <p>
-              Un site vitrine professionnel en Guadeloupe ne devrait <strong>PAS coûter plus de 1 500€</strong> pour une TPE.
-              Au-delà, vous payez la structure de l'agence, pas la qualité technique.
-            </p>
-
-            <div className="not-prose bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 my-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Notre Top 3 Recommandations 2026</h3>
-
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <span className="text-3xl">🥇</span>
-                  <div>
-                    <h4 className="text-xl font-bold text-primary">SolYB - 599€</h4>
-                    <p className="text-gray-700">Meilleur rapport qualité/prix, livraison rapide, technologie moderne</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <span className="text-3xl">🥈</span>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900">Les Accros du Web - 790€</h4>
-                    <p className="text-gray-700">Bon choix si SolYB complet, focus SEO</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <span className="text-3xl">🥉</span>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900">Freelance local vérifié - 800-1 200€</h4>
-                    <p className="text-gray-700">Pour projets très spécifiques</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary to-primary-600">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Besoin d'un Site Web Professionnel en Guadeloupe ?
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              SolYB vous livre un site complet en 2 semaines pour 599€.
-            </p>
-            <div className="space-y-2 mb-8 text-white/90">
-              <p>✅ Site responsive mobile</p>
-              <p>✅ Hébergement + nom de domaine 1 an offert</p>
-              <p>✅ Création de contenu avec IA</p>
-              <p>✅ Référencement SEO de base</p>
-              <p>✅ Formation vidéo</p>
-              <p>✅ Support 30 jours</p>
-            </div>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
-            >
-              Devis gratuit sous 24h
-            </Link>
-          </div>
-        </section>
-      </article>
+        <h2>En résumé</h2>
+        <p>
+          Pour une TPE guadeloupéenne, un site vitrine professionnel se situe le plus souvent entre <strong>600 € et
+          1 500 €</strong>. Au-delà, vous payez surtout la structure du prestataire. Mais le prix affiché ne dit pas
+          tout : raisonnez sur <strong>trois ans</strong>, exigez d&rsquo;être <strong>propriétaire</strong> de votre
+          site et de votre domaine, et méfiez-vous des «&nbsp;à partir de&nbsp;» et des abonnements sans fin. Le bon
+          prestataire, ce n&rsquo;est pas le moins cher ni le plus cher : c&rsquo;est celui qui affiche ses tarifs
+          clairement, vous rend propriétaire, et vous montre des réalisations concrètes.
+        </p>
+      </ArticleShell>
     </>
   )
 }

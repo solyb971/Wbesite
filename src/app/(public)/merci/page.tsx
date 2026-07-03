@@ -3,7 +3,7 @@ import Link from "next/link"
 import { CheckCircle, Mail, Clock, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Merci pour votre demande - SolYB",
+  title: "Merci pour votre demande",
   description: "Votre demande a été envoyée avec succès. Je vous recontacte sous 24h maximum.",
   robots: { index: false, follow: false },
 }
@@ -82,7 +82,7 @@ export default function MerciPage() {
 
         <p className="text-center text-sm text-[#8B8B9E] mt-6">
           Une question urgente ?{" "}
-          <a href="mailto:contact@solyb.fr" className="text-coral hover:underline font-semibold">
+          <a href="mailto:contact@solyb.fr" className="hover:underline font-semibold" style={{ color: '#E06245' }}>
             contact@solyb.fr
           </a>
         </p>

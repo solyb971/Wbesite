@@ -1,6 +1,7 @@
 ﻿import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+// Runtime Node par défaut (pas 'edge') : l'image OG est identique à chaque appel,
+// donc générée statiquement au build. Évite le warning Edge + un cold start.
 export const alt = 'SolYB — Agence Digitale Guadeloupe'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
@@ -38,7 +39,7 @@ export default async function Image() {
             border: '1px solid rgba(255,107,71,0.4)',
             background: 'rgba(255,107,71,0.1)',
             borderRadius: '4px', padding: '6px 16px',
-            fontSize: '12px', color: '#FF6B47',
+            fontSize: '12px', color: '#C4472A',
             letterSpacing: '3px', textTransform: 'uppercase',
           }}>
             GUADELOUPE · 971
@@ -51,18 +52,18 @@ export default async function Image() {
           {/* Logo text */}
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
             <span style={{ fontSize: '96px', fontWeight: 700, color: '#F0EDE8', lineHeight: 1, letterSpacing: '-4px' }}>Sol</span>
-            <span style={{ fontSize: '96px', fontWeight: 700, color: '#FF6B47', lineHeight: 1, letterSpacing: '-4px' }}>YB</span>
+            <span style={{ fontSize: '96px', fontWeight: 700, color: '#C4472A', lineHeight: 1, letterSpacing: '-4px' }}>YB</span>
           </div>
 
           {/* Tagline */}
           <div style={{ fontSize: '26px', color: '#8B8B9E', fontStyle: 'italic', letterSpacing: '0.5px' }}>
-            Agence Digitale Guadeloupe — Baie-Mahault
+            Agence Digitale Guadeloupe
           </div>
 
           {/* Services pills */}
           <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
             {[
-              { label: 'Sites Web Sur-Mesure', color: '#FF6B47' },
+              { label: 'Sites Web Sur-Mesure', color: '#C4472A' },
               { label: 'Applications Métier', color: '#00D4AA' },
               { label: 'Facturation Élec. 2026', color: '#F5A623' },
             ].map(s => (
@@ -80,7 +81,7 @@ export default async function Image() {
         {/* Bottom row */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
           <div style={{
-            background: '#FF6B47', borderRadius: '6px',
+            background: '#C4472A', borderRadius: '6px',
             padding: '14px 32px', fontSize: '16px', fontWeight: 700,
             color: '#fff', fontFamily: 'sans-serif', letterSpacing: '0.5px',
           }}>
@@ -88,7 +89,7 @@ export default async function Image() {
           </div>
           <div style={{ display: 'flex', gap: '40px' }}>
             {[
-              { n: '2-3 sem.', l: 'Livraison', c: '#FF6B47' },
+              { n: '2-3 sem.', l: 'Livraison', c: '#C4472A' },
               { n: '100%', l: 'Sur-mesure', c: '#00D4AA' },
               { n: '24H', l: 'Réponse', c: '#F5A623' },
             ].map(s => (

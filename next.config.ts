@@ -18,6 +18,25 @@ const nextConfig: NextConfig = {
     ]
   },
 
+  // L'ancienne page /tarifs (design obsolète) est remplacée par la section
+  // tarifs de la home → redirection permanente pour préserver le SEO.
+  async redirects() {
+    return [
+      {
+        source: '/tarifs',
+        destination: '/#tarifs',
+        permanent: true,
+      },
+      // Page /application-web-guadeloupe supprimée → redirigée vers /services
+      // pour préserver le SEO (URL déjà connue de Google) et éviter les 404.
+      {
+        source: '/application-web-guadeloupe',
+        destination: '/services',
+        permanent: true,
+      },
+    ]
+  },
+
   // Optimisation images
   images: {
     formats: ['image/avif', 'image/webp'],

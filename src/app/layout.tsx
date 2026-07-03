@@ -1,19 +1,30 @@
 ﻿import type { Metadata } from "next"
-import { Syne, Plus_Jakarta_Sans } from "next/font/google"
+import { Fraunces, DM_Sans, IBM_Plex_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-fraunces",
+  weight: ["100", "300", "700", "900"],
+  style: ["normal", "italic"],
 })
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500"],
+})
+
+// Mono pour les labels de rubrique (kicker) — look « agence digitale »
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+  weight: ["500"],
 })
 
 export const metadata: Metadata = {
@@ -21,9 +32,9 @@ export const metadata: Metadata = {
   title: {
     // 55 chars max pour ne pas être tronqué par Google
     default: 'SolYB — Agence Digitale Guadeloupe 971',
-    template: '%s | SolYB Guadeloupe'
+    template: '%s | SolYB'
   },
-  description: 'Agence digitale à Baie-Mahault, Guadeloupe. Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME. Devis gratuit sous 24h.',
+  description: 'Agence digitale en Guadeloupe. Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME. Devis gratuit sous 24h.',
   keywords: [
     'agence digitale Guadeloupe',
     'création site web Guadeloupe',
@@ -49,7 +60,7 @@ export const metadata: Metadata = {
     url: 'https://solyb.fr',
     siteName: 'SolYB Guadeloupe',
     title: 'SolYB — Agence Digitale Guadeloupe 971',
-    description: 'Sites web, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence basée à Baie-Mahault. Devis gratuit sous 24h.',
+    description: 'Sites web, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence au service de toute la Guadeloupe. Devis gratuit sous 24h.',
     images: [
       {
         // Image OG dédiée 1200×630 à créer dans /public/og-image.jpg
@@ -63,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'SolYB — Agence Digitale Guadeloupe 971',
-    description: 'Sites web sur-mesure, applications métier, facturation électronique 2026. Agence guadeloupéenne basée à Baie-Mahault.',
+    description: 'Sites web sur-mesure, applications métier, facturation électronique 2026. Agence guadeloupéenne au service de toute la Guadeloupe.',
     images: ['/opengraph-image'],
   },
   robots: {
@@ -80,8 +91,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://solyb.fr',
   },
-  // Ajoute ton vrai code après avoir créé le compte sur search.google.com/search-console
-  // verification: { google: 'TON_CODE_ICI' },
+  // Vérification Google Search Console : colle ton code dans la variable
+  // NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION (Vercel). Absente = pas de balise.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -103,26 +117,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr">
-      <body className={`${syne.variable} ${jakarta.variable} font-sans`}>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              var path = window.location.pathname;
-              var isPrivate = path.startsWith('/admin') || path.startsWith('/login') || path.startsWith('/auth');
-              if (isPrivate) return;
-              var done = sessionStorage.getItem('splash_done');
-              var isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-              if (!done && !isMobile) {
-                var el = document.createElement('div');
-                el.id = 'splash-block';
-                el.style.cssText = 'position:fixed;inset:0;background:#0a0a0f;z-index:99999;';
-                document.documentElement.appendChild(el);
-              }
-            } catch(e) {}
-          })();
-        `}} />
+    <html lang="fr" suppressHydrationWarning>
+      <body className={`${fraunces.variable} ${dmSans.variable} ${plexMono.variable} font-sans`}>
+        {/* Pose la classe `.js` avant le rendu des sections : l'état masqué des
+            animations `.reveal` n'est appliqué que si JS est actif. Sans JS
+            (désactivé / bundle en échec), le contenu reste visible. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
