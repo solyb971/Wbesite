@@ -52,7 +52,7 @@ export default function About() {
             tournent quasiment complets midi et soir même en basse saison, là où d&apos;autres
             établissements de la même plage ne font pas 40 couverts sur la semaine. Même emplacement,
             même clientèle potentielle.{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>La différence&nbsp;: ils ont existé sur Google.</span>
+            <span style={{ color: 'var(--syb-ink)' }}>La différence&nbsp;: ils existent sur Google.</span>
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
             Et ce n&apos;est qu&apos;un exemple parmi tant d&apos;autres — j&apos;en ai vu des dizaines,
