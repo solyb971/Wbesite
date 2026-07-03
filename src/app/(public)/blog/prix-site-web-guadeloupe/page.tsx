@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
 import { blogTags } from '@/lib/blog-meta'
 
-const ACCENT = '#B8760A'      // or éditorial
-const ACCENT_INK = '#96600A'  // variante texte (AA sur crème)
+const ACCENT = '#B8760A'                 // or éditorial — éléments visuels
+const ACCENT_INK = 'var(--syb-rust-ink)' // textes/liens harmonisés sur le rust de la home
 
 export const metadata: Metadata = {
   title: 'Prix Création Site Web en Guadeloupe : Le Guide Complet 2026',

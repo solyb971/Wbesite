@@ -16,40 +16,35 @@ export function BlogCover({
   category,
   accent,
   tags = [],
+  title,
   variant = 'header',
 }: {
   category: string
   accent: string
   tags?: string[]
+  /** Titre affiché au centre de la miniature (variant "card" uniquement). */
+  title?: string
   variant?: 'header' | 'card'
 }) {
   if (variant === 'card') {
     return (
-      <div className="relative h-full w-full overflow-hidden" style={{ background: DARK }}>
+      <div className="relative h-full w-full overflow-hidden flex flex-col" style={{ background: DARK }}>
         <span className="absolute left-0 top-0 bottom-0" style={{ width: 5, background: accent }} />
-        <div className="absolute" style={{ top: -70, right: -50, width: 220, height: 220, borderRadius: '50%', background: `radial-gradient(circle, ${accent}40 0%, transparent 68%)` }} />
-        <div className="relative h-full flex flex-col justify-between p-5">
-          <div className="flex items-start justify-between">
-            <span
-              className="inline-flex items-center gap-2 rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-[1.5px]"
-              style={{ border: `1px solid ${accent}66`, background: `${accent}1f`, color: accent }}
+        <div className="absolute" style={{ top: -80, right: -60, width: 240, height: 240, borderRadius: '50%', background: `radial-gradient(circle, ${accent}40 0%, transparent 68%)` }} />
+        <div className="absolute" style={{ bottom: -90, left: -50, width: 200, height: 200, borderRadius: '50%', background: `radial-gradient(circle, ${accent}22 0%, transparent 70%)` }} />
+        <Image src="/logo/syb-white.png" alt="" width={26} height={26} className="absolute top-4 right-4 opacity-80" />
+        <div className="relative flex-1 flex flex-col items-center justify-center text-center px-7 py-6">
+          <span className="text-xs font-semibold uppercase tracking-[2px] mb-3" style={{ color: accent }}>
+            {category}
+          </span>
+          {title && (
+            <h2
+              className="font-display font-black leading-tight"
+              style={{ fontSize: 'clamp(20px, 2.4vw, 24px)', letterSpacing: '-0.5px', color: '#F0EDE8' }}
             >
-              {category}
-            </span>
-            <Image src="/logo/syb-white.png" alt="" width={30} height={30} className="opacity-90" />
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {tags.slice(0, 2).map((t) => (
-              <span
-                key={t}
-                className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs"
-                style={{ border: '1px solid rgba(240,237,232,0.16)', background: 'rgba(240,237,232,0.05)', color: '#D8D3CC' }}
-              >
-                <span className="rounded-full" style={{ width: 5, height: 5, background: accent }} />
-                {t}
-              </span>
-            ))}
-          </div>
+              {title}
+            </h2>
+          )}
         </div>
       </div>
     )

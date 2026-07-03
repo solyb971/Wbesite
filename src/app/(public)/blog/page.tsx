@@ -4,7 +4,6 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import Breadcrumbs from '@/components/site/Breadcrumbs'
 import ScrollRevealInit from '@/components/site/ScrollRevealInit'
 import { BlogCover } from '@/components/site/BlogCover'
-import { blogTags } from '@/lib/blog-meta'
 
 export const metadata: Metadata = {
   title: 'Blog Création Site Web Guadeloupe — Conseils & Actualités',
@@ -94,15 +93,12 @@ export default function BlogPage() {
                 className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
                 style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
               >
-                {/* Couverture à la charte (variante compacte de la vignette) */}
-                <Link href={`/blog/${a.slug}`} className="relative block h-44 overflow-hidden">
-                  <BlogCover category={a.category} accent={a.accent} tags={blogTags[a.slug]} variant="card" />
+                {/* Couverture à la charte : titre au centre (variante de la vignette) */}
+                <Link href={`/blog/${a.slug}`} className="relative block h-52 overflow-hidden">
+                  <BlogCover category={a.category} accent={a.accent} title={a.title} variant="card" />
                 </Link>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <h2 className="font-display font-bold mb-2 leading-snug transition-colors" style={{ fontSize: '20px', color: 'var(--syb-ink)' }}>
-                    {a.title}
-                  </h2>
                   <p className="text-sm font-light leading-relaxed mb-5 flex-1" style={{ color: 'var(--syb-stone)', lineHeight: 1.6 }}>{a.excerpt}</p>
 
                   <div className="flex items-center justify-between pt-4" style={{ borderTop: '0.5px solid var(--syb-border)' }}>
@@ -116,7 +112,7 @@ export default function BlogPage() {
                         {a.readTime}
                       </span>
                     </div>
-                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 font-medium text-sm transition-transform hover:translate-x-0.5" style={{ color: a.textAccent }}>
+                    <Link href={`/blog/${a.slug}`} className="inline-flex items-center gap-1.5 font-medium text-sm transition-transform hover:translate-x-0.5" style={{ color: 'var(--syb-rust-ink)' }}>
                       Lire <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
