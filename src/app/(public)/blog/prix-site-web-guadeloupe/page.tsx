@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
+import { blogTags } from '@/lib/blog-meta'
 
 const ACCENT = '#B8760A'      // or éditorial
 const ACCENT_INK = '#96600A'  // variante texte (AA sur crème)
@@ -88,6 +89,7 @@ export default function PrixSiteWebGuadeloupePage() {
         readTime="11 min"
         crumbLabel="Prix création site web"
         crumbHref="/blog/prix-site-web-guadeloupe"
+        tags={blogTags['prix-site-web-guadeloupe']}
         cta={{
           heading: 'Envie d’un devis clair, sans surprise ?',
           text: 'On affiche nos tarifs et on vous livre un site vitrine professionnel en 2 à 3 semaines. Devis gratuit sous 24 h, sans engagement.',

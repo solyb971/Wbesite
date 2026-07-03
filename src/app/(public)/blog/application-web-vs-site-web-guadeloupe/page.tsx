@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
+import { blogTags } from '@/lib/blog-meta'
 
 const ACCENT = '#0E7C6B'      // teal caraïbe
 const ACCENT_INK = '#0C7060'  // variante texte (AA sur crème)
@@ -96,6 +97,7 @@ export default function ApplicationVsSiteWebPage() {
         readTime="11 min"
         crumbLabel="Application web vs site web"
         crumbHref="/blog/application-web-vs-site-web-guadeloupe"
+        tags={blogTags['application-web-vs-site-web-guadeloupe']}
         cta={{
           heading: 'Un besoin précis, encore flou sur le format ?',
           text: 'On en discute ensemble et on vous dit honnêtement si un site suffit ou s’il vous faut une application.',

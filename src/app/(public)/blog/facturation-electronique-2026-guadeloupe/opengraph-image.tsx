@@ -1,4 +1,5 @@
 import { renderBlogOg } from '@/lib/blog-og'
+import { blogTags } from '@/lib/blog-meta'
 
 export const alt = 'Facturation électronique 2026 en Guadeloupe — SolYB'
 export const size = { width: 1200, height: 630 }
@@ -9,6 +10,6 @@ export default function Image() {
     title: 'Facturation électronique 2026 en Guadeloupe',
     category: 'Conformité 2026',
     accent: '#2E8C92',
-    tags: ['La réforme expliquée', 'Le piège de la TVA DOM', 'Échéance sept. 2026'],
+    tags: blogTags['facturation-electronique-2026-guadeloupe'],
   })
 }
