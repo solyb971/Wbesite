@@ -27,12 +27,12 @@ export default function About() {
           style={{ maxWidth: '640px' }}
         >
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Je m&apos;appelle Yacine. J&apos;ai grandi sur cette île, puis je suis parti me former et
-            travailler ailleurs, comme beaucoup d&apos;ici. Mais je suis revenu — pour mettre ce que
-            j&apos;avais appris au service des entrepreneurs guadeloupéens, depuis la Guadeloupe.
+            Je m&apos;appelle Yacine. J&apos;ai grandi sur cette île, j&apos;en suis parti quelques
+            années, puis j&apos;y suis revenu. Et c&apos;est ici, en Guadeloupe, que j&apos;ai lancé
+            SolYB.
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            J&apos;ai lancé SolYB en voyant nos restaurateurs, nos artisans, nos commerçants se battre
+            L&apos;idée est venue en voyant nos restaurateurs, nos artisans, nos commerçants se battre
             avec des outils qui ne leur ressemblaient pas&nbsp;: des taux de TVA qui ne sont pas les
             nôtres, des templates importés de Paris, des logiciels qui ignorent tout de leur quotidien.
             Ce qui leur manquait, ce n&apos;était pas une agence de plus. C&apos;était quelqu&apos;un
