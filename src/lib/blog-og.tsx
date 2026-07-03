@@ -114,7 +114,7 @@ export function renderBlogOg({
         {/* Footer */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(240,237,232,0.10)', paddingTop: 22 }}>
           <span style={{ fontSize: 20, color: '#8B8B9E', letterSpacing: 1 }}>solyb.fr / blog</span>
-          <span style={{ fontSize: 20, fontWeight: 600, color: accent }}>Devis gratuit sous 24 h →</span>
+          <span style={{ fontSize: 20, fontWeight: 600, color: accent, letterSpacing: 1 }}>Guadeloupe · 971</span>
         </div>
       </div>
     ),

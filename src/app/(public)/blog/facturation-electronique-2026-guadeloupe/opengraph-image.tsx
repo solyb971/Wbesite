@@ -9,6 +9,6 @@ export default function Image() {
     title: 'Facturation électronique 2026 en Guadeloupe',
     category: 'Conformité 2026',
     accent: '#2E8C92',
-    tags: ['TVA DOM 8,5 %', 'Format Factur-X', 'Obligatoire sept. 2026'],
+    tags: ['La réforme expliquée', 'Le piège de la TVA DOM', 'Échéance sept. 2026'],
   })
 }

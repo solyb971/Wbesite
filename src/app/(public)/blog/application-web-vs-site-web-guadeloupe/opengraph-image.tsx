@@ -9,6 +9,6 @@ export default function Image() {
     title: 'Site web ou application : que choisir ?',
     category: 'Guides',
     accent: '#0E7C6B',
-    tags: ['Site dès 599 €', 'App sur devis', 'Cas réels 971'],
+    tags: ['Vitrine ou outil ?', 'Cas d’usage concrets', 'Bien choisir'],
   })
 }
