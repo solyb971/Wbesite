@@ -18,6 +18,7 @@ const root = process.cwd()
 const fraunces900 = readFileSync(join(root, 'src/assets/fonts/Fraunces-900.ttf'))
 const dmSans400 = readFileSync(join(root, 'src/assets/fonts/DMSans-400.ttf'))
 const dmSans600 = readFileSync(join(root, 'src/assets/fonts/DMSans-600.ttf'))
+const plexMono500 = readFileSync(join(root, 'src/assets/fonts/IBMPlexMono-500.ttf'))
 const logoUri =
   'data:image/png;base64,' +
   readFileSync(join(root, 'public/logo/syb-white.png')).toString('base64')

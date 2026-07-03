@@ -32,9 +32,9 @@ export function BlogCover({
         <span className="absolute left-0 top-0 bottom-0" style={{ width: 5, background: accent }} />
         <div className="absolute" style={{ top: -80, right: -60, width: 240, height: 240, borderRadius: '50%', background: `radial-gradient(circle, ${accent}40 0%, transparent 68%)` }} />
         <div className="absolute" style={{ bottom: -90, left: -50, width: 200, height: 200, borderRadius: '50%', background: `radial-gradient(circle, ${accent}22 0%, transparent 70%)` }} />
-        <Image src="/logo/syb-white.png" alt="" width={26} height={26} className="absolute top-4 right-4 opacity-80" />
         <div className="relative flex-1 flex flex-col items-center justify-center text-center px-7 py-6">
-          <span className="text-xs font-semibold uppercase tracking-[2px] mb-3" style={{ color: accent }}>
+          <Image src="/logo/syb-white.png" alt="" width={34} height={34} className="mb-4 opacity-90" />
+          <span className="text-xs uppercase tracking-[2.5px] mb-2.5" style={{ color: accent, fontFamily: 'var(--font-mono)', fontWeight: 500 }}>
             {category}
           </span>
           {title && (
@@ -63,8 +63,8 @@ export function BlogCover({
             <span className="font-display font-black" style={{ fontSize: 26, letterSpacing: '-0.5px', color: '#F0EDE8' }}>SolYB</span>
           </div>
           <span
-            className="inline-flex items-center gap-2 rounded-md px-4 py-1.5 text-xs font-semibold uppercase tracking-[2px]"
-            style={{ border: `1px solid ${accent}66`, background: `${accent}1f`, color: accent }}
+            className="inline-flex items-center gap-2 rounded-md px-4 py-1.5 text-xs uppercase tracking-[2.5px]"
+            style={{ border: `1px solid ${accent}66`, background: `${accent}1f`, color: accent, fontFamily: 'var(--font-mono)', fontWeight: 500 }}
           >
             {category}
           </span>

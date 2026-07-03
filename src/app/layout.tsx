@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next"
-import { Fraunces, DM_Sans } from "next/font/google"
+import { Fraunces, DM_Sans, IBM_Plex_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
@@ -17,6 +17,14 @@ const dmSans = DM_Sans({
   display: "swap",
   variable: "--font-dm-sans",
   weight: ["300", "400", "500"],
+})
+
+// Mono pour les labels de rubrique (kicker) — look « agence digitale »
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+  weight: ["500"],
 })
 
 export const metadata: Metadata = {
@@ -110,7 +118,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body className={`${fraunces.variable} ${dmSans.variable} font-sans`}>
+      <body className={`${fraunces.variable} ${dmSans.variable} ${plexMono.variable} font-sans`}>
         {/* Pose la classe `.js` avant le rendu des sections : l'état masqué des
             animations `.reveal` n'est appliqué que si JS est actif. Sans JS
             (désactivé / bundle en échec), le contenu reste visible. */}
