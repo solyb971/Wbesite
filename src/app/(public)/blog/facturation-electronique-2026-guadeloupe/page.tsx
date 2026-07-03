@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     publishedTime: '2026-06-17',
     modifiedTime: '2026-07-02',
     authors: ['Yacine Bouhassoun'],
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Facturation électronique 2026 Guadeloupe' }],
+    // og:image fournie automatiquement par ./opengraph-image.tsx (vignette dédiée)
   },
 }
 
