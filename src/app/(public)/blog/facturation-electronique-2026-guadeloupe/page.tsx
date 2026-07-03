@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { AlertTriangle } from 'lucide-react'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
+import { blogTags } from '@/lib/blog-meta'
 
 const ACCENT = '#2E8C92'      // pétrole (DA FactuGP)
 const ACCENT_INK = '#1F6E73'  // variante texte (AA sur crème)
@@ -100,6 +101,7 @@ export default function FacturationElectronique2026GuadeloupePage() {
         readTime="12 min"
         crumbLabel="Facturation électronique 2026"
         crumbHref="/blog/facturation-electronique-2026-guadeloupe"
+        tags={blogTags['facturation-electronique-2026-guadeloupe']}
         cta={{
           heading: 'Vous facturez sur Word, Excel ou papier ? Faisons le point.',
           text: 'On analyse gratuitement votre situation et on vous dit exactement ce que vous devez faire avant 2026 — sans jargon, sans pression.',

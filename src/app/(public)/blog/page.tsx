@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Calendar, Clock, FileText, Tag, GitCompare } from 'lucide-react'
+import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import Breadcrumbs from '@/components/site/Breadcrumbs'
 import ScrollRevealInit from '@/components/site/ScrollRevealInit'
+import { BlogCover } from '@/components/site/BlogCover'
+import { blogTags } from '@/lib/blog-meta'
 
 export const metadata: Metadata = {
   title: 'Blog Création Site Web Guadeloupe — Conseils & Actualités',
@@ -29,7 +31,6 @@ const articles = [
     category: 'Conformité 2026',
     accent: '#2E8C92',     // pétrole (rappel FactuGP) — couverture/icônes
     textAccent: '#1F6E73', // pétrole assombri pour texte (AA sur crème)
-    Icon: FileText,
   },
   {
     slug: 'prix-site-web-guadeloupe',
@@ -40,7 +41,6 @@ const articles = [
     category: 'Prix & Tarifs',
     accent: '#B8760A',     // or éditorial — couverture/icônes
     textAccent: '#96600A', // or assombri pour texte (AA sur crème)
-    Icon: Tag,
   },
   {
     slug: 'application-web-vs-site-web-guadeloupe',
@@ -51,7 +51,6 @@ const articles = [
     category: 'Guides',
     accent: '#0E7C6B',     // teal caraïbe — couverture/icônes
     textAccent: '#0E7C6B', // teal (déjà AA sur crème : 4,57)
-    Icon: GitCompare,
   },
 ]
 
@@ -95,17 +94,9 @@ export default function BlogPage() {
                 className="group rounded-xl overflow-hidden flex flex-col transition-transform duration-300 hover:-translate-y-1"
                 style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
               >
-                {/* Couverture stylisée */}
-                <Link href={`/blog/${a.slug}`} className="relative block h-44 overflow-hidden" style={{ background: `linear-gradient(135deg, ${a.accent}, ${a.accent}bb)` }}>
-                  <a.Icon
-                    className="absolute -right-4 -bottom-4 transition-transform duration-500 group-hover:scale-110"
-                    style={{ width: 132, height: 132, color: 'rgba(255,255,255,0.16)' }}
-                    strokeWidth={1.2}
-                  />
-                  <span className="absolute left-5 top-5 inline-block rounded-full px-3 py-1 text-xs font-semibold tracking-wide" style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', backdropFilter: 'blur(4px)' }}>
-                    {a.category}
-                  </span>
-                  <a.Icon className="absolute left-5 bottom-5 w-7 h-7" style={{ color: 'rgba(255,255,255,0.9)' }} strokeWidth={1.6} />
+                {/* Couverture à la charte (variante compacte de la vignette) */}
+                <Link href={`/blog/${a.slug}`} className="relative block h-44 overflow-hidden">
+                  <BlogCover category={a.category} accent={a.accent} tags={blogTags[a.slug]} variant="card" />
                 </Link>
 
                 <div className="p-6 flex flex-col flex-1">

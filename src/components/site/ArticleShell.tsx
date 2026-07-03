@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import Breadcrumbs from '@/components/site/Breadcrumbs'
+import { BlogCover } from '@/components/site/BlogCover'
 
 type CtaLink = { label: string; href: string }
 
@@ -20,6 +21,7 @@ export function ArticleShell({
   readTime,
   crumbLabel,
   crumbHref,
+  tags = [],
   children,
   cta,
 }: {
@@ -35,6 +37,8 @@ export function ArticleShell({
   readTime: string
   crumbLabel: string
   crumbHref: string
+  /** Tags thématiques affichés sur la couverture. */
+  tags?: string[]
   children: ReactNode
   cta?: {
     heading: string
@@ -52,16 +56,12 @@ export function ArticleShell({
     <main className="min-h-screen" style={{ background: 'var(--syb-warm)' }}>
       <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: crumbLabel, href: crumbHref }]} />
 
+      {/* Couverture visuelle (rubrique + tags) */}
+      <BlogCover category={category} accent={accent} tags={tags} variant="header" />
+
       {/* Header éditorial */}
-      <header className="px-6 pt-8 pb-12">
+      <header className="px-6 pt-10 pb-12">
         <div className="max-w-3xl mx-auto">
-          <div
-            className="flex items-center gap-2.5 mb-5 text-xs tracking-[2px] uppercase font-medium"
-            style={{ color: accentInk }}
-          >
-            <span className="w-5 h-px" style={{ background: accent }} />
-            {category}
-          </div>
           <h1
             className="font-display font-black leading-[1.05] mb-6"
             style={{ fontSize: 'clamp(32px, 5vw, 54px)', letterSpacing: '-1.5px', color: 'var(--syb-ink)' }}
