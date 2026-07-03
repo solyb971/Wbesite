@@ -9,5 +9,6 @@ export default function Image() {
     title: 'Combien coûte un site web en Guadeloupe ?',
     category: 'Prix & Tarifs',
     accent: '#B8760A',
+    tags: ['Site dès 599 €', 'Livré en 2-3 sem.', 'Devis sous 24 h'],
   })
 }
