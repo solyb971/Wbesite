@@ -4,8 +4,8 @@ import { AlertTriangle } from 'lucide-react'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
 import { blogTags } from '@/lib/blog-meta'
 
-const ACCENT = '#2E8C92'      // pétrole (DA FactuGP)
-const ACCENT_INK = '#1F6E73'  // variante texte (AA sur crème)
+const ACCENT = '#2E8C92'                 // pétrole (DA FactuGP) — éléments visuels
+const ACCENT_INK = 'var(--syb-rust-ink)' // textes/liens harmonisés sur le rust de la home
 
 export const metadata: Metadata = {
   title: 'Facturation Électronique 2026 en Guadeloupe : Guide TPE/PME',

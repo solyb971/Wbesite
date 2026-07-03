@@ -49,12 +49,15 @@ export function ArticleShell({
 }) {
   const articleVars = {
     '--article-accent': accent,
-    '--article-link': accentInk,
+    // Liens du corps harmonisés sur le rust de la home (charte unifiée) ;
+    // l'accent de rubrique reste réservé aux éléments visuels (puces, couverture).
+    '--article-link': 'var(--syb-rust-ink)',
   } as CSSProperties
 
   return (
     <main className="min-h-screen" style={{ background: 'var(--syb-warm)' }}>
-      <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: crumbLabel, href: crumbHref }]} />
+      {/* Données structurées BreadcrumbList uniquement (fil d'Ariane visuel masqué) */}
+      <Breadcrumbs items={[{ name: 'Blog', href: '/blog' }, { name: crumbLabel, href: crumbHref }]} visual={false} />
 
       {/* Couverture visuelle (rubrique + tags) */}
       <BlogCover category={category} accent={accent} tags={tags} variant="header" />

@@ -4,9 +4,9 @@ import { Check } from 'lucide-react'
 import { ArticleShell, ArticleCallout } from '@/components/site/ArticleShell'
 import { blogTags } from '@/lib/blog-meta'
 
-const ACCENT = '#0E7C6B'      // teal caraïbe
-const ACCENT_INK = '#0C7060'  // variante texte (AA sur crème)
-const SITE = '#C4472A'        // rust — repère « site web »
+const ACCENT = '#0E7C6B'                 // teal caraïbe — éléments visuels
+const ACCENT_INK = 'var(--syb-rust-ink)' // textes/liens harmonisés sur le rust de la home
+const SITE = '#C4472A'                   // rust — repère visuel « site web »
 const SITE_INK = 'var(--syb-rust-ink)'
 
 export const metadata: Metadata = {

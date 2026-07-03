@@ -10,7 +10,7 @@ const BASE = 'https://solyb.fr'
  * (schema.org BreadcrumbList) pour les rich results Google.
  * Le premier élément est toujours « Accueil » ; ne pas l'inclure dans `items`.
  */
-export default function Breadcrumbs({ items }: { items: Crumb[] }) {
+export default function Breadcrumbs({ items, visual = true }: { items: Crumb[]; visual?: boolean }) {
   const all: Crumb[] = [{ name: 'Accueil', href: '/' }, ...items]
 
   const jsonLd = {
@@ -24,9 +24,16 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
     })),
   }
 
+  // `visual={false}` : n'émet que les données structurées (SEO), sans le fil
+  // d'Ariane visible — utilisé sur les articles pour ne pas casser la couverture.
+  const script = (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+  )
+  if (!visual) return script
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {script}
       <nav aria-label="Fil d'Ariane" className="max-w-5xl mx-auto px-6 pt-24 md:pt-28">
         <ol className="flex flex-wrap items-center gap-1.5 text-xs" style={{ color: 'var(--syb-stone-light)' }}>
           {all.map((c, i) => {
