@@ -49,7 +49,7 @@ export default function FAQ() {
                 className="overflow-hidden transition-all duration-300"
                 style={{ maxHeight: openIndex === index ? '300px' : '0', paddingBottom: openIndex === index ? '1.5rem' : 0 }}
               >
-                <p className="text-sm font-light leading-relaxed" style={{ color: '#7A7268', lineHeight: 1.8 }}>
+                <p className="text-sm font-light leading-relaxed" style={{ color: '#736B5F', lineHeight: 1.8 }}>
                   {faq.answer}
                 </p>
               </div>

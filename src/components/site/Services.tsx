@@ -74,7 +74,7 @@ export default function Services() {
               <span style={{ fontWeight: 900, color: '#C4472A' }}>pour vous</span>
             </h2>
           </div>
-          <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#7A7268' }}>
+          <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#736B5F' }}>
             Chaque projet repart de zéro. On part de vous, de votre marché, de votre clientèle et de votre logique métier pour avoir la solution la plus optimisée possible à vos besoins.
           </p>
         </div>
