@@ -26,7 +26,7 @@ export default function Process() {
             4 étapes,<br />
             <em className="italic" style={{ fontWeight: 300, color: '#C4472A' }}>zéro surprise</em>
           </h2>
-          <p className="text-sm font-light leading-relaxed max-w-md" style={{ color: '#7A7268', lineHeight: 1.75 }}>
+          <p className="text-sm font-light leading-relaxed max-w-md" style={{ color: '#736B5F', lineHeight: 1.75 }}>
             Du premier appel à la mise en ligne, vous savez toujours où on en est. Pas de jargon, pas de mauvaise surprise.
           </p>
         </div>
