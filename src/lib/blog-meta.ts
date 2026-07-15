@@ -34,4 +34,14 @@ export const blogTags: Record<string, string[]> = {
     'Menu en ligne',
     'Avis qui rassurent',
   ],
+  'prix-application-metier-guadeloupe': [
+    'Ordres de grandeur',
+    'Sur-mesure ou pas ?',
+    'Lire un devis',
+  ],
+  'location-voiture-gite-reservation-en-ligne': [
+    'Plateformes & commissions',
+    'Calendrier unique',
+    'Acomptes en ligne',
+  ],
 }
