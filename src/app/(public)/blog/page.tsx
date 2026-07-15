@@ -22,6 +22,36 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'etre-visible-sur-google-guadeloupe',
+    title: 'Être visible sur Google en Guadeloupe : le guide de la fiche d’établissement',
+    excerpt: 'La fiche Google est gratuite et c’est le levier de visibilité locale le plus rentable. Création, photos, avis, erreurs à éviter : la méthode complète, pas à pas.',
+    date: '2026-07-15',
+    readTime: '10 min',
+    category: 'Guides',
+    accent: '#0E7C6B',     // teal caraïbe — couverture/icônes
+    textAccent: '#0E7C6B', // teal (déjà AA sur crème : 4,57)
+  },
+  {
+    slug: 'restaurant-guadeloupe-clients-google',
+    title: 'Restaurateurs en Guadeloupe : vos clients vous cherchent avant d’atterrir',
+    excerpt: 'Touristes et croisiéristes choisissent leurs restaurants sur Google avant d’arriver. Fiche, menu en ligne, avis : ce qui fait qu’on vous trouve — ou pas.',
+    date: '2026-07-15',
+    readTime: '8 min',
+    category: 'Secteurs',
+    accent: '#C4472A',     // terre-cuite — couverture/icônes
+    textAccent: '#B84126', // rust-ink (AA sur crème)
+  },
+  {
+    slug: 'site-invisible-sur-google-raisons',
+    title: 'Mon site n’apparaît pas sur Google : les 7 vraies raisons',
+    excerpt: 'Indexation, site trop récent, blocage technique, contenu trop maigre… Les 7 causes les plus fréquentes, avec pour chacune une vérification gratuite à faire soi-même.',
+    date: '2026-07-15',
+    readTime: '9 min',
+    category: 'Guides',
+    accent: '#0E7C6B',     // teal caraïbe — couverture/icônes
+    textAccent: '#0E7C6B', // teal (déjà AA sur crème : 4,57)
+  },
+  {
     slug: 'facturation-electronique-2026-guadeloupe',
     title: 'Facturation Électronique 2026 en Guadeloupe : le guide TPE/PME',
     excerpt: 'Dates, entreprises concernées, TVA DOM (8,5 % / 2,1 %), Chorus Pro, sanctions… Tout ce que les TPE/PME guadeloupéennes doivent savoir sur la réforme 2026.',

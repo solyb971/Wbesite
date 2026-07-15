@@ -19,4 +19,19 @@ export const blogTags: Record<string, string[]> = {
     'Cas d’usage concrets',
     'Bien choisir',
   ],
+  'etre-visible-sur-google-guadeloupe': [
+    'Fiche gratuite',
+    'Photos & avis',
+    'Erreurs à éviter',
+  ],
+  'site-invisible-sur-google-raisons': [
+    'Le test en 10 s',
+    '7 causes fréquentes',
+    'Diagnostic gratuit',
+  ],
+  'restaurant-guadeloupe-clients-google': [
+    'Touristes & croisiéristes',
+    'Menu en ligne',
+    'Avis qui rassurent',
+  ],
 }

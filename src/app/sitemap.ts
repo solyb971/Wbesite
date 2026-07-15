@@ -17,6 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog — index + articles
   const blog: MetadataRoute.Sitemap = [
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/blog/etre-visible-sur-google-guadeloupe`,       lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/blog/site-invisible-sur-google-raisons`,        lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/blog/restaurant-guadeloupe-clients-google`,     lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog/facturation-electronique-2026-guadeloupe`, lastModified: new Date('2026-06-17'), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog/prix-site-web-guadeloupe`,                 lastModified: new Date('2026-05-12'), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/blog/application-web-vs-site-web-guadeloupe`,   lastModified: new Date('2026-04-22'), changeFrequency: 'monthly', priority: 0.6 },
