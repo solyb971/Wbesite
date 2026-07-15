@@ -22,6 +22,26 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'prix-application-metier-guadeloupe',
+    title: 'Combien coûte une application métier ? Le guide des prix 2026',
+    excerpt: 'De l’outil ciblé au système complet : ce qui fait vraiment le prix d’un logiciel sur-mesure, quand un logiciel existant suffit, et comment lire un devis.',
+    date: '2026-07-15',
+    readTime: '10 min',
+    category: 'Prix & Tarifs',
+    accent: '#B8760A',     // or éditorial — couverture/icônes
+    textAccent: '#96600A', // or assombri pour texte (AA sur crème)
+  },
+  {
+    slug: 'location-voiture-gite-reservation-en-ligne',
+    title: 'Location de voitures & gîtes : passer à la réservation en ligne',
+    excerpt: 'Plateformes et commissions, réservation en direct, calendrier unique, acomptes : le guide pratique pour les loueurs et propriétaires de gîtes guadeloupéens.',
+    date: '2026-07-15',
+    readTime: '9 min',
+    category: 'Secteurs',
+    accent: '#C4472A',     // terre-cuite — couverture/icônes
+    textAccent: '#B84126', // rust-ink (AA sur crème)
+  },
+  {
     slug: 'etre-visible-sur-google-guadeloupe',
     title: 'Être visible sur Google en Guadeloupe : le guide de la fiche d’établissement',
     excerpt: 'La fiche Google est gratuite et c’est le levier de visibilité locale le plus rentable. Création, photos, avis, erreurs à éviter : la méthode complète, pas à pas.',
