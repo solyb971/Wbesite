@@ -25,7 +25,7 @@ const articles = [
     slug: 'prix-application-metier-guadeloupe',
     title: 'Combien coûte une application métier ? Le guide des prix 2026',
     excerpt: 'De l’outil ciblé au système complet : ce qui fait vraiment le prix d’un logiciel sur-mesure, quand un logiciel existant suffit, et comment lire un devis.',
-    date: '2026-07-15',
+    date: '2026-07-29',
     readTime: '10 min',
     category: 'Prix & Tarifs',
     accent: '#B8760A',     // or éditorial — couverture/icônes
@@ -35,7 +35,7 @@ const articles = [
     slug: 'location-voiture-gite-reservation-en-ligne',
     title: 'Location de voitures & gîtes : passer à la réservation en ligne',
     excerpt: 'Plateformes et commissions, réservation en direct, calendrier unique, acomptes : le guide pratique pour les loueurs et propriétaires de gîtes guadeloupéens.',
-    date: '2026-07-15',
+    date: '2026-08-12',
     readTime: '9 min',
     category: 'Secteurs',
     accent: '#C4472A',     // terre-cuite — couverture/icônes

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Plateformes, commissions, réservation en direct, doubles réservations : le guide pratique pour les loueurs guadeloupéens.',
     url: 'https://solyb.fr/blog/location-voiture-gite-reservation-en-ligne',
     type: 'article',
-    publishedTime: '2026-07-15',
+    publishedTime: '2026-08-12',
     authors: ['Yacine Bouhassoun'],
   },
 }
@@ -42,8 +42,8 @@ export default function LocationReservationEnLignePage() {
       logo: { '@type': 'ImageObject', url: 'https://solyb.fr/logo/syb-orange.png' },
       address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
-    datePublished: '2026-07-15',
-    dateModified: '2026-07-15',
+    datePublished: '2026-08-12',
+    dateModified: '2026-08-12',
     mainEntityOfPage: 'https://solyb.fr/blog/location-voiture-gite-reservation-en-ligne',
   }
 
@@ -79,7 +79,7 @@ export default function LocationReservationEnLignePage() {
         accent={ACCENT}
         accentInk={ACCENT_INK}
         title="Location de voitures & gîtes : passer à la réservation en ligne"
-        date="2026-07-15"
+        date="2026-08-12"
         readTime="9 min"
         crumbLabel="Locations et réservation en ligne"
         crumbHref="/blog/location-voiture-gite-reservation-en-ligne"

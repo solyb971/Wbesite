@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Ce qui fait vraiment le prix d’un logiciel sur-mesure : fonctionnalités, utilisateurs, intégrations. Et comment lire un devis sans se faire avoir.',
     url: 'https://solyb.fr/blog/prix-application-metier-guadeloupe',
     type: 'article',
-    publishedTime: '2026-07-15',
+    publishedTime: '2026-07-29',
     authors: ['Yacine Bouhassoun'],
   },
 }
@@ -42,8 +42,8 @@ export default function PrixApplicationMetierPage() {
       logo: { '@type': 'ImageObject', url: 'https://solyb.fr/logo/syb-orange.png' },
       address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
-    datePublished: '2026-07-15',
-    dateModified: '2026-07-15',
+    datePublished: '2026-07-29',
+    dateModified: '2026-07-29',
     mainEntityOfPage: 'https://solyb.fr/blog/prix-application-metier-guadeloupe',
   }
 
@@ -84,7 +84,7 @@ export default function PrixApplicationMetierPage() {
         accent={ACCENT}
         accentInk={ACCENT_INK}
         title="Combien coûte une application métier ? Le guide des prix 2026"
-        date="2026-07-15"
+        date="2026-07-29"
         readTime="10 min"
         crumbLabel="Prix application métier"
         crumbHref="/blog/prix-application-metier-guadeloupe"
