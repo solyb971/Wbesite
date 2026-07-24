@@ -29,7 +29,7 @@ const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email"
 
 // Expéditeur configurable : doit être un expéditeur VALIDÉ dans Brevo.
 // Par défaut solyb971@gmail.com (validé). Quand le domaine solyb.fr sera
-// authentifié dans Brevo, définir BREVO_SENDER_EMAIL=contact@solyb.fr.
+// authentifié dans Brevo, définir BREVO_SENDER_EMAIL=solyb971@gmail.com.
 const DEFAULT_SENDER: EmailRecipient = {
   email: process.env.BREVO_SENDER_EMAIL || "solyb971@gmail.com",
   name: process.env.BREVO_SENDER_NAME || "SolYB - Yacine Bouhassoun",
@@ -202,7 +202,7 @@ export async function sendWelcomeEmail(
     <div class="contact-info">
       <p style="margin: 0; font-weight: 600;">📞 Besoin d'échanger rapidement ?</p>
       <p style="margin: 10px 0 0 0;">
-        Email : <a href="mailto:contact@solyb.fr" style="color: #2563eb;">contact@solyb.fr</a><br>
+        Email : <a href="mailto:solyb971@gmail.com" style="color: #2563eb;">solyb971@gmail.com</a><br>
         Téléphone : +590 690 42 67 92<br>
         Disponibilité : Lun-Ven 18h-21h, Sam-Dim 10h-18h
       </p>
@@ -217,7 +217,7 @@ export async function sendWelcomeEmail(
     <div class="footer">
       <p>SolYB - Solutions digitales en Guadeloupe<br>
       Antilles Françaises<br>
-      <a href="mailto:contact@solyb.fr" style="color: #2563eb;">contact@solyb.fr</a></p>
+      <a href="mailto:solyb971@gmail.com" style="color: #2563eb;">solyb971@gmail.com</a></p>
       <p style="margin-top: 10px; font-size: 12px; color: #9ca3af;">
         Vous recevez cet email suite à votre demande sur solyb.fr
       </p>

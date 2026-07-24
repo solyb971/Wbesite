@@ -46,8 +46,8 @@ export default function NotFound() {
 
         <p className="text-center text-sm text-[#8B8B9E] mt-6">
           Une question ?{' '}
-          <a href="mailto:contact@solyb.fr" className="text-coral hover:underline font-semibold">
-            contact@solyb.fr
+          <a href="mailto:solyb971@gmail.com" className="text-coral hover:underline font-semibold">
+            solyb971@gmail.com
           </a>
         </p>
       </div>

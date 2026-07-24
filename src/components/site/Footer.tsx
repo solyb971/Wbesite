@@ -39,8 +39,8 @@ export default function Footer() {
               Agence digitale · Guadeloupe 971
             </p>
             <div className="flex flex-col gap-2 text-sm font-light">
-              <a href="mailto:contact@solyb.fr" className="transition-colors hover:text-white" style={{ color: '#B0A89E' }}>
-                contact@solyb.fr
+              <a href="mailto:solyb971@gmail.com" className="transition-colors hover:text-white" style={{ color: '#B0A89E' }}>
+                solyb971@gmail.com
               </a>
               <a
                 href={WHATSAPP_URL}

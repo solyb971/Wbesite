@@ -372,7 +372,7 @@ export default function FacturationPage() {
           <div className={styles.footerCol}>
             <h3>Contact</h3>
             <ul>
-              <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
+              <li><a href="mailto:solyb971@gmail.com">solyb971@gmail.com</a></li>
               <li>Petit-Bourg · Guadeloupe 97170</li>
               <li><a href="https://solyb.fr">solyb.fr →</a></li>
             </ul>

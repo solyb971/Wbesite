@@ -212,7 +212,7 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
               <div className="absolute right-0 mt-2 w-52 bg-[#201913] border border-white/[0.07] rounded-xl shadow-2xl shadow-black/40 overflow-hidden z-50">
                 <div className="px-4 py-3 border-b border-white/[0.06]">
                   <p className="text-[#F5EDD8] text-sm font-semibold">Yacine Bouhassoun</p>
-                  <p className="text-[#7E715E] text-xs mt-0.5">contact@solyb.fr</p>
+                  <p className="text-[#7E715E] text-xs mt-0.5">solyb971@gmail.com</p>
                 </div>
                 <div className="p-1">
                   <button

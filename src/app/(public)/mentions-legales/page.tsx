@@ -34,7 +34,7 @@ export default function MentionsLegalesPage() {
           <li>Numéro de TVA intracommunautaire : FR64102699220</li>
           <li>
             Email :{' '}
-            <a href="mailto:contact@solyb.fr" style={{ color: 'var(--syb-rust-ink)' }}>contact@solyb.fr</a>
+            <a href="mailto:solyb971@gmail.com" style={{ color: 'var(--syb-rust-ink)' }}>solyb971@gmail.com</a>
           </li>
           <li>
             Téléphone :{' '}

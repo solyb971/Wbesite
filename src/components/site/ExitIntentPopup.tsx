@@ -99,7 +99,7 @@ export default function ExitIntentPopup() {
           </ul>
 
           <a
-            href="mailto:contact@solyb.fr?subject=Demande%20d%27audit%20digital%20gratuit"
+            href="mailto:solyb971@gmail.com?subject=Demande%20d%27audit%20digital%20gratuit"
             className="w-full bg-coral hover:bg-coral/90 text-white py-4 rounded-xl font-semibold text-base transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-coral/20"
           >
             Nous écrire pour l&apos;audit

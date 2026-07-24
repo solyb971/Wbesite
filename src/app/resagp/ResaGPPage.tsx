@@ -390,7 +390,7 @@ export default function ResaGPPage() {
             <div>
               <div className={styles.footerColTitle}>Contact</div>
               <ul className={styles.footerList}>
-                <li><a href="mailto:contact@solyb.fr">contact@solyb.fr</a></li>
+                <li><a href="mailto:solyb971@gmail.com">solyb971@gmail.com</a></li>
                 <li><span style={{ color: 'var(--rg-mu)', fontSize: '0.85rem' }}>Petit-Bourg · Guadeloupe 97170</span></li>
                 <li style={{ marginTop: '0.5rem' }}><a href="https://solyb.fr">solyb.fr →</a></li>
               </ul>
