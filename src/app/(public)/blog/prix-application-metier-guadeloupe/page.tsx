@@ -192,6 +192,17 @@ export default function PrixApplicationMetierPage() {
           <li><strong>Y a-t-il une formation et une période de rodage ?</strong> Le meilleur outil du monde échoue si l&rsquo;équipe ne se l&rsquo;approprie pas.</li>
         </ol>
 
+        <h2>Ce que ces questions changent, concrètement</h2>
+        <p>
+          Ces six questions ne sont pas théoriques&nbsp;: c&rsquo;est la structure même d&rsquo;un cadrage sérieux,
+          avant tout chiffrage. Un projet qui commence par comprendre vos processus réels — pas par un catalogue de
+          fonctionnalités — évite l&rsquo;essentiel des mauvaises surprises listées plus haut&nbsp;: devis flou, code
+          dont vous n&rsquo;êtes pas propriétaire, ou facture salée l&rsquo;année suivante parce que personne
+          n&rsquo;avait parlé maintenance. C&rsquo;est aussi ce cadrage qui permet de répondre honnêtement à la
+          question du début de cet article&nbsp;: parfois la bonne réponse est qu&rsquo;un outil existant suffit, et
+          le dire fait gagner du temps à tout le monde.
+        </p>
+
         <h2>Questions fréquentes</h2>
         <h3>Peut-on commencer petit et faire évoluer l&rsquo;application ?</h3>
         <p>
