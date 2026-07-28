@@ -64,8 +64,11 @@ export default function HomePage() {
         closes: '18:00'
       }
     ],
-    // sameAs (Facebook / LinkedIn) retiré temporairement : profils pas
-    // encore créés. À remettre dès que les pages existent (backlinks + E-E-A-T).
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=61591451834555',
+      'https://www.linkedin.com/company/solyb-digital/',
+      'https://g.page/r/CeCBHRj25YQIEBM',
+    ],
     description: 'Agence digitale en Guadeloupe. Création de sites web sur-mesure, applications métier, facturation électronique obligatoire 2026 et SaaS pour TPE/PME. Au service de toute la Guadeloupe.',
     areaServed: [
       { '@type': 'City', name: 'Petit-Bourg' },
@@ -140,6 +143,11 @@ export default function HomePage() {
     name: 'SolYB',
     url: 'https://solyb.fr',
     logo: 'https://solyb.fr/logo/syb-orange.png',
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=61591451834555',
+      'https://www.linkedin.com/company/solyb-digital/',
+      'https://g.page/r/CeCBHRj25YQIEBM',
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+590690426792',

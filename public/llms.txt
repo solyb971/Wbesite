@@ -33,9 +33,13 @@ SolYB est dirigée par Yacine Bouhassoun, développeur guadeloupéen. La sociét
 
 ## Articles de blog
 
+- [Combien coûte une application métier ? (guide des prix 2026)](https://solyb.fr/blog/prix-application-metier-guadeloupe): ordres de grandeur, quand le sur-mesure se justifie, comment lire un devis.
+- [Être visible sur Google en Guadeloupe](https://solyb.fr/blog/etre-visible-sur-google-guadeloupe): guide de la fiche d'établissement Google, gratuite et rentable.
+- [Restaurateurs en Guadeloupe : vos clients vous cherchent avant d'atterrir](https://solyb.fr/blog/restaurant-guadeloupe-clients-google): fiche Google, menu en ligne, avis pour capter touristes et croisiéristes.
+- [Mon site n'apparaît pas sur Google : les 7 vraies raisons](https://solyb.fr/blog/site-invisible-sur-google-raisons): indexation, contenu trop maigre, blocages techniques, vérifications gratuites.
+- [Facturation électronique 2026 en Guadeloupe](https://solyb.fr/blog/facturation-electronique-2026-guadeloupe): dates, entreprises concernées, TVA DOM, Chorus Pro, sanctions.
 - [Prix création site web en Guadeloupe (guide 2026)](https://solyb.fr/blog/prix-site-web-guadeloupe): fourchettes de prix par prestataire et pièges à éviter.
 - [Application web vs site web en Guadeloupe](https://solyb.fr/blog/application-web-vs-site-web-guadeloupe): comment choisir entre un site vitrine et une application sur-mesure.
-- [Facturation électronique 2026 en Guadeloupe](https://solyb.fr/blog/facturation-electronique-2026-guadeloupe): dates, entreprises concernées, TVA DOM, Chorus Pro, sanctions.
 
 ## Contact
 

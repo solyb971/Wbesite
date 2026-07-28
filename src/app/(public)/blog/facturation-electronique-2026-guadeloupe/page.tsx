@@ -162,6 +162,13 @@ export default function FacturationElectronique2026GuadeloupePage() {
           <strong> septembre 2027</strong>, ce sera à vous d&rsquo;émettre les vôtres dans le bon format.
         </p>
         <p>
+          Ce calendrier est fixé par la direction générale des Finances publiques&nbsp;: le détail officiel est
+          consultable sur{' '}
+          <a href="https://www.economie.gouv.fr/entreprises/facturation-electronique" target="_blank" rel="noopener noreferrer">
+            economie.gouv.fr
+          </a>.
+        </p>
+        <p>
           Autrement dit : l&rsquo;échéance qui semble lointaine (2027) cache une première marche dès 2026. Et l&rsquo;expérience
           des réformes précédentes le montre — ceux qui s&rsquo;y prennent au dernier moment paient plus cher, choisissent
           dans l&rsquo;urgence, et font des erreurs. Anticiper, ici, c&rsquo;est simplement s&rsquo;éviter du stress.
@@ -286,7 +293,9 @@ export default function FacturationElectronique2026GuadeloupePage() {
               <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--syb-rust)' }} /><span><strong>250 €</strong> par transmission d&rsquo;e-reporting manquante ou erronée, également plafonnée à 15 000 € par an ;</span></li>
               <li className="flex items-start gap-2.5"><span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--syb-rust)' }} /><span><strong>500 €</strong>, puis <strong>1 000 € par trimestre</strong> après mise en demeure, si vous n&rsquo;avez aucune solution pour recevoir vos factures dès septembre 2026.</span></li>
             </ul>
-            <p className="mt-3 text-sm">Ces montants restent modestes à l&rsquo;unité, mais ils s&rsquo;additionnent vite pour un commerce qui émet des dizaines de factures par mois.</p>
+            <p className="mt-3 text-sm">Ces montants restent modestes à l&rsquo;unité, mais ils s&rsquo;additionnent vite pour un commerce qui émet des dizaines de factures par mois. Barème détaillé sur le{' '}
+              <a href="https://www.impots.gouv.fr/facturation-electronique" target="_blank" rel="noopener noreferrer">site officiel des impôts</a>.
+            </p>
           </div>
         </div>
 
