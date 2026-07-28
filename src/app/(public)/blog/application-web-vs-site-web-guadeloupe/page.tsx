@@ -131,7 +131,11 @@ export default function ApplicationVsSiteWebPage() {
         <p>
           Un <strong>site web classique</strong> (ou site vitrine) est avant tout <strong>informatif</strong>. Il
           présente votre entreprise, vos services, vos coordonnées, et permet aux visiteurs de vous contacter. Son but :
-          crédibiliser votre activité et vous rendre trouvable.
+          crédibiliser votre activité et vous rendre trouvable. Pour une définition technique plus poussée de ce qui
+          distingue un site d&rsquo;une application, la documentation de référence des développeurs web —{' '}
+          <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Getting_started/Environment_setup/Web_applications" target="_blank" rel="noopener noreferrer">
+            MDN Web Docs
+          </a> — reste la source la plus citée du secteur.
         </p>
         <ArticleCallout accent={SITE}>
           <p className="font-display font-bold mb-4" style={{ fontSize: '18px', color: 'var(--syb-ink)' }}>Exemples typiques en Guadeloupe</p>

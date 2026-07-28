@@ -69,7 +69,10 @@ export default function RestaurantGuadeloupePage() {
       >
         <p className="lead">
           La Guadeloupe accueille chaque année <strong>plus d&rsquo;un million de visiteurs</strong> — touristes de
-          séjour et croisiéristes. Et une grande partie d&rsquo;entre eux choisit ses restaurants <strong>avant même
+          séjour et croisiéristes, selon les chiffres de fréquentation publiés par le{' '}
+          <a href="https://www.guadeloupe-tourisme.com/" target="_blank" rel="noopener noreferrer">
+            Comité du Tourisme des Îles de Guadeloupe
+          </a>. Et une grande partie d&rsquo;entre eux choisit ses restaurants <strong>avant même
           d&rsquo;avoir posé le pied sur l&rsquo;île</strong> : depuis leur salon, trois semaines avant le vol, ou
           depuis le pont du bateau, une heure avant l&rsquo;escale. Ce moment-là se joue sur Google et Google Maps.
           Voici comment il fonctionne — et comment ne pas le laisser passer.
