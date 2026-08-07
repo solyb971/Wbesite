@@ -44,4 +44,9 @@ export const blogTags: Record<string, string[]> = {
     'Calendrier unique',
     'Acomptes en ligne',
   ],
+  'etre-visible-chatgpt-google-guadeloupe': [
+    'SEO + GEO',
+    'Sources & données structurées',
+    'Contenu prêt pour l’IA',
+  ],
 }

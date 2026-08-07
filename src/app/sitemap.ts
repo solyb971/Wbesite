@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog — index + articles
   const blog: MetadataRoute.Sitemap = [
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/blog/etre-visible-chatgpt-google-guadeloupe`,   lastModified: new Date('2026-08-01'), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog/prix-application-metier-guadeloupe`,       lastModified: new Date('2026-07-24'), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog/etre-visible-sur-google-guadeloupe`,       lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog/site-invisible-sur-google-raisons`,        lastModified: new Date('2026-07-15'), changeFrequency: 'monthly', priority: 0.7 },

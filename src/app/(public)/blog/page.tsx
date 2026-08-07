@@ -22,6 +22,16 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'etre-visible-chatgpt-google-guadeloupe',
+    title: 'SEO et GEO : être visible sur Google ET sur ChatGPT en 2026',
+    excerpt: 'Une partie de vos clients cherche désormais via ChatGPT, Perplexity ou Gemini. Ce qui change avec le GEO (Generative Engine Optimization), et comment s’y préparer sans tout reconstruire.',
+    date: '2026-08-01',
+    readTime: '9 min',
+    category: 'Guides',
+    accent: '#0E7C6B',     // teal caraïbe — couverture/icônes
+    textAccent: '#0E7C6B', // teal (déjà AA sur crème : 4,57)
+  },
+  {
     slug: 'prix-application-metier-guadeloupe',
     title: 'Combien coûte une application métier ? Le guide des prix 2026',
     excerpt: 'De l’outil ciblé au système complet : ce qui fait vraiment le prix d’un logiciel sur-mesure, quand un logiciel existant suffit, et comment lire un devis.',
