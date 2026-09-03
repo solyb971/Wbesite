@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type QRCodeStyling from 'qr-code-styling'
-import { Download } from 'lucide-react'
+import { Download, Share2 } from 'lucide-react'
 
 interface StyledQRCodeProps {
   url: string
@@ -17,6 +17,11 @@ interface StyledQRCodeProps {
 export default function StyledQRCode({ url, size = 260 }: StyledQRCodeProps) {
   const ref = useRef<HTMLDivElement>(null)
   const qrRef = useRef<QRCodeStyling | null>(null)
+  const [canShare, setCanShare] = useState(false)
+
+  useEffect(() => {
+    setCanShare(typeof navigator !== 'undefined' && typeof navigator.share === 'function')
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -46,19 +51,38 @@ export default function StyledQRCode({ url, size = 260 }: StyledQRCodeProps) {
     return () => { cancelled = true }
   }, [url, size])
 
-  const handleDownload = () => {
-    qrRef.current?.download({ name: 'solyb-qr-code', extension: 'png' })
+  // iOS Safari n'honore pas l'attribut download sur les liens blob : un clic
+  // classique via .download() n'y déclenche rien. On passe par le partage
+  // natif (permet aussi d'envoyer directement par WhatsApp/mail) quand il
+  // est disponible, et on retombe sur le telechargement direct sinon.
+  const handleClick = async () => {
+    if (!qrRef.current) return
+
+    try {
+      const raw = await qrRef.current.getRawData('png')
+      if (raw instanceof Blob) {
+        const file = new File([raw], 'solyb-qr-code.png', { type: 'image/png' })
+        if (navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ files: [file], title: 'SolYB' })
+          return
+        }
+      }
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') return
+    }
+
+    qrRef.current.download({ name: 'solyb-qr-code', extension: 'png' })
   }
 
   return (
     <div className="flex flex-col items-center gap-4">
       <div ref={ref} className="rounded-2xl overflow-hidden shadow-lg" style={{ width: size, height: size }} />
       <button
-        onClick={handleDownload}
+        onClick={handleClick}
         className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#1C1C26] hover:bg-[#2A2A38] text-[#F0EDE8] border border-[#2A2A38] rounded-xl font-semibold text-sm transition-all"
       >
-        <Download className="w-4 h-4" />
-        Télécharger le QR code
+        {canShare ? <Share2 className="w-4 h-4" /> : <Download className="w-4 h-4" />}
+        {canShare ? 'Partager le QR code' : 'Télécharger le QR code'}
       </button>
     </div>
   )
