@@ -34,6 +34,14 @@ const nextConfig: NextConfig = {
         destination: '/services',
         permanent: true,
       },
+      // Article location voiture/gîte dépublié (septembre 2026) → redirigé vers
+      // l'index du blog. L'URL répondait 200 en production, la redirection
+      // évite une 404 pour les liens existants et préserve le jus SEO.
+      {
+        source: '/blog/location-voiture-gite-reservation-en-ligne',
+        destination: '/blog',
+        permanent: true,
+      },
     ]
   },
 
