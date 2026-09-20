@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Ce qui fait vraiment le prix d’un logiciel sur-mesure : fonctionnalités, utilisateurs, intégrations. Et comment lire un devis sans se faire avoir.',
     url: 'https://solyb.fr/blog/prix-application-metier-guadeloupe',
     type: 'article',
-    publishedTime: '2026-07-29',
+    publishedTime: '2026-07-24',
     authors: ['Yacine Bouhassoun'],
   },
 }
@@ -42,8 +42,8 @@ export default function PrixApplicationMetierPage() {
       logo: { '@type': 'ImageObject', url: 'https://solyb.fr/logo/syb-orange.png' },
       address: { '@type': 'PostalAddress', addressLocality: 'Petit-Bourg', addressRegion: 'Guadeloupe', addressCountry: 'GP' },
     },
-    datePublished: '2026-07-29',
-    dateModified: '2026-07-29',
+    datePublished: '2026-07-24',
+    dateModified: '2026-07-24',
     mainEntityOfPage: 'https://solyb.fr/blog/prix-application-metier-guadeloupe',
   }
 
@@ -84,7 +84,7 @@ export default function PrixApplicationMetierPage() {
         accent={ACCENT}
         accentInk={ACCENT_INK}
         title="Combien coûte une application métier ? Le guide des prix 2026"
-        date="2026-07-29"
+        date="2026-07-24"
         readTime="10 min"
         crumbLabel="Prix application métier"
         crumbHref="/blog/prix-application-metier-guadeloupe"
@@ -191,6 +191,17 @@ export default function PrixApplicationMetierPage() {
           <li><strong>Où sont hébergées les données, et qui les sauvegarde ?</strong> Vos données métier sont vitales ; leur sauvegarde ne doit pas être un post-scriptum.</li>
           <li><strong>Y a-t-il une formation et une période de rodage ?</strong> Le meilleur outil du monde échoue si l&rsquo;équipe ne se l&rsquo;approprie pas.</li>
         </ol>
+
+        <h2>Ce que ces questions changent, concrètement</h2>
+        <p>
+          Ces six questions ne sont pas théoriques&nbsp;: c&rsquo;est la structure même d&rsquo;un cadrage sérieux,
+          avant tout chiffrage. Un projet qui commence par comprendre vos processus réels — pas par un catalogue de
+          fonctionnalités — évite l&rsquo;essentiel des mauvaises surprises listées plus haut&nbsp;: devis flou, code
+          dont vous n&rsquo;êtes pas propriétaire, ou facture salée l&rsquo;année suivante parce que personne
+          n&rsquo;avait parlé maintenance. C&rsquo;est aussi ce cadrage qui permet de répondre honnêtement à la
+          question du début de cet article&nbsp;: parfois la bonne réponse est qu&rsquo;un outil existant suffit, et
+          le dire fait gagner du temps à tout le monde.
+        </p>
 
         <h2>Questions fréquentes</h2>
         <h3>Peut-on commencer petit et faire évoluer l&rsquo;application ?</h3>

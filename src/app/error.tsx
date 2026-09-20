@@ -52,8 +52,8 @@ export default function Error({
 
         <p className="text-center text-sm text-[#8B8B9E] mt-6">
           Si le problème persiste :{' '}
-          <a href="mailto:contact@solyb.fr" className="text-coral hover:underline font-semibold">
-            contact@solyb.fr
+          <a href="mailto:solyb971@gmail.com" className="text-coral hover:underline font-semibold">
+            solyb971@gmail.com
           </a>
         </p>
       </div>

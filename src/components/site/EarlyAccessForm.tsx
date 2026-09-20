@@ -131,7 +131,7 @@ export default function EarlyAccessForm({
       </button>
       {status === 'error' && (
         <p style={{ color: '#F87171', fontSize: 13, textAlign: 'center' }}>
-          Une erreur est survenue. Réessayez ou écrivez à contact@solyb.fr.
+          Une erreur est survenue. Réessayez ou écrivez à solyb971@gmail.com.
         </p>
       )}
       <p style={{ color: theme.muted, fontSize: 12, textAlign: 'center', fontFamily: theme.fontMono, lineHeight: 1.5 }}>

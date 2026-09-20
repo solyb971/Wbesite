@@ -50,7 +50,7 @@ export default function CGVPage() {
           <li>TVA intracommunautaire : FR64102699220</li>
           <li>
             Contact :{' '}
-            <a href="mailto:contact@solyb.fr" style={rust}>contact@solyb.fr</a>{' '}
+            <a href="mailto:solyb971@gmail.com" style={rust}>solyb971@gmail.com</a>{' '}
             — <a href="tel:+590690426792" style={rust}>+590 690 42 67 92</a>
           </li>
         </ul>
@@ -213,7 +213,7 @@ export default function CGVPage() {
       <LegalSection title="18. Réclamation et médiation">
         <p>
           Toute réclamation peut être adressée à{' '}
-          <a href="mailto:contact@solyb.fr" style={rust}>contact@solyb.fr</a>. Conformément à
+          <a href="mailto:solyb971@gmail.com" style={rust}>solyb971@gmail.com</a>. Conformément à
           l&apos;article L612-1 du Code de la consommation, le Client consommateur peut recourir
           gratuitement à un médiateur de la consommation : [nom et coordonnées du médiateur à désigner].
         </p>

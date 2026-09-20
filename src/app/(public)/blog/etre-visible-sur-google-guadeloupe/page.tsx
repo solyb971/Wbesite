@@ -140,7 +140,9 @@ export default function EtreVisibleSurGooglePage() {
         <h2>Étape 2 — Remplir chaque champ, sans exception</h2>
         <p>
           Google favorise les fiches <strong>complètes</strong>. Une fiche à moitié remplie, c&rsquo;est une fiche que
-          Google hésite à montrer. Passez chaque section en revue&nbsp;:
+          Google hésite à montrer — et l&rsquo;écart n&rsquo;est pas anecdotique&nbsp;: selon les données de Google, les
+          établissements dont la fiche est complète sont <strong>2,7 fois plus susceptibles</strong> d&rsquo;être perçus
+          comme fiables par les internautes. Passez chaque section en revue&nbsp;:
         </p>
         <ul>
           <li><strong>La catégorie principale</strong> — c&rsquo;est le champ le plus important pour votre positionnement. Choisissez la plus précise («&nbsp;Restaurant créole&nbsp;» plutôt que «&nbsp;Restaurant&nbsp;»), puis ajoutez des catégories secondaires si pertinent.</li>
@@ -222,10 +224,13 @@ export default function EtreVisibleSurGooglePage() {
         </p>
         <h3>Ma fiche existe mais n&rsquo;apparaît pas dans les trois premiers résultats. Pourquoi ?</h3>
         <p>
-          Le classement local dépend de trois facteurs : la <strong>pertinence</strong> (votre catégorie et vos
-          informations correspondent à la recherche), la <strong>distance</strong> (vous êtes proche de la personne qui
-          cherche), et la <strong>notoriété</strong> (avis, complétude, ancienneté de la fiche). Vous ne pouvez pas
-          jouer sur la distance — mais la pertinence et la notoriété se travaillent avec tout ce qui précède.
+          Le classement local dépend de trois facteurs, décrits par Google lui-même dans son
+          {' '}<a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener noreferrer">
+            centre d&rsquo;aide Google Business Profile
+          </a> : la <strong>pertinence</strong> (votre catégorie et vos informations correspondent à la recherche), la{' '}
+          <strong>distance</strong> (vous êtes proche de la personne qui cherche), et la <strong>notoriété</strong>{' '}
+          (avis, complétude, ancienneté de la fiche). Vous ne pouvez pas jouer sur la distance — mais la pertinence et
+          la notoriété se travaillent avec tout ce qui précède.
         </p>
 
         <h2>En résumé</h2>

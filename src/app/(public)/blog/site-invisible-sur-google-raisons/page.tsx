@@ -122,7 +122,11 @@ export default function SiteInvisibleSurGooglePage() {
           <strong>Ce que vous pouvez faire</strong> : déclarer votre site dans <strong>Google Search Console</strong>
           (l&rsquo;outil gratuit de Google pour les propriétaires de sites), y soumettre votre sitemap, et utiliser
           «&nbsp;Inspection de l&rsquo;URL → Demander une indexation&nbsp;» sur vos pages principales. Cela
-          n&rsquo;élimine pas l&rsquo;attente, mais cela la raccourcit souvent nettement.
+          n&rsquo;élimine pas l&rsquo;attente, mais cela la raccourcit souvent nettement. Le fonctionnement exact de
+          l&rsquo;exploration et de l&rsquo;indexation est documenté par Google lui-même dans son{' '}
+          <a href="https://developers.google.com/search/docs/fundamentals/how-search-works" target="_blank" rel="noopener noreferrer">
+            guide officiel du fonctionnement de la recherche
+          </a>.
         </p>
 
         <h2>Raison 2 — Votre site dit lui-même à Google de ne pas venir</h2>

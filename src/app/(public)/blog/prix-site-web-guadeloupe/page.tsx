@@ -106,6 +106,14 @@ export default function PrixSiteWebGuadeloupePage() {
 
         <h2>Combien coûte vraiment un site web en Guadeloupe ?</h2>
         <p>
+          Avant les chiffres, un constat national qui touche aussi les TPE guadeloupéennes&nbsp;: une part encore
+          importante des très petites entreprises françaises n&rsquo;a pas de site web, un retard régulièrement
+          documenté par{' '}
+          <a href="https://www.francenum.gouv.fr/" target="_blank" rel="noopener noreferrer">France Num</a>, le
+          programme public d&rsquo;accompagnement à la transformation numérique des TPE/PME. Un site professionnel
+          bien pensé reste donc, pour beaucoup, un vrai avantage concurrentiel plutôt qu&rsquo;une simple formalité.
+        </p>
+        <p>
           Commençons par une réponse honnête : <strong>«&nbsp;ça dépend&nbsp;»</strong>. Non pas pour éluder la question,
           mais parce qu&rsquo;un «&nbsp;site web&nbsp;» peut désigner une simple carte de visite en ligne comme une
           boutique complète avec paiement. Cela dit, on peut donner des repères clairs. Pour une TPE guadeloupéenne
