@@ -39,9 +39,4 @@ export const blogTags: Record<string, string[]> = {
     'Sur-mesure ou pas ?',
     'Lire un devis',
   ],
-  'location-voiture-gite-reservation-en-ligne': [
-    'Plateformes & commissions',
-    'Calendrier unique',
-    'Acomptes en ligne',
-  ],
 }
