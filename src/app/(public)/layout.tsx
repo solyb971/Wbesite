@@ -14,7 +14,6 @@ export default function PublicLayout({
       <ScrollProgress />
 
       <div className="sticky top-0 z-50" data-sticky-header>
-        {/* <UrgencyBanner /> */}
         <Navigation />
       </div>
       {children}

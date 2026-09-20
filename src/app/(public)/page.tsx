@@ -173,7 +173,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <main className="min-h-screen bg-[#0A0A0F]">
+      <main className="min-h-screen">
         <ScrollRevealInit />
         <Hero />
         <Services />
