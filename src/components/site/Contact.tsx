@@ -85,7 +85,7 @@ export default function Contact() {
                   <input id="contact-phone" name="phone" type="tel" autoComplete="tel" placeholder="0690 00 00 00" />
                 </div>
               </div>
-              <div className={s.formGrid}>
+              <div className={`${s.formGrid} ${s.formGap}`}>
                 <div className={s.field}>
                   <label htmlFor="contact-email">Email</label>
                   <input id="contact-email" name="email" type="email" required autoComplete="email" placeholder="vous@exemple.fr" />
@@ -102,7 +102,7 @@ export default function Contact() {
                   </select>
                 </div>
               </div>
-              <div className={s.field}>
+              <div className={`${s.field} ${s.formGap}`}>
                 <label htmlFor="contact-need">Votre besoin</label>
                 <textarea
                   id="contact-need"

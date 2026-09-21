@@ -50,10 +50,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer leading-[1.6]">
       <div className="max-w-[1180px] mx-auto px-6 min-[720px]:px-10 py-12">
         <div className="flex flex-wrap justify-between gap-8">
-          <div className="max-w-[280px]">
+          <div className="max-w-[260px]">
             <Link href="/" className="flex items-center gap-2.5 mb-2.5 w-fit rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[var(--syb-rust-light)]" aria-label="SolYB — accueil">
               <Image src="/logo/syb-orange.png" alt="" width={160} height={160} className="h-8 w-auto" />
               <span aria-hidden className="font-display font-black leading-none text-[21px]" style={{ color: "var(--syb-cream)" }}>
@@ -77,7 +77,7 @@ export default function Footer() {
           <nav aria-label="Pied de page" className="flex flex-wrap gap-12">
             {columns.map((col) => (
               <div key={col.title}>
-                <p className="text-[11.5px] font-bold uppercase tracking-[0.06em] mb-3.5" style={muted}>
+                <p className="text-[11.5px] font-bold uppercase tracking-[0.06em] mt-[19px] mb-3.5" style={muted}>
                   {col.title}
                 </p>
                 <ul className="flex flex-col gap-2.5">

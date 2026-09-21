@@ -26,7 +26,10 @@ const theme = {
   home: {
     bar: { background: "rgba(14,13,11,0.62)", borderColor: "var(--syb-border-dark)", backdropFilter: "blur(12px)" },
     height: "h-[76px]",
+    logo: "h-[30px] w-auto",
     wordmark: "var(--syb-cream)",
+    tracking: "normal",
+    leading: "leading-[1.6]",
     link: "text-[14.5px] font-medium",
     idle: "text-[var(--syb-on-dark-muted)] hover:text-[var(--syb-cream)]",
     active: "text-[var(--syb-cream)]",
@@ -37,7 +40,10 @@ const theme = {
   page: {
     bar: { background: "rgba(245,242,237,0.93)", borderColor: "#DDD5C8", backdropFilter: "blur(14px)" },
     height: "h-16",
+    logo: "h-11 w-auto",
     wordmark: "var(--syb-ink)",
+    tracking: "-0.5px",
+    leading: "",
     link: "text-[13px] font-normal",
     idle: "text-[#6E665C] hover:text-[#0E0D0B]",
     active: "text-[#0E0D0B]",
@@ -128,7 +134,7 @@ export default function Navigation() {
     <nav
       ref={navRef}
       aria-label="Navigation principale"
-      className="w-full border-b"
+      className={`w-full border-b ${t.leading}`}
       style={{ ...t.bar, transition: "transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)" }}
     >
       <div className="max-w-[1180px] mx-auto px-6 min-[720px]:px-10">
@@ -141,13 +147,13 @@ export default function Navigation() {
               alt=""
               width={160}
               height={160}
-              className="h-10 w-auto"
+              className={t.logo}
               priority
             />
             <span
               aria-hidden
               className="font-display font-black leading-none"
-              style={{ fontSize: "21px", letterSpacing: "-0.5px", color: t.wordmark }}
+              style={{ fontSize: "21px", letterSpacing: t.tracking, color: t.wordmark }}
             >
               SolYB
             </span>

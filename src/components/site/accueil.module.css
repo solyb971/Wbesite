@@ -60,8 +60,13 @@
 .sectionFlush { padding-top: 0; }
 
 /* ── Typographie commune ── */
+/* En bloc (flex) et non inline-flex : la maquette, servie sans doctype, est
+   rendue en mode quirks où une ligne réduite à ce sur-titre ne réserve pas la
+   hauteur de ligne du parent. En mode standard, un inline-flex la réserverait
+   et descendrait de 8 px. */
 .eyebrow {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 8px;
   font-size: 12px;
@@ -129,7 +134,7 @@
   font-family: inherit;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.6;
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -160,6 +165,8 @@
   box-shadow: 0 2px 4px rgba(14, 13, 11, 0.08), 0 10px 22px -8px rgba(196, 71, 42, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 .btnPrimary:active { transform: translateY(0); }
+/* Un <button> garde la hauteur de ligne « normal » du navigateur, comme dans la maquette. */
+button.btn { line-height: normal; }
 .btnPrimary:disabled { opacity: 0.6; cursor: wait; }
 .btnSmall { padding: 11px 20px; font-size: 14px; }
 .btnGhost {
@@ -168,6 +175,10 @@
   background: none;
 }
 .btnGhost span { color: var(--syb-rust-light); }
+/* DM Sans n'a pas la flèche « → » : on la prend dans la police système,
+   comme la maquette, plutôt que dans la police de substitution de next/font. */
+.btnGhost span,
+.cardLink span { font-family: system-ui, sans-serif; }
 .btnBlock { width: 100%; }
 
 /* ── Panneaux clairs ── */
@@ -207,7 +218,7 @@
 /* Le H1 n'est jamais animé : il s'affiche au premier rendu (LCP). */
 .h1 {
   font-family: var(--font-fraunces), Georgia, serif;
-  font-size: clamp(2.5rem, 6.6vw, 6rem);
+  font-size: clamp(2.5rem, 6.2vw, 5.2rem);
   font-weight: 900;
   line-height: 1.02;
   letter-spacing: -0.02em;
@@ -317,7 +328,7 @@
 .dotSoon { background: var(--syb-gold); box-shadow: 0 0 0 3px rgba(184, 118, 10, 0.18); }
 .sub {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--syb-stone);
@@ -325,8 +336,7 @@
 .realBody h3 {
   font-family: inherit;
   font-size: 19px;
-  font-weight: 700;
-  line-height: 1.25;
+  font-weight: 600;
   color: var(--syb-ink);
 }
 .desc {
@@ -343,7 +353,7 @@
   align-items: center;
   gap: 6px;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--syb-rust);
   text-decoration: none;
 }
@@ -427,7 +437,7 @@
 .maintenance h3 {
   margin-top: 6px;
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--syb-ink);
 }
 .maintenanceDesc { margin-top: 4px; max-width: 480px; font-size: 13.5px; color: var(--syb-stone); }
@@ -440,8 +450,7 @@
   overflow: hidden;
   background: var(--syb-border);
 }
-@media (min-width: 720px) { .engageGrid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1000px) { .engageGrid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 720px) { .engageGrid { grid-template-columns: repeat(4, 1fr); } }
 .engageItem {
   display: flex;
   flex-direction: column;
@@ -486,8 +495,7 @@
   margin-top: 14px;
   font-family: var(--font-fraunces), Georgia, serif;
   font-size: clamp(1.7rem, 3vw, 2.3rem);
-  font-weight: 900;
-  line-height: 1.12;
+  font-weight: 700;
   color: var(--syb-cream);
   text-wrap: balance;
 }
@@ -523,7 +531,7 @@
   list-style: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--syb-ink);
 }
 .faqItem summary::-webkit-details-marker { display: none; }
@@ -552,11 +560,9 @@
 }
 @media (min-width: 900px) { .contactShell { grid-template-columns: 0.9fr 1.1fr; padding: 56px; } }
 .contactInfo h2 {
-  margin-top: 14px;
   font-family: var(--font-fraunces), Georgia, serif;
   font-size: clamp(1.9rem, 3.4vw, 2.5rem);
   font-weight: 900;
-  line-height: 1.08;
   color: var(--syb-ink);
 }
 .contactInfo h2 em { font-style: italic; font-weight: 300; color: var(--syb-rust); }
@@ -573,11 +579,15 @@
 }
 .badgeValue { margin-top: 2px; font-size: 14.5px; font-weight: 500; color: var(--syb-ink); }
 
-.form { display: flex; flex-direction: column; gap: 14px; }
+/* Espacements repris de la maquette : 14 px entre les lignes de champs,
+   4 px avant le consentement, 6 px avant le bouton. */
+/* margin-bottom : la maquette (mode quirks) donne 1em de marge basse aux <form>. */
+.form { display: flex; flex-direction: column; margin-bottom: 1em; }
+.formGap { margin-top: 14px; }
 .formGrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
 @media (min-width: 560px) { .formGrid { grid-template-columns: 1fr 1fr; } }
 .field { display: flex; flex-direction: column; gap: 7px; }
-.field label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; color: var(--syb-stone); }
+.field label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--syb-stone); }
 .field input,
 .field select,
 .field textarea {
@@ -590,6 +600,7 @@
   font-family: inherit;
   font-size: 14.5px;
   font-weight: 400;
+  line-height: normal;
 }
 .field select { cursor: pointer; }
 .field input::placeholder,
@@ -606,7 +617,7 @@
 .consent input { margin-top: 3px; accent-color: var(--syb-rust); flex-shrink: 0; }
 .consent a { color: var(--syb-rust-ink); text-decoration: underline; }
 .form .btnPrimary { margin-top: 6px; align-self: flex-start; }
-.formError { font-size: 13px; color: var(--syb-rust-ink); }
+.formError { margin-top: 8px; font-size: 13px; color: var(--syb-rust-ink); }
 .success { padding: 40px 24px; text-align: center; }
 .success h3 { margin-top: 10px; font-family: var(--font-fraunces), Georgia, serif; font-size: 22px; font-weight: 600; }
 .success p { margin-top: 6px; font-size: 14.5px; color: var(--syb-stone); }
