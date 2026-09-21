@@ -47,11 +47,13 @@ export default function About() {
             constat revenait sans cesse&nbsp;: des professionnels compétents, sérieux, reconnus sur le
             terrain — mais invisibles en ligne. Un exemple m&apos;a marqué&nbsp;: un restaurant sur la
             plage de Deshaies, plein en haute saison, quasiment vide en basse saison, au point que les
-            gérants ont fini par revendre. Les repreneurs, eux, ont fait quelques travaux, rouvert dès
-            la basse saison, et investi dans un vrai site bien référencé. Aujourd&apos;hui, ils
-            tournent quasiment complets midi et soir même en basse saison, là où d&apos;autres
-            établissements de la même plage ne font pas 40 couverts sur la semaine. Même emplacement,
-            même clientèle potentielle.{' '}
+            gérants ont fini par revendre.
+          </p>
+          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+            Les repreneurs, eux, ont fait quelques travaux, rouvert dès la basse saison, et investi
+            dans un vrai site bien référencé. Aujourd&apos;hui, ils affichent presque complet midi et
+            soir même en basse saison, là où d&apos;autres établissements de la même plage ne font pas
+            40 couverts sur la semaine. Même emplacement, même clientèle potentielle.{' '}
             <span style={{ color: 'var(--syb-ink)' }}>La différence&nbsp;: ils existent sur Google.</span>
           </p>
           <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>

@@ -74,7 +74,7 @@ export default function Hero() {
 
         {/* Réassurance */}
         <p className="mt-6 text-xs font-light" style={{ color: 'rgba(255,255,255,0.45)', animation: 'fadeUp 0.7s 1s ease both' }}>
-          Devis gratuit en 24h · Sans engagement · 1 an d&apos;hébergement inclus
+          Devis gratuit sous 24h · Sans engagement · 1 an d&apos;hébergement inclus
         </p>
       </div>
     </section>

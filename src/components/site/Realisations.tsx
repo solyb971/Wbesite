@@ -47,7 +47,7 @@ const tools = [
     textAccent: "#1F6E73",      // pétrole assombri pour texte (AA sur crème)
     preview: "/factugp/demo/demo-02-dashboard.jpeg",  // capture produit réelle
     tagline: "Facturation électronique conforme 2026",
-    description: "À partir de septembre 2026, toutes les entreprises devront facturer électroniquement. FactuGP gère votre conformité à votre place.",
+    description: "Dès septembre 2026, toutes les entreprises devront pouvoir recevoir des factures électroniques — et les TPE/PME en émettre dès 2027. FactuGP gère votre conformité à votre place.",
     status: "Disponible sept. 2026",
     statusColor: "#B8760A",   // pastille
     statusText: "#96600A",    // texte statut (AA sur crème)

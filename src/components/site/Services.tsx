@@ -8,7 +8,7 @@ const services = [
     featured: true,
     accent: "var(--syb-rust)",
     Icon: Globe,
-    description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour cibler votre région et étendre votre identité.",
+    description: "Un site pensé pour votre clientèle locale. Rapide, lisible sur mobile, référencé pour être trouvé par les clients de votre région.",
     price: "Dès 599€",
     features: [
       "Site 5 pages, adapté au mobile",
@@ -75,7 +75,7 @@ export default function Services() {
             </h2>
           </div>
           <p className="text-sm font-light leading-relaxed max-w-xs" style={{ color: '#736B5F' }}>
-            Chaque projet repart de zéro. On part de vous, de votre marché, de votre clientèle et de votre logique métier pour avoir la solution la plus optimisée possible à vos besoins.
+            Chaque projet repart de zéro. On part de vous — votre marché, votre clientèle, votre logique métier — pour construire la solution la plus juste pour votre activité.
           </p>
         </div>
 

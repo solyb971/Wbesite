@@ -100,7 +100,7 @@ export default function Contact() {
               <div className="rounded-xl p-10 text-center" style={{ background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}>
                 <div className="text-4xl mb-4">✓</div>
                 <h3 className="font-display font-bold text-xl mb-2" style={{ color: '#0E0D0B' }}>Demande envoyée !</h3>
-                <p className="text-sm font-light" style={{ color: '#736B5F' }}>Je vous recontacte sous 24h maximum.</p>
+                <p className="text-sm font-light" style={{ color: '#736B5F' }}>On vous recontacte sous 24h maximum.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
