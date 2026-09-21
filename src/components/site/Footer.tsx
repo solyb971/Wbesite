@@ -5,110 +5,110 @@ const WHATSAPP_URL =
   "https://wa.me/590690426792?text=" +
   encodeURIComponent("Bonjour ! Je souhaite des informations sur vos services.")
 
+const columns = [
+  {
+    title: "Services",
+    links: [
+      { href: "/#services", label: "Site vitrine" },
+      { href: "/#services", label: "E-commerce" },
+      { href: "/#services", label: "Application métier" },
+      { href: "/#services", label: "Maintenance" },
+    ],
+  },
+  {
+    title: "SolYB",
+    links: [
+      { href: "/#apropos", label: "L'histoire" },
+      { href: "/#realisations", label: "Nos projets" },
+      { href: "/blog", label: "Blog" },
+      { href: "/#faq", label: "FAQ" },
+      { href: "/#contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Outils maison",
+    links: [
+      { href: "/resagp", label: "ResaGP" },
+      { href: "/facturation-electronique", label: "FactuGP" },
+    ],
+  },
+]
+
+const legalLinks = [
+  { href: "/mentions-legales", label: "Mentions légales" },
+  { href: "/confidentialite", label: "Politique de confidentialité" },
+  { href: "/cgv", label: "CGV" },
+]
+
+const muted = { color: "var(--syb-on-dark-muted)" }
+const linkClass =
+  "text-[13.5px] text-[var(--syb-on-dark-muted)] transition-colors hover:text-[var(--syb-cream)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[var(--syb-rust-light)] rounded-sm"
+
+/* Fond ink sur toutes les pages ; transparent sur l'accueil, où il se pose
+   sur le canevas (voir .site-footer dans globals.css). */
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const navLinks = [
-    { href: "/#services", label: "Services" },
-    { href: "/#tarifs", label: "Nos tarifs" },
-    { href: "/#realisations", label: "Nos projets" },
-    { href: "/#apropos", label: "L'histoire" },
-    { href: "/blog", label: "Blog" },
-  ]
-
-  const legalLinks = [
-    { href: "/mentions-legales", label: "Mentions légales" },
-    { href: "/confidentialite", label: "Confidentialité" },
-    { href: "/cgv", label: "CGV" },
-  ]
-
   return (
-    <footer style={{ background: '#0E0D0B', borderTop: '0.5px solid #1a1814' }}>
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-
-          {/* Marque + contact */}
-          <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/logo/syb-white.png" alt="Logo SolYB — agence digitale en Guadeloupe" width={160} height={160} className="h-9 w-auto" />
-              <span aria-hidden="true" className="font-display font-black leading-none" style={{ fontSize: '20px', letterSpacing: '-0.5px', color: '#F0EDE8' }}>
+    <footer className="site-footer">
+      <div className="max-w-[1180px] mx-auto px-6 min-[720px]:px-10 py-12">
+        <div className="flex flex-wrap justify-between gap-8">
+          <div className="max-w-[280px]">
+            <Link href="/" className="flex items-center gap-2.5 mb-2.5 w-fit rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[var(--syb-rust-light)]" aria-label="SolYB — accueil">
+              <Image src="/logo/syb-orange.png" alt="" width={160} height={160} className="h-8 w-auto" />
+              <span aria-hidden className="font-display font-black leading-none text-[21px]" style={{ color: "var(--syb-cream)" }}>
                 SolYB
               </span>
-            </div>
-            <p className="text-sm font-light mb-5" style={{ color: '#B0A89E', lineHeight: 1.6 }}>
-              Agence digitale · Guadeloupe 971
+            </Link>
+            <p className="text-[13.5px] leading-relaxed" style={muted}>
+              Fait en Guadeloupe. Pensé pour durer. Agence digitale basée à Petit-Bourg.
             </p>
-            <div className="flex flex-col gap-2 text-sm font-light">
-              <a href="mailto:solyb971@gmail.com" className="transition-colors hover:text-white" style={{ color: '#B0A89E' }}>
+            <div className="flex flex-col gap-1.5 mt-4">
+              <a href="mailto:solyb971@gmail.com" className={linkClass}>
                 solyb971@gmail.com
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-white"
-                style={{ color: '#B0A89E' }}
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
-                </svg>
-                +590 690 42 67 92
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                WhatsApp · +590 690 42 67 92
+                <span className="sr-only"> (nouvel onglet)</span>
               </a>
             </div>
           </div>
 
-          {/* Liens rapides */}
-          <div>
-            <p className="text-xs uppercase tracking-[2px] mb-4" style={{ color: '#938B7D' }}>Navigation</p>
-            <ul className="flex flex-col gap-2.5">
-              {navLinks.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm font-light transition-colors hover:text-white" style={{ color: '#B0A89E' }}>
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CTA final */}
-          <div>
-            <p className="font-display font-bold text-lg mb-2" style={{ color: '#F0EDE8' }}>
-              Un projet en tête ?
-            </p>
-            <p className="text-sm font-light mb-5" style={{ color: '#B0A89E', lineHeight: 1.6 }}>
-              Le code, les contenus et le domaine vous appartiennent à 100 %.
-            </p>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 text-white text-sm font-normal px-5 py-3 rounded transition-transform hover:-translate-y-px"
-              style={{ background: 'var(--syb-rust)' }}
-            >
-              Demander un devis <span aria-hidden>→</span>
-            </Link>
-          </div>
+          <nav aria-label="Pied de page" className="flex flex-wrap gap-12">
+            {columns.map((col) => (
+              <div key={col.title}>
+                <p className="text-[11.5px] font-bold uppercase tracking-[0.06em] mb-3.5" style={muted}>
+                  {col.title}
+                </p>
+                <ul className="flex flex-col gap-2.5">
+                  {col.links.map((l) => (
+                    <li key={l.label}>
+                      <Link href={l.href} className={linkClass}>
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
 
-        {/* Bas de footer */}
         <div
-          className="mt-12 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-          style={{ borderTop: '0.5px solid #1a1814' }}
+          className="mt-10 pt-6 flex flex-wrap justify-between gap-3 text-[12.5px]"
+          style={{ ...muted, borderTop: "1px solid var(--syb-border-dark)" }}
         >
-          <p className="text-xs font-light" style={{ color: '#938B7D' }}>
-            © {currentYear} SolYB — Agence digitale · Guadeloupe
-          </p>
-          <div className="flex flex-wrap gap-6">
-            {legalLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-xs font-light transition-colors hover:text-white"
-                style={{ color: '#B0A89E' }}
-              >
-                {l.label}
-              </Link>
+          <span>© {currentYear} SolYB — Guadeloupe</span>
+          <span className="flex flex-wrap gap-x-2">
+            {legalLinks.map((l, i) => (
+              <span key={l.href}>
+                {i > 0 && <span aria-hidden>· </span>}
+                <Link href={l.href} className={linkClass.replace("text-[13.5px] ", "")}>
+                  {l.label}
+                </Link>
+              </span>
             ))}
-          </div>
+          </span>
         </div>
       </div>
     </footer>

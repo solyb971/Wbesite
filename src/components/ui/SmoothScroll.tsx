@@ -6,6 +6,8 @@ export default function SmoothScroll() {
   useEffect(() => {
     // Sur mobile, le scroll natif iOS/Android est plus fluide que Lenis
     if (window.innerWidth < 768) return
+    // Mouvement réduit : défilement natif, sans inertie
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const lenis = new Lenis({
       duration: 1.15,

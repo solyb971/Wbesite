@@ -1,235 +1,117 @@
 import Image from "next/image"
-import Link from "next/link"
-import ParallaxImage from "@/components/ui/ParallaxImage"
 import { realisations } from "@/lib/realisations-data"
+import s from "./accueil.module.css"
 
-function ResaMark() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 88 88" fill="none" aria-hidden>
-      <rect x="2" y="2" width="84" height="84" rx="3" stroke="currentColor" strokeWidth="4" />
-      <rect x="26" y="40" width="36" height="8" rx="2.5" fill="currentColor" />
-      <rect x="29" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="47" y="22" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="29" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
-      <rect x="47" y="61" width="12" height="5" rx="2" fill="currentColor" opacity="0.5" />
-    </svg>
-  )
+const lds = realisations[0]
+
+type Card = {
+  name: string
+  status: string
+  live: boolean
+  sub: string
+  description: string
+  points: string[]
+  image: string
+  alt: string
+  /** Fond visible le temps que la capture charge. */
+  tint: string
+  cta: { label: string; href: string; external?: boolean }
+  sizes: string
 }
 
-function FactuMark() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path d="M6 2h8l4 4v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M9 9h6M9 12.5h6M9 16h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-const tools = [
+const cards: Card[] = [
+  {
+    name: lds.client,
+    status: "Projet réel · en ligne",
+    live: true,
+    sub: lds.sector,
+    description:
+      "Une plateforme qui met en relation des soignants et des chauffeurs professionnels pour organiser leurs tournées du quotidien. Un espace pro de santé, un espace chauffeur — devis en ligne et gestion des rendez-vous.",
+    points: ["En ligne et active au quotidien", "Espace soignants + espace chauffeurs", "Devis et rendez-vous intégrés"],
+    image: lds.image,
+    alt: "Page d'accueil de Liberty Drive Serenity, plateforme de transport pour les tournées de soins",
+    tint: "linear-gradient(155deg, #20323C, #0E1B21)",
+    cta: { label: "Voir le projet", href: lds.url ?? "#contact", external: true },
+    sizes: "(min-width: 860px) 420px, 100vw",
+  },
   {
     name: "ResaGP",
-    Mark: ResaMark,
-    accent: "#0E7C7B",          // lagon (DA ResaGP) — icônes/bordures
-    textAccent: "#0C6E6D",      // lagon assombri pour texte (AA sur crème)
-    preview: "/resagp/demo/02_planning.png",  // capture produit réelle
-    tagline: "Réservations restaurant — sans commission",
-    description: "Réservations en ligne, plan de salle, rappels SMS automatiques, fiches clients. Tout ce dont un restaurant a besoin, dans un seul outil.",
     status: "Bientôt disponible",
-    statusColor: "#B8760A",   // pastille (ambre — en préparation)
-    statusText: "#96600A",    // texte statut (AA sur crème)
-    highlights: ["Aucune commission par couvert", "Pensé pour les restaurants et bars", "Accès anticipé bientôt ouvert"],
+    live: false,
+    sub: "Outil maison",
+    description: "Réservations restaurant — sans commission. Plan de salle, rappels SMS automatiques, fiches clients.",
+    points: ["Aucune commission par couvert", "Pensé pour restaurants et bars"],
+    image: "/resagp/demo/02_planning.png",
+    alt: "Planning des réservations dans ResaGP, l'outil de réservation pour restaurants",
+    tint: "linear-gradient(155deg, #3A2216, #1A1410)",
     cta: { label: "Rejoindre la liste d'attente", href: "/resagp" },
+    sizes: "(min-width: 860px) 330px, 100vw",
   },
   {
     name: "FactuGP",
-    Mark: FactuMark,
-    accent: "#2E8C92",          // pétrole (DA FactuGP) — icônes/bordures
-    textAccent: "#1F6E73",      // pétrole assombri pour texte (AA sur crème)
-    preview: "/factugp/demo/demo-02-dashboard.jpeg",  // capture produit réelle
-    tagline: "Facturation électronique conforme 2026",
-    description: "Dès septembre 2026, toutes les entreprises devront pouvoir recevoir des factures électroniques — et les TPE/PME en émettre dès 2027. FactuGP gère votre conformité à votre place.",
     status: "Disponible sept. 2026",
-    statusColor: "#B8760A",   // pastille
-    statusText: "#96600A",    // texte statut (AA sur crème)
-    highlights: ["TVA Guadeloupe préconfigurée", "Envoi automatique aux impôts", "Pensé pour les TPE et PME du 971"],
+    live: false,
+    sub: "Outil maison",
+    description: "Facturation électronique conforme 2026. TVA Guadeloupe préconfigurée, envoi automatique aux impôts.",
+    points: ["Conforme réforme DGFiP 2026", "Pensé pour TPE/PME du 971"],
+    image: "/factugp/demo/demo-02-dashboard.jpeg",
+    alt: "Tableau de bord de FactuGP, l'outil de facturation électronique",
+    tint: "linear-gradient(155deg, #1E2A20, #101810)",
     cta: { label: "Rejoindre la liste d'attente", href: "/facturation-electronique" },
+    sizes: "(min-width: 860px) 330px, 100vw",
   },
 ]
 
 export default function Realisations() {
-  const project = realisations[0]
-
   return (
-    <section
-      id="realisations"
-      className="py-24 md:py-28 scroll-mt-20 overflow-hidden"
-      style={{ background: 'var(--syb-warm)' }}
-    >
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div className="reveal mb-12 max-w-2xl">
-          <h2
-            className="title-reveal font-display font-black leading-none mb-5"
-            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: 'var(--syb-ink)' }}
-          >
-            Ce qu&apos;on a<br />
-            <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>déjà construit</span>
+    <section id="realisations" className={s.section}>
+      <div className={s.wrap}>
+        <div className={s.sectionHead}>
+          <span className={s.eyebrow}>Nos réalisations</span>
+          <h2>
+            Ce qu&apos;on a <em>déjà construit.</em>
           </h2>
-          <p className="text-sm font-light leading-relaxed" style={{ color: 'var(--syb-stone)', lineHeight: 1.75 }}>
-            Un projet client livré et en ligne — et nos deux outils maison, conçus pour la Guadeloupe.
-          </p>
+          <p>Un projet client livré et en ligne — et nos deux outils maison, conçus pour la Guadeloupe.</p>
         </div>
 
-        {/* Étude de cas */}
-        <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div
-            className="relative rounded-2xl overflow-hidden"
-            style={{ aspectRatio: '16/11', background: '#0e0c0a', border: '0.5px solid var(--syb-border)' }}
-          >
-            <ParallaxImage className="absolute inset-0">
-              <Image
-                src={project.image}
-                alt={project.client}
-                fill
-                sizes="(min-width: 1024px) 600px, 100vw"
-                className="object-cover object-top"
-                style={{ transform: 'scale(1.12) translateY(var(--parallax, 0px))' }}
-              />
-            </ParallaxImage>
-          </div>
-          <div>
-            <div
-              className="inline-flex items-center gap-2 text-xs tracking-[1.5px] uppercase rounded-full px-3 py-1 mb-4"
-              style={{ background: 'rgba(22,163,74,0.08)', border: '0.5px solid rgba(22,163,74,0.3)', color: '#147038' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#16A34A' }} />
-              Projet réel · en ligne
-            </div>
-            <div className="text-xs tracking-[2px] uppercase mb-3" style={{ color: 'var(--syb-rust)' }}>
-              {project.sector}
-            </div>
-            <h3
-              className="font-display font-bold mb-4"
-              style={{ fontSize: 'clamp(26px, 3vw, 38px)', color: 'var(--syb-ink)', lineHeight: 1.05 }}
-            >
-              {project.client}
-            </h3>
-            <p className="text-sm font-light leading-relaxed mb-4" style={{ color: 'var(--syb-stone)', lineHeight: 1.8 }}>
-              {project.description}
-            </p>
-            {project.result && (
-              <p className="text-sm font-normal leading-relaxed mb-6" style={{ color: 'var(--syb-ink)', lineHeight: 1.8 }}>
-                {project.result}
-              </p>
-            )}
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-white text-sm font-normal transition-transform hover:-translate-y-px"
-                style={{ background: 'var(--syb-rust)', padding: '12px 26px', borderRadius: '4px' }}
-              >
-                Voir le projet
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Sous-titre outils maison */}
-        <div className="reveal mt-20 mb-8">
-          <h3 className="font-display font-bold mb-2" style={{ fontSize: 'clamp(24px, 3vw, 36px)', color: 'var(--syb-ink)', letterSpacing: '-1px' }}>
-            Et nos propres outils, <span style={{ color: 'var(--syb-rust)' }}>faits ici</span>
-          </h3>
-          <p className="text-sm font-light leading-relaxed max-w-lg" style={{ color: 'var(--syb-stone)', lineHeight: 1.75 }}>
-            La plupart des outils qu&apos;on recommande sont conçus ailleurs, pour d&apos;autres marchés.
-            Alors on en a créé deux, pour la Guadeloupe.
-          </p>
-        </div>
-
-        {/* Cartes outils */}
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-4">
-          {tools.map((s) => (
-            <div
-              key={s.name}
-              className="group rounded-xl overflow-hidden flex flex-col transition-all duration-250 hover:-translate-y-1"
-              style={{ background: 'var(--syb-cream)', border: '0.5px solid var(--syb-border)' }}
-            >
-              {/* Aperçu visuel — capture produit réelle, ou header stylisé si indisponible */}
-              <div
-                className="relative overflow-hidden"
-                style={{ height: 168, background: `linear-gradient(135deg, ${s.accent}, ${s.accent}cc)` }}
-              >
-                {s.preview ? (
-                  <Image
-                    src={s.preview}
-                    alt={`Aperçu ${s.name}`}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center" style={{ color: 'rgba(255,255,255,0.92)' }}>
-                    <div style={{ transform: 'scale(3.2)' }}><s.Mark /></div>
-                  </div>
-                )}
-              </div>
-
-              <div className="p-7 flex flex-col flex-1">
-              <div className="flex items-center justify-between mb-5">
-                <div
-                  className="w-11 h-11 rounded-lg flex items-center justify-center"
-                  style={{ background: `${s.accent}14`, border: `1px solid ${s.accent}40`, color: s.accent }}
-                >
-                  <s.Mark />
+        <div className={s.realGrid}>
+          {cards.map((card) => (
+            <article key={card.name} className={`${s.panel} ${s.realCard} ${s.lift}`}>
+              <div className={s.realVisual} style={{ background: card.tint }}>
+                <div className={s.chrome} aria-hidden>
+                  <span />
+                  <span />
+                  <span />
                 </div>
-                <span className="flex items-center gap-2 text-xs tracking-wide" style={{ color: s.statusText }}>
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: s.statusColor }} />
-                  {s.status}
+                <div className={s.shot}>
+                  <Image src={card.image} alt={card.alt} fill sizes={card.sizes} />
+                </div>
+              </div>
+
+              <div className={s.realBody}>
+                <span className={`${s.status} ${card.live ? s.statusLive : s.statusSoon}`}>
+                  <span className={`${s.dot} ${card.live ? s.dotLive : s.dotSoon}`} aria-hidden />
+                  {card.status}
                 </span>
-              </div>
-
-              <h4 className="font-display font-bold text-2xl mb-2" style={{ color: 'var(--syb-ink)' }}>
-                {s.name}
-              </h4>
-
-              <p className="text-sm font-medium mb-3" style={{ color: s.textAccent }}>{s.tagline}</p>
-              <p className="text-xs font-light leading-relaxed flex-1 mb-5" style={{ color: 'var(--syb-stone)', lineHeight: 1.65 }}>
-                {s.description}
-              </p>
-
-              <ul className="flex flex-col gap-1.5 mb-5">
-                {s.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2 text-xs font-light" style={{ color: 'var(--syb-stone)' }}>
-                    <span className="w-px h-3 flex-shrink-0" style={{ background: s.statusColor, opacity: 0.5 }} />
-                    {h}
-                  </li>
-                ))}
-              </ul>
-
-              <div style={{ borderTop: '0.5px solid var(--syb-border)', paddingTop: '1.25rem' }}>
-                <Link
-                  href={s.cta.href}
-                  className="cta-arrow inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-80"
-                  style={{ color: s.textAccent }}
+                <span className={s.sub}>{card.sub}</span>
+                <h3>{card.name}</h3>
+                <p className={s.desc}>{card.description}</p>
+                <ul className={s.dashList}>
+                  {card.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <a
+                  className={s.cardLink}
+                  href={card.cta.href}
+                  {...(card.cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
-                  {s.cta.label} <span className="arrow">→</span>
-                </Link>
+                  {card.cta.label} <span aria-hidden>→</span>
+                  {card.cta.external && <span className="sr-only"> (nouvel onglet)</span>}
+                </a>
               </div>
-              </div>
-            </div>
+            </article>
           ))}
-        </div>
-
-        {/* CTA final */}
-        <div className="reveal mt-12">
-          <Link
-            href="/#contact"
-            className="cta-arrow inline-flex items-center gap-1.5 text-sm font-light transition-colors hover:text-[#0E0D0B]"
-            style={{ color: 'var(--syb-stone)' }}
-          >
-            Démarrer un projet comme celui-ci <span className="arrow">→</span>
-          </Link>
         </div>
       </div>
     </section>

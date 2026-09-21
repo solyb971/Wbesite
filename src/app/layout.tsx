@@ -8,7 +8,7 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-fraunces",
-  weight: ["100", "300", "700", "900"],
+  weight: ["100", "300", "600", "700", "900"],
   style: ["normal", "italic"],
 })
 
@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-dm-sans",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "700"],
 })
 
 // Mono pour les labels de rubrique (kicker) — look « agence digitale »

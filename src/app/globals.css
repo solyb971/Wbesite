@@ -9,8 +9,8 @@
   /* — Aliases palette éditoriale — */
   --syb-cream:       var(--smoke);      /* #F5F2ED */
   --syb-ink:         var(--ink);        /* #0E0D0B */
-  --syb-stone:       #736B5F;           /* assombri depuis #7A7268 → ≥4.5:1 aussi sur crème #F5F2ED (AA) */
-  --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
+  --syb-stone:       #6E665C;           /* aligné sur la maquette canevas (sept. 2026) — 5,5:1 sur --syb-warm (AA) */
+  --syb-stone-light: #6E665C;           /* méta/labels — désormais identique à --syb-stone (garde les usages existants) */
   --syb-rust:        var(--rust);       /* #C4472A */
   --syb-rust-ink:    #B84126;           /* rust assombri pour texte-lien sur crème (AA ≥4.5:1) */
   --syb-border:      var(--v3-border);  /* #DDD5C8 */
@@ -19,11 +19,23 @@
   --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
   --syb-rust-deep:   #9A5A3A;   /* accent foncé (carte Application) */
   --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
-  --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
+  --syb-dark-soft:   #2B1710;   /* brun-rouge : foyer du dégradé du canevas d'accueil */
   --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
-  --syb-warm:        #FFF9F6;   /* fond crème chaud (sections claires, vs blanc pur) */
+  --syb-warm:        #FFFBF8;   /* fond des panneaux clairs posés sur le canevas */
   --syb-teal:        #00BFA5;   /* turquoise caraïbe — accent secondaire (fills / fond sombre) */
   --syb-teal-deep:   #0E7C6B;   /* turquoise foncé — texte/CTA sur fond clair (contraste AA) */
+
+  /* — Canevas d'accueil (maquette sept. 2026) —
+     Contrastes calculés sur le point le plus clair du canevas
+     (--syb-dark-soft + lueur à 17 % = #4B2A1D). — */
+  --syb-on-dark-muted: #C4B9AB;                     /* texte secondaire sur canevas — 6,6:1 au pire */
+  --syb-border-dark:   rgba(245, 242, 237, 0.14);   /* filets sur canevas */
+  --syb-gold-ink:      #96600A;                     /* or lisible sur panneau clair — 5,1:1 (--syb-gold : 3,6:1) */
+  --syb-live-ink:      #147038;                     /* statut « en ligne » sur panneau clair — 6,0:1 */
+  --syb-radius-btn:    10px;
+  --syb-radius-card:   14px;
+  --syb-shadow-card:   0 1px 2px rgba(14, 13, 11, 0.05), 0 18px 36px -20px rgba(14, 13, 11, 0.55);
+  --syb-shadow-btn:    0 1px 2px rgba(14, 13, 11, 0.06), 0 6px 16px -6px rgba(196, 71, 42, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 @layer base {
@@ -470,3 +482,33 @@ section > .max-w-5xl {
 
 /* Les blocs custom (encadrés, tableaux) neutralisent la mise en forme du corps */
 .article-body .not-prose > * + * { margin-top: 0; }
+
+/* ============================================================
+   FOOTER + CANEVAS D'ACCUEIL
+============================================================ */
+.site-footer {
+  background: var(--syb-ink);
+  border-top: 1px solid var(--syb-border-dark);
+}
+/* Sur l'accueil, le footer se pose sur le canevas fixe. */
+main[data-canvas] ~ .site-footer { background: transparent; }
+/* Fond ink sous le canevas : évite le crème au rebond de défilement (iOS). */
+body:has(main[data-canvas]) { background-color: var(--syb-ink); }
+
+/* ============================================================
+   MOUVEMENT RÉDUIT — coupe toutes les animations et transitions du site.
+   0,01 ms plutôt que « none » : les événements transitionend/animationend
+   continuent de se déclencher pour le code qui les attend.
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

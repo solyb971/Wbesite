@@ -44,3 +44,10 @@ export const faqs = [
     answer: "Chaque site inclut une optimisation SEO locale : structure technique optimisée, balises meta et Schema.org avec mention de la Guadeloupe, Pointe-à-Pitre, Basse-Terre et Les Abymes, vitesse de chargement, compatibilité mobile. Pour dominer Google localement en partant de zéro, on recommande en plus : une fiche d'établissement Google bien tenue, des avis clients réguliers et des articles de blog ciblés.",
   },
 ]
+
+/**
+ * Questions affichées sur l'accueil. Le balisage FAQPage (JSON-LD) doit
+ * reprendre exactement cette liste : Google exige que les questions
+ * déclarées soient visibles sur la page.
+ */
+export const homeFaqs = faqs.slice(0, 7)

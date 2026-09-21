@@ -1,136 +1,99 @@
-'use client'
-import { useState } from "react"
-import HoneypotField from "@/components/site/HoneypotField"
+"use client"
 
-const contactInfo = [
-  { label: "Localisation", value: "Guadeloupe" },
-  { label: "Réponse garantie", value: "Sous 24h en semaine" },
-  { label: "Devis", value: "Gratuit et sans engagement" },
+import { useState } from "react"
+import { CalendarDays, Clock, MapPin } from "lucide-react"
+import HoneypotField from "@/components/site/HoneypotField"
+import s from "./accueil.module.css"
+
+const badges = [
+  { Icon: MapPin, label: "Localisation", value: "Guadeloupe" },
+  { Icon: Clock, label: "Réponse garantie", value: "Sous 24h en semaine" },
+  { Icon: CalendarDays, label: "Devis", value: "Gratuit et sans engagement" },
 ]
 
 export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setStatus('sending')
-    const fd = new FormData(e.currentTarget)
+    setStatus("sending")
+    const form = e.currentTarget
+    const fd = new FormData(form)
     try {
-      const res = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: fd.get('name'),
-          email: fd.get('email'),
-          phone: fd.get('phone'),
-          project_type: fd.get('project_type'),
-          description: fd.get('description'),
-          source: 'site-web',
-          urgency: 'normal',
-          company_website: fd.get('company_website'),
+          name: fd.get("name"),
+          email: fd.get("email"),
+          phone: fd.get("phone"),
+          project_type: fd.get("project_type"),
+          description: fd.get("description"),
+          source: "site-web",
+          urgency: "normal",
+          company_website: fd.get("company_website"),
         }),
       })
       if (!res.ok) throw new Error()
-      setStatus('success')
-      ;(e.target as HTMLFormElement).reset()
-      setTimeout(() => { window.location.href = '/merci' }, 1800)
+      setStatus("success")
+      form.reset()
+      setTimeout(() => { window.location.href = "/merci" }, 1800)
     } catch {
-      setStatus('error')
+      setStatus("error")
     }
   }
 
-  const inputStyle: React.CSSProperties = {
-    background: '#FFFFFF',
-    border: '0.5px solid #DDD5C8',
-    borderRadius: '7px',
-    padding: '12px 16px',
-    fontFamily: 'inherit',
-    fontSize: '14px',
-    fontWeight: 300,
-    color: '#2E2A25',
-    outline: 'none',
-    width: '100%',
-    transition: 'border-color .2s',
-  }
-
-  const labelStyle: React.CSSProperties = {
-    fontSize: '12px',
-    color: 'var(--syb-stone-light)',
-    letterSpacing: '1.5px',
-    textTransform: 'uppercase' as const,
-    display: 'block',
-    marginBottom: '6px',
-  }
-
   return (
-    <section id="contact" className="py-24 scroll-mt-20" style={{ background: 'var(--syb-cream)' }}>
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
-          {/* Left — info */}
-          <div>
-            <h2
-              className="font-display font-black leading-none mb-5"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)', letterSpacing: '-2px', color: '#0E0D0B' }}
-            >
-              Parlons<br />
-              <span style={{ fontWeight: 900, color: '#C4472A' }}>de votre projet.</span>
+    <section id="contact" className={s.section}>
+      <div className={s.wrap}>
+        <div className={`${s.panel} ${s.contactShell}`}>
+          <div className={s.contactInfo}>
+            <span className={`${s.eyebrow} ${s.eyebrowOnPanel}`}>Prendre contact</span>
+            <h2>
+              Parlons <em>de votre projet.</em>
             </h2>
-            <p className="text-sm font-light leading-relaxed mb-8" style={{ color: '#736B5F', lineHeight: 1.75 }}>
-              45 minutes pour comprendre votre besoin. Gratuit, sans engagement. Devis envoyé sous 24h.
-            </p>
-            <div className="flex flex-col gap-4">
-              {contactInfo.map((item) => (
-                <div key={item.label} className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: '#C4472A' }} />
+            <p>45 minutes pour comprendre votre besoin. Gratuit, sans engagement. Devis envoyé sous 24h.</p>
+            <ul className={s.badges}>
+              {badges.map(({ Icon, label, value }) => (
+                <li key={label} className={s.badge}>
+                  <Icon size={18} strokeWidth={1.8} aria-hidden />
                   <div>
-                    <span className="block text-xs uppercase tracking-wide font-normal" style={{ color: 'var(--syb-stone-light)', letterSpacing: '0.5px' }}>
-                      {item.label}
-                    </span>
-                    <span className="text-sm font-light" style={{ color: '#2E2A25' }}>{item.value}</span>
+                    <p className={s.badgeKey}>{label}</p>
+                    <p className={s.badgeValue}>{value}</p>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Right — form */}
-          <div>
-            {status === 'success' ? (
-              <div className="rounded-xl p-10 text-center" style={{ background: '#FFFFFF', border: '0.5px solid #DDD5C8' }}>
-                <div className="text-4xl mb-4">✓</div>
-                <h3 className="font-display font-bold text-xl mb-2" style={{ color: '#0E0D0B' }}>Demande envoyée !</h3>
-                <p className="text-sm font-light" style={{ color: '#736B5F' }}>On vous recontacte sous 24h maximum.</p>
+          {status === "success" ? (
+            <div className={s.success} role="status">
+              <p aria-hidden style={{ fontSize: 32 }}>✓</p>
+              <h3>Demande envoyée !</h3>
+              <p>On vous recontacte sous 24h maximum.</p>
+            </div>
+          ) : (
+            <form className={s.form} onSubmit={handleSubmit}>
+              <HoneypotField />
+              <div className={s.formGrid}>
+                <div className={s.field}>
+                  <label htmlFor="contact-name">Prénom &amp; nom</label>
+                  <input id="contact-name" name="name" type="text" required autoComplete="name" placeholder="Ex. Marie Laurent" />
+                </div>
+                <div className={s.field}>
+                  <label htmlFor="contact-phone">Téléphone (WhatsApp bienvenu)</label>
+                  <input id="contact-phone" name="phone" type="tel" autoComplete="tel" placeholder="0690 00 00 00" />
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
-                <HoneypotField />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label style={labelStyle}>Prénom & Nom</label>
-                    <input name="name" type="text" required placeholder="Marie Dupont" style={inputStyle}
-                      onFocus={e => (e.target.style.borderColor = '#C4472A')}
-                      onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
-                  </div>
-                  <div>
-                    <label style={labelStyle}>Téléphone <span style={{ textTransform: 'none', letterSpacing: 0, color: 'var(--syb-teal-deep)' }}>(WhatsApp bienvenu)</span></label>
-                    <input name="phone" type="tel" placeholder="0690 00 00 00" style={inputStyle}
-                      onFocus={e => (e.target.style.borderColor = '#C4472A')}
-                      onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
-                  </div>
+              <div className={s.formGrid}>
+                <div className={s.field}>
+                  <label htmlFor="contact-email">Email</label>
+                  <input id="contact-email" name="email" type="email" required autoComplete="email" placeholder="vous@exemple.fr" />
                 </div>
-                <div>
-                  <label style={labelStyle}>Email</label>
-                  <input name="email" type="email" required placeholder="marie@monentreprise.gp" style={inputStyle}
-                    onFocus={e => (e.target.style.borderColor = '#C4472A')}
-                    onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
-                </div>
-                <div>
-                  <label style={labelStyle} htmlFor="project_type">Type de projet</label>
-                  <select id="project_type" name="project_type" required style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
-                    onFocus={e => (e.target.style.borderColor = '#C4472A')}
-                    onBlur={e => (e.target.style.borderColor = '#DDD5C8')}>
-                    <option value="">Sélectionnez...</option>
+                <div className={s.field}>
+                  <label htmlFor="contact-type">Type de projet</label>
+                  <select id="contact-type" name="project_type" required defaultValue="">
+                    <option value="" disabled>Sélectionnez...</option>
                     <option value="vitrine">Site vitrine</option>
                     <option value="ecommerce">E-commerce</option>
                     <option value="application">Application métier</option>
@@ -138,38 +101,33 @@ export default function Contact() {
                     <option value="custom">Autre</option>
                   </select>
                 </div>
-                <div>
-                  <label style={labelStyle}>Votre besoin</label>
-                  <textarea name="description" required placeholder="Décrivez votre activité et ce que vous recherchez..."
-                    style={{ ...inputStyle, minHeight: '110px', resize: 'vertical' }}
-                    onFocus={e => (e.target.style.borderColor = '#C4472A')}
-                    onBlur={e => (e.target.style.borderColor = '#DDD5C8')} />
-                </div>
-                {status === 'error' && (
-                  <p className="text-xs" style={{ color: '#C4472A' }}>Une erreur est survenue. Réessayez ou contactez-nous directement.</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full py-3.5 text-white text-sm font-normal rounded transition-all hover:opacity-90 disabled:opacity-60"
-                  style={{ background: '#C4472A', marginTop: '4px' }}
-                >
-                  {status === 'sending' ? 'Envoi en cours...' : 'Recevoir mon devis gratuit'}
-                </button>
-                <label className="flex items-start gap-2 text-xs cursor-pointer" style={{ color: 'var(--syb-stone-light)', marginTop: '2px', lineHeight: 1.5 }}>
-                  <input type="checkbox" name="consent" required style={{ marginTop: '2px', accentColor: '#C4472A', flexShrink: 0 }} />
-                  <span>
-                    J&apos;accepte que mes données soient utilisées pour traiter ma demande,
-                    conformément à la{' '}
-                    <a href="/confidentialite" style={{ color: '#B84126', textDecoration: 'underline' }}>
-                      politique de confidentialité
-                    </a>. *
-                  </span>
-                </label>
-              </form>
-            )}
-          </div>
-
+              </div>
+              <div className={s.field}>
+                <label htmlFor="contact-need">Votre besoin</label>
+                <textarea
+                  id="contact-need"
+                  name="description"
+                  required
+                  placeholder="Décrivez votre activité et ce que vous cherchez à construire..."
+                />
+              </div>
+              <label className={s.consent}>
+                <input type="checkbox" name="consent" required />
+                <span>
+                  J&apos;accepte que mes données soient utilisées pour traiter ma demande, conformément à
+                  la <a href="/confidentialite">politique de confidentialité</a>.
+                </span>
+              </label>
+              {status === "error" && (
+                <p className={s.formError} role="alert">
+                  Une erreur est survenue. Réessayez ou contactez-nous directement.
+                </p>
+              )}
+              <button type="submit" className={`${s.btn} ${s.btnPrimary}`} disabled={status === "sending"}>
+                {status === "sending" ? "Envoi en cours..." : "Recevoir mon devis gratuit"}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
