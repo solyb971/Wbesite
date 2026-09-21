@@ -66,7 +66,7 @@ export default function Realisations() {
   return (
     <section id="realisations" className={s.section}>
       <div className={s.wrap}>
-        <div className={s.sectionHead}>
+        <div className={s.sectionHead} data-reveal>
           <span className={s.eyebrow}>Nos réalisations</span>
           <h2>
             Ce qu&apos;on a <em>déjà construit.</em>
@@ -74,9 +74,16 @@ export default function Realisations() {
           <p>Un projet client livré et en ligne — et nos deux outils maison, conçus pour la Guadeloupe.</p>
         </div>
 
-        <div className={s.realGrid}>
-          {cards.map((card) => (
-            <article key={card.name} className={`${s.panel} ${s.realCard} ${s.lift}`}>
+        <div className={s.realGrid} data-timeline>
+          {cards.map((card, i) => (
+            <article key={card.name} className={`${s.panel} ${s.realCard} ${s.lift}`} data-reveal="stagger">
+              {/* Parcours Liberty → ResaGP → FactuGP, tracé au défilement */}
+              <span className={s.tlDot} data-live={card.live} aria-hidden />
+              {i < cards.length - 1 && (
+                <span className={s.tlTrack} data-timeline-seg aria-hidden>
+                  <span className={s.tlFill} />
+                </span>
+              )}
               <div className={s.realVisual} style={{ background: card.tint }}>
                 <div className={s.chrome} aria-hidden>
                   <span />

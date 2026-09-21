@@ -53,7 +53,7 @@ export default function Services() {
   return (
     <section id="services" className={s.section}>
       <div className={s.wrap}>
-        <div className={s.sectionHead}>
+        <div className={s.sectionHead} data-reveal>
           <span className={s.eyebrow}>Ce qu&apos;on construit</span>
           <h2>
             Trois façons d&apos;exister <em>en ligne</em>, choisies pour votre marché.
@@ -66,7 +66,7 @@ export default function Services() {
 
         <div id="tarifs" className={s.servicesGrid}>
           {services.map(({ title, tag, featured, Icon, price, description, features }) => (
-            <article key={title} className={`${s.panel} ${s.serviceCard} ${s.lift}`}>
+            <article key={title} className={`${s.panel} ${s.serviceCard} ${s.lift}`} data-reveal="stagger">
               <div className={s.serviceTop}>
                 <span className={s.serviceIcon}>
                   <Icon size={21} strokeWidth={1.8} aria-hidden />
@@ -94,7 +94,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className={`${s.panel} ${s.maintenance} ${s.lift}`}>
+        <div className={`${s.panel} ${s.maintenance} ${s.lift}`} data-reveal>
           <div>
             <p className={s.maintenanceLabel}>Et après la livraison ?</p>
             <h3>Maintenance — 39€/mois</h3>

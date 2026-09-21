@@ -6,14 +6,14 @@ export default function FAQ() {
   return (
     <section id="faq" className={s.section}>
       <div className={`${s.wrap} ${s.faqWrap}`}>
-        <div className={s.sectionHead}>
+        <div className={s.sectionHead} data-reveal>
           <span className={s.eyebrow}>Questions fréquentes</span>
           <h2>
             Avant de <em>vous lancer.</em>
           </h2>
         </div>
 
-        <div className={`${s.panel} ${s.faqPanel}`}>
+        <div className={`${s.panel} ${s.faqPanel}`} data-reveal>
           {homeFaqs.map((faq, index) => (
             <details key={faq.question} className={s.faqItem} open={index === 0}>
               <summary>

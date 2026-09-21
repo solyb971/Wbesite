@@ -6,6 +6,7 @@ import Engagements from "@/components/site/Engagements"
 import About from "@/components/site/About"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
+import ScrollChoreography from "@/components/site/ScrollChoreography"
 import s from "@/components/site/accueil.module.css"
 import { homeFaqs } from "@/lib/faq-data"
 
@@ -192,6 +193,7 @@ export default function HomePage() {
         <About />
         <FAQ />
         <Contact />
+        <ScrollChoreography />
       </main>
     </>
   )

@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section id="apropos" className={s.section}>
       <div className={`${s.wrap} ${s.aboutGrid}`}>
-        <figure className={s.portrait}>
+        <figure className={s.portrait} data-reveal="stagger">
           {FOUNDER_PHOTO && (
             <Image
               src={FOUNDER_PHOTO}
@@ -26,7 +26,7 @@ export default function About() {
           </figcaption>
         </figure>
 
-        <div className={s.aboutCopy}>
+        <div className={s.aboutCopy} data-reveal="stagger">
           <span className={s.eyebrow}>À propos de SolYB</span>
           <h2>
             La Guadeloupe m&apos;a construit.{" "}

@@ -46,7 +46,7 @@ export default function Contact() {
   return (
     <section id="contact" className={s.section}>
       <div className={s.wrap}>
-        <div className={`${s.panel} ${s.contactShell}`}>
+        <div className={`${s.panel} ${s.contactShell}`} data-reveal>
           <div className={s.contactInfo}>
             <span className={`${s.eyebrow} ${s.eyebrowOnPanel}`}>Prendre contact</span>
             <h2>

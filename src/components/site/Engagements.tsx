@@ -28,14 +28,14 @@ export default function Engagements() {
   return (
     <section id="engagements" className={`${s.section} ${s.sectionFlush}`}>
       <div className={s.wrap}>
-        <div className={s.sectionHead}>
+        <div className={s.sectionHead} data-reveal>
           <span className={s.eyebrow}>Comment on travaille</span>
           <h2>
             Pas de promesses. <em>Des engagements.</em>
           </h2>
         </div>
 
-        <ul className={`${s.panel} ${s.engageGrid}`}>
+        <ul className={`${s.panel} ${s.engageGrid}`} data-reveal>
           {engagements.map(({ Icon, title, text }) => (
             <li key={title} className={s.engageItem}>
               <Icon size={22} strokeWidth={1.8} aria-hidden />
