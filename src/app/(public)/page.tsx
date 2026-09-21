@@ -7,6 +7,7 @@ import About from "@/components/site/About"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
 import ScrollChoreography from "@/components/site/ScrollChoreography"
+import CanvasMap from "@/components/site/CanvasMap"
 import s from "@/components/site/accueil.module.css"
 import { homeFaqs } from "@/lib/faq-data"
 
@@ -185,6 +186,7 @@ export default function HomePage() {
       <main className={s.home} data-canvas>
         <div className={s.canvas} aria-hidden>
           <div className={s.glow} />
+          <CanvasMap />
         </div>
         <Hero />
         <Realisations />

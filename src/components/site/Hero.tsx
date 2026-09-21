@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react"
 import { Check, Clock, Plus, Sun } from "lucide-react"
-import HeroMap from "./HeroMap"
 import s from "./accueil.module.css"
 
 /** Délai d'entrée d'un élément secondaire du hero. */
@@ -9,8 +8,7 @@ const delay = (seconds: number) => ({ "--hd": `${seconds}s` }) as CSSProperties
 export default function Hero() {
   return (
     <section id="hero" className={s.hero}>
-      <div className={`${s.wrap} ${s.heroWrap}`}>
-        <HeroMap />
+      <div className={s.wrap}>
         <span className={`${s.heroBadge} ${s.heroIn}`} style={delay(0.05)}>
           <Sun size={14} strokeWidth={2} aria-hidden />
           Agence digitale — Guadeloupe

@@ -1,15 +1,21 @@
 import type { CSSProperties } from "react"
-import { COMMUNES, GUADELOUPE_PATH, GUADELOUPE_VIEWBOX } from "./guadeloupe-map"
+import { COMMUNES, GUADELOUPE_HEIGHT, GUADELOUPE_PATH, GUADELOUPE_VIEWBOX, GUADELOUPE_WIDTH } from "./guadeloupe-map"
 import s from "./accueil.module.css"
 
 /**
- * Silhouette de la Guadeloupe qui se trace au chargement, puis des points qui
- * s'allument ici et là, comme des recherches en temps réel : l'accroche du hero,
- * illustrée. Petit-Bourg (où est basé SolYB) reste allumé en permanence.
+ * Silhouette de la Guadeloupe posée sur le canevas fixe de l'accueil.
+ * Elle se dessine au fil du défilement (--draw, piloté par ScrollChoreography),
+ * puis des points s'allument ici et là, comme des recherches en temps réel.
+ * Petit-Bourg (où est basé SolYB) reste allumé en permanence.
  *
- * Pur CSS : aucun JavaScript, ne bloque ni le H1 ni l'accroche.
- * Mouvement réduit : contour déjà tracé, points fixes, sans pulsation.
- * Décoratif : masqué aux lecteurs d'écran.
+ * Performance : le conteneur a sa propre couche graphique (le fond du canevas
+ * n'est jamais repeint) et les points qui pulsent sont en HTML, animés en
+ * transform / opacity, donc hors du thread principal.
+ *
+ * Masquée sans JavaScript : fixe à l'écran, elle ne saurait pas s'effacer avant
+ * la section « À propos » dont le texte passerait dessus.
+ * Mouvement réduit : contour entièrement tracé, points fixes, aucune animation.
+ * Décorative : le canevas parent est aria-hidden.
  */
 
 // Délais volontairement irréguliers : les pulsations ne se synchronisent jamais,
@@ -24,22 +30,32 @@ const PINGS: { at: keyof typeof COMMUNES; delay: number }[] = [
   { at: "sainteRose", delay: 5.2 },
 ]
 
-export default function HeroMap() {
+const percent = ([x, y]: readonly [number, number]) => ({
+  left: `${(x / GUADELOUPE_WIDTH) * 100}%`,
+  top: `${(y / GUADELOUPE_HEIGHT) * 100}%`,
+})
+
+export default function CanvasMap() {
   const [px, py] = COMMUNES.petitBourg
   return (
-    <svg className={s.heroMap} viewBox={GUADELOUPE_VIEWBOX} aria-hidden focusable="false">
-      <path className={s.mapShape} d={GUADELOUPE_PATH} pathLength={1} />
-      {PINGS.map(({ at, delay }) => {
-        const [x, y] = COMMUNES[at]
-        return (
-          <g key={at} className={s.mapPing} style={{ "--pd": `${delay}s` } as CSSProperties}>
-            <circle className={s.mapRing} cx={x} cy={y} r={9} />
-            <circle className={s.mapDot} cx={x} cy={y} r={6} />
-          </g>
-        )
-      })}
-      <circle className={s.mapHomeHalo} cx={px} cy={py} r={16} />
-      <circle className={s.mapHome} cx={px} cy={py} r={8} />
-    </svg>
+    <div className={s.canvasMap} data-canvas-map>
+      <svg className={s.mapSvg} viewBox={GUADELOUPE_VIEWBOX} focusable="false">
+        <defs>
+          <path id="gp-contour" d={GUADELOUPE_PATH} pathLength={1} />
+        </defs>
+        {/* Filigrane toujours visible, puis trait lumineux qui se dessine au scroll */}
+        <use href="#gp-contour" className={s.mapGhost} />
+        <use href="#gp-contour" className={s.mapDraw} />
+        <circle className={s.mapHomeHalo} cx={px} cy={py} r={16} />
+        <circle className={s.mapHome} cx={px} cy={py} r={8} />
+      </svg>
+      {PINGS.map(({ at, delay }) => (
+        <span
+          key={at}
+          className={s.mapPing}
+          style={{ ...percent(COMMUNES[at]), "--pd": `${delay}s` } as CSSProperties}
+        />
+      ))}
+    </div>
   )
 }
