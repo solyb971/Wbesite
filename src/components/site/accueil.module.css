@@ -279,27 +279,28 @@ button.btn { line-height: normal; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ════════ Silhouette de la Guadeloupe (canevas fixe) ════════
-   Visible à partir de 1 100 px et seulement une fois ScrollChoreography
-   exécuté (html.map-on) : fixe, elle doit s'effacer avant « À propos ».
+/* ════════ Silhouette de la Guadeloupe ════════
    --draw (0 → 1) : part du contour tracée ; --map-o : opacité (effacement).
    Sans ces variables, le contour est complet et la carte opaque.
-   will-change : couche graphique propre, le fond du canevas n'est jamais
-   repeint et l'effacement se fait sur le compositeur. */
-.canvasMap { display: none; }
+   will-change : couche graphique propre, les avancées du trait ne repeignent
+   que la carte (jamais le fond du canevas ni le contenu). */
+/* Posée sur le canevas fixe, à droite, là où aucun texte ne passe : écrans
+   larges seulement, et une fois ScrollChoreography exécuté (html.map-on),
+   car elle doit s'effacer avant « À propos ». */
+.map { display: none; aspect-ratio: 1000 / 870; }
 @media (min-width: 1100px) {
-  :global(html.map-on) .canvasMap {
+  :global(html.map-on) .map {
     display: block;
     position: absolute;
     right: max(40px, calc((100vw - 1180px) / 2 + 40px));
     top: 50%;
     width: min(440px, 34vw);
-    aspect-ratio: 1000 / 870;
     translate: 0 -42%;
     opacity: var(--map-o, 1);
     will-change: transform, opacity;
   }
 }
+
 .mapSvg { display: block; width: 100%; height: 100%; overflow: visible; }
 .mapGhost {
   fill: rgba(232, 132, 95, 0.045);
@@ -316,7 +317,8 @@ button.btn { line-height: normal; }
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 1;
-  stroke-dashoffset: calc(1 - var(--draw, 1));
+  /* Part de cette île déjà tracée : 0 avant son tour, 1 une fois passée. */
+  stroke-dashoffset: calc(1 - clamp(0, (var(--draw, 1) - var(--a, 0)) / (var(--b, 1) - var(--a, 0)), 1));
 }
 /* Petit-Bourg : toujours allumé, en or. */
 .mapHome { fill: var(--syb-gold); stroke: var(--syb-dark); stroke-width: 3; }
@@ -347,8 +349,8 @@ button.btn { line-height: normal; }
   margin: -4px 0 0 -4px;
   border: 1.2px solid var(--syb-rust-light);
 }
-.canvasMap[data-drawn] .mapPing::before { animation: mapDot 6s ease calc(0.4s + var(--pd, 0s)) infinite; }
-.canvasMap[data-drawn] .mapPing::after { animation: mapRing 6s ease-out calc(0.4s + var(--pd, 0s)) infinite; }
+.map[data-drawn] .mapPing::before { animation: mapDot 6s ease calc(0.4s + var(--pd, 0s)) infinite; }
+.map[data-drawn] .mapPing::after { animation: mapRing 6s ease-out calc(0.4s + var(--pd, 0s)) infinite; }
 @keyframes mapRing {
   0% { opacity: 0; transform: scale(0.6); }
   6% { opacity: 0.9; }

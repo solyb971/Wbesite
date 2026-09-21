@@ -7,7 +7,7 @@ import { useEffect } from "react"
  * - révélation au défilement des blocs marqués [data-reveal]
  *   (valeur "stagger" : cascade de STAGGER_MS entre éléments arrivés ensemble) ;
  * - tracé du parcours des réalisations ([data-timeline] / [data-timeline-seg]) ;
- * - dessin de la carte de la Guadeloupe posée sur le canevas ([data-canvas-map]).
+ * - dessin de la carte de la Guadeloupe ([data-map], sur le canevas, écrans larges).
  *
  * Garde-fous :
  * - rien n'est masqué tant que ce code n'a pas tourné : la classe html.reveal-on
@@ -156,27 +156,32 @@ function startTimeline(): () => void {
 }
 
 /**
- * Carte de la Guadeloupe sur le canevas : se dessine sur les deux premiers écrans
- * de défilement (10 % déjà tracés en haut de page), puis s'efface avant « À propos ».
- * Les calculs n'utilisent que scrollY et des positions mesurées au redimensionnement :
+ * Carte de la Guadeloupe (voir GuadeloupeMap), écrans larges uniquement :
+ * se dessine sur les deux premiers écrans de défilement (10 % déjà tracés en haut
+ * de page), puis s'efface avant « À propos ». Sous 1 100 px, rien n'écoute le
+ * défilement pour elle.
+ * Les calculs n'utilisent que scrollY et une position mesurée au redimensionnement :
  * aucune lecture de mise en page pendant le défilement.
  */
 function startMap(reduce: boolean): () => void {
-  const map = document.querySelector<HTMLElement>("[data-canvas-map]")
+  const map = document.querySelector<HTMLElement>("[data-map]")
   if (!map) return () => {}
   const root = document.documentElement
   const about = document.getElementById("apropos")
   const wide = window.matchMedia("(min-width: 1100px)")
   const clamp = (n: number) => Math.min(1, Math.max(0, n))
+  // Le défilement s'arrête au pixel entier : 0,9996 doit compter comme « tracé ».
+  const DRAWN = 0.995
   let aboutTop = Infinity
   let raf = 0
+  let active = false
+  let ro: ResizeObserver | null = null
 
   const measure = () => {
     aboutTop = about ? about.getBoundingClientRect().top + window.scrollY : Infinity
   }
   const update = () => {
     raf = 0
-    if (!wide.matches) return
     const y = window.scrollY
     const vh = window.innerHeight
     const draw = reduce ? 1 : clamp(0.1 + (0.9 * y) / (1.8 * vh))
@@ -185,7 +190,7 @@ function startMap(reduce: boolean): () => void {
     map.style.setProperty("--draw", draw.toFixed(3))
     map.style.setProperty("--map-o", fade.toFixed(3))
     // Les points ne pulsent qu'une fois le contour complet, et jamais carte effacée.
-    if (!reduce) map.toggleAttribute("data-drawn", draw >= 1 && fade > 0)
+    if (!reduce) map.toggleAttribute("data-drawn", draw >= DRAWN && fade > 0)
   }
   const schedule = () => {
     if (!raf) raf = requestAnimationFrame(update)
@@ -195,22 +200,36 @@ function startMap(reduce: boolean): () => void {
     schedule()
   }
 
-  measure()
-  update()
-  root.classList.add("map-on")
-  window.addEventListener("scroll", schedule, { passive: true })
-  window.addEventListener("resize", remeasure, { passive: true })
-  wide.addEventListener("change", remeasure)
-  // La hauteur de page bouge (polices, images, FAQ ouverte) : on remesure.
-  const ro = new ResizeObserver(remeasure)
-  ro.observe(document.body)
-
-  return () => {
+  const start = () => {
+    if (active) return
+    active = true
+    measure()
+    update()
+    window.addEventListener("scroll", schedule, { passive: true })
+    window.addEventListener("resize", remeasure, { passive: true })
+    // La hauteur de page bouge (polices, images, FAQ ouverte) : on remesure.
+    ro = new ResizeObserver(remeasure)
+    ro.observe(document.body)
+  }
+  const stop = () => {
+    if (!active) return
+    active = false
     window.removeEventListener("scroll", schedule)
     window.removeEventListener("resize", remeasure)
-    wide.removeEventListener("change", remeasure)
-    ro.disconnect()
+    ro?.disconnect()
     if (raf) cancelAnimationFrame(raf)
+    raf = 0
+    map.removeAttribute("data-drawn")
+  }
+  const sync = () => (wide.matches ? start() : stop())
+
+  sync()
+  root.classList.add("map-on")
+  wide.addEventListener("change", sync)
+
+  return () => {
+    stop()
+    wide.removeEventListener("change", sync)
     root.classList.remove("map-on")
   }
 }
