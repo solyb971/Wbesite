@@ -294,7 +294,8 @@ button.btn { line-height: normal; }
 }
 
 /* ════════ Silhouette de la Guadeloupe ════════
-   --draw (0 → 1) : part du contour tracée ; sans elle, le contour est complet.
+   Avancement du tracé écrit par ScrollChoreography (décalage de chaque île,
+   --reveal) ; sans script, le contour est complet.
    will-change : couche graphique propre, les avancées du trait ne repeignent
    que la carte (jamais le fond du canevas ni le contenu). */
 .mapSprite { position: absolute; width: 0; height: 0; overflow: hidden; }
@@ -329,16 +330,15 @@ button.btn { line-height: normal; }
   top: calc((100% - 80px - (100cqw - 12px) * 0.87) / 2);
   left: 28px;
   right: 28px;
-  /* --heart (0 → 1, posé par le script après l'arrimage) : l'île se resserre à
-     67 % pour laisser la place au cœur tracé autour d'elle, avec de l'air entre
-     les deux ; le cœur occupe alors presque toute la largeur du cadre (~20 px de
-     ses bords). Ce resserrement se fait sur le premier cinquième du tracé, avant
-     que le trait n'atteigne le lobe gauche : le cœur ne dépasse jamais du cadre.
-     Le décalage (−2,7 % ; −8 %) centre le cœur, et non l'île, dans l'espace
-     au-dessus de la légende. Sans script (téléphone, mouvement réduit, sans JS) :
-     état final directement. */
-  --shrink: min(1, var(--heart, 1) * 5);
-  transform: translate3d(calc(var(--shrink) * -2.7%), calc(var(--shrink) * -8%), 0) scale(calc(1 - var(--shrink) * 0.333));
+  /* État final : l'île resserrée à 67 % pour laisser la place au cœur tracé autour
+     d'elle, avec de l'air entre les deux ; le cœur occupe presque toute la largeur
+     du cadre (~20 px de ses bords). Le décalage (−2,7 % ; −8 %) centre le cœur, et
+     non l'île, dans l'espace au-dessus de la légende. C'est ce qu'affichent le
+     téléphone, le mouvement réduit et l'absence de JS ; sur écran large, le script
+     part de l'île pleine taille à l'arrimage et y arrive au fil du défilement
+     (valeurs écrites en nombres simples : pas de calc() à variables, que Firefox
+     ne calculait pas ici). */
+  transform: translate3d(-2.7%, -8%, 0) scale(0.667);
 }
 /* Même trait que le contour de l'île (.mapDraw) : couleur, opacité, épaisseur. */
 .mapHeart {
@@ -349,7 +349,8 @@ button.btn { line-height: normal; }
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 1;
-  stroke-dashoffset: calc(1 - var(--heart, 1));
+  /* Tracé complet par défaut ; sur écran large, le script écrit l'avancement. */
+  stroke-dashoffset: 0;
 }
 @media (min-width: 1100px) {
   :global(html.map-travel) .mapPortrait:not([data-docked]) { visibility: hidden; }
@@ -370,13 +371,15 @@ button.btn { line-height: normal; }
   stroke-width: 3;
   stroke-linejoin: round;
   stroke-linecap: round;
+  /* Décalage de chaque île écrit par le script (nombre simple, sans calc() : des
+     navigateurs ignoraient l'ancien calcul en CSS et affichaient l'île entière).
+     Sans script : 0, contour complet. */
   stroke-dasharray: 1;
-  /* Part de cette île déjà tracée : 0 avant son tour, 1 une fois passée. */
-  stroke-dashoffset: calc(1 - clamp(0, (var(--draw, 1) - var(--a, 0)) / (var(--b, 1) - var(--a, 0)), 1));
+  stroke-dashoffset: 0;
 }
 /* Silhouette pleine et Petit-Bourg : aucun fond au départ, ils n'apparaissent
-   qu'une fois le contour bouclé (sur les derniers 3 % du tracé). */
-.mapReveal { opacity: clamp(0, (var(--draw, 1) - 0.97) / 0.03, 1); }
+   qu'une fois le contour bouclé (--reveal, écrit par le script ; 1 sans script). */
+.mapReveal { opacity: var(--reveal, 1); }
 /* Petit-Bourg : toujours allumé, en or. */
 .mapHome { fill: var(--syb-gold); stroke: var(--syb-dark); stroke-width: 3; }
 .mapHomeHalo { fill: var(--syb-gold); opacity: 0.18; }
