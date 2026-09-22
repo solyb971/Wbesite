@@ -63,6 +63,22 @@ export default function MentionsLegalesPage() {
         </p>
       </LegalSection>
 
+      <LegalSection title="Crédits">
+        <p>
+          Le contour de la Guadeloupe affiché sur la page d&apos;accueil est issu des données{' '}
+          <strong>IGN – Admin Express COG</strong> (édition 2018), réutilisées sous{' '}
+          <a
+            href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--syb-rust-ink)' }}
+          >
+            Licence Ouverte Etalab
+          </a>
+          . Le tracé a été simplifié par SolYB.
+        </p>
+      </LegalSection>
+
       <LegalSection title="Données personnelles">
         <p>
           Les informations recueillies via les formulaires du site font l&apos;objet d&apos;un

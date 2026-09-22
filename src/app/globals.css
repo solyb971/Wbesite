@@ -9,8 +9,8 @@
   /* — Aliases palette éditoriale — */
   --syb-cream:       var(--smoke);      /* #F5F2ED */
   --syb-ink:         var(--ink);        /* #0E0D0B */
-  --syb-stone:       #736B5F;           /* assombri depuis #7A7268 → ≥4.5:1 aussi sur crème #F5F2ED (AA) */
-  --syb-stone-light: #6E665C;           /* méta/labels — assombri depuis #B0A89E (2.3:1) → ≥4.5:1 sur fonds clairs */
+  --syb-stone:       #6E665C;           /* aligné sur la maquette canevas (sept. 2026) — 5,5:1 sur --syb-warm (AA) */
+  --syb-stone-light: #6E665C;           /* méta/labels — désormais identique à --syb-stone (garde les usages existants) */
   --syb-rust:        var(--rust);       /* #C4472A */
   --syb-rust-ink:    #B84126;           /* rust assombri pour texte-lien sur crème (AA ≥4.5:1) */
   --syb-border:      var(--v3-border);  /* #DDD5C8 */
@@ -19,11 +19,23 @@
   --syb-rust-light:  #E8845F;   /* accent sur fond sombre — plus clair que --rust-l (#E06245) */
   --syb-rust-deep:   #9A5A3A;   /* accent foncé (carte Application) */
   --syb-dark:        #1A1410;   /* fond sombre hero + panneaux */
-  --syb-dark-soft:   #2A2420;   /* surface sombre secondaire */
+  --syb-dark-soft:   #2B1710;   /* brun-rouge : foyer du dégradé du canevas d'accueil */
   --syb-gold:        #B8760A;   /* or éditorial (aucun équivalent dans la palette v3) */
-  --syb-warm:        #FFF9F6;   /* fond crème chaud (sections claires, vs blanc pur) */
+  --syb-warm:        #FFFBF8;   /* fond des panneaux clairs posés sur le canevas */
   --syb-teal:        #00BFA5;   /* turquoise caraïbe — accent secondaire (fills / fond sombre) */
   --syb-teal-deep:   #0E7C6B;   /* turquoise foncé — texte/CTA sur fond clair (contraste AA) */
+
+  /* — Canevas d'accueil (maquette sept. 2026) —
+     Contrastes calculés sur le point le plus clair du canevas
+     (--syb-dark-soft + lueur à 17 % = #4B2A1D). — */
+  --syb-on-dark-muted: #C4B9AB;                     /* texte secondaire sur canevas — 6,6:1 au pire */
+  --syb-border-dark:   rgba(245, 242, 237, 0.14);   /* filets sur canevas */
+  --syb-gold-ink:      #96600A;                     /* or lisible sur panneau clair — 5,1:1 (--syb-gold : 3,6:1) */
+  --syb-live-ink:      #147038;                     /* statut « en ligne » sur panneau clair — 6,0:1 */
+  --syb-radius-btn:    10px;
+  --syb-radius-card:   14px;
+  --syb-shadow-card:   0 1px 2px rgba(14, 13, 11, 0.05), 0 18px 36px -20px rgba(14, 13, 11, 0.55);
+  --syb-shadow-btn:    0 1px 2px rgba(14, 13, 11, 0.06), 0 6px 16px -6px rgba(196, 71, 42, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 @layer base {
@@ -128,74 +140,18 @@
 }
 
 /* FactuGP — keyframes du mot typewriter (référencés en inline style depuis CSS Modules) */
-@keyframes fp-wIn  { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fp-wOut { from { opacity: 1; transform: translateY(0); }    to { opacity: 0; transform: translateY(-14px); } }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    SCROLLBAR
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+============================================================ */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #0A0A0F; }
-::-webkit-scrollbar-thumb { background: #FF6B47; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #FF4A1F; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: var(--rust); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--syb-rust-ink); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   GRAIN OVERLAY
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-/* grain-overlay removed */
-
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CUSTOM CURSOR (desktop only)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@media (hover: hover) {
-  .cursor-dot {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: #FF6B47;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-    transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.3s;
-  }
-  .cursor-dot.on-mag {
-    width: 5px;
-    height: 5px;
-    background: #FF7D5E;
-  }
-  .cursor-dot.on-btn {
-    width: 5px;
-    height: 5px;
-  }
-
-  .cursor-ring {
-    position: fixed;
-    width: 38px;
-    height: 38px;
-    border: 1px solid rgba(255, 107, 71, 0.45);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    will-change: transform;
-    transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
-  }
-  .cursor-ring.on-mag {
-    width: 60px;
-    height: 60px;
-    border-color: #FF6B47;
-    border-width: 2px;
-  }
-  .cursor-ring.on-btn {
-    width: 52px;
-    height: 52px;
-    border-color: #FF6B47;
-  }
-}
-
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    SCROLL REVEAL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+============================================================ */
 /* Scroll reveal — fade up doux (courbe validée, plus organique que ease)
    Filet de sécurité : l'état masqué n'est appliqué QUE si JS est actif (classe
    `.js` posée tôt sur <html>). Sans JS (désactivé / bundle en échec), le contenu
@@ -260,48 +216,21 @@
 }
 .cta-arrow:hover .arrow { transform: translateX(4px); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    HERO ANIMATIONS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@keyframes scrollDrop {
-  0%   { transform: translateY(0);    opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { transform: translateY(48px); opacity: 0; }
-}
+============================================================ */
 
-@keyframes splitCharIn {
-  from { transform: translateY(110%); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
-}
-
-.split-char {
-  animation: splitCharIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    TICKER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.ticker-track {
-  animation: tickerScroll 30s linear infinite;
-}
+============================================================ */
 
-@keyframes tickerScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    TILT CARDS (Services)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.tilt-card {
-  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
-}
+============================================================ */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   BUTTON FILL ANIMATION â€” Studio style
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   BUTTON FILL ANIMATION — Studio style
+============================================================ */
 .btn-studio {
   position: relative;
   overflow: hidden;
@@ -341,13 +270,13 @@
   background: rgba(209, 135, 10, 0.95);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   HERO â€” GLOW FLOAT
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   HERO — GLOW FLOAT
+============================================================ */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FLOAT â€” icon FAQ / Ã©lÃ©ments dÃ©coratifs
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   FLOAT — icon FAQ / éléments décoratifs
+============================================================ */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes float {
     from { transform: translateY(0); }
@@ -355,9 +284,9 @@
   }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   PROCESS â€” CONNECTION LINE DRAW
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   PROCESS — CONNECTION LINE DRAW
+============================================================ */
 @media (prefers-reduced-motion: no-preference) {
   .reveal.connection-line {
     opacity: 1 !important;
@@ -370,71 +299,35 @@
   }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   ABOUT â€” SKILLS STAGGER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   ABOUT — SKILLS STAGGER
+============================================================ */
 @media (prefers-reduced-motion: no-preference) {
-  .skill-reveal {
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  .skill-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   ABOUT â€” BIO BORDER GROW
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   ABOUT — BIO BORDER GROW
+============================================================ */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes borderGrow {
-    from { transform: scaleY(0); }
-    to   { transform: scaleY(1); }
-  }
+  
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ============================================================
    TYPEWRITER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@keyframes typewriterBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-@keyframes twGradShift {
-  0%   { background-position: 0%   50%; }
-  100% { background-position: 200% 50%; }
-}
-@keyframes twUniversGlow {
-  0%   { filter: drop-shadow(0 0  6px rgba(0,212,170,0.35)); }
-  100% { filter: drop-shadow(0 0 22px rgba(0,212,170,0.85)) drop-shadow(0 0 4px rgba(255,255,255,0.25)); }
-}
+============================================================ */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   PROCESS â€” BORDER DRAW SVG
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@keyframes borderDraw {
-  to { stroke-dashoffset: 0; }
-}
-@keyframes processContentReveal {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* ============================================================
+   PROCESS — BORDER DRAW SVG
+============================================================ */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CONTACT â€” SUCCESS BOUNCE
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-@keyframes successBounce {
-  0%   { transform: scale(0); opacity: 0; }
-  60%  { transform: scale(1.2); opacity: 1; }
-  80%  { transform: scale(0.9); }
-  100% { transform: scale(1); }
-}
+/* ============================================================
+   CONTACT — SUCCESS BOUNCE
+============================================================ */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CARD ELEVATION â€” 3D shadow layering
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ============================================================
+   CARD ELEVATION — 3D shadow layering
+============================================================ */
 .card-elevation {
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.6),
@@ -454,52 +347,14 @@
     0 0 20px rgba(255, 107, 71, 0.04);
   transform: translateY(-3px);
 }
-.card-elevation-solar:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.5),
-    0 6px 12px rgba(0, 0, 0, 0.35),
-    0 12px 24px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(245, 166, 35, 0.1),
-    0 0 20px rgba(245, 166, 35, 0.04);
-  transform: translateY(-3px);
-}
-.card-elevation-turquoise:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.5),
-    0 6px 12px rgba(0, 0, 0, 0.35),
-    0 12px 24px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(0, 212, 170, 0.1),
-    0 0 20px rgba(0, 212, 170, 0.04);
-  transform: translateY(-3px);
-}
-.card-shadow {
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.6),
-    0 4px 8px rgba(0, 0, 0, 0.5),
-    0 8px 16px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 107, 71, 0.08);
-  transition: box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.card-shadow:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.7),
-    0 8px 16px rgba(0, 0, 0, 0.6),
-    0 20px 40px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 107, 71, 0.12),
-    0 0 40px rgba(255, 107, 71, 0.06);
-}
 
-/* Splash â€” masquer logo nav pendant intro */
-.splash-active #nav-logo-ref {
-  opacity: 0 !important;
-  transition: opacity 0.3s ease;
-}
+/* Splash — masquer logo nav pendant intro */
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CONSTELLATIONS â€” contenu sections au-dessus du canvas (z:5)
+/* ============================================================
+   CONSTELLATIONS — contenu sections au-dessus du canvas (z:5)
    Canvas est fixed z:5, section backgrounds sont static (z:auto).
-   Le contenu des sections doit Ãªtre z:6 pour rester lisible.
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Le contenu des sections doit être z:6 pour rester lisible.
+============================================================ */
 section > .max-w-7xl,
 section > .max-w-4xl,
 section > .max-w-5xl {
@@ -517,21 +372,10 @@ section > .max-w-5xl {
   [style*="fadeUp"] { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
-@keyframes blobDrift {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(-3%, 4%) scale(1.06); }
-}
-
-.ticker-track-v3 {
-  animation: tickerScroll 28s linear infinite;
-}
-
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.4; }
 }
-
-
 
 /* ── Admin CRM — identité SolYB (dark chaud) : titres en Fraunces ── */
 .admin-shell h1,
@@ -566,11 +410,11 @@ section > .max-w-5xl {
   color: #F5EDD8;
 }
 
-/* ══════════════════════════════════════════════════════════
+/* ============================================================
    CORPS RÉDACTIONNEL DES ARTICLES (DA « SolYB v3 »)
    Remplace @tailwindcss/typography (non installé). L'accent de
    chaque article est passé via --article-accent / --article-link.
-   ══════════════════════════════════════════════════════════ */
+   ============================================================ */
 .article-body {
   font-weight: 300;
   font-size: 16px;
@@ -638,3 +482,33 @@ section > .max-w-5xl {
 
 /* Les blocs custom (encadrés, tableaux) neutralisent la mise en forme du corps */
 .article-body .not-prose > * + * { margin-top: 0; }
+
+/* ============================================================
+   FOOTER + CANEVAS D'ACCUEIL
+============================================================ */
+.site-footer {
+  background: var(--syb-ink);
+  border-top: 1px solid var(--syb-border-dark);
+}
+/* Sur l'accueil, le footer se pose sur le canevas fixe. */
+main[data-canvas] ~ .site-footer { background: transparent; }
+/* Fond ink sous le canevas : évite le crème au rebond de défilement (iOS). */
+body:has(main[data-canvas]) { background-color: var(--syb-ink); }
+
+/* ============================================================
+   MOUVEMENT RÉDUIT — coupe toutes les animations et transitions du site.
+   0,01 ms plutôt que « none » : les événements transitionend/animationend
+   continuent de se déclencher pour le code qui les attend.
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

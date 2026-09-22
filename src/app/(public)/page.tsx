@@ -1,14 +1,15 @@
 ﻿import { Metadata } from 'next'
 import Hero from "@/components/site/Hero"
-import ScrollRevealInit from "@/components/site/ScrollRevealInit"
-import Services from "@/components/site/Services"
-import About from "@/components/site/About"
 import Realisations from "@/components/site/Realisations"
-import Manifesto from "@/components/site/Manifesto"
+import Services from "@/components/site/Services"
 import Engagements from "@/components/site/Engagements"
+import About from "@/components/site/About"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
-import { faqs } from "@/lib/faq-data"
+import ScrollChoreography from "@/components/site/ScrollChoreography"
+import GuadeloupeMap, { GuadeloupeSprite } from "@/components/site/GuadeloupeMap"
+import s from "@/components/site/accueil.module.css"
+import { homeFaqs } from "@/lib/faq-data"
 
 export const metadata: Metadata = {
   // 54 chars — sans le suffixe template, affiché en entier dans Google
@@ -127,7 +128,7 @@ export default function HomePage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: homeFaqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -181,16 +182,21 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <main className="min-h-screen bg-[#0A0A0F]">
-        <ScrollRevealInit />
+      {/* data-canvas : repère pour globals.css (footer transparent, fond ink du body). */}
+      <main className={s.home} data-canvas>
+        <GuadeloupeSprite />
+        <div className={s.canvas} aria-hidden>
+          <div className={s.glow} />
+          <GuadeloupeMap variant="canvas" />
+        </div>
         <Hero />
+        <Realisations />
         <Services />
         <Engagements />
-        <Realisations />
-        <Manifesto />
         <About />
         <FAQ />
         <Contact />
+        <ScrollChoreography />
       </main>
     </>
   )

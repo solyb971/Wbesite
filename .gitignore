@@ -60,3 +60,4 @@ next-env.d.ts
 /verify-visual.mjs
 /SITE_SNAPSHOT.html
 /errorlog.txt
+.env*

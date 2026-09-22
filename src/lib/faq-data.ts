@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     question: "Est-ce que ça me concerne ?",
-    answer: "Oui, si vous facturez entre professionnels (B2B) et que vous êtes assujetti à la TVA — y compris en Guadeloupe. Salons de coiffure, commerces, restaurants, artisans, professions libérales : tous concernés. Contactez-nous pour un audit gratuit.",
+    answer: "Oui, si vous facturez entre professionnels (B2B) et que vous êtes assujetti à la TVA — y compris en Guadeloupe. Salons de coiffure, commerces, restaurants, artisans, professions libérales : tous concernés.",
   },
   {
     question: "Combien de temps pour avoir mon site ?",
@@ -25,7 +25,7 @@ export const faqs = [
   },
   {
     question: "Qu'est-ce qui est inclus dans les 599€ ?",
-    answer: "Design personnalisé adapté au mobile, jusqu'à 5 pages, formulaire de contact, référencement local (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement et nom de domaine 1 an, formation 1h en visio, 3 révisions et 1 mois de support par email. Sans frais caché.",
+    answer: "Design personnalisé adapté au mobile, jusqu'à 5 pages, formulaire de contact, référencement local (Pointe-à-Pitre, Basse-Terre, Les Abymes), hébergement et nom de domaine 1 an, formation 1h en visio, 3 révisions et 1 mois de support par email. Sans frais cachés.",
   },
   {
     question: "Comment se passe le paiement ?",
@@ -41,6 +41,13 @@ export const faqs = [
   },
   {
     question: "Mon site sera-t-il bien référencé sur Google Guadeloupe ?",
-    answer: "Chaque site inclut une optimisation SEO locale : structure technique optimisée, balises meta et Schema.org avec mention de la Guadeloupe, Pointe-à-Pitre, Basse-Terre et Les Abymes, vitesse de chargement, compatibilité mobile. Pour dominer Google localement avec 0 notoriété, on recommande en plus : une fiche Google My Business, des articles de blog ciblés et des citations locales (Pages Jaunes). Des offres dédiées sont disponibles.",
+    answer: "Chaque site inclut une optimisation SEO locale : structure technique optimisée, balises meta et Schema.org avec mention de la Guadeloupe, Pointe-à-Pitre, Basse-Terre et Les Abymes, vitesse de chargement, compatibilité mobile. Pour dominer Google localement en partant de zéro, on recommande en plus : une fiche d'établissement Google bien tenue, des avis clients réguliers et des articles de blog ciblés.",
   },
 ]
+
+/**
+ * Questions affichées sur l'accueil. Le balisage FAQPage (JSON-LD) doit
+ * reprendre exactement cette liste : Google exige que les questions
+ * déclarées soient visibles sur la page.
+ */
+export const homeFaqs = faqs.slice(0, 7)

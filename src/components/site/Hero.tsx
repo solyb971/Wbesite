@@ -1,81 +1,56 @@
-import Link from "next/link"
+import type { CSSProperties } from "react"
+import { Check, Clock, Plus, Sun } from "lucide-react"
+import s from "./accueil.module.css"
+
+/** Délai d'entrée d'un élément secondaire du hero. */
+const delay = (seconds: number) => ({ "--hd": `${seconds}s` }) as CSSProperties
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative flex items-center overflow-hidden"
-      style={{ background: 'var(--syb-dark)', minHeight: 'calc(100svh - 4rem)' }}
-    >
-      {/* Lueurs rust */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 75% 25%, rgba(196,71,42,0.28) 0%, transparent 55%)' }}
-      />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 8% 92%, rgba(196,71,42,0.10) 0%, transparent 50%)' }}
-      />
+    <section id="hero" className={s.hero}>
+      <div className={s.wrap}>
+        <span className={`${s.heroBadge} ${s.heroIn}`} style={delay(0.05)}>
+          <Sun size={14} strokeWidth={2} aria-hidden />
+          Agence digitale — Guadeloupe
+        </span>
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 md:px-12 py-16">
-        {/* H1 */}
-        <h1
-          className="font-display font-black leading-none mb-8"
-          style={{
-            fontSize: 'clamp(46px, 6.2vw, 92px)',
-            letterSpacing: '-3px',
-            color: 'var(--syb-cream)',
-          }}
-          aria-label="Votre clientèle vous cherche déjà"
-        >
-          <span className="block" style={{ animation: 'fadeUp 0.7s 0.25s ease both' }}>Votre clientèle</span>
-          <em
-            className="italic block"
-            style={{
-              fontWeight: 300,
-              color: 'var(--syb-rust-light)',
-              fontSize: '0.9em',
-              letterSpacing: '-2px',
-              animation: 'fadeUp 0.7s 0.45s ease both',
-            }}
-          >
-            vous cherche déjà.
-          </em>
+        {/* Jamais animé : c'est le texte qui doit s'afficher au premier rendu. */}
+        <h1 className={s.h1}>
+          Votre clientèle
+          <em>vous cherche déjà.</em>
         </h1>
 
-        {/* Subtitle */}
-        <p
-          className="font-light leading-relaxed mb-10 max-w-xl"
-          style={{ fontSize: '16px', color: '#b8ab9c', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.7s ease both' }}
-        >
+        {/* Pas d'entrée animée non plus : sur mobile, ce paragraphe est l'élément LCP. */}
+        <p className={s.lede}>
           Chaque jour, des clients tapent une recherche pensant vous trouver — et tombent sur un
           concurrent mieux référencé. On construit des outils digitaux pour les entrepreneurs
-          d&apos;ici : sites, applications, systèmes pensés pour être{' '}
-          <span style={{ color: 'var(--syb-cream)' }}>trouvés</span>, pas juste pour exister.
+          d&apos;ici : sites, applications, systèmes pensés pour être <strong>trouvés</strong>,
+          pas juste pour exister.
         </p>
 
-        {/* CTAs — primaire dominant, secondaire subordonné (lien texte discret) */}
-        <div className="flex flex-wrap items-center gap-x-7 gap-y-3" style={{ animation: 'fadeUp 0.7s 0.85s ease both' }}>
-          <Link
-            href="/#contact"
-            className="inline-block text-white font-medium transition-transform hover:-translate-y-px"
-            style={{ background: 'var(--syb-rust)', padding: '15px 32px', borderRadius: '4px', fontSize: '15px', letterSpacing: '0.3px' }}
-          >
+        <div className={`${s.heroCtas} ${s.heroIn}`} style={delay(0.2)}>
+          <a className={`${s.btn} ${s.btnPrimary}`} href="#contact">
             Demander un devis gratuit
-          </Link>
-          <Link
-            href="/#services"
-            className="cta-arrow inline-flex items-center gap-1.5 font-light transition-colors hover:text-white"
-            style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px' }}
-          >
-            Voir les services <span className="arrow">→</span>
-          </Link>
+          </a>
+          <a className={`${s.btn} ${s.btnGhost}`} href="#services">
+            Voir les services <span aria-hidden>→</span>
+          </a>
         </div>
 
-        {/* Réassurance */}
-        <p className="mt-6 text-xs font-light" style={{ color: 'rgba(255,255,255,0.45)', animation: 'fadeUp 0.7s 1s ease both' }}>
-          Devis gratuit en 24h · Sans engagement · 1 an d&apos;hébergement inclus
-        </p>
+        <ul className={`${s.trustBar} ${s.heroIn}`} style={delay(0.28)}>
+          <li className={s.trustItem}>
+            <Clock size={16} strokeWidth={2} aria-hidden />
+            Devis gratuit sous 24h
+          </li>
+          <li className={s.trustItem}>
+            <Check size={16} strokeWidth={2} aria-hidden />
+            Sans engagement
+          </li>
+          <li className={s.trustItem}>
+            <Plus size={16} strokeWidth={2} aria-hidden />
+            1 an d&apos;hébergement inclus
+          </li>
+        </ul>
       </div>
     </section>
   )

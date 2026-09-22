@@ -1,0 +1,888 @@
+/* ════════════════════════════════════════════════════════════
+   Accueil — un seul canevas sombre, deux registres de contenu :
+   texte éditorial directement sur le canevas (hero, à propos),
+   panneaux clairs qui flottent par-dessus (cartes, FAQ, contact).
+   Référence visuelle : maquette « solyb-refonte-accueil » (sept. 2026).
+   Aucune animation déclenchée par le scroll dans cette passe.
+   ════════════════════════════════════════════════════════════ */
+
+.home {
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--syb-cream);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Canevas fixe ──
+   Couche position:fixed plutôt que background-attachment:fixed,
+   ignoré par Safari iOS et coûteux au défilement ailleurs. */
+.canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(130% 90% at 16% 0%, var(--syb-dark-soft) 0%, var(--syb-dark) 48%, var(--syb-ink) 100%);
+}
+
+/* Lueur ambiante : même trajectoire que la maquette (background-position
+   6% 2% → 52% 30% sur une boîte de 120vw × 130vh), mais animée en
+   transform. Le compositeur la déplace sans repeindre le plein écran
+   à chaque image, là où background-position force un repaint continu. */
+.glow {
+  position: absolute;
+  left: -7.84vw;
+  top: -14.22vh;
+  width: 84vw;
+  height: 91vh;
+  background: radial-gradient(32% 26% at 50% 50%, rgba(232, 132, 95, 0.17), transparent 70%);
+  will-change: transform;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(16.56vw, 10.92vh, 0); }
+}
+
+/* ── Mise en page ── */
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+@media (min-width: 720px) { .wrap { padding-inline: 40px; } }
+
+/* Couloir de la carte (≥ 1 100 px, là où la carte s'affiche) : jusqu'à « À propos »,
+   le contenu laisse à droite une colonne libre où la carte de la Guadeloupe se trace
+   sans jamais passer sous un bloc. --lane-map : largeur de la carte ; le couloir
+   compte en plus 40 px de chaque côté. En CSS pur (pas de classe posée par le
+   script), pour que la mise en page soit la bonne dès le premier rendu : aucun
+   décalage. Même formule dans ScrollChoreography (startMap). */
+@media (min-width: 1100px) {
+  .home { --lane-map: clamp(220px, 21vw, 340px); }
+  /* :global : CSS Modules renommerait l'id, qui ne correspondrait plus. */
+  .home > section:not(:global(#apropos)):not(:global(#apropos) ~ section) .wrap {
+    padding-right: max(40px, calc(var(--lane-map) + 80px - (100vw - 1180px) / 2));
+  }
+}
+
+.section {
+  padding-block: 72px;
+  scroll-margin-top: 72px;
+}
+@media (min-width: 860px) { .section { padding-block: 100px; } }
+.sectionFlush { padding-top: 0; }
+
+/* ── Typographie commune ── */
+/* En bloc (flex) et non inline-flex : la maquette, servie sans doctype, est
+   rendue en mode quirks où une ligne réduite à ce sur-titre ne réserve pas la
+   hauteur de ligne du parent. En mode standard, un inline-flex la réserverait
+   et descendrait de 8 px. */
+.eyebrow {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--syb-rust-light);
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+}
+.eyebrowOnPanel { color: var(--syb-rust); }
+
+.sectionHead {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.sectionHead h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  margin-top: 14px;
+  color: var(--syb-cream);
+  text-wrap: balance;
+}
+.sectionHead h2 em,
+.accent {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--syb-rust-light);
+}
+.sectionHead p {
+  margin-top: 16px;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--syb-on-dark-muted);
+}
+
+/* ── Focus clavier ── */
+.home :where(a, button, summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--syb-rust-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Sur panneau clair, --syb-rust-light tombe à 2,6:1 : on passe au rust (4,8:1). */
+.panel :where(a, button, summary, input, select, textarea):focus-visible {
+  outline-color: var(--syb-rust);
+}
+
+/* ── Boutons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 28px;
+  border: none;
+  border-radius: var(--syb-radius-btn);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btnPrimary {
+  position: relative;
+  overflow: hidden;
+  /* Haut du dégradé #CA4D2C au lieu de #D2542F : le texte blanc reste ≥ 4,5:1 sur toute la hauteur. */
+  background: linear-gradient(180deg, #CA4D2C, var(--syb-rust));
+  color: #fff;
+  box-shadow: var(--syb-shadow-btn);
+}
+/* Balayage lumineux au survol */
+.btnPrimary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.32) 50%, transparent 60%);
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  transition: background-position 0.55s ease;
+  pointer-events: none;
+}
+.btnPrimary:hover::after { background-position: -20% 0; }
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(14, 13, 11, 0.08), 0 10px 22px -8px rgba(196, 71, 42, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btnPrimary:active { transform: translateY(0); }
+/* Un <button> garde la hauteur de ligne « normal » du navigateur, comme dans la maquette. */
+button.btn { line-height: normal; }
+.btnPrimary:disabled { opacity: 0.6; cursor: wait; }
+.btnSmall { padding: 11px 20px; font-size: 14px; }
+.btnGhost {
+  color: var(--syb-cream);
+  padding-inline: 4px;
+  background: none;
+}
+.btnGhost span { color: var(--syb-rust-light); }
+/* DM Sans n'a pas la flèche « → » : on la prend dans la police système,
+   comme la maquette, plutôt que dans la police de substitution de next/font. */
+.btnGhost span,
+.cardLink span { font-family: system-ui, sans-serif; }
+.btnBlock { width: 100%; }
+
+/* ── Panneaux clairs ── */
+.panel {
+  background: var(--syb-warm);
+  border: 1px solid var(--syb-border);
+  border-radius: var(--syb-radius-card);
+  box-shadow: var(--syb-shadow-card);
+  color: var(--syb-ink);
+}
+/* Le lift au survol est réservé aux cartes cliquables : pas aux grands
+   panneaux FAQ / contact, où il gênerait pendant la saisie. */
+.lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 2px rgba(14, 13, 11, 0.06), 0 22px 40px -18px rgba(14, 13, 11, 0.6);
+  border-color: var(--syb-rust-light);
+}
+
+/* ════════ Hero ════════ */
+.hero { padding-block: 84px 92px; }
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(232, 132, 95, 0.14);
+  border: 1px solid rgba(232, 132, 95, 0.35);
+  color: var(--syb-rust-light);
+  font-size: 13px;
+  font-weight: 500;
+}
+/* Le H1 n'est jamais animé : il s'affiche au premier rendu (LCP). */
+.h1 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(2.5rem, 6.2vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--syb-cream);
+  text-wrap: balance;
+}
+.h1 em {
+  display: block;
+  margin-top: 0.06em;
+  font-size: 0.86em;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--syb-rust-light);
+}
+.lede {
+  max-width: 620px;
+  margin-top: 28px;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--syb-on-dark-muted);
+}
+.lede strong { color: var(--syb-cream); font-weight: 700; }
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+.trustBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--syb-border-dark);
+}
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--syb-on-dark-muted);
+}
+.trustItem svg { color: var(--syb-rust-light); flex-shrink: 0; }
+
+/* Entrée douce des éléments secondaires du hero, jamais du H1 ni du
+   paragraphe d'accroche : ce dernier est l'élément LCP sur mobile. */
+.heroIn {
+  animation: heroFade 0.7s cubic-bezier(0.16, 0.8, 0.24, 1) both;
+  animation-delay: var(--hd, 0s);
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════ Silhouette de la Guadeloupe ════════
+   --draw (0 → 1) : part du contour tracée ; sans elle, le contour est complet.
+   will-change : couche graphique propre, les avancées du trait ne repeignent
+   que la carte (jamais le fond du canevas ni le contenu). */
+.mapSprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.map { aspect-ratio: 1000 / 870; }
+
+/* Exemplaire « canvas » : écrans larges, et seulement une fois ScrollChoreography
+   exécuté (html.map-on). Position, échelle (transform) et opacité sont écrites
+   par le script directement sur l'élément. */
+.mapCanvas { display: none; }
+@media (min-width: 1100px) {
+  :global(html.map-on) .mapCanvas {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--mw, 440px);
+    transform-origin: 0 0;
+    will-change: transform, opacity;
+  }
+  /* Relais pris par l'exemplaire du portrait. */
+  :global(html.map-on) .mapCanvas[data-away] { visibility: hidden; }
+}
+
+/* Exemplaire « portrait » : logé dans le cadre d'« À propos », au-dessus de la
+   légende. Visible par défaut (téléphone, sans JS, mouvement réduit) ; sur écran
+   large, masqué pendant le trajet et révélé à l'arrimage (data-docked). */
+/* Centrée dans la hauteur laissée libre au-dessus de la légende (80 px).
+   Largeur de la carte : cadre moins 2 × 28 px, soit 100cqw (zone de contenu,
+   cadre moins 2 × 22 px de marge intérieure) moins 12 px. */
+.mapPortrait {
+  position: absolute;
+  top: calc((100% - 80px - (100cqw - 12px) * 0.87) / 2);
+  left: 28px;
+  right: 28px;
+  /* --heart (0 → 1, posé par le script après l'arrimage) : l'île se resserre à
+     67 % pour laisser la place au cœur tracé autour d'elle, avec de l'air entre
+     les deux ; le cœur occupe alors presque toute la largeur du cadre (~20 px de
+     ses bords). Ce resserrement se fait sur le premier cinquième du tracé, avant
+     que le trait n'atteigne le lobe gauche : le cœur ne dépasse jamais du cadre.
+     Le décalage (−2,7 % ; −8 %) centre le cœur, et non l'île, dans l'espace
+     au-dessus de la légende. Sans script (téléphone, mouvement réduit, sans JS) :
+     état final directement. */
+  --shrink: min(1, var(--heart, 1) * 5);
+  transform: translate3d(calc(var(--shrink) * -2.7%), calc(var(--shrink) * -8%), 0) scale(calc(1 - var(--shrink) * 0.333));
+}
+/* Même trait que le contour de l'île (.mapDraw) : couleur, opacité, épaisseur. */
+.mapHeart {
+  fill: none;
+  stroke: var(--syb-rust-light);
+  stroke-opacity: 0.6;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--heart, 1));
+}
+@media (min-width: 1100px) {
+  :global(html.map-travel) .mapPortrait:not([data-docked]) { visibility: hidden; }
+}
+
+.mapSvg { display: block; width: 100%; height: 100%; overflow: visible; }
+.mapGhost {
+  fill: rgba(232, 132, 95, 0.045);
+  stroke: var(--syb-rust-light);
+  stroke-opacity: 0.14;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+.mapDraw {
+  fill: none;
+  stroke: var(--syb-rust-light);
+  stroke-opacity: 0.6;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  /* Part de cette île déjà tracée : 0 avant son tour, 1 une fois passée. */
+  stroke-dashoffset: calc(1 - clamp(0, (var(--draw, 1) - var(--a, 0)) / (var(--b, 1) - var(--a, 0)), 1));
+}
+/* Silhouette pleine et Petit-Bourg : aucun fond au départ, ils n'apparaissent
+   qu'une fois le contour bouclé (sur les derniers 3 % du tracé). */
+.mapReveal { opacity: clamp(0, (var(--draw, 1) - 0.97) / 0.03, 1); }
+/* Petit-Bourg : toujours allumé, en or. */
+.mapHome { fill: var(--syb-gold); stroke: var(--syb-dark); stroke-width: 3; }
+.mapHomeHalo { fill: var(--syb-gold); opacity: 0.18; }
+
+/* Points « recherches » en HTML (point + anneau), animés en transform/opacity :
+   uniquement une fois le contour entièrement tracé (data-drawn), en boucle,
+   avec des décalages irréguliers. */
+.mapPing { position: absolute; width: 0; height: 0; }
+.mapPing::before,
+.mapPing::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+.mapPing::before {
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--syb-rust-light);
+}
+.mapPing::after {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border: 1.2px solid var(--syb-rust-light);
+}
+.map[data-drawn] .mapPing::before { animation: mapDot 6s ease calc(0.4s + var(--pd, 0s)) infinite; }
+.map[data-drawn] .mapPing::after { animation: mapRing 6s ease-out calc(0.4s + var(--pd, 0s)) infinite; }
+
+/* Arrimée au portrait, elle scintille : pulsations deux fois plus serrées,
+   et Petit-Bourg qui bat doucement en or. Seulement tant qu'elle est à l'écran
+   (data-twinkle, posé par le script). */
+.map[data-twinkle] .mapPing::before { animation: mapDot 3s ease calc(var(--pd, 0s) / 2) infinite; }
+.map[data-twinkle] .mapPing::after { animation: mapRing 3s ease-out calc(var(--pd, 0s) / 2) infinite; }
+.mapHomePulse { position: absolute; width: 0; height: 0; }
+.mapHomePulse::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--syb-gold);
+  opacity: 0;
+}
+.map[data-twinkle] .mapHomePulse::after { animation: mapHome 2.4s ease-out infinite; }
+@keyframes mapHome {
+  0% { opacity: 0; transform: scale(0.8); }
+  10% { opacity: 0.85; }
+  70%, 100% { opacity: 0; transform: scale(3); }
+}
+@keyframes mapRing {
+  0% { opacity: 0; transform: scale(0.6); }
+  6% { opacity: 0.9; }
+  40%, 100% { opacity: 0; transform: scale(3.4); }
+}
+@keyframes mapDot {
+  0% { opacity: 0; }
+  6%, 38% { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+/* ════════ Réalisations ════════ */
+.realGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 860px) { .realGrid { grid-template-columns: 1.3fr 1fr 1fr; } }
+.realCard { position: relative; display: flex; flex-direction: column; }
+.realVisual {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: calc(var(--syb-radius-card) - 1px) calc(var(--syb-radius-card) - 1px) 0 0;
+}
+/* La capture commence sous la barre de navigateur, sans être recouverte. */
+.shot { position: absolute; inset: 30px 0 0; }
+.shot img { object-fit: cover; object-position: top center; }
+.chrome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 12px;
+}
+.chrome span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
+.realBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px 26px;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.statusLive { color: var(--syb-live-ink); }
+.statusSoon { color: var(--syb-gold-ink); }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dotLive { background: #2E8B57; box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.18); }
+.dotSoon { background: var(--syb-gold); box-shadow: 0 0 0 3px rgba(184, 118, 10, 0.18); }
+.sub {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--syb-stone);
+}
+.realBody h3 {
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--syb-ink);
+}
+.desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--syb-stone);
+}
+.dashList { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+.dashList li { display: flex; gap: 7px; font-size: 12.5px; color: var(--syb-ink); }
+.dashList li::before { content: "—"; color: var(--syb-rust); flex-shrink: 0; }
+.cardLink {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--syb-rust);
+  text-decoration: none;
+}
+.cardLink:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ════════ Services ════════ */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  scroll-margin-top: 96px;
+}
+@media (min-width: 860px) { .servicesGrid { grid-template-columns: repeat(3, 1fr); } }
+.serviceCard {
+  border-left: 3px solid var(--syb-rust);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.serviceTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.serviceIcon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: rgba(196, 71, 42, 0.09);
+  color: var(--syb-rust);
+}
+.tag {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tagRust { background: var(--syb-rust); color: #fff; }
+.tagOutline { border: 1px solid var(--syb-border); color: var(--syb-stone); }
+.serviceCard h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 2px;
+  color: var(--syb-ink);
+}
+.price {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 27px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--syb-ink);
+}
+.serviceCard > p { font-size: 14.5px; line-height: 1.6; color: var(--syb-stone); }
+.checklist { display: flex; flex-direction: column; gap: 9px; margin-top: 2px; }
+.checklist li { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; color: var(--syb-ink); }
+.checklist svg { color: var(--syb-rust); flex-shrink: 0; margin-top: 2px; }
+.serviceCard .btn { margin-top: auto; }
+
+.maintenance {
+  margin-top: 24px;
+  padding: 26px 30px;
+  border-left: 3px solid var(--syb-gold);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.maintenanceLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--syb-gold-ink);
+}
+.maintenance h3 {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--syb-ink);
+}
+.maintenanceDesc { margin-top: 4px; max-width: 480px; font-size: 13.5px; color: var(--syb-stone); }
+
+/* ════════ Engagements ════════ */
+.engageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  overflow: hidden;
+  background: var(--syb-border);
+}
+@media (min-width: 720px) { .engageGrid { grid-template-columns: repeat(4, 1fr); } }
+/* Entre 1 100 et 1 279 px, le couloir de la carte ne laisse que ~720 px : 2 × 2. */
+@media (min-width: 1100px) and (max-width: 1279px) { .engageGrid { grid-template-columns: repeat(2, 1fr); } }
+.engageItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px 26px;
+  background: var(--syb-warm);
+}
+.engageItem svg { color: var(--syb-rust); }
+.engageItem h3 { font-size: 15.5px; font-weight: 700; color: var(--syb-ink); }
+.engageItem p { font-size: 13.5px; line-height: 1.55; color: var(--syb-stone); }
+
+/* ════════ À propos (texte sur le canevas) ════════ */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+  align-items: start;
+}
+@media (min-width: 900px) { .aboutGrid { grid-template-columns: 0.85fr 1.15fr; } }
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px;
+  border-radius: var(--syb-radius-card);
+  border: 1px solid var(--syb-border-dark);
+  box-shadow: var(--syb-shadow-card);
+  background: linear-gradient(155deg, #3A2216 0%, var(--syb-dark) 55%, var(--syb-ink) 100%);
+  container-type: inline-size;
+}
+/* Écran large : fond transparent, pour que la carte du canevas reste visible
+   pendant que le cadre remonte jusqu'à elle (le canevas fait office de fond).
+   Collant : une fois la carte arrimée, le cadre reste à l'écran pendant que le
+   texte d'« À propos » défile à côté (le cœur s'y trace), puis repart. Il colle
+   exactement à la hauteur de l'arrimage (--frame-top, posée par le script). */
+@media (min-width: 1100px) {
+  :global(html.map-travel) .portrait {
+    position: sticky;
+    top: var(--frame-top, 96px);
+    background: transparent;
+  }
+}
+.portrait img { object-fit: cover; }
+.portraitCap {
+  position: relative;
+  z-index: 1;
+  font-size: 12.5px;
+  color: var(--syb-on-dark-muted);
+}
+.portraitCap strong { display: block; margin-bottom: 3px; font-size: 14.5px; color: var(--syb-cream); }
+.aboutCopy h2 {
+  margin-top: 14px;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 700;
+  color: var(--syb-cream);
+  text-wrap: balance;
+}
+.aboutCopy p {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--syb-on-dark-muted);
+}
+.aboutCopy .pull {
+  margin-block: 30px;
+  padding-left: 22px;
+  border-left: 2px solid var(--syb-rust-light);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--syb-cream);
+}
+
+/* ════════ FAQ ════════ */
+.faqWrap { max-width: 820px; }
+.faqPanel { padding-inline: 8px; }
+.faqItem { border-bottom: 1px solid var(--syb-border); }
+.faqItem:last-child { border-bottom: none; }
+.faqItem summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 20px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--syb-ink);
+}
+.faqItem summary::-webkit-details-marker { display: none; }
+.plus { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--syb-rust);
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.plus::before { width: 14px; height: 1.6px; }
+.plus::after { width: 1.6px; height: 14px; }
+.faqItem[open] .plus::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.answer { padding: 0 44px 22px 20px; font-size: 14.5px; line-height: 1.7; color: var(--syb-stone); }
+
+/* ════════ Contact ════════ */
+.contactShell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 44px 24px;
+}
+@media (min-width: 900px) { .contactShell { grid-template-columns: 0.9fr 1.1fr; padding: 56px; } }
+.contactInfo h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  font-weight: 900;
+  color: var(--syb-ink);
+}
+.contactInfo h2 em { font-style: italic; font-weight: 300; color: var(--syb-rust); }
+.contactInfo > p { margin-top: 16px; max-width: 380px; font-size: 15.5px; color: var(--syb-stone); }
+.badges { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+.badge { display: flex; align-items: flex-start; gap: 12px; }
+.badge svg { color: var(--syb-rust); margin-top: 2px; flex-shrink: 0; }
+.badgeKey {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--syb-stone);
+}
+.badgeValue { margin-top: 2px; font-size: 14.5px; font-weight: 500; color: var(--syb-ink); }
+
+/* Espacements repris de la maquette : 14 px entre les lignes de champs,
+   4 px avant le consentement, 6 px avant le bouton. */
+/* margin-bottom : la maquette (mode quirks) donne 1em de marge basse aux <form>. */
+.form { display: flex; flex-direction: column; margin-bottom: 1em; }
+.formGap { margin-top: 14px; }
+.formGrid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 560px) { .formGrid { grid-template-columns: 1fr 1fr; } }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--syb-stone); }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--syb-border);
+  border-radius: 9px;
+  background: var(--syb-cream);
+  color: var(--syb-ink);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: normal;
+}
+.field select { cursor: pointer; }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--syb-stone); opacity: 1; }
+.field textarea { min-height: 90px; resize: vertical; }
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: var(--syb-stone);
+}
+.consent input { margin-top: 3px; accent-color: var(--syb-rust); flex-shrink: 0; }
+.consent a { color: var(--syb-rust-ink); text-decoration: underline; }
+.form .btnPrimary { margin-top: 6px; align-self: flex-start; }
+.formError { margin-top: 8px; font-size: 13px; color: var(--syb-rust-ink); }
+.success { padding: 40px 24px; text-align: center; }
+.success h3 { margin-top: 10px; font-family: var(--font-fraunces), Georgia, serif; font-size: 22px; font-weight: 600; }
+.success p { margin-top: 6px; font-size: 14.5px; color: var(--syb-stone); }
+
+/* ════════ Parcours des réalisations ════════
+   Un point par carte, un trait entre deux cartes. Le trait se remplit via
+   --s (0 → 1), piloté par ScrollChoreography. Sans JS ou en mouvement
+   réduit, --s n'est jamais posé : le parcours reste entièrement tracé.
+   Mobile / tablette : trait vertical dans la gouttière. Desktop : horizontal,
+   au-dessus des cartes. */
+.tlDot,
+.tlTrack { position: absolute; pointer-events: none; }
+.tlDot {
+  left: -12px;
+  top: 20px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--syb-gold);
+  box-shadow: 0 0 0 3px rgba(184, 118, 10, 0.2);
+}
+.tlDot[data-live="true"] { background: #2E8B57; box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.22); }
+.tlTrack {
+  left: -12.75px;
+  top: 20px;
+  width: 1.5px;
+  height: calc(100% + 20px);
+  background: var(--syb-border-dark);
+}
+.tlFill {
+  position: absolute;
+  inset: 0;
+  background: var(--syb-rust-light);
+  transform-origin: top;
+  transform: scaleY(var(--s, 1));
+}
+@media (min-width: 720px) {
+  .tlDot { left: -20px; }
+  .tlTrack { left: -20.75px; }
+}
+@media (min-width: 860px) {
+  .tlDot { left: 24px; top: -22px; }
+  .tlTrack { left: 24px; top: -22.75px; width: calc(100% + 20px); height: 1.5px; }
+  .tlFill { transform-origin: left; transform: scaleX(var(--s, 1)); }
+}
+
+/* ════════ Révélation au scroll ════════
+   L'état masqué n'existe que sous html.reveal-on, classe posée par
+   ScrollChoreography une fois son code exécuté, et jamais en mouvement réduit.
+   `translate` (et non `transform`) : le lift au survol garde son propre transform. */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.reveal-on) .home [data-reveal] {
+    transition:
+      opacity 0.6s var(--ease-reveal) var(--reveal-delay, 0ms),
+      translate 0.6s var(--ease-reveal) var(--reveal-delay, 0ms);
+  }
+  :global(html.reveal-on) .home .lift[data-reveal] {
+    transition:
+      opacity 0.6s var(--ease-reveal) var(--reveal-delay, 0ms),
+      translate 0.6s var(--ease-reveal) var(--reveal-delay, 0ms),
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      border-color 0.22s ease;
+  }
+  :global(html.reveal-on) .home [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+/* ════════ Mouvement réduit ════════
+   Filet explicite en plus de la règle globale de globals.css. */
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .heroIn { animation: none; }
+  /* carte : contour complet, points fixes (data-drawn / data-twinkle jamais posés) */
+  .mapPing::after,
+  .mapHomePulse { display: none; }
+  .mapPing::before { opacity: 0.85; }
+  .btn,
+  .btnPrimary::after,
+  .lift,
+  .plus::before,
+  .plus::after { transition: none; }
+  .btnPrimary:hover,
+  .lift:hover { transform: none; }
+}

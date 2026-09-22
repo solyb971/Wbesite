@@ -1,74 +1,64 @@
+import Image from "next/image"
+import GuadeloupeMap from "./GuadeloupeMap"
+import s from "./accueil.module.css"
+
+/**
+ * Portrait du fondateur. Tant qu'il vaut null, un fond neutre tient la place.
+ * Déposer la photo dans /public (ex. /about/yacine.jpg) puis renseigner le chemin ici.
+ */
+const FOUNDER_PHOTO: string | null = null
+
 export default function About() {
   return (
-    <section
-      id="apropos"
-      className="py-28 md:py-36 scroll-mt-20"
-      style={{ background: 'var(--syb-cream)' }}
-    >
-      <div className="max-w-[900px] mx-auto px-6 md:px-12">
-        <p
-          className="reveal font-medium mb-4"
-          style={{ fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--syb-rust)' }}
-        >
-          À propos de SolYB
-        </p>
-        <h2
-          className="reveal font-display font-black mb-4"
-          style={{
-            fontSize: 'clamp(30px, 4.2vw, 56px)',
-            letterSpacing: '-1.5px',
-            color: 'var(--syb-ink)',
-            lineHeight: 1.15,
-            maxWidth: '820px',
-          }}
-        >
-          La Guadeloupe m&apos;a construit.<br />
-          <span style={{ fontWeight: 900, color: 'var(--syb-rust)' }}>
-            J&apos;ai envie de lui rendre la pareille.
-          </span>
-        </h2>
-        <p
-          className="reveal mb-12"
-          style={{ fontSize: '14px', letterSpacing: '0.3px', color: 'var(--syb-stone-light)' }}
-        >
-          Fondateur — Yacine Bouhassoun · Petit-Bourg, Guadeloupe
-        </p>
+    <section id="apropos" className={s.section}>
+      <div className={`${s.wrap} ${s.aboutGrid}`}>
+        <figure className={s.portrait} data-reveal="stagger">
+          {/* En attendant la photo, la carte arrivée du canevas vient se loger ici. */}
+          {!FOUNDER_PHOTO && <GuadeloupeMap variant="portrait" />}
+          {FOUNDER_PHOTO && (
+            <Image
+              src={FOUNDER_PHOTO}
+              alt="Yacine Bouhassoun, fondateur de SolYB, à Petit-Bourg en Guadeloupe"
+              fill
+              sizes="(min-width: 900px) 440px, 100vw"
+            />
+          )}
+          <figcaption className={s.portraitCap}>
+            <strong>Yacine Bouhassoun</strong>
+            Fondateur — Petit-Bourg, Guadeloupe
+          </figcaption>
+        </figure>
 
-        <div
-          className="reveal flex flex-col gap-5 text-left"
-          style={{ maxWidth: '640px' }}
-        >
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+        <div className={s.aboutCopy} data-reveal="stagger">
+          <span className={s.eyebrow}>À propos de SolYB</span>
+          <h2>
+            La Guadeloupe m&apos;a construit.{" "}
+            <em className={s.accent}>J&apos;ai envie de lui rendre la pareille.</em>
+          </h2>
+          <p>
             Je m&apos;appelle Yacine. J&apos;ai grandi en Guadeloupe, une île magnifique, avec une
             énergie entrepreneuriale qui ne ressemble à aucune autre.
           </p>
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+          <p>
             J&apos;ai eu l&apos;occasion de travailler dans différents corps de métier ici, et le même
             constat revenait sans cesse&nbsp;: des professionnels compétents, sérieux, reconnus sur le
-            terrain — mais invisibles en ligne. Un exemple m&apos;a marqué&nbsp;: un restaurant sur la
-            plage de Deshaies, plein en haute saison, quasiment vide en basse saison, au point que les
-            gérants ont fini par revendre. Les repreneurs, eux, ont fait quelques travaux, rouvert dès
-            la basse saison, et investi dans un vrai site bien référencé. Aujourd&apos;hui, ils
-            tournent quasiment complets midi et soir même en basse saison, là où d&apos;autres
-            établissements de la même plage ne font pas 40 couverts sur la semaine. Même emplacement,
-            même clientèle potentielle.{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>La différence&nbsp;: ils existent sur Google.</span>
+            terrain — mais invisibles en ligne.
           </p>
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            Et ce n&apos;est qu&apos;un exemple parmi tant d&apos;autres — j&apos;en ai vu des dizaines,
-            dans tous les secteurs, où le savoir-faire ne suffit plus s&apos;il ne se voit pas en ligne.
+          <p className={s.pull}>
+            «&nbsp;Un restaurant sur la plage de Deshaies, plein en haute saison, quasiment vide en
+            basse saison, au point d&apos;être revendu. Les repreneurs ont investi dans un vrai site
+            référencé — aujourd&apos;hui ils affichent presque complet midi et soir en basse saison.
+            Même emplacement, même clientèle. La différence&nbsp;: ils existent sur Google.&nbsp;»
           </p>
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
-            C&apos;est simple&nbsp;: avant de se déplacer, on cherche en ligne. Et en Guadeloupe, qui
-            accueille plus d&apos;un million de visiteurs par an — touristes de séjour et croisiéristes
-            — en plus de sa clientèle locale, ne pas y être vu, c&apos;est ne pas exister. Peu importe
-            la qualité du travail derrière.
+          <p>
+            En Guadeloupe, qui accueille plus d&apos;un million de visiteurs par an en plus de sa
+            clientèle locale, ne pas être vu en ligne, c&apos;est ne pas exister — peu importe la
+            qualité du travail derrière.
           </p>
-          <p className="font-light" style={{ fontSize: '15px', lineHeight: 1.85, color: 'var(--syb-stone)' }}>
+          <p>
             C&apos;est pour ça qu&apos;est née SolYB&nbsp;: une agence digitale locale, à l&apos;écoute
             réelle de chaque client, qui cherche à chaque fois le meilleur compromis entre prix et
-            efficacité —{' '}
-            <span style={{ color: 'var(--syb-ink)' }}>pour que le savoir-faire d&apos;ici se voie enfin autant en ligne qu&apos;il le mérite.</span>
+            efficacité.
           </p>
         </div>
       </div>
