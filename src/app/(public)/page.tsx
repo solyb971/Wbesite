@@ -7,7 +7,7 @@ import About from "@/components/site/About"
 import FAQ from "@/components/site/FAQ"
 import Contact from "@/components/site/Contact"
 import ScrollChoreography from "@/components/site/ScrollChoreography"
-import GuadeloupeMap from "@/components/site/GuadeloupeMap"
+import GuadeloupeMap, { GuadeloupeSprite } from "@/components/site/GuadeloupeMap"
 import s from "@/components/site/accueil.module.css"
 import { homeFaqs } from "@/lib/faq-data"
 
@@ -184,9 +184,10 @@ export default function HomePage() {
 
       {/* data-canvas : repère pour globals.css (footer transparent, fond ink du body). */}
       <main className={s.home} data-canvas>
+        <GuadeloupeSprite />
         <div className={s.canvas} aria-hidden>
           <div className={s.glow} />
-          <GuadeloupeMap />
+          <GuadeloupeMap variant="canvas" />
         </div>
         <Hero />
         <Realisations />

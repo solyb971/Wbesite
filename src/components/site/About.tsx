@@ -1,4 +1,5 @@
 import Image from "next/image"
+import GuadeloupeMap from "./GuadeloupeMap"
 import s from "./accueil.module.css"
 
 /**
@@ -12,6 +13,8 @@ export default function About() {
     <section id="apropos" className={s.section}>
       <div className={`${s.wrap} ${s.aboutGrid}`}>
         <figure className={s.portrait} data-reveal="stagger">
+          {/* En attendant la photo, la carte arrivée du canevas vient se loger ici. */}
+          {!FOUNDER_PHOTO && <GuadeloupeMap variant="portrait" />}
           {FOUNDER_PHOTO && (
             <Image
               src={FOUNDER_PHOTO}
