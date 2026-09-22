@@ -70,9 +70,10 @@ export default function GuadeloupeMap({ variant }: { variant: "canvas" | "portra
       aria-hidden
     >
       <svg className={s.mapSvg} viewBox={GUADELOUPE_VIEWBOX} focusable="false">
-        {/* Trait qui se dessine au scroll, île après île (--a / --b : part du tracé
-            total occupée par l'île) ; la silhouette pleine et Petit-Bourg
-            n'apparaissent qu'une fois le contour bouclé. */}
+        {/* Trait qui se dessine au scroll, île après île (data-a / data-b : part du
+            tracé total occupée par l'île ; ScrollChoreography en déduit le décalage
+            de chaque île) ; la silhouette pleine et Petit-Bourg n'apparaissent
+            qu'une fois le contour bouclé (--reveal). */}
         <g className={s.mapReveal}>
           {ILES.map((ile) => (
             <use key={`f-${ile.id}`} href={`#${contourId(ile.id)}`} className={s.mapGhost} />
@@ -83,14 +84,15 @@ export default function GuadeloupeMap({ variant }: { variant: "canvas" | "portra
             key={`t-${ile.id}`}
             href={`#${contourId(ile.id)}`}
             className={s.mapDraw}
-            style={{ "--a": ile.debut, "--b": ile.fin } as CSSProperties}
+            data-a={ile.debut}
+            data-b={ile.fin}
           />
         ))}
         <g className={s.mapReveal}>
           <circle className={s.mapHomeHalo} cx={px} cy={py} r={16} />
           <circle className={s.mapHome} cx={px} cy={py} r={8} />
         </g>
-        {/* Dans le cadre seulement : le cœur qui se trace autour de l'île (--heart). */}
+        {/* Dans le cadre seulement : le cœur qui se trace autour de l'île. */}
         {variant === "portrait" && <path className={s.mapHeart} d={COEUR} pathLength={1} />}
       </svg>
       <span className={s.mapHomePulse} style={percent(COMMUNES.petitBourg)} />

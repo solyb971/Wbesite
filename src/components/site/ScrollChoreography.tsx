@@ -169,7 +169,7 @@ function startTimeline(): () => void {
  *    à l'arrimage, l'exemplaire logé dans le cadre prend le relais au pixel près
  *    (il défile alors avec la page) et scintille tant qu'il est à l'écran ;
  * 4. tant que le cadre colle (et un peu après), l'île descend un peu dans le cadre et un cœur, du même trait,
- *    se trace autour d'elle (--heart).
+ *    se trace autour d'elle (transform de l'île et décalage du cœur écrits ici).
  * Sans exemplaire dans le cadre (photo en place) : tracée à droite sur les deux
  * premiers écrans, puis effacée avant « À propos ». Mouvement réduit : tracée d'emblée,
  * immobile à droite, et l'exemplaire du portrait est affiché. Sous 1 100 px, rien
@@ -181,6 +181,7 @@ function startMap(reduce: boolean): () => void {
   const map = document.querySelector<HTMLElement>('[data-map="canvas"]')
   if (!map) return () => {}
   const dock = document.querySelector<HTMLElement>('[data-map="portrait"]')
+  const heartPath = dock?.querySelector<SVGPathElement>("svg > path") ?? null
   const frame = dock?.parentElement ?? null
   const root = document.documentElement
   const about = document.getElementById("apropos")
@@ -361,12 +362,29 @@ function startMap(reduce: boolean): () => void {
     const i = Math.floor(f)
     return i >= seen.length - 1 ? 1 : lerp(seen[i], seen[i + 1], f - i)
   }
-  // Écritures seulement si la valeur change : --draw est héritée par tout le tracé,
+  // Traits des îles, avec la part du tracé total (a → b) que chacune occupe.
+  const segs = Array.from(map.querySelectorAll<SVGElement>("[data-a]")).map((el) => ({
+    el,
+    a: Number(el.dataset.a),
+    b: Number(el.dataset.b),
+  }))
+  // Écritures seulement si la valeur change, et en nombres simples : le décalage de
+  // chaque île et l'apparition de la silhouette sont calculés ici plutôt qu'en calc()
+  // CSS, que certains navigateurs ignoraient (l'île s'affichait alors entière).
   // transform et opacity sont écrits en propre (pas de variable héritée à recalculer).
   const last = { draw: "", transform: "", opacity: "" }
   let lastHeart = ""
   const write = (draw: string, transform: string, opacity: string) => {
-    if (draw !== last.draw) map.style.setProperty("--draw", (last.draw = draw))
+    if (draw !== last.draw) {
+      last.draw = draw
+      const d = Number(draw)
+      // Part de chaque île déjà tracée : 0 avant son tour, 1 une fois passée.
+      segs.forEach(({ el, a, b }) => {
+        el.style.strokeDashoffset = (1 - clamp((d - a) / (b - a))).toFixed(4)
+      })
+      // Silhouette pleine et Petit-Bourg : seulement sur les derniers 3 % du tracé.
+      map.style.setProperty("--reveal", clamp((d - 0.97) / 0.03).toFixed(3))
+    }
     if (transform !== last.transform) map.style.transform = last.transform = transform
     if (opacity !== last.opacity) map.style.opacity = last.opacity = opacity
   }
@@ -428,7 +446,15 @@ function startMap(reduce: boolean): () => void {
     // même temps. 0 à l'arrimage : relais au pixel près.
     const heartSpan = Math.max(1, g.stick + 0.1 * vh)
     const heart = (Math.round(clamp((y - g.dockAt) / heartSpan) * 200) / 200).toFixed(3)
-    if (heart !== lastHeart) dock.style.setProperty("--heart", (lastHeart = heart))
+    if (heart !== lastHeart) {
+      lastHeart = heart
+      const h = Number(heart)
+      // L'île se resserre sur le premier cinquième du tracé, avant que le trait
+      // n'atteigne le lobe gauche : le cœur ne dépasse jamais du cadre.
+      const k = Math.min(1, h * 5)
+      dock.style.transform = `translate3d(${(-2.7 * k).toFixed(3)}%, ${(-8 * k).toFixed(3)}%, 0) scale(${(1 - 0.333 * k).toFixed(4)})`
+      if (heartPath) heartPath.style.strokeDashoffset = (1 - h).toFixed(4)
+    }
   }
   const schedule = () => {
     if (!raf) raf = requestAnimationFrame(update)
@@ -469,7 +495,8 @@ function startMap(reduce: boolean): () => void {
     dock?.removeAttribute("data-docked")
     dock?.removeAttribute("data-twinkle")
     // Hors trajet (écran étroit) : le cadre montre l'état final, cœur tracé.
-    dock?.style.removeProperty("--heart")
+    dock?.style.removeProperty("transform")
+    heartPath?.style.removeProperty("stroke-dashoffset")
     lastHeart = ""
     root.classList.remove("map-travel")
   }
