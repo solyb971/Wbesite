@@ -101,7 +101,7 @@ export default function Realisations() {
               <li>Aucune commission par couvert</li>
               <li>Pensé pour restaurants et bars</li>
             </ul>
-            <Link className="link" href="/resagp">Rejoindre la liste d&apos;attente →</Link>
+            <Link prefetch={false} className="link" href="/resagp">Rejoindre la liste d&apos;attente →</Link>
           </div>
         </article>
 
@@ -135,7 +135,7 @@ export default function Realisations() {
               <li>Conforme réforme DGFiP 2026</li>
               <li>Pensé pour TPE/PME du 971</li>
             </ul>
-            <Link className="link" href="/facturation-electronique">Rejoindre la liste d&apos;attente →</Link>
+            <Link prefetch={false} className="link" href="/facturation-electronique">Rejoindre la liste d&apos;attente →</Link>
           </div>
         </article>
       </div>

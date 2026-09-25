@@ -2,6 +2,10 @@ import Link from "next/link"
 import Logo from "./Logo"
 import { SCENES } from "./Stage"
 
+// Liens vers les autres pages sans préchargement (ici, dans les réalisations et le
+// pied de page) : l'accueil ne télécharge pas six pages que le visiteur n'ouvrira
+// peut-être pas, et la console reste propre (CSS préchargée mais inutilisée).
+
 export default function Nav() {
   return (
     <>
@@ -14,7 +18,7 @@ export default function Nav() {
           <li><a href="#services">Services &amp; tarifs</a></li>
           <li><a href="#apropos">L&apos;histoire</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><Link href="/blog">Blog</Link></li>
+          <li><Link prefetch={false} href="/blog">Blog</Link></li>
         </ul>
         <a className="btn btn--brand btn--sm" href="#contact">Devis gratuit</a>
       </nav>

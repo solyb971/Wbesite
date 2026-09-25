@@ -32,7 +32,7 @@ export default function Footer() {
               <ul>
                 <li><a href="#apropos">L&apos;histoire</a></li>
                 <li><a href="#realisations">Nos projets</a></li>
-                <li><Link href="/blog">Blog</Link></li>
+                <li><Link prefetch={false} href="/blog">Blog</Link></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
@@ -40,16 +40,16 @@ export default function Footer() {
             <div>
               <h4>Outils maison</h4>
               <ul>
-                <li><Link href="/resagp">ResaGP</Link></li>
-                <li><Link href="/facturation-electronique">FactuGP</Link></li>
+                <li><Link prefetch={false} href="/resagp">ResaGP</Link></li>
+                <li><Link prefetch={false} href="/facturation-electronique">FactuGP</Link></li>
               </ul>
             </div>
           </div>
           <div className="legal">
             <span>© 2026 SolYB, Guadeloupe</span>
-            <Link href="/mentions-legales">Mentions légales</Link>
-            <Link href="/confidentialite">Politique de confidentialité</Link>
-            <Link href="/cgv">CGV</Link>
+            <Link prefetch={false} href="/mentions-legales">Mentions légales</Link>
+            <Link prefetch={false} href="/confidentialite">Politique de confidentialité</Link>
+            <Link prefetch={false} href="/cgv">CGV</Link>
           </div>
         </div>
       </div>

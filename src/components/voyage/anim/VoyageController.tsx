@@ -129,8 +129,14 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
       lenis.destroy()
     })
   }
+  // Lenis 1.3 retranche le scroll-padding-top de la page (90 px, prévu pour les
+  // sauts natifs) ; la maquette, en Lenis 1.1, posait la section pile en haut de
+  // l'écran. On le rajoute pour retrouver ce cadrage : une section, un écran.
+  const scrollPadding = () => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
   const scrollTo = (t: HTMLElement) =>
-    lenis ? lenis.scrollTo(t, { offset: 0, duration: 1.8 }) : t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
+    lenis
+      ? lenis.scrollTo(t, { offset: scrollPadding(), duration: 1.8 })
+      : t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
 
   $$<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
     const aller = (e: MouseEvent) => {
