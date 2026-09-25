@@ -13,7 +13,7 @@ export default function Finale() {
     <section className="finale plain" data-scene="5" aria-label="Vos objectifs. Nos solutions.">
       <div className="finale-stage">
         <div className="finale-text">
-          <div className="sign" aria-label="SolYB">
+          <div className="sign" role="img" aria-label="SolYB">
             {/* Le vrai logo remplace le rond provisoire « SYB » de la maquette ;
                 le cercle rouille, lui, se trace toujours autour. */}
             <span className="lm" aria-hidden="true">
