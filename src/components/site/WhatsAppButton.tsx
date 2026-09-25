@@ -1,35 +1,71 @@
 ﻿"use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { X, MessageCircle } from "lucide-react"
 
 interface WhatsAppButtonProps {
   phoneNumber?: string
   message?: string
+  /**
+   * Sélecteur de l'élément à partir duquel le bouton apparaît (le premier trouvé
+   * dans la page), par exemple la fin du site. Il se retire si l'on remonte
+   * au-dessus. Absent : toujours visible.
+   */
+  apparitionApres?: string
 }
 
 export default function WhatsAppButton({
   phoneNumber = "590690426792",
   message = "Bonjour ! Je suis intéressé(e) par vos services de création de site web.",
+  apparitionApres,
 }: WhatsAppButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [visible, setVisible] = useState(!apparitionApres)
+  const pathname = usePathname()
 
-  // Afficher le tooltip uniquement sur desktop, après 4 secondes
+  // Apparition à partir de l'élément demandé : visible quand il est à l'écran ou
+  // déjà dépassé, retiré au-dessus. Recalé à chaque page (la mise en page qui
+  // porte le bouton ne se recharge pas d'une page à l'autre).
   useEffect(() => {
+    if (!apparitionApres) return
+    setVisible(false)
+    const cible = document.querySelector(apparitionApres)
+    if (!cible) return setVisible(true)
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting || e.boundingClientRect.top < 0))
+    io.observe(cible)
+    return () => io.disconnect()
+  }, [apparitionApres, pathname])
+
+  // Masqué, le bouton n'a ni fenêtre ouverte ni infobulle en attente.
+  useEffect(() => {
+    if (!visible) {
+      setIsOpen(false)
+      setShowTooltip(false)
+    }
+  }, [visible])
+
+  // Afficher le tooltip uniquement sur desktop, 4 secondes après l'apparition du bouton
+  useEffect(() => {
+    if (!visible) return
     const isMobile = window.innerWidth < 768
     if (isMobile) return
     const show = setTimeout(() => setShowTooltip(true), 4000)
     const hide = setTimeout(() => setShowTooltip(false), 9000)
     return () => { clearTimeout(show); clearTimeout(hide) }
-  }, [])
+  }, [visible])
+
+  // Tant qu'il n'a pas à paraître, le bouton n'existe pas : aucune animation
+  // (pulsation) ne tourne pendant les scènes de la page.
+  if (!visible) return null
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (
     <>
       {/* Floating Button */}
-      <div role="complementary" aria-label="Contact rapide" className="fixed bottom-20 sm:bottom-6 right-6 z-50">
+      <div role="complementary" aria-label="Contact rapide" className="fixed bottom-20 sm:bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
         {/* Tooltip */}
         {showTooltip && !isOpen && (
           <div className="absolute bottom-full right-0 mb-3 animate-bounce">
