@@ -44,8 +44,8 @@ const muted = { color: "var(--syb-on-dark-muted)" }
 const linkClass =
   "text-[13.5px] text-[var(--syb-on-dark-muted)] transition-colors hover:text-[var(--syb-cream)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[var(--syb-rust-light)] rounded-sm"
 
-/* Fond ink sur toutes les pages ; transparent sur l'accueil, où il se pose
-   sur le canevas (voir .site-footer dans globals.css). */
+/* Pied de page des pages du site (l'accueil a le sien, voir components/voyage),
+   sur fond ink (.site-footer dans globals.css). */
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 

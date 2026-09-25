@@ -484,16 +484,12 @@ section > .max-w-5xl {
 .article-body .not-prose > * + * { margin-top: 0; }
 
 /* ============================================================
-   FOOTER + CANEVAS D'ACCUEIL
+   FOOTER
 ============================================================ */
 .site-footer {
   background: var(--syb-ink);
   border-top: 1px solid var(--syb-border-dark);
 }
-/* Sur l'accueil, le footer se pose sur le canevas fixe. */
-main[data-canvas] ~ .site-footer { background: transparent; }
-/* Fond ink sous le canevas : évite le crème au rebond de défilement (iOS). */
-body:has(main[data-canvas]) { background-color: var(--syb-ink); }
 
 /* ============================================================
    MOUVEMENT RÉDUIT — coupe toutes les animations et transitions du site.
