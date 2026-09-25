@@ -75,12 +75,31 @@ export default function Finale() {
             Vous avez un projet <em>en tête ?</em>
           </span>
           <span className="next-arrow" aria-hidden="true">
+            {/* Même matière que l'archipel au-dessus : aplat rouille, liseré clair et
+                néon à deux flous (le plus large respire avec celui de la carte). La tige
+                et la pointe ne font qu'un tracé, sans liseré à leur jonction. */}
             <svg className="na" viewBox="0 0 80 120">
-              <circle className="na-halo" cx="40" cy="92" r="30" fill="#B8760A" />
-              <rect x="29" y="4" width="22" height="70" rx="11" fill="#C4472A" />
-              <path className="na-flow" d="M40 14 V64" stroke="#F5F2ED" strokeWidth="4" strokeLinecap="round" strokeDasharray="9 13" fill="none" />
-              <path d="M10 60 Q40 55 70 60 Q62 78 40 108 Q18 78 10 60Z" fill="#C4472A" />
-              <path d="M22 64 Q40 62 58 64" stroke="#E0694B" strokeWidth="3" strokeLinecap="round" fill="none" />
+              <defs>
+                <filter id="naglow" x="-60%" y="-40%" width="220%" height="180%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b1" />
+                  <feGaussianBlur className="na-glow" in="SourceGraphic" stdDeviation="12" result="b2" />
+                  <feMerge>
+                    <feMergeNode in="b2" />
+                    <feMergeNode in="b1" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <circle className="na-halo" cx="40" cy="92" r="30" fill="none" stroke="#F08A6C" strokeWidth="1.6" />
+              <path
+                filter="url(#naglow)"
+                fill="#C4472A"
+                stroke="#F08A6C"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+                d="M29 15 A11 11 0 0 1 51 15 V57.8 Q60.5 58.4 70 60 Q62 78 40 108 Q18 78 10 60 Q19.5 58.4 29 57.8 Z"
+              />
+              <path className="na-flow" d="M40 14 V64" stroke="#F08A6C" strokeWidth="3" strokeLinecap="round" strokeDasharray="9 13" fill="none" />
             </svg>
           </span>
         </a>

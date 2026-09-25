@@ -254,8 +254,12 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
     gsap.set(".lm-img", { scale: 0, opacity: 0, transformOrigin: "50% 50%" })
     gsap.set(".sign-name > span", { opacity: 0 })
     gsap.set(".caret", { opacity: 0 })
-    // Le néon respire, seulement quand le final est à l'écran.
-    const halo = gsap.to(".halo2", { attr: { stdDeviation: 20 }, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: -1, paused: true })
+    // Le néon respire, seulement quand le final est à l'écran : celui de la carte
+    // (valeurs de la maquette) et, dans la même proportion, celui de la flèche.
+    const halo = gsap
+      .timeline({ repeat: -1, yoyo: true, paused: true })
+      .to(".halo2", { attr: { stdDeviation: 20 }, duration: 1.6, ease: "sine.inOut" }, 0)
+      .to(".na-glow", { attr: { stdDeviation: 17 }, duration: 1.6, ease: "sine.inOut" }, 0)
     const nq = SplitText.create(".next-q", { type: "words", mask: "words" })
     gsap.set(nq.words, { yPercent: 110 })
     gsap.set(".next-arrow", { opacity: 0, y: -20 })
