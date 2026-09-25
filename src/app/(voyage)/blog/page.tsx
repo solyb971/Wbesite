@@ -59,7 +59,7 @@ const articles: { slug: string; title: string; excerpt: string; date: string; re
     slug: "restaurant-guadeloupe-clients-google",
     title: "Restaurateurs en Guadeloupe : vos clients vous cherchent avant d’atterrir",
     excerpt:
-      "Touristes et croisiéristes choisissent leurs restaurants sur Google avant d’arriver. Fiche, menu en ligne, avis : ce qui fait qu’on vous trouve — ou pas.",
+      "Touristes et croisiéristes choisissent leurs restaurants sur Google avant d’arriver. Fiche, menu en ligne, avis : ce qui fait qu’on vous trouve, ou pas.",
     date: "2026-07-15",
     readTime: "8 min",
     category: "Secteurs",
