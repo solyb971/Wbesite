@@ -33,7 +33,7 @@ export default function Services() {
             Trois façons d&apos;exister <em>en ligne</em>, choisies pour votre marché.
           </h2>
           <p className="lede muted">
-            Chaque projet repart de zéro. On part de vous : votre marché, votre clientèle, votre logique métier et
+            Chaque projet repart de zéro. On part de vous&nbsp;: votre marché, votre clientèle, votre logique métier et
             ensemble, nous construisons la solution la plus adaptée pour votre activité.
           </p>
           <div className="offers">
@@ -48,7 +48,7 @@ export default function Services() {
           </div>
           <div className="maint">
             <div className="maint-head">
-              <span className="maint-q">Et après la livraison ?</span>
+              <span className="maint-q">Et après la livraison&nbsp;?</span>
               <span className="maint-price">
                 Maintenance <b>39€/mois</b>
               </span>

@@ -16,7 +16,7 @@ type Etat = "repos" | "envoi" | "succes" | "erreur" | "incomplet"
 const MESSAGES: Record<Etat, string> = {
   repos: "",
   envoi: "Envoi en cours...",
-  succes: "Demande envoyée ! On vous recontacte sous 24h maximum.",
+  succes: "Demande envoyée\u00a0! On vous recontacte sous 24h maximum.",
   erreur: "Une erreur est survenue. Réessayez ou contactez-nous directement.",
   incomplet: "Renseignez votre nom, votre email, le type de projet et cochez la case de consentement.",
 }
