@@ -10,6 +10,19 @@ export function ClientBackground() {
   return <SmoothScroll />
 }
 
+/**
+ * Accueil : la page porte son propre défilement (Lenis) et son contact, donc ni
+ * défilement global ni bulle WhatsApp — mais le consentement et la mesure restent.
+ */
+export function ClientLegalExtras() {
+  return (
+    <>
+      <CookieConsent />
+      <GoogleAnalytics />
+    </>
+  )
+}
+
 export function ClientFooterExtras() {
   return (
     <>

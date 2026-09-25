@@ -46,8 +46,16 @@ describe('contactSchema', () => {
     expect(r.success).toBe(false)
   })
 
-  it('rejette une description trop courte', () => {
-    const r = contactSchema.safeParse({ ...valid, description: 'trop court' })
+  it('accepte une description courte ou absente (chaîne vide par défaut)', () => {
+    expect(contactSchema.safeParse({ ...valid, description: 'Un site' }).success).toBe(true)
+    const sansDescription: Partial<typeof valid> = { ...valid }
+    delete sansDescription.description
+    const r = contactSchema.parse(sansDescription)
+    expect(r.description).toBe('')
+  })
+
+  it('rejette une description de plus de 2000 caractères', () => {
+    const r = contactSchema.safeParse({ ...valid, description: 'x'.repeat(2001) })
     expect(r.success).toBe(false)
   })
 

@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     question: "Est-ce que ça me concerne ?",
-    answer: "Oui, si vous facturez entre professionnels (B2B) et que vous êtes assujetti à la TVA — y compris en Guadeloupe. Salons de coiffure, commerces, restaurants, artisans, professions libérales : tous concernés.",
+    answer: "Oui, si vous facturez entre professionnels (B2B) et que vous êtes assujetti à la TVA, y compris en Guadeloupe. Salons de coiffure, commerces, restaurants, artisans, professions libérales : tous concernés.",
   },
   {
     question: "Combien de temps pour avoir mon site ?",
@@ -21,7 +21,7 @@ export const faqs = [
   },
   {
     question: "Vous pouvez reprendre mon site actuel, fait par quelqu'un d'autre ?",
-    answer: "Le plan maintenance est réservé aux sites qu'on a nous-mêmes développés — on connaît le code et l'architecture en détail, ce qui nous permet d'intervenir vite et bien. Pour une refonte de votre site existant, contactez-nous pour un devis.",
+    answer: "Le plan maintenance est réservé aux sites qu'on a nous-mêmes développés : on connaît le code et l'architecture en détail, ce qui nous permet d'intervenir vite et bien. Pour une refonte de votre site existant, contactez-nous pour un devis.",
   },
   {
     question: "Qu'est-ce qui est inclus dans les 599€ ?",

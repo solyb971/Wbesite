@@ -64,7 +64,7 @@ const DEMO_STEPS = [
 const ROADMAP = [
   { q: 'Q1 2026', status: 'done', title: 'Lancement FactuGP Beta', desc: 'Factures, devis, TVA DOM 8,5 % et 2,1 %, portail client, relances automatiques, PDF professionnel.' },
   { q: 'Q2 2026', status: 'done', title: 'Conformité légale complète', desc: 'Factur-X EN 16931, format Chorus Pro DOM, export FEC DGFiP certifié. Toutes les briques techniques de la réforme 2026 intégrées.' },
-  { q: 'Q3 2026', status: 'current', title: 'Suite complète disponible', desc: 'Module BTP, lecture automatique des factures, suivi commercial, modules Tourisme & Agriculture. Ouverture des accès.' },
+  { q: 'Janvier 2027', status: 'current', title: 'Suite complète disponible', desc: 'Module BTP, lecture automatique des factures, suivi commercial, modules Tourisme & Agriculture. Ouverture des accès.' },
   { q: 'À venir', status: 'next', title: 'Plateforme Agréée DGFiP', desc: 'Certification auprès d\'une Plateforme Agréée DGFiP (PA) pour la transmission e-reporting en conditions réelles.' },
 ]
 

@@ -1,0 +1,349 @@
+/* =========================================================
+   Accueil « voyage » : transposition de docs/refonte/solyb-reference.html,
+   générée depuis la maquette (même ordre, mêmes valeurs).
+   - Toutes les règles sont confinées à .voyage : aucune fuite vers les
+     autres pages, même après une navigation côté client.
+   - Jetons : mêmes noms que la maquette, posés sur .voyage et non sur
+     :root, où --card et --muted appartiennent déjà à l'admin (shadcn).
+   - Variante sombre des cartes en permanence (plus de mode clair).
+   - Images clés préfixées voyage-* (leurs noms sont globaux).
+   ========================================================= */
+
+/* Valeurs par défaut du navigateur que la maquette suppose et que la
+   remise à zéro de Tailwind efface. Spécificité (0,1,1) : au-dessus de cette
+   remise à zéro (sélecteurs d'éléments), en dessous de toute règle de la
+   maquette (au moins une classe en plus de .voyage). */
+.voyage p,.voyage blockquote,.voyage figure,.voyage ul,.voyage ol{margin-block:1em}
+.voyage ul,.voyage ol{padding-inline-start:40px}
+.voyage ul{list-style:disc}
+.voyage blockquote,.voyage figure{margin-inline:40px}
+.voyage h4{font-size:1em;font-weight:700;margin-block:1.33em}
+.voyage a{text-decoration:underline}
+.voyage svg{display:inline;vertical-align:baseline}
+
+/* Comme la maquette : défilement natif (Lenis et ScrollTrigger pilotent les
+   transitions eux-mêmes). Barre de défilement sombre et de largeur native : la
+   barre fine et sable du reste du site ferait une bande claire sur le fond encre
+   (scrollbar-color désactive aussi les styles ::-webkit-scrollbar globaux). */
+html:has(.voyage){scroll-behavior:auto;scrollbar-color:#3A342D #0E0D0B}
+
+.voyage{
+  /* Charte SolYB */
+  --brand:#C4472A;          /* rouille, couleur de marque */
+  --brand-ink:#E0694B;      /* rouille pour le texte sur carte sombre */
+  --paper:#F5F2ED;          /* crème, socle */
+  --ink:#0E0D0B;            /* encre, socle */
+  --teal:#00BFA5;           /* turquoise, accent secondaire */
+  --gold:#B8760A;           /* or, accent secondaire */
+  --sun:#FFC94A; --foam:#F5F2ED; --lagoon:#17625D;
+  --site-bg:#0E0D0B; --site-fg:#F5F2ED;   /* fin du site : fond noir encre */
+  --font-display:var(--font-bricolage),"Arial Narrow",system-ui,sans-serif;
+  --font-accent:var(--font-instrument),Georgia,serif;
+  --font-body:var(--font-hanken),system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --card:#1A1815; --card-fg:#F5F2ED; --muted:#B3AA9E; --line:rgba(245,242,237,.16);
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.voyage *,.voyage *::before,.voyage *::after{box-sizing:inherit}
+html:has(.voyage){scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px);-webkit-text-size-adjust:100%}
+html:has(.voyage),html:has(.voyage) body{overflow-x:clip}
+html.lenis:has(.voyage),html.lenis:has(.voyage) body{height:auto}
+html.lenis.lenis-smooth:has(.voyage){scroll-behavior:auto!important}
+html.lenis.lenis-stopped:has(.voyage){overflow:hidden}
+html:has(.voyage) body{margin:0;background:#0E0D0B;overflow-x:hidden}
+.voyage{color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.voyage a{color:inherit}
+.voyage :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+
+/* Décor */
+.voyage .stage{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--ink)}
+.voyage .scene{position:absolute;inset:0}
+.voyage .scene:not(:first-child){opacity:0;visibility:hidden}
+.voyage .scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.voyage .place{position:fixed;z-index:40;left:var(--gutter);bottom:calc(env(safe-area-inset-bottom,0px) + 1.1rem);display:flex;align-items:center;gap:.6rem;padding:.5rem 1rem .5rem .6rem;border-radius:999px;background:var(--card);color:var(--card-fg);font-weight:600;font-size:.92rem;box-shadow:0 10px 30px -12px rgba(14,13,11,.35)}
+.voyage .place i{width:26px;height:26px;border-radius:50%;background:var(--brand);display:grid;place-items:center}
+.voyage .place i::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--card)}
+.voyage .rail{position:fixed;z-index:40;right:calc(var(--gutter) * .6);top:50%;transform:translateY(-50%);display:grid;gap:10px}
+.voyage .rail button{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);background:var(--foam);padding:0;cursor:pointer;transition:transform .3s var(--ease),background-color .3s}
+.voyage .rail button.on{background:var(--brand);border-color:var(--brand);transform:scale(1.35)}
+.voyage .rail button::before{content:"";display:block;width:44px;height:44px;margin:-16px}
+@media (max-width:640px){.voyage .rail{display:none}}
+@media (max-width:640px){.voyage .place{top:calc(env(safe-area-inset-top,0px) + 78px);bottom:auto;left:0;right:0;margin:0 auto;width:max-content;font-size:.8rem;padding:.3rem .8rem .3rem .4rem}.voyage .place i{width:20px;height:20px}}
+.voyage main,.voyage footer{position:relative;z-index:1}
+
+/* Nav */
+.voyage .nav{position:fixed;z-index:50;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);width:min(1140px,calc(100% - 2rem));display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .6rem .55rem 1.2rem;border-radius:999px;background:var(--card);color:var(--card-fg);box-shadow:0 10px 30px -14px rgba(14,13,11,.35)}
+.voyage .logo{font-family:var(--font-display);font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:-.03em}
+.voyage .logo b{color:var(--brand)}
+.voyage .nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;font-weight:500;font-size:.95rem}
+.voyage .nav ul a{text-decoration:none;opacity:.85}.voyage .nav ul a:hover{opacity:1;color:var(--brand-ink)}
+@media (max-width:900px){.voyage .nav ul{display:none}}
+.voyage .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.5rem;border-radius:999px;font:600 1rem var(--font-body);text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:background-color .25s,color .25s,border-color .25s}
+.voyage .btn--brand{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.voyage .btn--brand:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.voyage .btn--ghost{background:transparent;color:inherit;border-color:currentColor}
+.voyage .btn--ghost:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.voyage .btn--sm{min-height:44px;padding:.5rem 1.15rem;font-size:.92rem}
+
+/* Typo de la charte : titre + partie en italique */
+.voyage .wrap{width:min(1320px,100%);margin-inline:auto;padding-inline:var(--gutter)}
+.voyage h1,.voyage h2,.voyage h3{font-family:var(--font-display);margin:0;letter-spacing:-.025em;line-height:.98}
+.voyage h1{font-size:clamp(2.8rem,6vw,5.6rem);font-weight:780;font-variation-settings:"wdth" 84;line-height:.92;max-width:12ch;color:var(--ink)}
+.voyage h2{font-size:clamp(2.1rem,4.2vw,3.7rem);font-weight:720;font-variation-settings:"wdth" 84;max-width:16ch}
+.voyage h1 em,.voyage h2 em{font-family:var(--font-accent);font-style:italic;font-weight:400;color:var(--brand-ink);letter-spacing:-.01em}
+.voyage h3{font-weight:700}
+.voyage .eyebrow{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.92rem;margin:0 0 1rem;color:var(--muted)}
+.voyage .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.voyage .lede{font-size:clamp(1.05rem,1.4vw,1.2rem);margin:1.1rem 0 0;max-width:50ch}
+.voyage .muted{color:var(--muted)}
+.voyage .card{background:var(--card);color:var(--card-fg);border-radius:28px;padding:clamp(1.6rem,3.4vw,2.8rem);max-width:620px;box-shadow:0 30px 70px -35px rgba(14,13,11,.55)}
+.voyage .chapter{min-height:100svh;display:flex;align-items:center;padding:7rem 0 5.5rem}
+@media (max-width:899px){.voyage .chapter{align-items:flex-end;padding-top:36svh}.voyage .card{max-width:none}}
+
+/* Hero */
+.voyage .hero .wrap{align-self:flex-start}
+.voyage .hero-card{max-width:680px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.voyage .hero-card h1{color:var(--card-fg)}
+.voyage .hero .lede{font-weight:500}
+.voyage .hero strong{color:var(--brand-ink)}
+.voyage .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.voyage .promises{list-style:none;padding:0;margin:1.6rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;font-weight:600;font-size:.95rem}
+.voyage .promises li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brand);margin-right:.5rem;vertical-align:middle}
+@media (max-width:899px){.voyage .hero{align-items:flex-end;padding-top:28svh;padding-bottom:1.5rem}.voyage .hero-card .lede{font-size:1rem}}
+
+/* Réalisations : défilement horizontal */
+.voyage .work{position:relative;overflow:clip}
+.voyage .track{display:flex;gap:clamp(1rem,2.5vw,2rem);align-items:center;padding:7rem var(--gutter) 5rem;overflow-x:auto;scroll-snap-type:x mandatory}
+.voyage .work.is-pinned .track{overflow:visible;height:100svh;width:max-content;padding-top:5.5rem;padding-bottom:4rem;scroll-snap-type:none}
+.voyage .track > *{scroll-snap-align:start;flex:none}
+
+.voyage .proj{width:min(940px,86vw);max-width:none;display:grid;grid-template-columns:1.15fr 1fr;gap:1.6rem 2.4rem;align-items:center}
+.voyage .proj h3{font-size:clamp(1.8rem,3vw,2.6rem);font-variation-settings:"wdth" 84}
+.voyage .proj p{margin:.6rem 0 0}
+.voyage .proj ul{padding-left:1.1rem;margin:.9rem 0;display:grid;gap:.2rem}
+.voyage .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.voyage .tag{font-size:.8rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;border:1.5px solid currentColor}
+.voyage .tag--live{background:var(--teal);border-color:var(--teal);color:var(--ink)}
+.voyage .tag--brand{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.voyage .link{font-weight:700;text-decoration-color:var(--brand);text-decoration-thickness:3px;text-underline-offset:6px}
+.voyage .work-intro{width:min(680px,88vw);padding:clamp(2rem,4vw,3.4rem)}
+.voyage .work-intro h2{font-size:clamp(2.8rem,5.6vw,5.2rem);max-width:11ch}
+.voyage .work-intro .lede{font-size:clamp(1.15rem,1.7vw,1.45rem);margin-top:1.4rem}
+.voyage .counter{display:inline-flex;align-items:center;gap:.9rem;margin:2rem 0 0;padding:.75rem 1.2rem;border-radius:999px;background:var(--brand);color:var(--paper);font-weight:600;font-size:1.05rem}
+.voyage .counter b{font-family:var(--font-display);font-size:1.3rem}
+.voyage .counter i{font-style:normal;font-size:1.3rem;display:inline-block;animation:voyage-slide 1.5s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes voyage-slide{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}
+@media (max-width:899px){.voyage .proj{grid-template-columns:1fr}.voyage .work.is-pinned .track{padding-top:5rem;align-items:center}}
+/* Maquettes d'écran */
+.voyage .browser{border-radius:14px;overflow:hidden;background:#fff;color:#0E0D0B;box-shadow:0 20px 40px -24px rgba(14,13,11,.6);border:1px solid rgba(14,13,11,.1);font-size:.72rem}
+.voyage .bbar{display:flex;align-items:center;gap:.35rem;padding:.5rem .7rem;background:#F1EDE7}
+.voyage .bbar i{width:8px;height:8px;border-radius:50%;background:#D8D2C9}
+.voyage .bbar span{margin-left:.6rem;padding:.15rem .6rem;border-radius:6px;background:#fff;color:#6B7A7C;flex:1}
+.voyage .bbody{aspect-ratio:16/10;display:grid}
+.voyage .m-lds{grid-template-columns:.9fr 1.3fr}
+.voyage .m-lds .list{padding:.7rem;display:grid;gap:.45rem;align-content:start;border-right:1px solid #EEE}
+.voyage .m-lds .row{padding:.45rem .5rem;border-radius:8px;background:#F4F8F7;display:grid;gap:.1rem}
+.voyage .m-lds .row b{font-size:.75rem}.voyage .m-lds .row.on{background:#F6DDD5}
+.voyage .m-lds .map{background:#E6F2EF;position:relative}
+.voyage .m-lds .map svg{position:absolute;inset:0;width:100%;height:100%}
+.voyage .m-resa{grid-template-columns:auto repeat(5,1fr);grid-auto-rows:1fr;gap:3px;padding:.6rem;background:#fff}
+.voyage .m-resa span{border-radius:5px;background:#F2F2EE}
+.voyage .m-resa .h{background:none;font-weight:700;display:grid;place-items:center;color:#6B7A7C}
+.voyage .m-resa .b1{background:#C4472A}.voyage .m-resa .b2{background:#00BFA5}.voyage .m-resa .b3{background:#B8760A}
+.voyage .m-factu{padding:.8rem;display:grid;grid-template-rows:auto 1fr;gap:.6rem;background:#FAFAF8}
+.voyage .m-factu .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
+.voyage .m-factu .kpi{background:#fff;border-radius:8px;padding:.5rem;border:1px solid #EEE}
+.voyage .m-factu .kpi b{display:block;font-size:.95rem;font-family:var(--font-display)}
+.voyage .m-factu .lines{background:#fff;border-radius:8px;border:1px solid #EEE;padding:.4rem .6rem;display:grid;align-content:start}
+.voyage .m-factu .line{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px solid #F0F0F0}
+.voyage .pill{font-size:.62rem;font-weight:700;padding:.05rem .45rem;border-radius:999px;background:#CCF2EC;color:#00695B}
+.voyage .pill.o{background:#F6E3C7;color:#8A5807}
+
+/* Services */
+.voyage .offers{display:grid;gap:.7rem;margin-top:1.5rem}
+.voyage .offer{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:1rem 1.2rem;border-radius:18px;border:2px solid var(--line);text-decoration:none;transition:border-color .3s,transform .4s var(--ease)}
+.voyage .offer:hover,.voyage .offer:focus-visible{border-color:var(--brand);transform:translateX(6px)}
+.voyage .offer h3{font-size:1.4rem;font-variation-settings:"wdth" 86}
+.voyage .offer .price{font-family:var(--font-display);font-weight:700;font-size:1.3rem;white-space:nowrap;color:var(--brand-ink)}
+.voyage .offer p{grid-column:1/-1;margin:0;font-size:.92rem;color:var(--muted)}
+.voyage .offer .kind{grid-column:1/-1;font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:.4rem}
+.voyage .offer .kind.hot{justify-self:start;background:var(--brand);color:var(--paper);padding:.1rem .55rem;border-radius:999px}
+.voyage .card .maint{margin:1.4rem 0 0;padding:1.1rem 1.2rem 1.2rem;border-radius:18px;background:color-mix(in srgb,var(--brand) 7%,transparent);border:2px dashed color-mix(in srgb,var(--brand) 35%,transparent)}
+.voyage .maint-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.3rem 1rem}
+.voyage .maint-q{font-family:var(--font-display);font-weight:700;font-size:1.2rem}
+.voyage .maint-price{font-weight:600;color:var(--muted)}
+.voyage .maint-price b{font-family:var(--font-display);font-size:1.3rem;color:var(--brand-ink);margin-left:.25rem}
+.voyage .card .maint-list{list-style:none;padding:0;margin:.8rem 0 1rem;display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1rem;font-size:.92rem;color:var(--muted)}
+.voyage .maint-list li{display:flex;align-items:baseline;gap:.5rem}
+.voyage .maint-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--brand);transform:translateY(-1px)}
+@media (max-width:480px){.voyage .card .maint-list{grid-template-columns:1fr}}
+
+/* Engagements */
+.voyage .promise-list{list-style:none;padding:0;margin:1.4rem 0 0}
+.voyage .promise-list li{padding:.9rem 0;border-top:2px solid var(--line)}
+.voyage .promise-list h3{font-size:1.4rem;font-variation-settings:"wdth" 86}
+.voyage .promise-list p{margin:.15rem 0 0;color:var(--muted)}
+.voyage .signature{margin:1.2rem 0 0;font-family:var(--font-accent);font-style:italic;font-size:1.3rem}
+.voyage .signature b{font-family:var(--font-display);font-style:normal;font-weight:700}
+
+/* À propos */
+.voyage .card p{margin:0 0 .9rem}
+.voyage .quote{margin:0;font-family:var(--font-display);font-size:clamp(1.35rem,2.3vw,2rem);line-height:1.22;font-weight:500;font-variation-settings:"wdth" 90}
+.voyage .quote strong{font-weight:760;color:var(--brand-ink)}
+.voyage .quote .plain-strong{color:var(--card-fg)}
+
+/* FAQ */
+.voyage details{border-top:2px solid var(--line);interpolate-size:allow-keywords}
+.voyage details:last-child{border-bottom:2px solid var(--line)}
+.voyage summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem 0;font-family:var(--font-display);font-size:1.15rem;font-weight:650;min-height:44px}
+.voyage summary::-webkit-details-marker{display:none}
+.voyage .plus{width:30px;height:30px;flex:none;border-radius:50%;border:2px solid currentColor;position:relative;transition:transform .45s var(--ease)}
+.voyage .plus::before,.voyage .plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.voyage .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.voyage details[open] .plus{transform:rotate(45deg);color:var(--brand-ink)}
+.voyage details::details-content{block-size:0;overflow:hidden;transition:block-size .5s var(--ease),content-visibility .5s allow-discrete}
+.voyage details[open]::details-content{block-size:auto}
+.voyage details p{margin:0 0 1rem;color:var(--muted)}
+.voyage .faq .card{max-width:760px}
+
+/* Contact */
+.voyage .contact .card{max-width:1000px;display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem 3rem}
+.voyage .facts{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.8rem}
+.voyage .facts span{display:block;font-size:.88rem;color:var(--muted)}
+.voyage .facts strong{font-family:var(--font-display);font-size:1.15rem}
+.voyage form{display:grid;gap:.9rem}
+.voyage .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.voyage label{display:grid;gap:.3rem;font-weight:600;font-size:.9rem}
+.voyage input,.voyage select,.voyage textarea{font:inherit;font-weight:400;color:inherit;background:transparent;border:1.5px solid var(--line);border-radius:14px;padding:.75rem 1rem;min-height:48px;width:100%}
+.voyage select option{color:#0E0D0B}
+.voyage input:focus,.voyage select:focus,.voyage textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(196,71,42,.3)}
+.voyage textarea{min-height:100px;resize:vertical}
+.voyage .consent{display:flex;gap:.7rem;align-items:flex-start;font-weight:400;font-size:.86rem}
+.voyage .consent input{width:22px;min-height:22px;height:22px;flex:none;margin-top:.1rem;accent-color:var(--brand)}
+.voyage .hp{position:absolute;left:-9999px}
+.voyage .form-msg{margin:0;font-weight:600;min-height:1.5em}
+@media (max-width:899px){.voyage .contact .card{grid-template-columns:1fr}.voyage .row{grid-template-columns:1fr}}
+
+/* Final : le papillon devient la Guadeloupe */
+.voyage .finale{position:relative;height:100svh;overflow:hidden;background:var(--site-bg);color:var(--site-fg)}
+.voyage .contact.plain,.voyage footer{background:var(--site-bg)}
+.voyage .plain .card,.voyage footer .card{box-shadow:none;border:0}
+.voyage .finale-stage{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:2rem;padding:6rem var(--gutter) 5rem;max-width:1320px;margin:0 auto}
+.voyage .gp{width:100%;max-width:640px;justify-self:center;overflow:visible;will-change:transform}
+.voyage .finale-text h2{color:var(--site-fg);font-size:clamp(2.4rem,5vw,4.6rem)}
+.voyage .finale-text h2 em{color:var(--brand-ink)}
+.voyage .finale-text p{max-width:36ch;font-size:1.15rem;opacity:.9}
+.voyage .finale-text .eyebrow{color:var(--site-fg)}
+.voyage .finale .btn--ghost{color:var(--site-fg)}
+@media (max-width:899px){.voyage .finale-stage{grid-template-columns:1fr;align-content:center;padding-top:5rem}.voyage .gp{max-width:420px;order:-1}}
+
+.voyage footer{padding:2rem 0 5.5rem}
+.voyage footer .card{max-width:none}
+.voyage .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;font-size:.95rem}
+.voyage .foot-grid h4{margin:0 0 .7rem;font-family:var(--font-display);font-size:1.1rem}
+.voyage .foot-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:.35rem}
+.voyage .foot-grid a{text-decoration:none;opacity:.85}.voyage .foot-grid a:hover{opacity:1;color:var(--brand-ink)}
+.voyage .legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1rem 2rem;font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){.voyage .foot-grid{grid-template-columns:1fr 1fr}}
+
+
+/* Logo + nom au final (le cercle SYB est provisoire : à remplacer par le vrai logo) */
+.voyage .sign{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+.voyage .lm{width:clamp(56px,6vw,76px);height:auto;overflow:visible}
+.voyage .sign-name{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,3.4vw,2.8rem);letter-spacing:-.03em;color:var(--site-fg);display:inline-flex;align-items:center}
+.voyage .sign-name .r{color:#E0694B}
+.voyage .caret{display:inline-block;width:3px;height:.9em;margin-left:4px;background:#E0694B;animation:voyage-blink 1s steps(1) infinite}
+@keyframes voyage-blink{50%{opacity:0}}
+@media (max-width:899px){.voyage .sign{margin-bottom:.8rem}}
+/* Invitation à descendre vers le formulaire */
+.voyage .next{grid-column:1/-1;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:1rem;text-decoration:none;color:var(--site-fg);text-align:center;padding:.5rem 1rem}
+.voyage .next-q{font-family:var(--font-display);font-size:clamp(2.2rem,4.4vw,3.8rem);font-weight:760;line-height:1.05;letter-spacing:-.02em;font-variation-settings:"wdth" 86}
+.voyage .next-q em{font-family:var(--font-accent);font-style:italic;font-weight:400;color:#E0694B}
+.voyage .next-arrow{display:block;width:66px;height:99px}
+.voyage .na{width:100%;height:100%;overflow:visible;animation:voyage-bob 1.8s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes voyage-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+.voyage .next:hover .na,.voyage .next:focus-visible .na{animation-duration:1s}
+.voyage .finale-stage{grid-template-rows:minmax(0,1fr) auto;padding-bottom:2rem;align-items:center}
+.voyage .finale .gp{max-height:calc(100svh - 17rem)}
+.voyage .next-q em{white-space:nowrap}
+.voyage .finale .gp{max-height:calc(100svh - 20rem)}
+@media (max-width:899px){.voyage .next-q{font-size:2rem}.voyage .finale-stage{grid-template-rows:auto auto auto;gap:1.2rem}.voyage .next-arrow{width:46px;height:69px}}
+/* Curseur main : on attrape la page pour la faire défiler */
+@media (pointer:fine){
+  html.drag-ready,html.drag-ready body{cursor:grab}
+  html.dragging,html.dragging *{cursor:grabbing!important;user-select:none!important}
+  html.drag-ready input,html.drag-ready textarea{cursor:text}
+  html.drag-ready select,html.drag-ready a,html.drag-ready button,html.drag-ready summary,html.drag-ready label{cursor:pointer}
+}
+@media (prefers-reduced-motion:reduce){.voyage *{transition:none!important;animation:none!important}}
+
+/* =========================================================
+   Ajouts au-delà de la maquette (intégration dans le projet)
+   ========================================================= */
+/* Vrai logo : monogramme + « SolYB », à la place du texte seul. */
+.voyage .logo{display:inline-flex;align-items:center;gap:.5rem}
+.voyage .logo-mark{width:auto;height:30px}
+/* Final : le cercle rouille se trace autour du logo, qui remplace le rond « SYB »
+   (même taille, même place : l'image occupe le disque provisoire, r = 29 sur 40). */
+.voyage .lm{position:relative;display:block;flex:none;aspect-ratio:1}
+.voyage .lm svg{display:block;width:100%;height:100%;overflow:visible}
+.voyage .lm-img{position:absolute;left:13.75%;top:13.75%;width:72.5%;height:auto}
+/* Carte rendue par le serveur (sans script, mouvement réduit) : pas de corps ni de
+   taches de papillon, comme le repli de la maquette. */
+.voyage .gp.is-map .spots,.voyage .gp.is-map .body{display:none}
+/* Sans script, les points du rail ne mèneraient nulle part. */
+html:not(.js) .voyage .rail{display:none}
+
+/* ── Pages de lecture au style de l'accueil (merci, index du blog) ── */
+/* Titre de page dans une carte sombre : texte crème (sur l'accueil, seul le hero
+   en avait un, réglé par .hero-card h1). */
+.voyage .card h1{color:var(--card-fg);font-size:clamp(2.5rem,5vw,4.4rem);max-width:14ch}
+.voyage .card h1 em{color:var(--brand-ink)}
+
+/* Merci : « la suite » en étapes numérotées, comme la liste des engagements. */
+.voyage .merci .card{max-width:640px}
+.voyage .suite{margin:2rem 0 0;font-size:1.05rem;font-weight:700;letter-spacing:0;max-width:none;color:var(--muted)}
+.voyage .steps{list-style:none;padding:0;margin:.6rem 0 0}
+.voyage .steps li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;padding:.9rem 0;border-top:2px solid var(--line)}
+.voyage .steps b{width:2.1rem;height:2.1rem;border-radius:50%;background:var(--brand);color:var(--paper);display:grid;place-items:center;font-family:var(--font-display);font-weight:700}
+.voyage .steps h3{font-size:1.3rem;font-variation-settings:"wdth" 86}
+.voyage .steps p{margin:.15rem 0 0;color:var(--muted)}
+.voyage .merci .maint-list{margin-top:1rem}
+/* .card .x : au-dessus de « .card p », qui règle les marges de tous les paragraphes des cartes. */
+.voyage .card .urgence{margin:1.4rem 0 0;font-size:.95rem}
+
+/* Blog : en-tête, grille d'articles, appel final. */
+.voyage .page-hero{padding:7rem 0 1.5rem}
+.voyage .crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.2rem;font-size:.9rem;color:var(--muted)}
+.voyage .crumbs li+li::before{content:"/";margin-right:.5rem;opacity:.6}
+.voyage .crumbs a{text-decoration:none}
+.voyage .crumbs a:hover{color:var(--brand-ink)}
+.voyage .posts{position:relative;z-index:1;padding:1rem 0 1.5rem}
+.voyage .post-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,2rem)}
+.voyage .post{max-width:none;height:100%;display:flex;flex-direction:column}
+.voyage .post .tags{margin-bottom:1rem}
+.voyage .post h2{font-size:clamp(1.4rem,2.1vw,1.75rem);font-weight:720;line-height:1.08;max-width:none;font-variation-settings:"wdth" 86}
+.voyage .post h2 a{text-decoration:none}
+.voyage .post h2 a:hover{color:var(--brand-ink)}
+.voyage .post > p.muted{margin:.8rem 0 0;flex:1}
+.voyage .card .post-meta{margin:1.2rem 0 .8rem;padding-top:1rem;border-top:2px solid var(--line);font-size:.88rem;color:var(--muted)}
+.voyage .post .link{align-self:flex-start}
+.voyage .tag--rust{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.voyage .cta-final{position:relative;z-index:1;padding:1.5rem 0 5rem}
+.voyage .cta-final .card{max-width:760px}
+@media (max-width:899px){
+  /* Comme les chapitres de l'accueil : le paysage d'abord, les cartes en dessous. */
+  .voyage .page-hero{padding-top:30svh}
+  .voyage .post-grid{grid-template-columns:1fr}
+}
+
+/* Liste déroulante du formulaire : la maquette forçait un texte encre sur les
+   options (prévu pour des cartes claires), illisible dans la liste sombre.
+   Liste sombre native, texte crème. */
+.voyage select{color-scheme:dark}
+.voyage select option{background-color:#1A1815;color:#F5F2ED}
