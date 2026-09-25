@@ -6,6 +6,14 @@
  *
  * Les attributs data-d des plans (.L) donnent leur profondeur, du ciel (0) au
  * premier plan (4) : ils règlent l'arrivée des plans et la parallaxe.
+ * data-foyer : abscisse (dans le dessin 1600×900) de ce qu'il faut voir en
+ * priorité quand l'écran est étroit — l'île : volcan et soleil ; la plage : le
+ * grand palmier ; la rivière : la cascade ; la canne : la distillerie ; le
+ * couchant : le soleil et le palmier ; la nuit : le volcan et la lune.
+ * data-foyer-y : hauteur de ce point, quand il est dessiné trop bas pour la bande
+ * que les cartes laissent libre en haut de l'écran mobile ; le paysage est alors
+ * remonté, et son sol prolongé sous y = 900 (rectangles invisibles sur ordinateur,
+ * où le cadre s'arrête à 900) comble le bas de l'écran.
  */
 
 /** Formes partagées par les paysages (palmes, nuages, feuilles, hibiscus). */
@@ -34,7 +42,7 @@ export default function Stage() {
   return (
     <div className="stage" aria-hidden="true">
       {/* A · L'île */}
-      <div className="scene" data-name="L'île et la Soufrière">
+      <div className="scene" data-name="L'île et la Soufrière" data-foyer="1319" data-foyer-y="330">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="aSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#F5F2ED" /><stop offset=".6" stopColor="#FFE6BC" /><stop offset="1" stopColor="#FFCB8E" /></linearGradient></defs>
         <g className="L" data-d="0"><g><rect width="1600" height="900" fill="url(#aSky)" /><circle className="a-sun" cx="1430" cy="250" r="78" fill="#FFC94A" /></g></g>
@@ -46,13 +54,13 @@ export default function Stage() {
         </g></g>
         <g className="L" data-d="2"><g><path d="M0 900 L0 640 Q200 560 420 600 T820 570 Q1000 530 1180 610 T1600 590 L1600 900Z" fill="#3E8C7F" /></g></g>
         <g className="L" data-d="3"><g fill="#17625D"><path d="M0 900 L0 720 Q180 660 360 700 T760 690 Q960 650 1160 712 T1600 690 L1600 900Z" /><circle cx="420" cy="690" r="34" /><circle cx="470" cy="700" r="28" /><circle cx="980" cy="668" r="36" /><circle cx="1030" cy="676" r="26" /><circle cx="1400" cy="690" r="32" /></g></g>
-        <g className="L" data-d="4"><g fill="#0E0D0B"><path d="M0 900 L0 820 Q300 770 620 810 T1250 800 Q1450 780 1600 800 L1600 900Z" /><circle cx="120" cy="815" r="40" /><circle cx="180" cy="800" r="46" /><circle cx="240" cy="820" r="36" /><circle cx="1280" cy="795" r="44" /><circle cx="1340" cy="780" r="52" /><circle cx="1410" cy="800" r="40" /><use href="#hib" x="1340" y="850" transform="" /></g></g>
+        <g className="L" data-d="4"><g fill="#0E0D0B"><rect y="899" width="1600" height="361" /><path d="M0 900 L0 820 Q300 770 620 810 T1250 800 Q1450 780 1600 800 L1600 900Z" /><circle cx="120" cy="815" r="40" /><circle cx="180" cy="800" r="46" /><circle cx="240" cy="820" r="36" /><circle cx="1280" cy="795" r="44" /><circle cx="1340" cy="780" r="52" /><circle cx="1410" cy="800" r="40" /><use href="#hib" x="1340" y="850" transform="" /></g></g>
         <g className="L" data-d="2"><g className="birds" fill="none" stroke="#0E0D0B" strokeWidth="3" strokeLinecap="round"><path d="M620 300 q12 -12 24 0 q12 -12 24 0" /><path d="M690 330 q9 -9 18 0 q9 -9 18 0" /><path d="M560 350 q8 -8 16 0 q8 -8 16 0" /></g></g>
         </svg>
       </div>
 
       {/* B · La plage */}
-      <div className="scene" data-name="La plage">
+      <div className="scene" data-name="La plage" data-foyer="1250">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="bSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#A8DDD6" /><stop offset="1" stopColor="#F5F2ED" /></linearGradient></defs>
         <g className="L" data-d="0"><g><rect width="1600" height="900" fill="url(#bSky)" /><circle cx="1250" cy="170" r="60" fill="#FFC94A" /></g></g>
@@ -74,7 +82,7 @@ export default function Stage() {
       </div>
 
       {/* C · La rivière */}
-      <div className="scene" data-name="La rivière et la cascade">
+      <div className="scene" data-name="La rivière et la cascade" data-foyer="1235">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="cSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1E6F63" /><stop offset="1" stopColor="#0E0D0B" /></linearGradient></defs>
         <g className="L" data-d="0"><g><rect width="1600" height="900" fill="url(#cSky)" /></g></g>
@@ -100,11 +108,12 @@ export default function Stage() {
       </div>
 
       {/* D · Champs de canne et distillerie */}
-      <div className="scene" data-name="La canne et la distillerie">
+      <div className="scene" data-name="La canne et la distillerie" data-foyer="1355" data-foyer-y="440">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="dSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#FFE9C2" /><stop offset="1" stopColor="#FFD27A" /></linearGradient></defs>
         <g className="L" data-d="0"><g><rect width="1600" height="900" fill="url(#dSky)" /><circle cx="960" cy="210" r="115" fill="#FFC94A" opacity=".25" /><circle cx="960" cy="210" r="80" fill="#FFC94A" /></g></g>
         <g className="L" data-d="1"><g>
+        <rect y="899" width="1600" height="361" fill="#A9C9A4" />
         <path d="M0 900 L0 540 Q300 480 600 520 T1200 500 Q1420 485 1600 510 L1600 900Z" fill="#A9C9A4" />
         <path d="M-20 596 Q400 572 800 588 T1640 578 L1640 612 Q1200 602 800 620 T-20 630Z" fill="#D9A85B" />
         <g className="distil">
@@ -143,7 +152,7 @@ export default function Stage() {
       </div>
 
       {/* E · Deshaies au couchant */}
-      <div className="scene" data-name="Deshaies au couchant">
+      <div className="scene" data-name="Deshaies au couchant" data-foyer="1225" data-foyer-y="540">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="eSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0E0D0B" /><stop offset=".45" stopColor="#C4472A" /><stop offset=".62" stopColor="#FFC94A" /></linearGradient>
         <linearGradient id="eSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4A3328" /><stop offset="1" stopColor="#0E0D0B" /></linearGradient></defs>
@@ -152,14 +161,14 @@ export default function Stage() {
         <g className="glints" fill="#FFC94A"><rect x="1070" y="580" width="160" height="6" rx="3" /><rect x="1095" y="605" width="110" height="5" rx="2.5" fill="#C4472A" /><rect x="1050" y="632" width="200" height="6" rx="3" /><rect x="1110" y="660" width="80" height="5" rx="2.5" fill="#C4472A" /><rect x="1080" y="690" width="140" height="5" rx="2.5" /></g>
         <g fill="#0E0D0B"><path d="M820 552 L880 552 L872 562 L828 562Z" /><path d="M850 548 V470" stroke="#0E0D0B" strokeWidth="3" /><path d="M920 556 L960 556 L955 563 L925 563Z" /><path d="M940 552 V500" stroke="#0E0D0B" strokeWidth="2" /></g></g></g>
         <g className="L" data-d="2"><g fill="#0E0D0B"><path d="M0 900 L0 380 Q140 330 260 400 Q380 440 480 520 Q560 560 700 562 L700 900Z" /><path d="M1600 562 Q1520 520 1480 530 Q1440 540 1420 562Z" /></g></g>
-        <g className="L" data-d="4"><g fill="#0E0D0B"><path d="M600 900 Q900 820 1600 840 L1600 900Z" />
+        <g className="L" data-d="4"><g fill="#0E0D0B"><rect y="899" width="1600" height="361" /><path d="M600 900 Q900 820 1600 840 L1600 900Z" />
         <g className="palm" data-ox="1350" data-oy="500"><path d="M1420 880 Q1400 680 1350 500" stroke="#0E0D0B" strokeWidth="18" fill="none" strokeLinecap="round" />
         <g className="crown"><use href="#frond" x="1350" y="500" transform="rotate(-160 1350 500)" /><use href="#frond" x="1350" y="500" transform="rotate(-120 1350 500)" /><use href="#frond" x="1350" y="500" transform="rotate(-75 1350 500)" /><use href="#frond" x="1350" y="500" transform="rotate(-30 1350 500)" /><use href="#frond" x="1350" y="500" transform="rotate(15 1350 500)" /><use href="#frond" x="1350" y="500" transform="rotate(160 1350 500)" /></g></g></g></g>
         </svg>
       </div>
 
       {/* F · La nuit */}
-      <div className="scene" data-name="La nuit sur l'île">
+      <div className="scene" data-name="La nuit sur l'île" data-foyer="1243">
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs><linearGradient id="fSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0E0D0B" /><stop offset=".7" stopColor="#0E0D0B" /><stop offset="1" stopColor="#3A2A22" /></linearGradient>
         <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" /></filter></defs>
