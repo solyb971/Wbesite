@@ -11,9 +11,6 @@ const TYPES = [
   ["custom", "Autre"],
 ] as const
 
-/** Minimum exigé par l'API pour la description du besoin. */
-const BESOIN_MIN = 20
-
 type Etat = "repos" | "envoi" | "succes" | "erreur" | "incomplet"
 
 const MESSAGES: Record<Etat, string> = {
@@ -21,7 +18,7 @@ const MESSAGES: Record<Etat, string> = {
   envoi: "Envoi en cours...",
   succes: "Demande envoyée ! On vous recontacte sous 24h maximum.",
   erreur: "Une erreur est survenue. Réessayez ou contactez-nous directement.",
-  incomplet: `Renseignez votre nom, votre email, le type de projet, votre besoin (${BESOIN_MIN} caractères minimum) et cochez la case de consentement.`,
+  incomplet: "Renseignez votre nom, votre email, le type de projet et cochez la case de consentement.",
 }
 
 /**
@@ -95,7 +92,7 @@ export default function ContactForm() {
       </label>
       <label>
         Votre besoin
-        <textarea name="besoin" required minLength={BESOIN_MIN} />
+        <textarea name="besoin" />
       </label>
       <label className="consent">
         <input type="checkbox" name="consent" required /> J&apos;accepte que mes données soient utilisées pour traiter

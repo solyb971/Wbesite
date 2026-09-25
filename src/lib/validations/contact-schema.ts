@@ -37,10 +37,13 @@ export const contactSchema = z.object({
     .enum(["<500", "500-1000", "1000-2000", ">2000"])
     .optional(),
 
+  // Facultative, comme dans le formulaire de l'accueil : un visiteur peut
+  // demander un devis sans détailler son besoin. Chaîne vide par défaut
+  // (la notation du lead en lit la longueur).
   description: z
     .string()
-    .min(20, "Veuillez décrire votre projet (minimum 20 caractères)")
-    .max(2000, "Description trop longue (maximum 2000 caractères)"),
+    .max(2000, "Description trop longue (maximum 2000 caractères)")
+    .default(""),
 
   urgency: z
     .enum(["low", "normal", "high", "urgent"])

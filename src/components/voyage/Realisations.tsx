@@ -126,7 +126,7 @@ export default function Realisations() {
           </div>
           <div>
             <div className="tags">
-              <span className="tag tag--brand">Disponible sept. 2026</span>
+              <span className="tag tag--brand">Disponible à partir de janvier 2027</span>
               <span className="tag">Outil maison</span>
             </div>
             <h3>FactuGP</h3>

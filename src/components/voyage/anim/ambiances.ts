@@ -14,6 +14,11 @@ const RECETTES: Record<Paysage, Recette> = {
       .to(q(".smoke"), { x: 25, scaleX: 1.08, transformOrigin: "50% 50%", duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 }, 0)
       .fromTo(q(".birds"), { x: 700, y: 0 }, { x: -800, y: -60, duration: 22, ease: "none", repeat: -1 }, 0)
       .to(q(".a-sun"), { attr: { r: 86 }, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 }, 0)
+    // Les oiseaux battent des ailes, chacun à son rythme : les ailes s'abaissent
+    // sous la ligne du corps et remontent (repli vertical autour du bas du tracé).
+    qa(".birds path").forEach((oiseau) =>
+      tl.to(oiseau, { scaleY: -0.55, transformOrigin: "50% 100%", duration: rnd(0.26, 0.36), ease: "sine.inOut", yoyo: true, repeat: -1, delay: rnd(0, 0.3) }, 0)
+    )
   },
   // La plage : nuages, bateau, vagues, écume, rivage, palmiers.
   plage: (tl, q, qa) => {

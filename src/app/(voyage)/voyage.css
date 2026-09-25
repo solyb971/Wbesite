@@ -341,3 +341,9 @@ html:not(.js) .voyage .rail{display:none}
   .voyage .page-hero{padding-top:30svh}
   .voyage .post-grid{grid-template-columns:1fr}
 }
+
+/* Liste déroulante du formulaire : la maquette forçait un texte encre sur les
+   options (prévu pour des cartes claires), illisible dans la liste sombre.
+   Liste sombre native, texte crème. */
+.voyage select{color-scheme:dark}
+.voyage select option{background-color:#1A1815;color:#F5F2ED}
