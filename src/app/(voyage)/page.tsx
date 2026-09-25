@@ -8,7 +8,6 @@ import Realisations from "@/components/voyage/Realisations"
 import Services from "@/components/voyage/Services"
 import Engagements from "@/components/voyage/Engagements"
 import Histoire from "@/components/voyage/Histoire"
-import Temoignage from "@/components/voyage/Temoignage"
 import Faq from "@/components/voyage/Faq"
 import Finale from "@/components/voyage/Finale"
 import Contact from "@/components/voyage/Contact"
@@ -201,7 +200,6 @@ export default function HomePage() {
           <Services />
           <Engagements />
           <Histoire />
-          <Temoignage />
           <Faq />
           <Finale />
           <Contact />

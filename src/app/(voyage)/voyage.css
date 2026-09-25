@@ -193,9 +193,9 @@ html:has(.voyage) body{margin:0;background:#0E0D0B;overflow-x:hidden}
 
 /* À propos */
 .voyage .card p{margin:0 0 .9rem}
-.voyage .quote{margin:0;font-family:var(--font-display);font-size:clamp(1.35rem,2.3vw,2rem);line-height:1.22;font-weight:500;font-variation-settings:"wdth" 90}
-.voyage .quote strong{font-weight:760;color:var(--brand-ink)}
-.voyage .quote .plain-strong{color:var(--card-fg)}
+
+
+
 
 /* FAQ */
 .voyage details{border-top:2px solid var(--line);interpolate-size:allow-keywords}
