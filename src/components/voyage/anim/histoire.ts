@@ -79,7 +79,7 @@ export function animerHistoire(section: HTMLElement): () => void {
         sorties[avant] = gsap.to(c, {
           autoAlpha: 0,
           y: -40 * sens,
-          duration: 0.45,
+          duration: 0.35,
           ease: "power2.in",
           overwrite: true,
           onComplete: () => void cascades[avant].pause(0),
@@ -90,7 +90,7 @@ export function animerHistoire(section: HTMLElement): () => void {
         gsap.fromTo(
           chaps[i],
           { autoAlpha: 0, y: 50 * sens },
-          { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", delay: avant >= 0 ? 0.25 : 0, overwrite: true }
+          { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", delay: avant >= 0 ? 0.35 : 0, overwrite: true }
         )
         cascades[i].restart()
       }

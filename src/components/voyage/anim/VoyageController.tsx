@@ -79,13 +79,33 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
 
   /* ---------- Passage d'un paysage à l'autre ---------- */
   let cur = 0
+  // Rideau en cours : il découvre le paysage « dessus » par-dessus le paysage
+  // « dessous ». Courbe power3 plutôt qu'expo : le nouveau paysage se montre dès
+  // les premiers instants, au lieu de rester invisible une demi-seconde.
+  let rideau: gsap.core.Tween | null = null
+  let dessusI = 0
+  let dessousI = 0
+  const couches = (s: Element) => layers(s).filter((c) => c.d).map((c) => c.el)
   function goTo(i: number) {
     if (i === cur) return
+    ambient[cur].pause()
+    ambient[i].play()
+    // Demi-tour pendant le rideau : les deux paysages sont encore là, entiers. On
+    // referme (ou rouvre) le rideau au lieu de repartir d'un écran vide.
+    if (rideau?.isActive() && (i === dessousI || i === dessusI)) {
+      cur = i
+      label(i)
+      const cibles = [...couches(scenes[dessusI]), ...couches(scenes[dessousI])]
+      gsap.killTweensOf(cibles)
+      gsap.to(cibles, { y: 0, duration: 0.6, ease: "expo.out" })
+      rideau.reversed(i === dessousI)
+      return
+    }
     const out = scenes[cur]
     const inn = scenes[i]
     const dir = i > cur ? 1 : -1
-    ambient[cur].pause()
-    ambient[i].play()
+    dessousI = cur
+    dessusI = i
     cur = i
     label(i)
     gsap.killTweensOf(scenes)
@@ -99,18 +119,23 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
       gsap.set(out, { autoAlpha: 0, delay: 0.5 })
       return
     }
-    gsap.fromTo(
+    rideau = gsap.fromTo(
       inn,
       { clipPath: dir > 0 ? "inset(100% 0% 0% 0%)" : "inset(0% 0% 100% 0%)" },
-      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.25, ease: "expo.inOut" }
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1,
+        ease: "power3.inOut",
+        onComplete: () => void gsap.set(out, { autoAlpha: 0 }),
+        onReverseComplete: () => void gsap.set(inn, { autoAlpha: 0, zIndex: 0 }),
+      }
     )
     layers(inn).forEach(({ el, d }) => {
-      if (d) gsap.fromTo(el, { y: 30 + d * 70 }, { y: 0, duration: 1.7, ease: "expo.out", delay: 0.15 + d * 0.06 })
+      if (d) gsap.fromTo(el, { y: 30 + d * 70 }, { y: 0, duration: 1.4, ease: "expo.out", delay: 0.1 + d * 0.05 })
     })
     layers(out).forEach(({ el, d }) => {
-      if (d) gsap.to(el, { y: d * 40, duration: 1.25, ease: "expo.inOut", onComplete: () => void gsap.set(el, { y: 0 }) })
+      if (d) gsap.to(el, { y: d * 40, duration: 1, ease: "power3.inOut", onComplete: () => void gsap.set(el, { y: 0 }) })
     })
-    gsap.set(out, { autoAlpha: 0, delay: 1.25 })
   }
 
   /* ---------- Défilement ---------- */
