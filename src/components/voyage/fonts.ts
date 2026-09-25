@@ -23,11 +23,17 @@ const instrument = Instrument_Serif({
   variable: "--font-instrument",
 })
 
-/** Texte courant. */
+/**
+ * Texte courant. Sans police de secours ajustée (adjustFontFallback) : Hanken n'a
+ * pas la flèche → des liens, que le navigateur va chercher plus loin dans la pile.
+ * Comme dans la maquette, elle doit venir de system-ui ; avec le secours ajusté,
+ * elle venait d'un Arial agrandi, plus long et plus gras.
+ */
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   display: "swap",
   style: ["normal", "italic"],
+  adjustFontFallback: false,
   variable: "--font-hanken",
 })
 
