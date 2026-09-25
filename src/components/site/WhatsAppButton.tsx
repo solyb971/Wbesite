@@ -41,7 +41,7 @@ export default function WhatsAppButton({
               >
                 <X className="w-4 h-4" />
               </button>
-              <p className="text-[#F0EDE8] font-semibold">Besoin d'aide ?</p>
+              <p className="text-[#F0EDE8] font-semibold">Besoin d&apos;aide ?</p>
               <p className="text-[#8B8B9E] text-xs mt-1">Contactez-moi sur WhatsApp !</p>
               <div className="absolute -bottom-2 right-6 w-4 h-4 bg-[#13131A] border-b border-r border-[#2A2A38] transform rotate-45"></div>
             </div>
@@ -78,7 +78,7 @@ export default function WhatsAppButton({
                 <p className="text-[#F0EDE8] text-sm">
                   Bonjour ! Je suis Yacine de SolYB. Comment puis-je vous aider avec votre projet web ?
                 </p>
-                <p className="text-xs text-[#8B8B9E] mt-2">Aujourd'hui</p>
+                <p className="text-xs text-[#8B8B9E] mt-2">Aujourd&apos;hui</p>
               </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { Lead } from "@/hooks/useLeads"
-import { addDays, addWeeks, format } from "date-fns"
+import { addDays, format } from "date-fns"
 import { fr } from "date-fns/locale"
 
 export interface TimeEstimate {

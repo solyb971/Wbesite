@@ -120,7 +120,7 @@ export default function TemplatesPage() {
           </div>
         </div>
         <div className="p-5">
-          <TemplateList searchQuery={searchQuery} onSelectTemplate={(_id: string) => {}} />
+          <TemplateList searchQuery={searchQuery} onSelectTemplate={() => {}} />
         </div>
       </div>
 
@@ -141,7 +141,7 @@ export default function TemplatesPage() {
               <div className="bg-[#15110B] border border-white/[0.05] rounded-xl p-4 text-center">
                 <TrendingUp className="w-5 h-5 text-coral mx-auto mb-2" />
                 <div className="text-3xl font-bold text-coral">{statsSequence.openRate}%</div>
-                <div className="text-[#7E715E] text-xs mt-1">Taux d'ouverture</div>
+                <div className="text-[#7E715E] text-xs mt-1">Taux d&apos;ouverture</div>
               </div>
               <div className="bg-[#15110B] border border-white/[0.05] rounded-xl p-4 text-center">
                 <MousePointerClick className="w-5 h-5 text-emerald-400 mx-auto mb-2" />

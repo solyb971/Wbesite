@@ -82,9 +82,6 @@ function ProductOverviewCard({
     : leads.filter(l => (l.product_source ?? "solyb_agency") === product.id)
 
   const gagnes = filtered.filter(l => l.status === "gagne")
-  const pipeline = filtered
-    .filter(l => ["nouveau","contact","devis"].includes(l.status))
-    .reduce((s, l) => s + (l.budget || 0), 0)
   const revenue = gagnes.reduce((s, l) => s + (l.estimated_revenue || l.budget || 0), 0)
   const convRate = filtered.length > 0 ? Math.round((gagnes.length / filtered.length) * 100) : 0
 

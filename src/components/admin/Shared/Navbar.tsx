@@ -172,7 +172,7 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
                   <div className="px-4 py-8 text-center">
                     <Bell className="w-7 h-7 text-[#3A332A] mx-auto mb-2" />
                     <p className="text-[#7E715E] text-sm">Aucune notification récente</p>
-                    <p className="text-[#574C3D] text-xs mt-0.5">Les nouveaux leads s'afficheront ici</p>
+                    <p className="text-[#574C3D] text-xs mt-0.5">Les nouveaux leads s&apos;afficheront ici</p>
                   </div>
                 ) : (
                   <div className="divide-y divide-white/[0.04] max-h-96 overflow-y-auto">
