@@ -1,6 +1,6 @@
 ﻿import { jsPDF } from "jspdf"
 import { Lead } from "@/hooks/useLeads"
-import { getTimeEstimate, getProfitabilityEstimate } from "./time-estimate"
+import { getTimeEstimate } from "./time-estimate"
 import { format } from "date-fns"
 import { fr } from "date-fns/locale"
 

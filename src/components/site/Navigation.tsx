@@ -5,7 +5,6 @@ import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
-import s from "./accueil.module.css"
 
 const navLinks = [
   { href: "/#realisations", label: "Nos projets" },
@@ -20,37 +19,21 @@ const SECTION_IDS = ["realisations", "services", "engagements", "apropos", "faq"
 const prefersReducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
-/* Deux habillages : sombre translucide sur l'accueil (posé sur le canevas),
-   crème sur les autres pages. */
-const theme = {
-  home: {
-    bar: { background: "rgba(14,13,11,0.62)", borderColor: "var(--syb-border-dark)", backdropFilter: "blur(12px)" },
-    height: "h-[76px]",
-    logo: "h-[30px] w-auto",
-    wordmark: "var(--syb-cream)",
-    tracking: "normal",
-    leading: "leading-[1.6]",
-    link: "text-[14.5px] font-medium",
-    idle: "text-[var(--syb-on-dark-muted)] hover:text-[var(--syb-cream)]",
-    active: "text-[var(--syb-cream)]",
-    focus: "focus-visible:outline-[var(--syb-rust-light)]",
-    toggle: "var(--syb-cream)",
-    menu: { background: "rgba(14,13,11,0.92)", borderColor: "var(--syb-border-dark)" },
-  },
-  page: {
-    bar: { background: "rgba(245,242,237,0.93)", borderColor: "#DDD5C8", backdropFilter: "blur(14px)" },
-    height: "h-16",
-    logo: "h-11 w-auto",
-    wordmark: "var(--syb-ink)",
-    tracking: "-0.5px",
-    leading: "",
-    link: "text-[13px] font-normal",
-    idle: "text-[#6E665C] hover:text-[#0E0D0B]",
-    active: "text-[#0E0D0B]",
-    focus: "focus-visible:outline-[var(--syb-rust)]",
-    toggle: "#6E665C",
-    menu: { background: "transparent", borderColor: "#DDD5C8" },
-  },
+/* Habillage crème des pages du site. L'accueil, /merci et l'index du blog ont
+   leur propre navigation (components/voyage/Nav). */
+const t = {
+  bar: { background: "rgba(245,242,237,0.93)", borderColor: "#DDD5C8", backdropFilter: "blur(14px)" },
+  height: "h-16",
+  logo: "h-11 w-auto",
+  wordmark: "var(--syb-ink)",
+  tracking: "-0.5px",
+  leading: "",
+  link: "text-[13px] font-normal",
+  idle: "text-[#6E665C] hover:text-[#0E0D0B]",
+  active: "text-[#0E0D0B]",
+  focus: "focus-visible:outline-[var(--syb-rust)]",
+  toggle: "#6E665C",
+  menu: { background: "transparent", borderColor: "#DDD5C8" },
 }
 
 export default function Navigation() {
@@ -58,19 +41,12 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState<string>("")
   const navRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
-  const isHome = pathname === "/"
-  const t = isHome ? theme.home : theme.page
 
   // Referme le menu mobile à chaque changement de page (Blog, retour navigateur…)
   useEffect(() => { setMobileMenuOpen(false) }, [pathname])
 
-  // Masquage au défilement hors accueil uniquement : sur l'accueil l'en-tête
-  // reste simplement collant (pas d'animation déclenchée par le scroll).
+  // Masquage au défilement : l'en-tête s'efface en descendant, revient en remontant.
   useEffect(() => {
-    if (isHome) {
-      if (navRef.current) navRef.current.style.transform = "translateY(0)"
-      return
-    }
     let lastY = 0
     const handleScroll = () => {
       const y = window.scrollY
@@ -81,7 +57,7 @@ export default function Navigation() {
     }
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [isHome])
+  }, [])
 
   // Lien actif selon la section visible (changement de couleur, pas d'animation)
   useEffect(() => {
@@ -126,9 +102,7 @@ export default function Navigation() {
     return `${t.link} rounded-sm transition-colors ${focusRing} ${activeSection === hash ? t.active : t.idle}`
   }
 
-  const cta = isHome
-    ? `${s.btn} ${s.btnPrimary} ${s.btnSmall} ${focusRing}`
-    : `text-white text-xs font-normal px-5 py-2 rounded bg-[#C4472A] hover:bg-[#B84126] transition-colors ${focusRing}`
+  const cta = `text-white text-xs font-normal px-5 py-2 rounded bg-[#C4472A] hover:bg-[#B84126] transition-colors ${focusRing}`
 
   return (
     <nav

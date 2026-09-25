@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Agence Web Guadeloupe — Sites, Apps & Facturation 2026',
     description: 'Sites web sur-mesure, applications métier et facturation électronique 2026 pour TPE/PME guadeloupéennes. Agence au service de toute la Guadeloupe. Devis gratuit.',
     url: 'https://solyb.fr',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SolYB — Agence Digitale Guadeloupe' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SolYB, agence digitale en Guadeloupe' }],
   },
 }
 

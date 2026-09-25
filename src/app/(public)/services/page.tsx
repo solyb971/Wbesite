@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from "next/link"
 import { ArrowRight, Check, Globe, ShoppingCart, Smartphone } from "lucide-react"
 import Breadcrumbs from "@/components/site/Breadcrumbs"
+import ScrollRevealInit from "@/components/site/ScrollRevealInit"
 
 export const metadata: Metadata = {
   title: 'Services Web & Applications en Guadeloupe 971',
@@ -81,6 +82,9 @@ export default function ServicesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* Révèle les blocs .reveal / .reveal-stagger, masqués par le CSS global dès
+          que JS est actif : sans lui, les offres restaient invisibles. */}
+      <ScrollRevealInit />
       <main style={{ background: 'var(--syb-warm)' }}>
 
         <Breadcrumbs items={[{ name: 'Services', href: '/services' }]} />

@@ -172,7 +172,7 @@ export default function FilterBar({ onFilterChange }: FilterBarProps) {
 
           {/* Activity */}
           <div>
-            <label className="block text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-2">Type d'activité</label>
+            <label className="block text-[10px] font-semibold text-[#6B5F4E] uppercase tracking-widest mb-2">Type d&apos;activité</label>
             <div className="flex flex-wrap gap-1.5">
               {(["digital", "content", "consulting"] as ActivityType[]).map((a) => (
                 <button key={a} onClick={() => toggleActivity(a)}

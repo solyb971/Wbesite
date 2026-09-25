@@ -15,7 +15,6 @@ type CtaLink = { label: string; href: string }
 export function ArticleShell({
   category,
   accent,
-  accentInk,
   title,
   date,
   readTime,

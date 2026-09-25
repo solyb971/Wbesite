@@ -11,16 +11,12 @@ const compat = new FlatCompat({ baseDirectory: dirname(fileURLToPath(import.meta
  * Retirer un fichier de cette liste une fois corrigé.
  */
 const DETTE = [
-  "src/app/(public)/merci/page.tsx",
-  "src/app/admin/templates/page.tsx",
   "src/app/api/cron/alerts/route.ts",
   "src/app/api/cron/analytics-snapshot/route.ts",
   "src/app/api/cron/email-sequences/route.ts",
   "src/components/admin/Shared/FilterBar.tsx",
-  "src/components/admin/Shared/Navbar.tsx",
   "src/components/admin/Templates/TemplateEditor.tsx",
   "src/components/site/Navigation.tsx",
-  "src/components/site/WhatsAppButton.tsx",
   "src/hooks/useLeads.ts",
   "src/middleware.ts",
   "src/types/lead.types.ts",

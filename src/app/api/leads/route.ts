@@ -222,7 +222,7 @@ export async function POST(request: NextRequest) {
 }
 
 // GET endpoint pour lister les leads
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = await createClient()
 

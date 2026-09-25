@@ -69,16 +69,6 @@ const DEMO_STEPS = [
     handoff: 'Toutes les données d\'un seul flux' },
 ] as const
 
-const CMP_ROWS = [
-  { crit: 'Commission par couvert',       z: 'Oui', gp: 'Non' },
-  { crit: 'Interface en français',         z: 'Partiel', gp: 'Oui' },
-  { crit: 'Conformité RGPD',              z: 'Partiel', gp: 'Oui' },
-  { crit: 'Plan de salle interactif',     z: 'Oui', gp: 'Oui' },
-  { crit: 'CRM clients intégré',          z: 'Limité', gp: 'Oui' },
-  { crit: 'Menu digital & QR Code',       z: 'Non', gp: 'Oui' },
-  { crit: 'Caisse intégrée',              z: 'Non', gp: 'Oui' },
-  { crit: 'Essai gratuit sans CB',        z: 'Non', gp: '14 jours' },
-]
 
 const TICKER_ITEMS = ['RÉSERVATION EN LIGNE', 'PLAN DE SALLE', 'FICHES CLIENTS', 'SMS RAPPELS', 'MENU QR CODE', 'STATISTIQUES', 'ZÉRO COMMISSION', 'RGPD', 'MULTI-ÉTABLISSEMENTS', 'CARTES CADEAUX', 'ÉQUIPE & RÔLES', 'CAISSE INTÉGRÉE']
 

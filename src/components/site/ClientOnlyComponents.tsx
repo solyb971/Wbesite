@@ -11,12 +11,15 @@ export function ClientBackground() {
 }
 
 /**
- * Accueil : la page porte son propre défilement (Lenis) et son contact, donc ni
- * défilement global ni bulle WhatsApp — mais le consentement et la mesure restent.
+ * Accueil, /merci et index du blog : ces pages portent leur propre défilement,
+ * donc pas de défilement global. Consentement et mesure restent ; la bulle
+ * WhatsApp n'apparaît qu'à la fin de la page (contact de l'accueil, sinon pied de
+ * page), pour ne pas se superposer aux animations.
  */
-export function ClientLegalExtras() {
+export function ClientExtrasVoyage() {
   return (
     <>
+      <WhatsAppButton apparitionApres="#contact, footer" />
       <CookieConsent />
       <GoogleAnalytics />
     </>

@@ -1,5 +1,4 @@
-﻿import { MetadataRoute } from 'next'
-
+﻿
 export async function GET() {
   const baseUrl = 'https://solyb.fr'
 

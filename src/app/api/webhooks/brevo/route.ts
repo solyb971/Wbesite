@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { event, email, "message-id": messageId, link, date } = body
+    const { event, email, "message-id": messageId, date } = body
 
     console.log("Brevo webhook received:", { event, email, messageId })
 
