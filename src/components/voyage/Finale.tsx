@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { BASSE_TERRE, DEPENDANCES, GRANDE_TERRE } from "./guadeloupe"
+import { BASSE_TERRE, DEPENDANCES, FLECHE, GRANDE_TERRE } from "./guadeloupe"
 
 /**
  * Final, juste avant le contact : le papillon traverse l'écran, ses ailes
@@ -75,9 +75,9 @@ export default function Finale() {
             Vous avez un projet <em>en tête ?</em>
           </span>
           <span className="next-arrow" aria-hidden="true">
-            {/* Même matière que l'archipel au-dessus : aplat rouille, liseré clair et
-                néon à deux flous (le plus large respire avec celui de la carte). La tige
-                et la pointe ne font qu'un tracé, sans liseré à leur jonction. */}
+            {/* Dessinée comme une île de l'archipel au-dessus : côte irrégulière en petits
+                segments, pointe fine en cap, même aplat rouille, même liseré clair et même
+                néon à deux flous (le plus large respire avec celui de la carte). */}
             <svg className="na" viewBox="0 0 80 120">
               <defs>
                 <filter id="naglow" x="-60%" y="-40%" width="220%" height="180%">
@@ -90,16 +90,7 @@ export default function Finale() {
                   </feMerge>
                 </filter>
               </defs>
-              <circle className="na-halo" cx="40" cy="92" r="30" fill="none" stroke="#F08A6C" strokeWidth="1.6" />
-              <path
-                filter="url(#naglow)"
-                fill="#C4472A"
-                stroke="#F08A6C"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-                d="M29 15 A11 11 0 0 1 51 15 V57.8 Q60.5 58.4 70 60 Q62 78 40 108 Q18 78 10 60 Q19.5 58.4 29 57.8 Z"
-              />
-              <path className="na-flow" d="M40 14 V64" stroke="#F08A6C" strokeWidth="3" strokeLinecap="round" strokeDasharray="9 13" fill="none" />
+              <path filter="url(#naglow)" fill="#C4472A" stroke="#F08A6C" strokeWidth="1.6" strokeLinejoin="round" d={FLECHE} />
             </svg>
           </span>
         </a>

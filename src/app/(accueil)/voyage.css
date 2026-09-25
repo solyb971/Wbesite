@@ -266,11 +266,7 @@ html:has(.voyage) body{margin:0;background:#0E0D0B;overflow-x:hidden}
 .voyage .next-q em{font-family:var(--font-accent);font-style:italic;font-weight:400;color:#E0694B}
 .voyage .next-arrow{display:block;width:66px;height:99px}
 .voyage .na{width:100%;height:100%;overflow:visible;animation:voyage-bob 1.8s cubic-bezier(.45,0,.55,1) infinite}
-.voyage .na-flow{animation:voyage-flow .9s linear infinite}
-.voyage .na-halo{transform-box:fill-box;transform-origin:50% 50%;animation:voyage-halo 1.8s ease-out infinite}
-@keyframes voyage-flow{to{stroke-dashoffset:-44}}
 @keyframes voyage-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
-@keyframes voyage-halo{0%{transform:scale(.5);opacity:.45}100%{transform:scale(1.35);opacity:0}}
 .voyage .next:hover .na,.voyage .next:focus-visible .na{animation-duration:1s}
 .voyage .finale-stage{grid-template-rows:minmax(0,1fr) auto;padding-bottom:2rem;align-items:center}
 .voyage .finale .gp{max-height:calc(100svh - 17rem)}
