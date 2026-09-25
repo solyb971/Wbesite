@@ -27,7 +27,7 @@ export default function Footer({ page = "accueil" }: { page?: PageVoyage }) {
               </p>
             </div>
             <div>
-              <h4>Services</h4>
+              <h3>Services</h3>
               <ul>
                 <li><LienSection id="services" accueil={accueil}>Site vitrine</LienSection></li>
                 <li><LienSection id="services" accueil={accueil}>E-commerce</LienSection></li>
@@ -36,7 +36,7 @@ export default function Footer({ page = "accueil" }: { page?: PageVoyage }) {
               </ul>
             </div>
             <div>
-              <h4>SolYB</h4>
+              <h3>SolYB</h3>
               <ul>
                 <li><LienSection id="apropos" accueil={accueil}>L&apos;histoire</LienSection></li>
                 <li><LienSection id="realisations" accueil={accueil}>Nos projets</LienSection></li>
@@ -46,7 +46,7 @@ export default function Footer({ page = "accueil" }: { page?: PageVoyage }) {
               </ul>
             </div>
             <div>
-              <h4>Outils maison</h4>
+              <h3>Outils maison</h3>
               <ul>
                 <li><Link prefetch={false} href="/resagp">ResaGP</Link></li>
                 <li><Link prefetch={false} href="/facturation-electronique">FactuGP</Link></li>

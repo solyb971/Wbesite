@@ -21,7 +21,7 @@ const PAR_CHAPITRE = 0.7
  * tient pas dans l'écran ; c'est remesuré au redimensionnement. Renvoie la
  * fonction qui défait tout.
  */
-export function animerHistoire(section: HTMLElement): () => void {
+export function animerHistoire(section: HTMLElement, { recalculer = true } = {}): () => void {
   const mouvementReduit = window.matchMedia("(prefers-reduced-motion: reduce)")
   const carte = section.querySelector<HTMLElement>(".histoire-card")
   const zone = section.querySelector<HTMLElement>(".h-chaps")
@@ -125,13 +125,22 @@ export function animerHistoire(section: HTMLElement): () => void {
     const soleil = scene.querySelector(".e-sun")
     const ciel = scene.querySelectorAll("linearGradient#eSky stop")
     const reflets = scene.querySelector(".glints")
-    // Le soleil passe à droite de la carte (qui le cacherait à sa place d'origine),
-    // ses reflets avec lui.
+    // Le soleil passe dans l'espace libre à droite de la carte (qui le cacherait à sa
+    // place d'origine), ses reflets avec lui. Sans place à droite (mobile, carte en
+    // bas), il reste au-dessus d'elle, en 1320.
+    let cx = 1320
+    const svg = scene.querySelector("svg")
+    const m = svg?.getScreenCTM()
+    if (m && m.a > 0) {
+      const droite = carte.getBoundingClientRect().right
+      const libre = window.innerWidth - droite
+      if (libre > 2 * 110 * m.a) cx = Math.min(1480, Math.max(1180, (droite + libre / 2 - m.e) / m.a))
+    }
     if (soleil)
-      tl.fromTo(soleil, { attr: { cx: 1320, cy: 440 }, fill: "#FFE39A" }, { attr: { cx: 1320, cy: 650 }, fill: "#F59A5C" }, 0)
+      tl.fromTo(soleil, { attr: { cx, cy: 440 }, fill: "#FFE39A" }, { attr: { cx, cy: 650 }, fill: "#F59A5C" }, 0)
     if (ciel[1]) tl.fromTo(ciel[1], { attr: { offset: 0.45 } }, { attr: { offset: 0.7 } }, 0)
     if (ciel[2]) tl.fromTo(ciel[2], { attr: { offset: 0.62 } }, { attr: { offset: 0.9 } }, 0)
-    if (reflets) tl.fromTo(reflets, { x: 170, opacity: 1 }, { x: 170, opacity: 0.3 }, 0)
+    if (reflets) tl.fromTo(reflets, { x: cx - 1150, opacity: 1 }, { x: cx - 1150, opacity: 0.3 }, 0)
     return tl
   }
 
@@ -213,9 +222,12 @@ export function animerHistoire(section: HTMLElement): () => void {
     chaps.forEach((c) => c.removeAttribute("aria-hidden"))
   }
 
-  const construire = () => {
+  // Au premier montage dans l'accueil, la chorégraphie recalcule toute la page juste
+  // après : inutile de le faire deux fois. Au redimensionnement, on recalcule ici.
+  const construire = (rafraichir = true) => {
     demonter()
     if (!mouvementReduit.matches) monter()
+    if (!rafraichir) return
     ScrollTrigger.sort()
     ScrollTrigger.refresh()
   }
@@ -235,14 +247,15 @@ export function animerHistoire(section: HTMLElement): () => void {
     }, 200)
   }
   window.addEventListener("resize", auRedimensionnement)
-  mouvementReduit.addEventListener("change", construire)
+  const surMouvement = () => construire()
+  mouvementReduit.addEventListener("change", surMouvement)
   if (tactile) {
     window.addEventListener("touchstart", surToucher, { passive: true })
     window.addEventListener("touchend", surLacher, { passive: true })
     window.addEventListener("touchcancel", surLacher, { passive: true })
   }
 
-  construire()
+  construire(recalculer)
 
   return () => {
     window.clearTimeout(attente)
@@ -250,7 +263,7 @@ export function animerHistoire(section: HTMLElement): () => void {
     window.removeEventListener("touchstart", surToucher)
     window.removeEventListener("touchend", surLacher)
     window.removeEventListener("touchcancel", surLacher)
-    mouvementReduit.removeEventListener("change", construire)
+    mouvementReduit.removeEventListener("change", surMouvement)
     demonter()
   }
 }

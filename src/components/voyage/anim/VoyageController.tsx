@@ -314,8 +314,9 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
   }
 
   /* L'histoire : la carte se fige, les chapitres se succèdent, le soleil se couche */
+  // Le recalcul des positions se fait une seule fois, plus bas, pour toute la page.
   const histoire = $(".histoire")
-  if (histoire) defaire.push(animerHistoire(histoire))
+  if (histoire) defaire.push(animerHistoire(histoire, { recalculer: false }))
 
   /* 3. Changement de paysage par chapitre (créé après les épinglages) */
   // Le paysage se déduit de la position de défilement : juste même après un saut
@@ -361,7 +362,9 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
       },
     })
 
-    $$(".chapter .card,footer .card").forEach((c) =>
+    // La carte du hero est déjà à l'écran au chargement : elle s'affiche d'emblée
+    // (son titre et ses boutons ont leur propre entrée), sans attendre un fondu.
+    $$(".chapter:not(.hero) .card,footer .card").forEach((c) =>
       gsap.from(c, {
         y: 70,
         opacity: 0,
@@ -390,7 +393,9 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
     })
     intro
       .from(h1.words, { yPercent: 120, duration: 1.1, stagger: 0.06 }, 0.5)
-      .from(".hero-in", { y: 24, opacity: 0, stagger: 0.1, duration: 1 }, 0.8)
+      // Le paragraphe d'accroche reste affiché tel que rendu : c'est le plus grand
+      // texte du premier écran, le masquer le temps de l'entrée retardait son affichage.
+      .from(".hero-in:not(.lede)", { y: 24, opacity: 0, stagger: 0.1, duration: 1 }, 0.8)
       .from(".nav,.rail", { y: -20, opacity: 0, stagger: 0.1, duration: 1 }, 0.9)
       .add(() => void ambient[0].play(), 0.8)
   } else ambient[0].play()
