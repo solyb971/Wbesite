@@ -10,20 +10,22 @@
    ========================================================= */
 
 /* Valeurs par défaut du navigateur que la maquette suppose et que la
-   remise à zéro de Tailwind efface. Spécificité nulle : la moindre règle
-   de la maquette l'emporte. */
-:where(.voyage) :where(p,blockquote,figure,ul,ol){margin-block:1em}
-:where(.voyage) :where(ul,ol){padding-inline-start:40px}
-:where(.voyage) :where(ul){list-style:disc}
-:where(.voyage) :where(blockquote,figure){margin-inline:40px}
-:where(.voyage) :where(h4){font-size:1em;font-weight:700;margin-block:1.33em}
-:where(.voyage) :where(a){text-decoration:underline}
-:where(.voyage) :where(svg){display:inline;vertical-align:baseline}
+   remise à zéro de Tailwind efface. Spécificité (0,1,1) : au-dessus de cette
+   remise à zéro (sélecteurs d'éléments), en dessous de toute règle de la
+   maquette (au moins une classe en plus de .voyage). */
+.voyage p,.voyage blockquote,.voyage figure,.voyage ul,.voyage ol{margin-block:1em}
+.voyage ul,.voyage ol{padding-inline-start:40px}
+.voyage ul{list-style:disc}
+.voyage blockquote,.voyage figure{margin-inline:40px}
+.voyage h4{font-size:1em;font-weight:700;margin-block:1.33em}
+.voyage a{text-decoration:underline}
+.voyage svg{display:inline;vertical-align:baseline}
 
 /* Comme la maquette : défilement natif (Lenis et ScrollTrigger pilotent les
-   transitions eux-mêmes), et pas de rail de barre clair sur le fond encre. */
-html:has(.voyage){scroll-behavior:auto}
-html:has(.voyage)::-webkit-scrollbar-track{background:#0E0D0B}
+   transitions eux-mêmes). Barre de défilement sombre et de largeur native : la
+   barre fine et sable du reste du site ferait une bande claire sur le fond encre
+   (scrollbar-color désactive aussi les styles ::-webkit-scrollbar globaux). */
+html:has(.voyage){scroll-behavior:auto;scrollbar-color:#3A342D #0E0D0B}
 
 .voyage{
   /* Charte SolYB */

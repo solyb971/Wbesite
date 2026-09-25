@@ -13,6 +13,7 @@ import Faq from "@/components/voyage/Faq"
 import Finale from "@/components/voyage/Finale"
 import Contact from "@/components/voyage/Contact"
 import Footer from "@/components/voyage/Footer"
+import VoyageController from "@/components/voyage/anim/VoyageController"
 
 export const metadata: Metadata = {
   // 54 chars — sans le suffixe template, affiché en entier dans Google
@@ -206,6 +207,7 @@ export default function HomePage() {
           <Contact />
         </main>
         <Footer />
+        <VoyageController />
       </div>
     </>
   )
