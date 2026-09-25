@@ -1,16 +1,24 @@
 import Link from "next/link"
 import Logo from "./Logo"
+import { LienSection, type PageVoyage } from "./Nav"
 
-export default function Footer() {
+export default function Footer({ page = "accueil" }: { page?: PageVoyage }) {
+  const accueil = page === "accueil"
   return (
     <footer>
       <div className="wrap">
         <div className="card">
           <div className="foot-grid">
             <div>
-              <a className="logo" href="#top" aria-label="SolYB, retour en haut">
-                <Logo />
-              </a>
+              {accueil ? (
+                <a className="logo" href="#top" aria-label="SolYB, retour en haut">
+                  <Logo />
+                </a>
+              ) : (
+                <Link prefetch={false} className="logo" href="/" aria-label="SolYB, accueil">
+                  <Logo />
+                </Link>
+              )}
               <p className="muted">Fait en Guadeloupe. Pensé pour durer. Agence digitale basée à Petit-Bourg.</p>
               <p>
                 <a href="mailto:solyb971@gmail.com">solyb971@gmail.com</a>
@@ -21,20 +29,20 @@ export default function Footer() {
             <div>
               <h4>Services</h4>
               <ul>
-                <li><a href="#services">Site vitrine</a></li>
-                <li><a href="#services">E-commerce</a></li>
-                <li><a href="#services">Application métier</a></li>
-                <li><a href="#services">Maintenance</a></li>
+                <li><LienSection id="services" accueil={accueil}>Site vitrine</LienSection></li>
+                <li><LienSection id="services" accueil={accueil}>E-commerce</LienSection></li>
+                <li><LienSection id="services" accueil={accueil}>Application métier</LienSection></li>
+                <li><LienSection id="services" accueil={accueil}>Maintenance</LienSection></li>
               </ul>
             </div>
             <div>
               <h4>SolYB</h4>
               <ul>
-                <li><a href="#apropos">L&apos;histoire</a></li>
-                <li><a href="#realisations">Nos projets</a></li>
+                <li><LienSection id="apropos" accueil={accueil}>L&apos;histoire</LienSection></li>
+                <li><LienSection id="realisations" accueil={accueil}>Nos projets</LienSection></li>
                 <li><Link prefetch={false} href="/blog">Blog</Link></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><LienSection id="faq" accueil={accueil}>FAQ</LienSection></li>
+                <li><LienSection id="contact" accueil={accueil}>Contact</LienSection></li>
               </ul>
             </div>
             <div>

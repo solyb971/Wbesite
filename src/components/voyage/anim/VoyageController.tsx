@@ -9,6 +9,7 @@ import { SplitText } from "gsap/SplitText"
 import Lenis from "lenis"
 import { AILES, BASSE_TERRE, GRANDE_TERRE } from "../guadeloupe"
 import { creerAmbiances } from "./ambiances"
+import { cadrerPaysages } from "./cadrage"
 import { genererDecor } from "./decor"
 import { activerGlisser } from "./glisser"
 
@@ -49,10 +50,6 @@ export default function VoyageController() {
 function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
   const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)
   const $$ = <T extends Element = HTMLElement>(s: string) => Array.from(root.querySelectorAll<T>(s))
-  const ecouter = <K extends keyof WindowEventMap>(type: K, fn: (e: WindowEventMap[K]) => void) => {
-    window.addEventListener(type, fn)
-    defaire.push(() => window.removeEventListener(type, fn))
-  }
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
   /* ---------- Éléments générés du décor ---------- */
@@ -63,34 +60,8 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
   const dots = $$<HTMLButtonElement>(".rail button")
   const firstOf = scenes.map((_, i) => chapters.find((c) => Number(c.dataset.scene) === i)!)
 
-  // Écran étroit (mise en page mobile, sous 900 px) : on ne voit qu'une bande du
-  // dessin 1600×900, et les cartes, calées en bas, en couvrent la plus grande part.
-  // Chaque paysage est donc recadré autour de son point d'intérêt (data-foyer),
-  // borné aux limites du dessin, et remonté si ce point est dessiné trop bas
-  // (data-foyer-y) : il vient à 23 % de la hauteur, au milieu de la bande libre
-  // entre la navigation et le haut des cartes. Le sol prolongé sous y = 900 comble
-  // alors le bas. Au-delà de 900 px, cadrage de la maquette : centré, calé en bas.
-  const stage = $(".stage")!
-  const HAUT_LIBRE = 0.23 * 900 // en unités du dessin, quelle que soit la hauteur d'écran
-  const cadrer = () => {
-    const etroit = window.innerWidth < 900
-    const largeur = Math.min(1600, (900 * stage.clientWidth) / Math.max(1, stage.clientHeight))
-    scenes.forEach((scene) => {
-      const svg = scene.querySelector("svg")!
-      const foyer = Number(scene.dataset.foyer)
-      if (!etroit || !foyer || largeur >= 1600) {
-        svg.setAttribute("viewBox", "0 0 1600 900")
-      } else {
-        const x = Math.min(1600 - largeur, Math.max(0, foyer - largeur / 2))
-        const hauteur = Number(scene.dataset.foyerY)
-        const y = hauteur ? Math.min(360, Math.max(0, hauteur - HAUT_LIBRE)) : 0
-        svg.setAttribute("viewBox", `${x.toFixed(1)} ${y.toFixed(1)} ${largeur.toFixed(1)} 900`)
-      }
-      svg.setAttribute("preserveAspectRatio", "xMidYMax slice")
-    })
-  }
-  cadrer()
-  ecouter("resize", cadrer)
+  // Paysages recadrés sur leur point d'intérêt sur écran étroit (voir cadrage.ts).
+  defaire.push(cadrerPaysages($(".stage")!, scenes))
   const label = (i: number) => dots.forEach((d, k) => d.classList.toggle("on", k === i))
 
   gsap.set(scenes, { autoAlpha: 0 })
@@ -392,4 +363,59 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
 
   ScrollTrigger.sort()
   ScrollTrigger.refresh()
+
+  // Arrivée d'une autre page sur une ancre (/#services depuis le blog…) : le
+  // navigateur saute avant que les épinglages n'allongent la page, et reste alors
+  // à côté de la section. On s'y recale, section en haut de l'écran comme les
+  // liens de l'accueil : à l'image suivante, puis une fois les dernières mises en
+  // page passées — jamais si le visiteur a déjà pris la main sur le défilement.
+  let aLaMain = false
+  const priseEnMain = () => {
+    aLaMain = true
+  }
+  const recaler = () => {
+    if (aLaMain || location.hash.length < 2) return
+    let cible: HTMLElement | null = null
+    try {
+      cible = document.querySelector<HTMLElement>(decodeURIComponent(location.hash))
+    } catch {
+      cible = null
+    }
+    if (!cible) return
+    const y = Math.round(cible.getBoundingClientRect().top + window.scrollY)
+    window.scrollTo(0, y)
+    lenis?.scrollTo(y, { immediate: true, force: true })
+  }
+  const image = requestAnimationFrame(() => requestAnimationFrame(recaler))
+  const tard = window.setTimeout(recaler, 450)
+  // Chargement direct (lien partagé, rechargement) : le navigateur rejoue son saut
+  // vers l'ancre à la fin du chargement ; on repasse juste après lui.
+  const auChargement = () => requestAnimationFrame(recaler)
+  if (document.readyState !== "complete") window.addEventListener("load", auChargement, { once: true })
+  // Changement d'ancre sans rechargement (barre d'adresse, retour arrière dans
+  // l'historique) : le navigateur a déjà sauté, avec son propre décalage, pendant
+  // que Lenis garde l'ancienne position. On pose la section en haut de l'écran,
+  // immédiatement, et on remet Lenis d'accord.
+  const surAncre = () => {
+    let cible: HTMLElement | null = null
+    try {
+      cible = location.hash.length > 1 ? document.querySelector<HTMLElement>(decodeURIComponent(location.hash)) : null
+    } catch {
+      cible = null
+    }
+    if (!cible) return
+    const y = Math.round(cible.getBoundingClientRect().top + window.scrollY)
+    window.scrollTo(0, y)
+    lenis?.scrollTo(y, { immediate: true, force: true })
+  }
+  window.addEventListener("hashchange", surAncre)
+  defaire.push(() => window.removeEventListener("hashchange", surAncre))
+  const gestes = ["wheel", "touchstart", "keydown", "pointerdown"] as const
+  gestes.forEach((g) => window.addEventListener(g, priseEnMain, { passive: true, once: true }))
+  defaire.push(() => {
+    cancelAnimationFrame(image)
+    window.clearTimeout(tard)
+    window.removeEventListener("load", auChargement)
+    gestes.forEach((g) => window.removeEventListener(g, priseEnMain))
+  })
 }

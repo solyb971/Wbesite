@@ -298,3 +298,46 @@ html:has(.voyage) body{margin:0;background:#0E0D0B;overflow-x:hidden}
 .voyage .gp.is-map .spots,.voyage .gp.is-map .body{display:none}
 /* Sans script, les points du rail ne mèneraient nulle part. */
 html:not(.js) .voyage .rail{display:none}
+
+/* ── Pages de lecture au style de l'accueil (merci, index du blog) ── */
+/* Titre de page dans une carte sombre : texte crème (sur l'accueil, seul le hero
+   en avait un, réglé par .hero-card h1). */
+.voyage .card h1{color:var(--card-fg);font-size:clamp(2.5rem,5vw,4.4rem);max-width:14ch}
+.voyage .card h1 em{color:var(--brand-ink)}
+
+/* Merci : « la suite » en étapes numérotées, comme la liste des engagements. */
+.voyage .merci .card{max-width:640px}
+.voyage .suite{margin:2rem 0 0;font-size:1.05rem;font-weight:700;letter-spacing:0;max-width:none;color:var(--muted)}
+.voyage .steps{list-style:none;padding:0;margin:.6rem 0 0}
+.voyage .steps li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;padding:.9rem 0;border-top:2px solid var(--line)}
+.voyage .steps b{width:2.1rem;height:2.1rem;border-radius:50%;background:var(--brand);color:var(--paper);display:grid;place-items:center;font-family:var(--font-display);font-weight:700}
+.voyage .steps h3{font-size:1.3rem;font-variation-settings:"wdth" 86}
+.voyage .steps p{margin:.15rem 0 0;color:var(--muted)}
+.voyage .merci .maint-list{margin-top:1rem}
+/* .card .x : au-dessus de « .card p », qui règle les marges de tous les paragraphes des cartes. */
+.voyage .card .urgence{margin:1.4rem 0 0;font-size:.95rem}
+
+/* Blog : en-tête, grille d'articles, appel final. */
+.voyage .page-hero{padding:7rem 0 1.5rem}
+.voyage .crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.2rem;font-size:.9rem;color:var(--muted)}
+.voyage .crumbs li+li::before{content:"/";margin-right:.5rem;opacity:.6}
+.voyage .crumbs a{text-decoration:none}
+.voyage .crumbs a:hover{color:var(--brand-ink)}
+.voyage .posts{position:relative;z-index:1;padding:1rem 0 1.5rem}
+.voyage .post-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,2rem)}
+.voyage .post{max-width:none;height:100%;display:flex;flex-direction:column}
+.voyage .post .tags{margin-bottom:1rem}
+.voyage .post h2{font-size:clamp(1.4rem,2.1vw,1.75rem);font-weight:720;line-height:1.08;max-width:none;font-variation-settings:"wdth" 86}
+.voyage .post h2 a{text-decoration:none}
+.voyage .post h2 a:hover{color:var(--brand-ink)}
+.voyage .post > p.muted{margin:.8rem 0 0;flex:1}
+.voyage .card .post-meta{margin:1.2rem 0 .8rem;padding-top:1rem;border-top:2px solid var(--line);font-size:.88rem;color:var(--muted)}
+.voyage .post .link{align-self:flex-start}
+.voyage .tag--rust{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.voyage .cta-final{position:relative;z-index:1;padding:1.5rem 0 5rem}
+.voyage .cta-final .card{max-width:760px}
+@media (max-width:899px){
+  /* Comme les chapitres de l'accueil : le paysage d'abord, les cartes en dessous. */
+  .voyage .page-hero{padding-top:30svh}
+  .voyage .post-grid{grid-template-columns:1fr}
+}
