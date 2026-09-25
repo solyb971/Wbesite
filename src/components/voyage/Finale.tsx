@@ -72,7 +72,7 @@ export default function Finale() {
 
         <a className="next" href="#contact">
           <span className="next-q">
-            Vous avez un projet <em>en tête ?</em>
+            Vous avez un projet <em>en tête&nbsp;?</em>
           </span>
           <span className="next-arrow" aria-hidden="true">
             {/* Dessinée comme une île de l'archipel au-dessus : côte irrégulière en petits

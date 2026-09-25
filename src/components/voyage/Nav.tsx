@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Logo from "./Logo"
+import MasquageNav from "./anim/MasquageNav"
 import { SCENES } from "./Stage"
 
 // Liens vers les autres pages sans préchargement (ici, dans les réalisations et le
@@ -68,6 +69,7 @@ export default function Nav({ page = "accueil" }: { page?: PageVoyage }) {
           Devis gratuit
         </LienSection>
       </nav>
+      <MasquageNav />
       {/* Un point par paysage ; le script les relie au défilement (masqué sans JS). */}
       {accueil && (
         <nav className="rail" aria-label="Paysages">

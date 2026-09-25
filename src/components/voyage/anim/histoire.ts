@@ -38,6 +38,35 @@ export function animerHistoire(section: HTMLElement): () => void {
 
   const indice = (p: number) => Math.min(n - 1, Math.floor(p * n))
 
+  // Écran tactile : un lancer du doigt parcourt facilement plus d'un chapitre, qui
+  // serait alors sauté. Chaque geste avance donc d'un chapitre au plus, et la page
+  // se pose au milieu de celui-ci une fois le défilement arrêté. Un glisser lent,
+  // doigt posé, reste libre ; on sort de la scène par le haut ou le bas sans frein.
+  // Seul l'élan qui suit un geste est concerné (inertie), pas un défilement par lien.
+  const tactile = window.matchMedia("(pointer: coarse)").matches
+  let inertie = false
+  let depart = -1
+  let departGeste = -1
+  let yGeste = 0
+  const chapitreActuel = () => (!pin || pin.isActive ? courant : pin.progress <= 0 ? -1 : n)
+  const borner = (i: number) => Math.max(0, Math.min(n - 1, Math.max(depart - 1, Math.min(depart + 1, i))))
+  const aimanter = (v: number) => {
+    if (!inertie) return v
+    const i = borner(indice(v))
+    if ((i === 0 && v < 0.5 / n) || (i === n - 1 && v > (n - 0.5) / n)) return v
+    return (i + 0.5) / n
+  }
+  const surToucher = () => {
+    inertie = false
+    departGeste = chapitreActuel()
+    yGeste = window.scrollY
+  }
+  const surLacher = () => {
+    const tranche = pin ? (pin.end - pin.start) / n : Infinity
+    depart = Math.abs(window.scrollY - yGeste) < tranche / 2 ? departGeste : chapitreActuel()
+    inertie = true
+  }
+
   const afficher = (i: number) => {
     if (i === courant || !ctx) return
     const sens = i > courant ? 1 : -1
@@ -130,14 +159,25 @@ export function animerHistoire(section: HTMLElement): () => void {
         pin: true,
         animation: coucherDeSoleil(),
         scrub: 1,
+        snap: tactile
+          ? {
+              snapTo: aimanter,
+              duration: { min: 0.3, max: 0.7 },
+              delay: 0.05,
+              ease: "power2.out",
+              inertia: false,
+              onComplete: () => void (inertie = false),
+            }
+          : undefined,
         invalidateOnRefresh: true,
         onUpdate: (st) => {
           section.classList.toggle("is-started", st.progress > 0.02)
-          if (entree) afficher(indice(st.progress))
+          if (entree) afficher(inertie ? borner(indice(st.progress)) : indice(st.progress))
         },
         // La colonne de points du site s'efface le temps de la scène : le récit se
         // découvre sans indicateur de progression.
         onToggle: (st) => {
+          if (!st.isActive) inertie = false
           const r = railDuSite()
           if (r) gsap.to(r, { autoAlpha: st.isActive ? 0 : 1, duration: 0.4, overwrite: "auto" })
         },
@@ -196,12 +236,20 @@ export function animerHistoire(section: HTMLElement): () => void {
   }
   window.addEventListener("resize", auRedimensionnement)
   mouvementReduit.addEventListener("change", construire)
+  if (tactile) {
+    window.addEventListener("touchstart", surToucher, { passive: true })
+    window.addEventListener("touchend", surLacher, { passive: true })
+    window.addEventListener("touchcancel", surLacher, { passive: true })
+  }
 
   construire()
 
   return () => {
     window.clearTimeout(attente)
     window.removeEventListener("resize", auRedimensionnement)
+    window.removeEventListener("touchstart", surToucher)
+    window.removeEventListener("touchend", surLacher)
+    window.removeEventListener("touchcancel", surLacher)
     mouvementReduit.removeEventListener("change", construire)
     demonter()
   }

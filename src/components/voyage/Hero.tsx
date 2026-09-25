@@ -8,7 +8,7 @@ export default function Hero() {
           </h1>
           <p className="lede hero-in">
             Chaque jour, des clients tapent une recherche pensant vous trouver et tombent sur un concurrent mieux
-            référencé. On construit des outils digitaux pour les entrepreneurs d&apos;ici : sites, applications,
+            référencé. On construit des outils digitaux pour les entrepreneurs d&apos;ici&nbsp;: sites, applications,
             systèmes pensés pour être <strong>trouvés</strong>, pas juste pour exister.
           </p>
           <div className="cta hero-in">
