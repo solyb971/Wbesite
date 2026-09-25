@@ -12,6 +12,7 @@ import { creerAmbiances } from "./ambiances"
 import { cadrerPaysages } from "./cadrage"
 import { genererDecor } from "./decor"
 import { activerGlisser } from "./glisser"
+import { animerHistoire } from "./histoire"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, MorphSVGPlugin, MotionPathPlugin)
 
@@ -21,7 +22,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, MorphSVGPlugin, MotionPat
  * ce composant ne fait que l'animer, et tout est défait au démontage (useGSAP pour
  * GSAP, SplitText et les épinglages ; la liste « defaire » pour le reste).
  *
- * L'ordre compte : épinglages (réalisations, final) avant les déclencheurs qui
+ * L'ordre compte : épinglages (réalisations, final, histoire) avant les déclencheurs qui
  * dépendent de leur position, puis ScrollTrigger.sort() et refresh().
  */
 export default function VoyageController() {
@@ -59,6 +60,10 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
   const chapters = $$("[data-scene]")
   const dots = $$<HTMLButtonElement>(".rail button")
   const firstOf = scenes.map((_, i) => chapters.find((c) => Number(c.dataset.scene) === i)!)
+  // Une section épinglée se retrouve en bas de son enveloppe une fois l'épinglage
+  // passé : c'est l'enveloppe (son vrai début) que visent ancres et mesures.
+  const debut = (el: HTMLElement) =>
+    el.parentElement?.classList.contains("pin-spacer") ? el.parentElement : el
 
   // Paysages recadrés sur leur point d'intérêt sur écran étroit (voir cadrage.ts).
   defaire.push(cadrerPaysages($(".stage")!, scenes))
@@ -127,8 +132,8 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
   const scrollPadding = () => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
   const scrollTo = (t: HTMLElement) =>
     lenis
-      ? lenis.scrollTo(t, { offset: scrollPadding(), duration: 1.8 })
-      : t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
+      ? lenis.scrollTo(debut(t), { offset: scrollPadding(), duration: 1.8 })
+      : debut(t).scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
 
   $$<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
     const aller = (e: MouseEvent) => {
@@ -283,6 +288,10 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
     })
   }
 
+  /* L'histoire : la carte se fige, les chapitres se succèdent, le soleil se couche */
+  const histoire = $(".histoire")
+  if (histoire) defaire.push(animerHistoire(histoire))
+
   /* 3. Changement de paysage par chapitre (créé après les épinglages) */
   // Le paysage se déduit de la position de défilement : juste même après un saut
   // d'ancre, un défilement rapide ou dans une section épinglée.
@@ -314,7 +323,7 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
     )
     let tops: number[] = []
     const measure = () => {
-      tops = firstOf.map((c) => c.getBoundingClientRect().top + window.scrollY)
+      tops = firstOf.map((c) => debut(c).getBoundingClientRect().top + window.scrollY)
     }
     ScrollTrigger.addEventListener("refresh", measure)
     defaire.push(() => ScrollTrigger.removeEventListener("refresh", measure))
@@ -382,7 +391,7 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
       cible = null
     }
     if (!cible) return
-    const y = Math.round(cible.getBoundingClientRect().top + window.scrollY)
+    const y = Math.round(debut(cible).getBoundingClientRect().top + window.scrollY)
     window.scrollTo(0, y)
     lenis?.scrollTo(y, { immediate: true, force: true })
   }
@@ -404,7 +413,7 @@ function mettreEnScene(root: HTMLElement, defaire: Array<() => void>) {
       cible = null
     }
     if (!cible) return
-    const y = Math.round(cible.getBoundingClientRect().top + window.scrollY)
+    const y = Math.round(debut(cible).getBoundingClientRect().top + window.scrollY)
     window.scrollTo(0, y)
     lenis?.scrollTo(y, { immediate: true, force: true })
   }

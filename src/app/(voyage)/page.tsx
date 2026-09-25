@@ -7,8 +7,7 @@ import Hero from "@/components/voyage/Hero"
 import Realisations from "@/components/voyage/Realisations"
 import Services from "@/components/voyage/Services"
 import Engagements from "@/components/voyage/Engagements"
-import APropos from "@/components/voyage/APropos"
-import Temoignage from "@/components/voyage/Temoignage"
+import Histoire from "@/components/voyage/Histoire"
 import Faq from "@/components/voyage/Faq"
 import Finale from "@/components/voyage/Finale"
 import Contact from "@/components/voyage/Contact"
@@ -200,8 +199,7 @@ export default function HomePage() {
           <Realisations />
           <Services />
           <Engagements />
-          <APropos />
-          <Temoignage />
+          <Histoire />
           <Faq />
           <Finale />
           <Contact />
