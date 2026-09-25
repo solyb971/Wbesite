@@ -14,11 +14,24 @@ const RECETTES: Record<Paysage, Recette> = {
       .to(q(".smoke"), { x: 25, scaleX: 1.08, transformOrigin: "50% 50%", duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 }, 0)
       .fromTo(q(".birds"), { x: 700, y: 0 }, { x: -800, y: -60, duration: 22, ease: "none", repeat: -1 }, 0)
       .to(q(".a-sun"), { attr: { r: 86 }, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 }, 0)
-    // Les oiseaux battent des ailes, chacun à son rythme : les ailes s'abaissent
-    // sous la ligne du corps et remontent (repli vertical autour du bas du tracé).
-    qa(".birds path").forEach((oiseau) =>
-      tl.to(oiseau, { scaleY: -0.55, transformOrigin: "50% 100%", duration: rnd(0.26, 0.36), ease: "sine.inOut", yoyo: true, repeat: -1, delay: rnd(0, 0.3) }, 0)
-    )
+    // Les oiseaux battent des ailes, chacun à son rythme : le corps (milieu du
+    // tracé) reste en place, les pointes des ailes montent au-dessus de lui puis
+    // redescendent en dessous. On anime la forme même des ailes (deux courbes),
+    // pas le dessin entier, qui aurait l'air de se retourner.
+    qa(".birds path").forEach((oiseau) => {
+      const m = /M\s*([\d.]+)\s+([\d.]+)\s*q\s*([\d.]+)/.exec(oiseau.getAttribute("d") ?? "")
+      if (!m) return
+      const [x, y, demi] = [Number(m[1]), Number(m[2]), Number(m[3]) * 2]
+      const ailes = (pointe: number, courbe: number) =>
+        `M${x} ${y + pointe * demi} Q${x + 0.45 * demi} ${y + courbe * demi} ${x + demi} ${y} ` +
+        `Q${x + 1.55 * demi} ${y + courbe * demi} ${x + 2 * demi} ${y + pointe * demi}`
+      tl.fromTo(
+        oiseau,
+        { attr: { d: ailes(-0.45, -0.85) } },
+        { attr: { d: ailes(0.4, -0.25) }, duration: rnd(0.24, 0.34), ease: "sine.inOut", yoyo: true, repeat: -1, delay: rnd(0, 0.3) },
+        0
+      )
+    })
   },
   // La plage : nuages, bateau, vagues, écume, rivage, palmiers.
   plage: (tl, q, qa) => {
