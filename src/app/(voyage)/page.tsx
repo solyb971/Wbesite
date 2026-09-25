@@ -7,7 +7,7 @@ import Hero from "@/components/voyage/Hero"
 import Realisations from "@/components/voyage/Realisations"
 import Services from "@/components/voyage/Services"
 import Engagements from "@/components/voyage/Engagements"
-import APropos from "@/components/voyage/APropos"
+import Histoire from "@/components/voyage/Histoire"
 import Temoignage from "@/components/voyage/Temoignage"
 import Faq from "@/components/voyage/Faq"
 import Finale from "@/components/voyage/Finale"
@@ -200,7 +200,7 @@ export default function HomePage() {
           <Realisations />
           <Services />
           <Engagements />
-          <APropos />
+          <Histoire />
           <Temoignage />
           <Faq />
           <Finale />

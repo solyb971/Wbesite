@@ -401,3 +401,75 @@ html:not(.js) .voyage .rail{display:none}
   .voyage .hero-card h1{font-size:2.1rem}
   .voyage .hero-card .lede{font-size:.9rem;line-height:1.45}
 }
+
+/* ---------- L'histoire en cinq chapitres (components/voyage/Histoire.tsx) ----------
+   Lecture classique par défaut (sans JS, mouvement réduit, écran trop bas) :
+   chapitres les uns sous les autres. anim/histoire.ts ajoute
+   .is-pinned : la carte se fige, un seul chapitre à la fois. */
+.voyage .histoire-card{position:relative;max-width:min(980px,100%);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(2rem,5vw,5rem);align-items:start}
+.voyage .histoire h2{font-size:clamp(2rem,3.1vw,2.9rem);max-width:none}
+.voyage .histoire h2 em{display:block}
+.voyage .h-hint{display:none}
+
+.voyage .h-chap{display:flex;flex-direction:column;gap:1.25rem;padding:2.4rem 0;border-top:2px solid var(--line)}
+.voyage .h-chap:first-child{border-top:0;padding-top:.4rem}
+.voyage .histoire .h-chap p{margin:0}
+.voyage .h-lead{font-family:var(--font-display);font-weight:650;font-variation-settings:"wdth" 88;font-size:clamp(1.45rem,2.2vw,2.05rem);line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+.voyage .h-lead--xl{font-size:clamp(1.9rem,3vw,2.7rem)}
+.voyage .h-lead b{font-weight:inherit;color:var(--brand-ink)}
+.voyage .h-lead em,.voyage .h-punch em,.voyage .h-words em{font-family:var(--font-accent);font-style:italic;font-weight:400;letter-spacing:-.005em;color:var(--brand-ink)}
+.voyage .h-p{font-size:clamp(1.02rem,1.3vw,1.15rem);color:var(--muted);max-width:44ch}
+.voyage .h-me{display:flex;align-items:center;gap:.9rem}
+.voyage .h-me b{display:block;font-weight:700}
+.voyage .h-me small{font-size:.9rem;color:var(--muted)}
+.voyage .h-avatar{flex:none;display:grid;place-items:center;width:3.5rem;height:3.5rem;border-radius:50%;overflow:hidden;background:var(--brand);color:var(--paper);font-family:var(--font-accent);font-style:italic;font-size:1.75rem;line-height:1}
+.voyage .h-avatar img{width:100%;height:100%;object-fit:cover}
+.voyage .h-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,3vw,2.2rem)}
+.voyage .h-col{display:flex;flex-direction:column;gap:.7rem;padding-top:.9rem;border-top:2px solid var(--card-fg)}
+.voyage .h-col--off{border-top-style:dashed;border-top-color:var(--muted)}
+.voyage .h-kicker{font-weight:600;font-size:.92rem;color:var(--muted)}
+.voyage .h-words{font-family:var(--font-display);font-weight:720;font-variation-settings:"wdth" 84;font-size:clamp(1.75rem,3.2vw,2.9rem);line-height:1.02;letter-spacing:-.025em}
+.voyage .h-words em{font-size:1.1em}
+.voyage .h-panel{display:flex;flex-direction:column;gap:.85rem;padding:1.1rem 1.25rem 1.25rem;border:2px solid var(--line);border-radius:18px;background:rgba(245,242,237,.03)}
+.voyage .histoire .h-panel p{font-size:.98rem;color:var(--muted)}
+.voyage .h-bar-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.4rem;font-size:.9rem;color:var(--muted)}
+.voyage .h-bar-head span:last-child{text-align:right}
+.voyage .h-bar--now .h-bar-head{color:var(--card-fg);font-weight:600}
+.voyage .h-track{height:10px;border-radius:5px;background:rgba(245,242,237,.1);overflow:hidden}
+.voyage .h-track i{display:block;height:100%;border-radius:inherit;background:#6E665C;transform-origin:0 50%}
+.voyage .h-bar--now .h-track i{background:var(--brand-ink)}
+.voyage .histoire .h-panel .h-legende{margin-top:.4rem;font-size:.8rem;color:var(--muted)}
+.voyage .h-punch{font-family:var(--font-display);font-weight:650;font-variation-settings:"wdth" 88;font-size:clamp(1.2rem,1.7vw,1.5rem);line-height:1.2;letter-spacing:-.015em}
+.voyage .h-big{display:flex;align-items:center;gap:.06em;font-family:var(--font-display);font-weight:760;font-variation-settings:"wdth" 92;font-size:clamp(4rem,8.5vw,7.25rem);line-height:.9;letter-spacing:0;color:var(--brand-ink);transform-origin:0 50%}
+.voyage .h-plus{font-size:1.45em;line-height:.7;font-weight:700}
+.voyage .h-souligne{position:relative;white-space:nowrap}
+.voyage .h-souligne i{position:absolute;left:0;right:0;bottom:-.06em;height:3px;border-radius:2px;background:var(--brand-ink);transform-origin:0 50%}
+.voyage .h-list{list-style:none;margin:0;padding:0}
+.voyage .h-list li{display:flex;align-items:baseline;gap:.85rem;padding:.8rem 0;border-top:2px solid var(--line);font-weight:600;font-size:clamp(1.02rem,1.3vw,1.15rem)}
+.voyage .h-list li:last-child{border-bottom:2px solid var(--line)}
+.voyage .h-list li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--brand);transform:translateY(-2px)}
+
+/* Scène figée : la hauteur de la zone est celle du plus long chapitre (mesurée). */
+.voyage .histoire.is-pinned{min-height:0;height:100vh;height:100svh;padding:5.75rem 0 1.5rem;align-items:center}
+.voyage .histoire.is-pinned .histoire-card{align-items:center}
+.voyage .histoire.is-pinned .h-chaps{position:relative;height:var(--h-chaps,auto)}
+.voyage .histoire.is-pinned .h-chap{position:absolute;inset:0 0 auto;min-height:100%;justify-content:center;padding:0;border:0}
+.voyage .histoire.is-pinned .h-hint{display:flex;align-items:center;gap:.6rem;margin:1.6rem 0 0;font-size:.85rem;font-weight:600;color:var(--muted);transition:opacity .5s}
+.voyage .histoire.is-pinned .h-hint::after{content:"";width:2px;height:1.1rem;border-radius:1px;background:linear-gradient(var(--brand-ink),transparent);animation:voyage-bob 1.6s ease-in-out infinite}
+.voyage .histoire.is-started .h-hint{opacity:0}
+@media (min-width:861px) and (max-height:760px){
+  .voyage .histoire.is-pinned{padding:5.25rem 0 1rem}
+  .voyage .histoire.is-pinned .histoire-card{padding-block:1.8rem}
+  .voyage .histoire.is-pinned h2{font-size:clamp(1.8rem,2.6vw,2.3rem)}
+  .voyage .histoire.is-pinned .h-big{font-size:clamp(3.6rem,7vw,5.5rem)}
+}
+/* Mobile : une colonne, le titre reste pour les lecteurs d'écran seulement. La
+   carte reste en bas, le couchant au-dessus. */
+@media (max-width:860px){
+  .voyage .histoire-card{grid-template-columns:minmax(0,1fr)}
+  .voyage .histoire.is-pinned{align-items:flex-end;padding:5.25rem 0 .75rem}
+  .voyage .histoire.is-pinned h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+  .voyage .histoire.is-pinned .h-hint{margin:0 0 .9rem}
+  .voyage .histoire.is-pinned .h-chap{gap:1rem}
+  .voyage .h-panel{padding:.9rem 1rem 1rem}
+}
