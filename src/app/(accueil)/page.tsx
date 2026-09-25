@@ -1,15 +1,18 @@
-﻿import { Metadata } from 'next'
-import Hero from "@/components/site/Hero"
-import Realisations from "@/components/site/Realisations"
-import Services from "@/components/site/Services"
-import Engagements from "@/components/site/Engagements"
-import About from "@/components/site/About"
-import FAQ from "@/components/site/FAQ"
-import Contact from "@/components/site/Contact"
-import ScrollChoreography from "@/components/site/ScrollChoreography"
-import GuadeloupeMap, { GuadeloupeSprite } from "@/components/site/GuadeloupeMap"
-import s from "@/components/site/accueil.module.css"
+import { Metadata } from 'next'
 import { homeFaqs } from "@/lib/faq-data"
+import { voyageFonts } from "@/components/voyage/fonts"
+import Stage, { SharedShapes } from "@/components/voyage/Stage"
+import Nav from "@/components/voyage/Nav"
+import Hero from "@/components/voyage/Hero"
+import Realisations from "@/components/voyage/Realisations"
+import Services from "@/components/voyage/Services"
+import Engagements from "@/components/voyage/Engagements"
+import APropos from "@/components/voyage/APropos"
+import Temoignage from "@/components/voyage/Temoignage"
+import Faq from "@/components/voyage/Faq"
+import Finale from "@/components/voyage/Finale"
+import Contact from "@/components/voyage/Contact"
+import Footer from "@/components/voyage/Footer"
 
 export const metadata: Metadata = {
   // 54 chars — sans le suffixe template, affiché en entier dans Google
@@ -33,6 +36,9 @@ export const metadata: Metadata = {
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SolYB — Agence Digitale Guadeloupe' }],
   },
 }
+
+/** Comme la maquette : la barre du navigateur prend la couleur du ciel du premier paysage. */
+export const viewport = { themeColor: "#F5F2ED" }
 
 export default function HomePage() {
   const localBusinessSchema = {
@@ -182,22 +188,25 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      {/* data-canvas : repère pour globals.css (footer transparent, fond ink du body). */}
-      <main className={s.home} data-canvas>
-        <GuadeloupeSprite />
-        <div className={s.canvas} aria-hidden>
-          <div className={s.glow} />
-          <GuadeloupeMap variant="canvas" />
-        </div>
-        <Hero />
-        <Realisations />
-        <Services />
-        <Engagements />
-        <About />
-        <FAQ />
-        <Contact />
-        <ScrollChoreography />
-      </main>
+      {/* Maquette de référence : docs/refonte/solyb-reference.html. Tout le contenu
+          est rendu ici, côté serveur ; les animations ne font que l'enrichir. */}
+      <div className={`voyage ${voyageFonts}`}>
+        <SharedShapes />
+        <Stage />
+        <Nav />
+        <main id="top">
+          <Hero />
+          <Realisations />
+          <Services />
+          <Engagements />
+          <APropos />
+          <Temoignage />
+          <Faq />
+          <Finale />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
